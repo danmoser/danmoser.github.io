@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>reST Tips</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="rest-tips">
+<h1 class="title">reST Tips</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#how-to-install" id="id1">How to install</a></li>
+<li><a class="reference internal" href="#usage-examples" id="id2">Usage examples</a></li>
+<li><a class="reference internal" href="#file-example-here" id="id3">File example (here)</a></li>
+<li><a class="reference internal" href="#good-references" id="id4">Good references</a></li>
+<li><a class="reference internal" href="#advanced-feature-example" id="id5">Advanced feature example</a></li>
+<li><a class="reference internal" href="#making-presentations" id="id6">Making presentations</a><ul>
+<li><a class="reference internal" href="#rst2pdf" id="id7">rst2pdf</a></li>
+<li><a class="reference internal" href="#rst2beamer" id="id8">rst2beamer</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="how-to-install">
+<h1><a class="toc-backref" href="#id1">How to install</a></h1>
+<pre class="code bash literal-block">
+<span class="comment"># Linux (Ubuntu, Debian)
+</span><span class="name variable">$ </span>sudo apt-get install python-docutils
+<span class="comment"># MacOS
+</span><span class="name variable">$ </span>sudo pip install docutils
+</pre>
+</div>
+<div class="section" id="usage-examples">
+<h1><a class="toc-backref" href="#id2">Usage examples</a></h1>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>rst2html file.rst &gt; file.html
+<span class="name variable">$ </span>rst2latex file.rst &gt; file.tex
+<span class="name variable">$ </span>pdflatex file.tex
+</pre>
+</div>
+<div class="section" id="file-example-here">
+<h1>File example (<a class="reference external" href="example.html">here</a>)</h1>
+<pre class="literal-block">
+Title or main part
+###################
+
+.. contents:: Table of contents
+
+Chapter
+**********
+
+Section
+=========
+
+Subsection
+-----------
+
+Subsubsection
+^^^^^^^^^^^^^^^
+
+Import paragraph
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+
+Regular paragraph...
+
+- one asterisk (\*): *text* for emphasis (italics),
+- two asterisks: (\*\*) **text** for strong emphasis (boldface), and
+- backquotes (\`\`): ``text`` for code samples.
+</pre>
+</div>
+<div class="section" id="good-references">
+<h1><a class="toc-backref" href="#id4">Good references</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">http://docutils.sourceforge.net/docs/user/rst/quickref.html</a></li>
+<li><a class="reference external" href="http://sphinx-doc.org/rest.html">http://sphinx-doc.org/rest.html</a></li>
+</ul>
+</div>
+<div class="section" id="advanced-feature-example">
+<h1><a class="toc-backref" href="#id5">Advanced feature example</a></h1>
+<p>Strikethrough text in html and latex. In the document:</p>
+<pre class="literal-block">
+.. role:: strike
+    :class: strike
+</pre>
+<p>This can be applied as follows:</p>
+<blockquote>
+<tt class="docutils literal"><span class="pre">:strike:\`This</span> text will be crossed <span class="pre">out.\`</span></tt></blockquote>
+<p>Then in my css file I have an entry (html output):</p>
+<pre class="code css literal-block">
+<span class="name class">.strike</span> <span class="punctuation">{</span>
+  <span class="keyword">text-decoration</span><span class="operator">:</span> <span class="keyword">line-through</span><span class="punctuation">;</span>
+<span class="punctuation">}</span>
+</pre>
+<p>Or in my extra latex file:</p>
+<pre class="literal-block">
+\usepackage{ulem}
+\newcommand*{\DUrolestrike}{\sout}
+</pre>
+<p>And it is compiled as:</p>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>rst2html --stylesheet<span class="operator">=</span>syntax.css in.rst &gt; out.html
+<span class="name variable">$ </span>rst2latex --stylesheet<span class="operator">=</span>syntax.tex in.rst &gt; out.tex
+</pre>
+</div>
+<div class="section" id="making-presentations">
+<h1><a class="toc-backref" href="#id6">Making presentations</a></h1>
+<div class="section" id="rst2pdf">
+<h2><a class="toc-backref" href="#id7">rst2pdf</a></h2>
+<p>Create a &quot;slides.style&quot; to <cite>rst2pdf</cite>:</p>
+<pre class="code css literal-block">
+<span class="punctuation">{</span><span class="literal string double">&quot;pageSetup&quot;</span><span class="operator">:</span> <span class="error">{</span>
+    <span class="literal string double">&quot;width&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;16cm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;height&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;10cm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;margin-top&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;2mm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;margin-bottom&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;0mm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;margin-left&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;.5cm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;margin-right&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;1cm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;margin-gutter&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;0cm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;spacing-header&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;2mm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;spacing-footer&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;0mm&quot;</span><span class="operator">,</span>
+    <span class="literal string double">&quot;firstTemplate&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;coverPage&quot;</span>
+  <span class="punctuation">}</span><span class="operator">,</span>
+  <span class="literal string double">&quot;pageTemplates&quot;</span> <span class="operator">:</span> <span class="punctuation">{</span>
+  <span class="literal string double">&quot;coverPage&quot;</span><span class="operator">:</span> <span class="error">{</span>
+    <span class="literal string double">&quot;frames&quot;</span><span class="operator">:</span> <span class="punctuation">[</span>
+        <span class="punctuation">[</span><span class="literal string double">&quot;0cm&quot;</span><span class="operator">,</span> <span class="literal string double">&quot;0cm&quot;</span><span class="operator">,</span> <span class="literal string double">&quot;100%&quot;</span><span class="operator">,</span> <span class="literal string double">&quot;100%&quot;</span><span class="punctuation">]</span>
+    <span class="punctuation">]</span><span class="operator">,</span>
+    <span class="literal string double">&quot;showHeader&quot;</span> <span class="operator">:</span> <span class="name">false</span><span class="operator">,</span>
+    <span class="literal string double">&quot;showFooter&quot;</span> <span class="operator">:</span> <span class="name">true</span><span class="operator">,</span>
+    <span class="literal string double">&quot;alignment&quot;</span><span class="operator">:</span> <span class="literal string double">&quot;TA_CENTER&quot;</span>
+    <span class="punctuation">}</span><span class="operator">,</span>
+    <span class="literal string double">&quot;cutePage&quot;</span><span class="operator">:</span> <span class="punctuation">{</span>
+        <span class="literal string double">&quot;frames&quot;</span><span class="operator">:</span> <span class="punctuation">[</span>
+            <span class="punctuation">[</span><span class="literal string double">&quot;0&quot;</span><span class="operator">,</span> <span class="literal string double">&quot;0&quot;</span><span class="operator">,</span> <span class="literal string double">&quot;100%&quot;</span><span class="operator">,</span> <span class="literal string double">&quot;100%&quot;</span><span class="punctuation">]</span>
+        <span class="punctuation">]</span><span class="operator">,</span>
+        <span class="literal string double">&quot;showHeader&quot;</span> <span class="operator">:</span> <span class="name">false</span><span class="operator">,</span>
+        <span class="literal string double">&quot;showFooter&quot;</span> <span class="operator">:</span> <span class="name">false</span>
+    <span class="punctuation">}</span>
+  <span class="error">}</span>
+<span class="error">}</span>
+</pre>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>rst2pdf slides.rst -b1 -s slides.style
+<span class="name variable">$ </span>rst2pdf -b2 -s a4-landscape -o path/temp.pdf slides.rst
+</pre>
+</div>
+<div class="section" id="rst2beamer">
+<h2><a class="toc-backref" href="#id8">rst2beamer</a></h2>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>rst2beamer slides.rst &gt; slides.tex
+<span class="name variable">$ </span>pdflatex slides.tex
+</pre>
+</div>
+</div>
+</div>
+</body>
+</html>

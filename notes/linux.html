@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Linux tips</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="linux-tips">
+<h1 class="title">Linux tips</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#useful-commands-tricks" id="id1">Useful commands tricks</a><ul>
+<li><a class="reference internal" href="#print-line-interval" id="id2">Print line interval</a></li>
+<li><a class="reference internal" href="#multiple-files-edition-substitution" id="id3">Multiple files edition (substitution)</a></li>
+<li><a class="reference internal" href="#disk-usage" id="id4">Disk usage</a></li>
+<li><a class="reference internal" href="#ls" id="id5"><tt class="docutils literal">ls</tt></a></li>
+<li><a class="reference internal" href="#unix-essential-commands" id="id6">Unix essential commands</a></li>
+<li><a class="reference internal" href="#symbolic-link" id="id7">Symbolic link</a></li>
+<li><a class="reference internal" href="#number-of-cores" id="id8">Number of cores</a></li>
+<li><a class="reference internal" href="#rm-find" id="id9"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></li>
+<li><a class="reference internal" href="#rsync" id="id10"><tt class="docutils literal">rsync</tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-tips" id="id11">General Tips</a><ul>
+<li><a class="reference internal" href="#terminal" id="id12">Terminal</a></li>
+<li><a class="reference internal" href="#scripts" id="id13">Scripts</a></li>
+<li><a class="reference internal" href="#useful-keyboard-shortcuts" id="id14">Useful keyboard shortcuts</a></li>
+<li><a class="reference internal" href="#image-tools" id="id15">Image tools</a></li>
+<li><a class="reference internal" href="#image-to-eps-format" id="id16">Image to EPS format</a></li>
+<li><a class="reference internal" href="#cedilla" id="id17">Cedilla</a></li>
+<li><a class="reference internal" href="#grub-edit" id="id18">GRUB edit</a></li>
+<li><a class="reference internal" href="#mimes-and-program-links-in-file-managers" id="id19">Mimes and program links in File Managers</a></li>
+<li><a class="reference internal" href="#firefox-adblocl" id="id20">Firefox + AdBlocl</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#permitions" id="id21">Permitions</a><ul>
+<li><a class="reference internal" href="#how-to-apply-default-permissions" id="id22">How to apply default permissions</a></li>
+<li><a class="reference internal" href="#users" id="id23">Users</a></li>
+<li><a class="reference internal" href="#machine-name" id="id24">machine name</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ssh-auth" id="id25">SSH Auth</a><ul>
+<li><a class="reference internal" href="#run-at-local-pc" id="id26">1- Run at local PC</a></li>
+<li><a class="reference internal" href="#run-at-remote-pc" id="id27">2- Run at remote PC</a></li>
+<li><a class="reference internal" href="#one-may-need-to-run-at-remote-pc" id="id28">3- One may need to run at remote PC</a></li>
+<li><a class="reference internal" href="#github" id="id29">GitHub</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-pc-mic" id="id30">Using PC MIC</a><ul>
+<li><a class="reference internal" href="#tips" id="id31">Tips</a></li>
+<li><a class="reference internal" href="#how-can-i-get-the-instrumentals-only-from-a-file-and-remove-the-vocals" id="id32">How can I get the instrumentals only from a file and remove the vocals?</a></li>
+<li><a class="reference internal" href="#listen-to-microphone-over-the-speakers-using-pulseaudio" id="id33">Listen to microphone over the speakers using pulseaudio</a></li>
+<li><a class="reference internal" href="#listen-to-microphone-over-the-speakers-using-qjackctl" id="id34">Listen to microphone over the speakers using Qjackctl</a></li>
+<li><a class="reference internal" href="#how-to-do-a-mixing" id="id35">How to do a mixing</a></li>
+<li><a class="reference internal" href="#summary" id="id36">Summary</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="useful-commands-tricks">
+<h1><a class="toc-backref" href="#id1">Useful commands tricks</a></h1>
+<div class="section" id="print-line-interval">
+<h2><a class="toc-backref" href="#id2">Print line interval</a></h2>
+<p>Print from lines 4400 to 4500 of a file</p>
+<pre class="code bash literal-block">
+cat file | head -n 4500 | tail -n 100
+</pre>
+</div>
+<div class="section" id="multiple-files-edition-substitution">
+<h2><a class="toc-backref" href="#id3">Multiple files edition (substitution)</a></h2>
+<pre class="code bash literal-block">
+sed -i <span class="literal string double">&quot;s/INPUT/OUTPUT/g&quot;</span> *.txt
+</pre>
+<p>Reminder: if you want to substitute a special character, write &quot;\&quot; before it (e.g., &quot;\/&quot;).</p>
+</div>
+<div class="section" id="disk-usage">
+<h2><a class="toc-backref" href="#id4">Disk usage</a></h2>
+<pre class="code bash literal-block">
+du -h<span class="operator">(</span>s<span class="operator">)</span> folder
+</pre>
+<p>Returns the disk usage of <tt class="docutils literal">folder</tt> recursively. &quot;s&quot; returns it <em>summed</em>.</p>
+<p>Good program: <tt class="docutils literal">baobab</tt>.</p>
+</div>
+<div class="section" id="ls">
+<h2><a class="toc-backref" href="#id5"><tt class="docutils literal">ls</tt></a></h2>
+<pre class="code bash literal-block">
+ls -ltr --time-style<span class="operator">=</span>long
+ls -ltr --time-style<span class="operator">=</span>iso
+ls -ltr --time-style<span class="operator">=</span>full
+</pre>
+</div>
+<div class="section" id="unix-essential-commands">
+<h2><a class="toc-backref" href="#id6">Unix essential commands</a></h2>
+<pre class="literal-block">
+`awk`      tool for processing rows and columns.
+`bc`       calculate mathematical expressions.
+`cat`      print the whole file on screen.
+`cd`       change your current directory.
+`chgrp`    change the group of the file.
+`chmod`    change permissions of the file.
+`chown`    change the owner of the file.
+`cp`       copy a file.
+`cut`      select sections of text files (usually cols) by delimiters.
+`date`     print the current date on screen.
+`diff`     shows in screen the differences between two files.
+`du`       get information about disk usage and file sizes.
+`echo`     print string on screen.
+`expr`     calculate mathematical expressions.
+`find`     find files in your computer.
+`grep`     find string in file or list of files.
+`gzip`     compress/decompress files.
+`head`     print first lines of a file.
+`ifconfig` check network info (IP, mac address...).
+`ln`       create links (shortcuts) between files.
+`ls`       list files in directories.
+`mkdir`    create a directory.
+`more`     print file on screen, pause in the way.
+`mv`       move files from directories and change their names.
+`nohup`    leave process running in remote computer after you log off
+`passwd`   change your password.
+`read`     get input from keyboard.
+`rm`       remove (delete) a file.
+`scp`      copy files to/from remote computers.
+`sed`      automatable, command-line text editing.
+`shred`    write zeroes on top of the file so it cannot be recovered.
+`sort`     sort lines in a text file.
+`ssh`      connect to remote computers.
+`tac`      print the whole file on screen, backwards.
+`tail`     print last lines of a file.
+`tar`      put/extract files in a tarball.
+`touch`    update 'last modified' date or create an empty file.
+`wc`       counts words, lines and characters in a file.
+`wget`     download file from the internet.
+`top`      find out which processes are running.
+`xargs`    pass input from pipeline as argument to a command.
+</pre>
+<pre class="code bash literal-block">
+<span class="comment"># examples
+</span>cat command_list.txt
+more command_list.txt
+head command_list.txt
+head -n3 command_list.txt
+head -n-20 command_list.txt
+tail command_list.txt
+tail -n3 command_list.txt
+tail -n-20 command_list.txt
+diff command_list.bkp command_list.txt
+wc command_list.txt
+wc -m command_list.txt
+wc -l *
+grep <span class="literal string double">&quot;example:&quot;</span> command_list.txt
+grep <span class="literal string double">&quot;List of examples&quot;</span> -A6 command_list.txt
+grep <span class="literal string double">&quot;List of examples&quot;</span> -A6 -m1 command_list.txt
+grep -nr <span class="literal string double">&quot;example:&quot;</span> command_list.txt
+grep -v <span class="literal string double">&quot;example:&quot;</span> command_list.txt
+grep <span class="literal string double">&quot;Other&quot;</span> command_list.*
+grep <span class="literal string double">&quot;Other&quot;</span> command_list.* -l
+grep <span class="literal string double">&quot;Other&quot;</span> command_list.* -c
+grep --help
+sort data/frutas.dat
+sort -n data/numeros.dat
+cut -d: -f1 command_list.txt
+cut -d/ -f3 data/listagem.dat
+awk <span class="literal string single">'{print $2,$1}'</span> data/listagem.dat
+sed -e <span class="literal string double">&quot;s/example/exemplo/g&quot;</span> -e <span class="literal string double">&quot;s/:/&gt;/g&quot;</span> command_list.txt
+find ./ -name <span class="literal string single">'*.dat'</span>
+ln -s data/numeros.dat numbers.dat
+nohup &lt;normal <span class="name builtin">command</span>&gt; &gt; output.txt &amp;
+chmod 755 helloworld.sh
+</pre>
+</div>
+<div class="section" id="symbolic-link">
+<h2><a class="toc-backref" href="#id7">Symbolic link</a></h2>
+<pre class="code bash literal-block">
+ln -s <span class="operator">{</span>/path/to/file-name<span class="operator">}</span> <span class="operator">{</span>link-name<span class="operator">}</span>
+</pre>
+</div>
+<div class="section" id="number-of-cores">
+<h2><a class="toc-backref" href="#id8">Number of cores</a></h2>
+<pre class="code bash literal-block">
+nproc
+</pre>
+</div>
+<div class="section" id="rm-find">
+<h2><a class="toc-backref" href="#id9"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></h2>
+<pre class="code bash literal-block">
+find . -name <span class="literal string double">&quot;*~&quot;</span> -exec rm -r <span class="literal string double">&quot;{}&quot;</span> <span class="literal string escape">\;</span>
+<span class="comment"># or
+</span>find . -name <span class="literal string double">&quot;*~&quot;</span> -print0 | xargs -0 rm
+<span class="comment"># or for directories
+</span>find . -name <span class="literal string double">&quot;svn&quot;</span> -type d -exec rmdir <span class="literal string double">&quot;{}&quot;</span> <span class="literal string escape">\;</span>
+</pre>
+</div>
+<div class="section" id="rsync">
+<h2><a class="toc-backref" href="#id10"><tt class="docutils literal">rsync</tt></a></h2>
+<pre class="code bash literal-block">
+rsync -azP --delete --dry-run --rsh<span class="operator">=</span><span class="literal string single">'ssh -p20001'</span> Scripts/ user&#64;machine:/paht/Scripts2
+    <span class="comment"># &quot;/&quot; = very important. Otherwise, without &quot;/&quot;, it goes /paht/Scripts2/Scripts
+</span>    <span class="comment"># -a = arquive (recursive)
+</span>    <span class="comment"># -z = zip (for network)
+</span>    <span class="comment"># --delete = to sync deletions
+</span>    <span class="comment"># --dry-run = only show results
+</span>    <span class="comment"># -P = partially (resume)
+</span>    <span class="comment"># --exclude X = ignora arquivos X, e.g. &quot;*.pro&quot;
+</span>    <span class="comment"># --update = somente sobrescreve arquivos mais novos
+</span>    <span class="comment"># --stats = estatistica da transferencia
+</span>
+rsync -a -f <span class="literal string single">'- /*/*/'</span> /dirA/ host:/dirB/
+    <span class="comment"># -a triggers the archive mode that activates recursion
+</span>    <span class="comment"># -f is short for --filter=, which adds a file-filtering rule.
+</span>    <span class="comment">#     The pattern is inside single quotes so that the shell does not expand
+</span>    <span class="comment">#         wildcards; double quotes would work equally well in this case.
+</span>    <span class="comment">#     - means this is an exclude pattern.
+</span>    <span class="comment">#     The leading / means the pattern must start at dirA/ (the rsync &quot;transfer-root&quot;).
+</span>    <span class="comment">#     The */* part of the pattern refers to anything inside of a subdirectory.
+</span>    <span class="comment">#     The trailing / limits the exclusion to directories.
+</span>    <span class="comment">#     Files inside a subdirectory of dirA/ are not affected.
+</span>
+<span class="comment"># So in the end, rsync copies nothing more than one level down (and also does not
+# create second-level directories).</span>
+</pre>
+</div>
+</div>
+<div class="section" id="general-tips">
+<h1><a class="toc-backref" href="#id11">General Tips</a></h1>
+<div class="section" id="terminal">
+<h2><a class="toc-backref" href="#id12">Terminal</a></h2>
+<ul class="simple">
+<li><em>Ctrl+Shift+T</em> Open it</li>
+<li><em>Ctrl+A</em>      Go to the beginning of the line you are currently typing on</li>
+<li><em>Ctrl+E</em>      Go to the end of the line you are currently typing on</li>
+<li><em>Ctrl+L</em>      Clears the Screen, similar to the clear command</li>
+<li><em>Ctrl+U</em>      Clears the line before the cursor position. If you are at the end of the line, clears the entire line.</li>
+<li><em>Ctrl+H</em>      Same as backspace</li>
+<li><em>Ctrl+R</em>      Let’s you search through previously used commands</li>
+<li><em>Ctrl+C</em>      Kill whatever you are running</li>
+<li><em>Ctrl+D</em>      Exit the current shell</li>
+<li><em>Ctrl+Z</em>      Puts whatever you are running into a suspended background process. fg restores it.</li>
+<li><em>Ctrl+W</em>      Delete the word before the cursor</li>
+<li><em>Ctrl+K</em>      Clear the line after the cursor</li>
+<li><em>Ctrl+T</em>      Swap the last two characters before the cursor</li>
+<li><em>Esc+T</em>       Swap the last two words before the cursor</li>
+</ul>
+<p>Also works on Mac OS.</p>
+</div>
+<div class="section" id="scripts">
+<h2><a class="toc-backref" href="#id13">Scripts</a></h2>
+<p>Script starts with <tt class="docutils literal"><span class="pre">#!/bin/bash</span></tt></p>
+</div>
+<div class="section" id="useful-keyboard-shortcuts">
+<h2><a class="toc-backref" href="#id14">Useful keyboard shortcuts</a></h2>
+<pre class="code bash literal-block">
+exaile -t  <span class="comment">#Pause
+</span>exaile -p  <span class="comment">#Previous
+</span>exaile -n  <span class="comment">#Next
+</span>qmmp -t  <span class="comment">#Pause
+</span>amixer <span class="name builtin">set </span>Master 7%- -q
+amixer <span class="name builtin">set </span>Master 7%+ -q
+</pre>
+</div>
+<div class="section" id="image-tools">
+<h2><a class="toc-backref" href="#id15">Image tools</a></h2>
+<pre class="code bash literal-block">
+sudo apt-get install imagemagick
+mogrify -quality 75 *
+
+<span class="comment"># Para mudar a resolucao, onde nao havera nenhuma imagem com largura ou
+#  altura maior do que 1280 pxs (O 'aspect ratio' eh sempre preservado):
+</span>mogrify -resize <span class="literal string single">'1280x1280&gt;'</span> *.jpg
+<span class="comment"># Exemplos: 4608x3072 -&gt; 1280x852
+# Exemplos: 3072x4608 -&gt; 852x1280
+</span>
+mogrify -resize <span class="literal string single">'1920x1920&gt;'</span> -quality 75 *.jpg
+mogrify -resize <span class="literal string single">'1920x1920&gt;'</span> -quality 75 *.JPG
+
+<span class="comment"># fusao vertical
+</span>convert -gravity Center -append input*.eps output.png
+<span class="comment"># fusao horizontal
+</span>convert -gravity Center +append input*.eps output.png
+
+<span class="comment"># Exemplo mais avancados
+</span>montage rrm.pdf pol.pdf -geometry 800x800 output.pdf
+convert output.pdf -crop 1600x600+0+100 +repage out2.pdf
+
+convert teste.pdf -crop 100%+0+10% +repage out2.pdf
+
+montage vin.pdf xav.pdf -geometry 600x600 temp.pdf
+convert temp.pdf -crop 1200x460+0+70 +repage newfig1.pdf
+</pre>
+</div>
+<div class="section" id="image-to-eps-format">
+<h2><a class="toc-backref" href="#id16">Image to EPS format</a></h2>
+<p>There are <em>several</em> recipes for doing this (e.g., <tt class="docutils literal">convert img.png img.eps</tt>).
+By far, the best option is this:</p>
+<pre class="code bash literal-block">
+convert image.png image.pdf
+pdftops -eps image.pdf
+</pre>
+<p>You can also try (<tt class="docutils literal">eps3</tt> is a valid option):</p>
+<pre class="code bash literal-block">
+convert image.png eps2:image.eps
+</pre>
+<p>Attention! <em>BIMP</em> and <em>David's Batch Plugin</em> (gimp-plugin-registry) DO NOT WORK for EPS format...</p>
+<p>(More about EPS-PDF convertion, formats and sizes, see <a class="reference external" href="latex.html">latex</a> page)</p>
+</div>
+<div class="section" id="cedilla">
+<h2><a class="toc-backref" href="#id17">Cedilla</a></h2>
+<p>Add the following to <tt class="docutils literal">/etc/environment</tt>:</p>
+<pre class="code literal-block">
+GTK_IM_MODULE=cedilla
+QT_IM_MODULE=cedilla
+</pre>
+</div>
+<div class="section" id="grub-edit">
+<h2><a class="toc-backref" href="#id18">GRUB edit</a></h2>
+<pre class="code bash literal-block">
+sudo vim /etc/default/grub
+sudo update-grub
+</pre>
+</div>
+<div class="section" id="mimes-and-program-links-in-file-managers">
+<h2><a class="toc-backref" href="#id19">Mimes and program links in File Managers</a></h2>
+<p>In Ubuntu, the program-file type association is set is in <tt class="docutils literal"><span class="pre">~/.local/share/applications/mimeapps.list</span></tt>.</p>
+<p>Then, the program associated there must have a &quot;description&quot; in <tt class="docutils literal">/usr/share/applications/PROGRAM.desktop</tt>.</p>
+<p>One example is here:</p>
+<pre class="code literal-block">
+[Desktop Entry]
+Name=Foxit Reader
+Comment=View pdf documents
+Keywords=pdf;octet-stream;
+StartupNotify=true
+Terminal=false
+Type=Application
+#Icon=FoxitReader
+X-GNOME-DocPath=
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=FoxitReader
+X-GNOME-Bugzilla-Component=BugBuddyBugs
+X-GNOME-Bugzilla-Version=3.14.1
+Categories=GNOME;Viewer;Graphics;2DGraphics;VectorGraphics;
+MimeType=application/pdf;application/octet-stream;
+Exec=/data/Softwares/Foxit/FoxitReader.sh
+Icon=/home/user/.local/share/icons/hicolor/64x64/apps/FoxitReader.png
+</pre>
+</div>
+<div class="section" id="firefox-adblocl">
+<h2><a class="toc-backref" href="#id20">Firefox + AdBlocl</a></h2>
+<p>Open <tt class="docutils literal">about:config</tt> in Firefox, and change the option at <tt class="docutils literal">extensions.adblockplus.sidebar_key</tt>!</p>
+</div>
+</div>
+<div class="section" id="permitions">
+<h1><a class="toc-backref" href="#id21">Permitions</a></h1>
+<pre class="code bash literal-block">
+chmod a<span class="operator">[</span>ll<span class="operator">]</span>,g<span class="operator">[</span>roup<span class="operator">]</span>,u<span class="operator">[</span>ser<span class="operator">]</span> +/-x,r,w
+<span class="name variable">1</span> <span class="operator">=</span> execute
+<span class="name variable">2</span> <span class="operator">=</span> write
+<span class="name variable">4</span> <span class="operator">=</span> <span class="name builtin">read
+</span><span class="name variable">7</span> <span class="operator">=</span> 1+2+4
+</pre>
+<p>To do it recursively:</p>
+<pre class="code bash literal-block">
+<span class="comment"># To recursively give directories read&amp;execute privileges:
+</span>find /path/to/base/dir -type d -print0 | xargs -0 chmod -f 775
+<span class="comment"># To recursively give files read privileges:
+</span>find /path/to/base/dir -type f -print0 | xargs -0 chmod 664
+<span class="comment">#
+# Other (not so efficient) ways are:
+</span>find /path/to/base/dir -type d -exec chmod 755 <span class="operator">{}</span> +
+find /path/to/base/dir -type f -exec chmod 644 <span class="operator">{}</span> +
+<span class="comment"># Or
+</span>chmod 755 <span class="keyword">$(</span>find /path/to/base/dir -type d<span class="keyword">)</span>
+chmod 644 <span class="keyword">$(</span>find /path/to/base/dir -type f<span class="keyword">)</span>
+</pre>
+<div class="section" id="how-to-apply-default-permissions">
+<h2><a class="toc-backref" href="#id22">How to apply default permissions</a></h2>
+<pre class="code bash literal-block">
+chmod g+s &lt;directory&gt;  //set gid
+setfacl -d -m g::rwx /&lt;directory&gt;  //set group to rwx default
+setfacl -d -m o::rx /&lt;directory&gt;   //set other
+</pre>
+<p>Next we can verify:</p>
+<pre class="code bash literal-block">
+getfacl /&lt;directory&gt;
+</pre>
+<p>Output:</p>
+<pre class="literal-block">
+# file: ../&lt;directory&gt;/
+# owner: &lt;user&gt;
+# group: media
+# flags: -s-
+user::rwx
+group::rwx
+other::r-x
+default:user::rwx
+default:group::rwx
+default:other::r-x
+</pre>
+</div>
+<div class="section" id="users">
+<h2><a class="toc-backref" href="#id23">Users</a></h2>
+<p>How can I add a new user as sudoer using the command line?</p>
+<pre class="code bash literal-block">
+sudo usermod -a -G sudo &lt;username&gt;
+</pre>
+</div>
+<div class="section" id="machine-name">
+<h2><a class="toc-backref" href="#id24">machine name</a></h2>
+<p>Error message when I run sudo: unable to resolve host(name)</p>
+<ul class="simple">
+<li>Edit <tt class="docutils literal">/etc/hostname</tt> file contains just the name of the machine.</li>
+<li>Edit <tt class="docutils literal">/etc/hosts</tt> accordingly.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="ssh-auth">
+<h1><a class="toc-backref" href="#id25">SSH Auth</a></h1>
+<div class="section" id="run-at-local-pc">
+<h2><a class="toc-backref" href="#id26">1- Run at local PC</a></h2>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>ssh-keygen -t rsa
+<span class="comment">#(3x type ENTER)
+#Your public key has been saved in &lt;your_home_dir&gt;/.ssh/id_rsa.pub
+</span><span class="name variable">$ </span>scp ~/.ssh/id_rsa.pub USER&#64;HOST:/sto/home/USER/id_rsa.pub
+<span class="comment">#(Type your server's password)</span>
+</pre>
+</div>
+<div class="section" id="run-at-remote-pc">
+<h2><a class="toc-backref" href="#id27">2- Run at remote PC</a></h2>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+<span class="name variable">$ </span>chmod 700 ~/.ssh/authorized_keys
+<span class="name variable">$ </span>rm id_rsa.pub
+</pre>
+</div>
+<div class="section" id="one-may-need-to-run-at-remote-pc">
+<h2><a class="toc-backref" href="#id28">3- One may need to run at remote PC</a></h2>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span><span class="name builtin">exec </span>ssh-agent bash
+<span class="name variable">$ </span>ssh-add
+</pre>
+</div>
+<div class="section" id="github">
+<h2><a class="toc-backref" href="#id29">GitHub</a></h2>
+<p><a class="reference external" href="https://help.github.com/articles/generating-ssh-keys/">https://help.github.com/articles/generating-ssh-keys/</a></p>
+<pre class="code bash literal-block">
+ssh-keygen -t rsa -b 4096 -C <span class="literal string double">&quot;user&#64;gmail.com&quot;</span>
+<span class="comment"># Enter file in which to save the key (/home/user/.ssh/id_rsa): /home/user/.ssh/id_github
+#
+# Type your github password...
+#
+# ...
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db user&#64;gmail.com
+</span>
+cat /home/user/.ssh/id_github
+<span class="comment"># Copy and paste to https://github.com/settings/ssh
+</span>
+<span class="comment"># These steps may be required:
+# ..
+# start the ssh-agent in the background
+# eval &quot;$(ssh-agent -s)&quot;
+# Agent pid 59566
+#
+# If ~/.ssh/id_rsa do not exists:
+# ssh-keygen -t rsa
+#
+# Add your SSH key to the ssh-agent:
+# ssh-add ~/.ssh/id_rsa</span>
+</pre>
+</div>
+</div>
+<div class="section" id="using-pc-mic">
+<h1><a class="toc-backref" href="#id30">Using PC MIC</a></h1>
+<div class="section" id="tips">
+<h2><a class="toc-backref" href="#id31">Tips</a></h2>
+<p>Press &quot;Record&quot; and then check the &quot;Recording&quot; tab at the volume control.</p>
+<p>Look for the &quot;Monitor...&quot; option.</p>
+</div>
+<div class="section" id="how-can-i-get-the-instrumentals-only-from-a-file-and-remove-the-vocals">
+<h2><a class="toc-backref" href="#id32">How can I get the instrumentals only from a file and remove the vocals?</a></h2>
+<p>A software that can do this is called <tt class="docutils literal">sox</tt>. It has an option for karaoke:</p>
+<blockquote>
+<p><em>oops</em></p>
+<p>Out Of Phase Stereo effect. Mixes stereo to twin-mono where each mono channel contains the difference between the left and right stereo channels. This is sometimes known as the ‘karaoke’ effect as it often has the effect of removing most or all of the vocals from a recording.</p>
+</blockquote>
+<p>So from command line this ...</p>
+<pre class="code literal-block">
+sox song.wav song_karaoke.wav oops
+</pre>
+<p>It must be in the WAV format.</p>
+<p>To work directly on the MP3, you can also use <tt class="docutils literal">audacity</tt>.</p>
+<blockquote>
+<a class="reference external" href="http://manual.audacityteam.org/o/man/tutorial_vocal_removal_and_isolation.html">http://manual.audacityteam.org/o/man/tutorial_vocal_removal_and_isolation.html</a></blockquote>
+</div>
+<div class="section" id="listen-to-microphone-over-the-speakers-using-pulseaudio">
+<h2><a class="toc-backref" href="#id33">Listen to microphone over the speakers using pulseaudio</a></h2>
+<p>By default, we cannot hear any sound of microphone over speaker on Debian or Ubuntu OS. So, we cannot sing karaoke. But this command can route the mic input through output:</p>
+<pre class="code literal-block">
+pactl load-module module-loopback latency_msec=1
+</pre>
+<p>To turn it off:</p>
+<pre class="code bash literal-block">
+<span class="comment"># Find the module NUMBER with
+</span>pacmd list-modules
+<span class="comment"># then to unload it:
+</span>pactl unload-module 27
+</pre>
+<p>To add this permanently, you need to load the module when pulseaudio starts. To do this, you need to add a line to the <tt class="docutils literal">/etc/pulse/default.pa</tt> (as sudo). The line can be added at the end of the file:</p>
+<pre class="code literal-block">
+load-module module-loopback
+</pre>
+<p><strong>PROBLEM</strong>: there is a lag in the mic audio using this method.</p>
+</div>
+<div class="section" id="listen-to-microphone-over-the-speakers-using-qjackctl">
+<h2><a class="toc-backref" href="#id34">Listen to microphone over the speakers using Qjackctl</a></h2>
+<pre class="code literal-block">
+sudo apt-get install qjackctl
+</pre>
+<p>Maybe you will need to add your user to the audio group (and restart the system).</p>
+<p>To use it, &quot;Start&quot; and then &quot;Connect&quot;.</p>
+<blockquote>
+<strong>PROBLEM</strong>: No system audio - but no lag!</blockquote>
+</div>
+<div class="section" id="how-to-do-a-mixing">
+<h2><a class="toc-backref" href="#id35">How to do a mixing</a></h2>
+<p>Open you file in the Audacity.</p>
+<p>Record your mic. The problem is: or you listen to yourself (and set out of sinc with the music, like with loopback) or listen only to the music.</p>
+<p>I couldn't find a way record the voice while playing it in the right time (only with lag).</p>
+</div>
+<div class="section" id="summary">
+<h2><a class="toc-backref" href="#id36">Summary</a></h2>
+<p>QjackCtl: mic in the output, no lag. No system sound, and no record.</p>
+<p>Audacity + loopback: mic in the output, with lag. System sound, and record.</p>
+<p>Audacity: no mic in the output. System sound and record, no lag.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

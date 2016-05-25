@@ -1,0 +1,1893 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Python and Astronomy</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+</style>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="python-and-astronomy">
+<h1 class="title">Python and Astronomy</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#general-tips" id="id1">General tips</a><ul>
+<li><a class="reference internal" href="#style-guide" id="id2">Style Guide</a><ul>
+<li><a class="reference internal" href="#highlights" id="id3">Highlights</a></li>
+<li><a class="reference internal" href="#line-continuation-with-strings" id="id4">Line continuation with strings</a></li>
+<li><a class="reference internal" href="#how-to-get-rid-of-utf-8-bom" id="id5">How to get rid of UTF-8 BOM</a></li>
+<li><a class="reference internal" href="#the-use-of-underscore-in-python" id="id6">The use of <tt class="docutils literal">_</tt> (underscore) in Python</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-super-considered-super" id="id7">Python <tt class="docutils literal">super()</tt> considered super!</a></li>
+<li><a class="reference internal" href="#flat-a-double-nested-list" id="id8">flat a double (!) nested list:</a></li>
+<li><a class="reference internal" href="#os-path" id="id9">os.path</a></li>
+<li><a class="reference internal" href="#pip" id="id10">pip</a><ul>
+<li><a class="reference internal" href="#installing-in-a-custom-folder" id="id11">Installing in a custom folder</a></li>
+<li><a class="reference internal" href="#pip-not-found" id="id12"><cite>pip</cite> not found</a></li>
+<li><a class="reference internal" href="#could-not-find-egg-info" id="id13">“Could not find .egg-info&quot;</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#ipython" id="id14">ipython</a></li>
+<li><a class="reference internal" href="#shebang" id="id15">Shebang</a></li>
+<li><a class="reference internal" href="#what-ide-to-use-for-python" id="id16">What IDE to use for Python?</a></li>
+<li><a class="reference internal" href="#matplotlib-taking-long-to-start" id="id17">Matplotlib taking long to start</a><ul>
+<li><a class="reference internal" href="#figsize" id="id18"><tt class="docutils literal">figsize</tt></a></li>
+<li><a class="reference internal" href="#bugs" id="id19">Bugs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-gui" id="id20">Python GUI</a></li>
+<li><a class="reference internal" href="#check-if-a-variable-is-string" id="id21">Check if a variable is string</a></li>
+<li><a class="reference internal" href="#emcee-and-other-nice-stuff" id="id22"><em>emcee</em> and other nice stuff</a></li>
+<li><a class="reference internal" href="#date-time" id="id23">Date &amp; Time</a></li>
+<li><a class="reference internal" href="#profile" id="id24">Profile</a></li>
+<li><a class="reference internal" href="#broadcasting" id="id25">Broadcasting</a></li>
+<li><a class="reference internal" href="#pandas" id="id26">Pandas</a></li>
+<li><a class="reference internal" href="#list-of-reserved-words-in-python" id="id27">List of reserved words in Python</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-fitting" id="id28">Data fitting</a><ul>
+<li><a class="reference internal" href="#curve-fit" id="id29"><tt class="docutils literal">curve_fit</tt></a></li>
+<li><a class="reference internal" href="#leastsq" id="id30"><tt class="docutils literal">leastsq</tt></a></li>
+<li><a class="reference internal" href="#pyhdust-leastsq" id="id31"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></li>
+<li><a class="reference internal" href="#pyhdust-curve-fit" id="id32"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#global-variables" id="id33">Global variables</a></li>
+<li><a class="reference internal" href="#control-flow" id="id34">Control Flow</a></li>
+<li><a class="reference internal" href="#values-representation-and-text-encoding" id="id35">Values representation and text encoding</a></li>
+<li><a class="reference internal" href="#hard-install-reference" id="id36">Hard install reference</a><ul>
+<li><a class="reference internal" href="#start" id="id37">Start</a></li>
+<li><a class="reference internal" href="#systems" id="id38">Systems</a><ul>
+<li><a class="reference internal" href="#ms-windows" id="id39">MS-Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#random-stuff" id="id40">Random stuff</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-environments-and-references" id="id41">Python environments and references</a><ul>
+<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id42">General use Python packages in Astronomy</a></li>
+<li><a class="reference internal" href="#python-learning-for-astronomers" id="id43">Python learning for astronomers</a></li>
+<li><a class="reference internal" href="#python-distributions" id="id44">Python distributions</a></li>
+<li><a class="reference internal" href="#python-environments" id="id45">Python environments</a></li>
+<li><a class="reference internal" href="#utilities" id="id46">Utilities</a><ul>
+<li><a class="reference internal" href="#package-index" id="id47">Package Index</a></li>
+<li><a class="reference internal" href="#cookbooks" id="id48">Cookbooks</a></li>
+<li><a class="reference internal" href="#articles" id="id49">Articles</a></li>
+<li><a class="reference internal" href="#python-code-revision" id="id50">Python code revision</a></li>
+<li><a class="reference internal" href="#visualization-tools" id="id51">Visualization tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-tips">
+<h1><a class="toc-backref" href="#id1">General tips</a></h1>
+<div class="section" id="style-guide">
+<h2><a class="toc-backref" href="#id2">Style Guide</a></h2>
+<dl class="docutils">
+<dt>Python style guide are in two PEPs (Python Enhancement Proposals):</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP 8</a> for the main text;</li>
+<li><a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">PEP 257</a> for docstring conventions.</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="highlights">
+<h3><a class="toc-backref" href="#id3">Highlights</a></h3>
+<p>Class names should normally use the <em>CapWords</em> convention.</p>
+<p>Function names should be lowercase, with words separated by underscores as necessary to improve readability.</p>
+<p><em>single_trailing_underscore_</em> : used by convention to avoid conflicts with Python keyword, e.g.</p>
+<pre class="code python literal-block">
+<span class="name">Tkinter</span><span class="operator">.</span><span class="name">Toplevel</span><span class="punctuation">(</span><span class="name">master</span><span class="punctuation">,</span> <span class="name">class_</span><span class="operator">=</span><span class="literal string">'ClassName'</span><span class="punctuation">)</span>
+</pre>
+<p>You can define functions as <strong>is_xxx</strong> or <strong>has_xxx</strong> to return Boolean values.</p>
+</div>
+<div class="section" id="line-continuation-with-strings">
+<h3><a class="toc-backref" href="#id4">Line continuation with strings</a></h3>
+<p>How is the best way to spam a string over multiple lines?</p>
+<p>Since adjacent string literals are automatically joint into a single string, you can just use the implied line continuation inside parentheses as recommended by PEP 8:</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;Why, hello there wonderful &quot;</span>
+      <span class="literal string">&quot;stackoverflow people!&quot;</span><span class="punctuation">)</span>
+</pre>
+<p><a class="reference external" href="http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings">http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings</a></p>
+</div>
+<div class="section" id="how-to-get-rid-of-utf-8-bom">
+<h3><a class="toc-backref" href="#id5">How to get rid of UTF-8 BOM</a></h3>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">codecs</span>
+<span class="name">f0</span> <span class="operator">=</span> <span class="name builtin">open</span><span class="punctuation">(</span><span class="name builtin">file</span><span class="punctuation">)</span>
+<span class="comment"># DO NOT WORK</span>
+<span class="comment"># lines = f0.read().decode('utf-8-sig').encode('utf-8')</span>
+<span class="name">lines</span> <span class="operator">=</span> <span class="name">f0</span><span class="operator">.</span><span class="name">readlines</span><span class="punctuation">()</span>
+<span class="name">f0</span><span class="operator">.</span><span class="name">close</span><span class="punctuation">()</span>
+<span class="keyword">if</span> <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">startswith</span><span class="punctuation">(</span><span class="name">codecs</span><span class="operator">.</span><span class="name">BOM_UTF8</span><span class="punctuation">):</span>
+    <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">replace</span><span class="punctuation">(</span><span class="name">codecs</span><span class="operator">.</span><span class="name">BOM_UTF8</span><span class="punctuation">,</span> <span class="literal string">''</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="the-use-of-underscore-in-python">
+<h3><a class="toc-backref" href="#id6">The use of <tt class="docutils literal">_</tt> (underscore) in Python</a></h3>
+<p><tt class="docutils literal">_</tt> has 3 main conventional uses in Python (imported from the corresponding C conventions, probably):</p>
+<blockquote>
+<ol class="arabic simple">
+<li>To hold the result of the last executed statement in an interactive interpreter session.</li>
+<li>For translation lookup in <em>i18n</em>, as in code like: <tt class="docutils literal">raise <span class="pre">forms.ValidationError(_(&quot;Please</span> enter a correct <span class="pre">username&quot;))</span></tt></li>
+<li>As a general purpose &quot;throwaway&quot; variable name to indicate that part of a function result is being deliberately ignored, as in code like: <tt class="docutils literal">label, has_label, _ = <span class="pre">text.partition(':')</span></tt></li>
+</ol>
+</blockquote>
+<p>The latter two purposes can conflict, so many folks prefer a double-underscore <tt class="docutils literal">__</tt> as throwaway variable.</p>
+<p><a class="reference external" href="http://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python">http://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python</a></p>
+</div>
+</div>
+<div class="section" id="python-super-considered-super">
+<h2><a class="toc-backref" href="#id7">Python <tt class="docutils literal">super()</tt> considered super!</a></h2>
+<p><a class="reference external" href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
+</div>
+<div class="section" id="flat-a-double-nested-list">
+<h2><a class="toc-backref" href="#id8">flat a double (!) nested list:</a></h2>
+<pre class="code python literal-block">
+<span class="name">result</span> <span class="operator">=</span> <span class="punctuation">[]</span>
+<span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name">oidata</span><span class="operator">.</span><span class="name">vis2</span><span class="punctuation">:</span>
+    <span class="keyword">for</span> <span class="name">item</span> <span class="operator word">in</span> <span class="name">x</span><span class="operator">.</span><span class="name">_vis2data</span><span class="punctuation">:</span>
+        <span class="name">result</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="name">item</span><span class="punctuation">)</span>
+
+<span class="comment"># is equivalent to:</span>
+<span class="name">tmp2</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="name">item</span> <span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name">oidata</span><span class="operator">.</span><span class="name">vis2</span> <span class="keyword">for</span> <span class="name">item</span> <span class="operator word">in</span> <span class="name">x</span><span class="operator">.</span><span class="name">_vis2data</span><span class="punctuation">]</span>
+</pre>
+<p>There is a general answer for arbitrary nested case in Python Cookbood (3rd ed).</p>
+</div>
+<div class="section" id="os-path">
+<h2><a class="toc-backref" href="#id9">os.path</a></h2>
+<p>This is the right way of dealing with paths, filenames, extensions...</p>
+<pre class="code python literal-block">
+<span class="name">observ</span> <span class="operator">=</span> <span class="literal string">'/media/moser/SAMSUNG2TB/interf/interf_PIO/2015/2015-11-29_SCI_alp_Eri_oidataCalibrated.fits'</span>
+<span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">split</span><span class="punctuation">(</span><span class="name">observ</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">dirname</span><span class="punctuation">(</span><span class="name">observ</span><span class="punctuation">),</span> <span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">basename</span><span class="punctuation">(</span><span class="name">observ</span><span class="punctuation">))</span>
+</pre>
+</div>
+<div class="section" id="pip">
+<h2><a class="toc-backref" href="#id10">pip</a></h2>
+<div class="section" id="installing-in-a-custom-folder">
+<h3><a class="toc-backref" href="#id11">Installing in a custom folder</a></h3>
+<pre class="code bash literal-block">
+pip install --install-option<span class="operator">=</span><span class="literal string double">&quot;--prefix=$PREFIX_PATH&quot;</span> package_name
+</pre>
+<p><strong>Important</strong>: pip will add <cite>/lib/pythonX.X/site-packages/</cite> to the <cite>$PREFIX_PATH</cite> defined.</p>
+<p>In <em>Ureka</em>, this should be <cite>$UREKA_PATH/python/</cite>.</p>
+</div>
+<div class="section" id="pip-not-found">
+<h3><a class="toc-backref" href="#id12"><cite>pip</cite> not found</a></h3>
+<p>After installing Python 2.7.9+, you need to run</p>
+<pre class="code bash literal-block">
+python -m ensurepip
+</pre>
+</div>
+<div class="section" id="could-not-find-egg-info">
+<h3><a class="toc-backref" href="#id13">“Could not find .egg-info&quot;</a></h3>
+<p>It is a bug, solved by <cite>setuptools</cite>. In Debian/Ubuntu, run</p>
+<pre class="code bash literal-block">
+sudo pip install setuptools
+</pre>
+</div>
+</div>
+<div class="section" id="ipython">
+<h2><a class="toc-backref" href="#id14">ipython</a></h2>
+<p><cite>ipython</cite> is not calling the python version I want. What should I do?</p>
+<pre class="code bash literal-block">
+<span class="comment"># You can discover the `ipython` you are calling typing
+</span>which ipython
+<span class="comment"># ~/.local/bin/ipython
+</span>
+<span class="comment"># Then type
+</span>cat ~/.local/bin/ipython
+
+<span class="comment"># The first line tells you the python ipython is calling
+#!/usr/local/bin/python
+# You may want to change to
+#!/usr/bin/env python</span>
+</pre>
+<p>Remember: <cite>ipython</cite> is equivalent to <cite>python -m IPython</cite>.</p>
+</div>
+<div class="section" id="shebang">
+<h2><a class="toc-backref" href="#id15">Shebang</a></h2>
+<pre class="code python literal-block">
+<span class="comment">#!/usr/bin/env python</span>
+<span class="comment"># -*- coding:utf-8 -*-</span>
+</pre>
+</div>
+<div class="section" id="what-ide-to-use-for-python">
+<h2><a class="toc-backref" href="#id16">What IDE to use for Python?</a></h2>
+<p>This is a <em>religious</em> question.</p>
+<p><a class="reference external" href="http://stackoverflow.com/questions/81584/what-ide-to-use-for-python">http://stackoverflow.com/questions/81584/what-ide-to-use-for-python</a></p>
+</div>
+<div class="section" id="matplotlib-taking-long-to-start">
+<h2><a class="toc-backref" href="#id17">Matplotlib taking long to start</a></h2>
+<p>If you are getting this message:</p>
+<blockquote>
+<dl class="docutils">
+<dt>/home/moser/.local/lib/python2.7/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.</dt>
+<dd>warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')</dd>
+</dl>
+</blockquote>
+<p>erase the contents of <tt class="docutils literal">mpl.get_cachedir()</tt>. Additionally, you may need to delete <tt class="docutils literal"><span class="pre">~/.config/matplotlib</span></tt> and <tt class="docutils literal"><span class="pre">~/.cache/fontconfig</span></tt>.</p>
+<div class="section" id="figsize">
+<h3><a class="toc-backref" href="#id18"><tt class="docutils literal">figsize</tt></a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>(2,2)</td>
+<td>272 x 200 px</td>
+</tr>
+<tr><td>(2,8)</td>
+<td>272 x 800 px</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="bugs">
+<h3><a class="toc-backref" href="#id19">Bugs</a></h3>
+<ul class="simple">
+<li><cite>eps</cite> = no transparency.</li>
+<li><cite>pdf</cite> = no hatches in patches.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="python-gui">
+<h2><a class="toc-backref" href="#id20">Python GUI</a></h2>
+<p>&quot;Always&quot; the first option is to use <cite>Tkinter</cite> because it is part of the standard Python module and runs in most of the systems. However it is not so beautiful as the <cite>Qt</cite> library.</p>
+<p>If someone needs pretty graphics, interactively, one may think using <cite>pyqtgraph</cite> (<a class="reference external" href="http://www.pyqtgraph.org/">http://www.pyqtgraph.org/</a>).</p>
+</div>
+<div class="section" id="check-if-a-variable-is-string">
+<h2><a class="toc-backref" href="#id21">Check if a variable is string</a></h2>
+<p>In Python 2.x, one would do for the <em>s</em> variable</p>
+<pre class="code python literal-block">
+<span class="name builtin">isinstance</span><span class="punctuation">(</span><span class="name">s</span><span class="punctuation">,</span> <span class="name builtin">basestring</span><span class="punctuation">)</span>
+</pre>
+<p>to check for str or unicode objects. In Python 3.x, it would be</p>
+<pre class="code python literal-block">
+<span class="name builtin">isinstance</span><span class="punctuation">(</span><span class="name">s</span><span class="punctuation">,</span> <span class="name builtin">str</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="emcee-and-other-nice-stuff">
+<h2><a class="toc-backref" href="#id22"><em>emcee</em> and other nice stuff</a></h2>
+<p><a class="reference external" href="http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html">http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html</a></p>
+<p><a class="reference external" href="http://eso-python.github.io/ESOPythonTutorials/">http://eso-python.github.io/ESOPythonTutorials/</a></p>
+</div>
+<div class="section" id="date-time">
+<h2><a class="toc-backref" href="#id23">Date &amp; Time</a></h2>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">time</span>
+
+<span class="comment">## Regular and 12 hour format ##</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span>
+
+<span class="comment">## Date with full and short year ##</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%Y/%m/</span><span class="literal string interpol">%d</span><span class="literal string">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string">&quot;</span><span class="punctuation">))</span>
+</pre>
+<table border="1" class="docutils">
+<colgroup>
+<col width="6%" />
+<col width="94%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Directive</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>%a</td>
+<td>Weekday name.</td>
+</tr>
+<tr><td>%A</td>
+<td>Full weekday name.</td>
+</tr>
+<tr><td>%b</td>
+<td>Abbreviated month name.</td>
+</tr>
+<tr><td>%B</td>
+<td>Full month name.</td>
+</tr>
+<tr><td>%c</td>
+<td>Appropriate date and time representation.</td>
+</tr>
+<tr><td>%d</td>
+<td>Day of the month as a decimal number [01,31].</td>
+</tr>
+<tr><td>%H</td>
+<td>Hour (24-hour clock) as a decimal number [00,23].</td>
+</tr>
+<tr><td>%I</td>
+<td>Hour (12-hour clock) as a decimal number [01,12].</td>
+</tr>
+<tr><td>%j</td>
+<td>Day of the year as a decimal number [001,366].</td>
+</tr>
+<tr><td>%m</td>
+<td>Month as a decimal number [01,12].</td>
+</tr>
+<tr><td>%M</td>
+<td>Minute as a decimal number [00,59].</td>
+</tr>
+<tr><td>%p</td>
+<td>Equivalent of either AM or PM.</td>
+</tr>
+<tr><td>%S</td>
+<td>Second as a decimal number [00,61].</td>
+</tr>
+<tr><td>%U</td>
+<td>Week number of the year (Sunday as the first day of the week) as a decimal number [00,53]. All days in a new year preceding the first Sunday are considered to be in week 0.</td>
+</tr>
+<tr><td>%w</td>
+<td>Weekday as a decimal number [0(Sunday),6].</td>
+</tr>
+<tr><td>%W</td>
+<td>Week number of the year (Monday as the first day of the week) as a decimal number [00,53]. All days in a new year preceding the first Monday are considered to be in week 0.</td>
+</tr>
+<tr><td>%x</td>
+<td>Appropriate date representation.</td>
+</tr>
+<tr><td>%X</td>
+<td>Apropriate time representation.</td>
+</tr>
+<tr><td>%y</td>
+<td>Year without century as a decimal number [00,99].</td>
+</tr>
+<tr><td>%Y</td>
+<td>Year with century as a decimal number.</td>
+</tr>
+<tr><td>%Z</td>
+<td>Time zone name (no characters if no time zone exists).</td>
+</tr>
+<tr><td>%%</td>
+<td>A literal '%' character.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="profile">
+<h2><a class="toc-backref" href="#id24">Profile</a></h2>
+<pre class="code bash literal-block">
+python -m cProfile script.py
+</pre>
+</div>
+<div class="section" id="broadcasting">
+<h2><a class="toc-backref" href="#id25">Broadcasting</a></h2>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword namespace">as</span> <span class="name namespace">np</span>
+<span class="keyword namespace">from</span> <span class="name namespace">itertools</span> <span class="keyword namespace">import</span> <span class="name">product</span> <span class="keyword">as</span> <span class="name">itprod</span>
+
+<span class="name">a</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number float">120.</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">b</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number float">120.</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">fact</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">,</span> <span class="literal number float">1.4</span><span class="punctuation">,</span> <span class="literal number integer">15</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">reshape</span><span class="punctuation">((</span><span class="literal number integer">3</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">))</span>
+
+<span class="keyword">for</span> <span class="name">i</span><span class="punctuation">,</span> <span class="name">j</span> <span class="operator word">in</span> <span class="name">itprod</span><span class="punctuation">(</span><span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">),</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">)):</span>
+    <span class="name">a</span><span class="punctuation">[</span><span class="name">i</span><span class="punctuation">,</span> <span class="punctuation">:,</span> <span class="name">j</span><span class="punctuation">]</span> <span class="operator">*=</span> <span class="name">fact</span><span class="punctuation">[</span><span class="name">i</span><span class="punctuation">,</span> <span class="name">j</span><span class="punctuation">]</span>
+
+<span class="name">b</span> <span class="operator">*=</span> <span class="name">fact</span><span class="punctuation">[:,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">,</span> <span class="punctuation">:,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">,</span> <span class="name">np</span><span class="operator">.</span><span class="name">newaxis</span><span class="punctuation">]</span>
+</pre>
+</div>
+<div class="section" id="pandas">
+<h2><a class="toc-backref" href="#id26">Pandas</a></h2>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">pandas</span>
+
+<span class="name">df</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">read_csv</span><span class="punctuation">(</span><span class="name">csvfilename</span><span class="punctuation">,</span> <span class="name">sep</span><span class="operator">=</span><span class="literal string">','</span><span class="punctuation">)</span> <span class="comment">#,header=None)</span>
+<span class="name">df</span><span class="operator">.</span><span class="name">values</span><span class="punctuation">[:</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">]</span>
+
+<span class="name">idx</span> <span class="operator">=</span> <span class="name">df</span><span class="punctuation">[</span><span class="literal string">'col3'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">str</span><span class="operator">.</span><span class="name">contains</span><span class="punctuation">(</span><span class="name">regex</span><span class="punctuation">)</span>
+<span class="name">subdf</span> <span class="operator">=</span> <span class="name">df</span><span class="punctuation">[</span><span class="name">idx</span><span class="punctuation">]</span>
+
+<span class="comment"># Create a DataFrame and save a CSV file</span>
+<span class="name">full_data</span> <span class="operator">=</span> <span class="punctuation">{</span><span class="literal string">'first_name'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal string">'Jason'</span><span class="punctuation">,</span> <span class="literal string">'Molly'</span><span class="punctuation">,</span> <span class="literal string">'Tina'</span><span class="punctuation">,</span> <span class="literal string">'Jake'</span><span class="punctuation">,</span> <span class="literal string">'Amy'</span><span class="punctuation">],</span>
+        <span class="literal string">'last_name'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal string">'Miller'</span><span class="punctuation">,</span> <span class="literal string">'Jacobson'</span><span class="punctuation">,</span> <span class="literal string">'Ali'</span><span class="punctuation">,</span> <span class="literal string">'Milner'</span><span class="punctuation">,</span> <span class="literal string">'Cooze'</span><span class="punctuation">],</span>
+        <span class="literal string">'age'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">42</span><span class="punctuation">,</span> <span class="literal number integer">52</span><span class="punctuation">,</span> <span class="literal number integer">36</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">73</span><span class="punctuation">],</span>
+        <span class="literal string">'preTestScore'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">31</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span>
+        <span class="literal string">'postTestScore'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">25</span><span class="punctuation">,</span> <span class="literal number integer">94</span><span class="punctuation">,</span> <span class="literal number integer">57</span><span class="punctuation">,</span> <span class="literal number integer">62</span><span class="punctuation">,</span> <span class="literal number integer">70</span><span class="punctuation">]}</span>
+
+<span class="name">data</span> <span class="operator">=</span> <span class="punctuation">[[</span><span class="literal string">'Jason'</span><span class="punctuation">,</span> <span class="literal string">'Molly'</span><span class="punctuation">,</span> <span class="literal string">'Tina'</span><span class="punctuation">,</span> <span class="literal string">'Jake'</span><span class="punctuation">,</span> <span class="literal string">'Amy'</span><span class="punctuation">],</span>
+        <span class="punctuation">[</span><span class="literal string">'Miller'</span><span class="punctuation">,</span> <span class="literal string">'Jacobson'</span><span class="punctuation">,</span> <span class="literal string">'Ali'</span><span class="punctuation">,</span> <span class="literal string">'Milner'</span><span class="punctuation">,</span> <span class="literal string">'Cooze'</span><span class="punctuation">],</span>
+        <span class="punctuation">[</span><span class="literal number integer">42</span><span class="punctuation">,</span> <span class="literal number integer">52</span><span class="punctuation">,</span> <span class="literal number integer">36</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">73</span><span class="punctuation">],</span>
+        <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">31</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span>
+        <span class="punctuation">[</span><span class="literal number integer">25</span><span class="punctuation">,</span> <span class="literal number integer">94</span><span class="punctuation">,</span> <span class="literal number integer">57</span><span class="punctuation">,</span> <span class="literal number integer">62</span><span class="punctuation">,</span> <span class="literal number integer">70</span><span class="punctuation">]]</span>
+
+<span class="name">df1</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">data</span><span class="punctuation">,</span> <span class="name">columns</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string">'first_name'</span><span class="punctuation">,</span> <span class="literal string">'last_name'</span><span class="punctuation">,</span> <span class="literal string">'age'</span><span class="punctuation">,</span> <span class="literal string">'preTestScore'</span><span class="punctuation">,</span> <span class="literal string">'postTestScore'</span><span class="punctuation">])</span>
+
+<span class="name">df2</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">full_data</span><span class="punctuation">)</span>
+
+<span class="name">df3</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">data</span><span class="punctuation">)</span>
+
+<span class="name">dfn</span><span class="operator">.</span><span class="name">to_csv</span><span class="punctuation">(</span><span class="literal string">'filename.csv'</span><span class="punctuation">)</span><span class="comment">#, sep=',', encoding='utf-8')</span>
+</pre>
+</div>
+<div class="section" id="list-of-reserved-words-in-python">
+<h2><a class="toc-backref" href="#id27">List of reserved words in Python</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="22%" />
+<col width="30%" />
+<col width="26%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>ArithmeticError</td>
+<td>AssertionError</td>
+<td>AttributeError</td>
+<td>BaseException</td>
+</tr>
+<tr><td>BufferError</td>
+<td>BytesWarning</td>
+<td>DeprecationWarning</td>
+<td>EOFError</td>
+</tr>
+<tr><td>Ellipsis</td>
+<td>EnvironmentError</td>
+<td>Exception</td>
+<td>False</td>
+</tr>
+<tr><td>FloatingPointError</td>
+<td>FutureWarning</td>
+<td>GeneratorExit</td>
+<td>IOError</td>
+</tr>
+<tr><td>ImportError</td>
+<td>ImportWarning</td>
+<td>IndentationError</td>
+<td>IndexError</td>
+</tr>
+<tr><td>KeyError</td>
+<td>KeyboardInterrupt</td>
+<td>LookupError</td>
+<td>MemoryError</td>
+</tr>
+<tr><td>NameError</td>
+<td>None</td>
+<td>NotImplemented</td>
+<td>NotImplementedError</td>
+</tr>
+<tr><td>OSError</td>
+<td>OverflowError</td>
+<td>PendingDeprecationWarning</td>
+<td>ReferenceError</td>
+</tr>
+<tr><td>RuntimeError</td>
+<td>RuntimeWarning</td>
+<td>StandardError</td>
+<td>StopIteration</td>
+</tr>
+<tr><td>SyntaxError</td>
+<td>SyntaxWarning</td>
+<td>SystemError</td>
+<td>SystemExit</td>
+</tr>
+<tr><td>TabError</td>
+<td>True</td>
+<td>TypeError</td>
+<td>UnboundLocalError</td>
+</tr>
+<tr><td>UnicodeDecodeError</td>
+<td>UnicodeEncodeError</td>
+<td>UnicodeError</td>
+<td>UnicodeTranslateError</td>
+</tr>
+<tr><td>UnicodeWarning</td>
+<td>UserWarning</td>
+<td>ValueError</td>
+<td>Warning</td>
+</tr>
+<tr><td>ZeroDivisionError</td>
+<td>__IPYTHON__</td>
+<td>__IPYTHON__active</td>
+<td>__debug__</td>
+</tr>
+<tr><td>__doc__</td>
+<td>__import__</td>
+<td>__name__</td>
+<td>__package__</td>
+</tr>
+<tr><td>abs</td>
+<td>all</td>
+<td>and</td>
+<td>any</td>
+</tr>
+<tr><td>apply</td>
+<td>as</td>
+<td>assert</td>
+<td>basestring</td>
+</tr>
+<tr><td>bin</td>
+<td>bool</td>
+<td>break</td>
+<td>buffer</td>
+</tr>
+<tr><td>bytearray</td>
+<td>bytes</td>
+<td>callable</td>
+<td>chr</td>
+</tr>
+<tr><td>class</td>
+<td>classmethod</td>
+<td>cmp</td>
+<td>coerce</td>
+</tr>
+<tr><td>compile</td>
+<td>complex</td>
+<td>continue</td>
+<td>copyright</td>
+</tr>
+<tr><td>credits</td>
+<td>def</td>
+<td>del</td>
+<td>delattr</td>
+</tr>
+<tr><td>dict</td>
+<td>dir</td>
+<td>divmod</td>
+<td>dreload</td>
+</tr>
+<tr><td>elif</td>
+<td>else</td>
+<td>enumerate</td>
+<td>eval</td>
+</tr>
+<tr><td>except</td>
+<td>exec</td>
+<td>execfile</td>
+<td>file</td>
+</tr>
+<tr><td>filter</td>
+<td>finally</td>
+<td>float</td>
+<td>for</td>
+</tr>
+<tr><td>format</td>
+<td>from</td>
+<td>frozenset</td>
+<td>get_ipython</td>
+</tr>
+<tr><td>getattr</td>
+<td>global</td>
+<td>globals</td>
+<td>hasattr</td>
+</tr>
+<tr><td>hash</td>
+<td>help</td>
+<td>hex</td>
+<td>id</td>
+</tr>
+<tr><td>if</td>
+<td>import</td>
+<td>in</td>
+<td>input</td>
+</tr>
+<tr><td>int</td>
+<td>intern</td>
+<td>is</td>
+<td>isinstance</td>
+</tr>
+<tr><td>issubclass</td>
+<td>iter</td>
+<td>lambda</td>
+<td>len</td>
+</tr>
+<tr><td>license</td>
+<td>list</td>
+<td>locals</td>
+<td>long</td>
+</tr>
+<tr><td>map</td>
+<td>max</td>
+<td>memoryview</td>
+<td>min</td>
+</tr>
+<tr><td>next</td>
+<td>not</td>
+<td>object</td>
+<td>oct</td>
+</tr>
+<tr><td>open</td>
+<td>or</td>
+<td>ord</td>
+<td>pass</td>
+</tr>
+<tr><td>pow</td>
+<td>print</td>
+<td>print</td>
+<td>property</td>
+</tr>
+<tr><td>raise</td>
+<td>range</td>
+<td>raw_input</td>
+<td>reduce</td>
+</tr>
+<tr><td>reload</td>
+<td>repr</td>
+<td>return</td>
+<td>reversed</td>
+</tr>
+<tr><td>round</td>
+<td>set</td>
+<td>setattr</td>
+<td>slice</td>
+</tr>
+<tr><td>sorted</td>
+<td>staticmethod</td>
+<td>str</td>
+<td>sum</td>
+</tr>
+<tr><td>super</td>
+<td>try</td>
+<td>tuple</td>
+<td>type</td>
+</tr>
+<tr><td>unichr</td>
+<td>unicode</td>
+<td>vars</td>
+<td>while</td>
+</tr>
+<tr><td>with</td>
+<td>xrange</td>
+<td>yield</td>
+<td>zip</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="data-fitting">
+<h1><a class="toc-backref" href="#id28">Data fitting</a></h1>
+<div class="section" id="curve-fit">
+<h2><a class="toc-backref" href="#id29"><tt class="docutils literal">curve_fit</tt></a></h2>
+<p>Consider errors for fitting. The solution returns the covariation matrix. Its diagnonal is the variance (the squared root, <span class="formula"><i>σ</i></span>
+)!!</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">scipy.optimize</span> <span class="keyword namespace">import</span> <span class="name">curve_fit</span>
+
+<span class="keyword">def</span> <span class="name function">gauss</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span> <span class="operator">*</span><span class="name">p</span><span class="punctuation">):</span>
+    <span class="name">A</span><span class="punctuation">,</span> <span class="name">mu</span><span class="punctuation">,</span> <span class="name">sigma</span> <span class="operator">=</span> <span class="name">p</span>
+    <span class="keyword">return</span> <span class="name">A</span><span class="operator">*</span><span class="name">_np</span><span class="operator">.</span><span class="name">exp</span><span class="punctuation">(</span><span class="operator">-</span><span class="punctuation">(</span><span class="name">x</span><span class="operator">-</span><span class="name">mu</span><span class="punctuation">)</span><span class="operator">**</span><span class="literal number integer">2</span><span class="operator">/</span><span class="punctuation">(</span><span class="literal number float">2.</span><span class="operator">*</span><span class="name">sigma</span><span class="operator">**</span><span class="literal number integer">2</span><span class="punctuation">))</span><span class="operator">+</span><span class="literal number integer">1</span>
+
+<span class="name">p0</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal number float">1.</span><span class="punctuation">,</span> <span class="name">vels</span><span class="punctuation">[</span><span class="name">i0</span><span class="punctuation">],</span> <span class="literal number float">40.</span><span class="punctuation">]</span>
+<span class="name">coeff0</span><span class="punctuation">,</span> <span class="name">cov</span> <span class="operator">=</span> <span class="name">curve_fit</span><span class="punctuation">(</span><span class="name">gauss</span><span class="punctuation">,</span> <span class="name">x</span><span class="punctuation">,</span> <span class="name">y</span><span class="punctuation">,</span> <span class="name">p0</span><span class="operator">=</span><span class="name">p0</span><span class="punctuation">,</span> <span class="name">sigma</span><span class="operator">=</span><span class="name">yerr</span><span class="punctuation">)</span>
+
+<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">'# Best coefficients are:'</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="name">coeff0</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="leastsq">
+<h2><a class="toc-backref" href="#id30"><tt class="docutils literal">leastsq</tt></a></h2>
+<p>Consider errors for fitting. The solution, however, has no errors in the parameters.</p>
+<p><a class="reference external" href="http://wiki.scipy.org/Cookbook/FittingData">http://wiki.scipy.org/Cookbook/FittingData</a></p>
+</div>
+<div class="section" id="pyhdust-leastsq">
+<h2><a class="toc-backref" href="#id31"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></h2>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword namespace">as</span> <span class="name namespace">phc</span>
+
+<span class="keyword">def</span> <span class="name function">polfunc</span><span class="punctuation">(</span><span class="name">p</span><span class="punctuation">,</span> <span class="name">phi</span><span class="operator">=</span><span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">21</span><span class="punctuation">)):</span>
+    <span class="literal string doc">&quot;&quot;&quot;
+    P(phi) = P0+A cos[4 pi(phi-delt)] &quot;&quot;&quot;</span>
+    <span class="name">P0</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">,</span> <span class="name">delt</span> <span class="operator">=</span> <span class="name">p</span>
+    <span class="keyword">return</span> <span class="name">P0</span><span class="operator">+</span><span class="name">A</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">cos</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">pi</span><span class="operator">*</span><span class="punctuation">(</span><span class="name">phi</span><span class="operator">-</span><span class="name">delt</span><span class="punctuation">))</span>
+
+<span class="name">mag</span> <span class="operator">=</span> <span class="name">sst</span><span class="operator">.</span><span class="name">BlobDiskMod</span><span class="punctuation">()</span>
+<span class="name">mag</span> <span class="operator">=</span> <span class="name">sst</span><span class="operator">.</span><span class="name">BlobDiskMod</span><span class="punctuation">(</span><span class="name">Qis</span><span class="operator">=-.</span><span class="literal number integer">348</span><span class="punctuation">,</span> <span class="name">Uis</span><span class="operator">=</span><span class="literal number float">0.040</span><span class="punctuation">)</span>
+
+<span class="name">p0</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="operator">.</span><span class="literal number oct">0471</span><span class="punctuation">,</span><span class="operator">.</span><span class="literal number oct">021</span><span class="punctuation">,</span><span class="operator">-.</span><span class="literal number integer">17</span><span class="punctuation">]</span>
+<span class="name">p</span><span class="punctuation">,</span> <span class="name">c2r</span> <span class="operator">=</span> <span class="name">phc</span><span class="operator">.</span><span class="name">optim</span><span class="punctuation">(</span><span class="name">p0</span><span class="punctuation">,</span><span class="name">mag</span><span class="operator">.</span><span class="name">phiobs</span><span class="punctuation">,</span><span class="name">mag</span><span class="operator">.</span><span class="name">P2</span><span class="punctuation">,</span><span class="name">mag</span><span class="operator">.</span><span class="name">sigP</span><span class="punctuation">,</span><span class="name">polfunc</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="pyhdust-curve-fit">
+<h2><a class="toc-backref" href="#id32"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></h2>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword namespace">as</span> <span class="name namespace">phc</span>
+
+<span class="keyword">def</span> <span class="name function">polfunc2</span><span class="punctuation">(</span><span class="name">phi</span><span class="operator">=</span><span class="name">np</span><span class="operator">.</span><span class="name">linspace</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">,</span><span class="literal number integer">1</span><span class="punctuation">,</span><span class="literal number integer">21</span><span class="punctuation">),</span> <span class="operator">*</span><span class="name">p</span><span class="punctuation">):</span>
+    <span class="literal string doc">&quot;&quot;&quot; P(phi) = P0+A cos[4 pi(phi-delt)] &quot;&quot;&quot;</span>
+    <span class="name">P0</span><span class="punctuation">,</span> <span class="name">A</span><span class="punctuation">,</span> <span class="name">delt</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">(</span><span class="name">p</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">flatten</span><span class="punctuation">()</span>
+    <span class="keyword">return</span> <span class="name">P0</span><span class="operator">+</span><span class="name">A</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">cos</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="operator">*</span><span class="name">np</span><span class="operator">.</span><span class="name">pi</span><span class="operator">*</span><span class="punctuation">(</span><span class="name">phi</span><span class="operator">-</span><span class="name">delt</span><span class="punctuation">))</span>
+
+<span class="name">mag</span> <span class="operator">=</span> <span class="name">sst</span><span class="operator">.</span><span class="name">BlobDiskMod</span><span class="punctuation">()</span>
+<span class="name">mag</span> <span class="operator">=</span> <span class="name">sst</span><span class="operator">.</span><span class="name">BlobDiskMod</span><span class="punctuation">(</span><span class="name">Qis</span><span class="operator">=-.</span><span class="literal number integer">348</span><span class="punctuation">,</span> <span class="name">Uis</span><span class="operator">=</span><span class="literal number float">0.040</span><span class="punctuation">)</span>
+
+<span class="name">p0</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="operator">.</span><span class="literal number oct">0471</span><span class="punctuation">,</span><span class="operator">.</span><span class="literal number oct">021</span><span class="punctuation">,</span><span class="operator">-.</span><span class="literal number integer">17</span><span class="punctuation">]</span>
+<span class="name">p</span><span class="punctuation">,</span> <span class="name">perr</span><span class="punctuation">,</span> <span class="name">c2r</span> <span class="operator">=</span> <span class="name">phc</span><span class="operator">.</span><span class="name">optim2</span><span class="punctuation">(</span><span class="name">p0</span><span class="punctuation">,</span><span class="name">mag</span><span class="operator">.</span><span class="name">phiobs</span><span class="punctuation">,</span><span class="name">mag</span><span class="operator">.</span><span class="name">P2</span><span class="punctuation">,</span><span class="name">mag</span><span class="operator">.</span><span class="name">sigP</span><span class="punctuation">,</span><span class="name">polfunc2</span><span class="punctuation">)</span>
+</pre>
+</div>
+</div>
+<div class="section" id="global-variables">
+<h1><a class="toc-backref" href="#id33">Global variables</a></h1>
+<p>One needs to declare a variable <cite>global</cite> in a function when one wants that function to be able to modify the global variable. If you one wants to access it, then the <cite>global</cite> is not needed.</p>
+<pre class="code python literal-block">
+<span class="keyword">def</span> <span class="name function">func1</span><span class="punctuation">():</span>
+    <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">):</span>
+        <span class="name">glob1</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="name">i</span><span class="punctuation">)</span>
+<span class="keyword">return</span>
+
+<span class="keyword">def</span> <span class="name function">func2</span><span class="punctuation">():</span>
+    <span class="keyword">global</span> <span class="name">glob1</span>
+    <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="punctuation">):</span>
+        <span class="name">glob1</span><span class="operator">+=</span> <span class="punctuation">[</span><span class="name">i</span><span class="punctuation">]</span>
+<span class="keyword">return</span>
+
+<span class="name">glob1</span> <span class="operator">=</span> <span class="punctuation">[]</span>
+<span class="keyword">print</span> <span class="name">glob1</span>
+<span class="name">func1</span><span class="punctuation">()</span>
+<span class="keyword">print</span> <span class="name">glob1</span>
+
+<span class="name">glob1</span> <span class="operator">=</span> <span class="punctuation">[]</span>
+<span class="keyword">print</span> <span class="name">glob1</span>
+<span class="name">func2</span><span class="punctuation">()</span>
+<span class="keyword">print</span> <span class="name">glob1</span>
+</pre>
+<p>The program above has this exit:</p>
+<pre class="literal-block">
+[]
+[0,1,2]
+[]
+[0,1,2]
+</pre>
+<p>But the variable can be modified without global. To go into a bit more detail on what &quot;modify&quot; (mutate) means: many operations that modify an object do not re-bind the variable name, and so they are all valid without declaring the name global in the function.</p>
+<pre class="code python literal-block">
+<span class="name">d</span> <span class="operator">=</span> <span class="punctuation">{}</span>
+<span class="name">l</span> <span class="operator">=</span> <span class="punctuation">[]</span>
+<span class="name">o</span> <span class="operator">=</span> <span class="name builtin">type</span><span class="punctuation">(</span><span class="literal string">&quot;object&quot;</span><span class="punctuation">,</span> <span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">,),</span> <span class="punctuation">{})()</span>
+
+<span class="keyword">def</span> <span class="name function">valid</span><span class="punctuation">():</span>     <span class="comment"># these are all valid without declaring any names global!</span>
+   <span class="name">d</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>      <span class="comment"># changes what's in d, but d still points to the same object</span>
+   <span class="name">d</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">+=</span> <span class="literal number integer">1</span>     <span class="comment"># ditto</span>
+   <span class="name">d</span><span class="operator">.</span><span class="name">clear</span><span class="punctuation">()</span>     <span class="comment"># ditto! d is now empty but it`s still the same object!</span>
+   <span class="name">l</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">)</span>   <span class="comment"># l is still the same list but has an additional member</span>
+   <span class="name">o</span><span class="operator">.</span><span class="name">test</span> <span class="operator">=</span> <span class="literal number integer">1</span>    <span class="comment"># creating new attribute on o, but o is still the same object</span>
+<span class="keyword">return</span>
+</pre>
+</div>
+<div class="section" id="control-flow">
+<h1><a class="toc-backref" href="#id34">Control Flow</a></h1>
+<p>The syntax is the <tt class="docutils literal">*</tt> and <tt class="docutils literal">**</tt>. The names <tt class="docutils literal">*args</tt> and <tt class="docutils literal">**kwargs</tt> are only by convention but there's no hard requirement to use them.</p>
+<p>You would use <tt class="docutils literal">args</tt> when you're not sure how many arguments might be passed to your function, i.e. it allows you pass an arbitrary number of arguments to your function. For example:</p>
+<pre class="code python literal-block">
+<span class="operator">&gt;&gt;&gt;</span> <span class="keyword">def</span> <span class="name function">print_everything</span><span class="punctuation">(</span><span class="operator">*</span><span class="name">args</span><span class="punctuation">):</span>
+        <span class="keyword">for</span> <span class="name">count</span><span class="punctuation">,</span> <span class="name">thing</span> <span class="operator word">in</span> <span class="name builtin">enumerate</span><span class="punctuation">(</span><span class="name">args</span><span class="punctuation">):</span>
+<span class="operator">...</span>         <span class="keyword">print</span> <span class="literal string">'{0}. {1}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">count</span><span class="punctuation">,</span> <span class="name">thing</span><span class="punctuation">)</span>
+<span class="operator">...</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">print_everything</span><span class="punctuation">(</span><span class="literal string">'apple'</span><span class="punctuation">,</span> <span class="literal string">'banana'</span><span class="punctuation">,</span> <span class="literal string">'cabbage'</span><span class="punctuation">)</span>
+<span class="literal number float">0.</span> <span class="name">apple</span>
+<span class="literal number float">1.</span> <span class="name">banana</span>
+<span class="literal number float">2.</span> <span class="name">cabbage</span>
+</pre>
+<p>Similarly, <tt class="docutils literal">**kwargs</tt> allows you to handle named arguments that you have not defined in advance:</p>
+<pre class="code python literal-block">
+<span class="operator">&gt;&gt;&gt;</span> <span class="keyword">def</span> <span class="name function">table_things</span><span class="punctuation">(</span><span class="operator">**</span><span class="name">kwargs</span><span class="punctuation">):</span>
+<span class="operator">...</span>     <span class="keyword">for</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">value</span> <span class="operator word">in</span> <span class="name">kwargs</span><span class="operator">.</span><span class="name">items</span><span class="punctuation">():</span>
+<span class="operator">...</span>         <span class="keyword">print</span> <span class="literal string">'{0} = {1}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">name</span><span class="punctuation">,</span> <span class="name">value</span><span class="punctuation">)</span>
+<span class="operator">...</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">table_things</span><span class="punctuation">(</span><span class="name">apple</span> <span class="operator">=</span> <span class="literal string">'fruit'</span><span class="punctuation">,</span> <span class="name">cabbage</span> <span class="operator">=</span> <span class="literal string">'vegetable'</span><span class="punctuation">)</span>
+<span class="name">cabbage</span> <span class="operator">=</span> <span class="name">vegetable</span>
+<span class="name">apple</span> <span class="operator">=</span> <span class="name">fruit</span>
+</pre>
+<p>You can use these along with named arguments too. The explicit arguments get values first and then everything else is passed to <tt class="docutils literal">*args</tt> and <tt class="docutils literal">**kwargs</tt>. The named arguments come first in the list. For example:</p>
+<pre class="code python literal-block">
+<span class="keyword">def</span> <span class="name function">table_things</span><span class="punctuation">(</span><span class="name">titlestring</span><span class="punctuation">,</span> <span class="operator">**</span><span class="name">kwargs</span><span class="punctuation">)</span>
+</pre>
+<p>You can also use both in the same function definition but <tt class="docutils literal">*args</tt> must occur before <tt class="docutils literal">**kwargs</tt>.</p>
+<p>You can also use the <tt class="docutils literal">*</tt> and <tt class="docutils literal">**</tt> syntax when calling a function. For example:</p>
+<pre class="code python literal-block">
+<span class="operator">&gt;&gt;&gt;</span> <span class="keyword">def</span> <span class="name function">print_three_things</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span><span class="punctuation">,</span> <span class="name">c</span><span class="punctuation">):</span>
+<span class="operator">...</span>     <span class="keyword">print</span> <span class="literal string">'a = {0}, b = {1}, c = {2}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span><span class="name">b</span><span class="punctuation">,</span><span class="name">c</span><span class="punctuation">)</span>
+<span class="operator">...</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">mylist</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string">'aardvark'</span><span class="punctuation">,</span> <span class="literal string">'baboon'</span><span class="punctuation">,</span> <span class="literal string">'cat'</span><span class="punctuation">]</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">print_three_things</span><span class="punctuation">(</span><span class="operator">*</span><span class="name">mylist</span><span class="punctuation">)</span>
+<span class="name">a</span> <span class="operator">=</span> <span class="name">aardvark</span><span class="punctuation">,</span> <span class="name">b</span> <span class="operator">=</span> <span class="name">baboon</span><span class="punctuation">,</span> <span class="name">c</span> <span class="operator">=</span> <span class="name">cat</span>
+</pre>
+<p>As you can see in this case it takes the list (or tuple) of items and unpacks it. By this it matches them to the arguments in the function. Of course, you could have a <tt class="docutils literal">*</tt> both in the function definition and in the function call.</p>
+</div>
+<div class="section" id="values-representation-and-text-encoding">
+<h1><a class="toc-backref" href="#id35">Values representation and text encoding</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="19%" />
+<col width="14%" />
+<col width="14%" />
+<col width="41%" />
+</colgroup>
+<tbody valign="top">
+<tr><td>chars</td>
+<td>[0-1]</td>
+<td>[0-7]</td>
+<td>[0-f]</td>
+<td>[encoding]</td>
+</tr>
+<tr><td>Base</td>
+<td>2</td>
+<td>8</td>
+<td>16</td>
+<td>text</td>
+</tr>
+<tr><td>2</td>
+<td>10</td>
+<td>2</td>
+<td>2</td>
+<td>(<em>complex</em>)</td>
+</tr>
+<tr><td>16</td>
+<td>10000</td>
+<td>20</td>
+<td>10</td>
+<td>(<em>complex</em>)</td>
+</tr>
+<tr><td>50</td>
+<td>110010</td>
+<td>62</td>
+<td>32</td>
+<td>b'2'</td>
+</tr>
+</tbody>
+</table>
+<p>The text representation (or association of numerical values with characters, and other text information, as spaces, end of line, etc) is complex. The first standard was the ASCII. ASCII is 8-bits encoding with fixed lenght association and no support to advanced characters. Its <em>printable range</em> has value from 32 to 126, corresponding to the characters from <em>space</em> to ~ (i.e., 95 characters). Other standards emerged to support complex characters, as the <em>Latin-1</em> and <em>UTF-8</em> - still with 8-bits (a byte), but with variable length information.</p>
+<p>The standard text (string) written in Python 2 is in ASCII (or the binary mode!). You can specify the text in binary mode (<tt class="docutils literal">b'hello'</tt>) and Py2 will consider it as a <tt class="docutils literal">str</tt> type: you can sum the two types (<tt class="docutils literal">'simple ' + b'binary'</tt>)!.</p>
+<p>In Python 3, the text is in UTF-8! There is a class for binary text (<tt class="docutils literal">bytes</tt>), and it you not interact with the string type anymore. The <tt class="docutils literal">bytes</tt> type in Py3 use the direct correspondence of the printable ASCII values, and use an hexadecimal escape sequência to other values.</p>
+<p>Of course, work in <tt class="docutils literal">bytes</tt> is much faster than with an encoding, but it is not design to work with text (but instead to <strong>integer</strong> values).</p>
+</div>
+<div class="section" id="hard-install-reference">
+<h1><a class="toc-backref" href="#id36">Hard install reference</a></h1>
+<div class="section" id="start">
+<h2><a class="toc-backref" href="#id37">Start</a></h2>
+<pre class="code bash literal-block">
+<span class="comment"># In ~/.bashrc
+</span><span class="name builtin">export </span><span class="name variable">PYTHONPATH</span><span class="operator">=</span><span class="name variable">$PYTHONPATH</span>:~/pyhdust
+
+<span class="name variable">PATH</span><span class="operator">=</span>~/.local/bin/:<span class="name variable">$PATH</span>
+
+<span class="name variable">LD_LIBRARY_PATH</span><span class="operator">=</span><span class="literal string double">&quot;$HOME/.local/lib&quot;</span>
+<span class="name builtin">export </span>LD_LIBRARY_PATH PATH
+
+<span class="name builtin">export </span><span class="name variable">LDFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-L$HOME/.local/lib&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CPPFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-I$HOME/.local/include&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CXXFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">CFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">LD_RUN_PATH</span><span class="operator">=</span><span class="name variable">$LD_LIBRARY_PATH</span>
+
+<span class="name variable">$ </span>python setup.py install --user
+<span class="name variable">$ </span>./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;~/.local&quot;</span>
+</pre>
+</div>
+<div class="section" id="systems">
+<h2><a class="toc-backref" href="#id38">Systems</a></h2>
+<div class="section" id="ms-windows">
+<h3><a class="toc-backref" href="#id39">MS-Windows</a></h3>
+<p>When dialing with binary files in Windows (e.g., <em>struct, xdrlib</em>) open/write the files with the appendix 'b' (i.e., <tt class="docutils literal">rb, wb, r+b</tt>...).</p>
+<p>Starting at version 2.7.9, Python comes with pip!!!</p>
+<dl class="docutils">
+<dt>Unofficial Windows Binaries for Python Extension Packages</dt>
+<dd><a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a></dd>
+</dl>
+</div>
+</div>
+<div class="section" id="random-stuff">
+<h2><a class="toc-backref" href="#id40">Random stuff</a></h2>
+<pre class="code bash literal-block">
+<span class="name builtin">export </span><span class="name variable">LDFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-L$HOME/.local/lib -L/lib -L/lib64 -L$HOME/Ureka/python/lib&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CPPFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-I$HOME/.local/include -I/usr/include -I$HOME/Ureka/python/include&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CXXFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">CFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">LD_RUN_PATH</span><span class="operator">=</span><span class="name variable">$LD_LIBRARY_PATH</span>
+<span class="name builtin">export </span><span class="name variable">PKG_CONFIG_PATH</span><span class="operator">=</span>/sto/home/moser/.local/lib/pkgconfig:<span class="name variable">$PKG_CONFIG_PATH</span>
+
+
+<span class="comment"># https://sourceware.org/libffi/
+# #curl -L http://github.com/atgreen/libffi/zipball/master &gt; libffi.zip
+# #unzip libffi.zip
+# #cd atgreen-...
+</span>wget ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+tar xpvf libffi-3.2.1.tar.gz
+<span class="name builtin">cd </span>libffi-3.2.1
+./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;$HOME/.local&quot;</span>
+make
+make install
+
+wget http://ftp.gnome.org/pub/gnome/sources/glib/2.44/glib-2.44.0.tar.xz
+<span class="comment"># https://developer.gnome.org/glib/
+</span>tar xpvf glib-2.44.0.tar.xz
+<span class="name builtin">cd </span>glib-2.44.0
+<span class="name builtin">export </span><span class="name variable">LIBFFI_CFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-I$HOME/.local/lib/libffi-3.2.1/include&quot;</span>
+<span class="name builtin">export </span><span class="name variable">LIBFFI_LIBS</span><span class="operator">=</span><span class="literal string double">&quot;-L$HOME/.local/lib -lffi&quot;</span>
+./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;$HOME/.local&quot;</span>
+make
+make install
+
+<span class="comment"># http://ftp.gnome.org/pub/gnome/sources/gtk+/
+</span>wget http://ftp.gnome.org/pub/gnome/sources/gtk+/3.16/gtk+-3.16.2.tar.xz
+tar xpvf gtk+-3.16.2.tar.xz
+<span class="name builtin">cd </span>gtk+-3.16.2
+
+
+curl -L https://github.com/geany/geany/zipball/master &gt; geany.zip
+unzip geany.zip
+<span class="name builtin">cd </span>geany-geany-...
+./autogen.sh --prefix<span class="operator">=</span><span class="literal string double">&quot;$HOME/.local&quot;</span>
+
+    <span class="comment">### Nativo: HORRIVEL !!!
+</span>
+<span class="name builtin">export </span><span class="name variable">LDFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-L$HOME/.local/lib -L/lib -L/lib64&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CPPFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-fPIC -I$HOME/.local/include -I/usr/include&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CXXFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">CFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">LD_RUN_PATH</span><span class="operator">=</span><span class="name variable">$LD_LIBRARY_PATH</span>
+
+<span class="comment"># Error URLLIB... Recompilar python com openSSL
+</span>wget http://www.openssl.org/source/openssl-1.0.2a.tar.gz
+tar xpvf openssl-1.0.2a.tar.gz
+<span class="name builtin">cd </span>openssl-1.0.2a
+./config --prefix<span class="operator">=</span><span class="literal string double">&quot;$HOME/.local&quot;</span>
+make
+make install
+
+wget ftp://ftp.cwru.edu/pub/bash/readline-6.3.tar.gz
+tar xpvf readline-6.3.tar.gz
+<span class="name builtin">cd </span>readline-6.3
+./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;$HOME/.local&quot;</span>
+make
+make install
+<span class="comment">### ERRO: *** WARNING: renaming &quot;readline&quot; since importing it failed: /sto/home/moser/.local/lib/libreadline.so.6: undefined symbol: PC
+</span>
+wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz
+wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tar.xz
+    <span class="comment">### 2.7.9 Erro SSL....
+</span>tar xpvf Python-2.7.9.tar.xz
+<span class="name builtin">cd </span>Python-2.7.9
+vim Modules/Setup.dist
+<span class="comment"># descomentar bloco SSL; linha ~220
+# SSL=/sto/home/moser/.local
+### adicionar diretórios setup.py; linha ~440 #Sem efeito
+</span>./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;$HOME/.local&quot;</span>
+
+curl -L https://github.com/cython/cython/zipball/master &gt; cython.zip
+curl -L https://github.com/numpy/numpy/zipball/master &gt; numpy.zip
+
+Python 2.6 or 3.2:
+wget http://archive.ipython.org/release/1.0.0/ipython-1.0.0.tar.gz
+tar xpvf ipython-1.0.0.tar.gz
+
+curl -L https://github.com/spacetelescope/PyFITS/zipball/master &gt; pyfits.zip
+
+wget https://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.4.3/matplotlib-1.4.3.tar.gz
+tar xpvf matplotlib-1.4.3.tar.gz
+</pre>
+</div>
+</div>
+<div class="section" id="python-environments-and-references">
+<h1><a class="toc-backref" href="#id41">Python environments and references</a></h1>
+<div class="section" id="general-use-python-packages-in-astronomy">
+<h2><a class="toc-backref" href="#id42">General use Python packages in Astronomy</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>PyHdust (Python tools for hdust code)</dt>
+<dd><p class="first last"><a class="reference external" href="http://astroweb.iag.usp.br/~moser/doc/">http://astroweb.iag.usp.br/~moser/doc/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>AstroPy (community Python library for Astronomy)</dt>
+<dd><p class="first"><a class="reference external" href="http://www.astropy.org/">http://www.astropy.org/</a></p>
+<ul class="last simple">
+<li>AstroQuery: <a class="reference external" href="http://astroquery.readthedocs.org/en/latest/">http://astroquery.readthedocs.org/en/latest/</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>astLib (set of Python modules that provides some tools for research astronomers)</dt>
+<dd><p class="first last"><a class="reference external" href="http://astlib.sourceforge.net/">http://astlib.sourceforge.net/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>PyAstronomy (collection of astronomy related packages)</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.hs.uni-hamburg.de/DE/Ins/Per/Czesla/PyA/PyA/">http://www.hs.uni-hamburg.de/DE/Ins/Per/Czesla/PyA/PyA/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Astropysics</dt>
+<dd><p class="first last"><a class="reference external" href="https://pythonhosted.org/Astropysics/">https://pythonhosted.org/Astropysics/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>spectral-cube</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/radio-astro-tools/spectral-cube">https://github.com/radio-astro-tools/spectral-cube</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Trendvis</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/matplotlib/trendvis">https://github.com/matplotlib/trendvis</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Kapteyn package</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.astro.rug.nl/software/kapteyn/">http://www.astro.rug.nl/software/kapteyn/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Python time series analysis (pytseries)</dt>
+<dd><p class="first last"><a class="reference external" href="http://pytseries.sourceforge.net/">http://pytseries.sourceforge.net/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>scikit-learn (Machine Learning in Python)</dt>
+<dd><p class="first last"><a class="reference external" href="http://scikit-learn.org/stable/">http://scikit-learn.org/stable/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>PyQt-Fit (regression toolbox in Python)</dt>
+<dd><p class="first last"><a class="reference external" href="http://pythonhosted.org/PyQt-Fit/">http://pythonhosted.org/PyQt-Fit/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="python-learning-for-astronomers">
+<h2><a class="toc-backref" href="#id43">Python learning for astronomers</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>CodeCAdemy</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.codecademy.com/en/tracks/python">http://www.codecademy.com/en/tracks/python</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Coursera</dt>
+<dd><p class="first last"><a class="reference external" href="https://www.coursera.org/course/interactivepython1">https://www.coursera.org/course/interactivepython1</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Python4astronomers</dt>
+<dd><p class="first last"><a class="reference external" href="https://python4astronomers.github.io/">https://python4astronomers.github.io/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Machine learning in Python</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.scipy-lectures.org/packages/scikit-learn/index.html">http://www.scipy-lectures.org/packages/scikit-learn/index.html</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Matplotlib tutorial</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.labri.fr/perso/nrougier/teaching/matplotlib/#other-types-of-plots">http://www.labri.fr/perso/nrougier/teaching/matplotlib/#other-types-of-plots</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="python-distributions">
+<h2><a class="toc-backref" href="#id44">Python distributions</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>Ureka*</dt>
+<dd><p class="first last"><a class="reference external" href="http://ssb.stsci.edu/ureka/">http://ssb.stsci.edu/ureka/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Anaconda</dt>
+<dd><p class="first last"><a class="reference external" href="http://continuum.io/downloads">http://continuum.io/downloads</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Enthought Canopy</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.enthought.com/products/canopy/">http://www.enthought.com/products/canopy/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Python(x,y)</dt>
+<dd><p class="first last"><a class="reference external" href="http://code.google.com/p/pythonxy/">http://code.google.com/p/pythonxy/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>WinPython</dt>
+<dd><p class="first last"><a class="reference external" href="http://winpython.github.io/">http://winpython.github.io/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Pyzo</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.pyzo.org/">http://www.pyzo.org/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="python-environments">
+<h2><a class="toc-backref" href="#id45">Python environments</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt>ipython</dt>
+<dd><p class="first last"><a class="reference external" href="http://ipython.org/">http://ipython.org/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ipython Notebook</dt>
+<dd><p class="first last"><a class="reference external" href="http://ipython.org/notebook.html">http://ipython.org/notebook.html</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Geany</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.geany.org/">http://www.geany.org/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>PyCharm</dt>
+<dd><p class="first last"><a class="reference external" href="http://www.jetbrains.com/pycharm/">http://www.jetbrains.com/pycharm/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="utilities">
+<h2><a class="toc-backref" href="#id46">Utilities</a></h2>
+<div class="section" id="package-index">
+<h3><a class="toc-backref" href="#id47">Package Index</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>PyPI</dt>
+<dd><p class="first last"><a class="reference external" href="http://cheeseshop.python.org">http://cheeseshop.python.org</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="cookbooks">
+<h3><a class="toc-backref" href="#id48">Cookbooks</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>ActiveState Python recipes</dt>
+<dd><p class="first last"><a class="reference external" href="http://code.activestate.com/recipes/langs/python/">http://code.activestate.com/recipes/langs/python/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="articles">
+<h3><a class="toc-backref" href="#id49">Articles</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Survey of software use in astronomy</dt>
+<dd><p class="first last"><a class="reference external" href="http://arxiv.org/pdf/1507.03989v1.pdf">http://arxiv.org/pdf/1507.03989v1.pdf</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="python-code-revision">
+<h3><a class="toc-backref" href="#id50">Python code revision</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Landscape</dt>
+<dd><p class="first last"><a class="reference external" href="https://landscape.io/">https://landscape.io/</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="visualization-tools">
+<h3><a class="toc-backref" href="#id51">Visualization tools</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Seaborn</dt>
+<dd><p class="first last"><a class="reference external" href="https://beta.oreilly.com/learning/data-visualization-with-seaborn">https://beta.oreilly.com/learning/data-visualization-with-seaborn</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Plotly</dt>
+<dd><p class="first last"><a class="reference external" href="https://plot.ly">https://plot.ly</a>, <a class="reference external" href="http://blog.plot.ly">http://blog.plot.ly</a></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

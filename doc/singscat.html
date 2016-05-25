@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>singscat: module of single scattering tools &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="next" title="spectools: module of spectroscopic tools" href="spectools.html" />
+    <link rel="prev" title="rotstars: module of rotating stars functions" href="rotstars.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="spectools.html" title="spectools: module of spectroscopic tools"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="rotstars.html" title="rotstars: module of rotating stars functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.singscat">
+<span id="singscat-module-of-single-scattering-tools"></span><h1><strong>singscat</strong>: module of single scattering tools<a class="headerlink" href="#module-pyhdust.singscat" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust <em>singscat</em> module: Single Scatering Dumbbell+disk model.</p>
+<p>This release contains a simplified version of the one applied to Sigma Ori E in 
+Carciofi+2013.</p>
+<div class="line-block">
+<div class="line">VARIABLES:</div>
+<div class="line-block">
+<div class="line">BLOB</div>
+<div class="line">- i</div>
+<div class="line">- Rstar</div>
+<div class="line">- Blob diam.</div>
+<div class="line">- Blob dist. (center)</div>
+<div class="line">- n_e</div>
+<div class="line"><br /></div>
+<div class="line">DISK</div>
+<div class="line">- n_d</div>
+<div class="line">- Disk length (assumed centered at blob dist.)</div>
+<div class="line">- Disk height</div>
+<div class="line">- Angle between stellar rotation and magnetic field (disk inclination)</div>
+<div class="line"><br /></div>
+<div class="line">OBSERVATIONAL</div>
+<div class="line">- Pis = Qis + Uis</div>
+<div class="line">- Theta_sky</div>
+<div class="line">- Delta phase from photometry</div>
+<div class="line"><br /></div>
+<div class="line">CALCULATIONS</div>
+<div class="line">- n0 = blob resolution (n0**3)</div>
+<div class="line">- phases</div>
+<div class="line">- dh = disk height step</div>
+<div class="line">- ddr = disk radius steps</div>
+<div class="line">- dphi = disk angle step</div>
+</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">license:</th><td class="field-body">GNU GPL v3.0  <a class="reference external" href="https://github.com/danmoser/pyhdust/blob/master/LICENSE">https://github.com/danmoser/pyhdust/blob/master/LICENSE</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="pyhdust.singscat.BlobDiskMod">
+<em class="property">class </em><tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">BlobDiskMod</tt><big>(</big><em>tgt='sori'</em>, <em>rs=4.28</em>, <em>diamb=0.6666666666666666</em>, <em>distb=2.4</em>, <em>n0=5</em>, <em>ne=1000000000000.0</em>, <em>iang=75.0</em>, <em>dlt0=-0.17</em>, <em>ths=150.3</em>, <em>Qis=-0.35</em>, <em>Uis=0.025</em>, <em>rdi=0.0</em>, <em>rdf=0.0</em>, <em>Hd=0.01</em>, <em>alpha=28</em>, <em>dh=1</em>, <em>ddr=3</em>, <em>dphi=180</em>, <em>ned=2700000000000.0</em>, <em>nbins=0</em>, <em>outname=None</em>, <em>hasdata=True</em>, <em>path=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class BlobDiskMod doc</p>
+<p>Definicoes:</p>
+<blockquote>
+<div><p>-fases sempre entre 0-1
+-phiin = phiobs-phi0 = phimod
+-phiobs = phimod+phi0
+-Q1 = Qobs-Qis
+-Qobs = Qmod+Qis
+-Q2 = Pobs**2*_np.cos(2*(ang-ths))
+-Q2obs = Pmod**2*_np.cos(2*(angmod+ths))</p>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>Pobs = Raw Data
+<a href="#id3"><span class="problematic" id="id4">*</span></a>P1 = Raw Data - P_IS
+<a href="#id5"><span class="problematic" id="id6">*</span></a>P2 = P1 * rot(ths)
+<a href="#id7"><span class="problematic" id="id8">*</span></a>Pmod = intrinsic mod (phi = linspace)
+<a href="#id9"><span class="problematic" id="id10">*</span></a>Pmodobs = observed mod (phi = linspace)
+<a href="#id11"><span class="problematic" id="id12">*</span></a>Psetobs = observed mod (phi = phiobs)</p>
+</div></blockquote>
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.calcavgU0">
+<tt class="descname">calcavgU0</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.calcavgU0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.calcavgU0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.getRmPis">
+<tt class="descname">getRmPis</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.getRmPis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.getRmPis" title="Permalink to this definition">¶</a></dt>
+<dd><p>print rmP_IS</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.getRot">
+<tt class="descname">getRot</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.getRot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.getRot" title="Permalink to this definition">¶</a></dt>
+<dd><p>setRot</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.getmod">
+<tt class="descname">getmod</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.getmod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.getmod" title="Permalink to this definition">¶</a></dt>
+<dd><p>print mod</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.getobs">
+<tt class="descname">getobs</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.getobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.getobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>print obs. info</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.setRmPis">
+<tt class="descname">setRmPis</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.setRmPis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.setRmPis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove P_IS</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.setRot">
+<tt class="descname">setRot</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.setRot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.setRot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.setbin">
+<tt class="descname">setbin</tt><big>(</big><em>nbins</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.setbin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.setbin" title="Permalink to this definition">¶</a></dt>
+<dd><p>set bin</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.setmod">
+<tt class="descname">setmod</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.setmod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.setmod" title="Permalink to this definition">¶</a></dt>
+<dd><p>set mod</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.singscat.BlobDiskMod.setobs">
+<tt class="descname">setobs</tt><big>(</big><em>path=None</em>, <em>r=0</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#BlobDiskMod.setobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.BlobDiskMod.setobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>It reads the <cite>tgt.log</cite> file inside path and sets the observation
+variables ph0 and Period (from light-curve database) and phiobs, Pobs,
+Qobs, Uobs, sigP, sigth and angobs from polarimetry.</p>
+<p><cite>r</cite> applies the filtraobs with this ratio.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.Q0check">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">Q0check</tt><big>(</big><em>Q</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#Q0check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.Q0check" title="Permalink to this definition">¶</a></dt>
+<dd><p>### Q0 check ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.QUang">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">QUang</tt><big>(</big><em>Q</em>, <em>U</em>, <em>filter=True</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#QUang"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.QUang" title="Permalink to this definition">¶</a></dt>
+<dd><p>### Q,U angles ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.QUplots">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">QUplots</tt><big>(</big><em>a</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#QUplots"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.QUplots" title="Permalink to this definition">¶</a></dt>
+<dd><p>QU plots</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.chi2calc">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">chi2calc</tt><big>(</big><em>Qobc</em>, <em>Uobc</em>, <em>dobs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#chi2calc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.chi2calc" title="Permalink to this definition">¶</a></dt>
+<dd><p>### CHI2 CALC given Pobs and Pobc ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.chi2calc_old">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">chi2calc_old</tt><big>(</big><em>Qobc</em>, <em>Uobc</em>, <em>dobs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#chi2calc_old"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.chi2calc_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>### CHI2 CALC given Pobs and Pobc ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.chi2f">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">chi2f</tt><big>(</big><em>params</em>, <em>p_info</em>, <em>tgt</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#chi2f"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.chi2f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.chi2fin">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">chi2fin</tt><big>(</big><em>params</em>, <em>p_info</em>, <em>tgt</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#chi2fin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.chi2fin" title="Permalink to this definition">¶</a></dt>
+<dd><p>chi2f</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.diskcoords">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">diskcoords</tt><big>(</big><em>pdk</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#diskcoords"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.diskcoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>### DISK geom. ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.errorcalc">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">errorcalc</tt><big>(</big><em>pst</em>, <em>pob</em>, <em>dobs</em>, <em>pdk</em>, <em>phiobs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#errorcalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.errorcalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>error calc</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.extdata">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">extdata</tt><big>(</big><em>ph</em>, <em>P</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#extdata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.extdata" title="Permalink to this definition">¶</a></dt>
+<dd><p>extend data for phases</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.extend">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">extend</tt><big>(</big><em>phiT</em>, <em>Q</em>, <em>U</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#extend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.extend" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.geogen">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">geogen</tt><big>(</big><em>pst</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#geogen"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.geogen" title="Permalink to this definition">¶</a></dt>
+<dd><p>### BLOB dVs ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.mcmc">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">mcmc</tt><big>(</big><em>tgt</em>, <em>p_info</em>, <em>birun=50</em>, <em>emrun=500</em>, <em>nd_walk=10</em>, <em>a=2</em>, <em>threads=4</em>, <em>savesteps=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#mcmc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.mcmc" title="Permalink to this definition">¶</a></dt>
+<dd><div class="line-block">
+<div class="line">tgt = target (sst.BlobDiskMod class)</div>
+<div class="line">p_info = parameters info matrix </div>
+<div class="line"><br /></div>
+<div class="line">birun = burn-in steps</div>
+<div class="line">emrun = emcee run steps </div>
+<div class="line">nd_walk = nwalkers = nd_walk*ndim</div>
+</div>
+<dl class="docutils">
+<dt>Returns a sst.BlodDiskMod as best-fit and the emcee smampler:</dt>
+<dd>bestfit, sampler</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.mod2obs">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">mod2obs</tt><big>(</big><em>Q</em>, <em>U</em>, <em>pob</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#mod2obs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.mod2obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>### MODEL TO OBSERV ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.modcycle">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">modcycle</tt><big>(</big><em>phiT</em>, <em>pst</em>, <em>pob</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#modcycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.modcycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>### ONE MODEL CALC ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.modcycleD">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">modcycleD</tt><big>(</big><em>phiT</em>, <em>pst</em>, <em>pob</em>, <em>pdk</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#modcycleD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.modcycleD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.modcycleF">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">modcycleF</tt><big>(</big><em>varr</em>, <em>th</em>, <em>phi_0</em>, <em>n3</em>, <em>varrD</em>, <em>thD</em>, <em>phiD_0</em>, <em>phiT</em>, <em>pst</em>, <em>pob</em>, <em>pdk</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#modcycleF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.modcycleF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.obs2mod">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">obs2mod</tt><big>(</big><em>pob</em>, <em>dobs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#obs2mod"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.obs2mod" title="Permalink to this definition">¶</a></dt>
+<dd><p>### MODEL TO OBSERV ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.phsort">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">phsort</tt><big>(</big><em>ph</em>, <em>P</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#phsort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.phsort" title="Permalink to this definition">¶</a></dt>
+<dd><p>sort by phases</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.plotCaribe">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">plotCaribe</tt><big>(</big><em>a</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#plotCaribe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.plotCaribe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot Caribe</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.plotClean">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">plotClean</tt><big>(</big><em>a</em>, <em>angopt1=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#plotClean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.plotClean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot Clean</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.plotPolISrot">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">plotPolISrot</tt><big>(</big><em>a</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#plotPolISrot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.plotPolISrot" title="Permalink to this definition">¶</a></dt>
+<dd><p>plot pol IS Rot</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.plotResiduals">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">plotResiduals</tt><big>(</big><em>a</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#plotResiduals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.plotResiduals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Residuals</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.poly_curve_output">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">poly_curve_output</tt><big>(</big><em>best_params</em>, <em>errors</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#poly_curve_output"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.poly_curve_output" title="Permalink to this definition">¶</a></dt>
+<dd><p>Terminal fit output</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.stokes">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">stokes</tt><big>(</big><em>varr</em>, <em>th</em>, <em>phi</em>, <em>n3</em>, <em>pst</em>, <em>pob</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#stokes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.stokes" title="Permalink to this definition">¶</a></dt>
+<dd><p>### STOKES CALC given BLOB dVs ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.singscat.stokesD">
+<tt class="descclassname">pyhdust.singscat.</tt><tt class="descname">stokesD</tt><big>(</big><em>varrD</em>, <em>thD</em>, <em>phiD</em>, <em>pst</em>, <em>pob</em>, <em>pdk</em><big>)</big><a class="reference internal" href="_modules/pyhdust/singscat.html#stokesD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.singscat.stokesD" title="Permalink to this definition">¶</a></dt>
+<dd><p>### STOKES CALC given DISK ###</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rotstars.html"
+                        title="previous chapter"><strong>rotstars</strong>: module of rotating stars functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="spectools.html"
+                        title="next chapter"><strong>spectools</strong>: module of spectroscopic tools</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/singscat.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="spectools.html" title="spectools: module of spectroscopic tools"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="rotstars.html" title="rotstars: module of rotating stars functions"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

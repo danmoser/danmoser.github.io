@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyhdust.triangle &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../../index.html" />
+    <link rel="up" title="pyhdust" href="../pyhdust.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" accesskey="U">pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyhdust.triangle</h1><div class="highlight"><pre>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;PyHdust auxiliary module: third-part MCMC plotting tools.</span>
+
+<span class="sd">:co-author: Daniel Moser</span>
+<span class="sd">:license: Copyright 2013 Daniel Foreman-Mackey</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">pl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.cm</span> <span class="kn">as</span> <span class="nn">cm</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">MaxNLocator</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">gaussian_filter</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">gaussian_filter</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;corner&quot;</span><span class="p">,</span> <span class="s">&quot;hist2d&quot;</span><span class="p">]</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s">&quot;0.2.0&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&quot;Dan Foreman-Mackey&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&quot;danfm@nyu.edu&quot;</span>
+
+
+<div class="viewcode-block" id="corner"><a class="viewcode-back" href="../../triangle.html#pyhdust.triangle.corner">[docs]</a><span class="k">def</span> <span class="nf">corner</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;k&quot;</span><span class="p">,</span>
+           <span class="n">smooth</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">smooth1d</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+           <span class="n">labels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">label_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+           <span class="n">show_titles</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">title_fmt</span><span class="o">=</span><span class="s">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">title_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+           <span class="n">truths</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">truth_color</span><span class="o">=</span><span class="s">&quot;#4682b4&quot;</span><span class="p">,</span>
+           <span class="n">scale_hist</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">quantiles</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+           <span class="n">max_n_ticks</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">top_ticks</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> 
+           <span class="n">qtdiff</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">hist2d_kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Make a *sick* corner plot showing the projections of a data set in a</span>
+<span class="sd">    multi-dimensional space. kwargs are passed to hist2d() or used for</span>
+<span class="sd">    `matplotlib` styling.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    xs : array_like (nsamples, ndim)</span>
+<span class="sd">        The samples. This should be a 1- or 2-dimensional array. For a 1-D</span>
+<span class="sd">        array this results in a simple histogram. For a 2-D array, the zeroth</span>
+<span class="sd">        axis is the list of samples and the next axis are the dimensions of</span>
+<span class="sd">        the space.</span>
+
+<span class="sd">    weights : array_like (nsamples,)</span>
+<span class="sd">        The weight of each sample. If `None` (default), samples are given</span>
+<span class="sd">        equal weight.</span>
+
+<span class="sd">    labels : iterable (ndim,) (optional)</span>
+<span class="sd">        A list of names for the dimensions. If a ``xs`` is a</span>
+<span class="sd">        ``pandas.DataFrame``, labels will default to column names.</span>
+
+<span class="sd">    show_titles : bool (optional)</span>
+<span class="sd">        Displays a title above each 1-D histogram showing the 0.5 quantile</span>
+<span class="sd">        with the upper and lower errors supplied by the quantiles argument.</span>
+
+<span class="sd">    title_fmt : string (optional)</span>
+<span class="sd">        The format string for the quantiles given in titles.</span>
+<span class="sd">        (default: `.2f`)</span>
+
+<span class="sd">    title_args : dict (optional)</span>
+<span class="sd">        Any extra keyword arguments to send to the `add_title` command.</span>
+
+<span class="sd">    extents : iterable (ndim,) (optional)</span>
+<span class="sd">        A list where each element is either a length 2 tuple containing</span>
+<span class="sd">        lower and upper bounds (extents) or a float in range (0., 1.)</span>
+<span class="sd">        giving the fraction of samples to include in bounds, e.g.,</span>
+<span class="sd">        [(0.,10.), (1.,5), 0.999, etc.].</span>
+<span class="sd">        If a fraction, the bounds are chosen to be equal-tailed.</span>
+
+<span class="sd">    truths : iterable (ndim,) (optional)</span>
+<span class="sd">        A list of reference values to indicate on the plots.  Individual</span>
+<span class="sd">        values can be omitted by using ``None``.</span>
+
+<span class="sd">    truth_color : str (optional)</span>
+<span class="sd">        A ``matplotlib`` style color for the ``truths`` makers.</span>
+
+<span class="sd">    scale_hist : bool (optional)</span>
+<span class="sd">        Should the 1-D histograms be scaled in such a way that the zero line</span>
+<span class="sd">        is visible?</span>
+
+<span class="sd">    quantiles : iterable (optional)</span>
+<span class="sd">        A list of fractional quantiles to show on the 1-D histograms as</span>
+<span class="sd">        vertical dashed lines.</span>
+
+<span class="sd">    verbose : bool (optional)</span>
+<span class="sd">        If true, print the values of the computed quantiles.</span>
+
+<span class="sd">    plot_contours : bool (optional)</span>
+<span class="sd">        Draw contours for dense regions of the plot.</span>
+
+<span class="sd">    plot_datapoints : bool (optional)</span>
+<span class="sd">        Draw the individual data points.</span>
+
+<span class="sd">    max_n_ticks: int (optional)</span>
+<span class="sd">        maximum number of ticks to try to use</span>
+
+<span class="sd">    fig : matplotlib.Figure (optional)</span>
+<span class="sd">        Overplot onto the provided figure object.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">quantiles</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">quantiles</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">title_kwargs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">title_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">label_kwargs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">label_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">qtdiff</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">qtdiff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c"># Try filling in labels from pandas.DataFrame columns.</span>
+    <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">columns</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="c"># Deal with 1D sample lists.</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;The input sample array must be 1- or 2-D.&quot;</span>
+        <span class="n">xs</span> <span class="o">=</span> <span class="n">xs</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">assert</span> <span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;I don&#39;t believe that you want more &quot;</span> \
+                                       <span class="s">&quot;dimensions than samples!&quot;</span>
+
+    <span class="c"># Parse the weight array.</span>
+    <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">weights</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Weights must be 1-D&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="n">weights</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Lengths of weights must match number of samples&quot;</span><span class="p">)</span>
+
+    <span class="c"># Parse the parameter ranges.</span>
+    <span class="k">if</span> <span class="nb">range</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">&quot;extents&quot;</span> <span class="ow">in</span> <span class="n">hist2d_kwargs</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Deprecated keyword argument &#39;extents&#39;. &quot;</span>
+                         <span class="s">&quot;Use &#39;range&#39; instead.&quot;</span><span class="p">)</span>
+            <span class="nb">range</span> <span class="o">=</span> <span class="n">hist2d_kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&quot;extents&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">range</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">]</span>
+            <span class="c"># Check for parameters that never change.</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">((</span><span class="s">&quot;It looks like the parameter(s) in &quot;</span>
+                                  <span class="s">&quot;column(s) {0} have no dynamic range. &quot;</span>
+                                  <span class="s">&quot;Please provide a `range` argument.&quot;</span><span class="p">)</span>
+                                 <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span>
+                                     <span class="s">&quot;{0}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">))[</span><span class="n">m</span><span class="p">]))))</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c"># If any of the extents are percentiles, convert them to ranges.</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">range</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">emin</span><span class="p">,</span> <span class="n">emax</span> <span class="o">=</span> <span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+                <span class="n">q</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+                <span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">quantile</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">q</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">range</span><span class="p">)</span> <span class="o">!=</span> <span class="n">xs</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Dimension mismatch between samples and range&quot;</span><span class="p">)</span>
+
+    <span class="c"># Parse the bin specifications.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">range</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Dimension mismatch between bins and range&quot;</span><span class="p">)</span>
+
+    <span class="c"># Some magic numbers for pretty axis layout.</span>
+    <span class="n">K</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="n">factor</span> <span class="o">=</span> <span class="mf">2.0</span>           <span class="c"># size of one side of one panel</span>
+    <span class="n">lbdim</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">factor</span>   <span class="c"># size of left/bottom margin</span>
+    <span class="n">trdim</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">factor</span>   <span class="c"># size of top/right margin</span>
+    <span class="n">whspace</span> <span class="o">=</span> <span class="mf">0.05</span>         <span class="c"># w/hspace size</span>
+    <span class="n">plotdim</span> <span class="o">=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">K</span> <span class="o">+</span> <span class="n">factor</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">*</span> <span class="n">whspace</span>
+    <span class="n">dim</span> <span class="o">=</span> <span class="n">lbdim</span> <span class="o">+</span> <span class="n">plotdim</span> <span class="o">+</span> <span class="n">trdim</span>
+
+    <span class="c"># Create a new figure if one wasn&#39;t provided.</span>
+    <span class="k">if</span> <span class="n">fig</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="n">dim</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">axes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">K</span><span class="p">,</span> <span class="n">K</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Provided figure has {0} axes, but data has &quot;</span>
+                             <span class="s">&quot;dimensions K={1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fig</span><span class="o">.</span><span class="n">axes</span><span class="p">),</span> <span class="n">K</span><span class="p">))</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">set_tight_layout</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="c"># Format the figure.</span>
+    <span class="n">lb</span> <span class="o">=</span> <span class="n">lbdim</span> <span class="o">/</span> <span class="n">dim</span>
+    <span class="n">tr</span> <span class="o">=</span> <span class="p">(</span><span class="n">lbdim</span> <span class="o">+</span> <span class="n">plotdim</span><span class="p">)</span> <span class="o">/</span> <span class="n">dim</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">lb</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">lb</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">tr</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">tr</span><span class="p">,</span>
+                        <span class="n">wspace</span><span class="o">=</span><span class="n">whspace</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="n">whspace</span><span class="p">)</span>
+
+    <span class="c"># Set up the default histogram keywords.</span>
+    <span class="k">if</span> <span class="n">hist_kwargs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">hist_kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">hist_kwargs</span><span class="p">[</span><span class="s">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;color&quot;</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">smooth1d</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">hist_kwargs</span><span class="p">[</span><span class="s">&quot;histtype&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hist_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&quot;histtype&quot;</span><span class="p">,</span> <span class="s">&quot;step&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+        <span class="c"># Deal with masked arrays.</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s">&quot;compressed&quot;</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">compressed</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">xs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="c"># Plot the histograms.</span>
+        <span class="k">if</span> <span class="n">smooth1d</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">n</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span>
+                              <span class="nb">range</span><span class="o">=</span><span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">**</span><span class="n">hist_kwargs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">gaussian_filter</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s">&quot;Please install scipy for smoothing&quot;</span><span class="p">)</span>
+            <span class="n">n</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span>
+                                <span class="nb">range</span><span class="o">=</span><span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">smooth1d</span><span class="p">)</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">b</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+            <span class="n">y0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="o">**</span><span class="n">hist_kwargs</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">truths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">truths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">truths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">truth_color</span><span class="p">)</span>
+
+        <span class="c"># Plot quantiles if wanted.</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">quantiles</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">quantiles</span><span class="p">)</span> <span class="o">+</span> <span class="n">qtdiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">qts</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">qts</span><span class="p">)</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">qts</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="n">qts</span><span class="p">)</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qts</span><span class="p">)</span>
+            <span class="n">qvalues</span> <span class="o">=</span> <span class="n">quantile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">qts</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">qvalues</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Quantiles:&quot;</span><span class="p">)</span>
+                <span class="k">print</span><span class="p">([</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">qts</span><span class="p">,</span> <span class="n">qvalues</span><span class="p">)])</span>                
+
+        <span class="k">if</span> <span class="n">show_titles</span><span class="p">:</span>
+            <span class="c"># Compute the quantiles for the title. This might redo</span>
+            <span class="c"># unneeded computation but who cares.</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">quantiles</span><span class="p">)</span> <span class="o">+</span> <span class="n">qtdiff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">qts</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">qts</span><span class="p">)</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">qts</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="n">qts</span><span class="p">)</span>
+            <span class="n">qts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">qts</span><span class="p">)</span>
+            <span class="n">q_16</span><span class="p">,</span> <span class="n">q_50</span><span class="p">,</span> <span class="n">q_84</span> <span class="o">=</span> <span class="n">quantile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">qts</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>             
+            <span class="n">q_m</span><span class="p">,</span> <span class="n">q_p</span> <span class="o">=</span> <span class="n">q_50</span> <span class="o">-</span> <span class="n">q_16</span><span class="p">,</span> <span class="n">q_84</span> <span class="o">-</span> <span class="n">q_50</span>
+
+            <span class="c"># Format the quantile display.</span>
+            <span class="k">if</span> <span class="n">q_50</span> <span class="o">&lt;</span> <span class="mf">1e6</span><span class="p">:</span>
+                <span class="n">fmt</span> <span class="o">=</span> <span class="s">&quot;{{0:{0}}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title_fmt</span><span class="p">)</span><span class="o">.</span><span class="n">format</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s">r&quot;${{{0}}}_{{-{1}}}^{{+{2}}}$&quot;</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="n">q_50</span><span class="p">),</span> <span class="n">fmt</span><span class="p">(</span><span class="n">q_m</span><span class="p">),</span> <span class="n">fmt</span><span class="p">(</span><span class="n">q_p</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">expn</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">q_50</span><span class="p">))</span>
+                <span class="n">fmt</span> <span class="o">=</span> <span class="s">&quot;{{0:{0}}}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">title_fmt</span><span class="p">)</span><span class="o">.</span><span class="n">format</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s">r&quot;${{{0}}}_{{-{1}}}^{{+{2}}}e{3}$&quot;</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fmt</span><span class="p">(</span><span class="n">q_50</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**-</span><span class="n">expn</span><span class="p">),</span> <span class="n">fmt</span><span class="p">(</span><span class="n">q_m</span> <span class="o">*</span> 
+                    <span class="mi">10</span><span class="o">**-</span><span class="n">expn</span><span class="p">),</span> <span class="n">fmt</span><span class="p">(</span><span class="n">q_p</span> <span class="o">*</span> <span class="mi">10</span><span class="o">**-</span><span class="n">expn</span><span class="p">),</span> <span class="n">expn</span><span class="p">)</span>
+
+            <span class="c"># Add in the column name if it&#39;s given.</span>
+            <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                    <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;{0} = {1}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">][:</span><span class="n">j</span><span class="p">],</span> <span class="n">title</span><span class="p">)</span>
+
+            <span class="c"># Add the title to the axis.</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="o">**</span><span class="n">title_kwargs</span><span class="p">)</span>
+
+        <span class="c"># Set up the axes.</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">scale_hist</span><span class="p">:</span>
+            <span class="n">maxn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">maxn</span><span class="p">,</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">maxn</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="n">max_n_ticks</span><span class="p">,</span> <span class="n">prune</span><span class="o">=</span><span class="s">&quot;lower&quot;</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">K</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">top_ticks</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticks_position</span><span class="p">(</span><span class="s">&quot;top&quot;</span><span class="p">)</span>
+                <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()]</span>
+            <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">**</span><span class="n">label_kwargs</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_coords</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">xs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_frame_on</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+                <span class="k">continue</span>
+            <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="c"># Deal with masked arrays.</span>
+            <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="s">&quot;compressed&quot;</span><span class="p">):</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">compressed</span><span class="p">()</span>
+            <span class="n">hist2d</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">[</span><span class="nb">range</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">range</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">,</span>
+                   <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="n">smooth</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="n">bins</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">bins</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> 
+                   <span class="o">**</span><span class="n">hist2d_kwargs</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">truths</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">truths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">truths</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">truths</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">truths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">truth_color</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">truths</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">truths</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">truth_color</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">truths</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">truths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">truth_color</span><span class="p">)</span>
+
+            <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="n">max_n_ticks</span><span class="p">,</span> <span class="n">prune</span><span class="o">=</span><span class="s">&quot;lower&quot;</span><span class="p">))</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MaxNLocator</span><span class="p">(</span><span class="n">max_n_ticks</span><span class="p">,</span> <span class="n">prune</span><span class="o">=</span><span class="s">&quot;lower&quot;</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">K</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">()]</span>
+                <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="o">**</span><span class="n">label_kwargs</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_label_coords</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">set_rotation</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">()]</span>
+                <span class="k">if</span> <span class="n">labels</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="o">**</span><span class="n">label_kwargs</span><span class="p">)</span>
+                    <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_label_coords</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span>
+
+</div>
+<span class="k">def</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Like numpy.percentile, but:</span>
+
+<span class="sd">    * Values of q are quantiles [0., 1.] rather than percentiles [0., 100.]</span>
+<span class="sd">    * scalar q not supported (q must be iterable)</span>
+<span class="sd">    * optional weights on x</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">weights</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mf">100.</span> <span class="o">*</span> <span class="n">qi</span> <span class="k">for</span> <span class="n">qi</span> <span class="ow">in</span> <span class="n">q</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">xsorted</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+        <span class="n">cdf</span> <span class="o">/=</span> <span class="n">cdf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">q</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">xsorted</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="hist2d"><a class="viewcode-back" href="../../triangle.html#pyhdust.triangle.hist2d">[docs]</a><span class="k">def</span> <span class="nf">hist2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">smooth</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+           <span class="n">ax</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">plot_datapoints</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">plot_density</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+           <span class="n">plot_contours</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fill_contours</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+           <span class="n">contour_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">contourf_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">data_kwargs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+           <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot a 2-D histogram of samples.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+    <span class="c"># Set the default range based on the data range if not provided.</span>
+    <span class="k">if</span> <span class="nb">range</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s">&quot;extent&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;Deprecated keyword argument &#39;extent&#39;. &quot;</span>
+                         <span class="s">&quot;Use &#39;range&#39; instead.&quot;</span><span class="p">)</span>
+            <span class="nb">range</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s">&quot;extent&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">range</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()],</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">()]]</span>
+
+    <span class="c"># Set up the default plotting arguments.</span>
+    <span class="c"># if color is None:</span>
+        <span class="c"># color = &quot;k&quot;</span>
+<span class="c"># </span>
+    <span class="c"># Choose the default &quot;sigma&quot; contour levels.</span>
+    <span class="c"># if levels is None:</span>
+        <span class="c"># levels = 1.0 - np.exp(-0.5 * np.arange(0.5, 2.1, 0.5) ** 2)</span>
+<span class="c"># </span>
+    <span class="c"># This is the color map for the density plot, over-plotted to indicate the</span>
+    <span class="c"># density of the points near the center.</span>
+    <span class="c"># density_cmap = LinearSegmentedColormap.from_list(</span>
+        <span class="c"># &quot;density_cmap&quot;, [color, (1, 1, 1, 0)])</span>
+<span class="c"># </span>
+    <span class="c"># This color map is used to hide the points at the high density areas.</span>
+    <span class="c"># white_cmap = LinearSegmentedColormap.from_list(</span>
+        <span class="c"># &quot;white_cmap&quot;, [(1, 1, 1), (1, 1, 1)], N=2)</span>
+<span class="c"># </span>
+    <span class="c"># This &quot;color map&quot; is the list of colors for the contour levels if the</span>
+    <span class="c"># contours are filled.</span>
+    <span class="c"># rgba_color = colorConverter.to_rgba(color)</span>
+    <span class="c"># contour_cmap = [rgba_color] + [list(rgba_color) for l in levels]</span>
+    <span class="c"># for i, l in enumerate(levels):</span>
+        <span class="c"># contour_cmap[i+1][-1] *= float(len(levels) - i) / (len(levels)+1)</span>
+<span class="c"># </span>
+    <span class="c"># We&#39;ll make the 2D histogram to directly estimate the density.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">H</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
+                                 <span class="nb">range</span><span class="o">=</span><span class="nb">range</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;It looks like at least one of your sample columns &quot;</span>
+                         <span class="s">&quot;have no dynamic range. You could try using the &quot;</span>
+                         <span class="s">&quot;&#39;range&#39; argument.&quot;</span><span class="p">)</span>
+<span class="c"># </span>
+    <span class="c"># if smooth is not None:</span>
+        <span class="c"># if gaussian_filter is None:</span>
+            <span class="c"># raise ImportError(&quot;Please install scipy for smoothing&quot;)</span>
+        <span class="c"># H = gaussian_filter(H, smooth)</span>
+<span class="c"># </span>
+    <span class="c"># Compute the density levels.</span>
+    <span class="c"># Hflat = H.flatten()</span>
+    <span class="c"># inds = np.argsort(Hflat)[::-1]</span>
+    <span class="c"># Hflat = Hflat[inds]</span>
+    <span class="c"># sm = np.cumsum(Hflat)</span>
+    <span class="c"># sm /= sm[-1]</span>
+    <span class="c"># V = np.empty(len(levels))</span>
+    <span class="c"># for i, v0 in enumerate(levels):</span>
+        <span class="c"># try:</span>
+            <span class="c"># V[i] = Hflat[sm &lt;= v0][-1]</span>
+        <span class="c"># except:</span>
+            <span class="c"># V[i] = Hflat[0]</span>
+<span class="c"># </span>
+    <span class="c"># Compute the bin centers.</span>
+    <span class="c"># X1, Y1 = 0.5 * (X[1:] + X[:-1]), 0.5 * (Y[1:] + Y[:-1])</span>
+<span class="c"># </span>
+    <span class="c"># Extend the array for the sake of the contours at the plot edges.</span>
+    <span class="c"># H2 = H.min() + np.zeros((H.shape[0] + 4, H.shape[1] + 4))</span>
+    <span class="c"># H2[2:-2, 2:-2] = H</span>
+    <span class="c"># H2[2:-2, 1] = H[:, 0]</span>
+    <span class="c"># H2[2:-2, -2] = H[:, -1]</span>
+    <span class="c"># H2[1, 2:-2] = H[0]</span>
+    <span class="c"># H2[-2, 2:-2] = H[-1]</span>
+    <span class="c"># H2[1, 1] = H[0, 0]</span>
+    <span class="c"># H2[1, -2] = H[0, -1]</span>
+    <span class="c"># H2[-2, 1] = H[-1, 0]</span>
+    <span class="c"># H2[-2, -2] = H[-1, -1]</span>
+    <span class="c"># X2 = np.concatenate([</span>
+        <span class="c"># X1[0] + np.array([-2, -1]) * np.diff(X1[:2]),</span>
+        <span class="c"># X1,</span>
+        <span class="c"># X1[-1] + np.array([1, 2]) * np.diff(X1[-2:]),</span>
+    <span class="c"># ])</span>
+    <span class="c"># Y2 = np.concatenate([</span>
+        <span class="c"># Y1[0] + np.array([-2, -1]) * np.diff(Y1[:2]),</span>
+        <span class="c"># Y1,</span>
+        <span class="c"># Y1[-1] + np.array([1, 2]) * np.diff(Y1[-2:]),</span>
+    <span class="c"># ])</span>
+<span class="c"># </span>
+    <span class="c"># if plot_datapoints:</span>
+        <span class="c"># if data_kwargs is None:</span>
+            <span class="c"># data_kwargs = dict()</span>
+        <span class="c"># data_kwargs[&quot;color&quot;] = data_kwargs.get(&quot;color&quot;, color)</span>
+        <span class="c"># data_kwargs[&quot;ms&quot;] = data_kwargs.get(&quot;ms&quot;, 2.0)</span>
+        <span class="c"># data_kwargs[&quot;mec&quot;] = data_kwargs.get(&quot;mec&quot;, &quot;none&quot;)</span>
+        <span class="c"># data_kwargs[&quot;alpha&quot;] = data_kwargs.get(&quot;alpha&quot;, 0.1)</span>
+        <span class="c"># ax.plot(x, y, &quot;o&quot;, zorder=-1, rasterized=True, **data_kwargs)</span>
+<span class="c"># </span>
+    <span class="c"># Plot the base fill to hide the densest data points.</span>
+    <span class="c"># if plot_contours or plot_density:</span>
+        <span class="c"># ax.contourf(X2, Y2, H2.T, [V[-1], H.max()],</span>
+                    <span class="c"># cmap=white_cmap, antialiased=False)</span>
+<span class="c"># </span>
+    <span class="c"># if plot_contours and fill_contours:</span>
+        <span class="c"># if contourf_kwargs is None:</span>
+            <span class="c"># contourf_kwargs = dict()</span>
+        <span class="c"># contourf_kwargs[&quot;colors&quot;] = contourf_kwargs.get(&quot;colors&quot;, contour_</span>
+            <span class="c"># cmap)</span>
+        <span class="c"># contourf_kwargs[&quot;antialiased&quot;] = contourf_kwargs.get(&quot;antialiased&quot;,</span>
+            <span class="c"># False)</span>
+        <span class="c"># ax.contourf(X2, Y2, H2.T, np.concatenate([[H.max()], V, [0]]),</span>
+                    <span class="c"># **contourf_kwargs)</span>
+<span class="c"># </span>
+    <span class="c"># Plot the density map. This can&#39;t be plotted at the same time as the</span>
+    <span class="c"># contour fills.</span>
+    <span class="c"># elif plot_density:</span>
+        <span class="c"># ax.pcolor(X, Y, H.max() - H.T, cmap=density_cmap)</span>
+    <span class="k">if</span> <span class="n">plot_density</span><span class="p">:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">&#39;gist_heat&#39;</span><span class="p">))</span>
+<span class="c"># </span>
+    <span class="c"># Plot the contour edge colors.</span>
+    <span class="c"># if plot_contours:</span>
+        <span class="c"># if contour_kwargs is None:</span>
+            <span class="c"># contour_kwargs = dict()</span>
+        <span class="c"># contour_kwargs[&quot;colors&quot;] = contour_kwargs.get(&quot;colors&quot;, color)</span>
+        <span class="c"># ax.contour(X2, Y2, H2.T, V, **contour_kwargs)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="nb">range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="nb">range</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span>
+
+<span class="c"># Main</span></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" >pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

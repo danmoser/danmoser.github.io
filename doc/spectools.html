@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>spectools: module of spectroscopic tools &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="next" title="stats: module of statistical functions" href="stats.html" />
+    <link rel="prev" title="singscat: module of single scattering tools" href="singscat.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats: module of statistical functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="singscat.html" title="singscat: module of single scattering tools"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.spectools">
+<span id="spectools-module-of-spectroscopic-tools"></span><h1><strong>spectools</strong>: module of spectroscopic tools<a class="headerlink" href="#module-pyhdust.spectools" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust <em>spectools</em> module: spectroscopy tools</p>
+<p>Algumas definicoes: para todas as rotinas funcionarem, todos os espectros devem
+estar agrupados num mesmo caminho (<cite>path</cite>), em estrutura de
+noite/estrelas/espec.</p>
+<p>Neste momento, as rotinas somente leem arquivos <cite>*.cal.fits</cite>. Para receber este
+sufixo <cite>.cal</cite>, algumas informacoes no header sao necessarias:</p>
+<blockquote>
+<div><ul class="simple">
+<li>&#8216;MJD-OBS&#8217; ou &#8216;MJD&#8217; ou &#8216;JD&#8217; ou &#8216;DATE-OBS&#8217;</li>
+<li>&#8216;CRVAL1&#8217; + &#8216;CDELT1&#8217;</li>
+</ul>
+</div></blockquote>
+<p>IMPORTANT NOTE: after the version 0.9.81, the &#8220;analline&#8221; function returns 
+FWHM instead of <cite>depthcent</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">license:</th><td class="field-body">GNU GPL v3.0 <a class="reference external" href="https://github.com/danmoser/pyhdust/blob/master/LICENSE">https://github.com/danmoser/pyhdust/blob/master/LICENSE</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyhdust.spectools.DCcalc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">DCcalc</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>vmax=None</em>, <em>vc=0.0</em>, <em>ssize=0.05</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#DCcalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.DCcalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculo, na presenca de emissao, da profundidade do reverso central.</p>
+<p>TODO: gauss fit</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.ECcalc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">ECcalc</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>ssize=0.05</em>, <em>gaussfit=False</em>, <em>doublegf=True</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#ECcalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.ECcalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supoe que o fluxo jah estah normalizado, e vetores ordenad_os.</p>
+<p>Calcula o topo da emissao da linha, e retorna em que velocidade ela
+ocorre.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.EWcalc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">EWcalc</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>vw=1000</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#EWcalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.EWcalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supoe que o fluxo jah estah normalizado, e vetores ordenad_os.</p>
+<p>Devolve o valor EW, alem dos vetores cortados em vw.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.FWHM">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">FWHM</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>halfmax</em>, <em>vmax=350.0</em>, <em>flxincr=0.01</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#FWHM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.FWHM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calc. FWHM (Full-Width at Half Maximum) based on the value of the 
+Half Maximum</p>
+<p>TODO: Gaussfit</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.PScalc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">PScalc</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>vc=0.0</em>, <em>ssize=0.05</em>, <em>gaussfit=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#PScalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.PScalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcula peak_separation</p>
+<p><cite>doublegaussfit</cite> = True, do it before and after zero velocity. False, use
+maximum (default).</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyhdust.spectools.Spec">
+<em class="property">class </em><tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">Spec</tt><big>(</big><em>wl=None</em>, <em>flux=None</em>, <em>lbc=None</em>, <em>hwidth=1000.0</em>, <em>EW=nan</em>, <em>EC=nan</em>, <em>VR=nan</em>, <em>peaksep=nan</em>, <em>depthcent=nan</em>, <em>F0=nan</em>, <em>dateobs=''</em>, <em>MJD=0.0</em>, <em>datereduc=''</em>, <em>file=''</em>, <em>gaussfit=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definicao de classe espectro para conter toda a informacao util
+para plots e analises.</p>
+<p>EW in km/s</p>
+<p>Para configurar uma ou mais linhas:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span> <span class="o">=</span> <span class="n">Spec</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">lbc</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c">#significa que vetor wl eh vetor velocidades, e nao comprimento de </span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># onda.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">lbc</span> <span class="o">=</span> <span class="mf">6564.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb2</span> <span class="o">=</span> <span class="n">Spec</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb2</span><span class="o">.</span><span class="n">lbc</span> <span class="o">=</span> <span class="mf">4863.</span>
+</pre></div>
+</div>
+<p>Como usar (hard way):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span> <span class="o">=</span> <span class="n">Spec</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c">#read spec `flux` and `wl` for a given `lbc`</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">spdtb</span><span class="o">.</span><span class="n">EW</span><span class="p">,</span> <span class="n">spdtb</span><span class="o">.</span><span class="n">EC</span><span class="p">,</span> <span class="n">spdtb</span><span class="o">.</span><span class="n">VR</span><span class="p">,</span> <span class="n">spdtb</span><span class="o">.</span><span class="n">peaksep</span><span class="p">,</span> <span class="n">spdtb</span><span class="o">.</span><span class="n">depthcent</span><span class="p">,</span>\ 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">F0</span><span class="p">)</span> <span class="o">=</span> <span class="n">analline</span><span class="p">(</span><span class="n">wl</span><span class="p">,</span> <span class="n">flux</span><span class="p">,</span> <span class="n">lbc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">MJD</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="nb">file</span>
+</pre></div>
+</div>
+<p>And then:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="c">#to record it to the database:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">addspec</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Para carregar uma tabela anterior, faca:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span> <span class="o">=</span> <span class="n">Spec</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c">#(...) read new specs and then join with previous ones</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">spdtb</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">&#39;hdt/datafile.txt&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">metadata</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span> <span class="n">spdtb</span><span class="o">.</span><span class="n">metadata</span><span class="p">,</span> \
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s">&#39;hdt/metafile.txt&#39;</span><span class="p">)</span> <span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">updatecount</span><span class="p">()</span> <span class="c">#to update the counter</span>
+</pre></div>
+</div>
+<p>Ou simplesmente (nome de arquivos default):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">loaddata</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.addspec">
+<tt class="descname">addspec</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.addspec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.addspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Record the class parameters into the database</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the class parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.lastinfo">
+<tt class="descname">lastinfo</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.lastinfo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.lastinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the current class parameters (last spec)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.lastmeta">
+<tt class="descname">lastmeta</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.lastmeta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.lastmeta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the current class parameters (last spec)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.loaddata">
+<tt class="descname">loaddata</tt><big>(</big><em>datafile='/datafile.txt'</em>, <em>metafile='/metafile.txt'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.loaddata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.loaddata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to load a previous table
+Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span> <span class="o">=</span> <span class="n">Spec</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spdtb</span><span class="o">.</span><span class="n">loaddata</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.loadspec">
+<tt class="descname">loadspec</tt><big>(</big><em>file</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.loadspec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.loadspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a fits file (parameters <cite>wl</cite>, <cite>flux</cite>, <cite>MJD</cite>, <cite>dateobs</cite>,
+<cite>datareduc</cite> and <cite>file</cite>).</p>
+<p>Currently, only compatible for standard fits.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.plotspec">
+<tt class="descname">plotspec</tt><big>(</big><em>outname=''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.plotspec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.plotspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export current spec into a PNG file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the class parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pyhdust.spectools.Spec.savedata">
+<tt class="descname">savedata</tt><big>(</big><em>datafile='/datafile.txt'</em>, <em>metafile='/metafile.txt'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#Spec.savedata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.Spec.savedata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save current table</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.VREWcalc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">VREWcalc</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>vw=1000</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#VREWcalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.VREWcalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supoe que o fluxo jah estah normalizado, e vetores ordenad_os.</p>
+<p>Calcula o ew para os dois lados (azul/vermelho) da linha, ajustando
+a velocidade de repouso (TBD).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.VRcalc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">VRcalc</tt><big>(</big><em>vels</em>, <em>flux</em>, <em>vw=1000</em>, <em>gaussfit=False</em>, <em>ssize=0.05</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#VRcalc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.VRcalc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calcula o PICO para os dois lados (azul/vermelho) da linha, ajustando
+a velocidade de repouso (TBD).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.air2vac">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">air2vac</tt><big>(</big><em>wl</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#air2vac"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.air2vac" title="Permalink to this definition">¶</a></dt>
+<dd><p>The IAU standard for conversion from air to vacuum wavelengths is given
+in Morton (1991, ApJS, 77, 119). For vacuum wavelengths (VAC) in Angstroms,
+convert to air wavelength (AIR) via:
+AIR = VAC / (1.0 + 2.735182E-4 + 131.4182 / VAC^2 + 2.76249E8 / VAC^4 )</p>
+<p>Fitting the inverse curve:
+VAC = AIR / (1.0 - 2.73443407E-4 - 1.31275255E2 / AIR^2 - 2.75708212E8 / 
+AIR^4 )</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.analline">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">analline</tt><big>(</big><em>lbd</em>, <em>flux</em>, <em>lbdc</em>, <em>hwidth=1000</em>, <em>verb=True</em>, <em>gaussfit=False</em>, <em>doublegf=True</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#analline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.analline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the analysis of a line.</p>
+<p>Both lbd and flux need to be ordered (a normalization IS FORCED).
+lbd,lbdc must have the same unit, and width in km/s is required.
+The line will be cutted so that the total DeltaLambda will be 2*width</p>
+<p>if <cite>lbdc</cite> &lt;= 0, lbd array is assumed to be a velocity array (in km/s)!</p>
+<div class="line-block">
+<div class="line">EXAMPLE: Using sed2data. lbc = 0.6565 (halpha), obs = 1 (width==1000)</div>
+<div class="line-block">
+<div class="line">analline(lbd=sed2data[obs,:,2], flux=sed2data[obs,:,3], lbc=lbc)</div>
+</div>
+</div>
+<p>The EW is the equivalent width in km/s, 
+EC is the Emission over Continuum ratio, 
+VR ratio, 
+peaksep in km/s, 
+FWHM is the Full-Width at Half Maximum (emission as maximum)
+F0 is the depth of rest wavelength normalized to the continuum</p>
+<p>OUTPUT: EW, EC, VR, peaksep, FWHM, F0</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.averagespecs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">averagespecs</tt><big>(</big><em>speclist</em>, <em>n=999</em>, <em>path=''</em>, <em>objname='OBJECT'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#averagespecs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.averagespecs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average specs taken in the same MJD, in groups of approx. <cite>n</cite> 
+elements.</p>
+<p>OUTPUT: Files written.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.calcres_R">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">calcres_R</tt><big>(</big><em>hwidth=1350</em>, <em>nbins=108</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#calcres_R"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.calcres_R" title="Permalink to this definition">¶</a></dt>
+<dd><p>(h)Width in km/s.
+<em>WARNING</em>: <cite>width</cite> in HDUST input is only half.
+To HDUST effective R, multiple the input width by 2 he_re.</p>
+<p># R = lbd/Dlbd = _phc.c/Dv = _phc.c*nbins/width 
+# nbins = R*width/_phc.c</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.calcres_nbins">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">calcres_nbins</tt><big>(</big><em>R=12000</em>, <em>hwidth=1350</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#calcres_nbins"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.calcres_nbins" title="Permalink to this definition">¶</a></dt>
+<dd><p>(h)Width in km/s.
+<em>WARNING</em>: <cite>width</cite> in HDUST input is only half.
+To HDUST effective R, multiple the input width by 2 he_re.</p>
+<p># R = lbd/Dlbd = _phc.c/Dv = _phc.c*nbins/width 
+# nbins = R*width/_phc.c</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.cardelli">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">cardelli</tt><big>(</big><em>lbd</em>, <em>flux</em>, <em>ebv=0.0</em>, <em>Rv=3.1</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#cardelli"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.cardelli" title="Permalink to this definition">¶</a></dt>
+<dd><p>Milky Way Extinction law from Cardelli et al. 1989</p>
+<p><cite>lbd</cite> must be in microns.</p>
+<p>OUTPUT: Corrected flux.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.check_dtobs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">check_dtobs</tt><big>(</big><em>dtobs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#check_dtobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.check_dtobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the dtobs fits the float format. Required for MJD calc.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.checkshiftfits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">checkshiftfits</tt><big>(</big><em>fitslist</em>, <em>lbc=6562.8</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#checkshiftfits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.checkshiftfits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do <em>shiftfits</em> sistematically</p>
+<p>INPUT: list of files</p>
+<p>OUTPUT: fits files header updated with WLSHIFT.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.checksubdirs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">checksubdirs</tt><big>(</big><em>path</em>, <em>star</em>, <em>lbc</em>, <em>hwidth=1000</em>, <em>showleg=True</em>, <em>plots=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#checksubdirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.checksubdirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Faz o que tem que fazer.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.convgaussFunc">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">convgaussFunc</tt><big>(</big><em>wl</em>, <em>flx</em>, <em>lbc</em>, <em>hwidth=1000.0</em>, <em>convgauss=0.0</em>, <em>frac=0.0</em>, <em>ssize=0.05</em>, <em>wlout=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#convgaussFunc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.convgaussFunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do a Gaussian convolution of a given Line Profile with a Gaussian.</p>
+<p><cite>wl</cite>, <cite>flx</cite>, <cite>lbc</cite>: wavelenght and flux of the spectrum containing the 
+line, and its value.</p>
+<p><cite>hwidth</cite>, <cite>ssize</cite>: width to be keeped around the line (km/s), and the 
+region (in percentage) where the continuum level will be evaluted around 
+the selected region.</p>
+<p><cite>convgauss</cite>: if bigger then 0., do the convolution. Its values is the sigma 
+of the gaussian conv. profile (in km/s).</p>
+<p><cite>frac</cite>: controls the intensity of the convolution. <a href="#id1"><span class="problematic" id="id2">`</span></a>frac`=0 means pure 
+profile output and <a href="#id3"><span class="problematic" id="id4">`</span></a>frac`=1 a pure gaussian output with the same EW value.</p>
+<p><cite>wlout</cite>: returns a wavelength array instead of a velocity array (standar)</p>
+<p>OUTPUT: vel/wl, flux (arrays)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.cutpastrefspec">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">cutpastrefspec</tt><big>(</big><em>ivl</em>, <em>iflx</em>, <em>irefvl</em>, <em>ireflx</em>, <em>hwidth</em>, <em>ssize=0.05</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#cutpastrefspec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.cutpastrefspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cut and paste a given line profile into a reference line profile.</p>
+<p>Both profiles (with any resolution) must be normalized and given in vel.</p>
+<p>It was designed to solve the problem of Achernar&#8217;s Halpha line wings 
+problem and it works like this: given a reference profile (<cite>refvl</cite>, 
+<cite>reflx</cite>), the selected profile will be cutted at the <cite>hwidth</cite> position 
+and them pasted in the corresponding position (and intensity level) of 
+the reference spectrum.</p>
+<p>OUTPUT: refvl, reflx</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.diffPlotLineFits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">diffPlotLineFits</tt><big>(</big><em>specs, lbc=0.6564606, fmt=['png'], xlim=None, rvel=None, rflx=None, hwidth=1500.0, addsuf='', cmapn='jet', dlim=None, outpath='', ylim=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#diffPlotLineFits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.diffPlotLineFits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate overplot of DIFFERENCE spec. line from a FITS files list.
+The observations will be linearly interpolated
+with the reference spec. If none is given as reference, 
+then it assumes the first of the list.</p>
+<p>It is recommend to run first (rvel, rflx) =  lineProf(rvel, rflx,
+lbc=lbc, hwidth=hwidth).</p>
+<p>If <cite>cmap</cite> is None or empty, the phc.colors vector is read.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.diffPlotLineObs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">diffPlotLineObs</tt><big>(</big><em>fullseds, obsers=[0], lbc=0.6564606, fmt=['png'], rvel=None, rflx=None, hwidth=1000.0, addsuf='', outpath=''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#diffPlotLineObs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.diffPlotLineObs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate overplot of DIFFERENCE spec. line from a HDUST OBSERVERS list.
+The model will be linearly interpolated
+with the reference spec. If none is given as reference, 
+then it assumes the first observer of the list.</p>
+<p>It is recommend to run first (rvel, rflx) =  lineProf(rvel, rflx,
+lbc=lbc, hwidth=hwidth).</p>
+<p>Observers config. must be the same between models in
+<cite>fullseds</cite> list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.diffPlotLineSeries">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">diffPlotLineSeries</tt><big>(</big><em>fullseds, obsers=[0], lbc=0.6564606, fmt=['png'], rvel=None, rflx=None, hwidth=1000.0, outpath='', addsuf=''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#diffPlotLineSeries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.diffPlotLineSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate overplot of DIFFERENCE spec. line from a HDUST mod list.
+The model will be linearly interpolated
+with the reference spec. If none is given as reference, 
+then it assumes the first of the list.</p>
+<p>It is recommend to run first (rvel, rflx) =  lineProf(rvel, rflx,
+lbc=lbc, hwidth=hwidth).</p>
+<p>Observers config. must be the same between models in
+<cite>fullseds</cite> list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.diffplotsubdirs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">diffplotsubdirs</tt><big>(</big><em>path</em>, <em>star</em>, <em>limits=(6540</em>, <em>6600)</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#diffplotsubdirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.diffplotsubdirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o plot de espectros da estrela <cite>star</cite> dentre do diretorio <cite>path</cite>.
+Atualmente, faz o plot entre os valores <cite>limits</cite> (Angstroms).</p>
+<p>Gera os arquivos <cite>path/star/star.log</cite> e <cite>path/star/star_specs_dif.png</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.din_spec">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">din_spec</tt><big>(</big><em>metadata, lbc=6562.86, hwidth=1500.0, res=50, interv=None, fmt=['png'], outname='din_spec', pxsize=8, vmin=None, vmax=None, avg=True, cmapn='inferno', refspec=None, figsize=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#din_spec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.din_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot dynamical specs. from metadata table of the Spec class.</p>
+<p><cite>interv</cite> controls the interval between specs (in days).</p>
+<p><cite>res</cite> is the resolution in km/s.</p>
+<p>By default (<a href="#id5"><span class="problematic" id="id6">`</span></a>avg`=True), the average of spectra in that bin is show. If 
+<a href="#id7"><span class="problematic" id="id8">`</span></a>avg`=False, the nearest bin-centered (in time) spectra will be shown.</p>
+<p>if <cite>refspec</cite> is not None, them it will be a difference spectra.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.extractfromsplot">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">extractfromsplot</tt><big>(</big><em>file</em>, <em>splot</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#extractfromsplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.extractfromsplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ce = center; Co = core
+#LcCe, LcCo, lcGW, lcEW, lvCe, lcCo, lvEW, lrCe, LrCo, lrEW</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.fitzpatrick">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">fitzpatrick</tt><big>(</big><em>wave</em>, <em>flux</em>, <em>ebv</em>, <em>Rv=3.1</em>, <em>LMC2=False</em>, <em>AVGLMC=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#fitzpatrick"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.fitzpatrick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deredden a flux vector using the Fitzpatrick (1999) parameterization</p>
+<dl class="docutils">
+<dt>wave <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
+<dd>Wavelength in Angstrom</dd>
+<dt>flux <span class="classifier-delimiter">:</span> <span class="classifier">array</span></dt>
+<dd>Calibrated flux vector, same number of elements as wave.</dd>
+<dt>ebv <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd>Color excess E(B-V). If a positive ebv is supplied,
+then fluxes will be dereddened rather than reddened.
+The default is 3.1.</dd>
+<dt>AVGLMC <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd>If True, then the default fit parameters c1,c2,c3,c4,gamma,x0 
+are set to the average values determined for reddening in the 
+general Large Magellanic Cloud (LMC) field by
+Misselt et al. (1999, ApJ, 515, 128). The default is
+False.</dd>
+<dt>LMC2 <span class="classifier-delimiter">:</span> <span class="classifier">boolean</span></dt>
+<dd>If True, the fit parameters are set to the values determined
+for the LMC2 field (including 30 Dor) by Misselt et al.
+Note that neither <cite>AVGLMC</cite> nor <cite>LMC2</cite> will alter the default value 
+of Rv, which is poorly known for the LMC.</dd>
+</dl>
+<dl class="docutils">
+<dt>new_flux <span class="classifier-delimiter">:</span> <span class="classifier">array </span></dt>
+<dd>Dereddened flux vector, same units and number of elements
+as input flux.</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This function was ported from the IDL Astronomy User&#8217;s Library.</p>
+<p>The following five parameters allow the user to customize
+the adopted extinction curve.    For example, see Clayton et al. (2003,
+ApJ, 588, 871) for examples of these parameters in different 
+interstellar environments.</p>
+<p>x0 - Centroid of 2200 A bump in microns (default = 4.596)
+gamma - Width of 2200 A bump in microns (default  =0.99)
+c3 - Strength of the 2200 A bump (default = 3.23)
+c4 - FUV curvature (default = 0.41)
+c2 - Slope of the linear UV extinction component</p>
+<blockquote>
+<div>(default = -0.824 + 4.717/R)</div></blockquote>
+<dl class="last docutils">
+<dt>c1 - Intercept of the linear UV extinction component </dt>
+<dd>(default = 2.030 - 3.007*c2</dd>
+</dl>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.hydrogenlinewl">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">hydrogenlinewl</tt><big>(</big><em>ni</em>, <em>nf</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#hydrogenlinewl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.hydrogenlinewl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate H line transitions wavelengths in meters for VACUUM</p>
+<p>Rydberg constant <cite>R</cite> was manually adjusted to fit Halpha and Hbeta lines.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.incrPlotLineFits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">incrPlotLineFits</tt><big>(</big><em>specs, lbc=0.6564606, fmt=['png'], hwidth=1500.0, yzero=False, addsuf='', dlim=None, cmapn='jet', xlim=None, outpath='', ylim=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#incrPlotLineFits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.incrPlotLineFits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate incremented spec. line from FITS files list.
+The increment is 0.1 for each file in sequence.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.incrPlotLineSeries">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">incrPlotLineSeries</tt><big>(</big><em>fullseds, obsers=[0], lbc=0.6564606, fmt=['png'], addsuf='', outpath=''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#incrPlotLineSeries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.incrPlotLineSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate incremented spec. line from a HDUST mod list, separated by
+observers. The increment is 0.1 for each file in fullseds sequence.</p>
+<p>Observers config. must be the same between models in <cite>fullseds</cite> list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.kurlog">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">kurlog</tt><big>(</big><em>file=None</em>, <em>output=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#kurlog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.kurlog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a list of teff and logg present in a Kurucz file.</p>
+<p>If output is not specified, it is saved as <a href="#id9"><span class="problematic" id="id10">`</span></a>file`+.log</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.kuruczflux">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">kuruczflux</tt><big>(</big><em>teff</em>, <em>logg</em>, <em>range=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#kuruczflux"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.kuruczflux" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return fluxes from a Kurucz model.</p>
+<p>Fluxes are in ergs/cm**2/s/hz/ster and wavelength in nm (range must be in
+nm).</p>
+<p>OUTPUT: wv, flux, info</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.lbdc2range">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">lbdc2range</tt><big>(</big><em>lbdc</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#lbdc2range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.lbdc2range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function doc</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.lineProf">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">lineProf</tt><big>(</big><em>x</em>, <em>flx</em>, <em>lbc</em>, <em>flxerr=array(</em>, <span class="optional">[</span><span class="optional">]</span><em>dtype=float64)</em>, <em>hwidth=1000.0</em>, <em>ssize=0.05</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#lineProf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.lineProf" title="Permalink to this definition">¶</a></dt>
+<dd><p>lineProf() - retorna um array (flx) normalizado e um array x em 
+VELOCIDADES. <cite>lbc</cite> deve fornecido em mesma unidade de x para conversão 
+lambda -&gt; vel. Se vetor x jah esta em vel., usar funcao linfit().</p>
+<p>x eh importante, pois y pode ser nao igualmente amostrado.
+x e y devem estar em ordem crescente.</p>
+<p>ssize = % do tamanho de y; numero de pontos usados nas extremidades
+para a media do contínuo. &#8216;ssize&#8217; de .5 à 0 (exclusive).</p>
+<p>OUTPUT: vel (array), flx (array)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.linfit">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">linfit</tt><big>(</big><em>x</em>, <em>y</em>, <em>ssize=0.05</em>, <em>yerr=array(</em>, <span class="optional">[</span><span class="optional">]</span><em>dtype=float64)</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#linfit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.linfit" title="Permalink to this definition">¶</a></dt>
+<dd><p>linfit() - retorna um array (y) normalizado, em posicoes de x</p>
+<p>x eh importante, pois y pode ser nao igualmente amostrado.
+x e y devem estar em ordem crescente.</p>
+<p>ssize = % do tamanho de y; numero de pontos usados nas extremidades
+para a media do contínuo. &#8216;ssize&#8217; de .5 à 0 (exclusive).</p>
+<p>OUTPUT: y, yerr (if given)</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c">#Example:</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pyhdust.phc</span> <span class="kn">as</span> <span class="nn">phc</span>
+<span class="kn">import</span> <span class="nn">pyhdust.spectools</span> <span class="kn">as</span> <span class="nn">spt</span>
+
+<span class="n">wv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">6500</span><span class="p">,</span> <span class="mi">6600</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">flx</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">101</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">100.</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">phc</span><span class="o">.</span><span class="n">normgauss</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">wv</span><span class="p">,</span> 
+<span class="n">xc</span><span class="o">=</span><span class="mf">6562.79</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wv</span><span class="p">,</span> <span class="n">flx</span><span class="p">)</span>
+<span class="n">normflx</span> <span class="o">=</span> <span class="n">linfit</span><span class="p">(</span><span class="n">wv</span><span class="p">,</span> <span class="n">flx</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">wv</span><span class="p">,</span> <span class="n">normflx</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s">&#39;--&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">r&#39;$\lambda$ ($\AA$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Flux (arb. unit)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/spt_linfit.png"><img alt="_images/spt_linfit.png" class="align-center" src="_images/spt_linfit.png" style="width: 500px;" /></a>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.load_specs_fits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">load_specs_fits</tt><big>(</big><em>speclist</em>, <em>ref</em>, <em>lbc</em>, <em>lncore=None</em>, <em>hwidth=None</em>, <em>gaussfit=False</em>, <em>plotcut=0</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#load_specs_fits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.load_specs_fits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a list of specs and do the <em>line core cut &amp; paste</em></p>
+<p><cite>lncore</cite>: cut and paste hwidth of the line center. It can be None, and 
+must be &lt; hwidth. If hwidth is None, it is assumed to be 1000 km/s.</p>
+<p><cite>speclist</cite> : [ [&#8216;path+file.fits&#8217;, &#8216;INSTRUMENT&#8217;], ... ]</p>
+<p><cite>ref</cite>: reference spectra to do the cut &amp; paste</p>
+<p><cite>plotcut</cite>: if plotcut &gt; 0, save the cutted spectra in steps of this 
+variable.</p>
+<p>OUTPUT: dtb_obs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.loadfits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">loadfits</tt><big>(</big><em>fitsfile</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#loadfits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.loadfits" title="Permalink to this definition">¶</a></dt>
+<dd><p>load FITS spec</p>
+<p>Out: wl, flux, MJD, dateobs, datereduc, fitsfile</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.max_func_pts">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">max_func_pts</tt><big>(</big><em>x</em>, <em>y</em>, <em>ws=0.01</em>, <em>avgbox=3</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#max_func_pts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.max_func_pts" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>ws</cite> window size where the maximum will be evaluated. Example: <cite>ws=0.02</cite>
+corresponds to 2% of the length of the input.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.normalize_range">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">normalize_range</tt><big>(</big><em>lb</em>, <em>spec</em>, <em>a</em>, <em>b</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#normalize_range"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.normalize_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is obsolete and must be removed.</p>
+<p>Still here for compatibility issues.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.normalize_spec">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">normalize_spec</tt><big>(</big><em>lb</em>, <em>flx</em>, <em>q=2</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#normalize_spec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.normalize_spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize a spectrum using the non-parametric regression algorithm of
+Local Polynomial Kernel (order=``q``).</p>
+<p>For details, see <a class="reference external" href="http://pythonhosted.org/PyQt-Fit/NonParam_tut.html">http://pythonhosted.org/PyQt-Fit/NonParam_tut.html</a> .</p>
+<p>INPUT: lb, flx</p>
+<p>OUTPUT: norm_flx</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.overPlotLineFits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">overPlotLineFits</tt><big>(</big><em>specs, lbc=0.6564606, fmt=['png'], hwidth=1500.0, ylim=None, yzero=False, addsuf='', dlim=None, cmapn='jet', xlim=None, outpath=''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#overPlotLineFits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.overPlotLineFits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate overplot spec. line from a FITS file list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.overPlotLineSeries">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">overPlotLineSeries</tt><big>(</big><em>fullseds, obsers=[0], lbc=0.6564606, fmt=['png'], convgauss=0.0, frac=0.0, addsuf='', labels=None, hwidth=1000.0, ssize=0.05, outpath='', ylim=[0.7, 2.2], cmapn='gnuplot'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#overPlotLineSeries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.overPlotLineSeries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate overplot spec. line from a HDUST mod list, separated by
+observers.</p>
+<p>Observers config. must be the same between models in <cite>fullseds</cite> list.</p>
+<p>If <cite>convgauss</cite> &gt; 0, do a gaussian convolution.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.overplotsubdirs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">overplotsubdirs</tt><big>(</big><em>path</em>, <em>star</em>, <em>limits=(6540</em>, <em>6600)</em>, <em>showleg=True</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#overplotsubdirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.overplotsubdirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o plot de espectros da estrela <cite>star</cite> dentre do diretorio <cite>path</cite>.
+Atualmente, faz o plot entre os valores <cite>limits</cite> (Angstroms).</p>
+<p>Gera os arquivos <cite>path/star/star.log</cite> e <cite>path/star/star_specs.png</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.overplotsubdirs2">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">overplotsubdirs2</tt><big>(</big><em>path</em>, <em>star</em>, <em>limits=(6540</em>, <em>6600)</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#overplotsubdirs2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.overplotsubdirs2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o plot de espectros da estrela <cite>star</cite> dentre do diretorio <cite>path</cite>.
+Atualmente, faz o plot entre os valores <cite>limits</cite> (Angstroms).</p>
+<p>Ha&#8217; um criterio de escolha de espectros aqui (rudimentar).</p>
+<p>Gera os arquivos <cite>path/star/star.log</cite> e <cite>path/star/star_specs2.png</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.plotAll">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">plotAll</tt><big>(</big><em>files, obs=None, boxes=['s'], range=[[0, -1]], ncol=None, fmt=['png'], out=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#plotAll"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.plotAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>PlotAll routine for fullsed files.</p>
+<div class="line-block">
+<div class="line"><cite>files</cite> and <cite>obs</cite> are lists that define files and observers. </div>
+<div class="line"><br /></div>
+<div class="line">The number of boxes is defined by the <cite>boxes</cite> list.</div>
+<div class="line">Valid boxes are: &#8216;s&#8217; for SED, &#8216;p&#8217; for polarimetry, &#8216;l&#8217; for line.</div>
+<div class="line"><br /></div>
+<div class="line"><cite>Range</cite> is a list of lists and defines the interval for &#8216;s&#8217; and &#8216;p&#8217;</div>
+<div class="line">(in microns). For automatic selection, leave [0,-1] for the respective </div>
+<div class="line">box. &#8216;l&#8217; option must be [hwidht, lbd0] (mandatory).</div>
+<div class="line"><br /></div>
+<div class="line"><cite>ncol</cite> fix the number of columns of the output file.</div>
+</div>
+<p>The standard output name will be <cite>date_time.png</cite>, but it can be change
+with the variables <cite>out</cite> and <cite>fmt</cite>.</p>
+<p>TDB: normalize line, yrange and (x,y) log_scale !</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.plotSpecData">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">plotSpecData</tt><big>(</big><em>dtb, limits=None, civcfg=[1, 'm', 2013, 1, 1], fmt=['png'], ident=None, lims=None, setylim=False, addsuf=''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#plotSpecData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.plotSpecData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot spec class database <cite>vs</cite> MJD e civil date</p>
+<p>Plot originally done to London, Canada, 2014.</p>
+<p>INPUT: civcfg = [step, &#8216;d&#8217;/&#8217;m&#8217;/&#8217;y&#8217;, starting year, month, day]</p>
+<p><cite>lims</cite> sequence: &#8216;EW&#8217;, &#8216;E/C&#8217;, &#8216;V/R&#8217;, &#8216;Pk. sep. (km/s)&#8217;, &#8216;E-F0&#8217;, &#8216;F0&#8217;</p>
+<p><cite>lims</cite> = [[-2,4+2,2],[1.,1.4+.1,0.1],[.6,1.4+.2,.2],[0,400+100,100],
+[.30,.45+.05,.05],[0.6,1.20+.2,.2]]</p>
+<p>If <cite>lims</cite> is defined, <cite>setylim</cite> can be set to True.</p>
+<p>OUTPUT: Written image.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.plot_line_str">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">plot_line_str</tt><big>(</big><em>fig</em>, <em>ax</em>, <em>lbc=''</em>, <em>ylabel=''</em>, <em>fs=14</em>, <em>xlim=None</em>, <em>dlim=None</em>, <em>cmapn='gnuplot'</em>, <em>lfs=10</em>, <em>ylim=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#plot_line_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.plot_line_str" title="Permalink to this definition">¶</a></dt>
+<dd><p>Line plotting structure</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.plot_spec_info">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">plot_spec_info</tt><big>(</big><em>speclist</em>, <em>dtb_obs</em>, <em>mAEW=False</em>, <em>mgray=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#plot_spec_info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.plot_spec_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard plot of the Spec class (EW, E/C, V/R, peak-sep., FWHM, F0)</p>
+<p>OUTPUT: figure (fig pyplot)</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.refplotsubdirs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">refplotsubdirs</tt><big>(</big><em>path</em>, <em>star</em>, <em>limits=(6540</em>, <em>6600)</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#refplotsubdirs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.refplotsubdirs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Realiza o plot de espectros da estrela <cite>star</cite> dentre do diretorio <cite>path</cite>.
+Atualmente, faz o plot entre os valores <cite>limits</cite> (Angstroms).</p>
+<p>Gera os arquivos <cite>path/star/star.log</cite> e 
+<cite>path/star/star_specs_REFERENCIA.png</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.renorm">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">renorm</tt><big>(</big><em>vl</em>, <em>y</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#renorm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.renorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renormalize <tt class="docutils literal"><span class="pre">y</span></tt> so that the equivalent width is preserved when the 
+continuum is shifted to 1.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.shiftfits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">shiftfits</tt><big>(</big><em>fitsfile</em>, <em>newsh=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#shiftfits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.shiftfits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update FITS spec header for a given shift value.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.sort_specs">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">sort_specs</tt><big>(</big><em>specs</em>, <em>path=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#sort_specs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.sort_specs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specs in an (N,2) array, where specs[:,0] are the files paths and 
+specs[:,1] the instrument name.</p>
+<p>Return ordered_specs</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.spec_time">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">spec_time</tt><big>(</big><em>speclist, lbc=6562.8, fmt=['png', 'pdf'], outname=None, cmapn='inferno', hwidth=1000.0, outpath='', figsize=(5, 15), ysh=0.01</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#spec_time"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.spec_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot specs over time as suggested by Rivi</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.splitKurucz">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">splitKurucz</tt><big>(</big><em>file</em>, <em>path=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#splitKurucz"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.splitKurucz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split atmospheric Kurucz file (e.g., &#8216;ap00k0.dat&#8217;) into individual models.</p>
+<p>INPUT: file, path (strings)</p>
+<p>OUTPUT: <a href="#id11"><span class="problematic" id="id12">*</span></a>files written</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.vac2air">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">vac2air</tt><big>(</big><em>wl</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#vac2air"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.vac2air" title="Permalink to this definition">¶</a></dt>
+<dd><p>The IAU standard for conversion from air to vacuum wavelengths is given
+in Morton (1991, ApJS, 77, 119). For vacuum wavelengths (VAC) in Angstroms,
+convert to air wavelength (AIR) via:
+AIR = VAC / (1.0 + 2.735182E-4 + 131.4182 / VAC^2 + 2.76249E8 / VAC^4 )</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.vel2wl">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">vel2wl</tt><big>(</big><em>vel</em>, <em>lbc</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#vel2wl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.vel2wl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vel. to wavelength. Vel must be in km/s and output is in <cite>lbc</cite> units.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.wl2vel">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">wl2vel</tt><big>(</big><em>wl</em>, <em>lbc</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#wl2vel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.wl2vel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wavelength to vel., in km/s. <cite>wl</cite> and <cite>lbc</cite> units must be the same.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.spectools.writeFits">
+<tt class="descclassname">pyhdust.spectools.</tt><tt class="descname">writeFits</tt><big>(</big><em>flx</em>, <em>lbd</em>, <em>extrahead=None</em>, <em>savename=None</em>, <em>quiet=False</em>, <em>path=None</em>, <em>lbdc=None</em>, <em>externhd=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/spectools.html#writeFits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.spectools.writeFits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a 1D spectra FITS.</p>
+<div class="line-block">
+<div class="line">INPUT: flux array, lbd array, extrahead flag+info, save name.</div>
+<div class="line">- lbd array: if len(lbd)==2: lbd = [CRVAL1, CDELT1]</div>
+<div class="line-block">
+<div class="line-block">
+<div class="line">else: CDELT1 = (lbd[-1]-lbd[0])/(len(lbd)-1)</div>
+<div class="line-block">
+<div class="line">CRVAL1 = lbd[0]</div>
+</div>
+</div>
+<div class="line">WARNING: lbd must be in ANGSTROMS (FITS default). It can also be </div>
+<div class="line">velocities. In this case, it must be in km/s and lbdc is given in </div>
+</div>
+<div class="line">ANGSTROM.</div>
+<div class="line">- extrahead: matrix (n,2). Example: [[&#8216;OBJECT&#8217;,&#8217;Achernar&#8217;], [&#8216;COMMENT&#8217;,</div>
+<div class="line">&#8216;value&#8217;]]</div>
+</div>
+<p><cite>externhd</cite> = copy the header from an external file.</p>
+<p>OUTPUT: write FITS file.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="singscat.html"
+                        title="previous chapter"><strong>singscat</strong>: module of single scattering tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="stats.html"
+                        title="next chapter"><strong>stats</strong>: module of statistical functions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/spectools.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats: module of statistical functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="singscat.html" title="singscat: module of single scattering tools"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

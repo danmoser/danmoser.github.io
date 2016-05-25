@@ -1,0 +1,168 @@
+201506
+=======
+
+150630
+-----------
+- Bruno sent the IUE analyzes: ok for blocks 1 and 2; block 3 (with huge disk) with uniform determinations.
+- Chapter 3 ok. Chapter 4 almost there.
+
+150629
+---------
+- *DELIVER CHAPTER 5 and earlier corrections* Failed
+- UFU Inscription. CANCELLED
+- Parking Isabelle contact = got it!
+- IUE data + Bruno
+
+150627-28
+------------
+- No work. Stavros.
+- Parking Isabelle contact. No answer.
+
+150626
+---------
+- *DELIVER CHAPTERS 3 and 4* Failed
+- (Thesis. No detailed info)
+- Car Controls (parking+alarm)
+
+150622-25
+----------
+- (Thesis. No detailed info)
+
+150621
+----------
+- Answer to Catalina.
+- (Thesis. No detailed info)
+
+150620
+----------
+- No work.
+
+150619
+----------
+- DELIVERED CHAPTER 1 
+- Nelson CCSL talk.
+- Took NB from repair.
+- Helped Artur.
+
+150618
+----------
+- Buy Primeiramao = Ok.
+- Defense Committee 
+
+150617
+----------
+- Notebook repair, R$ 270 schedule to Friday.
+- BeAtlas = finished H+Br13+SED+Ha+Hb+UV+K+Brg !!
+- Thesis topics work (Introduction, yet) !
+- Fabricio's money and phone.
+
+150616
+----------
+- BeAtlas = accidentally remove *.map* files!
+    - Backup failed: more than 1.5 TB, only the preliminary *.map* files
+- Chat Pedro.
+- Thesis topics work (Introduction) !
+- Notebook repair.
+
+150615
+---------
+- Thesis topics work (Introduction).
+- BeAtlas Photospheric UV done!
+    - Missing SED+Ha+Hb+H+Br13+K+Brg for Xc!=0.3 = Submitted!
+- Catalina e-mail.
+- Projeto André+Teló.
+- Publicação Primeira-mão = OK.
+- BeAtlas backup = started
+
+150614
+---------
+- Thesis topics work (small).
+- M Borges EW fit.
+
+150613
+---------
+- No work (@Sandro+Andréia)
+
+150612
+------------
+- Payment and post-office inscription to UDESC.
+- UDESC studies topics definition.
+- Thesis topics work (small).
+- Earlier exit to the Movies (Tata).
+
+150611
+------------
+- Aeri's Comparison Interferometry (polar box, rotated polar, multiple models).
+- Alex meeting.
+
+150610
+----------
+- E-mail Armando.
+    - Banca/rapporteur; Sufixo; Férias até 25/julho.
+- Deadlines definitions.
+- Thesis skeleton.
+- Group meeting.
+- Aeri's Comparison Interferometry (1 model = ok).
+
+150609
+--------
+- BeAtlas Photospheric UV (+all till now) done!
+- Fullsed delivered to Bruno.
+- Problem: missing other Xc rather than 0.3.
+- QU plot for short term variations.
+- UDESC tendering.
+- P1 High school course.
+- Alpha + t0 fitting. Done!
+- Organized Aeri.
+- Write Armando.
+    - Signature ready, name @USP, AMBER, work on data, draft, tender.
+- Ordered VGA card.
+
+150608
+--------
+- Check BeAtlas UV photospheric models.
+- Aeri's Dyn. specs FEROS = complete.
+- Check of bgq access procedure with Kadowaki.
+- (Try to) Fix desktop computer.
+- Mohammad's help with cluster submission.
+
+150606-07
+----------
+No work.
+
+150605
+---------
+- Submitted all BeAtlas models + UV, Brg and K.
+- QU plots
+- Aeri's Dyn. specs FEROS = start
+
+150604
+----------
+- Working in the Holiday: until 16h00 to reinstall it.
+- Submitted Photospheric models + UV, Brg and K.
+
+150603
+--------
+- Meeting with Alex, Kelly and Elaine.
+- Finishing MultiEvo Plot.
+- Group meeting: Preparing recent results and presentation
+- PC CRASHed!! Reinstalled Rimulo's one...
+
+150602
+--------
+- Pol. color issue (now with error bars).
+- Pol.V with error bars.
+- Merge poltools.py from Bednarski.
+- Mais M Borges.
+- Specs. cut+paste.
+- Short discussion with Bruno about E(B-V) minimization.
+
+150601
+--------
+- End of BeAtlas SED+Ha+Hb first run. Re-submitted next run.
+- [Astro15 comments about EP2 and exam EP3]
+- Review of Tiago's code (M. Borges).
+- Talks @ GAi (Upload Julio e Reinaldo, +Walter)
+- Comentários ata Beacon Website 29/05
+- Aeri: EC, VR e Pk.separation all now with gaussian fit.
+

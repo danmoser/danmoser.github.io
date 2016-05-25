@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyhdust.releases &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../../index.html" />
+    <link rel="up" title="pyhdust" href="../pyhdust.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" accesskey="U">pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyhdust.releases</h1><div class="highlight"><pre>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;PyHdust auxiliary module: PyHdust releases control.</span>
+
+<span class="sd">History</span>
+<span class="sd">============</span>
+<span class="sd">..</span>
+
+<span class="sd">v0.993 @ 2016-04-30</span>
+<span class="sd">----------------------</span>
+<span class="sd">- New inp.makeCSGrid_bistabWind1Dust()</span>
+
+<span class="sd">v.0970 @ 2016-01-xx</span>
+<span class="sd">-----------------------</span>
+<span class="sd">- New README.md</span>
+<span class="sd">- phc.cycles (new)</span>
+<span class="sd">- roadmap.TODO (new)</span>
+<span class="sd">- hdt.plot_obs (new)</span>
+<span class="sd">- bcd (new module)</span>
+
+<span class="sd">v0.967 @ 2015-12-30</span>
+<span class="sd">----------------------</span>
+<span class="sd">- PEP8 Standardization</span>
+<span class="sd">- intt.I: Vieira+2015 models</span>
+
+<span class="sd">v0.966 @ 2015-12-16</span>
+<span class="sd">----------------------</span>
+<span class="sd">- Correction on setup.py</span>
+
+<span class="sd">v0.965 @ 2015-12-16</span>
+<span class="sd">----------------------</span>
+<span class="sd">- hdt.mergesed2: SED was the first because, if present, the code will check if </span>
+<span class="sd">    other bands parameters are the same (i.e., observers, Rstar, Rwind).</span>
+<span class="sd">- hdt.mergesed2: The criteria I elected for distinguishing between broad-band </span>
+<span class="sd">    and line (Sobolev 0/1) is the presence of &quot;_SEI&quot; extension in the filename, </span>
+<span class="sd">    assumed that the line rest wavelength is the BAND CENTER WAVELENGTH. There </span>
+<span class="sd">    is an option to the user manually put it.</span>
+<span class="sd">- hdt.mergesed2: A new output format of the numbers was done.</span>
+<span class="sd">- inp.makeSourceGrid: Function created as discussed</span>
+<span class="sd">- inp.makeDiskGrid: Define convSig2Rho=True, then all the values of sig0vals </span>
+<span class="sd">will be considered as rho0 values.</span>
+
+<span class="sd">v0.964 @ 2015-09-15</span>
+<span class="sd">----------------------</span>
+<span class="sd">- hdrpil module added</span>
+<span class="sd">- readdust function implemented</span>
+<span class="sd">- Other mirror changes</span>
+
+<span class="sd">v0.956 @ 2015-05-08</span>
+<span class="sd">----------------------</span>
+<span class="sd">- Contributions from Bednarski to poltools+fieldstars</span>
+<span class="sd">- Corrections to work on Windows (binary files)</span>
+<span class="sd">- Triangle module added</span>
+
+<span class="sd">v0.955 @ 2015-05-15</span>
+<span class="sd">----------------------</span>
+<span class="sd">- spt.fitzpatrick included</span>
+<span class="sd">- intt.img2fits and intt.data2fitscube rotation correction</span>
+<span class="sd">- Documentation of poltools.py (Portuguese)</span>
+<span class="sd">- hdt.readSingleBe improved</span>
+<span class="sd">- inp.makeDiskGrid with SingleBe option</span>
+<span class="sd">- intt.img2fits debugged</span>
+<span class="sd">- inp.makeInpJob BlueGene support added</span>
+
+<span class="sd">v0.954 @ 2015-05-08</span>
+<span class="sd">----------------------</span>
+<span class="sd">- releases.py do automatically the docs&#39; rsync</span>
+<span class="sd">- hdt.plottemp improved</span>
+<span class="sd">- General: &quot;== False&quot; replaced by &quot;not&quot;</span>
+<span class="sd">- spt.*Plot* corrections</span>
+<span class="sd">- spt.kuruczflux correction</span>
+
+<span class="sd">v0.953 @ 2015-05-01</span>
+<span class="sd">----------------------</span>
+<span class="sd">- phc.bindata, now yerr is an optional array</span>
+<span class="sd">- spt,dtb improvements save/load Class</span>
+<span class="sd">- spt.shiftfits improved</span>
+<span class="sd">- spt.plotSpecData improved</span>
+<span class="sd">- spt.cardelli included</span>
+
+<span class="sd">v0.952b @ 2015-04-28</span>
+<span class="sd">---------------------</span>
+<span class="sd">- Create of releases.py</span>
+<span class="sd">-   Automatic update of setup.py and documentation files.</span>
+<span class="sd">- Defined flux units at SED2 file manipulation</span>
+<span class="sd">- Implemented Kurucz flux unity correction</span>
+<span class="sd">- Removed *ra2deg* variable</span>
+<span class="sd">- Updated phc.rot_stars (Beta(W))</span>
+<span class="sd">- Created XDR BeAtlas</span>
+
+<span class="sd">Previously</span>
+<span class="sd">------------</span>
+<span class="sd">- Added options `force` and `chknames` to genStdLog and genObjLog</span>
+
+
+<span class="sd">:license: GNU GPL v3.0 https://github.com/danmoser/pyhdust/blob/master/LICENSE</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&quot;Daniel Moser&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&quot;dmfaes@gmail.com&quot;</span>
+
+
+<div class="viewcode-block" id="listFunctions"><a class="viewcode-back" href="../../releases.html#pyhdust.releases.listFunctions">[docs]</a><span class="k">def</span> <span class="nf">listFunctions</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; List all *PyHdust* functions. &quot;&quot;&quot;</span> 
+    <span class="kn">import</span> <span class="nn">pyhdust</span> <span class="kn">as</span> <span class="nn">hdt</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">hdt</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.beatlas</span> <span class="kn">as</span> <span class="nn">bat</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.beatlas&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">bat</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.input</span> <span class="kn">as</span> <span class="nn">inp</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.input&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.interftools</span> <span class="kn">as</span> <span class="nn">intt</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.interftools&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">intt</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.poltools</span> <span class="kn">as</span> <span class="nn">polt</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.poltools&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">polt</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.phc</span> <span class="kn">as</span> <span class="nn">phc</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.phc&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">phc</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.singscat</span> <span class="kn">as</span> <span class="nn">sst</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.singscat&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">sst</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="kn">import</span> <span class="nn">pyhdust.spectools</span> <span class="kn">as</span> <span class="nn">spt</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;# pyhdust.spectools&quot;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">spt</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&quot;_&quot;</span><span class="p">]))</span>
+
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="setRelease"><a class="viewcode-back" href="../../releases.html#pyhdust.releases.setRelease">[docs]</a><span class="k">def</span> <span class="nf">setRelease</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Read the version values from __init__.py and write it to the setup.py</span>
+<span class="sd">    and doc files. &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">pyhdust.phc</span> <span class="kn">as</span> <span class="nn">phc</span>
+    <span class="kn">from</span> <span class="nn">pyhdust</span> <span class="kn">import</span> <span class="n">__version__</span><span class="p">,</span> <span class="n">hdtpath</span>
+    <span class="c">#  </span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}setup.py&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hdtpath</span><span class="p">()))</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;version&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">oldver</span> <span class="o">=</span> <span class="n">phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;version&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">asstr</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">oldver</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">__version__</span><span class="p">))</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}setup.py&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hdtpath</span><span class="p">()),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# ../setup.py file updated!&#39;</span><span class="p">)</span>
+    <span class="c">#</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}docs/index.rst&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hdtpath</span><span class="p">()))</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;at **version&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">oldver</span> <span class="o">=</span> <span class="n">phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;version&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">asstr</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">oldver</span><span class="p">):</span>
+            <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">oldver</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">__version__</span><span class="p">))</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}docs/index.rst&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hdtpath</span><span class="p">()),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>    
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# docs/index.rst file updated!&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">&#39;{0}docs&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hdtpath</span><span class="p">()))</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;make html&#39;</span><span class="p">)</span>
+    <span class="c"># os.system(&#39;rsync -rP _build/html/ astroweb:/www/moser/www/doc&#39;)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;rsync -rP _build/html/ /data/Dropbox/Public/doc&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# From version {0} to {1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">oldver</span><span class="p">,</span> <span class="n">__version__</span><span class="p">))</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+        <span class="s">&#39;firefox https://dl.dropboxusercontent.com/u/6569986/doc/index.html &amp;&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s">&#39;../..&#39;</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;git push&#39;</span><span class="p">)</span>
+    <span class="c">#  os.system(&#39;disown&#39;)</span>
+    <span class="k">return</span>
+
+
+<span class="c"># MAIN ###</span></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" >pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>tabulate: auxiliary module to tablature matrix &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="next" title="triangle: auxiliary module to MCMC plotting" href="triangle.html" />
+    <link rel="prev" title="stats: module of statistical functions" href="stats.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="triangle.html" title="triangle: auxiliary module to MCMC plotting"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats: module of statistical functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.tabulate">
+<span id="tabulate-auxiliary-module-to-tablature-matrix"></span><h1><em>tabulate</em>: auxiliary module to tablature matrix<a class="headerlink" href="#module-pyhdust.tabulate" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust auxiliary module: third-part pretty-print tabular data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">license:</th><td class="field-body">MIT License</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyhdust.tabulate.tabulate">
+<tt class="descclassname">pyhdust.tabulate.</tt><tt class="descname">tabulate</tt><big>(</big><em>tabular_data</em>, <em>headers=()</em>, <em>tablefmt=u'simple'</em>, <em>floatfmt=u'g'</em>, <em>numalign=u'decimal'</em>, <em>stralign=u'left'</em>, <em>missingval=u''</em><big>)</big><a class="reference internal" href="_modules/pyhdust/tabulate.html#tabulate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.tabulate.tabulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a fixed width table for pretty printing.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.34</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">56</span><span class="p">,</span> <span class="s">&quot;8.999&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;2&quot;</span><span class="p">,</span> <span class="s">&quot;10001&quot;</span><span class="p">]]))</span>
+<span class="go">---  ---------</span>
+<span class="go">  1      2.34</span>
+<span class="go">-56      8.999</span>
+<span class="go">  2  10001</span>
+<span class="go">---  ---------</span>
+</pre></div>
+</div>
+<p>The first required argument (<cite>tabular_data</cite>) can be a
+list-of-lists (or another iterable of iterables), a list of named
+tuples, a dictionary of iterables, an iterable of dictionaries,
+a two-dimensional NumPy array, NumPy record array, or a Pandas&#8217;
+dataframe.</p>
+<p>To print nice column headers, supply the second argument (<cite>headers</cite>):</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>headers</cite> can be an explicit list of column headers</li>
+<li>if <cite>headers=&#8221;firstrow&#8221;</cite>, then the first row of data is used</li>
+<li>if <cite>headers=&#8221;keys&#8221;</cite>, then dictionary keys or column indices are used</li>
+</ul>
+</div></blockquote>
+<p>Otherwise a headerless table is produced.</p>
+<p>If the number of headers is less than the number of columns, they
+are supposed to be names of the last columns. This is consistent
+with the plain-text format of R and Pandas&#8217; dataframes.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;sex&quot;</span><span class="p">,</span><span class="s">&quot;age&quot;</span><span class="p">],[</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;F&quot;</span><span class="p">,</span><span class="mi">24</span><span class="p">],[</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;M&quot;</span><span class="p">,</span><span class="mi">19</span><span class="p">]],</span>
+<span class="gp">... </span>      <span class="n">headers</span><span class="o">=</span><span class="s">&quot;firstrow&quot;</span><span class="p">))</span>
+<span class="go">       sex      age</span>
+<span class="go">-----  -----  -----</span>
+<span class="go">Alice  F         24</span>
+<span class="go">Bob    M         19</span>
+</pre></div>
+</div>
+<p><cite>tabulate</cite> tries to detect column types automatically, and aligns
+the values properly. By default it aligns decimal points of the
+numbers (or flushes integer numbers to the right), and flushes
+everything else to the left. Possible column alignments
+(<cite>numalign</cite>, <cite>stralign</cite>) are: &#8220;right&#8221;, &#8220;center&#8221;, &#8220;left&#8221;, &#8220;decimal&#8221;
+(only for <cite>numalign</cite>), and None (to disable alignment).</p>
+<p><cite>floatfmt</cite> is a format specification used for columns which
+contain numeric data with a decimal point.</p>
+<p><cite>None</cite> values are replaced with a <cite>missingval</cite> string:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="bp">None</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="p">[</span><span class="s">&quot;other&quot;</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="mf">2.7</span><span class="p">]],</span> <span class="n">missingval</span><span class="o">=</span><span class="s">&quot;?&quot;</span><span class="p">))</span>
+<span class="go">-----  --  ----</span>
+<span class="go">spam    1  ?</span>
+<span class="go">eggs   42  3.14</span>
+<span class="go">other   ?  2.7</span>
+<span class="go">-----  --  ----</span>
+</pre></div>
+</div>
+<p>Various plain-text table formats (<cite>tablefmt</cite>) are supported:
+&#8216;plain&#8217;, &#8216;simple&#8217;, &#8216;grid&#8217;, &#8216;pipe&#8217;, &#8216;orgtbl&#8217;, &#8216;rst&#8217;, &#8216;mediawiki&#8217;,</p>
+<blockquote>
+<div>&#8216;latex&#8217;, and &#8216;latex_booktabs&#8217;. Variable <cite>tabulate_formats</cite> contains the 
+list of currently supported formats.</div></blockquote>
+<p>&#8220;plain&#8221; format doesn&#8217;t use any pseudographics to draw tables,
+it separates columns with a double space:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>                <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;plain&quot;</span><span class="p">))</span>
+<span class="go">strings      numbers</span>
+<span class="go">spam         41.9999</span>
+<span class="go">eggs        451</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;plain&quot;))</span>
+<span class="go">spam   41.9999</span>
+<span class="go">eggs  451</span>
+</pre></div>
+</div>
+<p>&#8220;simple&#8221; format is like Pandoc simple_tables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>                <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;simple&quot;</span><span class="p">))</span>
+<span class="go">strings      numbers</span>
+<span class="go">---------  ---------</span>
+<span class="go">spam         41.9999</span>
+<span class="go">eggs        451</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;simple&quot;))</span>
+<span class="go">----  --------</span>
+<span class="go">spam   41.9999</span>
+<span class="go">eggs  451</span>
+<span class="go">----  --------</span>
+</pre></div>
+</div>
+<p>&#8220;grid&#8221; is similar to tables produced by Emacs table.el package or
+Pandoc grid_tables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;grid&quot;</span><span class="p">))</span>
+<span class="go">+-----------+-----------+</span>
+<span class="go">| strings   |   numbers |</span>
+<span class="go">+===========+===========+</span>
+<span class="go">| spam      |   41.9999 |</span>
+<span class="go">+-----------+-----------+</span>
+<span class="go">| eggs      |  451      |</span>
+<span class="go">+-----------+-----------+</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;grid&quot;))</span>
+<span class="go">+------+----------+</span>
+<span class="go">| spam |  41.9999 |</span>
+<span class="go">+------+----------+</span>
+<span class="go">| eggs | 451      |</span>
+<span class="go">+------+----------+</span>
+</pre></div>
+</div>
+<p>&#8220;fancy_grid&#8221; draws a grid using box-drawing characters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;fancy_grid&quot;</span><span class="p">))</span>
+<span class="go">╒═══════════╤═══════════╕</span>
+<span class="go">│ strings   │   numbers │</span>
+<span class="go">╞═══════════╪═══════════╡</span>
+<span class="go">│ spam      │   41.9999 │</span>
+<span class="go">├───────────┼───────────┤</span>
+<span class="go">│ eggs      │  451      │</span>
+<span class="go">╘═══════════╧═══════════╛</span>
+</pre></div>
+</div>
+<p>&#8220;pipe&#8221; is like tables in PHP Markdown Extra extension or Pandoc
+pipe_tables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;pipe&quot;</span><span class="p">))</span>
+<span class="go">| strings   |   numbers |</span>
+<span class="go">|:----------|----------:|</span>
+<span class="go">| spam      |   41.9999 |</span>
+<span class="go">| eggs      |  451      |</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;pipe&quot;))</span>
+<span class="go">|:-----|---------:|</span>
+<span class="go">| spam |  41.9999 |</span>
+<span class="go">| eggs | 451      |</span>
+</pre></div>
+</div>
+<p>&#8220;orgtbl&#8221; is like tables in Emacs org-mode and orgtbl-mode. They
+are slightly different from &#8220;pipe&#8221; format by not using colons to
+define column alignment, and using a &#8220;+&#8221; sign to indicate line
+intersections:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;orgtbl&quot;</span><span class="p">))</span>
+<span class="go">| strings   |   numbers |</span>
+<span class="go">|-----------+-----------|</span>
+<span class="go">| spam      |   41.9999 |</span>
+<span class="go">| eggs      |  451      |</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;orgtbl&quot;))</span>
+<span class="go">| spam |  41.9999 |</span>
+<span class="go">| eggs | 451      |</span>
+</pre></div>
+</div>
+<p>&#8220;rst&#8221; is like a simple table format from reStructuredText; please
+note that reStructuredText accepts also &#8220;grid&#8221; tables:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="s">&quot;rst&quot;</span><span class="p">))</span>
+<span class="go">=========  =========</span>
+<span class="go">strings      numbers</span>
+<span class="go">=========  =========</span>
+<span class="go">spam         41.9999</span>
+<span class="go">eggs        451</span>
+<span class="go">=========  =========</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s">&quot;rst&quot;</span><span class="p">))</span>
+<span class="go">====  ========</span>
+<span class="go">spam   41.9999</span>
+<span class="go">eggs  451</span>
+<span class="go">====  ========</span>
+</pre></div>
+</div>
+<p>&#8220;mediawiki&#8221; produces a table markup used in Wikipedia and on other
+MediaWiki-based sites:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> 
+<span class="go">  &quot;451.0&quot;]], headers=&quot;firstrow&quot;, tablefmt=&quot;mediawiki&quot;))</span>
+<span class="go">{| class=&quot;wikitable&quot; style=&quot;text-align: left;&quot;</span>
+<span class="go">|+ &lt;!-- caption --&gt;</span>
+<span class="go">|-</span>
+<span class="go">! strings   !! align=&quot;right&quot;|   numbers</span>
+<span class="go">|-</span>
+<span class="go">| spam      || align=&quot;right&quot;|   41.9999</span>
+<span class="go">|-</span>
+<span class="go">| eggs      || align=&quot;right&quot;|  451</span>
+<span class="go">|}</span>
+</pre></div>
+</div>
+<p>&#8220;html&#8221; produces HTML markup:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;strings&quot;</span><span class="p">,</span> <span class="s">&quot;numbers&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> 
+<span class="go">  [&quot;eggs&quot;, &quot;451.0&quot;]],</span>
+<span class="gp">... </span>               <span class="n">headers</span><span class="o">=</span><span class="s">&quot;firstrow&quot;</span><span class="p">,</span> <span class="n">tablefmt</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">))</span>
+<span class="go">&lt;table&gt;</span>
+<span class="go">&lt;tr&gt;&lt;th&gt;strings  &lt;/th&gt;&lt;th style=&quot;text-align: right;&quot;&gt;  numbers&lt;/th&gt;&lt;/tr&gt;</span>
+<span class="go">&lt;tr&gt;&lt;td&gt;spam     &lt;/td&gt;&lt;td style=&quot;text-align: right;&quot;&gt;  41.9999&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="go">&lt;tr&gt;&lt;td&gt;eggs     &lt;/td&gt;&lt;td style=&quot;text-align: right;&quot;&gt; 451     &lt;/td&gt;&lt;/tr&gt;</span>
+<span class="go">&lt;/table&gt;</span>
+</pre></div>
+</div>
+<p>&#8220;latex&#8221; produces a tabular environment of LaTeX document markup:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;latex&quot;))</span>
+<span class="go">\begin{tabular}{lr}</span>
+<span class="go">\hline</span>
+<span class="go"> spam &amp;  41.9999 \\</span>
+<span class="go"> eggs &amp; 451      \\</span>
+<span class="go">\hline</span>
+<span class="go">\end{tabular}</span>
+</pre></div>
+</div>
+<p>&#8220;latex_booktabs&#8221; produces a tabular environment of LaTeX document markup
+using the booktabs.sty package:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mf">41.9999</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span> <span class="s">&quot;451.0&quot;</span><span class="p">]],</span> 
+<span class="go">  tablefmt=&quot;latex_booktabs&quot;))</span>
+<span class="go">\begin{tabular}{lr}</span>
+<span class="go">\toprule</span>
+<span class="go"> spam &amp;  41.9999 \\</span>
+<span class="go"> eggs &amp; 451      \\</span>
+<span class="go">\bottomrule</span>
+<span class="go">\end{tabular}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.tabulate.simple_separated_format">
+<tt class="descclassname">pyhdust.tabulate.</tt><tt class="descname">simple_separated_format</tt><big>(</big><em>separator</em><big>)</big><a class="reference internal" href="_modules/pyhdust/tabulate.html#simple_separated_format"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.tabulate.simple_separated_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a simple TableFormat with columns separated by a separator.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tsv</span> <span class="o">=</span> <span class="n">simple_separated_format</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span><span class="p">)</span> <span class="p">;</span>         <span class="n">tabulate</span><span class="p">([[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s">&quot;spam&quot;</span><span class="p">,</span> <span class="mi">23</span><span class="p">]],</span> <span class="n">tablefmt</span><span class="o">=</span><span class="n">tsv</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;foo </span><span class="se">\t</span><span class="s"> 1&#39;</span> <span class="o">+</span>         <span class="s">&#39;</span><span class="se">\n</span><span class="s">spam</span><span class="se">\t</span><span class="s">23&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="stats.html"
+                        title="previous chapter"><strong>stats</strong>: module of statistical functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="triangle.html"
+                        title="next chapter"><em>triangle</em>: auxiliary module to MCMC plotting</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tabulate.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="triangle.html" title="triangle: auxiliary module to MCMC plotting"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stats.html" title="stats: module of statistical functions"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

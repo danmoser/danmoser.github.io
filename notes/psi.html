@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Psi</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="psi">
+<h1 class="title">Psi</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#definitions" id="id1">Definitions</a><ul>
+<li><a class="reference internal" href="#extrasensory-perception" id="id2">Extrasensory perception</a></li>
+<li><a class="reference internal" href="#parapsychology" id="id3">Parapsychology</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#personalities" id="id4">Personalities</a><ul>
+<li><a class="reference internal" href="#camille-flammarion" id="id5">Camille Flammarion</a></li>
+<li><a class="reference internal" href="#arthur-conan-doyle" id="id6">Arthur Conan Doyle</a></li>
+<li><a class="reference internal" href="#william-crookes" id="id7">William Crookes</a></li>
+<li><a class="reference internal" href="#johann-karl-friedrich-zollner" id="id8">Johann Karl Friedrich Zöllner</a></li>
+<li><a class="reference internal" href="#charles-richet" id="id9">Charles Richet</a></li>
+<li><a class="reference internal" href="#franz-mesmer" id="id10">Franz Mesmer</a></li>
+<li><a class="reference internal" href="#j-b-rhine" id="id11">J. B. Rhine</a></li>
+<li><a class="reference internal" href="#alfred-russel-wallace" id="id12">Alfred Russel Wallace</a></li>
+<li><a class="reference internal" href="#other-names" id="id13">Other names</a></li>
+<li><a class="reference internal" href="#ian-stevenson" id="id14">Ian Stevenson</a></li>
+<li><a class="reference internal" href="#rupert-sheldrake" id="id15">Rupert Sheldrake</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#works-and-references" id="id16">Works and references</a><ul>
+<li><a class="reference internal" href="#expelled-no-intelligence-allowed" id="id17">Expelled: No Intelligence Allowed</a></li>
+<li><a class="reference internal" href="#life-after-life" id="id18">Life After Life</a></li>
+<li><a class="reference internal" href="#psychic-discoveries-behind-the-iron-curtain" id="id19">Psychic Discoveries Behind the Iron Curtain</a></li>
+<li><a class="reference internal" href="#papers" id="id20">Papers</a><ul>
+<li><a class="reference internal" href="#distressing-near-death-experiences" id="id21">Distressing near-death experiences</a></li>
+<li><a class="reference internal" href="#review-near-death-experiences-clinical-implications" id="id22">REVIEW Near-death experiences: clinical implications</a></li>
+<li><a class="reference internal" href="#should-psychotherapy-consider-reincarnation" id="id23">Should psychotherapy consider reincarnation?</a></li>
+<li><a class="reference internal" href="#the-physical-environment-in-the-city-of-light" id="id24">The physical environment in the City of Light</a></li>
+<li><a class="reference internal" href="#how-parapsychology-could-become-a-science" id="id25">How parapsychology could become a science</a></li>
+<li><a class="reference internal" href="#statistics-what-is-the-question" id="id26">Statistics: What is the question?</a></li>
+<li><a class="reference internal" href="#the-next-decade-how-it-might-unfold" id="id27">The Next Decade: How It Might Unfold</a></li>
+<li><a class="reference internal" href="#the-bridge-which-is-between-physical-and-psychical-research" id="id28">The &quot;BRIDGE Which Is Between Physical And Psychical Research&quot;</a></li>
+<li><a class="reference internal" href="#spirituality-and-science-a-personal-view" id="id29">Spirituality and science: a personal view</a></li>
+<li><a class="reference internal" href="#alguns-aspectos-do-merito-cientifico-da-teoria-do-design-inteligente" id="id30">Alguns aspectos do mérito científico da teoria do design inteligente</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#websites" id="id31">Websites</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#allan-kardec-and-spiritism" id="id32">Allan Kardec and Spiritism</a><ul>
+<li><a class="reference internal" href="#triple-aspect" id="id33">Triple aspect</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#medicine" id="id34">Medicine</a></li>
+</ul>
+</div>
+<div class="section" id="definitions">
+<h1><a class="toc-backref" href="#id1">Definitions</a></h1>
+<div class="section" id="extrasensory-perception">
+<h2><a class="toc-backref" href="#id2">Extrasensory perception</a></h2>
+<p>Extrasensory perception or <strong>ESP</strong>, also called sixth sense, includes reception of information not gained through the recognized physical senses but sensed with the mind. The term was adopted by Duke University psychologist J. B. Rhine to denote psychic abilities such as telepathy, clairaudience, and clairvoyance, and their trans-temporal operation as precognition or retrocognition.</p>
+<div class="figure align-center">
+<img alt="figs/psi_732px-Cartas_Zener.svg.png" src="figs/psi_732px-Cartas_Zener.svg.png" style="width: 366px;" />
+<p class="caption">Zener cards were first used in the 1930s for experimental research into ESP.</p>
+</div>
+</div>
+<div class="section" id="parapsychology">
+<h2><a class="toc-backref" href="#id3">Parapsychology</a></h2>
+<p>Parapsychology is a <em>pseudoscience</em> concerned with the investigation of paranormal and psychic phenomena. Parapsychologists study telepathy, precognition, clairvoyance, psychokinesis, near-death experiences, reincarnation, apparitional experiences, and other paranormal claims.</p>
+</div>
+</div>
+<div class="section" id="personalities">
+<h1><a class="toc-backref" href="#id4">Personalities</a></h1>
+<div class="section" id="camille-flammarion">
+<h2><a class="toc-backref" href="#id5">Camille Flammarion</a></h2>
+<p>(1842-1925) French astronomer and author. He was a prolific author of more than fifty titles, including popular science works about astronomy, several notable early science fiction novels, and works on psychical research and related topics.</p>
+<p>Some works: <em>La pluralité des mondes habités</em> (The Plurality of Inhabited Worlds), 1862.
+God in nature, 1866 (Flammarion argues that the mind is independent of the brain). <em>Récits de l'infini</em>, 1872 (translated into English as Stories of Infinity in 1873): (i) Lumen, (ii) History of a Comet; (iii) In Infinity.
+<em>L’inconnu et les problèmes psychiques</em> (published in English as: L’inconnu: The Unknown), 1900, a collection of psychic experiences. Mysterious psychic forces: an account of the author's investigations in psychical research, together with those of other European savants, 1907.
+Death and its mystery—proofs of the existence of the soul; Volume 1 to 3 (1921-1923).</p>
+</div>
+<div class="section" id="arthur-conan-doyle">
+<h2><a class="toc-backref" href="#id6">Arthur Conan Doyle</a></h2>
+<p>(1859-1930) Scottish writer and physician, most noted for his fictional stories about the detective Sherlock Holmes.</p>
+<p>Doyle had a longstanding interest in mystical subjects. In 1887 he joined the Society for Psychical Research.</p>
+<p>The wrote The New Revelation (1918), The Case for Spirit Photography (1925), The History of Spiritualism (1926), among others.</p>
+</div>
+<div class="section" id="william-crookes">
+<h2><a class="toc-backref" href="#id7">William Crookes</a></h2>
+<p>(1832-1919) British chemist and physicist. He was a pioneer of vacuum tubes, inventing the Crookes tube which was made in 1875 and the Crookes radiometer.</p>
+<p>Notable awards: Royal Medal (1875), Davy Medal (1888), Albert Medal (1899), Copley Medal (1904), Order of Merit (1910) and Elliott Cresson Medal (1912).</p>
+<p>Crookes became interested in spiritualism in the late 1860s. Between 1871 and 1874, Crookes studied the mediums Kate Fox, Florence Cook (Katie King), and Daniel Dunglas Home.</p>
+</div>
+<div class="section" id="johann-karl-friedrich-zollner">
+<h2><a class="toc-backref" href="#id8">Johann Karl Friedrich Zöllner</a></h2>
+<p>(1834-1882) German astrophysicist who studied optical illusions and proved Christian Doppler's theory on the effect of motion of the color of stars.</p>
+<p>Zöllner first became interested in Spiritism in 1875 when he visited the scientist William Crookes in England. Zöllner wanted a physical scientific explanation for Spiritism and came to the conclusion that physics of a four-dimensional space may explain spiritualism. Zöllner attempted to prove that spirits are four-dimensional and set up his own experiments with the medium Henry Slade. These experiments were recorded by Zöllner in a book titled Transcendental Physics in 1878.</p>
+</div>
+<div class="section" id="charles-richet">
+<h2><a class="toc-backref" href="#id9">Charles Richet</a></h2>
+<p>(1850-1935) French physiologist who initially investigated a variety of subjects such as neurochemistry, digestion, thermoregulation in homeothermic animals, and breathing. He won the Nobel Prize &quot;in recognition of his work on anaphylaxis&quot; in 1913.</p>
+<pre class="literal-block">
+It has been shown that as regards subjective metapsychics the simplest and
+most rational explanation is to suppose the existence of a faculty of
+supernormal cognition ... setting in motion the human intelligence by
+certain vibrations that do not move the normal senses.
+</pre>
+<p>Richet's works on parascientific subjects, which dominated his later years, include <em>Traité de Métapsychique</em> (Treatise on Metapsychics, 1922), <em>Notre Sixième Sens</em> (Our Sixth Sense, 1928), <em>L'Avenir et la Prémonition</em> (The Future and Premonition, 1931) and <em>La grande espérance</em> (The Great Hope, 1933).</p>
+</div>
+<div class="section" id="franz-mesmer">
+<h2><a class="toc-backref" href="#id10">Franz Mesmer</a></h2>
+<p>(17347-1815) German physician with an interest in astronomy, who theorised that there was a natural energetic transference that occurred between all animated and inanimate objects that he called animal magnetism, sometimes later referred to as mesmerism. The theory attracted a wide following between about 1780 and 1850.  In 1843 the Scottish physician James Braid proposed the term hypnosis for a technique derived from animal magnetism.</p>
+<p><em>De planetarum influxu in corpus humanum</em> (&quot;The Influence of the Planets on the Human Body&quot;, 1766).</p>
+</div>
+<div class="section" id="j-b-rhine">
+<h2><a class="toc-backref" href="#id11">J. B. Rhine</a></h2>
+<p>(1895-1980) Founded scientific research in parapsychology as a branch of psychology, founding a lab at Duke University (~1937).</p>
+</div>
+<div class="section" id="alfred-russel-wallace">
+<h2><a class="toc-backref" href="#id12">Alfred Russel Wallace</a></h2>
+<p>(1823-1913) British naturalist, explorer, geographer, anthropologist, and biologist. He is best known for independently conceiving the theory of evolution through natural selection (jointly published with some of Charles Darwin's writings in 1858).</p>
+<p>Wallace was strongly attracted to unconventional ideas (such as evolution). His advocacy of spiritualism and his belief in a non-material origin for the higher mental faculties of humans strained his relationship with some members of the scientific establishment. In addition to his scientific work, he was a social activist who was critical of what he considered to be an unjust social and economic system in 19th-century Britain.</p>
+<p>Notable awards  Royal Medal (1868), Gold Medal of the Société de Géographie (1870), Darwin Medal (1890), Founder's Medal (1892), Linnean Medal (1892), Copley Medal (1908), Darwin-Wallace Medal (Gold, 1908) and Order of Merit (1908).</p>
+</div>
+<div class="section" id="other-names">
+<h2><a class="toc-backref" href="#id13">Other names</a></h2>
+<p>Bozzano, Lodge, Asakov, Lombroso, Delanne, Imbassahy*, Hernani*.</p>
+</div>
+<div class="section" id="ian-stevenson">
+<h2><a class="toc-backref" href="#id14">Ian Stevenson</a></h2>
+<p>(1918-2007) Canadian-born U.S. psychiatrist. Stevenson became known internationally for his research into reincarnation, the idea that emotions, memories, and even physical injuries in the form of birth-marks, can be transferred from one life to another. But he was never able to suggest what kind of process might be involved.</p>
+<p>His major work was the 2,268-page, two-volume Reincarnation and Biology: A Contribution to the Etiology of Birthmarks and Birth Defects (1997). This reported two hundred cases of birth-marks that, he believed, corresponded with a wound on the deceased person whose life the child purported to recall.</p>
+</div>
+<div class="section" id="rupert-sheldrake">
+<h2><a class="toc-backref" href="#id15">Rupert Sheldrake</a></h2>
+<p>(1942-) Known by the books &quot;Seven Experiments That Could Change the World&quot; (1995) and &quot;The Science Delusion&quot; (Science Set Free, 2012).</p>
+<p>TED (BANNED) Talk &quot;The Science Delusion&quot;:</p>
+<blockquote>
+<a class="reference external" href="http://www.youtube.com/watch?v=JKHUaNAxsTg">http://www.youtube.com/watch?v=JKHUaNAxsTg</a></blockquote>
+<p>Ideas: &quot;morphic resonance&quot;; &quot;10 scientific creeds&quot;.</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Everything is essentially mechanical. Dogs, for example, are complex mechanisms, rather than living organisms with goals of their own. Even people are machines, 'lumbering robots', in Richard Dawkins's vivid phrase, with brains that are like genetically programmed computers.</li>
+<li>All matter is unconscious. It has no inner life or subjectivity or point of view. Even human consciousness is an illusion produced by the material activities of brains.</li>
+<li>The total amount of matter and energy is always the same (with the exception of the Big Bang, when all the matter and energy of the universe suddenly appeared).</li>
+<li>The laws of nature are fixed. They are the same today as they were at the beginning, and they will stay the same for ever.</li>
+<li>Nature is purposeless, and evolution has no goal or direction.</li>
+<li>All biological inheritance is material, carried in the genetic material, DNA, and in other material structures.</li>
+<li>Minds are inside heads and are nothing but the activities of brains. When you look at a tree, the image of the tree you are seeing is not 'out there', where it seems to be, but inside your brain.</li>
+<li>Memories are stored as material traces in brains and are wiped out at death.</li>
+<li>Unexplained phenomena like telepathy are illusory.</li>
+<li>Mechanistic medicine is the only kind that really works.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+<div class="section" id="works-and-references">
+<h1><a class="toc-backref" href="#id16">Works and references</a></h1>
+<div class="section" id="expelled-no-intelligence-allowed">
+<h2><a class="toc-backref" href="#id17">Expelled: No Intelligence Allowed</a></h2>
+<p>The 2008 film, starred by Ben Stein, contends that the mainstream science establishment suppresses academics who believe they see evidence of intelligent design in nature.</p>
+<p><a class="reference external" href="http://www.youtube.com/watch?v=V5EPymcWp-g">http://www.youtube.com/watch?v=V5EPymcWp-g</a></p>
+</div>
+<div class="section" id="life-after-life">
+<h2><a class="toc-backref" href="#id18">Life After Life</a></h2>
+<p>The investigation of a phenomenon survival of bodily death</p>
+<p>Dr. Raymond A. Moody, Jr.</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/Raymond_Moody_Life_After_Life.pdf">http://dl.dropbox.com/u/6569986/geenl/Raymond_Moody_Life_After_Life.pdf</a></p>
+<p>[<a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/Vida_Depois_da_Vida_Raymond_Moody_Jr.pdf">Portuguese1</a>]</p>
+</div>
+<div class="section" id="psychic-discoveries-behind-the-iron-curtain">
+<h2><a class="toc-backref" href="#id19">Psychic Discoveries Behind the Iron Curtain</a></h2>
+<p>Ostrander, Sheila, and Lynn Schroeder</p>
+<p>New Jersey: Prentice-Hall, 1970</p>
+</div>
+<div class="section" id="papers">
+<h2><a class="toc-backref" href="#id20">Papers</a></h2>
+<div class="section" id="distressing-near-death-experiences">
+<h3><a class="toc-backref" href="#id21">Distressing near-death experiences</a></h3>
+<p>Psychiatry. 1992 Feb;55(1):95-110.</p>
+<p>Greyson B(1), Bush NE.</p>
+<p>1 Department of Psychiatry, University of Connecticut Health Centr, Farmington 06030.</p>
+<p>Abstract</p>
+<p>Most reported near-death experiences include profound feelings of peace, joy, and cosmic unity. Less familiar are the reports following close brushes with death of experiences that are partially or entirely unpleasant, frightening, or frankly hellish. While little is known about the antecedents or aftereffects of these distressing experiences, there appear to be three distinct types, involving (1) phenomenology similar to peaceful near-death experiences but interpreted as unpleasant, (2) a sense of nonexistence or eternal void, or (3) graphic hellish landscapes and entities. While the first type may eventually convert to a typical peaceful experience, the relationship of all three types to prototypical near-death experiences merits further study. The effect of the distressing experience in the lives of individuals deserves exploration, as the psychological impact may be profound and long-lasting.</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/Distressing_Near-Death_Experiences.pdf">http://dl.dropbox.com/u/6569986/geenl/Distressing_Near-Death_Experiences.pdf</a></p>
+</div>
+<div class="section" id="review-near-death-experiences-clinical-implications">
+<h3><a class="toc-backref" href="#id22">REVIEW Near-death experiences: clinical implications</a></h3>
+<p>Rev. psiquiatr. clín. vol.34  suppl.1 São Paulo  2007</p>
+<p>Bruce Greyson, M.D.</p>
+<p>Division of Perceptual Studies, Department of Psychiatry &amp; Neurobehavioral Sciences, University of Virginia School of Medicine</p>
+<p><a class="reference external" href="http://dx.doi.org/10.1590/S0101-60832007000700015">http://dx.doi.org/10.1590/S0101-60832007000700015</a></p>
+<p>[<a class="reference external" href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0101-60832007000700015&amp;lng=en&amp;nrm=iso&amp;tlng=pt&amp;ORIGINALLANG=pt">Portuguese0</a>]</p>
+</div>
+<div class="section" id="should-psychotherapy-consider-reincarnation">
+<h3><a class="toc-backref" href="#id23">Should psychotherapy consider reincarnation?</a></h3>
+<p>J Nerv Ment Dis. 2012 Feb;200(2):174-9. doi: 10.1097/NMD.0b013e3182439836.</p>
+<p>Peres JF(1)</p>
+<p>1 Psychotraumatology Clinic, Hospital Perola Byington, Sao Paulo, Brazil. <a class="reference external" href="mailto:julioperes&#64;yahoo.com">julioperes&#64;yahoo.com</a></p>
+<p>Abstract</p>
+<p>There is increasing recognition of the need to take into account the cultural environment and belief systems of psychotherapy patients because these values reflect basic assumptions about man's nature and the cognitive references used to cope with psychological difficulties. Currently accepted psychotherapeutic approaches take no account of the belief in life after death held by most of the world's population. The World Values Survey (<a class="reference external" href="http://www.worldvaluessurvey.org">http://www.worldvaluessurvey.org</a>) showed that there are large numbers of reincarnationists around the world, and whatever the reasons for believing in reincarnation, psychotherapeutic approaches should not ignore this significant group of people. Respect for patient opinions and subjective realities is a therapeutic need and an ethical duty, even though therapists may not share the same beliefs. Guidelines are suggested for professionals to develop collaborative models that help patients mobilize their intrinsic intelligence to find solutions to their complaints.</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/reincarnation_JNMD.pdf">http://dl.dropbox.com/u/6569986/geenl/reincarnation_JNMD.pdf</a></p>
+</div>
+<div class="section" id="the-physical-environment-in-the-city-of-light">
+<h3><a class="toc-backref" href="#id24">The physical environment in the City of Light</a></h3>
+<p>Journal of Near-Death Studies</p>
+<p>Summer 1993, Volume 11, Issue 4, pp 239-246</p>
+<p>Harold A. Widdison Ph.D., Craig R. Lundahl Ph.D.</p>
+<p>Abstract</p>
+<p>The article describes the physical environment found in the other world or the City of Light, based on published accounts of near-death experiences (NDEs). The City of Light appears to be a world of preternatural beauty that cannot be described adequately. NDE accounts provide descriptions of the landscape, animal life, plant life, and architecture found in the other world.</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/The_Physical_environment_in_the_City_of_Light.pdf">http://dl.dropbox.com/u/6569986/geenl/The_Physical_environment_in_the_City_of_Light.pdf</a></p>
+</div>
+<div class="section" id="how-parapsychology-could-become-a-science">
+<h3><a class="toc-backref" href="#id25">How parapsychology could become a science</a></h3>
+<p>Paul M. Churchland (1987)</p>
+<p>Journal of Philosophy, 30:3, 227-239,</p>
+<p><a class="reference external" href="http://dx.doi.org/10.1080/00201748708602121">http://dx.doi.org/10.1080/00201748708602121</a></p>
+<p>Abstract</p>
+<p>An important methodological argument is outlined in support of general theoretical challenges to the dominant materialist paradigm. The idea is that the empirical inadequacies of a dominant theory can be hidden from view by various factors, and will emerge from the shadows only when viewed from the perspective of a systematic conceptual alternative. The question then posed is whether parapsychology provides a conceptual alternative adequate to this task. The provisional conclusion drawn is that it does not. Some further consequences are drawn from this concerning the experimental side of the parapsychological tradition.</p>
+<p>[<a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/Churchland-Como_Parapsicologia_poderia.pdf">Portuguese2</a>]</p>
+</div>
+<div class="section" id="statistics-what-is-the-question">
+<h3><a class="toc-backref" href="#id26">Statistics: What is the question?</a></h3>
+<p>Mistaking the type of question being considered is the most common error in data analysis</p>
+<p><a class="reference external" href="http://www.sciencemag.org/content/347/6228/1314.full">http://www.sciencemag.org/content/347/6228/1314.full</a></p>
+</div>
+<div class="section" id="the-next-decade-how-it-might-unfold">
+<h3><a class="toc-backref" href="#id27">The Next Decade: How It Might Unfold</a></h3>
+<p>Larry Dossey</p>
+<p>Explore: The Journal of Science and Healing
+March-April, 2012 Volume 8, Issue 2, Pages 73–80</p>
+<p><a class="reference external" href="http://dx.doi.org/10.1016/j.explore.2011.12.006">http://dx.doi.org/10.1016/j.explore.2011.12.006</a></p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/How_It_Might_Unfold.pdf">http://dl.dropbox.com/u/6569986/geenl/How_It_Might_Unfold.pdf</a></p>
+</div>
+<div class="section" id="the-bridge-which-is-between-physical-and-psychical-research">
+<h3><a class="toc-backref" href="#id28">The &quot;BRIDGE Which Is Between Physical And Psychical Research&quot;</a></h3>
+<p>William Fletcher Barrett, Sensitive Flames, And Spiritualism</p>
+<p>Richard Noakes</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/Noakes_Barrett_flames_spiritualism.pdf">http://dl.dropbox.com/u/6569986/geenl/Noakes_Barrett_flames_spiritualism.pdf</a></p>
+</div>
+<div class="section" id="spirituality-and-science-a-personal-view">
+<h3><a class="toc-backref" href="#id29">Spirituality and science: a personal view</a></h3>
+<p>Andrew Powell</p>
+<p>Advances in Psychiatric Treatment
+Vol. 7, p. (2001), 319 vol. 7, pp. 319–321</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/Spirituality_and_science.pdf">http://dl.dropbox.com/u/6569986/geenl/Spirituality_and_science.pdf</a></p>
+</div>
+<div class="section" id="alguns-aspectos-do-merito-cientifico-da-teoria-do-design-inteligente">
+<h3><a class="toc-backref" href="#id30">Alguns aspectos do mérito científico da teoria do design inteligente</a></h3>
+<p>Enézio E. de Almeida Filho</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/TDI.pdf">http://dl.dropbox.com/u/6569986/geenl/TDI.pdf</a></p>
+</div>
+</div>
+<div class="section" id="websites">
+<h2><a class="toc-backref" href="#id31">Websites</a></h2>
+<p><a class="reference external" href="http://obraspsicografadas.org/">http://obraspsicografadas.org/</a></p>
+</div>
+</div>
+<div class="section" id="allan-kardec-and-spiritism">
+<h1><a class="toc-backref" href="#id32">Allan Kardec and Spiritism</a></h1>
+<p>Allan Kardec is the pen name of the French educator, translator and author Hippolyte Léon Denizard Rivail (1804-1869). He is the author of the five books known as the Spiritist Codification, and is the founder of Spiritism.</p>
+<p>Rivail was in his early 1850s when he became interested in <em>séances</em> (&quot;table-turning&quot;), which were a popular entertainment at the time.</p>
+<pre class="literal-block">
+Naitre, mourir, renaitre encore et progresser sans cesse, telle est la loi
+</pre>
+<div class="section" id="triple-aspect">
+<h2><a class="toc-backref" href="#id33">Triple aspect</a></h2>
+<p>[Portuguese] Por Silvio Chibeni.</p>
+<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/geenl/tripliceaspecto.pdf">http://dl.dropbox.com/u/6569986/geenl/tripliceaspecto.pdf</a></p>
+</div>
+</div>
+<div class="section" id="medicine">
+<h1><a class="toc-backref" href="#id34">Medicine</a></h1>
+<p>um tempo atrás me interessei por fazer uma pesquisa sobre a homeopatia. Esse artigo da Australia’s National Health and Medical Research Council é um dos estudos pelos quais comecei. Uma das conclusões que cheguei é que existe uma diferença entre dizer que ela não funciona e que ela funciona melhor que o placebo. Existe também um preconceito enorme quanto ao placebo, tanto do lado da homeopatia quanto da alopatia. Eu pessoalmente prefiro chamar, tanto o placebo quanto essas terapias alternativas de &quot;terapias de auto-cura”. Para mim facilita bastante na discussão pois explicita um processo FENOMENAL que é o processo de auto-cura, que pode ser potencializado por uma crença, seja ela qual for. De ambos os lados existe esse equívoco de considerar placebo=nada.</p>
+<p>Eu tenho a impressão que do lado da alopatia (ou da industria farmacêutica) nunca interessa discutir se o existem processos de auto-cura que são tão eficientes quanto um remédio alopático. Imagine que 80% (eu to chutando um numero, mas seria legal saber numero real) das enfermidades cotidianas pudessem ser curadas por terapias que incitam a auto-cura. Uma analise de todas as enfermidades que são curadas por terapias alternativas daria uma boa ideia das enfermidades que o seu corpo tem capacidade de curar sozinho, sem remédios.</p>
+<p>Aliás, sempre me incomodou terminar a discussão em “não é estatisticamente melhor que um placebo”. Para que essa frase faça sentido tem que entender o que é placebo e o seu efeito. Por exemplo, esse estudo mostra que o efeito placebo é de fato estatisticamente significante: <a class="reference external" href="http://www.rima.org/web/medline_pdf/placebointerventions.pdf">http://www.rima.org/web/medline_pdf/placebointerventions.pdf</a> . E mais interessante ainda, esse outro estudo, usando os mesmos dados e meta-analise, mostra que em certos casos não existe nenhuma diferença significativa entre placebo e tratamento “ativo”: <a class="reference external" href="http://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0062599">http://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0062599</a> . Esse último estudo também faz uma discussão sobre os vieses de estudos duplo cego. Um vies interessante é que estudos que chegam à conclusão negativa sobre a eficácia de um medicamento, que podem ser causados por um forte efeito placebo, tem menos chance de ser publicado. Isso cria um vies negativo em estudos estatísticos sobre a eficácia do efeito placebo ou auto-cura.</p>
+<p>Eu concordo contigo e também me incomoda a “explicação” pseudo-cientifica sobre a homeopatia. Na verdade seria muito mais razoável para mim que ela fosse explicada por um “campo de energia espiritual”. Nesse ultimo caso de explicação puramente metafísica ao menos a ciência não teria nada a ver com isso.</p>
+<p>Enfim, a minha resposta para pergunta se a homeopatia funciona seria: sim ela funciona, mas não pelos motivos que os homeopatas tradicionalmente defendem.</p>
+<p>PS. Agora uma provocação. A minha impressão depois de ler esse artigo da NHMRC é que ele mostra um vies que, apesar não não estatisticamente significativo (ainda?), é positivo em quase todos os estudos para a eficácia da homeopatia :-)</p>
+<p><a class="reference external" href="static/psi_journal.pone.0062599.zip">Placebo effect</a></p>
+</div>
+</div>
+</body>
+</html>

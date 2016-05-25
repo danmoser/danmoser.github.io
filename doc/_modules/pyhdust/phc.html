@@ -1,0 +1,1203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyhdust.phc &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../../index.html" />
+    <link rel="up" title="pyhdust" href="../pyhdust.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" accesskey="U">pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyhdust.phc</h1><div class="highlight"><pre>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;PyHdust *phc* module: physical constants and general use functions</span>
+
+<span class="sd">Includes functions for:</span>
+<span class="sd">- Data manipulation (average, bin, fitting)</span>
+<span class="sd">- Manipulation of 3D coordinates </span>
+<span class="sd">- Convolution functions</span>
+<span class="sd">- Manipulation of strings and lists</span>
+<span class="sd">- Manipulation of angular coordinates and dates </span>
+<span class="sd">- Files or directories manipulation</span>
+<span class="sd">- Plotting </span>
+<span class="sd">- Physical functions</span>
+<span class="sd">- `List of constants`_</span>
+
+<span class="sd">.. _`List of constants`: phc_list.html</span>
+
+
+<span class="sd">:license: GNU GPL v3.0 https://github.com/danmoser/pyhdust/blob/master/LICENSE</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="kn">as</span> <span class="nn">_os</span>
+<span class="kn">import</span> <span class="nn">re</span> <span class="kn">as</span> <span class="nn">_re</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">_np</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="kn">as</span> <span class="nn">_dt</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span> <span class="k">as</span> <span class="n">_glob</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span> <span class="k">as</span> <span class="n">_product</span>
+<span class="kn">import</span> <span class="nn">pyhdust.jdcal</span> <span class="kn">as</span> <span class="nn">_jdcal</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">_plt</span>
+    <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span> <span class="k">as</span> <span class="n">_optimize</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! matplotlib and/or scipy module not installed!!!&#39;</span><span class="p">)</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&quot;Daniel Moser&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&quot;dmfaes@gmail.com&quot;</span>
+
+
+<span class="c"># Data manipulation (includes fitting)</span>
+<div class="viewcode-block" id="wg_avg_and_std"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.wg_avg_and_std">[docs]</a><span class="k">def</span> <span class="nf">wg_avg_and_std</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the weighted average and standard deviation.</span>
+
+<span class="sd">    This IS NOT the problem of Wikipedia &gt; Weighted_arithmetic_mean &gt;</span>
+<span class="sd">        Weighted_sample_variance.</span>
+
+<span class="sd">    average = _np.average(values, weights=weights)</span>
+<span class="sd">    #Fast and numerically precise:</span>
+<span class="sd">    variance = _np.average((values-average)**2, weights=weights)</span>
+<span class="sd">    return (average, _np.sqrt(variance))</span>
+
+<span class="sd">    INPUT: values, sigma -- arrays with the same shape.</span>
+
+<span class="sd">    OUTPUT: average, avg_sig (float, float)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="n">sigma</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">avg</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">values</span><span class="p">)</span> <span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="bindata"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.bindata">[docs]</a><span class="k">def</span> <span class="nf">bindata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">nbins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="nb">xrange</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the weighted binned data.</span>
+
+<span class="sd">    if yerr is None:</span>
+<span class="sd">        yerr = _np.ones(shape=_np.shape(x))</span>
+
+<span class="sd">    INPUT: x, y, err - arrays with the same shape (they don&#39;t need to be</span>
+<span class="sd">    sorted); nbins=int, xrange=[xmin, xmax]</span>
+
+<span class="sd">    OUTPUT: xvals, yvals, new_yerr (arrays)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">yerr</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">yerr</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">yerr</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">yerr</span><span class="p">)</span>
+    <span class="n">nans</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">nan_helper</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">]</span>
+    <span class="n">yerr</span> <span class="o">=</span> <span class="n">yerr</span><span class="p">[</span><span class="o">~</span><span class="n">nans</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">xrange</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">xmax</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">xmin</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="nb">xrange</span>
+    <span class="n">shift</span> <span class="o">=</span> <span class="p">(</span><span class="n">xmax</span> <span class="o">-</span> <span class="n">xmin</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">nbins</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">tmpx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span> <span class="o">*</span> <span class="n">shift</span> <span class="o">+</span> <span class="n">xmin</span>
+    <span class="n">tmpy</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span>
+    <span class="n">tmpyerr</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nbins</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nbins</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbins</span><span class="p">):</span>
+        <span class="n">selx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">tmpx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="n">shift</span> <span class="o">/</span> <span class="mf">2.</span> <span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">selx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">tmpx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">selx</span><span class="p">])</span>
+            <span class="n">tmpy</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">tmpyerr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">wg_avg_and_std</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">selx</span><span class="p">],</span> <span class="n">yerr</span><span class="p">[</span><span class="n">selx</span><span class="p">])</span>
+            <span class="n">idx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">if</span> <span class="n">_np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yerr</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">tmpx</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">tmpy</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">tmpx</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">tmpy</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">tmpyerr</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+</div>
+<div class="viewcode-block" id="chi2calc"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.chi2calc">[docs]</a><span class="k">def</span> <span class="nf">chi2calc</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">obs</span><span class="p">,</span> <span class="n">sig_obs</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">npar</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Calculate the chi2 &quot;&quot;&quot;</span>
+    <span class="n">nans</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">nan_helper</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">obs</span><span class="p">)[</span><span class="o">~</span><span class="n">nans</span><span class="p">]</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mod</span><span class="p">)[</span><span class="o">~</span><span class="n">nans</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">sig_obs</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">sig_obs</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">obs</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sig_obs</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sig_obs</span><span class="p">)[</span><span class="o">~</span><span class="n">nans</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span> <span class="p">(</span><span class="n">mod</span> <span class="o">-</span> <span class="n">obs</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sig_obs</span><span class="o">**</span><span class="mi">2</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sig_obs</span><span class="p">)</span> <span class="o">-</span> <span class="n">npar</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="splitequal"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.splitequal">[docs]</a><span class="k">def</span> <span class="nf">splitequal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Split `N` in approx. `n` igual parts </span>
+
+<span class="sd">    `N` must be integer.</span>
+
+<span class="sd">    Suggestion: *phc.splitequal(N/8., N)* split N into sequences of </span>
+<span class="sd">    approx. 8 itens.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">idx</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">i</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="n">n</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="n">n</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">idx</span>
+
+</div>
+<div class="viewcode-block" id="interBarND"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.interBarND">[docs]</a><span class="k">def</span> <span class="nf">interBarND</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">grid</span><span class="p">,</span> <span class="n">Zgrid</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; TODO &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">grid</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">grid</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="interLinND"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.interLinND">[docs]</a><span class="k">def</span> <span class="nf">interLinND</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X0</span><span class="p">,</span> <span class="n">X1</span><span class="p">,</span> <span class="n">Fx</span><span class="p">,</span> <span class="n">disablelog</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    N-dimensional linear interpolation in LOG space!!</span>
+
+<span class="sd">    Pay attention: Fx must always be &gt; 0. If not, put disablelog=True.</span>
+
+<span class="sd">    Other important thing: Fx must be regularly spaced (i.e., [Fx0y0, Fx0y1,</span>
+<span class="sd">    Fx1y0, Fx1y1] if X0=[x0,y0] and X1=[x1,y1]). </span>
+
+<span class="sd">    If it is not the case, see *interBar?D* function.</span>
+
+<span class="sd">    | INPUT:</span>
+<span class="sd">    | X = position in with the interpolation is desired;</span>
+<span class="sd">    | X0 = minimal values of the interval;</span>
+<span class="sd">    | X1 = maximum values of the inveral</span>
+<span class="sd">    | Fx = function values along the interval, ORDERED BY DIMENSTION.</span>
+<span class="sd">    | Example: Fx = [F00, F01, F10, F11]</span>
+
+<span class="sd">    OUTPUT: interpolated value (float)&quot;&quot;&quot;</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">X0</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X0</span><span class="p">)</span>
+    <span class="n">X1</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X1</span><span class="p">)</span>
+    <span class="n">Xd</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">X0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">X1</span> <span class="o">-</span> <span class="n">X0</span><span class="p">)</span>
+    <span class="n">DX</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">Xd</span> <span class="p">])</span>
+    <span class="c">#</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">prod</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="o">*</span><span class="n">DX</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">disablelog</span><span class="p">:</span>
+            <span class="n">F</span> <span class="o">+=</span> <span class="n">Fx</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">prod</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">F</span> <span class="o">+=</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Fx</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="n">prod</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="c">#</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">disablelog</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">F</span>
+
+</div>
+<div class="viewcode-block" id="optim"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.optim">[docs]</a><span class="k">def</span> <span class="nf">optim</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">errfunc</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Do scipy.optimize.leastsq minimization. </span>
+<span class="sd">    Default error function is the chi2 function.</span>
+
+<span class="sd">    Requirements:</span>
+<span class="sd">        - func(p, x) is a previously user defined function.</span>
+<span class="sd">        - len(x)=len(y)=len(yerr)</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">        best parameters (p), chi2_red value</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">errfunc</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">def</span> <span class="nf">errfunc</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+            <span class="sd">&quot;&quot;&quot; error function &quot;&quot;&quot;</span>
+            <span class="c"># return np.sum( ((y-func(p,x))/yerr)**2 )</span>
+            <span class="k">return</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">yerr</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">bestp</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">_optimize</span><span class="o">.</span><span class="n">leastsq</span><span class="p">(</span><span class="n">errfunc</span><span class="p">,</span> <span class="n">p0</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">func</span><span class="p">))</span>
+    <span class="n">c2red</span> <span class="o">=</span> <span class="n">chi2calc</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">bestp</span><span class="p">,</span> <span class="n">x</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">npar</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">p0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">bestp</span><span class="p">,</span> <span class="n">c2red</span>
+
+</div>
+<div class="viewcode-block" id="optim2"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.optim2">[docs]</a><span class="k">def</span> <span class="nf">optim2</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Do scipy.optimize.curve_fit minimization. </span>
+<span class="sd">    It returns errors to the parameters fitting!!!</span>
+
+<span class="sd">    Requirements:</span>
+<span class="sd">        - func(p, x) is a previously user defined function.</span>
+<span class="sd">        - len(x)=len(y)=len(yerr)</span>
+
+<span class="sd">    Output:</span>
+<span class="sd">        best params (p), params errors (perr), chi2_red value</span>
+<span class="sd">     &quot;&quot;&quot;</span>
+    <span class="n">bestp</span><span class="p">,</span> <span class="n">cov</span> <span class="o">=</span> <span class="n">_optimize</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">p0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">yerr</span><span class="p">)</span>
+    <span class="n">c2red</span> <span class="o">=</span> <span class="n">chi2calc</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bestp</span><span class="p">),</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="p">,</span> <span class="n">npar</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">p0</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">bestp</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">cov</span><span class="p">)),</span> <span class="n">c2red</span>
+
+</div>
+<div class="viewcode-block" id="bin_ndarray"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.bin_ndarray">[docs]</a><span class="k">def</span> <span class="nf">bin_ndarray</span><span class="p">(</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">new_shape</span><span class="p">,</span> <span class="n">operation</span><span class="o">=</span><span class="s">&#39;avg&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Bins an ndarray in all axes based on the target shape, by summing or</span>
+<span class="sd">        averaging.</span>
+<span class="sd">    Number of output dimensions must match number of input dimensions.</span>
+
+<span class="sd">    Example</span>
+<span class="sd">    -------</span>
+<span class="sd">    &gt;&gt;&gt; m = np.arange(0,100,1).reshape((10,10))</span>
+<span class="sd">    &gt;&gt;&gt; n = bin_ndarray(m, new_shape=(5,5), operation=&#39;sum&#39;)</span>
+<span class="sd">    &gt;&gt;&gt; print(n)</span>
+<span class="sd">    [[ 22  30  38  46  54]</span>
+<span class="sd">     [102 110 118 126 134]</span>
+<span class="sd">     [182 190 198 206 214]</span>
+<span class="sd">     [262 270 278 286 294]</span>
+<span class="sd">     [342 350 358 366 374]]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;sum&#39;</span><span class="p">,</span> <span class="s">&#39;mean&#39;</span><span class="p">,</span> <span class="s">&#39;average&#39;</span><span class="p">,</span> <span class="s">&#39;avg&#39;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Operation {} not supported.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">operation</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">ndarray</span><span class="o">.</span><span class="n">ndim</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_shape</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s">&quot;Shape mismatch: {} -&gt; {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ndarray</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
+                                                           <span class="n">new_shape</span><span class="p">))</span>
+    <span class="n">compression_pairs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">d</span><span class="p">,</span> <span class="n">c</span><span class="o">//</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">new_shape</span><span class="p">,</span>
+                                                   <span class="n">ndarray</span><span class="o">.</span><span class="n">shape</span><span class="p">)]</span>
+    <span class="n">flattened</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">compression_pairs</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+    <span class="c"># print flattened</span>
+    <span class="n">ndarray</span> <span class="o">=</span> <span class="n">ndarray</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">flattened</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">new_shape</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;sum&quot;</span><span class="p">:</span>
+            <span class="n">ndarray</span> <span class="o">=</span> <span class="n">ndarray</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">operation</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;mean&quot;</span><span class="p">,</span> <span class="s">&quot;average&quot;</span><span class="p">,</span> <span class="s">&quot;avg&quot;</span><span class="p">]:</span>
+            <span class="n">ndarray</span> <span class="o">=</span> <span class="n">ndarray</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ndarray</span>
+
+
+<span class="c"># Convolution functions</span></div>
+<div class="viewcode-block" id="normgauss"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.normgauss">[docs]</a><span class="k">def</span> <span class="nf">normgauss</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Normalized Gaussian function.</span>
+
+<span class="sd">    INPUT: sigma value (float), x (array), xc (float)</span>
+
+<span class="sd">    OUTPUT: yvals (array)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span> <span class="o">*</span> <span class="n">sig</span><span class="p">,</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">sig</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**.</span><span class="mi">5</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xc</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sig</span><span class="o">**</span><span class="mf">2.</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="normbox"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.normbox">[docs]</a><span class="k">def</span> <span class="nf">normbox</span><span class="p">(</span><span class="n">hwidth</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Normalized Box function.</span>
+
+<span class="sd">    INPUT: half-width (number), x (array), xc (float)</span>
+
+<span class="sd">    OUTPUT: yvals (array)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">hwidth</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">xc</span><span class="p">,</span> <span class="n">hwidth</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">xc</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">xc</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">hwidth</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">idx</span><span class="p">]))</span> <span class="o">+</span> <span class="mf">2.</span> <span class="o">/</span> <span class="n">hwidth</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+</div>
+<div class="viewcode-block" id="convnorm"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.convnorm">[docs]</a><span class="k">def</span> <span class="nf">convnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">pattern</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Do the convolution of arr with pattern.</span>
+<span class="sd">    Vector x is required for normalization. Its length must be odd!</span>
+
+<span class="sd">    INPUT: units space (x, array), original array (arr), pattern (array)</span>
+
+<span class="sd">    OUTPUT: array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Wrong format of x and/or pattern arrays!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">)</span>
+    <span class="n">cut</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">arr</span><span class="p">)[</span><span class="n">cut</span><span class="p">:</span><span class="o">-</span><span class="n">cut</span><span class="p">]</span> <span class="o">*</span> <span class="n">dx</span>
+
+
+<span class="c"># 3D Coordinates manipulation (rotation)</span></div>
+<div class="viewcode-block" id="cart2sph"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.cart2sph">[docs]</a><span class="k">def</span> <span class="nf">cart2sph</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Cartesian to spherical coordinates.</span>
+
+<span class="sd">    INPUT: arrays of same length</span>
+
+<span class="sd">    OUTPUT: arrays &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">z</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">hxy</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">hxy</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+    <span class="n">el</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">hxy</span><span class="p">)</span>
+    <span class="n">az</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">el</span>
+
+</div>
+<span class="k">def</span> <span class="nf">sph2cart</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">az</span><span class="p">,</span> <span class="n">el</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">el</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">el</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+    <span class="n">rcos_theta</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">rcos_theta</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">az</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">rcos_theta</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">az</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
+
+
+<div class="viewcode-block" id="cart_rot"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.cart_rot">[docs]</a><span class="k">def</span> <span class="nf">cart_rot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">ang_xy</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">ang_yz</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">ang_zx</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Apply rotation in Cartesian coordinates.</span>
+
+<span class="sd">    INPUT: 3 arrays of same length, 3 angles (float, in radians).</span>
+
+<span class="sd">    OUTPUT: arrays &quot;&quot;&quot;</span>
+    <span class="n">rotmtx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">),</span> <span class="o">-</span><span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span>
+        <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">)</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">),</span>
+        <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">)</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)</span> <span class="o">*</span>
+        <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">)],</span>
+        <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">),</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">)</span> <span class="o">+</span>
+        <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">),</span> <span class="o">-</span><span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span>
+        <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">)</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_xy</span><span class="p">)],</span>
+        <span class="p">[</span><span class="o">-</span><span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">),</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">),</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_yz</span><span class="p">)</span> <span class="o">*</span>
+        <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ang_zx</span><span class="p">)]</span> <span class="p">])</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rotmtx</span><span class="p">,</span> <span class="n">vec</span><span class="p">)</span>
+
+
+<span class="c"># Lists and strings manipulation</span></div>
+<div class="viewcode-block" id="renormvals"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.renormvals">[docs]</a><span class="k">def</span> <span class="nf">renormvals</span><span class="p">(</span><span class="n">xlist</span><span class="p">,</span> <span class="n">xref</span><span class="p">,</span> <span class="n">yref</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Renormalize ``xlist`` according to ``_ref`` values.</span>
+
+<span class="sd">    len(xref)=len(yref)=2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">yref</span><span class="p">)</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">xref</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">yref</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">xref</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xlist</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
+
+</div>
+<div class="viewcode-block" id="keys_values"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.keys_values">[docs]</a><span class="k">def</span> <span class="nf">keys_values</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&#39;_&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the values in a string coded as *KeyValueDelimiter*. The keys </span>
+<span class="sd">    do not need to be in order in the text. </span>
+
+<span class="sd">    Important! The text can not start with a keyword (if it is the case, add </span>
+<span class="sd">    a delimiter first) and it must have a delimiter after the last key. </span>
+
+<span class="sd">    TODO: Relax the important message considering starting with the first key </span>
+<span class="sd">    and a sign as last delimiter.</span>
+
+<span class="sd">    Example: </span>
+
+<span class="sd">    .. code:: python</span>
+
+<span class="sd">        keys = [&#39;M&#39;, &#39;ob&#39;, &#39;H&#39;, &#39;Z&#39;, &#39;b&#39;]</span>
+<span class="sd">        text = &#39;Be_M04.20_ob1.30_H0.30_Z0.014_bE_Ell.txt&#39;</span>
+
+<span class="sd">        print( phc.keys_values(keys, text) )</span>
+<span class="sd">        # </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">delimiter</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+        <span class="n">afterk</span> <span class="o">=</span> <span class="n">text</span><span class="p">[</span><span class="n">text</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="o">+</span><span class="n">k</span><span class="p">):]</span>
+        <span class="n">vals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">afterk</span><span class="p">[:</span><span class="n">afterk</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span> <span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">vals</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">vals</span>
+
+</div>
+<div class="viewcode-block" id="fltTxtOccur"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.fltTxtOccur">[docs]</a><span class="k">def</span> <span class="nf">fltTxtOccur</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">after</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">asstr</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the seq-th float of the line after the n-th</span>
+<span class="sd">    occurrence of `s` in the array `lines`.</span>
+
+<span class="sd">    INPUT: s=string, lines=array of strings, n/seq=int (starting at 1)</span>
+
+<span class="sd">    OUTPUT: float&quot;&quot;&quot;</span>
+    <span class="n">fltregex</span> <span class="o">=</span> <span class="s">r&#39;[-+]?[0-9]*\.?[0-9]+(?:[eE][-+]?[0-9]+)?&#39;</span>
+    <span class="k">if</span> <span class="n">after</span><span class="p">:</span>
+        <span class="n">occur</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">):]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">occur</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">occur</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">occur</span> <span class="o">=</span> <span class="n">occur</span><span class="p">[</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">_re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">fltregex</span><span class="p">,</span> <span class="n">occur</span><span class="p">)[</span><span class="n">seq</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">asstr</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+</div>
+<div class="viewcode-block" id="strrep"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.strrep">[docs]</a><span class="k">def</span> <span class="nf">strrep</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">newseq</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Insert `newseq` at position `n` of the string `seq`.</span>
+
+<span class="sd">    seq[n] = seq[:n]+newseq+seq[n+1:]</span>
+
+<span class="sd">    Note: the string at the position `n` is replaced!!!</span>
+
+<span class="sd">    OUTPUT: string</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">seq</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">newseq</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+
+</div>
+<div class="viewcode-block" id="find_nearest"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.find_nearest">[docs]</a><span class="k">def</span> <span class="nf">find_nearest</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">bigger</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Find nearest VALUE in the array and return it.</span>
+
+<span class="sd">    INPUT: array, value</span>
+
+<span class="sd">    OUTPUT: closest value (array dtype)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">bigger</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">array</span> <span class="o">-</span> <span class="n">value</span><span class="p">))</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">bigger</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array</span> <span class="o">==</span> <span class="n">found</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">bigger</span><span class="p">:</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">])</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">array</span> <span class="o">==</span> <span class="n">found</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# ERROR at bigger!!&#39;</span><span class="p">)</span>
+    <span class="c"># return</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">idx</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">found</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">i</span>
+
+</div>
+<div class="viewcode-block" id="nan_helper"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.nan_helper">[docs]</a><span class="k">def</span> <span class="nf">nan_helper</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Helper to handle indices and logical indices of NaNs.</span>
+
+<span class="sd">    Input:</span>
+<span class="sd">        - y, 1d numpy array with possible NaNs</span>
+<span class="sd">    Output:</span>
+<span class="sd">        - nans, logical indices of NaNs</span>
+<span class="sd">        - index, a function, with signature indices= index(logical_indices),</span>
+<span class="sd">          to convert logical indices of NaNs to &#39;equivalent&#39; indices</span>
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; # linear interpolation of NaNs</span>
+<span class="sd">        &gt;&gt;&gt; nans, x = nan_helper(y)</span>
+<span class="sd">        &gt;&gt;&gt; # x is a lambda &quot;sequence&quot; function to interpolation purposes</span>
+<span class="sd">        &gt;&gt;&gt; y[nans]= np.interp(x(nans), x(~nans), y[~nans])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="n">z</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="c"># Angular coordinates and dates manipulation</span></div>
+<div class="viewcode-block" id="dtflag"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.dtflag">[docs]</a><span class="k">def</span> <span class="nf">dtflag</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Return a &quot;datetime&quot; flag, i.e., a string the the current date and time</span>
+<span class="sd">    formated as yyyymmdd-hhMM.&quot;&quot;&quot;</span>
+    <span class="n">now</span> <span class="o">=</span> <span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="k">return</span> <span class="s">&#39;{0}{1:02d}{2:02d}-{3:02d}{4:02d}{5:02d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">now</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> 
+        <span class="n">now</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">hour</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">minute</span><span class="p">,</span> <span class="n">now</span><span class="o">.</span><span class="n">second</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="longdate2MJD"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.longdate2MJD">[docs]</a><span class="k">def</span> <span class="nf">longdate2MJD</span><span class="p">(</span><span class="n">ldate</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; FROM YYYY-MM-HHThh:mm:ss.sss to MJD (float). &quot;&quot;&quot;</span>
+    <span class="n">ldate</span><span class="p">,</span> <span class="n">hms</span> <span class="o">=</span> <span class="n">ldate</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;T&#39;</span><span class="p">)</span>
+    <span class="n">ldate</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ldate</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;-&#39;</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">mjd</span> <span class="o">=</span> <span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="o">*</span><span class="n">ldate</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">mjd</span> <span class="o">+</span> <span class="n">hms2fracday</span><span class="p">(</span><span class="n">hms</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="hms2fracday"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.hms2fracday">[docs]</a><span class="k">def</span> <span class="nf">hms2fracday</span><span class="p">(</span><span class="n">hms</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Enter hour:min:sec (string) and return fraction of a day (float) &quot;&quot;&quot;</span>
+    <span class="n">hms</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">hms</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;float&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">hms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">hms</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mf">60.</span> <span class="o">+</span> <span class="n">hms</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="mi">3600</span><span class="p">)</span> <span class="o">/</span> <span class="mf">24.</span>
+
+</div>
+<div class="viewcode-block" id="fracday2hms"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.fracday2hms">[docs]</a><span class="k">def</span> <span class="nf">fracday2hms</span><span class="p">(</span><span class="n">frac</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Enter fraction of a day (e.g., MJD) and return integers of hour, min,</span>
+<span class="sd">    sec.</span>
+
+<span class="sd">    INPUT: float</span>
+
+<span class="sd">    OUTPUT: hour, min, sec (int, int, int)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">hh</span> <span class="o">=</span> <span class="n">frac</span> <span class="o">*</span> <span class="mi">24</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">hh</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="n">hh</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">hh</span><span class="p">)</span>
+        <span class="n">hh</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">hh</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="n">hh</span>
+        <span class="n">hh</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">mm</span> <span class="o">=</span> <span class="n">mm</span> <span class="o">*</span> <span class="mi">60</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">mm</span> <span class="o">%</span> <span class="nb">int</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ss</span> <span class="o">=</span> <span class="n">mm</span>
+        <span class="n">mm</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">ss</span> <span class="o">*</span> <span class="mi">60</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">hh</span><span class="p">,</span> <span class="n">mm</span><span class="p">,</span> <span class="n">ss</span>
+
+</div>
+<div class="viewcode-block" id="ra2degf"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.ra2degf">[docs]</a><span class="k">def</span> <span class="nf">ra2degf</span><span class="p">(</span><span class="n">rastr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; RA to degrees (decimal). Input is string. &quot;&quot;&quot;</span>
+    <span class="n">rastr</span> <span class="o">=</span> <span class="n">rastr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;::&#39;</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">)</span>
+    <span class="n">rastr</span> <span class="o">=</span> <span class="n">rastr</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rastr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">60.</span> <span class="o">+</span> <span class="n">vals</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">3600.</span><span class="p">)</span> <span class="o">*</span> <span class="mf">360.</span> <span class="o">/</span> <span class="mi">24</span>
+
+</div>
+<div class="viewcode-block" id="dec2degf"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.dec2degf">[docs]</a><span class="k">def</span> <span class="nf">dec2degf</span><span class="p">(</span><span class="n">decstr</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">&quot;:&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Sexagesimal to decimal. Input is string. &quot;&quot;&quot;</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">decstr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">delimiter</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">return</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">vals</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">60.</span> <span class="o">+</span> <span class="n">vals</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">3600.</span>
+
+</div>
+<div class="viewcode-block" id="gentkdates"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.gentkdates">[docs]</a><span class="k">def</span> <span class="nf">gentkdates</span><span class="p">(</span><span class="n">mjd0</span><span class="p">,</span> <span class="n">mjd1</span><span class="p">,</span> <span class="n">fact</span><span class="p">,</span> <span class="n">step</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Generates round dates between &gt; mjd0 and &lt; mjd1 in a given step.</span>
+<span class="sd">    Valid steps are:</span>
+
+<span class="sd">        &#39;d/D/dd/DD&#39; for days;</span>
+<span class="sd">        &#39;m/M/mm/MM&#39; for months;</span>
+<span class="sd">        &#39;y/Y/yy/YY/yyyy/YYYY&#39; for years.</span>
+
+<span class="sd">    dtstart (optional) is expected to be in _datetime._datetime.date() format</span>
+<span class="sd">    [i.e., _datetime.date(yyyy, m, d)].</span>
+
+<span class="sd">    fact must be an integer.</span>
+
+<span class="sd">    INPUT: float, float, float, int, step (see above), dtstart (see above)</span>
+
+<span class="sd">    OUTPUT: list of _datetime.date</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># check sanity of dtstart</span>
+    <span class="k">if</span> <span class="n">dtstart</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">dtstart</span> <span class="o">=</span> <span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">_jdcal</span><span class="o">.</span><span class="n">jd2gcal</span><span class="p">(</span><span class="n">_jdcal</span><span class="o">.</span><span class="n">MJD_0</span><span class="p">,</span> <span class="n">mjd0</span><span class="p">)[:</span><span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+        <span class="n">mjdst</span> <span class="o">=</span> <span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="n">dtstart</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">day</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mjdst</span> <span class="o">=</span> <span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="n">dtstart</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">day</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">mjdst</span> <span class="o">&lt;</span> <span class="n">mjd0</span> <span class="o">-</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">mjdst</span> <span class="o">&gt;</span> <span class="n">mjd1</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! Invalid &quot;dtstart&quot;. Using mjd0.&#39;</span><span class="p">)</span>
+            <span class="n">dtstart</span> <span class="o">=</span> <span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span>
+                <span class="o">*</span><span class="n">_jdcal</span><span class="o">.</span><span class="n">jd2gcal</span><span class="p">(</span><span class="n">_jdcal</span><span class="o">.</span><span class="n">MJD_0</span><span class="p">,</span> <span class="n">mjd0</span><span class="p">)[:</span><span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+    <span class="c"># define step &#39;position&#39; and vector:</span>
+    <span class="k">if</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">day</span> <span class="o">&gt;</span> <span class="mi">28</span><span class="p">:</span>
+        <span class="n">dtstart</span> <span class="o">=</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">day</span><span class="o">=</span><span class="mi">28</span><span class="p">)</span>
+    <span class="n">basedata</span> <span class="o">=</span> <span class="p">[</span><span class="n">dtstart</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">dtstart</span><span class="o">.</span><span class="n">day</span><span class="p">]</span>
+    <span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">mjd</span> <span class="o">=</span> <span class="n">mjdst</span>
+    <span class="k">if</span> <span class="n">step</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;Y&#39;</span><span class="p">,</span> <span class="s">&#39;YY&#39;</span><span class="p">,</span> <span class="s">&#39;YYYY&#39;</span><span class="p">]:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">mjd</span> <span class="o">&lt;</span> <span class="n">mjd1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">dates</span> <span class="o">+=</span> <span class="p">[</span><span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">basedata</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()]</span>
+            <span class="n">basedata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">fact</span>
+            <span class="n">mjd</span> <span class="o">=</span> <span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="o">*</span><span class="n">basedata</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">step</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;M&#39;</span><span class="p">,</span> <span class="s">&#39;MM&#39;</span><span class="p">]:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">mjd</span> <span class="o">&lt;</span> <span class="n">mjd1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">dates</span> <span class="o">+=</span> <span class="p">[</span><span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">basedata</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()]</span>
+            <span class="n">basedata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">fact</span>
+            <span class="k">while</span> <span class="n">basedata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">12</span><span class="p">:</span>
+                <span class="n">basedata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">basedata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">12</span>
+            <span class="n">mjd</span> <span class="o">=</span> <span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="o">*</span><span class="n">basedata</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">step</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;D&#39;</span><span class="p">,</span> <span class="s">&#39;DD&#39;</span><span class="p">]:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="c"># daysvec = _np.arange(1, 29, fact)</span>
+        <span class="c"># if basedata[i] not in daysvec:</span>
+        <span class="c">#     j = 0</span>
+        <span class="c">#     while daysvec[j + 1] &lt; basedata[i]:</span>
+        <span class="c">#         j += 1</span>
+        <span class="c">#     daysvec += basedata[i] - daysvec[j]</span>
+        <span class="c">#     idx = _np.where(daysvec &lt; 29)</span>
+        <span class="c">#     daysvec = daysvec[idx]</span>
+        <span class="c"># else:</span>
+        <span class="c">#     j = _np.where(daysvec == basedata[i])[0]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">daysvec</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">)[</span><span class="n">j</span><span class="p">::</span><span class="n">fact</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">basedata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">daysvec</span><span class="p">:</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">daysvec</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">29</span><span class="p">)[</span><span class="n">j</span><span class="p">::</span><span class="n">fact</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="n">mjd</span> <span class="o">&lt;</span> <span class="n">mjd1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">dates</span> <span class="o">+=</span> <span class="p">[</span><span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="o">*</span><span class="n">basedata</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()]</span>
+            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">daysvec</span><span class="p">):</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">basedata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">if</span> <span class="n">basedata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
+                    <span class="n">basedata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                    <span class="n">basedata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">basedata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">daysvec</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+            <span class="n">mjd</span> <span class="o">=</span> <span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="o">*</span><span class="n">basedata</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# ERROR! Invalid step&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dates</span>
+
+</div>
+<div class="viewcode-block" id="deg2rad"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.deg2rad">[docs]</a><span class="k">def</span> <span class="nf">deg2rad</span><span class="p">(</span><span class="n">deg</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ=\frac{pi}{180}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">deg</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">180.</span>
+
+</div>
+<div class="viewcode-block" id="rad2deg"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.rad2deg">[docs]</a><span class="k">def</span> <span class="nf">rad2deg</span><span class="p">(</span><span class="n">rad</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ=\frac{pi}{180}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rad</span><span class="o">*</span><span class="mf">180.</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span>
+
+</div>
+<div class="viewcode-block" id="arcmin2rad"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.arcmin2rad">[docs]</a><span class="k">def</span> <span class="nf">arcmin2rad</span><span class="p">(</span><span class="n">arm</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1&#39;=\frac{pi}{10800}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">arm</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">10800.</span>
+
+</div>
+<div class="viewcode-block" id="rad2arcmin"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.rad2arcmin">[docs]</a><span class="k">def</span> <span class="nf">rad2arcmin</span><span class="p">(</span><span class="n">rad</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ=\frac{pi}{10800}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rad</span><span class="o">*</span><span class="mf">10800.</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span>
+
+</div>
+<div class="viewcode-block" id="arcsec2rad"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.arcsec2rad">[docs]</a><span class="k">def</span> <span class="nf">arcsec2rad</span><span class="p">(</span><span class="n">ars</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1&#39;=\frac{pi}{648000}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ars</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">648000.</span>
+
+</div>
+<div class="viewcode-block" id="rad2arcsec"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.rad2arcsec">[docs]</a><span class="k">def</span> <span class="nf">rad2arcsec</span><span class="p">(</span><span class="n">rad</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ=\frac{pi}{648000}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rad</span><span class="o">*</span><span class="mf">648000.</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span>
+
+</div>
+<div class="viewcode-block" id="mas2rad"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.mas2rad">[docs]</a><span class="k">def</span> <span class="nf">mas2rad</span><span class="p">(</span><span class="n">mas</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ=\frac{pi}{648000000}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">mas</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">648000000.</span>
+
+</div>
+<div class="viewcode-block" id="rad2mas"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.rad2mas">[docs]</a><span class="k">def</span> <span class="nf">rad2mas</span><span class="p">(</span><span class="n">rad</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ=\frac{pi}{648000000}` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">rad</span><span class="o">*</span><span class="mf">648000000.</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span>
+
+</div>
+<div class="viewcode-block" id="deg2mas"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.deg2mas">[docs]</a><span class="k">def</span> <span class="nf">deg2mas</span><span class="p">(</span><span class="n">deg</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ = 3600000` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">deg</span><span class="o">*</span><span class="mf">3600000.</span>
+
+</div>
+<div class="viewcode-block" id="mas2deg"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.mas2deg">[docs]</a><span class="k">def</span> <span class="nf">mas2deg</span><span class="p">(</span><span class="n">mas</span><span class="o">=</span><span class="mf">1.</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; :math:`1^\circ = 3600000` &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">mas</span><span class="o">/</span><span class="mf">3600000.</span>
+
+
+<span class="c"># Files manipulation</span></div>
+<div class="viewcode-block" id="sortfile"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.sortfile">[docs]</a><span class="k">def</span> <span class="nf">sortfile</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Sort the file. &quot;&quot;&quot;</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# File {0} sorted!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">file</span><span class="p">))</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="outfld"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.outfld">[docs]</a><span class="k">def</span> <span class="nf">outfld</span><span class="p">(</span><span class="n">fold</span><span class="o">=</span><span class="s">&#39;hdt&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Check and create (if necessary) an (sub)folder - generally used for output.</span>
+
+<span class="sd">    INPUT: *fold=string</span>
+
+<span class="sd">    OUTPUT: *system [folder creation]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fold</span><span class="p">):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir {0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fold</span><span class="p">))</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="trimpathname"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.trimpathname">[docs]</a><span class="k">def</span> <span class="nf">trimpathname</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Trim the full path string to return path and filename.</span>
+
+<span class="sd">    INPUT: full file path</span>
+
+<span class="sd">    OUTPUT: folder path, filename (strings)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">[</span> <span class="nb">file</span><span class="p">[:</span><span class="nb">file</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="nb">file</span><span class="p">[</span><span class="nb">file</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span> <span class="p">]</span>
+
+</div>
+<div class="viewcode-block" id="rmext"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.rmext">[docs]</a><span class="k">def</span> <span class="nf">rmext</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Remove the extension of a filename.</span>
+<span class="sd">    Criteria: last `.` sets the extension.</span>
+
+<span class="sd">    INPUT: filename (string)</span>
+
+<span class="sd">    OUTPUT: filename without extension (string) &quot;&quot;&quot;</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">name</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">[:</span><span class="n">name</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)]</span>
+
+</div>
+<div class="viewcode-block" id="readrange"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.readrange">[docs]</a><span class="k">def</span> <span class="nf">readrange</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">i0</span><span class="p">,</span> <span class="n">ie</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Read a specific range of lines of a file with minimal memory use.</span>
+
+<span class="sd">    Note that i == n-1 for the n-th line.</span>
+
+<span class="sd">    INPUT: string, int, int</span>
+
+<span class="sd">    OUTPUT: list of strings &quot;&quot;&quot;</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fp</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">i0</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">+=</span> <span class="p">[</span><span class="n">line</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">ie</span><span class="p">:</span>
+            <span class="k">break</span>
+    <span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">lines</span>
+
+</div>
+<div class="viewcode-block" id="splitfilelines"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.splitfilelines">[docs]</a><span class="k">def</span> <span class="nf">splitfilelines</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Break the *file* into *n* files. It also erases the expression &quot;qsub &quot;.</span>
+
+<span class="sd">    OUTPUT: `file_##.txt` &quot;&quot;&quot;</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;qsub &#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+    <span class="n">outname</span> <span class="o">=</span> <span class="n">trimpathname</span><span class="p">(</span><span class="nb">file</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.sh&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}_{1:02d}.txt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">outname</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="n">n</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="n">n</span><span class="p">])</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# {0} files created!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="recsearch"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.recsearch">[docs]</a><span class="k">def</span> <span class="nf">recsearch</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="s">&#39;./&#39;</span><span class="p">,</span> <span class="n">fstr</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">],</span> <span class="n">allfstr</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fullpath</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Do a recursive search in `root` looking for files containg `fstr`.</span>
+
+<span class="sd">    `fstr` must be a list!</span>
+
+<span class="sd">    If `allfstr` is True, *all* itens in fstr must be in the path+file names </span>
+<span class="sd">    structure. If False, *any* of the itens must be.</span>
+
+<span class="sd">    INPUT: root (string), fstr (list of strings)</span>
+
+<span class="sd">    OUTPUT: list of strings</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">outflist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fstr</span><span class="p">)):</span>
+        <span class="n">fstr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">fstr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">subfolders</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">_os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">fcomp</span> <span class="o">=</span> <span class="n">f</span>
+            <span class="k">if</span> <span class="n">fullpath</span><span class="p">:</span>
+                <span class="n">fcomp</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">allfstr</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">fcomp</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fstr</span><span class="p">):</span>
+                    <span class="n">outflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">+</span><span class="s">&#39;/&#39;</span><span class="o">+</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">fcomp</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">fstr</span><span class="p">):</span>
+                    <span class="n">outflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">+</span><span class="s">&#39;/&#39;</span><span class="o">+</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">outflist</span>
+
+</div>
+<div class="viewcode-block" id="renlist"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.renlist">[docs]</a><span class="k">def</span> <span class="nf">renlist</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">newr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; The routine changes each A_STR_B to A_NEW_B inside the running folder.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">files</span> <span class="o">=</span> <span class="n">_glob</span><span class="p">(</span><span class="s">&#39;*{0}*&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">root</span><span class="p">))</span>
+    <span class="n">files</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">files</span><span class="p">)):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+            <span class="s">&#39;mv &quot;&#39;</span> <span class="o">+</span> <span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39;&quot; &quot;&#39;</span> <span class="o">+</span> <span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">newr</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;&quot;&#39;</span> <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;# &quot;</span> <span class="o">+</span> <span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot; renamed to: &quot;</span> <span class="o">+</span>
+              <span class="n">files</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">newr</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="repl_fline_val"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.repl_fline_val">[docs]</a><span class="k">def</span> <span class="nf">repl_fline_val</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">iline</span><span class="p">,</span> <span class="n">oldval</span><span class="p">,</span> <span class="n">newval</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Replace `oldval` by `newval` in `f[iline]`</span>
+
+<span class="sd">    return `f` replaced.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span><span class="p">[</span><span class="n">iline</span><span class="p">]</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">iline</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">oldval</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">newval</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">f</span>
+
+
+<span class="c"># Plot-related</span></div>
+<div class="viewcode-block" id="civil_ticks"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.civil_ticks">[docs]</a><span class="k">def</span> <span class="nf">civil_ticks</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">civcfg</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;m&#39;</span><span class="p">],</span> <span class="n">civdt</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">tklab</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Add the civil ticks in the axis.  &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">civdt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">civdt</span> <span class="o">=</span> <span class="n">_dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">civdt</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">civdt</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">civdt</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+    <span class="n">mjd0</span><span class="p">,</span> <span class="n">mjd1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span>
+    <span class="n">dtticks</span> <span class="o">=</span> <span class="n">gentkdates</span><span class="p">(</span><span class="n">mjd0</span><span class="p">,</span> <span class="n">mjd1</span><span class="p">,</span> <span class="n">civcfg</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">civcfg</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtstart</span><span class="o">=</span><span class="n">civdt</span><span class="p">)</span>
+    <span class="n">mjdticks</span> <span class="o">=</span> <span class="p">[</span><span class="n">_jdcal</span><span class="o">.</span><span class="n">gcal2jd</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">date</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">date</span><span class="o">.</span><span class="n">day</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> 
+        <span class="n">date</span> <span class="ow">in</span> <span class="n">dtticks</span><span class="p">]</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twiny</span><span class="p">()</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xlim</span><span class="p">()</span> <span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">mjdticks</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tklab</span><span class="p">:</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%d</span><span class="s"> %b %y&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">dtticks</span><span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+    <span class="k">return</span> <span class="n">ax</span>
+
+</div>
+<div class="viewcode-block" id="savefig"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.savefig">[docs]</a><span class="k">def</span> <span class="nf">savefig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">figname</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;png&#39;</span><span class="p">],</span> <span class="n">keeppt</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Standard way of saving a figure in PyHdust. &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">figname</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">figname</span> <span class="o">==</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">figname</span> <span class="o">=</span> <span class="n">dtflag</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">keeppt</span><span class="p">:</span>
+        <span class="n">figname</span> <span class="o">=</span> <span class="n">figname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">figname</span><span class="p">)</span> <span class="o">==</span> <span class="n">figname</span><span class="p">:</span>
+        <span class="n">figname</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">figname</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fmt</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Saved {1}.{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">figname</span><span class="p">))</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">figname</span><span class="o">+</span><span class="s">&#39;.{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">transparent</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> 
+            <span class="n">bbox_inches</span><span class="o">=</span><span class="s">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">_plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="normGScale"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.normGScale">[docs]</a><span class="k">def</span> <span class="nf">normGScale</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the normalized values of a given array to 0 and 255 (gray </span>
+<span class="sd">    scale).</span>
+
+<span class="sd">    If `log` then the normalization is done in this scale.</span>
+
+<span class="sd">    If `min` and `max` are not set, it is assumed that the values are from the </span>
+<span class="sd">    list.</span>
+
+<span class="sd">    .. code::</span>
+
+<span class="sd">        &gt;&gt;&gt; phc.normGScale(np.linspace(0,10,10), 0, 10)</span>
+<span class="sd">        array([  0,  28,  57,  85, 113, 142, 170, 198, 227, 255])</span>
+<span class="sd">        &gt;&gt;&gt; phc.normGScale(np.linspace(0,10,10))</span>
+<span class="sd">        array([  0,  28,  57,  85, 113, 142, 170, 198, 227, 255])</span>
+<span class="sd">        &gt;&gt;&gt; phc.normGScale(np.linspace(0,10,10), 0, 10, log=True)</span>
+<span class="sd">        array([  0,   0,  80, 128, 161, 187, 208, 226, 241, 255])</span>
+<span class="sd">        &gt;&gt;&gt; phc.normGScale(np.logspace(0,1,10), 0, 10, log=True)</span>
+<span class="sd">        array([  0,  28,  57,  85, 113, 142, 170, 198, 227, 255])</span>
+<span class="sd">        &gt;&gt;&gt; phc.normGScale(np.logspace(0,1,10), 0, 10)</span>
+<span class="sd">        array([ 26,  33,  43,  55,  71,  92, 118, 153, 197, 255])</span>
+<span class="sd">        &gt;&gt;&gt; phc.normGScale(np.logspace(0,1,10))</span>
+<span class="sd">        array([  0,   8,  19,  33,  51,  73, 103, 142, 191, 255])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">min</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="nb">max</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! Wrong normGScale call!!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">127</span>
+    <span class="c">#</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">min</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="nb">min</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">max</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="nb">max</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">log</span><span class="p">:</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">max</span> <span class="o">-</span> <span class="nb">min</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">min</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)])</span>
+            <span class="n">val</span><span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">val</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">min</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span> <span class="o">-</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">min</span><span class="p">))</span> <span class="o">/</span> \
+            <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">max</span><span class="p">)</span> <span class="o">-</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">min</span><span class="p">))</span> <span class="o">*</span> <span class="mi">255</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="gradColor"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.gradColor">[docs]</a><span class="k">def</span> <span class="nf">gradColor</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">cmapn</span><span class="o">=</span><span class="s">&#39;jet&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the corresponding value(s) color of a given colormap.</span>
+
+<span class="sd">    Good options, specially for lines, are &#39;jet&#39;, &#39;gnuplot&#39;, &#39;brg&#39;, </span>
+<span class="sd">    &#39;cool&#39; and &#39;gist_heat&#39; (attention! Here max is white!). </span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        cor = phc.gradColor(arange(10), cmapn=&#39;gist_heat&#39;)</span>
+<span class="sd">        for i in range(0,10):</span>
+<span class="sd">            cor = phc.gradColor(arange(10), cmapn=&#39;gist_heat&#39;)[i]</span>
+<span class="sd">            print cor</span>
+<span class="sd">            plt.plot(arange(5)+i, color=cor, label=&#39;GB=&#39;+(&#39;{0:4.2f},&#39;*3).</span>
+<span class="sd">                format(*cor)[:-1])</span>
+
+<span class="sd">        plt.legend(fontsize=8)</span>
+
+<span class="sd">    .. image:: _static/phc_gradColor.png</span>
+<span class="sd">        :width: 512px</span>
+<span class="sd">        :align: center</span>
+<span class="sd">        :alt: phc.gradColor example</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">normGScale</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="nb">max</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="n">log</span><span class="p">)</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">_plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="n">cmapn</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cmap</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="cycles"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.cycles">[docs]</a><span class="k">def</span> <span class="nf">cycles</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ctype</span><span class="o">=</span><span class="s">&#39;cor&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Cycle between values of the phc.colors, phc.line_styles and </span>
+<span class="sd">    phc.filled_markers lists. </span>
+
+<span class="sd">    INPUT: valid ctypes are: [&#39;cor&#39;,&#39;ls&#39;,&#39;mk&#39;]</span>
+
+<span class="sd">    OUTPUT: the corresponding value of the list. &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ctype</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;cor&#39;</span><span class="p">,</span> <span class="s">&#39;ls&#39;</span><span class="p">,</span> <span class="s">&#39;mk&#39;</span><span class="p">]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! Invalid ctype calling phc.cycles!&#39;</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="k">elif</span> <span class="n">ctype</span> <span class="o">==</span> <span class="s">&#39;cor&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">colors</span><span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">colors</span><span class="p">))]</span>
+    <span class="k">elif</span> <span class="n">ctype</span> <span class="o">==</span> <span class="s">&#39;ls&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">line_styles</span><span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">line_styles</span><span class="p">))]</span>
+    <span class="k">elif</span> <span class="n">ctype</span> <span class="o">==</span> <span class="s">&#39;mk&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">filled_markers</span><span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">filled_markers</span><span class="p">))]</span>
+
+</div>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Black&#39;</span><span class="p">,</span> <span class="s">&#39;Blue&#39;</span><span class="p">,</span> <span class="s">&#39;Green&#39;</span><span class="p">,</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&#39;orange&#39;</span><span class="p">,</span> <span class="s">&#39;brown&#39;</span><span class="p">,</span> <span class="s">&#39;purple&#39;</span><span class="p">,</span> <span class="s">&#39;gray&#39;</span><span class="p">,</span>
+    <span class="s">&#39;dodgerblue&#39;</span><span class="p">,</span> <span class="s">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="s">&#39;tomato&#39;</span><span class="p">,</span> <span class="s">&#39;yellow&#39;</span><span class="p">,</span> <span class="s">&#39;peru&#39;</span><span class="p">,</span> <span class="s">&#39;MediumVioletRed&#39;</span><span class="p">,</span>
+    <span class="s">&#39;LightSteelBlue&#39;</span><span class="p">,</span> <span class="s">&#39;cyan&#39;</span><span class="p">,</span> <span class="s">&#39;darkred&#39;</span><span class="p">,</span> <span class="s">&#39;olive&#39;</span><span class="p">]</span>
+
+<span class="n">filled_markers</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;o&#39;</span><span class="p">,</span> <span class="s">&#39;v&#39;</span><span class="p">,</span> <span class="s">&#39;^&#39;</span><span class="p">,</span> <span class="s">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s">&#39;&gt;&#39;</span><span class="p">,</span> <span class="s">&#39;8&#39;</span><span class="p">,</span> <span class="s">&#39;s&#39;</span><span class="p">,</span> <span class="s">&#39;p&#39;</span><span class="p">,</span> <span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="s">&#39;h&#39;</span><span class="p">,</span> <span class="s">&#39;H&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;d&#39;</span><span class="p">]</span>
+
+<span class="n">line_styles</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="s">&#39;-.&#39;</span><span class="p">]</span>
+
+
+<span class="c"># Physical functions</span>
+<div class="viewcode-block" id="BBlbd"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.BBlbd">[docs]</a><span class="k">def</span> <span class="nf">BBlbd</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">lbd</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Black body radiation as function of lambda. CGS units (erg s-1 sr−1 cm−3).</span>
+
+<span class="sd">    INPUT: lambda vector in cm. If None, lbd = _np.arange(1000, 10000, 100) *</span>
+<span class="sd">    1e-8 #Angs -&gt; cm&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">lbd</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">lbd</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-8</span>  <span class="c"># Angs -&gt; cm</span>
+    <span class="n">ft</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">cgs</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">cgs</span> <span class="o">/</span> <span class="p">(</span><span class="n">lbd</span> <span class="o">*</span> <span class="n">kB</span><span class="o">.</span><span class="n">cgs</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="o">.</span><span class="n">cgs</span> <span class="o">*</span> <span class="n">c</span><span class="o">.</span><span class="n">cgs</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">lbd</span><span class="o">**</span><span class="mi">5</span> <span class="o">*</span> <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">ft</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+
+</div>
+<div class="viewcode-block" id="fBBcor"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.fBBcor">[docs]</a><span class="k">def</span> <span class="nf">fBBcor</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Correction as appendix B Vieira+2015. Stellar atmospheric models</span>
+<span class="sd">    systematically have a LOWER flux than a BB of a given Teff temperature in </span>
+<span class="sd">    IR.</span>
+
+<span class="sd">    fBBcor(T)*BBlbd(Teff) == Kurucz(Teff) </span>
+
+<span class="sd">    INPUT: Teff (Kurucz). log g = 4.0</span>
+
+<span class="sd">    OUTPUT: fBBcor(T) &lt; 1.0 &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">1.015</span> <span class="o">-</span> <span class="mf">0.301</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="mf">1e4</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.064</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="mf">1e4</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span>
+
+</div>
+<div class="viewcode-block" id="gbf"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.gbf">[docs]</a><span class="k">def</span> <span class="nf">gbf</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">lbd</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Gaunt factors from Vieira+2015. </span>
+
+<span class="sd">    INPUT: T (K) and lbd (:math:`\mu`m, array)</span>
+
+<span class="sd">    log(T /K) G0 G1 G2 B0 B1 B2</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vals</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="mf">3.70</span><span class="p">,</span> <span class="mf">0.0952</span><span class="p">,</span> <span class="mf">0.0215</span><span class="p">,</span> <span class="mf">0.0145</span><span class="p">,</span> <span class="mf">2.2125</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5290</span><span class="p">,</span> <span class="mf">0.0563</span><span class="p">,</span>
+        <span class="mf">3.82</span><span class="p">,</span> <span class="mf">0.1001</span><span class="p">,</span> <span class="mf">0.0421</span><span class="p">,</span> <span class="mf">0.0130</span><span class="p">,</span> <span class="mf">1.6304</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3884</span><span class="p">,</span> <span class="mf">0.0413</span><span class="p">,</span>
+        <span class="mf">3.94</span><span class="p">,</span> <span class="mf">0.1097</span><span class="p">,</span> <span class="mf">0.0639</span><span class="p">,</span> <span class="mf">0.0111</span><span class="p">,</span> <span class="mf">1.1316</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2866</span><span class="p">,</span> <span class="mf">0.0305</span><span class="p">,</span>
+        <span class="mf">4.06</span><span class="p">,</span> <span class="mf">0.1250</span><span class="p">,</span> <span class="mf">0.0858</span><span class="p">,</span> <span class="mf">0.0090</span><span class="p">,</span> <span class="mf">0.6927</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2128</span><span class="p">,</span> <span class="mf">0.0226</span><span class="p">,</span>
+        <span class="mf">4.18</span><span class="p">,</span> <span class="mf">0.1470</span><span class="p">,</span> <span class="mf">0.1071</span><span class="p">,</span> <span class="mf">0.0068</span><span class="p">,</span> <span class="mf">0.2964</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1585</span><span class="p">,</span> <span class="mf">0.0169</span><span class="p">,</span>
+        <span class="mf">4.30</span><span class="p">,</span> <span class="mf">0.1761</span><span class="p">,</span> <span class="mf">0.1269</span><span class="p">,</span> <span class="mf">0.0046</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0690</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1185</span><span class="p">,</span> <span class="mf">0.0126</span><span class="p">,</span>
+    <span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">T</span> <span class="o">&lt;</span> <span class="mi">5000</span> <span class="ow">or</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="mi">22500</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# ERROR! Invalid temperature for Gaunt factors calculation!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lbd</span><span class="p">)),</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lbd</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">T</span> <span class="o">&gt;=</span> <span class="mi">5000</span> <span class="ow">and</span> <span class="n">T</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="o">**</span><span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! Extrapolated Gaunt factors!!&#39;</span><span class="p">)</span>
+        <span class="n">g0</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="k">elif</span> <span class="n">T</span> <span class="o">&lt;=</span> <span class="mi">22500</span> <span class="ow">and</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">**</span><span class="n">vals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! Extrapolated Gaunt factors!!&#39;</span><span class="p">)</span>
+        <span class="n">g0</span><span class="p">,</span> <span class="n">g1</span><span class="p">,</span> <span class="n">g2</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="n">vals</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">find_nearest</span><span class="p">(</span>
+            <span class="n">vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">),</span> <span class="n">bigger</span><span class="o">=</span><span class="bp">False</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c"># print i, vals[i,0]</span>
+        <span class="n">g0</span> <span class="o">=</span> <span class="n">interLinND</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">)],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">g1</span> <span class="o">=</span> <span class="n">interLinND</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">)],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+        <span class="n">g2</span> <span class="o">=</span> <span class="n">interLinND</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">)],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="n">b0</span> <span class="o">=</span> <span class="n">interLinND</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">)],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
+            <span class="n">disablelog</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="n">b1</span> <span class="o">=</span> <span class="n">interLinND</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">)],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> 
+            <span class="n">disablelog</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+        <span class="n">b2</span> <span class="o">=</span> <span class="n">interLinND</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">T</span><span class="p">)],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> 
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">g0</span> <span class="o">+</span> <span class="n">g1</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lbd</span><span class="p">)</span> <span class="o">+</span> <span class="n">g2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lbd</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">_np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">b0</span> <span class="o">+</span> 
+        <span class="n">b1</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lbd</span><span class="p">)</span> <span class="o">+</span> <span class="n">b2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lbd</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="lawkep"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.lawkep">[docs]</a><span class="k">def</span> <span class="nf">lawkep</span><span class="p">(</span><span class="n">M</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Kepler law calc. Kepp `None` on what you what to calc.</span>
+
+<span class="sd">    Units are in *Solar System* one, what is, masses in Msun and `P` in years.</span>
+
+<span class="sd">    `a` is the distance between the two bodies, measured in AU. </span>
+
+<span class="sd">    One can also use the Centre-of-Mass equation a1*M1 = a2*M2 to relate the </span>
+<span class="sd">    two masses. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Gc</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">pi2_4</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">M</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">m</span> <span class="o">*=</span> <span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">P</span> <span class="o">*=</span> <span class="n">yr</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">a</span> <span class="o">*=</span> <span class="n">au</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pi2_4</span><span class="o">*</span><span class="n">a</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">P</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Gc</span><span class="o">-</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="k">elif</span> <span class="n">m</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">M</span> <span class="o">*=</span> <span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">P</span> <span class="o">*=</span> <span class="n">yr</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">a</span> <span class="o">*=</span> <span class="n">au</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">pi2_4</span><span class="o">*</span><span class="n">a</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="n">P</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Gc</span><span class="o">-</span><span class="n">M</span><span class="p">)</span><span class="o">/</span><span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="k">elif</span> <span class="n">P</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">M</span> <span class="o">*=</span> <span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">m</span> <span class="o">*=</span> <span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">a</span> <span class="o">*=</span> <span class="n">au</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">pi2_4</span><span class="o">*</span><span class="n">a</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="n">Gc</span> <span class="p">)</span><span class="o">/</span><span class="n">yr</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="k">elif</span> <span class="n">a</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">M</span> <span class="o">*=</span> <span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">m</span> <span class="o">*=</span> <span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="n">P</span> <span class="o">*=</span> <span class="n">yr</span><span class="o">.</span><span class="n">cgs</span>
+        <span class="k">return</span> <span class="p">(</span> <span class="n">P</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">Gc</span><span class="o">*</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="n">m</span><span class="p">)</span><span class="o">/</span><span class="n">pi2_4</span> <span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">au</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Wrong call of phc.lawkep! Keep `None` to calc that qtt.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+</div>
+<div class="viewcode-block" id="Constant"><a class="viewcode-back" href="../../phc.html#pyhdust.phc.Constant">[docs]</a><span class="k">class</span> <span class="nc">Constant</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot; Class for a physical/astronomical constant</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cgs</span><span class="p">,</span> <span class="n">SI</span><span class="p">,</span> <span class="n">unitscgs</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="s">&#39;No available description&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cgs</span> <span class="o">=</span> <span class="n">cgs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">SI</span> <span class="o">=</span> <span class="n">SI</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unitscgs</span> <span class="o">=</span> <span class="n">unitscgs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="n">info</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="s">&#39;{0:.7e} in {1} (cgs)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">unitscgs</span><span class="p">))</span>
+
+
+<span class="c"># From CODATA/NIST in May/2016 (related to Mohr+2015)</span>
+<span class="c">#  http://arxiv.org/abs/1507.07956</span></div>
+<span class="n">nA</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">6.022140857e23</span><span class="p">,</span> <span class="mf">6.022140857e23</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&quot;Avogadro&#39;s constant&quot;</span><span class="p">)</span>
+<span class="n">amu</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.66053904e-24</span><span class="p">,</span> <span class="mf">1.66053904e-27</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Unified atomic mass unit&#39;</span><span class="p">)</span>
+<span class="n">me</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">9.10938356e-28</span><span class="p">,</span> <span class="mf">9.10938356e-31</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Mass of electron&#39;</span><span class="p">)</span>
+<span class="n">mp</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.672621898e-24</span><span class="p">,</span> <span class="mf">1.672621898e-27</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Mass of proton&#39;</span><span class="p">)</span>
+<span class="n">mn</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.00137841898</span><span class="o">*</span><span class="n">mp</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="mf">1.00137841898</span><span class="o">*</span><span class="n">mp</span><span class="o">.</span><span class="n">SI</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Mass of neutron&#39;</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">6.62607004e-27</span><span class="p">,</span> <span class="mf">6.62607004e-34</span><span class="p">,</span> <span class="s">&#39;erg s-1&#39;</span><span class="p">,</span> <span class="s">&#39;Planck constant&#39;</span><span class="p">)</span>
+<span class="n">eV</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.6021766208e-12</span><span class="p">,</span> <span class="mf">1.6021766208e-19</span><span class="p">,</span> <span class="s">&#39;erg&#39;</span><span class="p">,</span> <span class="s">&#39;Electron volt&#39;</span><span class="p">)</span>
+<span class="n">kB</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.38064852e-16</span><span class="p">,</span> <span class="mf">1.38064852e-23</span><span class="p">,</span> <span class="s">&#39;erg K-1&#39;</span><span class="p">,</span> <span class="s">&#39;Boltzmann constant&#39;</span><span class="p">)</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">7.2973525664e-3</span><span class="p">,</span> <span class="mf">7.2973525664e-3</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Fine structure constant&#39;</span><span class="p">)</span>
+<span class="n">Rinf</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">109737.31568</span><span class="p">,</span> <span class="mf">10973731.568</span><span class="p">,</span> <span class="s">&#39;cm-1&#39;</span><span class="p">,</span> <span class="s">&#39;Rydberg constant&#39;</span><span class="p">)</span>
+<span class="n">sigT</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">6.6524587158e-25</span><span class="p">,</span> <span class="mf">6.6524587158e-29</span><span class="p">,</span> <span class="s">&#39;cm2&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Thomson cross section&#39;</span><span class="p">)</span>
+<span class="c"># From Luzum et al., 2011</span>
+<span class="n">au</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.49597870700e13</span><span class="p">,</span> <span class="mf">1.49597870700e11</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">,</span> <span class="s">&#39;Astronomical unit&#39;</span><span class="p">)</span>
+<span class="c"># From Prsa &amp; Harmanec, 2012</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">6.67384e-8</span><span class="p">,</span> <span class="mf">6.67384e-11</span><span class="p">,</span> <span class="s">&#39;cm3 g-1 s-2&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Gravitational constant&#39;</span><span class="p">)</span>
+<span class="n">Mea</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">398600.4418e15</span><span class="o">/</span><span class="n">G</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="mf">398600.4418e9</span><span class="o">/</span><span class="n">G</span><span class="o">.</span><span class="n">SI</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Earth mass&#39;</span><span class="p">)</span>
+<span class="n">Rea</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">6371.e5</span><span class="p">,</span> <span class="mf">6371.e3</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">,</span> <span class="s">&#39;Earth radius&#39;</span><span class="p">)</span>
+<span class="n">Mju</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">126686535e15</span><span class="o">/</span><span class="n">G</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="mf">126686535e9</span><span class="o">/</span><span class="n">G</span><span class="o">.</span><span class="n">SI</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Jupiter mass&#39;</span><span class="p">)</span>
+<span class="n">Rju</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">71492.e5</span><span class="p">,</span> <span class="mf">71492.e3</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">,</span> <span class="s">&#39;Jupiter radius&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">2.99792458e10</span><span class="p">,</span> <span class="mf">299792458.</span><span class="p">,</span> <span class="s">&#39;cm s-1&#39;</span><span class="p">,</span> <span class="s">&#39;speed of light in vacuum&#39;</span><span class="p">)</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">5.670400e-5</span><span class="p">,</span> <span class="mf">5.670400e-8</span><span class="p">,</span> <span class="s">&#39;erg cm-2 K-4 s-1&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Stefan-Boltzmann constant&#39;</span><span class="p">)</span>
+<span class="n">Msun</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.988547e33</span><span class="p">,</span> <span class="mf">1.988547e30</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Solar mass&#39;</span><span class="p">)</span>
+<span class="n">Rsun</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">6.95508e10</span><span class="p">,</span> <span class="mf">695508e3</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">,</span> <span class="s">&#39;Solar radius&#39;</span><span class="p">)</span>
+<span class="n">Lsun</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">3.846e33</span><span class="p">,</span> <span class="mf">3.846e26</span><span class="p">,</span> <span class="s">&#39;erg s-1&#39;</span><span class="p">,</span> <span class="s">&#39;Solar luminosity&#39;</span><span class="p">)</span>
+<span class="n">Tsun</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">5779.57</span><span class="p">,</span> <span class="mf">5779.57</span><span class="p">,</span> <span class="s">&#39;K&#39;</span><span class="p">,</span> <span class="s">&#39;Solar Temperature&#39;</span><span class="p">)</span>
+<span class="c"># Derived quantities</span>
+<span class="c"># In astronomy, the Julian year is defined as 365.25 days of exactly 86400 SI </span>
+<span class="c">#  seconds each, totalling exactly 31557600 SI (IAU style manual, 1989, </span>
+<span class="c">#  Wilkins)</span>
+<span class="c"># For the Gregorian calendar the average length of the calendar year (the mean </span>
+<span class="c">#  year) across the complete leap cycle of 400 years is 365.2425 days!</span>
+<span class="n">yr</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mf">365.25</span><span class="p">,</span> <span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mf">365.25</span><span class="p">,</span> <span class="s">&#39;sec&#39;</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">)</span>
+<span class="n">ly</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="n">yr</span><span class="o">.</span><span class="n">cgs</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="n">yr</span><span class="o">.</span><span class="n">SI</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">SI</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">,</span> <span class="s">&#39;Light year&#39;</span><span class="p">)</span>
+<span class="n">pc</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="n">au</span><span class="o">.</span><span class="n">cgs</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">au</span><span class="o">.</span><span class="n">SI</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">180</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">,</span> <span class="s">&#39;Parsec&#39;</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mi">10</span><span class="o">*</span><span class="n">c</span><span class="o">.</span><span class="n">cgs</span><span class="o">*</span><span class="mf">1.6021766208e-19</span><span class="p">,</span> <span class="mf">1.6021766208e-19</span><span class="p">,</span> <span class="s">&#39;esu&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Elementary charge&#39;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sigma</span><span class="o">.</span><span class="n">cgs</span><span class="o">/</span><span class="n">c</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">sigma</span><span class="o">.</span><span class="n">SI</span><span class="o">/</span><span class="n">c</span><span class="o">.</span><span class="n">SI</span><span class="p">,</span> <span class="s">&#39;erg cm-3 K-4&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Radiation density constant&#39;</span><span class="p">)</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="n">h</span><span class="o">.</span><span class="n">cgs</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">h</span><span class="o">.</span><span class="n">SI</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="s">&#39;erg s&#39;</span><span class="p">,</span> 
+    <span class="s">&#39;Planck constant/(2*pi)&#39;</span><span class="p">)</span>
+<span class="c"># From Wikipedia</span>
+<span class="n">ep0</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">8.854187187e-12</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;Permittivity of Free Space&#39;</span><span class="p">)</span>
+<span class="n">mH</span> <span class="o">=</span> <span class="n">Constant</span><span class="p">(</span><span class="mf">1.00794</span><span class="o">*</span><span class="n">amu</span><span class="o">.</span><span class="n">cgs</span><span class="p">,</span> <span class="mf">1.00794</span><span class="o">*</span><span class="n">amu</span><span class="o">.</span><span class="n">SI</span><span class="p">,</span> <span class="s">&#39;g&#39;</span><span class="p">,</span> <span class="s">&#39;Mass of hydrogen&#39;</span><span class="p">)</span>
+
+
+<span class="c"># MAIN ###</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" >pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

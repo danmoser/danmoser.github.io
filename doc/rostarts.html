@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>rotstars: module of rotating stars functions &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.rotstars">
+<span id="rotstars-module-of-rotating-stars-functions"></span><h1><strong>rotstars</strong>: module of rotating stars functions<a class="headerlink" href="#module-pyhdust.rotstars" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust module: Rotating stars tools.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">license:</th><td class="field-body">GNU GPL v3.0 <a class="reference external" href="https://github.com/danmoser/pyhdust/blob/master/LICENSE">https://github.com/danmoser/pyhdust/blob/master/LICENSE</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyhdust.rotstars.beta">
+<tt class="descclassname">pyhdust.rotstars.</tt><tt class="descname">beta</tt><big>(</big><em>par</em>, <em>is_ob=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/rotstars.html#beta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.rotstars.beta" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Calculate the math:<cite>eta</cite> value from Espinosa-Lara for a given </dt>
+<dd>rotation rate math:<a href="#id1"><span class="problematic" id="id2">`</span></a>w_{</dd>
+</dl>
+<p>m frac} = Omega/Omega_c`</p>
+<blockquote>
+<div>If <cite>is_ob == True</cite>, it consider the param as ob (instead of
+math:<a href="#id3"><span class="problematic" id="id4">`</span></a>w_{</div></blockquote>
+<p>m frac}`).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.rotstars.readscr">
+<tt class="descclassname">pyhdust.rotstars.</tt><tt class="descname">readscr</tt><big>(</big><em>scrfile</em><big>)</big><a class="reference internal" href="_modules/pyhdust/rotstars.html#readscr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.rotstars.readscr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read source generated with <cite>ref_estrela.txt</cite>.</p>
+<p>OUTPUT: M, Req and TP (2*solar units and K).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.rotstars.rotStar">
+<tt class="descclassname">pyhdust.rotstars.</tt><tt class="descname">rotStar</tt><big>(</big><em>Tp=20000.0</em>, <em>M=10.3065</em>, <em>rp=5.38462</em>, <em>star='B'</em>, <em>beta=0.25</em>, <em>wfrac=0.8</em>, <em>th_res=5001</em>, <em>quiet=False</em>, <em>LnotTp=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/rotstars.html#rotStar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.rotstars.rotStar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the photospheric parameters of a rotating star.</p>
+<p><cite>LnotTp</cite>: the value of &#8220;Tp&#8221; is the Luminosity (in solar units).</p>
+<p>Calculation of Von Zeipel&#8217;s Beta parameter as function of W: see math...</p>
+<p>INPUT: th_res (theta resolution, integer)...</p>
+<p>OUTPUT: printed status + (ob, Tp values, Area[cm2])</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.rotstars.vrot_scr">
+<tt class="descclassname">pyhdust.rotstars.</tt><tt class="descname">vrot_scr</tt><big>(</big><em>scrfile</em><big>)</big><a class="reference internal" href="_modules/pyhdust/rotstars.html#vrot_scr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.rotstars.vrot_scr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <cite>vrot</cite> value of a given source star.</p>
+<p>OUTPUT: vrot in km/s.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.rotstars.wrot">
+<tt class="descclassname">pyhdust.rotstars.</tt><tt class="descname">wrot</tt><big>(</big><em>par</em>, <em>is_ob=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/rotstars.html#wrot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.rotstars.wrot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts math:<cite>w_{
+m frac} = Omega/Omega_c</cite> into</p>
+<blockquote>
+<div><p>math:<cite>W = vrot/vorb</cite>.</p>
+<p>If <cite>is_ob == True</cite>, it consider the param as ob (instead of 
+math:<a href="#id5"><span class="problematic" id="id6">`</span></a>w_{</p>
+</div></blockquote>
+<p>m frac}`).</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/rostarts.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

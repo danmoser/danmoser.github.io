@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>releases: module to control PyHdust releases &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="next" title="rotstars: module of rotating stars functions" href="rotstars.html" />
+    <link rel="prev" title="poltools: module of polarimetric tools" href="poltools.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rotstars.html" title="rotstars: module of rotating stars functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poltools.html" title="poltools: module of polarimetric tools"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.releases">
+<span id="releases-module-to-control-pyhdust-releases"></span><h1><em>releases</em>: module to control PyHdust releases<a class="headerlink" href="#module-pyhdust.releases" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust auxiliary module: PyHdust releases control.</p>
+<div class="section" id="history">
+<h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v0-993-2016-04-30">
+<h3>v0.993 &#64; 2016-04-30<a class="headerlink" href="#v0-993-2016-04-30" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>New inp.makeCSGrid_bistabWind1Dust()</li>
+</ul>
+</div>
+<div class="section" id="v-0970-2016-01-xx">
+<h3>v.0970 &#64; 2016-01-xx<a class="headerlink" href="#v-0970-2016-01-xx" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>New README.md</li>
+<li>phc.cycles (new)</li>
+<li>roadmap.TODO (new)</li>
+<li>hdt.plot_obs (new)</li>
+<li>bcd (new module)</li>
+</ul>
+</div>
+<div class="section" id="v0-967-2015-12-30">
+<h3>v0.967 &#64; 2015-12-30<a class="headerlink" href="#v0-967-2015-12-30" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>PEP8 Standardization</li>
+<li>intt.I: Vieira+2015 models</li>
+</ul>
+</div>
+<div class="section" id="v0-966-2015-12-16">
+<h3>v0.966 &#64; 2015-12-16<a class="headerlink" href="#v0-966-2015-12-16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Correction on setup.py</li>
+</ul>
+</div>
+<div class="section" id="v0-965-2015-12-16">
+<h3>v0.965 &#64; 2015-12-16<a class="headerlink" href="#v0-965-2015-12-16" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>hdt.mergesed2: SED was the first because, if present, the code will check if </dt>
+<dd><p class="first last">other bands parameters are the same (i.e., observers, Rstar, Rwind).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>hdt.mergesed2: The criteria I elected for distinguishing between broad-band </dt>
+<dd><p class="first last">and line (Sobolev 0/1) is the presence of &#8220;_SEI&#8221; extension in the filename, 
+assumed that the line rest wavelength is the BAND CENTER WAVELENGTH. There 
+is an option to the user manually put it.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">hdt.mergesed2: A new output format of the numbers was done.</p>
+</li>
+<li><p class="first">inp.makeSourceGrid: Function created as discussed</p>
+</li>
+<li><p class="first">inp.makeDiskGrid: Define convSig2Rho=True, then all the values of sig0vals</p>
+</li>
+</ul>
+<p>will be considered as rho0 values.</p>
+</div>
+<div class="section" id="v0-964-2015-09-15">
+<h3>v0.964 &#64; 2015-09-15<a class="headerlink" href="#v0-964-2015-09-15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>hdrpil module added</li>
+<li>readdust function implemented</li>
+<li>Other mirror changes</li>
+</ul>
+</div>
+<div class="section" id="v0-956-2015-05-08">
+<h3>v0.956 &#64; 2015-05-08<a class="headerlink" href="#v0-956-2015-05-08" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Contributions from Bednarski to poltools+fieldstars</li>
+<li>Corrections to work on Windows (binary files)</li>
+<li>Triangle module added</li>
+</ul>
+</div>
+<div class="section" id="v0-955-2015-05-15">
+<h3>v0.955 &#64; 2015-05-15<a class="headerlink" href="#v0-955-2015-05-15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>spt.fitzpatrick included</li>
+<li>intt.img2fits and intt.data2fitscube rotation correction</li>
+<li>Documentation of poltools.py (Portuguese)</li>
+<li>hdt.readSingleBe improved</li>
+<li>inp.makeDiskGrid with SingleBe option</li>
+<li>intt.img2fits debugged</li>
+<li>inp.makeInpJob BlueGene support added</li>
+</ul>
+</div>
+<div class="section" id="v0-954-2015-05-08">
+<h3>v0.954 &#64; 2015-05-08<a class="headerlink" href="#v0-954-2015-05-08" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>releases.py do automatically the docs&#8217; rsync</li>
+<li>hdt.plottemp improved</li>
+<li>General: &#8220;== False&#8221; replaced by &#8220;not&#8221;</li>
+<li>spt.*Plot* corrections</li>
+<li>spt.kuruczflux correction</li>
+</ul>
+</div>
+<div class="section" id="v0-953-2015-05-01">
+<h3>v0.953 &#64; 2015-05-01<a class="headerlink" href="#v0-953-2015-05-01" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>phc.bindata, now yerr is an optional array</li>
+<li>spt,dtb improvements save/load Class</li>
+<li>spt.shiftfits improved</li>
+<li>spt.plotSpecData improved</li>
+<li>spt.cardelli included</li>
+</ul>
+</div>
+<div class="section" id="v0-952b-2015-04-28">
+<h3>v0.952b &#64; 2015-04-28<a class="headerlink" href="#v0-952b-2015-04-28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Create of releases.py</li>
+<li>Automatic update of setup.py and documentation files.</li>
+<li>Defined flux units at SED2 file manipulation</li>
+<li>Implemented Kurucz flux unity correction</li>
+<li>Removed <em>ra2deg</em> variable</li>
+<li>Updated phc.rot_stars (Beta(W))</li>
+<li>Created XDR BeAtlas</li>
+</ul>
+</div>
+<div class="section" id="previously">
+<h3>Previously<a class="headerlink" href="#previously" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Added options <cite>force</cite> and <cite>chknames</cite> to genStdLog and genObjLog</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">license:</th><td class="field-body">GNU GPL v3.0 <a class="reference external" href="https://github.com/danmoser/pyhdust/blob/master/LICENSE">https://github.com/danmoser/pyhdust/blob/master/LICENSE</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyhdust.releases.listFunctions">
+<tt class="descclassname">pyhdust.releases.</tt><tt class="descname">listFunctions</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/releases.html#listFunctions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.releases.listFunctions" title="Permalink to this definition">¶</a></dt>
+<dd><p>List all <em>PyHdust</em> functions.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.releases.setRelease">
+<tt class="descclassname">pyhdust.releases.</tt><tt class="descname">setRelease</tt><big>(</big><big>)</big><a class="reference internal" href="_modules/pyhdust/releases.html#setRelease"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.releases.setRelease" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the version values from __init__.py and write it to the setup.py
+and doc files.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><em>releases</em>: module to control PyHdust releases</a><ul>
+<li><a class="reference internal" href="#history">History</a><ul>
+<li><a class="reference internal" href="#v0-993-2016-04-30">v0.993 &#64; 2016-04-30</a></li>
+<li><a class="reference internal" href="#v-0970-2016-01-xx">v.0970 &#64; 2016-01-xx</a></li>
+<li><a class="reference internal" href="#v0-967-2015-12-30">v0.967 &#64; 2015-12-30</a></li>
+<li><a class="reference internal" href="#v0-966-2015-12-16">v0.966 &#64; 2015-12-16</a></li>
+<li><a class="reference internal" href="#v0-965-2015-12-16">v0.965 &#64; 2015-12-16</a></li>
+<li><a class="reference internal" href="#v0-964-2015-09-15">v0.964 &#64; 2015-09-15</a></li>
+<li><a class="reference internal" href="#v0-956-2015-05-08">v0.956 &#64; 2015-05-08</a></li>
+<li><a class="reference internal" href="#v0-955-2015-05-15">v0.955 &#64; 2015-05-15</a></li>
+<li><a class="reference internal" href="#v0-954-2015-05-08">v0.954 &#64; 2015-05-08</a></li>
+<li><a class="reference internal" href="#v0-953-2015-05-01">v0.953 &#64; 2015-05-01</a></li>
+<li><a class="reference internal" href="#v0-952b-2015-04-28">v0.952b &#64; 2015-04-28</a></li>
+<li><a class="reference internal" href="#previously">Previously</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="poltools.html"
+                        title="previous chapter"><strong>poltools</strong>: module of polarimetric tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rotstars.html"
+                        title="next chapter"><strong>rotstars</strong>: module of rotating stars functions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/releases.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="rotstars.html" title="rotstars: module of rotating stars functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poltools.html" title="poltools: module of polarimetric tools"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

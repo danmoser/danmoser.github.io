@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Events Notes</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="events-notes">
+<h1 class="title">Events Notes</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#workshop-ciencia-de-dados-iag" id="id1">2015-04 Workshop Ciência de Dados IAG</a><ul>
+<li><a class="reference internal" href="#apresentacao-laerte" id="id2">Apresentação Laerte</a></li>
+<li><a class="reference internal" href="#claudia-bauzer-medeiros" id="id3">Claudia Bauzer Medeiros</a></li>
+<li><a class="reference internal" href="#fabio-m-porto-lncc" id="id4">Fábio M. Porto (LNCC)</a></li>
+<li><a class="reference internal" href="#luiz-m-r-gadelha-jr" id="id5">Luiz M. R. Gadelha Jr.</a></li>
+<li><a class="reference internal" href="#paulo-rodrigues-t-coelho-astro" id="id6">Paulo Rodrigues T. Coelho (Astro)</a></li>
+<li><a class="reference internal" href="#victor-sacek-marcelo-b-de-bianchi-geofisica" id="id7">Victor Sacek &amp; Marcelo B. de Bianchi (Geofísica)</a></li>
+<li><a class="reference internal" href="#pedro-leite-s-dias-sergio-meteorologia" id="id8">Pedro Leite S. Dias &amp; Sergio... (Meteorologia)</a></li>
+<li><a class="reference internal" href="#sergio-ferreira-cptec" id="id9">Sergio ... Ferreira... (CPTEC)</a></li>
+<li><a class="reference internal" href="#encerramento" id="id10">(Encerramento)</a></li>
+<li><a class="reference internal" href="#outros" id="id11">Outros</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="workshop-ciencia-de-dados-iag">
+<h1><a class="toc-backref" href="#id1">2015-04 Workshop Ciência de Dados IAG</a></h1>
+<img alt="alternate text" class="align-center" src="figs/events_iwbdiag-program.jpg" style="width: 800px;" />
+<!-- :height: 100px -->
+<div class="section" id="apresentacao-laerte">
+<h2><a class="toc-backref" href="#id2">Apresentação Laerte</a></h2>
+<p>3 itens importantes: (i) Atualidade, (ii) Importância Institucional e (iii) Visibilidade.
+Presença de big data nos 3 departamentos do IAG. Desafios: armazenamento, transferência e processamento.</p>
+<p>Muitos post-docs estão arrumando empregos em ciência de dados. Exemplo Nature: PhD da Inglaterra trabalha com desenvolvimento de algoritmos para clientes escolherem suas roupas.</p>
+<p>Exemplo Astro: SDSS. Bilhôes de objetos, desde Sist.Solar à extra-gal.</p>
+<p>Importância para o Instituto: 3 deptos. não interagem entre si. Big-data pode ser a ponta que falta para solidificar; Algoritmos e machine-learning para todos.
+II Workshop internacional com 3 áreas: único. Visibilidade. Realizar a Escola FAPESP.</p>
+</div>
+<div class="section" id="claudia-bauzer-medeiros">
+<h2><a class="toc-backref" href="#id3">Claudia Bauzer Medeiros</a></h2>
+<p>Urban Informatics: sistema público da cidade de Nova York (CUSP-statistics2014, MPCSTAR 5.3)</p>
+<p>Computational issues: to extract and present trends, patterns, anomalies, correlations from a (huge) set of <em>Heterogeneous data</em>, to <em>people</em> ...</p>
+<p>Technologies: Hadoop, MapReduce...</p>
+<p>eScience: <em>Joint</em> research effort (Comp. Science + {X}). With results in computation beyond {X}.</p>
+<dl class="docutils">
+<dt>BigData: 3V</dt>
+<dd><ul class="first last simple">
+<li>Volume</li>
+<li>Velocity</li>
+<li>Variety</li>
+<li>Veracity (4V)</li>
+<li>Variability (6V)</li>
+<li>Visibility (6V)</li>
+</ul>
+</dd>
+</dl>
+<p>Data Science = Big Data + Big Analytics (extrair informações dos dados).</p>
+<p>Livros: data scientists at work; Hadoop for Dummies.</p>
+<p>Revista básica: Communications of the ACM.</p>
+<p>ukdataservice.ac.uk</p>
+<p>Paradigma: de &quot;quais dados tem tal valor&quot; para quais dados &quot;possuem determinado perfil&quot;?</p>
+</div>
+<div class="section" id="fabio-m-porto-lncc">
+<h2><a class="toc-backref" href="#id4">Fábio M. Porto (LNCC)</a></h2>
+<p>DEXL Lab: Dados crus, integração, análise</p>
+<p>&quot;Desenvolver técnicas, métodos, algoritmos para apoio à Gerência e Análise de Dados Científicos&quot;.</p>
+<ul class="simple">
+<li>Prêmio desafios da computação</li>
+</ul>
+<p>&quot;Scientists are spending most of their time manipulating, organizing, finding and moving data, instead of researching. And it's going to get worse&quot;.</p>
+<p>Início: origem do dados humana. Quantidade podia ser analisada por um único homem.
+Hoje: origem é automática/mecânica. Quantidade deve ser analisada de forma idêntica.</p>
+<p>Cada dado tem VÁRIAS dimensões: valor, veracidade, velocidade, etc.
+&quot;One size does not fit all&quot;.</p>
+<p>OLTP : Main memory database (comércio...)
+OLAP : Column Stores
+NoSQL : Grande scala
+SciDB, Neo... = formas de acessar os dados (tecnologias).</p>
+<ul class="simple">
+<li>Procurar padrões</li>
+<li>Projeto NoDB (EPFL), SimDB (Dexl-MACC)...</li>
+</ul>
+<p>Gruber : ontologia é uma conceitualização formal e compartilhada da especificação de um domínio.</p>
+<p>Hive... = language do Handoop+HDFS+....</p>
+<p>1 vs grupo e dados distribuídos = Handoop + Map-Reduce</p>
+<p>MayBMS = banco de dados &quot;incertos&quot;.</p>
+<p>Bernardo Gonçalves, Fabio Porto, PVLDB 2014</p>
+<dl class="docutils">
+<dt>Considerações finais:</dt>
+<dd><ul class="first last simple">
+<li>Interesse em diversas versões (a medida q é processado)</li>
+<li>O ponto de intervenção</li>
+<li>Identificacao da essencia do problema</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="luiz-m-r-gadelha-jr">
+<h2><a class="toc-backref" href="#id5">Luiz M. R. Gadelha Jr.</a></h2>
+<p>Gerenciamento biodiversidade...</p>
+<p>iNaturalist = registro de ocorrências naturais, como identificação de espécies.</p>
+</div>
+<div class="section" id="paulo-rodrigues-t-coelho-astro">
+<h2><a class="toc-backref" href="#id6">Paulo Rodrigues T. Coelho (Astro)</a></h2>
+<p>Virtual Observatory: an Astronomy's answer to Big Data</p>
+<p>Dados complexos e heterogêneos.</p>
+<p>VO:</p>
+<ul class="simple">
+<li>The vision that astronomical datasets and other resources should work as a seamless whole (IVOA)</li>
+<li>A collection of interoperating data archives and software tools which utilize the internet to form an environment... (Wiki)</li>
+<li>A data discovery, access and integration facility (B. Hanisch)</li>
+</ul>
+<p>Common language (standards, protocols, data models, etc).</p>
+<ul class="simple">
+<li>Standards (Registry, Protocols, Data Models)</li>
+<li>Tools (30+ VO-enabled applications, from 10+ VO projects)</li>
+<li>300+ refereed papers (2015)</li>
+</ul>
+<p>VO complied: Canadian Astronomy Data Centre; CdS; ESA (Archives)</p>
+<p>BRAVO:</p>
+<ul class="simple">
+<li>To stimulate and to encourage the projrects...</li>
+<li>Organize workshops and schools</li>
+<li>Act as a partner of the IVOA</li>
+</ul>
+<p>I e II WCCA
+Track Astronomy in SBCC
+Desafio BraVO
+BraVO VO Schools (* Escola latino-americana)</p>
+<p>VO Day = SAB 2012
+IVOAInterop = 2012</p>
+<p>Cluster LAi (FAPESP, 2012) e gina (INCT-A, 2011)</p>
+<p>Casos de usuário (2011-2015?)</p>
+<!-- PyCUDA -->
+</div>
+<div class="section" id="victor-sacek-marcelo-b-de-bianchi-geofisica">
+<h2><a class="toc-backref" href="#id7">Victor Sacek &amp; Marcelo B. de Bianchi (Geofísica)</a></h2>
+<p>Victor:
+&quot;Experiências do passado e desafios do futuro&quot;.</p>
+<p>1957-1958 = Ano internacional Geofísico (IGY, em inglês).
+* Teoria que unificou as feições da terra (continentes, cordilheiras, placas tecntônicas, etc).</p>
+<p>IGY World Data Centers (WDC): all observational data shall be available to scientists and scientific institutions in all countries.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>EarthCube</dt>
+<dd><ul class="first last simple">
+<li>EC3</li>
+<li>GeoDeepDive (Exemplo: comparação com Paleobiology Database)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Bianchi:
+Grupo de sismologia. Dados e organização.</p>
+<p>Seedlink? (protocol), StationXML... UML organizador.</p>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Natural_language_processing">http://en.wikipedia.org/wiki/Natural_language_processing</a>, Machine learning,
+iniciativa transversal.</p>
+</div>
+<div class="section" id="pedro-leite-s-dias-sergio-meteorologia">
+<h2><a class="toc-backref" href="#id8">Pedro Leite S. Dias &amp; Sergio... (Meteorologia)</a></h2>
+<p>Modelos e evolução meteorologia... Centros regionais: problemas de padronização.</p>
+<p>Meteorology ... University of Moscow.</p>
+<p>IBM: How big data can boost weather forecasting</p>
+<p><a class="reference external" href="http://chuvaonline.iag.usp.br">http://chuvaonline.iag.usp.br</a>
+<a class="reference external" href="http://www.starnet.iag.usp.br">http://www.starnet.iag.usp.br</a>
+(<a class="reference external" href="http://radar.iag.usp.br">http://radar.iag.usp.br</a>)</p>
+</div>
+<div class="section" id="sergio-ferreira-cptec">
+<h2><a class="toc-backref" href="#id9">Sergio ... Ferreira... (CPTEC)</a></h2>
+<p>[<em>Já cansado demais... detalhes de operação e armazenamento</em>]</p>
+</div>
+<div class="section" id="encerramento">
+<h2><a class="toc-backref" href="#id10">(Encerramento)</a></h2>
+<p>Pela 1a. vez IAG se reune para discutir problemas históricos.</p>
+<p>Dificuldade de recursos humanos = institutos como o IAG não podem contratar especialistas em computação. Necessidade de instituto transversais.</p>
+<p>IME tem suporte para desenvolvimento de software livre.</p>
+<p>Falta à universidade e ao Brasil uma programa de produção científica. Hoje os esforços são iniciativas individuais.</p>
+<p>&quot;Ciência da computação se confunde com a tecnologia da informação&quot;.</p>
+</div>
+<div class="section" id="outros">
+<h2><a class="toc-backref" href="#id11">Outros</a></h2>
+<p>Banco de dados relacional (MySQL; aplicações comerciais) versus não relacional (aplicações científicas; dados complexos).</p>
+</div>
+</div>
+</div>
+</body>
+</html>

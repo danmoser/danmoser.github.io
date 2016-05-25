@@ -1,0 +1,1104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyhdust.input &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../../index.html" />
+    <link rel="up" title="pyhdust" href="../pyhdust.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" accesskey="U">pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyhdust.input</h1><div class="highlight"><pre>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;PyHdust *input* module: Hdust input tools.</span>
+
+<span class="sd">:co-author: Rodrigo Vieira</span>
+<span class="sd">:license: GNU GPL v3.0 https://github.com/danmoser/pyhdust/blob/master/LICENSE</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="kn">as</span> <span class="nn">_os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">_np</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span> <span class="k">as</span> <span class="n">_glob</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span> <span class="k">as</span> <span class="n">_product</span>
+<span class="kn">import</span> <span class="nn">pyhdust.phc</span> <span class="kn">as</span> <span class="nn">_phc</span>
+<span class="kn">import</span> <span class="nn">pyhdust.rotstars</span> <span class="kn">as</span> <span class="nn">_rot</span>
+<span class="kn">import</span> <span class="nn">pyhdust</span> <span class="kn">as</span> <span class="nn">_hdt</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&quot;Daniel Moser&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&quot;dmfaes@gmail.com&quot;</span>
+
+
+<div class="viewcode-block" id="makeDiskGrid"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeDiskGrid">[docs]</a><span class="k">def</span> <span class="nf">makeDiskGrid</span><span class="p">(</span><span class="n">modn</span><span class="o">=</span><span class="s">&#39;01&#39;</span><span class="p">,</span> <span class="n">mhvals</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">],</span> <span class="n">hvals</span><span class="o">=</span><span class="p">[</span><span class="mf">60.</span><span class="p">],</span> <span class="n">rdvals</span><span class="o">=</span><span class="p">[</span><span class="mf">18.6</span><span class="p">],</span> 
+    <span class="n">mvals</span><span class="o">=</span><span class="p">[</span><span class="mf">2.0</span><span class="p">],</span> <span class="n">sig0vals</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">],</span> <span class="n">convSig2Rho</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">doFVDD</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sBdays</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> 
+    <span class="n">sBfiles</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">selsources</span><span class="o">=</span><span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">mu</span><span class="o">=.</span><span class="mi">5</span><span class="p">,</span> <span class="n">R0r</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">Mdot11</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> 
+    <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | ###CONFIG. OPTIONS</span>
+<span class="sd">    | #MODEL NUMBER</span>
+<span class="sd">    | modn        = &#39;02&#39;</span>
+<span class="sd">    | #The following filter will be applied to the SOURCE selection (string </span>
+<span class="sd">    | # fmt)</span>
+<span class="sd">    | selsources = &#39;*&#39;</span>
+<span class="sd">    |                              </span>
+<span class="sd">    | #SUPERFICIAL DENSITY PROFILE EXPONENT</span>
+<span class="sd">    | mvals       = [1.5,2.0,2.5,3.0]</span>
+<span class="sd">    | #VERTICAL DENSITY PROFILE EXPONENT     </span>
+<span class="sd">    | mhvals      = [1.5]</span>
+<span class="sd">    | #FRACTION OF TEFF OF PRIMARY STAR</span>
+<span class="sd">    | #This parameter sets if it you be FIXED to OB=1.1 case</span>
+<span class="sd">    | hvals       = [72.]</span>
+<span class="sd">    | #DISK RADIUS EQUATORIAL...    </span>
+<span class="sd">    | rdvals      = [30.]</span>
+<span class="sd">    | #SIGMA_0 VALUES</span>
+<span class="sd">    | sig0vals    = _np.logspace(_np.log10(0.02),_np.log10(4.0),7)</span>
+<span class="sd">    | </span>
+<span class="sd">    | #Do the Full VDD model for the corresponding sig0?</span>
+<span class="sd">    | doFVDD = True </span>
+<span class="sd">    | alpha = 0.5</span>
+<span class="sd">    | mu = 0.5</span>
+<span class="sd">    | #WARNING: it only generates a single R0 value per batch. If you want to </span>
+<span class="sd">    | # change it, run it twice (or more)</span>
+<span class="sd">    | R0r = 300</span>
+<span class="sd">    | ###END CONFIG.</span>
+<span class="sd">    |</span>
+<span class="sd">    | Mdot11 = TODO</span>
+<span class="sd">    |</span>
+<span class="sd">    | WARNING: if convSig2Rho=True, the routine assumes ``sig0vals`` contains</span>
+<span class="sd">    |  rho0vals. For that, (sBfiles==None or sBdays==None) and doFVDD==False.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># Consistency check</span>
+    <span class="k">if</span> <span class="n">convSig2Rho</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">((</span><span class="n">sBfiles</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">sBdays</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">and</span> <span class="n">doFVDD</span> <span class="ow">is</span> 
+        <span class="bp">False</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# ERROR! There is an inconsistency in the input.&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Check the *convSig2Rho*!&#39;</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">Msun</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">Rsun</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Rsun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">kB</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">kB</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">mH</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">mH</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">yr</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">yr</span><span class="o">.</span><span class="n">cgs</span>
+
+    <span class="k">def</span> <span class="nf">doPL</span><span class="p">(</span><span class="n">prodI</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Given a prodI (i.e., src,sig0,rd,h,m,mh), generates the Power-Law model </span>
+<span class="sd">        input</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">src</span><span class="p">,</span> <span class="n">sig0</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">mh</span> <span class="o">=</span> <span class="n">prodI</span>
+        <span class="n">M</span><span class="p">,</span> <span class="n">Req</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">_rot</span><span class="o">.</span><span class="n">readscr</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+        <span class="n">Mstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+        <span class="n">M</span> <span class="o">*=</span> <span class="n">Msun</span>
+        <span class="n">Req</span> <span class="o">*=</span> <span class="n">Rsun</span>
+
+        <span class="n">Th</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">Tp</span> <span class="o">/</span> <span class="mf">100.</span>
+        <span class="c"># a0 = (kB*h/100.*Tp/mu/mH)**.5</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">kB</span> <span class="o">*</span> <span class="n">Th</span> <span class="o">/</span> <span class="n">mu</span> <span class="o">/</span> <span class="n">mH</span><span class="p">)</span><span class="o">**.</span><span class="mi">5</span>
+        <span class="n">n0</span> <span class="o">=</span> <span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="mf">2.</span> <span class="o">/</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**.</span><span class="mi">5</span> <span class="o">*</span> <span class="n">sig0</span> <span class="o">/</span> <span class="n">mu</span> <span class="o">/</span> <span class="n">mH</span> <span class="o">/</span> <span class="n">a</span> <span class="o">/</span> <span class="n">Req</span><span class="o">**</span><span class="mf">1.5</span>
+        <span class="c"># Th = a**2*mu*mH/kB</span>
+
+        <span class="n">srcname</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source/&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18.6&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">rd</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;2.0&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">33</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">mh</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18000.&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Th</span><span class="p">))</span>      
+        <span class="k">if</span> <span class="n">convSig2Rho</span><span class="p">:</span>
+            <span class="n">wmod</span><span class="p">[</span><span class="mi">52</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">52</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;2.35E13&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2e</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">sig0</span><span class="p">))</span>    
+            <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_PLn{0:.1f}_rho{1:5.2e}_h{2:03.0f}_Rd{3:05.1f}_{4}&#39;</span><span class="o">.</span>\
+                <span class="n">format</span><span class="p">((</span><span class="n">m</span> <span class="o">+</span> <span class="n">mh</span><span class="p">),</span> <span class="n">sig0</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">srcname</span><span class="p">)</span>  
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wmod</span><span class="p">[</span><span class="mi">52</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">52</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;2.35E13&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2e</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">n0</span><span class="p">))</span>    
+            <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_PLn{0:.1f}_sig{1:.2f}_h{2:03.0f}_Rd{3:05.1f}_{4}&#39;</span><span class="o">.</span>\
+                <span class="n">format</span><span class="p">((</span><span class="n">m</span> <span class="o">+</span> <span class="n">mh</span><span class="p">),</span> <span class="n">sig0</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">srcname</span><span class="p">)</span>  
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="s">&#39;/mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">doMdot</span><span class="p">(</span><span class="n">prodI</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Given a prodI (i.e., src,sig0,rd,h,m,mh), generates the full VDD model </span>
+<span class="sd">        input</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">src</span><span class="p">,</span> <span class="n">sig0</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">mh</span> <span class="o">=</span> <span class="n">prodI</span>
+        <span class="n">M</span><span class="p">,</span> <span class="n">Req</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">_rot</span><span class="o">.</span><span class="n">readscr</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+        <span class="n">Mstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+        <span class="n">M</span> <span class="o">*=</span> <span class="n">Msun</span>
+        <span class="n">Req</span> <span class="o">*=</span> <span class="n">Rsun</span>
+
+        <span class="n">Th</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">Tp</span> <span class="o">/</span> <span class="mf">100.</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">kB</span> <span class="o">*</span> <span class="n">Th</span> <span class="o">/</span> <span class="n">mu</span> <span class="o">/</span> <span class="n">mH</span><span class="p">)</span><span class="o">**.</span><span class="mi">5</span>
+        <span class="c"># a0 = (kB*h/100*Tp/mu/mH)**.5</span>
+        <span class="c"># a = a0*Req0*Req**.25/Req/Req**.25</span>
+
+        <span class="n">R0</span> <span class="o">=</span> <span class="n">R0r</span> <span class="o">*</span> <span class="n">Req</span>
+        <span class="n">Mdot</span> <span class="o">=</span> <span class="n">sig0</span> <span class="o">*</span> <span class="n">Req</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">alpha</span> <span class="o">*</span> \
+            <span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">*</span> <span class="n">R0</span><span class="p">)</span><span class="o">**.</span><span class="mi">5</span>  <span class="c"># SI units</span>
+        <span class="n">Mdot</span> <span class="o">=</span> <span class="n">Mdot</span> <span class="o">/</span> <span class="n">Msun</span> <span class="o">*</span> <span class="n">yr</span>
+        <span class="c"># Th = a**2*mu*mH/kB</span>
+
+        <span class="n">srcname</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source/&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="c"># suffix = &#39;_NI_Mdot{:.1e}_Rd{:.1f}_R0{:.1f}_alp{:.1f}_h{:.1f}_{}&#39;.\</span>
+        <span class="c"># format(Mdot,rd,R0/Req,alpha,h,srcname)</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_NIa{0:.1f}_sig{1:.2f}_h{2:03.0f}_Rd{3:05.1f}_{4}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">alpha</span><span class="p">,</span> <span class="n">sig0</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">srcname</span><span class="p">)</span>
+
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18.6&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">rd</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1.&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">alpha</span><span class="p">))</span> 
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;= 0.&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;= </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">R0</span> <span class="o">/</span> <span class="n">Req</span><span class="p">)))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;= 0&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;= </span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="mi">1</span><span class="p">))</span>  
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18000.&#39;</span><span class="p">,</span> <span class="s">&#39;{0:.1f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Th</span><span class="p">))</span> 
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">49</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">49</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;2&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="mi">3</span><span class="p">))</span>            
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">55</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">55</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1.E-9&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2e</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Mdot</span><span class="p">))</span>
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="s">&#39;/mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">doSB</span><span class="p">(</span><span class="n">prodI</span><span class="p">,</span> <span class="n">hseq</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Given a prodI (i.e., sources,rdvals,hvals,mhvals,sBdays,sBfiles),</span>
+<span class="sd">        generates the Single Be based model input</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">src</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">mh</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">sfile</span> <span class="o">=</span> <span class="n">prodI</span>
+        <span class="n">M</span><span class="p">,</span> <span class="n">Req</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">_rot</span><span class="o">.</span><span class="n">readscr</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
+        <span class="n">Mstr</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+        <span class="n">M</span> <span class="o">*=</span> <span class="n">Msun</span>
+        <span class="n">Req</span> <span class="o">*=</span> <span class="n">Rsun</span>
+
+        <span class="n">Th</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">Tp</span> <span class="o">/</span> <span class="mf">100.</span>
+        <span class="c"># a0 = (kB*h/100.*Tp/mu/mH)**.5</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">kB</span> <span class="o">*</span> <span class="n">Th</span> <span class="o">/</span> <span class="n">mu</span> <span class="o">/</span> <span class="n">mH</span><span class="p">)</span><span class="o">**.</span><span class="mi">5</span>
+        <span class="c"># n0 = (G*M/2./_np.pi)**.5*sig0/mu/mH/a/Req**1.5</span>
+        <span class="c"># Th = a**2*mu*mH/kB</span>
+
+        <span class="n">srcname</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source/&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18.6&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">rd</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;= 1&#39;</span><span class="p">,</span> <span class="s">&#39;= 4&#39;</span><span class="p">)</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">28</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">28</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+            <span class="s">&#39;deltasco/Atsuo/1D/data/dSco_a035_01&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">sfile</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">29</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">29</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;2.3&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">day</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hseq</span><span class="p">:</span>
+            <span class="n">wmod</span><span class="p">[</span><span class="mi">33</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">33</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">mh</span><span class="p">))</span>
+            <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_SB{0}_{1:.1f}d_h{2:03.0f}_Rd{3:05.1f}_{4}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">_phc</span><span class="o">.</span><span class="n">trimpathname</span><span class="p">(</span><span class="n">sfile</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">day</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">srcname</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">wmod</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;= 0&#39;</span><span class="p">,</span> <span class="s">&#39;= 1&#39;</span><span class="p">)</span>
+            <span class="n">wmod</span><span class="p">[</span><span class="mi">36</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">36</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1.5&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">mh</span><span class="p">))</span>
+            <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_SB{0}_{1:.1f}d_hseq_Rd{2:05.1f}_{3}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">_phc</span><span class="o">.</span><span class="n">trimpathname</span><span class="p">(</span><span class="n">sfile</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">day</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">srcname</span><span class="p">)</span>
+
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">40</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18000.&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Th</span><span class="p">))</span>      
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="s">&#39;/mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="c"># TODO Setup Tpole = REF of a (scale height)    </span>
+    <span class="c"># Tps = dict(zip(Ms, Tp11))</span>
+
+    <span class="c"># PROGRAM BEGINS</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">+=</span> <span class="s">&#39;/&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="c"># Check modN folder</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">)):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">))</span>
+
+    <span class="c"># Select sources</span>
+    <span class="n">sources</span> <span class="o">=</span> <span class="n">_glob</span><span class="p">(</span><span class="s">&#39;source/&#39;</span> <span class="o">+</span> <span class="n">selsources</span><span class="p">)</span>
+
+    <span class="c"># Load disk model</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF_disco.txt&#39;</span><span class="p">))</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">sBdays</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">sBfiles</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">prodI</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">sig0vals</span><span class="p">,</span> <span class="n">rdvals</span><span class="p">,</span> <span class="n">hvals</span><span class="p">,</span> <span class="n">mvals</span><span class="p">,</span> <span class="n">mhvals</span><span class="p">):</span>
+            <span class="n">doPL</span><span class="p">(</span><span class="n">prodI</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">doFVDD</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">doMdot</span><span class="p">(</span><span class="n">prodI</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# {0:.0f} arquivos foram gerados !!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">*</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">sig0vals</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">rdvals</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">hvals</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mvals</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> 
+            <span class="nb">len</span><span class="p">(</span><span class="n">mhvals</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">prodI</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">sources</span><span class="p">,</span> <span class="n">rdvals</span><span class="p">,</span> <span class="n">hvals</span><span class="p">,</span> <span class="n">mhvals</span><span class="p">,</span> <span class="n">sBdays</span><span class="p">,</span> <span class="n">sBfiles</span><span class="p">):</span>
+            <span class="n">doSB</span><span class="p">(</span><span class="n">prodI</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">doFVDD</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">doSB</span><span class="p">(</span><span class="n">prodI</span><span class="p">,</span> <span class="n">hseq</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# {0:.0f} arquivos foram gerados !!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)</span> <span class="o">*</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">rdvals</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">hvals</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">sBdays</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mhvals</span><span class="p">)</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> 
+            <span class="nb">len</span><span class="p">(</span><span class="n">sBfiles</span><span class="p">)))</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>
+    <span class="c"># END PROGRAM    </span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="makeInpJob"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeInpJob">[docs]</a><span class="k">def</span> <span class="nf">makeInpJob</span><span class="p">(</span><span class="n">modn</span><span class="o">=</span><span class="s">&#39;01&#39;</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span> <span class="n">simulations</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;SED&#39;</span><span class="p">],</span>
+    <span class="n">docases</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">sim1</span><span class="o">=</span><span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="n">sim2</span><span class="o">=</span><span class="s">&#39;step1_ref&#39;</span><span class="p">,</span> <span class="n">composition</span><span class="o">=</span><span class="s">&#39;pureH&#39;</span><span class="p">,</span>
+    <span class="n">controls</span><span class="o">=</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">gridcells</span><span class="o">=</span><span class="s">&#39;grid&#39;</span><span class="p">,</span> <span class="n">observers</span><span class="o">=</span><span class="s">&#39;observers&#39;</span><span class="p">,</span>
+    <span class="n">images</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;&#39;</span><span class="p">],</span> <span class="n">perturbations</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clusters</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;job&#39;</span><span class="p">],</span> <span class="n">srcid</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">,</span>
+    <span class="n">walltime</span><span class="o">=</span><span class="s">&#39;24:00:00&#39;</span><span class="p">,</span> <span class="n">wcheck</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s">&#39;$USER@localhost&#39;</span><span class="p">,</span> <span class="n">chkout</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">st1max</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">st1refmax</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">ctrM</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">touch</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">srcNf</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create INP+JOB files to run Hdust.</span>
+
+<span class="sd">    All SOURCE files must initiate by &quot;Be_&quot;. Otherwise, the `makeInpJob` will</span>
+<span class="sd">    not work. This is to satisfies the criteria of a specific disk model for</span>
+<span class="sd">    each source star.</span>
+
+<span class="sd">        ### Start edit here ###</span>
+<span class="sd">        modn = &#39;02&#39;</span>
+
+<span class="sd">        #clusters config</span>
+<span class="sd">        # job = AlphaCrucis; oar = MesoCentre Licallo; ge = MesoCentre FRIPP</span>
+<span class="sd">        clusters = [&#39;job&#39;,&#39;oar&#39;,&#39;ge&#39;,&#39;bgq&#39;]</span>
+<span class="sd">        clusters = [&#39;oar&#39;]</span>
+<span class="sd">        nodes    = 48</span>
+<span class="sd">        #if wcheck == True, walltime will be AUTOMATICALLY estimated</span>
+<span class="sd">        walltime = &#39;3:00:00&#39;</span>
+<span class="sd">        wcheck   = True</span>
+<span class="sd">        email    = &#39;user@gmail.com&#39;</span>
+
+<span class="sd">        #Check if the outputs already exist</span>
+<span class="sd">        chkout = True</span>
+<span class="sd">        #Above the values below, the step1 will be considered done!</span>
+<span class="sd">        st1max = 26</span>
+<span class="sd">        st1refmax = 30</span>
+<span class="sd">        #Gera inp+job so&#39; para o source com &#39;1.45&#39; no nome</span>
+<span class="sd">        #Nao funciona caracteres especiais como * ou ?</span>
+<span class="sd">        srcid       = &#39;1.45&#39;</span>
+<span class="sd">        srcid       = &#39;&#39;</span>
+<span class="sd">        #Se um dos 3 casos nao estiver presente, ele gera input comentado.</span>
+<span class="sd">        docases = [1,2,3]</span>
+<span class="sd">        #1 = step1  &lt;&gt; Gera inp+job so&#39; para mod#/mod#.txt (SEM source, so disco)</span>
+<span class="sd">        #habilita ADDSUFFIX; retira OBSERVERS e IMAGES</span>
+<span class="sd">        sim1 = &#39;step1&#39;</span>
+<span class="sd">        #2 = step1_refine </span>
+<span class="sd">        sim2 = &#39;step1_refine&#39;</span>
+<span class="sd">        #3 = outros &lt;&gt; Gera inp+job so&#39; para mod#/mod#SOURCE.txt (post-proc.)</span>
+<span class="sd">        #retira ADDSUFFIX; adiciona OBSERVERS (e talvez IMAGES)</span>
+<span class="sd">        simulations = [&#39;sed&#39;,&#39;h&#39;,&#39;brg&#39;,&#39;halpha&#39;,&#39;uv&#39;]</span>
+<span class="sd">        simulations = [&#39;sed_sig&#39;,&#39;brg_M&#39;,&#39;halpha_M&#39;,&#39;uv&#39;,&#39;j&#39;,&#39;h&#39;,&#39;k&#39;,&#39;l&#39;,&#39;m&#39;,&#39;n&#39;,</span>
+<span class="sd">         &#39;q1&#39;,&#39;q2&#39;]</span>
+<span class="sd">        simulations = [&#39;SED&#39;,&#39;Ha&#39;]</span>
+<span class="sd">        images      = [&#39;&#39;,&#39;h&#39;,&#39;brg&#39;,&#39;halpha&#39;,&#39;uv&#39;]</span>
+<span class="sd">        images        = simulations[:]</span>
+<span class="sd">        composition = &#39;pureH&#39;</span>
+<span class="sd">        controls    = &#39;no_op&#39;</span>
+<span class="sd">        controls    = &#39;controls&#39;</span>
+<span class="sd">        ctrM        = False</span>
+<span class="sd">        gridcells   = &#39;grid&#39;</span>
+<span class="sd">        observers   = &#39;obs&#39;</span>
+<span class="sd">        touch       = True</span>
+<span class="sd">        ###stop edition here</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">isFloat</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">doCase1</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">cases</span><span class="p">):</span>
+        <span class="n">case1</span> <span class="o">=</span> <span class="n">inp</span><span class="p">[:]</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;suffix&#39;</span><span class="p">,</span> <span class="n">suf</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;pureH&#39;</span><span class="p">,</span> <span class="n">composition</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ctrM</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">suf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_M&#39;</span><span class="p">)</span>
+            <span class="n">M</span> <span class="o">=</span> <span class="n">suf</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">7</span><span class="p">]</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">controls</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">controls</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;grid&#39;</span><span class="p">,</span> <span class="n">gridcells</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="n">sim1</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source&#39;</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">perturbations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">case1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;PERTURBATIONS = &#39;{0}&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">perturbations</span><span class="p">))</span>
+        <span class="k">if</span> <span class="mi">1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">case1</span><span class="p">)):</span>
+                <span class="n">case1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;!~ &#39;</span> <span class="o">+</span> <span class="n">case1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">case1</span>
+
+    <span class="k">def</span> <span class="nf">doCase2</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">cases</span><span class="p">):</span>
+        <span class="n">case1</span> <span class="o">=</span> <span class="n">inp</span><span class="p">[:]</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;suffix&#39;</span><span class="p">,</span> <span class="n">suf</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;pureH&#39;</span><span class="p">,</span> <span class="n">composition</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ctrM</span><span class="p">:</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">suf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_M&#39;</span><span class="p">)</span>
+            <span class="n">M</span> <span class="o">=</span> <span class="n">suf</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">7</span><span class="p">]</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">controls</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">controls</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;grid&#39;</span><span class="p">,</span> <span class="n">gridcells</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="n">sim2</span><span class="p">)</span>
+        <span class="n">case1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source&#39;</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">perturbations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">case1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;PERTURBATIONS = &#39;{0}&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">perturbations</span><span class="p">))</span>
+        <span class="k">if</span> <span class="mi">2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">case1</span><span class="p">)):</span>
+                <span class="n">case1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;!~ &#39;</span> <span class="o">+</span> <span class="n">case1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">case1</span>
+
+    <span class="k">def</span> <span class="nf">doCase3</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">simchk</span><span class="p">):</span>
+        <span class="n">case3</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">simulations</span><span class="p">)):</span>
+            <span class="n">case1</span> <span class="o">=</span> <span class="n">inp</span><span class="p">[:]</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;suffix&#39;</span><span class="p">,</span> <span class="n">suf</span><span class="p">)</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;pureH&#39;</span><span class="p">,</span> <span class="n">composition</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ctrM</span><span class="p">:</span>
+                <span class="n">j</span> <span class="o">=</span> <span class="n">suf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_M&#39;</span><span class="p">)</span>
+                <span class="n">M</span> <span class="o">=</span> <span class="n">suf</span><span class="p">[</span><span class="n">j</span><span class="p">:</span><span class="n">j</span> <span class="o">+</span> <span class="mi">7</span><span class="p">]</span>
+                <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">controls</span> <span class="o">+</span> <span class="n">M</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;controls&#39;</span><span class="p">,</span> <span class="n">controls</span><span class="p">)</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;grid&#39;</span><span class="p">,</span> <span class="n">gridcells</span><span class="p">)</span>
+            <span class="n">case1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source&#39;</span><span class="p">,</span> <span class="n">src</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">simulations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;SED&#39;</span><span class="p">:</span>
+                <span class="n">sig</span> <span class="o">=</span> <span class="n">suf</span><span class="p">[</span><span class="n">suf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_sig&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span><span class="p">:</span><span class="n">suf</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_sig&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">isFloat</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span> <span class="ow">and</span> <span class="n">srcNf</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                    <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                        <span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="s">&#39;SED_sig{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sig</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="n">simulations</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">srcNf</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="s">&#39;{0}_{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">simulations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">src</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">case1</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;step1&#39;</span><span class="p">,</span> <span class="n">simulations</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">case1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;OBSERVERS   = &#39;{0}&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">observers</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+                <span class="n">case1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;IMAGES      = &#39;{0}&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">images</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">perturbations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">case1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&quot;PERTURBATIONS = &#39;{0}&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">perturbations</span><span class="p">))</span>
+            <span class="n">case1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">simchk</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">case1</span><span class="p">)):</span>
+                    <span class="n">case1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;!~ &#39;</span> <span class="o">+</span> <span class="n">case1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">case3</span> <span class="o">+=</span> <span class="n">case1</span>
+        <span class="k">return</span> <span class="n">case3</span>
+
+    <span class="k">def</span> <span class="nf">doJobs</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">addtouch</span><span class="o">=</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">):</span>
+        <span class="c"># load Ref</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF.{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">)))</span>
+        <span class="n">wout</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">outname</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[</span><span class="n">mod</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;txt&#39;</span><span class="p">,</span> <span class="n">sel</span><span class="p">)</span>
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}s/{0}s_{1}_mod{2}.sh&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="n">modn</span><span class="p">),</span> <span class="s">&#39;a&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">sel</span> <span class="o">==</span> <span class="s">&#39;job&#39;</span><span class="p">:</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;128&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;36:00:00&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">walltime</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="s">&#39;alexcarciofi@gmail.com&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">email</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;hdust_bestar2.02.inp&#39;</span><span class="p">,</span> <span class="s">&#39;{0}/{1}&#39;</span><span class="o">.</span>
+            <span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.inp&#39;</span><span class="p">)))</span>
+            <span class="k">if</span> <span class="n">touch</span><span class="p">:</span>
+                <span class="n">wout</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span> <span class="o">=</span> <span class="n">addtouch</span>
+                <span class="n">modchmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">trimpathname</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+                <span class="n">modchmod</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">modchmod</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;*&#39;</span><span class="p">)</span>
+                <span class="n">wout</span><span class="p">[</span><span class="mi">31</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;chmod -f 664 {0}/{1}/*{2}</span><span class="se">\n</span><span class="s">chmod -f 664 log/*</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">+</span>\
+                    <span class="s">&#39;chmod -f 664 ../../tmp/*</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="o">*</span><span class="n">modchmod</span><span class="p">)</span>
+            <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s">&#39;qsub {0}/{1}s/{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">sel</span> <span class="o">==</span> <span class="s">&#39;oar&#39;</span><span class="p">:</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;12&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;24:0:0&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">walltime</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;hdust_bestar2.02.inp&#39;</span><span class="p">,</span> <span class="s">&#39;{0}/{1}&#39;</span><span class="o">.</span>
+            <span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.inp&#39;</span><span class="p">)))</span>
+            <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span>
+                <span class="s">&#39;chmod -f a+x {0}/{1}s/{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>
+            <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span>
+                <span class="s">&#39;oarsub -S ./{0}/{1}s/{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>      
+        <span class="k">elif</span> <span class="n">sel</span> <span class="o">==</span> <span class="s">&#39;ge&#39;</span><span class="p">:</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;48&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;45:00:00&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">walltime</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;dmfaes@gmail.com&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">email</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;hdust_bestar2.02.inp&#39;</span><span class="p">,</span> <span class="s">&#39;{0}/{1}&#39;</span><span class="o">.</span>
+            <span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.inp&#39;</span><span class="p">)))</span>
+            <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span>
+                <span class="s">&#39;qsub -P hdust {0}/{1}s/{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">sel</span> <span class="o">==</span> <span class="s">&#39;bgq&#39;</span><span class="p">:</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;512&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nodes</span><span class="p">))</span>
+            <span class="n">nodes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">nodes</span> <span class="o">%</span> <span class="mi">512</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">nrsv</span> <span class="o">=</span> <span class="p">(</span><span class="n">nodes</span> <span class="o">//</span> <span class="mi">512</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">128</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">nrsv</span> <span class="o">=</span> <span class="p">(</span><span class="n">nodes</span> <span class="o">//</span> <span class="mi">512</span><span class="p">)</span> <span class="o">*</span> <span class="mi">128</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;128&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nrsv</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;24:00:00&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">walltime</span><span class="p">))</span>
+            <span class="n">wout</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="n">wout</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;hdust_bestar2.02.inp&#39;</span><span class="p">,</span> <span class="s">&#39;{0}/{1}&#39;</span><span class="o">.</span>
+            <span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.inp&#39;</span><span class="p">)))</span>
+            <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s">&#39;chmod -f +x {0}/{1}s/{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> 
+                <span class="n">outname</span><span class="p">))</span>
+            <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span>
+                <span class="s">&#39;llsubmit ./{0}/{1}s/{2}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}s/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wout</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Saved: {0}s/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="c"># PROGRAM START</span>
+    <span class="k">if</span> <span class="n">srcNf</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">srcNf</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">simulations</span><span class="p">)</span> <span class="o">*</span> <span class="p">[</span><span class="bp">False</span><span class="p">]</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">+=</span> <span class="s">&#39;/&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="c"># obtain the actual directory</span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> 
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">proj</span><span class="p">[</span><span class="n">proj</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c"># Folder&#39;s checks</span>
+    <span class="k">for</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;{0}s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">)):</span>
+            <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir {0}s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;{0}s/{0}s_{1}_mod{2}.sh&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> 
+            <span class="n">modn</span><span class="p">)):</span>
+            <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;rm {0}s/{0}s_{1}_mod{2}.sh&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">proj</span><span class="p">,</span> <span class="n">modn</span><span class="p">))</span>
+
+    <span class="c"># list of mods</span>
+    <span class="n">mods</span> <span class="o">=</span> <span class="n">_glob</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}*.txt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">))</span>
+
+    <span class="c"># load REF_inp</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF_inp.txt&#39;</span><span class="p">))</span>
+    <span class="n">inp</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">mods</span><span class="p">:</span>
+        <span class="c"># Write inps</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.inp&#39;</span><span class="p">),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s">&#39;PROJECT = {0}</span><span class="se">\n</span><span class="s">MODEL = {1}</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">modn</span><span class="p">))</span>
+
+        <span class="n">suf</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[</span><span class="n">mod</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;_&#39;</span><span class="p">):</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">mod</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;Be_&#39;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[</span><span class="n">mod</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;Be_&#39;</span><span class="p">):</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">src</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">srcid</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c"># src = &#39;aeri_draft&#39;</span>
+        <span class="c"># if src.find(srcid) == -1:</span>
+        <span class="c">#     print(&#39;# Script skipped by missing &quot;Be&quot; in source...&#39;)</span>
+        <span class="c">#     continue</span>
+
+        <span class="n">cases</span> <span class="o">=</span> <span class="n">docases</span><span class="p">[:]</span>
+        <span class="c"># Do the touch thing</span>
+        <span class="n">addtouch</span> <span class="o">=</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span>
+        <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;chmod -f 664 ../../tmp/*</span><span class="se">\n</span><span class="s">chmod -f 664 {0}/mod{1}/*</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span>\
+            <span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">modn</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">touch</span> <span class="ow">and</span> <span class="p">(</span> <span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">)</span> <span class="p">):</span>
+            <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span>
+                                                 <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.log&#39;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">touch</span> <span class="ow">and</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">sim</span> <span class="ow">in</span> <span class="n">simulations</span><span class="p">:</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;.chk&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;.err&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;.log&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;_SEI.chk&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span>
+                    <span class="s">&#39;_SEI.err&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}/{1}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;_SEI.log&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">))</span>
+                <span class="n">err90a</span> <span class="o">=</span> <span class="s">&#39;{0}/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;.err&#39;</span><span class="p">)</span><span class="o">.</span>
+                    <span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span>
+                    <span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">)))</span>
+                <span class="n">err90b</span> <span class="o">=</span> <span class="s">&#39;{0}/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">proj</span><span class="p">,</span> <span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> 
+                    <span class="s">&#39;_SEI.err&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;mod{0}/mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">),</span> 
+                    <span class="s">&#39;mod{0}/{1}_mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">sim</span><span class="p">)))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err90a</span><span class="p">[:</span><span class="mi">90</span><span class="p">])</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">err90b</span><span class="p">[:</span><span class="mi">90</span><span class="p">])</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">err90a</span><span class="p">[:</span><span class="mi">90</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;.err&quot;</span><span class="p">,</span> <span class="s">&quot;.chk&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;.er&quot;</span><span class="p">,</span> <span class="s">&quot;.ch&quot;</span><span class="p">)</span><span class="o">.</span>
+                    <span class="n">replace</span><span class="p">(</span><span class="s">&quot;.e&quot;</span><span class="p">,</span> <span class="s">&quot;.c&quot;</span><span class="p">))</span>
+                <span class="n">addtouch</span> <span class="o">+=</span> <span class="s">&#39;touch {0}</span><span class="se">\n</span><span class="s">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">err90b</span><span class="p">[:</span><span class="mi">90</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;.err&quot;</span><span class="p">,</span> <span class="s">&quot;.chk&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;.er&quot;</span><span class="p">,</span> <span class="s">&quot;.ch&quot;</span><span class="p">)</span><span class="o">.</span>
+                    <span class="n">replace</span><span class="p">(</span><span class="s">&quot;.e&quot;</span><span class="p">,</span> <span class="s">&quot;.c&quot;</span><span class="p">))</span>
+        <span class="n">modchmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">trimpathname</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+        <span class="n">modchmod</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">modchmod</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;*&#39;</span><span class="p">)</span>
+        <span class="c"># addtouch += &#39;chmod 664 {0}/{1}/*{2}\n&#39;.format(proj, *modchmod)</span>
+
+        <span class="c"># Set simulation check variable</span>
+        <span class="k">if</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="n">simchk</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">simulations</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>    
+            <span class="n">simchk</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">simulations</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;{0:02d}.temp&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">st1max</span><span class="p">)))</span>\
+            <span class="ow">and</span> <span class="n">chkout</span> <span class="ow">and</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="n">cases</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">case1</span> <span class="o">=</span> <span class="n">doCase1</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">cases</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">case1</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;{0:02d}.temp&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">st1refmax</span><span class="p">)))</span> <span class="ow">and</span> <span class="n">chkout</span> <span class="ow">and</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="n">cases</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    
+        <span class="n">case2</span> <span class="o">=</span> <span class="n">doCase2</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">cases</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">case2</span> <span class="o">+</span> <span class="p">[</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="n">chkout</span> <span class="ow">and</span> <span class="mi">3</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">simulations</span><span class="p">)):</span>
+                <span class="n">outs2a</span> <span class="o">=</span> <span class="s">&#39;mod{0}/{1}_mod{0}{2}.sed2&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">modn</span><span class="p">,</span> <span class="n">simulations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">suf</span><span class="p">)</span>
+                <span class="n">outs2b</span> <span class="o">=</span> <span class="s">&#39;mod{0}/{1}_mod{0}{2}_SEI.sed2&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">modn</span><span class="p">,</span> <span class="n">simulations</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">suf</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outs2a</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outs2b</span><span class="p">):</span>
+                    <span class="n">simchk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="k">if</span> <span class="bp">True</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">simchk</span><span class="p">:</span>
+                <span class="n">cases</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">case3</span> <span class="o">=</span> <span class="n">doCase3</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">simchk</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">case3</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="c"># Def automatic walltime:</span>
+        <span class="k">if</span> <span class="n">wcheck</span><span class="p">:</span>
+            <span class="n">h</span> <span class="o">=</span> <span class="mi">0</span> 
+            <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+                <span class="n">h</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">cases</span><span class="p">:</span>
+                <span class="n">h</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">simchk</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">extra</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">h</span> <span class="o">=</span> <span class="n">h</span> <span class="o">+</span> <span class="n">extra</span> <span class="o">*</span> <span class="mi">48</span> <span class="o">/</span> <span class="n">nodes</span>
+            <span class="n">walltime</span> <span class="o">=</span> <span class="s">&#39;{0}:0:0&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+        <span class="c"># Del old jobs</span>
+        <span class="k">for</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">:</span>
+            <span class="n">outname</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[</span><span class="n">mod</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;txt&#39;</span><span class="p">,</span> <span class="n">sel</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;{0}s/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">)):</span>
+                <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;rm {0}s/{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sel</span><span class="p">,</span> <span class="n">outname</span><span class="p">))</span>
+
+        <span class="c"># Write jobs (if necessary)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cases</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">sel</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">:</span>
+                <span class="n">doJobs</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">sel</span><span class="p">,</span> <span class="n">nodes</span><span class="p">,</span> <span class="n">addtouch</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>
+    <span class="c"># PROGRAM END</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="makeNoDiskGrid"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeNoDiskGrid">[docs]</a><span class="k">def</span> <span class="nf">makeNoDiskGrid</span><span class="p">(</span><span class="n">modn</span><span class="p">,</span> <span class="n">selsources</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    #Create a model list with random disk parameters (&quot;noCS&quot; in filename)</span>
+
+<span class="sd">    INPUT:  modn = &#39;01&#39;; selsources = &#39;*&#39; (filter that is applied to the SOURCE</span>
+<span class="sd">    selection).</span>
+
+<span class="sd">    OUTPUT: Files written</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">doNoCS</span><span class="p">(</span><span class="n">src</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Given a src, generates the noCS model input</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">srcname</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;source/&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_noCS_{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">srcname</span><span class="p">)</span>
+
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="c"># Remove a disk does not work:</span>
+        <span class="c"># wmod[9]=wmod[9].replace(&#39;1&#39;,&#39;0&#39;)</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;18.6&#39;</span><span class="p">,</span> <span class="s">&#39;2.0&#39;</span><span class="p">)</span>
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="s">&#39;/mod&#39;</span> <span class="o">+</span> <span class="n">modn</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="c"># PROGRAM BEGINS</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">+=</span> <span class="s">&#39;/&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="c"># Check modN folder</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">)):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">))</span>
+
+    <span class="c"># Select sources</span>
+    <span class="n">sources</span> <span class="o">=</span> <span class="n">_glob</span><span class="p">(</span><span class="s">&#39;source/&#39;</span> <span class="o">+</span> <span class="n">selsources</span><span class="p">)</span>
+
+    <span class="c"># Load disk model</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF_disco.txt&#39;</span><span class="p">))</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">prodI</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">sources</span><span class="p">):</span>
+        <span class="n">prodI</span> <span class="o">=</span> <span class="n">prodI</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">doNoCS</span><span class="p">(</span><span class="n">prodI</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# {0:.0f} arquivos foram gerados !!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sources</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>
+    <span class="c"># END PROGRAM</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="makeSimulLine"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeSimulLine">[docs]</a><span class="k">def</span> <span class="nf">makeSimulLine</span><span class="p">(</span><span class="n">basesims</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">hwidth</span><span class="p">,</span> <span class="n">Ms</span><span class="p">,</span> <span class="n">Obs</span><span class="p">,</span> <span class="n">lsuffix</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s">&#39;source/&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    | vrots = [[167.023,229.187,271.072,301.299,313.702],</span>
+<span class="sd">    |          [177.998,244.636,290.596,324.272,338.298],</span>
+<span class="sd">    |          [192.612,267.017,318.288,355.320,370.638],</span>
+<span class="sd">    |          [202.059,281.667,335.158,373.716,389.782],</span>
+<span class="sd">    |          [209.244,292.409,358.626,410.439,430.844],</span>
+<span class="sd">    |          [214.407,297.661,357.799,402.628,420.683]]</span>
+
+<span class="sd">    | vrots = [[259.759,354.834,417.792,464.549,483.847],</span>
+<span class="sd">    |          [252.050,346.163,406.388,449.818,468.126],</span>
+<span class="sd">    |          [245.127,336.834,399.983,448.076,467.806],</span>
+<span class="sd">    |          [239.522,329.496,388.734,432.532,450.806],</span>
+<span class="sd">    |          [234.301,321.139,379.297,423.241,441.122],</span>
+<span class="sd">    |          [228.538,313.797,370.343,412.488,429.914],</span>
+<span class="sd">    |          [219.126,299.656,354.547,395.821,413.008],</span>
+<span class="sd">    |          [211.544,288.840,341.081,380.426,396.978],</span>
+<span class="sd">    |          [203.438,279.328,328.666,365.697,380.660],</span>
+<span class="sd">    |          [197.823,268.964,316.901,353.568,368.506],</span>
+<span class="sd">    |          [192.620,262.688,308.208,341.963,356.410],</span>
+<span class="sd">    |          [187.003,255.125,299.737,332.511,346.043]]</span>
+<span class="sd">    |         </span>
+<span class="sd">    | basesims = [&#39;simulation/Brg.txt&#39;,&#39;simulation/Ha.txt&#39;]</span>
+<span class="sd">    | Rs = [12000, 20000]</span>
+<span class="sd">    | </span>
+<span class="sd">    | Ms = [4.00,5.00,7.00,9.00,12.00,15.00]</span>
+<span class="sd">    | Ms = [14.6, 12.5, 10.8, 9.6, 8.6, 7.7, 6.4, 5.5, 4.8, 4.2, 3.8, 3.4]</span>
+<span class="sd">    | Obs = [1.1,1.2,1.3,1.4,1.45]</span>
+<span class="sd">    | suffix = &#39;H0.30_Z0.014_bE_Ell&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">cgs</span>
+
+    <span class="k">for</span> <span class="n">prodI</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">Ms</span><span class="p">,</span> <span class="n">Obs</span><span class="p">,</span> <span class="n">basesims</span><span class="p">,</span> <span class="n">lsuffix</span><span class="p">):</span>
+        <span class="n">M</span><span class="p">,</span> <span class="n">Ob</span><span class="p">,</span> <span class="n">basesim</span><span class="p">,</span> <span class="n">suffix</span> <span class="o">=</span> <span class="n">prodI</span>
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">basesim</span><span class="p">)</span>
+        <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">srcid</span> <span class="o">=</span> <span class="s">&#39;Be_M{0:05.2f}_ob{1:.2f}_{2}.txt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">Ob</span><span class="p">,</span> <span class="n">suffix</span><span class="p">)</span>
+
+        <span class="c"># i = Ms.index(M)</span>
+        <span class="c"># j = Obs.index(Ob)</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">basesims</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">basesim</span><span class="p">)</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">Rs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">nmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="n">vrot</span> <span class="o">=</span> <span class="n">_rot</span><span class="o">.</span><span class="n">vrot_scr</span><span class="p">(</span><span class="n">path</span><span class="o">+</span><span class="n">srcid</span><span class="p">)</span>
+        <span class="n">vel</span> <span class="o">=</span> <span class="s">&#39;{0:.1f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">hwidth</span> <span class="o">+</span> <span class="n">vrot</span><span class="p">)</span>
+        <span class="n">nmod</span><span class="p">[</span><span class="mi">103</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmod</span><span class="p">[</span><span class="mi">103</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;1020.&#39;</span><span class="p">,</span> <span class="n">vel</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">hwidth</span> <span class="o">+</span> <span class="n">vrot</span><span class="p">)</span> <span class="o">*</span> <span class="n">R</span> <span class="o">/</span> <span class="n">c</span> <span class="o">*</span> <span class="mf">1e5</span><span class="p">)))</span>
+        <span class="c"># if len(_np.shape(vrots)) == 2:</span>
+        <span class="c">#     vel = &#39;{0:.1f}&#39;.format(hwidth + vrots[i][j])</span>
+        <span class="c">#     nmod[103] = nmod[103].replace(&#39;1020.&#39;, vel)</span>
+        <span class="c">#     n = str(int(round(2 * (hwidth + vrots[i][j]) * R / c * 1e5)))</span>
+        <span class="c"># else:</span>
+        <span class="c">#     vel = &#39;{0:.1f}&#39;.format(hwidth + vrots[0])</span>
+        <span class="c">#     nmod[103] = nmod[103].replace(&#39;1020.&#39;, vel)</span>
+        <span class="c">#     n = str(int(round(2 * (hwidth + vrots[0]) * R / c * 1e5)))</span>
+        <span class="c"># print(srcid, n)</span>
+        <span class="n">nmod</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmod</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;100&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+            <span class="n">basesim</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;_{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">srcid</span><span class="p">)),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">nmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="makeSourceGrid"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeSourceGrid">[docs]</a><span class="k">def</span> <span class="nf">makeSourceGrid</span><span class="p">(</span><span class="n">masses</span><span class="p">,</span> <span class="n">rps</span><span class="p">,</span> <span class="n">lums</span><span class="p">,</span> <span class="n">Ws</span><span class="p">,</span> <span class="n">betas</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Arbitrary values (no stellar model info), for the SELF-CONSISTENT RIGID </span>
+<span class="sd">    ROTATOR setup.</span>
+
+<span class="sd">    OUTPUT: The combination of the values of all lists in the *path/source/* </span>
+<span class="sd">    folder.</span>
+
+<span class="sd">    Example: 2 of each parameters results in 32 models (2^5)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">+=</span> <span class="s">&#39;/&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="c"># </span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF_estrela.txt&#39;</span><span class="p">))</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;{0}source&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">)):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir {0}source&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
+    <span class="c"># </span>
+    <span class="k">for</span> <span class="n">prod</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">masses</span><span class="p">,</span> <span class="n">rps</span><span class="p">,</span> <span class="n">lums</span><span class="p">,</span> <span class="n">Ws</span><span class="p">,</span> <span class="n">betas</span><span class="p">):</span>
+        <span class="n">MI</span><span class="p">,</span> <span class="n">Raio</span><span class="p">,</span> <span class="n">Lum</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Beta</span> <span class="o">=</span> <span class="n">prod</span>
+        <span class="c"># REGISTRA VALORES</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>        
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;10.3065&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">MI</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;5.38462&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Raio</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0.775&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">W</span><span class="p">))</span>            
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;7500.&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Lum</span><span class="p">))</span>
+        <span class="n">wmod</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0.25&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.5f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Beta</span><span class="p">))</span>
+        <span class="c"># </span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_M{0:05.2f}_W{1:.2f}_b{2:.2f}_rp{3:05.2f}_L{4:05.0f}_Ell&#39;</span><span class="o">.</span> \
+            <span class="n">format</span><span class="p">(</span><span class="n">MI</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Beta</span><span class="p">,</span> <span class="n">Raio</span><span class="p">,</span> <span class="n">Lum</span><span class="p">)</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;{0}source/Be&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c">#</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>    
+    <span class="k">return</span> 
+
+</div>
+<div class="viewcode-block" id="makeStarGrid"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeStarGrid">[docs]</a><span class="k">def</span> <span class="nf">makeStarGrid</span><span class="p">(</span><span class="n">oblats</span><span class="p">,</span> <span class="n">Hfs</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Based on GENEVA models.</span>
+
+<span class="sd">    | INPUT: oblats = [1.1,1.2,1.3,1.4,1.45] (example)</span>
+<span class="sd">    | Hfs = [0.3] (example)</span>
+
+<span class="sd">    Masses list a Z value are inside `geneve_par.pro` file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s">&#39;/&#39;</span><span class="p">:</span>
+            <span class="n">path</span> <span class="o">+=</span> <span class="s">&#39;/&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;stmodels&#39;</span><span class="p">):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir stmodels&#39;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">runIDL</span> <span class="o">=</span> <span class="bp">True</span> 
+        <span class="kn">import</span> <span class="nn">pidly</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# This system do not have pIDLy installed...&#39;</span><span class="p">)</span>
+        <span class="n">runIDL</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">if</span> <span class="n">runIDL</span><span class="p">:</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s">&#39;# Do you want to run &quot;geneve_par&quot; (y/other):&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="o">!=</span> <span class="s">&#39;y&#39;</span><span class="p">:</span>
+            <span class="n">runIDL</span> <span class="o">=</span> <span class="bp">False</span>
+
+    <span class="k">if</span> <span class="n">runIDL</span><span class="p">:</span>
+        <span class="n">idl</span> <span class="o">=</span> <span class="n">pidly</span><span class="o">.</span><span class="n">IDL</span><span class="p">()</span>
+        <span class="n">propath</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span> <span class="p">)</span>
+        <span class="n">idl</span><span class="p">(</span><span class="s">&#39;cd,&quot;{0}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">propath</span><span class="p">))</span>
+        <span class="n">idl</span><span class="p">(</span><span class="s">&#39;.r geneve_par&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ob</span> <span class="ow">in</span> <span class="n">oblats</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">H</span> <span class="ow">in</span> <span class="n">Hfs</span><span class="p">:</span>
+                <span class="n">idl</span><span class="p">(</span><span class="s">&#39;geneve_par, {0}, {1}, /oblat,/makeeps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ob</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>
+                <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mv {0}/geneve_lum.eps stmodels/geneve_lum_&#39;</span> <span class="o">+</span>
+                    <span class="s">&#39;{1:.2f}_{2:.2f}.eps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">propath</span><span class="p">,</span> <span class="n">ob</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>
+                <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+                    <span class="s">&#39;mv {0}/geneve_rp.eps stmodels/geneve_rp_{1:.2f}_&#39;</span> <span class="o">+</span>
+                    <span class="s">&#39;{2:.2f}.eps&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">propath</span><span class="p">,</span> <span class="n">ob</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>
+                <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span>
+                    <span class="s">&#39;mv {0}/geneve_par.txt stmodels/oblat{1}_h{2}.txt&#39;</span><span class="o">.</span>
+                    <span class="n">format</span><span class="p">(</span><span class="n">propath</span><span class="p">,</span> <span class="n">ob</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>
+        <span class="n">idl</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF_estrela.txt&#39;</span><span class="p">))</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;source&#39;</span><span class="p">):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir source&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">ob</span> <span class="ow">in</span> <span class="n">oblats</span><span class="p">:</span>                        
+        <span class="k">for</span> <span class="n">H</span> <span class="ow">in</span> <span class="n">Hfs</span><span class="p">:</span>  
+            <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;stmodels/oblat{0}_h{1}.txt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ob</span><span class="p">,</span> <span class="n">H</span><span class="p">))</span>                     
+            <span class="n">matriz</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span> 
+            <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="n">Omega</span><span class="p">,</span> <span class="n">W</span><span class="p">,</span> <span class="n">Beta</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">matriz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+
+            <span class="n">m2</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">matriz</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matriz</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">m2</span> <span class="o">+=</span> <span class="p">[</span><span class="n">matriz</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]]</span>
+            <span class="n">matriz</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+            <span class="n">M</span> <span class="o">=</span> <span class="n">matriz</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c"># MASS (SOLAR MASSES)</span>
+            <span class="n">M</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+            <span class="n">Rp</span> <span class="o">=</span> <span class="n">matriz</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c"># POLAR RADIUS (SOLAR RADII)</span>
+            <span class="n">Rp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">Rp</span><span class="p">)</span>
+            <span class="n">L</span> <span class="o">=</span> <span class="n">matriz</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>  <span class="c"># LUMINOSITY (in solar lum.)</span>
+            <span class="n">L</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+            <span class="n">Z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.014</span><span class="p">]</span>  <span class="c"># METALLICITY(=Zsolar) (other options: 0.006, 0.002)</span>
+
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Omega = &#39;</span><span class="p">,</span> <span class="n">Omega</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;W     = &#39;</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;beta  = &#39;</span><span class="p">,</span> <span class="n">Beta</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;M     = &#39;</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Rp    = &#39;</span><span class="p">,</span> <span class="n">Rp</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&#39;L     = &#39;</span><span class="p">,</span> <span class="n">L</span><span class="p">)</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%.0f</span><span class="s"> arquivos gerados</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">Hfs</span><span class="p">)))</span>
+
+            <span class="c"># DEFINE ALL INDEX</span>
+            <span class="k">for</span> <span class="n">prodI</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">Rp</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">Z</span><span class="p">):</span>
+                <span class="n">MI</span><span class="p">,</span> <span class="n">RpI</span><span class="p">,</span> <span class="n">LI</span><span class="p">,</span> <span class="n">ZI</span> <span class="o">=</span> <span class="n">prodI</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">MI</span><span class="p">)</span>
+                <span class="n">Raio</span> <span class="o">=</span> <span class="n">Rp</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+                <span class="n">Lum</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+
+                <span class="n">suffix</span> <span class="o">=</span> <span class="s">&#39;_M{0:05.2f}_ob{1:.2f}_H{2:.2f}_Z{3}_bE_Ell&#39;</span><span class="o">.</span> \
+                    <span class="n">format</span><span class="p">(</span><span class="n">MI</span><span class="p">,</span> <span class="n">ob</span><span class="p">,</span> <span class="n">H</span><span class="p">,</span> <span class="n">ZI</span><span class="p">,</span> <span class="n">Beta</span><span class="p">,</span> <span class="n">RpI</span><span class="p">,</span> <span class="n">LI</span><span class="p">)</span>
+
+                <span class="c"># REGISTRA VALORES</span>
+                <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>        
+                <span class="n">wmod</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;10.3065&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">MI</span><span class="p">))</span>
+                <span class="n">wmod</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;5.38462&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Raio</span><span class="p">))</span>
+                <span class="n">wmod</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0.775&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">W</span><span class="p">))</span>            
+                <span class="n">wmod</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;7500.&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Lum</span><span class="p">))</span>
+                <span class="n">wmod</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">wmod</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;0.25&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s">&#39;</span><span class="si">%.5f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">Beta</span><span class="p">))</span>
+
+                <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;source/Be&#39;</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+                <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+                <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c">#</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="makeSimulDens"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeSimulDens">[docs]</a><span class="k">def</span> <span class="nf">makeSimulDens</span><span class="p">(</span><span class="n">dbase</span><span class="p">,</span> <span class="n">basesim</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Sets the SED simulations number of photos so that the signal/noise level</span>
+<span class="sd">    is approximately constant at visible polarization.</span>
+
+<span class="sd">    |dbase = _np.logspace(_np.log10(0.02),_np.log10(4.0),7)</span>
+<span class="sd">    |basesim = &#39;simulation/sed.txt&#39;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">basesim</span><span class="p">)</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c"># fact = 2.  Tempo execucao = d/1e13*fact</span>
+    <span class="c"># Nf0 = 500000000</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dbase</span><span class="p">:</span>
+        <span class="n">srcid</span> <span class="o">=</span> <span class="s">&#39;sig{0:.2f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        <span class="c"># alpha = .39794</span>
+        <span class="c"># beta =  13.87219</span>
+        <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.34588</span>
+        <span class="n">beta</span> <span class="o">=</span> <span class="mf">8.50927</span>
+        <span class="n">newd</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="n">beta</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;{0}, N_f = {1:.2f}e+9&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">srcid</span><span class="p">,</span> <span class="n">newd</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">))</span>
+        <span class="n">nmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="n">nmod</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">=</span> <span class="n">nmod</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;500000000&#39;</span><span class="p">,</span> <span class="s">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">newd</span><span class="p">))</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">basesim</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.txt&#39;</span><span class="p">,</span> <span class="s">&#39;_{0}.txt&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">srcid</span><span class="p">)),</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">nmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c"># a = raw_input(&#39;asdads&#39;)</span>
+    <span class="k">return</span> 
+
+</div>
+<div class="viewcode-block" id="makeCSGrid_bistabWind1Dust"><a class="viewcode-back" href="../../input.html#pyhdust.input.makeCSGrid_bistabWind1Dust">[docs]</a><span class="k">def</span> <span class="nf">makeCSGrid_bistabWind1Dust</span><span class="p">(</span><span class="n">modn</span><span class="o">=</span><span class="s">&#39;01&#39;</span><span class="p">,</span> <span class="n">renv</span><span class="o">=</span><span class="p">[</span><span class="mf">18.6</span><span class="p">],</span> <span class="n">rcs</span><span class="o">=</span><span class="p">[</span><span class="mf">5.</span><span class="p">],</span> 
+    <span class="n">dm_dOmega</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5e-5</span><span class="p">],</span> <span class="n">v_0</span><span class="o">=</span><span class="p">[</span><span class="mf">10.</span><span class="p">],</span> <span class="n">v_inf</span><span class="o">=</span><span class="p">[</span><span class="mf">1200.</span><span class="p">],</span> <span class="n">beta_v</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">A1</span><span class="o">=</span><span class="p">[</span><span class="mi">49</span><span class="p">],</span> 
+    <span class="n">A2</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="n">A3</span><span class="o">=</span><span class="p">[</span><span class="mf">0.</span><span class="p">],</span> <span class="n">m_dth</span><span class="o">=</span><span class="p">[</span><span class="mf">92.</span><span class="p">],</span> <span class="n">grain_dust_ratio</span><span class="o">=</span><span class="p">[</span><span class="mf">200.</span><span class="p">],</span> <span class="n">grain_dens</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">],</span> 
+    <span class="n">selsources</span><span class="o">=</span><span class="s">&#39;*&#39;</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Great a CS Grid for HDUST for wind+dust shell (1) both in bi-stability</span>
+
+<span class="sd">    Based on Carciofi+2010 and used in the B[e] grid between IAG/ON (Brazil).</span>
+
+<span class="sd">    :param arg1: the first value</span>
+<span class="sd">    :param arg2: the first value</span>
+<span class="sd">    :type arg1: int, float,...</span>
+<span class="sd">    :type arg2: int, float,...</span>
+<span class="sd">    :returns: arg1/arg2 +arg3</span>
+<span class="sd">    :rtype: int, float</span>
+
+<span class="sd">    :Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; import template</span>
+<span class="sd">    &gt;&gt;&gt; a = template.MainClass1()</span>
+<span class="sd">    &gt;&gt;&gt; a.function1(1,1,1)</span>
+<span class="sd">    2</span>
+
+<span class="sd">    .. note:: can be useful to emphasize important feature</span>
+<span class="sd">    .. seealso:: :class:`MainClass2`</span>
+<span class="sd">    .. warning:: arg2 must be non-zero.</span>
+<span class="sd">    .. todo:: check that arg2 is non zero.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">dobistabWind1Dust</span><span class="p">(</span><span class="n">lpars</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Given a proper list of parameters, do the thing...</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">dm_d0</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> <span class="n">vinf</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">mdth</span><span class="p">,</span> <span class="n">gdratio</span><span class="p">,</span> <span class="n">gdens</span><span class="p">,</span> <span class="n">re</span><span class="p">,</span> <span class="n">rd</span><span class="p">,</span> <span class="n">src</span> <span class="o">=</span>\
+            <span class="n">lpars</span>
+
+        <span class="n">srcname</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">src</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="c"># TODO</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;_rd{0:02.0f}_a1+{1:02.0f}_m{2:03.0f}_md{3:.0e}_grh{4:04.1f}&#39;</span>
+            <span class="s">&#39;_gdr{5:03.0f}_v0+{6:02.0f}_vinf{7:04.0f}_a2+{8:04.1f}_b{9:03.1f}&#39;</span>
+            <span class="s">&#39;_a3+{10:03.1f}&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">rd</span><span class="p">,</span> <span class="n">a1</span><span class="p">,</span> <span class="n">mdth</span><span class="p">,</span> <span class="n">dm_d0</span><span class="p">,</span> <span class="n">gdens</span><span class="p">,</span> <span class="n">gdratio</span><span class="p">,</span> <span class="n">v0</span><span class="p">,</span> 
+            <span class="n">vinf</span><span class="p">,</span> <span class="n">a2</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">a3</span><span class="p">,</span> <span class="n">srcname</span><span class="p">)</span>
+
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">mod</span><span class="p">[:]</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s">&#39;18.6&#39;</span><span class="p">,</span> <span class="n">re</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s">&#39;3.&#39;</span><span class="p">,</span> <span class="n">rd</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="s">&#39;9.&#39;</span><span class="p">,</span> <span class="n">a1</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s">&#39;182.&#39;</span><span class="p">,</span> <span class="n">mdth</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="s">&#39;39.&#39;</span><span class="p">,</span> <span class="n">a1</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="s">&#39;182.&#39;</span><span class="p">,</span> <span class="n">mdth</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="s">&#39;2.E-9&#39;</span><span class="p">,</span> <span class="n">dm_d0</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s">&#39;1.E-7&#39;</span><span class="p">,</span> <span class="n">dm_d0</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="s">&#39;1.&#39;</span><span class="p">,</span> <span class="n">gdens</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="s">&#39;200.&#39;</span><span class="p">,</span> <span class="n">gdratio</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="s">&#39;10.&#39;</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="s">&#39;400.&#39;</span><span class="p">,</span> <span class="n">vinf</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="s">&#39;-0.7&#39;</span><span class="p">,</span> <span class="n">a2</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s">&#39;0.8&#39;</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+        <span class="n">wmod</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">repl_fline_val</span><span class="p">(</span><span class="n">wmod</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="s">&#39;2.75&#39;</span><span class="p">,</span> <span class="n">a3</span><span class="p">)</span>
+
+        <span class="n">fmod</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;mod&#39;</span><span class="o">+</span><span class="n">modn</span><span class="p">,</span> <span class="s">&#39;mod&#39;</span><span class="o">+</span><span class="n">modn</span><span class="o">+</span><span class="n">suffix</span><span class="o">+</span><span class="s">&#39;.txt&#39;</span><span class="p">)</span>
+        <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fmod</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">wmod</span><span class="p">)</span>
+        <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="c"># PROGRAM BEGINS</span>
+    <span class="n">path0</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
+    <span class="c"># Check modN folder</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&#39;mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">)):</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir mod{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modn</span><span class="p">))</span>
+
+    <span class="c"># Select sources</span>
+    <span class="c"># print _os.path.join(&#39;source&#39;, selsources)</span>
+    <span class="n">sources</span> <span class="o">=</span> <span class="n">_glob</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">&#39;source&#39;</span><span class="p">,</span> <span class="n">selsources</span><span class="p">))</span>
+
+    <span class="c"># Load disk model</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">(),</span> <span class="s">&#39;refs&#39;</span><span class="p">,</span> <span class="s">&#39;REF_bistabWind1Dust.txt&#39;</span><span class="p">))</span>
+    <span class="n">mod</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">lpars</span> <span class="ow">in</span> <span class="n">_product</span><span class="p">(</span><span class="n">dm_dOmega</span><span class="p">,</span> <span class="n">v_0</span><span class="p">,</span> <span class="n">v_inf</span><span class="p">,</span> <span class="n">beta_v</span><span class="p">,</span> <span class="n">A1</span><span class="p">,</span> <span class="n">A2</span><span class="p">,</span> <span class="n">A3</span><span class="p">,</span> <span class="n">m_dth</span><span class="p">,</span> 
+        <span class="n">grain_dust_ratio</span><span class="p">,</span> <span class="n">grain_dens</span><span class="p">,</span> <span class="n">renv</span><span class="p">,</span> <span class="n">rcs</span><span class="p">,</span> <span class="n">sources</span><span class="p">):</span>
+        <span class="n">dobistabWind1Dust</span><span class="p">(</span><span class="n">lpars</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">_os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">path0</span><span class="p">)</span>
+    <span class="c"># END PROGRAM</span>
+    <span class="k">return</span>
+
+<span class="c"># MAIN ###</span></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" >pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

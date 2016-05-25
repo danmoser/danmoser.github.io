@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyhdust.images &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../../index.html" />
+    <link rel="up" title="pyhdust" href="../pyhdust.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" accesskey="U">pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyhdust.images</h1><div class="highlight"><pre>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;PyHdust *images* module: auxiliary images module</span>
+
+<span class="sd"># ramp yellow</span>
+<span class="sd">sz = 100</span>
+<span class="sd">r = _np.arange(sz*sz).reshape((sz,sz))*256./sz/sz</span>
+<span class="sd">g = _np.arange(sz*sz).reshape((sz,sz))*256./sz/sz</span>
+<span class="sd">b = _np.zeros((sz,sz))</span>
+<span class="sd">yramp = _np.dstack((r,g,b)).astype(uint8)</span>
+
+<span class="sd">img = PIL.Image.fromarray(yramp)</span>
+<span class="sd">img.save(&#39;yrampRGB.jpg&#39;)</span>
+
+<span class="sd">img = PIL.Image.fromarray(rgb2cmyk(yramp), mode=&#39;CMYK&#39;)</span>
+<span class="sd">img.save(&#39;yrampCMYK.jpg&#39;)</span>
+
+<span class="sd"># convert &#39;CMYK_color&#39;</span>
+<span class="sd">CM = PIL.Image.open(&#39;CMYK_color.jpg&#39;)</span>
+<span class="sd">CM = CM.convert(mode=&#39;RGB&#39;)</span>
+<span class="sd">CM.save(&#39;CMYK2rgbPIL.jpg&#39;)</span>
+
+<span class="sd">img = PIL.Image.fromarray(rgb2cmyk(_np.asarray(CM)), mode=&#39;CMYK&#39;)</span>
+<span class="sd">img.save(&#39;CMYK2rgb.jpg&#39;)</span>
+
+<span class="sd">:license: GNU GPL v3.0 https://github.com/danmoser/pyhdust/blob/master/LICENSE</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span> <span class="kn">as</span> <span class="nn">_os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">_np</span>
+<span class="kn">import</span> <span class="nn">time</span> <span class="kn">as</span> <span class="nn">_time</span>
+<span class="kn">import</span> <span class="nn">pyhdust</span> <span class="kn">as</span> <span class="nn">_hdt</span>
+<span class="kn">from</span> <span class="nn">pyhdust.hdrpil</span> <span class="kn">import</span> <span class="n">hdr</span> <span class="k">as</span> <span class="n">_hdr</span>
+<span class="kn">import</span> <span class="nn">pyhdust.phc</span> <span class="kn">as</span> <span class="nn">_phc</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">PIL</span> <span class="kn">as</span> <span class="nn">_PIL</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! PIL (Pillow) module not installed!!!&#39;</span><span class="p">)</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&quot;Daniel Moser&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&quot;dmfaes@gmail.com&quot;</span>
+
+
+<div class="viewcode-block" id="rgb2cmyk"><a class="viewcode-back" href="../../images.html#pyhdust.images.rgb2cmyk">[docs]</a><span class="k">def</span> <span class="nf">rgb2cmyk</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; `img` must have (m,n,3) dimensions</span>
+
+<span class="sd">    R&#39; = R/255</span>
+
+<span class="sd">    G&#39; = G/255</span>
+
+<span class="sd">    B&#39; = B/255</span>
+
+<span class="sd">    The black key (K) color is calculated from the red (R&#39;), green (G&#39;) and </span>
+<span class="sd">    blue (B&#39;) colors:</span>
+
+<span class="sd">    K = min(R&#39;, G&#39;, B&#39;)</span>
+
+<span class="sd">    The cyan color (C) is calculated from the red (R&#39;) and black (K) colors:</span>
+
+<span class="sd">    C = (1-R&#39;-K) / (1-K)</span>
+
+<span class="sd">    The magenta color (M) is calculated from the green (G&#39;) and black (K) </span>
+<span class="sd">    colors:</span>
+
+<span class="sd">    M = (1-G&#39;-K) / (1-K)</span>
+
+<span class="sd">    The yellow color (Y) is calculated from the blue (B&#39;) and black (K) colors:</span>
+
+<span class="sd">    Y = (1-B&#39;-K) / (1-K)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="mf">255.</span>
+    <span class="c"># </span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">((</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">r</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">g</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">b</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="n">cmyk</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span> <span class="o">*</span> <span class="mi">255</span>
+    <span class="k">return</span> <span class="n">cmyk</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;uint8&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="doColorConv"><a class="viewcode-back" href="../../images.html#pyhdust.images.doColorConv">[docs]</a><span class="k">def</span> <span class="nf">doColorConv</span><span class="p">(</span><span class="n">lbd</span><span class="p">,</span> <span class="n">flx</span><span class="p">,</span> <span class="n">fdat</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; `fdat` is and (3,nlbd) matrix with the color space functions. If `None`,</span>
+<span class="sd">        CIE 1931 RGB color space is used.</span>
+
+<span class="sd">        INPUT = lambda (nm), flux (intensities) vectors</span>
+
+<span class="sd">        OUTPUT = RGB values (0-255; uint8)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">fdat</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fdat</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+            <span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;refs/rgb_eff.txt&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">lbd</span> <span class="o">&gt;=</span> <span class="n">fdat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lbd</span> <span class="o">&lt;=</span> <span class="n">fdat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">lbd</span> <span class="o">=</span> <span class="n">lbd</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">flx</span> <span class="o">=</span> <span class="n">flx</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">finterp</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">lbd</span><span class="p">,</span> <span class="n">fdat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fdat</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">out</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">finterp</span> <span class="o">*</span> <span class="n">flx</span><span class="p">,</span> <span class="n">lbd</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">out</span> <span class="o">*</span> <span class="mf">255.</span> <span class="o">/</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;uint8&#39;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="doColorConvMaps"><a class="viewcode-back" href="../../images.html#pyhdust.images.doColorConvMaps">[docs]</a><span class="k">def</span> <span class="nf">doColorConvMaps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lbdc</span><span class="p">,</span> <span class="n">fdat</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">di</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">oi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ii</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">outflt</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; `fdat` is and (3,nlbd) matrix with the color space functions. If `None`,</span>
+<span class="sd">        CIE 1931 RGB color space is used.</span>
+
+<span class="sd">        `di, oi, ii` are data[oi, ii, di]. `di` = 0 for *.maps files.</span>
+
+<span class="sd">        outflt=True, the output is in float format.</span>
+
+<span class="sd">        INPUT = data (n,m,nlbdc), lambda (nlbdc; um unit)</span>
+
+<span class="sd">        OUTPUT = RGB images (n,m,3; [0-255; uint8])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">fdat</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">fdat</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span>
+            <span class="n">_hdt</span><span class="o">.</span><span class="n">hdtpath</span><span class="p">()</span> <span class="o">+</span> <span class="s">&#39;refs/rgb_eff.txt&#39;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="n">lbd</span> <span class="o">=</span> <span class="n">lbdc</span> <span class="o">*</span> <span class="mf">1e3</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">lbd</span> <span class="o">&gt;=</span> <span class="n">fdat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lbd</span> <span class="o">&lt;=</span> <span class="n">fdat</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">lbd</span> <span class="o">=</span> <span class="n">lbd</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ndata</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ii</span><span class="p">,</span> <span class="n">oi</span><span class="p">,</span> <span class="n">idx</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">ndata</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">ndata</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]))</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+        <span class="n">ndata</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">ndata</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">di</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">ndata</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]))</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">ndata</span> <span class="o">=</span> <span class="n">ndata</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">di</span><span class="p">]</span>
+    <span class="n">ndata</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">ndata</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ndata</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">ndata</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">rgblbd</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">lbd</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">rgblbd</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">lbd</span><span class="p">,</span> <span class="n">fdat</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fdat</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">out</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span> <span class="n">rgblbd</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">ndata</span><span class="p">,</span> <span class="n">lbd</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="n">RGB</span> <span class="o">=</span> <span class="n">out</span> <span class="o">*</span> <span class="mf">255.</span> <span class="o">/</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">outflt</span><span class="p">:</span>
+        <span class="n">RGB</span> <span class="o">=</span> <span class="n">RGB</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;uint8&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">RGB</span>
+
+</div>
+<div class="viewcode-block" id="rgb2png"><a class="viewcode-back" href="../../images.html#pyhdust.images.rgb2png">[docs]</a><span class="k">def</span> <span class="nf">rgb2png</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">savename</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s">&#39;png&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Save a array(n,m,3; uint8) as regular image file. &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">savename</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">savename</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">dtflag</span><span class="p">()</span>
+    <span class="c"># </span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">_PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">RGB</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;uint8&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">_PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savename</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">ext</span><span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="doHDR"><a class="viewcode-back" href="../../images.html#pyhdust.images.doHDR">[docs]</a><span class="k">def</span> <span class="nf">doHDR</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="s">&#39;hdr&#39;</span><span class="p">,</span> <span class="n">ext</span><span class="o">=</span><span class="s">&#39;png&#39;</span><span class="p">,</span> <span class="n">strength</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">],</span>
+        <span class="n">naturalness</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Do HDR of RGB images. &quot;&quot;&quot;</span>
+    <span class="n">ext</span> <span class="o">=</span> <span class="n">ext</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">_os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="n">folder</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">_os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s">&#39;mkdir &#39;</span> <span class="o">+</span> <span class="n">folder</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">levels</span><span class="p">):</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">RGB</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s">&#39;float&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">i</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;uint8&#39;</span><span class="p">)</span>
+        <span class="n">rgb2png</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">savename</span><span class="o">=</span><span class="s">&#39;{}/hdr_{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">folder</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> 
+            <span class="n">ext</span><span class="o">=</span><span class="n">ext</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="n">proj</span> <span class="o">=</span> <span class="n">_hdr</span><span class="p">(</span><span class="n">case</span><span class="o">=</span><span class="n">folder</span><span class="p">,</span> <span class="n">img_type</span><span class="o">=</span><span class="n">ext</span><span class="p">,</span> <span class="n">cur_dir</span><span class="o">=</span><span class="s">&#39;./&#39;</span><span class="p">)</span>
+    <span class="n">proj</span><span class="o">.</span><span class="n">get_hdr</span><span class="p">(</span><span class="n">strength</span><span class="o">=</span><span class="n">strength</span><span class="p">,</span> <span class="n">naturalness</span><span class="o">=</span><span class="n">naturalness</span><span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="do_background"><a class="viewcode-back" href="../../images.html#pyhdust.images.do_background">[docs]</a><span class="k">def</span> <span class="nf">do_background</span><span class="p">(</span><span class="n">foreimg</span><span class="p">,</span> <span class="n">backimg</span><span class="p">,</span> <span class="n">savename</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">],</span> <span class="n">cut</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+    <span class="n">fmt</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;png&#39;</span><span class="p">],</span> <span class="n">bga</span><span class="o">=.</span><span class="mi">9</span><span class="p">,</span> <span class="n">rotang</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">fsize</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Add `backimg` as background (bg) of `foreimg` (fg). `*img` are regular</span>
+<span class="sd">    image files (e.g., JPG or PNG).</span>
+
+<span class="sd">    `pos` is the position of the central pixel of fg as fraction size of the </span>
+<span class="sd">    bg image. Example: </span>
+<span class="sd">    pos = [.1, .1] puts the foreground image in the lowe left position; </span>
+<span class="sd">    pos = [.5, .5] in the center. </span>
+
+<span class="sd">    `cut` = limit the brightest pixels. `cut == 1` says that only white points </span>
+<span class="sd">    will have no background (transparency. In other words, all fg will be </span>
+<span class="sd">    transparent as bg). </span>
+<span class="sd">    `cut == 0.5` says that every pixel with &gt;= 50% of the white level will not  </span>
+<span class="sd">    be transparent. `cut == 0` says that all black points will not be </span>
+<span class="sd">    transparent (i.e., no bg).</span>
+
+<span class="sd">    `bga` = background strength</span>
+
+<span class="sd">    METHOD: There the fg is brillhant (star), no bg. Where it is tenous, </span>
+<span class="sd">    (disk), it is applied a combination of bg + fg with the transparency </span>
+<span class="sd">    is proportiona to the fg brightness. </span>
+
+<span class="sd">    Is it important to note that even if a &quot;black background&quot; is applied, the </span>
+<span class="sd">    disk will be atenuated where it is below the cutting limit. </span>
+
+<span class="sd">    DETAILS: a combination of images, without saturation (standard level) is </span>
+<span class="sd">    equal to (img1 + img2 )/2.</span>
+
+<span class="sd">    Problem 1: the star becomes transparent! Solution: we define a `cut`, where </span>
+<span class="sd">    pixels above a given level do not enter in the above sum, rather their </span>
+<span class="sd">    foreground values are kept.</span>
+
+<span class="sd">    Problem 2: this procedure can create a big contrast between the star and </span>
+<span class="sd">    the disk, making the disk 50% fainter. Solucion: define the transparency </span>
+<span class="sd">    as function of the fg value (bigger the value, less transparent).</span>
+
+<span class="sd">    Problem 3: if the star is seen edge-on, one can have bg where it is the </span>
+<span class="sd">    star! How to solve it? Analogous to the `cut`, if an mask can be created </span>
+<span class="sd">    if the photospheric image is provided (and then, no gb where px_val &gt; 0).</span>
+
+<span class="sd">    TODO: photospheric mask to cut.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">cut</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">cut</span> <span class="o">=</span> <span class="mf">1e-3</span>
+    <span class="k">if</span> <span class="n">savename</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">savename</span> <span class="o">=</span> <span class="n">_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&quot;%y%m</span><span class="si">%d</span><span class="s">-%H%M%S&quot;</span><span class="p">)</span>
+    <span class="c"># </span>
+    <span class="c"># if fwd is not int(round(bwd/3.)):</span>
+        <span class="c"># fact = bwd/3./fwd</span>
+        <span class="c"># foreground = foreground.resize(np.round(foreground.size*fact).\</span>
+            <span class="c"># astype(&#39;int&#39;)), _PIL.Image.ANTIALIAS)</span>
+    <span class="c"># </span>
+    <span class="n">aB</span> <span class="o">=</span> <span class="n">_PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">backimg</span><span class="p">)</span>
+    <span class="n">aF</span> <span class="o">=</span> <span class="n">_PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">foreimg</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fsize</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">minbd</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">aB</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">minfd</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">aF</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">minbd</span><span class="o">*</span><span class="n">fsize</span><span class="o">/</span><span class="n">minfd</span>
+        <span class="n">fsize</span> <span class="o">=</span> <span class="p">(</span> <span class="n">_np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">aF</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">])),</span> <span class="n">_np</span><span class="o">.</span><span class="n">int</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="n">aF</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">)</span>
+        <span class="n">aF</span> <span class="o">=</span> <span class="n">aF</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">fsize</span><span class="p">,</span> <span class="n">_PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">ANTIALIAS</span><span class="p">)</span>
+    <span class="n">aB</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">aB</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">aF</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">aF</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rotang</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">aF</span> <span class="o">=</span> <span class="n">rotate_cube</span><span class="p">(</span><span class="n">aF</span><span class="p">,</span> <span class="n">rotang</span><span class="p">)</span>
+    <span class="n">aF</span> <span class="o">=</span> <span class="n">align_backfore</span><span class="p">(</span><span class="n">aB</span><span class="p">,</span> <span class="n">aF</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">)</span>
+    <span class="c"># tF = sum + clip in the limit (i.e., `cut` the brightest parts)</span>
+    <span class="c"># cut = mask to transparency (based on the values of the px, says if it </span>
+    <span class="c"># will be transparent.</span>
+    <span class="n">tF</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">aF</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">tF</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">tF</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">256</span> <span class="o">*</span> <span class="n">cut</span><span class="p">)</span>
+    <span class="n">tF</span> <span class="o">/=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="mi">256</span> <span class="o">*</span> <span class="n">cut</span><span class="p">)</span>
+    <span class="c"># tB = inverse of tF, with the strength of `bga`</span>
+    <span class="n">tB</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">*</span> <span class="n">tF</span> <span class="o">+</span> <span class="n">bga</span>
+    <span class="n">tB</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">tB</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">tB</span><span class="p">))</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">aF</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">tF</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span> <span class="o">+</span> \
+        <span class="n">aB</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="n">tB</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">_PIL</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s">&#39;uint8&#39;</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fmt</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">savename</span> <span class="o">+</span> <span class="s">&#39;.&#39;</span> <span class="o">+</span> <span class="n">f</span><span class="p">)</span>
+    <span class="k">return</span>
+
+</div>
+<div class="viewcode-block" id="align_backfore"><a class="viewcode-back" href="../../images.html#pyhdust.images.align_backfore">[docs]</a><span class="k">def</span> <span class="nf">align_backfore</span><span class="p">(</span><span class="n">bkimg</span><span class="p">,</span> <span class="n">frimg</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="p">[</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">]):</span>
+    <span class="sd">&quot;&quot;&quot; doc &quot;&quot;&quot;</span>
+    <span class="n">bkh</span><span class="p">,</span> <span class="n">bkv</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">bkimg</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">f0h</span><span class="p">,</span> <span class="n">f0v</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">frimg</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">frh</span><span class="p">,</span> <span class="n">frv</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">bkimg</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">frimg</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="c"># TODO: Resige bkimg to the size of frimg</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# ERROR! foreground image wrong format (dimensions)!!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="k">elif</span> <span class="n">f0h</span> <span class="o">==</span> <span class="n">bkh</span> <span class="ow">and</span> <span class="n">f0v</span> <span class="o">==</span> <span class="n">bkv</span> <span class="ow">and</span> <span class="n">pos</span> <span class="o">==</span> <span class="p">[</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span> <span class="o">.</span><span class="mi">5</span><span class="p">]:</span>
+        <span class="c"># Nothing to do!</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Nothing done!!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">frimg</span>
+    <span class="c"># Starting...</span>
+    <span class="k">if</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c"># Horizontal</span>
+    <span class="n">ival</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">bkh</span><span class="p">))</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">ival</span> <span class="o">-</span> <span class="n">f0h</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">addx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">x0</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">addx</span> <span class="o">+=</span> <span class="n">f0h</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">ival</span>
+    <span class="k">elif</span> <span class="n">bkh</span> <span class="o">&lt;</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">f0h</span><span class="p">:</span>
+        <span class="n">addx</span> <span class="o">+=</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">f0h</span> <span class="o">-</span> <span class="n">bkh</span>   
+    <span class="c"># vertical</span>
+    <span class="n">ival</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">bkv</span><span class="p">))</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">ival</span> <span class="o">-</span> <span class="n">f0v</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">addy</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">y0</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">addy</span> <span class="o">+=</span> <span class="n">f0v</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span> <span class="n">ival</span>
+    <span class="k">elif</span> <span class="n">bkv</span> <span class="o">&lt;</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">f0v</span><span class="p">:</span>
+        <span class="n">addy</span> <span class="o">+=</span> <span class="n">y0</span> <span class="o">+</span> <span class="n">f0v</span> <span class="o">-</span> <span class="n">bkv</span>   
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">frimg</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">d3</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">frimg</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">frtmp</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bkh</span><span class="o">+</span><span class="n">addx</span><span class="p">,</span> <span class="n">bkv</span><span class="o">+</span><span class="n">addy</span><span class="p">,</span> <span class="n">d3</span><span class="p">))</span>
+        <span class="c"># for i in range(d3):</span>
+        <span class="c">#     frtmp[x0:x0+f0h, y0:y0+f0v, i] = frimg[:, :, i]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">frtmp</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bkh</span><span class="o">+</span><span class="n">addx</span><span class="p">,</span> <span class="n">bkv</span><span class="o">+</span><span class="n">addy</span><span class="p">))</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="n">bkh</span><span class="p">,</span> <span class="n">bkv</span><span class="p">,</span> <span class="n">f0h</span><span class="p">,</span> <span class="n">f0v</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">addx</span><span class="p">,</span> <span class="n">addy</span><span class="p">,</span> <span class="n">pos</span><span class="p">)</span>
+    <span class="n">frtmp</span><span class="p">[</span><span class="n">x0</span><span class="p">:</span><span class="n">x0</span><span class="o">+</span><span class="n">f0h</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">y0</span><span class="o">+</span><span class="n">f0v</span><span class="p">]</span> <span class="o">=</span> <span class="n">frimg</span>
+    <span class="n">frnew</span> <span class="o">=</span> <span class="n">frtmp</span><span class="p">[:</span><span class="n">bkh</span><span class="p">,</span> <span class="p">:</span><span class="n">bkv</span><span class="p">]</span>
+    <span class="c"># print frnew.shape, bkimg.shape</span>
+    <span class="k">return</span> <span class="n">frnew</span>
+
+</div>
+<div class="viewcode-block" id="rotate_coords"><a class="viewcode-back" href="../../images.html#pyhdust.images.rotate_coords">[docs]</a><span class="k">def</span> <span class="nf">rotate_coords</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Rotate arrays of coordinates x and y by theta radians about the</span>
+<span class="sd">    point (ox, oy).</span>
+
+<span class="sd">    This routine was inspired on a http://codereview.stackexchange.com post.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">ox</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">oy</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">c</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">ox</span><span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">c</span> <span class="o">+</span> <span class="n">oy</span>
+
+</div>
+<div class="viewcode-block" id="rotate_image"><a class="viewcode-back" href="../../images.html#pyhdust.images.rotate_image">[docs]</a><span class="k">def</span> <span class="nf">rotate_image</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">oy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Rotate the image src by theta radians about (ox, oy).</span>
+<span class="sd">    Pixels in the result that don&#39;t correspond to pixels in src are</span>
+<span class="sd">    replaced by the value fill.</span>
+
+<span class="sd">    This routine was inspired on a http://codereview.stackexchange.com post.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># Images have origin at the top left, so negate the angle.</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="o">-</span><span class="n">theta</span>
+
+    <span class="c"># Dimensions of source image. Note that scipy.misc.imread loads</span>
+    <span class="c"># images in row-major order, so src.shape gives (height, width).</span>
+    <span class="n">sh</span><span class="p">,</span> <span class="n">sw</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">ox</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">ox</span> <span class="o">=</span> <span class="n">sw</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">oy</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">oy</span> <span class="o">=</span> <span class="n">sh</span><span class="o">/</span><span class="mi">2</span>
+
+    <span class="c"># Rotated positions of the corners of the source image.</span>
+    <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span> <span class="o">=</span> <span class="n">rotate_coords</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">sw</span><span class="p">,</span> <span class="n">sw</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sh</span><span class="p">,</span> <span class="n">sh</span><span class="p">],</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">)</span>
+
+    <span class="c"># Determine dimensions of destination image.</span>
+    <span class="n">dw</span><span class="p">,</span> <span class="n">dh</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">c</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">))</span>
+
+    <span class="c"># Coordinates of pixels in destination image.</span>
+    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">dw</span><span class="p">),</span> <span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">dh</span><span class="p">))</span>
+
+    <span class="c"># Corresponding coordinates in source image. Since we are</span>
+    <span class="c"># transforming dest-to-src here, the rotation is negated.</span>
+    <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span> <span class="o">=</span> <span class="n">rotate_coords</span><span class="p">(</span><span class="n">dx</span> <span class="o">+</span> <span class="n">cx</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">dy</span> <span class="o">+</span> <span class="n">cy</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="o">-</span><span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">)</span>
+
+    <span class="c"># Select nearest neighbour.</span>
+    <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span> <span class="o">=</span> <span class="n">sx</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">),</span> <span class="n">sy</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+    <span class="c"># Mask for valid coordinates.</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">sx</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sx</span> <span class="o">&lt;</span> <span class="n">sw</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">sy</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">sy</span> <span class="o">&lt;</span> <span class="n">sh</span><span class="p">)</span>
+
+    <span class="c"># Create destination image.</span>
+    <span class="n">dest</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">dh</span><span class="p">,</span> <span class="n">dw</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">src</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
+
+    <span class="c"># Copy valid coordinates from source image.</span>
+    <span class="n">dest</span><span class="p">[</span><span class="n">dy</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">dx</span><span class="p">[</span><span class="n">mask</span><span class="p">]]</span> <span class="o">=</span> <span class="n">src</span><span class="p">[</span><span class="n">sy</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">sx</span><span class="p">[</span><span class="n">mask</span><span class="p">]]</span>
+
+    <span class="c"># Fill invalid coordinates.</span>
+    <span class="n">dest</span><span class="p">[</span><span class="n">dy</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">],</span> <span class="n">dx</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">]]</span> <span class="o">=</span> <span class="n">fill</span>
+
+    <span class="k">return</span> <span class="n">dest</span>
+
+</div>
+<div class="viewcode-block" id="rotate_cube"><a class="viewcode-back" href="../../images.html#pyhdust.images.rotate_cube">[docs]</a><span class="k">def</span> <span class="nf">rotate_cube</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">oy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; `src` must be a numpy array. &quot;&quot;&quot;</span>
+    <span class="n">dims</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! It is a image, not a cube!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">rotate_image</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">rotate_image</span><span class="p">(</span><span class="n">src</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+    <span class="n">dimsr</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">shape</span>
+    <span class="n">rot</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">dimsr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dimsr</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">rot</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dims</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+        <span class="n">rot</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">rotate_image</span><span class="p">(</span><span class="n">src</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">theta</span><span class="p">,</span> <span class="n">ox</span><span class="p">,</span> <span class="n">oy</span><span class="p">,</span> <span class="n">fill</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rot</span>
+
+</div>
+<div class="viewcode-block" id="genSquare"><a class="viewcode-back" href="../../images.html#pyhdust.images.genSquare">[docs]</a><span class="k">def</span> <span class="nf">genSquare</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">halfside</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a square inside a square.</span>
+
+<span class="sd">    If size is not even, the unit square will not be centered.</span>
+
+<span class="sd">    center is the relative position</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">_np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="c"># ABSOLUTE Center:</span>
+    <span class="c"># if center is None:</span>
+    <span class="c">#    x0 = y0 = size // 2</span>
+    <span class="c"># else:</span>
+    <span class="c">#    x0 = center[0]</span>
+    <span class="c">#    y0 = center[1]</span>
+    <span class="c"># Relative Center:</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">img</span><span class="p">[</span><span class="n">x0</span> <span class="o">-</span> <span class="n">halfside</span><span class="p">:</span><span class="n">x0</span> <span class="o">+</span> <span class="n">halfside</span><span class="p">,</span> <span class="n">y0</span> <span class="o">-</span> <span class="n">halfside</span><span class="p">:</span><span class="n">y0</span> <span class="o">+</span> <span class="n">halfside</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">img</span>
+
+</div>
+<div class="viewcode-block" id="genGaussian"><a class="viewcode-back" href="../../images.html#pyhdust.images.genGaussian">[docs]</a><span class="k">def</span> <span class="nf">genGaussian</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">sig</span><span class="o">=</span><span class="mi">64</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a square gaussian kernel (non-normalized).</span>
+
+<span class="sd">    `size` is the length of a side of the square (pixels)</span>
+
+<span class="sd">    center is the relative position</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">_np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="c"># ABSOLUTE Center:</span>
+    <span class="c"># if center is None:</span>
+    <span class="c">#    x0 = y0 = size // 2</span>
+    <span class="c"># else:</span>
+    <span class="c">#    x0 = center[0]</span>
+    <span class="c">#    y0 = center[1]</span>
+    <span class="c"># Relative Center:</span>
+    <span class="n">x0</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">size</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c">#</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">sig</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="c"># MAIN ###</span></div>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" >pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

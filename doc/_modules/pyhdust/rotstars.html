@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyhdust.rotstars &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../../index.html" />
+    <link rel="up" title="pyhdust" href="../pyhdust.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" accesskey="U">pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyhdust.rotstars</h1><div class="highlight"><pre>
+<span class="c"># -*- coding:utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;PyHdust *rotstars* module: Rotating stars tools.</span>
+
+<span class="sd">:license: GNU GPL v3.0 https://github.com/danmoser/pyhdust/blob/master/LICENSE</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">re</span> <span class="kn">as</span> <span class="nn">_re</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">_np</span>
+<span class="kn">import</span> <span class="nn">pyhdust.phc</span> <span class="kn">as</span> <span class="nn">_phc</span>
+
+<span class="c"># try:</span>
+<span class="c">#     import matplotlib.pyplot as _plt</span>
+<span class="c">#     from scipy import interpolate as _interpolate</span>
+<span class="c"># except:</span>
+<span class="c">#     print(&#39;# Warning! matplotlib and/or scipy module not installed!!!&#39;)</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&quot;Daniel Moser&quot;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&quot;dmfaes@gmail.com&quot;</span>
+
+
+<div class="viewcode-block" id="readscr"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.readscr">[docs]</a><span class="k">def</span> <span class="nf">readscr</span><span class="p">(</span><span class="n">scrfile</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Read source generated with `ref_estrela.txt`.</span>
+
+<span class="sd">    OUTPUT: M, Req and TP (2*solar units and K).</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">scrfile</span><span class="p">)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;STAR =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;M =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">Rp</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;R_pole =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">ob</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;R_eq/R_pole =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;Teff_pole =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;W =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">bet</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;Beta_GD =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">L</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">fltTxtOccur</span><span class="p">(</span><span class="s">&#39;L =&#39;</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+        <span class="n">wfrac</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">27.</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">W</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">W</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ob</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">A</span> <span class="o">=</span> <span class="n">rotStar</span><span class="p">(</span><span class="n">Tp</span><span class="o">=</span><span class="n">L</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="o">=</span><span class="n">Rp</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="n">bet</span><span class="p">,</span> <span class="n">wfrac</span><span class="o">=</span><span class="n">wfrac</span><span class="p">,</span> 
+            <span class="n">quiet</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">LnotTp</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="c"># print M,Rp*ob,Tp</span>
+    <span class="k">return</span> <span class="n">M</span><span class="p">,</span> <span class="n">Rp</span> <span class="o">*</span> <span class="n">ob</span><span class="p">,</span> <span class="n">Tp</span>
+
+</div>
+<div class="viewcode-block" id="vrot_scr"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.vrot_scr">[docs]</a><span class="k">def</span> <span class="nf">vrot_scr</span><span class="p">(</span><span class="n">scrfile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Returns the `vrot` value of a given source star.</span>
+
+<span class="sd">    OUTPUT: vrot in km/s. &quot;&quot;&quot;</span>
+    <span class="n">M</span><span class="p">,</span> <span class="n">Req</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">readscr</span><span class="p">(</span><span class="n">scrfile</span><span class="p">)</span>
+    <span class="c"># Be_M04.80_ob1.40_H0.30_Z0.014_bE_Ell</span>
+    <span class="n">rule</span> <span class="o">=</span> <span class="s">&#39;(?&lt;=_ob)(.+)(?=_H)&#39;</span>
+    <span class="n">ob</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">_re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">scrfile</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">vrot</span> <span class="o">=</span> <span class="n">wrot</span><span class="p">(</span><span class="n">ob</span><span class="p">,</span> <span class="n">is_ob</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="o">*</span> \
+        <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">_phc</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">cgs</span> <span class="o">*</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="n">Req</span> <span class="o">/</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Rsun</span><span class="o">.</span><span class="n">cgs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vrot</span><span class="o">*</span><span class="mf">1e-5</span>
+
+</div>
+<div class="viewcode-block" id="wrot"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.wrot">[docs]</a><span class="k">def</span> <span class="nf">wrot</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">is_ob</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Converts math:`w_{\rm frac} = \Omega/\Omega_c` into </span>
+<span class="sd">    math:`W = vrot/vorb`.</span>
+
+<span class="sd">    If `is_ob == True`, it consider the param as ob (instead of </span>
+<span class="sd">    math:`w_{\rm frac}`). &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_ob</span><span class="p">:</span>
+        <span class="n">wfrac</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="p">(</span><span class="n">par</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">/</span> <span class="n">par</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">wfrac</span> <span class="o">=</span> <span class="n">par</span>
+
+    <span class="n">gam</span> <span class="o">=</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">wfrac</span><span class="p">))</span> <span class="o">/</span> <span class="mf">3.</span><span class="p">)</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gam</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">wfrac</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">W</span>
+
+</div>
+<div class="viewcode-block" id="wfrac_rot"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.wfrac_rot">[docs]</a><span class="k">def</span> <span class="nf">wfrac_rot</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Returns wfrac (Omega/Omega_crit) value from a W value.</span>
+
+<span class="sd">    Equation 1.23 de Faes (2015).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">27</span><span class="o">/</span><span class="mf">8.</span><span class="o">*</span><span class="n">W</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+.</span><span class="mi">5</span><span class="o">*</span><span class="n">W</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="beta"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.beta">[docs]</a><span class="k">def</span> <span class="nf">beta</span><span class="p">(</span><span class="n">par</span><span class="p">,</span> <span class="n">is_ob</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Calculate the math:`\beta` value from Espinosa-Lara for a given </span>
+<span class="sd">    rotation rate math:`w_{\rm frac} = \Omega/\Omega_c`</span>
+
+<span class="sd">    If `is_ob == True`, it consider the param as ob (instead of</span>
+<span class="sd">    math:`w_{\rm frac}`). &quot;&quot;&quot;</span>
+
+    <span class="c"># Ekstrom et al. 2008, Eq. 9</span>
+    <span class="k">if</span> <span class="n">is_ob</span><span class="p">:</span>
+        <span class="n">wfrac</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.5</span> <span class="o">**</span> <span class="mf">1.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="p">(</span><span class="n">par</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">/</span> <span class="n">par</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">wfrac</span> <span class="o">=</span> <span class="n">par</span>
+
+    <span class="c"># avoid exceptions</span>
+    <span class="k">if</span> <span class="n">wfrac</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">.</span><span class="mi">25</span>
+    <span class="k">elif</span> <span class="n">wfrac</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.13535</span>
+    <span class="k">elif</span> <span class="n">wfrac</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">wfrac</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Warning! Invalid value of wfrac.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mf">0.</span>
+
+    <span class="c"># Espinosa-Lara VLTI-School 2013 lecture, slide 18...</span>
+    <span class="n">delt</span> <span class="o">=</span> <span class="mf">1.</span>
+    <span class="n">omega1</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">wfrac</span>
+    <span class="k">while</span> <span class="n">delt</span> <span class="o">&gt;=</span> <span class="mf">1e-5</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="mf">3.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">wfrac</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="o">-</span><span class="mf">108.</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">2.</span><span class="p">)</span><span class="o">**</span><span class="mi">4</span>
+        <span class="n">omega1</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">-</span> <span class="n">f</span> <span class="o">/</span> <span class="n">df</span>
+        <span class="n">delt</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">omega1</span> <span class="o">-</span> <span class="n">omega</span><span class="p">)</span> <span class="o">/</span> <span class="n">omega</span>
+        <span class="n">omega</span> <span class="o">=</span> <span class="n">omega1</span>
+
+    <span class="n">nthe</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">nthe</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="n">grav</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nthe</span><span class="p">)</span>
+    <span class="n">teff</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nthe</span><span class="p">)</span>
+    <span class="n">corr</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">nthe</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="mf">0.</span>
+
+    <span class="k">for</span> <span class="n">ithe</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nthe</span><span class="p">):</span>
+
+        <span class="n">delt</span> <span class="o">=</span> <span class="mf">1.</span>
+        <span class="n">r1</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="mf">1.</span>
+        <span class="k">while</span> <span class="n">delt</span> <span class="o">&gt;=</span> <span class="mf">1e-5</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> \
+                <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="mf">2.</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="mf">3.</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> \
+                <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">+</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">r1</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">f</span> <span class="o">/</span> <span class="n">df</span>
+            <span class="n">delt</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">r1</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">r1</span>
+
+        <span class="n">delt</span> <span class="o">=</span> <span class="mf">1.</span>
+        <span class="n">n1</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="n">ftheta</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="mf">3.</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">])</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> \
+            <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">])</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">))</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span>
+        <span class="k">while</span> <span class="n">delt</span> <span class="o">&gt;=</span> <span class="mf">1e-5</span><span class="p">:</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">n</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">))</span> <span class="o">-</span> <span class="n">ftheta</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="o">-</span><span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+            <span class="n">n1</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">f</span> <span class="o">/</span> <span class="n">df</span>
+            <span class="n">delt</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">n1</span> <span class="o">-</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">n1</span>
+
+        <span class="n">grav</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">r</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="n">omega</span><span class="o">**</span><span class="mi">4</span> <span class="o">*</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span>
+            <span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">r</span><span class="p">)</span>
+
+        <span class="n">corr</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">_np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">theta</span><span class="p">[</span><span class="n">ithe</span><span class="p">]))</span>
+        <span class="n">teff</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span> <span class="o">=</span> <span class="n">corr</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span> <span class="o">*</span> <span class="n">grav</span><span class="p">[</span><span class="n">ithe</span><span class="p">]</span><span class="o">**</span><span class="mf">0.25</span>
+
+    <span class="n">u</span> <span class="o">=</span> <span class="o">~</span><span class="n">_np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">teff</span><span class="p">)</span>
+    <span class="n">coef</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">grav</span><span class="p">[</span><span class="n">u</span><span class="p">]),</span> <span class="n">_np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">teff</span><span class="p">[</span><span class="n">u</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">beta</span> <span class="o">=</span> <span class="n">coef</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">beta</span>
+
+</div>
+<div class="viewcode-block" id="rotStar"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.rotStar">[docs]</a><span class="k">def</span> <span class="nf">rotStar</span><span class="p">(</span><span class="n">Tp</span><span class="o">=</span><span class="mf">20000.</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mf">10.3065</span><span class="p">,</span> <span class="n">rp</span><span class="o">=</span><span class="mf">5.38462</span><span class="p">,</span> <span class="n">star</span><span class="o">=</span><span class="s">&#39;B&#39;</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">wfrac</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+            <span class="n">th_res</span><span class="o">=</span><span class="mi">5001</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">LnotTp</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Return the photospheric parameters of a rotating star.</span>
+
+<span class="sd">    `LnotTp`: the value of &quot;Tp&quot; is the Luminosity (in solar units).</span>
+
+<span class="sd">    Calculation of Von Zeipel&#39;s Beta parameter as function of W: see math...</span>
+
+<span class="sd">    INPUT: th_res (theta resolution, integer)...</span>
+
+<span class="sd">    OUTPUT: printed status + (ob, Tp values, Area[cm2])</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Rsun</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Rsun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">Msun</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Msun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">Lsun</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">Lsun</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="c"># AU = _phc.au.cgs</span>
+    <span class="c"># pc = _phc.pc.cgs</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">_phc</span><span class="o">.</span><span class="n">sigma</span><span class="o">.</span><span class="n">cgs</span>
+    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span> <span class="o">*</span> <span class="n">Msun</span>
+    <span class="n">rp</span> <span class="o">=</span> <span class="n">rp</span> <span class="o">*</span> <span class="n">Rsun</span>
+    <span class="k">if</span> <span class="n">wfrac</span> <span class="o">==</span> <span class="mf">0.</span><span class="p">:</span>
+        <span class="n">wfrac</span> <span class="o">=</span> <span class="mf">1e-9</span>
+    <span class="k">if</span> <span class="n">LnotTp</span><span class="p">:</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="p">(</span><span class="n">Tp</span> <span class="o">*</span> <span class="n">Lsun</span> <span class="o">/</span> <span class="mf">4.</span> <span class="o">/</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">rp</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">sigma</span><span class="p">)</span><span class="o">**.</span><span class="mi">25</span>
+
+    <span class="c"># DEFS ###</span>
+    <span class="k">def</span> <span class="nf">rt</span><span class="p">(</span><span class="n">th</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">th</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mf">1.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">3.</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">_np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">wfrac</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">))</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span>
+                <span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">wfrac</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">r</span>
+
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="n">wfrac</span><span class="p">):</span>
+        <span class="n">ths</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th_res</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ths</span><span class="p">)):</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">rt</span><span class="p">(</span><span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wfrac</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">ths</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">th</span><span class="p">):</span>
+        <span class="n">wcrit</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="mi">27</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">**</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">wcrit</span> <span class="o">*</span> <span class="n">wfrac</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">*</span> <span class="n">rt</span><span class="p">(</span><span class="n">th</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">)</span> <span class="o">*</span> \
+            <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="n">rp</span> <span class="o">*</span> <span class="n">rt</span><span class="p">(</span><span class="n">th</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">g</span>
+
+    <span class="k">def</span> <span class="nf">lum</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+        <span class="n">ths</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th_res</span><span class="p">)</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ths</span><span class="p">)):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">rt</span><span class="p">(</span><span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wfrac</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> \
+                <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span> <span class="o">**</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">beta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">ths</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">C</span> <span class="o">**</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">l</span>
+
+    <span class="k">def</span> <span class="nf">lumf</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+        <span class="n">ths</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">th_res</span><span class="p">)</span>
+        <span class="n">l</span> <span class="o">=</span> <span class="mf">0.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ths</span><span class="p">)):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="n">rt</span><span class="p">(</span><span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">wfrac</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">*</span> \
+                <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">ths</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">**</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">beta</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">l</span> <span class="o">*</span> <span class="n">ths</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="n">Bstars</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">_phc</span><span class="o">.</span><span class="n">bestars</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">Bstars</span><span class="p">:</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">Bstars</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">star</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">Bstars</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">Tp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Bstars</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">M</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Bstars</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">Msun</span>
+        <span class="n">rp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">Bstars</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span> <span class="o">*</span> <span class="n">Rsun</span>
+        <span class="c"># comentar linha abaixo se 1a. rodada:</span>
+        <span class="c"># Tp = 27438.63 #K</span>
+
+    <span class="n">wcrit</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="p">(</span><span class="mi">27</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">**</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">Tp</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="n">rp</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">vrot</span> <span class="o">=</span> <span class="n">wcrit</span> <span class="o">*</span> <span class="n">wfrac</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">*</span> <span class="n">rt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">)</span>
+    <span class="n">lum0</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">Tp</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">/</span> <span class="n">Lsun</span>
+
+    <span class="c"># a = rp**2*Tp**4*abs(g(wfrac,M,rp,0.))**(4*beta)</span>
+    <span class="c"># print(&#39;Teff_pol* = %.2f&#39; % ( (a/b)**beta ) )</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">lumf</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">lumf</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+    <span class="n">Cw</span> <span class="o">=</span> <span class="p">(</span><span class="n">c</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">4.</span> <span class="o">*</span> <span class="n">beta</span><span class="p">))</span> <span class="o">*</span> <span class="n">C</span>
+    <span class="n">ob</span> <span class="o">=</span> <span class="n">rt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">)</span>  <span class="c"># /(rp / Rsun)</span>
+
+    <span class="c"># OUTPUT ###</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">quiet</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# Parameters:&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;wfrac     = </span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">wfrac</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;W         = </span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">ob</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Star Mass = </span><span class="si">%.2f</span><span class="s"> Msun&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">M</span> <span class="o">/</span> <span class="n">Msun</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Rpole     = </span><span class="si">%.2f</span><span class="s"> Rsun&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rp</span> <span class="o">/</span> <span class="n">Rsun</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Req       = </span><span class="si">%.2f</span><span class="s"> Rpole&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">rt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">)))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Teff_pol  = </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Tp</span><span class="p">))</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Star Area = </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">area</span><span class="p">(</span><span class="n">wfrac</span><span class="p">)))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Star Lum. = </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lum</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span> <span class="o">/</span> <span class="n">Lsun</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Star Lum.*= </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lum0</span><span class="p">))</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;vrot(km/s)= </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">vrot</span> <span class="o">/</span> <span class="mf">1e5</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;vorb(km/s)= </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span>
+              <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">M</span> <span class="o">/</span> <span class="n">rp</span> <span class="o">/</span> <span class="n">rt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">wfrac</span><span class="p">))</span> <span class="o">/</span> <span class="mf">1e5</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;vcrt(km/s)= </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">wcrit</span> <span class="o">*</span> <span class="n">rp</span> <span class="o">*</span> <span class="n">rt</span><span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e5</span><span class="p">))</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;log(g)pole= </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)))</span> <span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;log(g)eq  = </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span>
+              <span class="p">(</span><span class="n">_np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span> <span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Teff_eq   = </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span>
+              <span class="p">(</span> <span class="p">(</span><span class="n">C</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span> <span class="o">**</span> <span class="n">beta</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Teff_eq*  = </span><span class="si">%.1f</span><span class="s">&#39;</span> <span class="o">%</span>
+              <span class="p">(</span> <span class="p">(</span><span class="n">Cw</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span> <span class="o">**</span> <span class="n">beta</span><span class="p">)</span> <span class="p">)</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Teff_pol* = </span><span class="si">%.2f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span> <span class="p">(</span><span class="n">Cw</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)))</span> <span class="o">**</span> <span class="n">beta</span><span class="p">)</span> <span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;T_pol/eq* = </span><span class="si">%.4f</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">((</span><span class="n">Cw</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)))</span> <span class="o">**</span> <span class="n">beta</span> <span class="o">/</span> 
+            <span class="p">(</span><span class="n">Cw</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)))</span> <span class="o">**</span> <span class="n">beta</span><span class="p">)</span> <span class="p">)</span>
+
+        <span class="k">print</span><span class="p">(</span><span class="s">&#39;# </span><span class="se">\&quot;</span><span class="s">*</span><span class="se">\&quot;</span><span class="s"> == case where L is constant!&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ob</span><span class="p">,</span> <span class="p">(</span><span class="n">Cw</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)))</span> <span class="o">**</span> <span class="n">beta</span><span class="p">,</span> <span class="n">area</span><span class="p">(</span><span class="n">wfrac</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">rp</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="rochearea"><a class="viewcode-back" href="../../rotstars.html#pyhdust.rotstars.rochearea">[docs]</a><span class="k">def</span> <span class="nf">rochearea</span><span class="p">(</span><span class="n">wfrac</span><span class="p">,</span> <span class="n">isW</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Calculate the Roche area of a rigid rotator.</span>
+
+<span class="sd">    Equation 4.23 from Cranmer 1996 (thesis).</span>
+
+<span class="sd">    Area in (squared) radial unit (it must be multiplied to Rpole**2 to a </span>
+<span class="sd">    physical size).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">isW</span><span class="p">:</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">wfrac_rot</span><span class="p">(</span><span class="n">wfrac</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">wfrac</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">_np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+.</span><span class="mi">19444</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.28053</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mf">1.9014</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">6</span><span class="o">+</span><span class="mf">6.8298</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">8</span><span class="o">-</span>
+        <span class="mf">9.502</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">10</span><span class="o">+</span><span class="mf">4.6631</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">12</span><span class="p">)</span>
+
+</div>
+<span class="n">bestarsHarm1988</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># The numbers below are based on Harmanec 1988</span>
+    <span class="c"># B1.5 and B2.5 interpolated by Faes.</span>
+    <span class="c"># Teff fixed: Rp2 from Lum1; Lum2 from Rp1.</span>
+    <span class="c"># SpType  Teff    Mass     Rp    Lum   Rp2     Lum2</span>
+    <span class="p">[</span><span class="s">&#39;B0.0&#39;</span><span class="p">,</span> <span class="mf">29854.</span><span class="p">,</span> <span class="mf">14.57</span><span class="p">,</span> <span class="mf">05.80</span><span class="p">,</span> <span class="mf">27290.</span><span class="p">,</span> <span class="mf">6.19</span><span class="p">,</span> <span class="mf">23948.8487173</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B0.5&#39;</span><span class="p">,</span> <span class="mf">28510.</span><span class="p">,</span> <span class="mf">13.19</span><span class="p">,</span> <span class="mf">05.46</span><span class="p">,</span> <span class="mf">19953.</span><span class="p">,</span> <span class="mf">5.80</span><span class="p">,</span> <span class="mf">17651.9502267</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.0&#39;</span><span class="p">,</span> <span class="mf">26182.</span><span class="p">,</span> <span class="mf">11.03</span><span class="p">,</span> <span class="mf">04.91</span><span class="p">,</span> <span class="mf">11588.</span><span class="p">,</span> <span class="mf">5.24</span><span class="p">,</span> <span class="mf">10152.9628687</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.5&#39;</span><span class="p">,</span> <span class="mf">24599.</span><span class="p">,</span> <span class="mf">09.72</span><span class="p">,</span> <span class="mf">04.58</span><span class="p">,</span> <span class="mf">07768.</span><span class="p">,</span> <span class="mf">4.87</span><span class="p">,</span> <span class="mf">6883.65832266</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.0&#39;</span><span class="p">,</span> <span class="mf">23121.</span><span class="p">,</span> <span class="mf">08.62</span><span class="p">,</span> <span class="mf">04.28</span><span class="p">,</span> <span class="mf">05297.</span><span class="p">,</span> <span class="mf">4.55</span><span class="p">,</span> <span class="mf">4691.72482578</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.5&#39;</span><span class="p">,</span> <span class="mf">20980.</span><span class="p">,</span> <span class="mf">07.18</span><span class="p">,</span> <span class="mf">03.90</span><span class="p">,</span> <span class="mf">02931.</span><span class="p">,</span> <span class="mf">4.11</span><span class="p">,</span> <span class="mf">2641.00783143</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B3.0&#39;</span><span class="p">,</span> <span class="mf">19055.</span><span class="p">,</span> <span class="mf">06.07</span><span class="p">,</span> <span class="mf">03.56</span><span class="p">,</span> <span class="mf">01690.</span><span class="p">,</span> <span class="mf">3.78</span><span class="p">,</span> <span class="mf">1497.45695726</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B4.0&#39;</span><span class="p">,</span> <span class="mf">17179.</span><span class="p">,</span> <span class="mf">05.12</span><span class="p">,</span> <span class="mf">03.26</span><span class="p">,</span> <span class="mf">00946.</span><span class="p">,</span> <span class="mf">3.48</span><span class="p">,</span> <span class="mf">829.555139678</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B5.0&#39;</span><span class="p">,</span> <span class="mf">15488.</span><span class="p">,</span> <span class="mf">04.36</span><span class="p">,</span> <span class="mf">03.01</span><span class="p">,</span> <span class="mf">00530.</span><span class="p">,</span> <span class="mf">3.21</span><span class="p">,</span> <span class="mf">467.232334920</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B6.0&#39;</span><span class="p">,</span> <span class="mf">14093.</span><span class="p">,</span> <span class="mf">03.80</span><span class="p">,</span> <span class="mf">02.81</span><span class="p">,</span> <span class="mf">00316.</span><span class="p">,</span> <span class="mf">2.99</span><span class="p">,</span> <span class="mf">279.154727515</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B7.0&#39;</span><span class="p">,</span> <span class="mf">12942.</span><span class="p">,</span> <span class="mf">03.38</span><span class="p">,</span> <span class="mf">02.65</span><span class="p">,</span> <span class="mf">00200.</span><span class="p">,</span> <span class="mf">2.82</span><span class="p">,</span> <span class="mf">176.569574061</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B8.0&#39;</span><span class="p">,</span> <span class="mf">11561.</span><span class="p">,</span> <span class="mf">02.91</span><span class="p">,</span> <span class="mf">02.44</span><span class="p">,</span> <span class="mf">00109.</span><span class="p">,</span> <span class="mf">2.61</span><span class="p">,</span> <span class="mf">95.3190701227</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B9.0&#39;</span><span class="p">,</span> <span class="mf">10351.</span><span class="p">,</span> <span class="mf">02.52</span><span class="p">,</span> <span class="mf">02.25</span><span class="p">,</span> <span class="mf">0059.1</span><span class="p">,</span> <span class="mf">2.39</span><span class="p">,</span> <span class="mf">52.0850169839</span><span class="p">]]</span>
+    <span class="c"># [&#39;B9.5&#39;, 09886., 02.38, 02.17, 00046., 2.32, 40.3107085348]]</span>
+
+<span class="n">bestarsSK1982</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># Schmidt-Kaller1982. Used (and interpolated) by Porter1996, Townsedn2004, </span>
+    <span class="c"># SpType Teff   Mass    Rp    Lum</span>
+    <span class="p">[</span><span class="s">&#39;B0.0&#39;</span><span class="p">,</span> <span class="mf">30105.</span><span class="p">,</span> <span class="mf">17.5</span><span class="p">,</span> <span class="mf">7.70</span><span class="p">,</span> <span class="mf">43651.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B0.5&#39;</span><span class="p">,</span> <span class="mf">27859.</span><span class="p">,</span> <span class="mf">14.6</span><span class="p">,</span> <span class="mf">6.90</span><span class="p">,</span> <span class="mf">25703.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.0&#39;</span><span class="p">,</span> <span class="mf">25985.</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mf">6.30</span><span class="p">,</span> <span class="mf">16218.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.5&#39;</span><span class="p">,</span> <span class="mf">24347.</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">,</span> <span class="mf">5.70</span><span class="p">,</span> <span class="mf">10232.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.0&#39;</span><span class="p">,</span> <span class="mf">22813.</span><span class="p">,</span> <span class="mf">09.6</span><span class="p">,</span> <span class="mf">5.40</span><span class="p">,</span> <span class="mf">07079.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.5&#39;</span><span class="p">,</span> <span class="mf">21498.</span><span class="p">,</span> <span class="mf">08.6</span><span class="p">,</span> <span class="mf">5.00</span><span class="p">,</span> <span class="mf">04786.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B3.0&#39;</span><span class="p">,</span> <span class="mf">20222.</span><span class="p">,</span> <span class="mf">07.7</span><span class="p">,</span> <span class="mf">4.70</span><span class="p">,</span> <span class="mf">03311.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B4.0&#39;</span><span class="p">,</span> <span class="mf">18206.</span><span class="p">,</span> <span class="mf">06.4</span><span class="p">,</span> <span class="mf">4.20</span><span class="p">,</span> <span class="mf">01737.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B5.0&#39;</span><span class="p">,</span> <span class="mf">16673.</span><span class="p">,</span> <span class="mf">05.5</span><span class="p">,</span> <span class="mf">3.80</span><span class="p">,</span> <span class="mf">01000.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B6.0&#39;</span><span class="p">,</span> <span class="mf">15302.</span><span class="p">,</span> <span class="mf">04.8</span><span class="p">,</span> <span class="mf">3.50</span><span class="p">,</span> <span class="mf">00602.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B7.0&#39;</span><span class="p">,</span> <span class="mf">14103.</span><span class="p">,</span> <span class="mf">04.2</span><span class="p">,</span> <span class="mf">3.20</span><span class="p">,</span> <span class="mf">00363.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B8.0&#39;</span><span class="p">,</span> <span class="mf">13202.</span><span class="p">,</span> <span class="mf">03.8</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">,</span> <span class="mf">00245.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B9.0&#39;</span><span class="p">,</span> <span class="mf">12246.</span><span class="p">,</span> <span class="mf">03.4</span><span class="p">,</span> <span class="mf">2.80</span><span class="p">,</span> <span class="mf">00158.</span><span class="p">]]</span>
+
+<span class="n">bestarsdJN1987</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># Derived by de Jager &amp; Niewuwenhuijzen 1987 to the main sequence (b=5.) </span>
+    <span class="c">#  lum class IV (b=4.); Used by Cranmer2005</span>
+    <span class="c"># Conclusion: 5 and 4 apper do be ZAMS and mid-MS; 3 late MS</span>
+    <span class="c"># Conclusion: SpTypes appear to be shifhed by -1.0 here (cooler stars)</span>
+    <span class="c"># SpType b-val Teff_V Mass_V Rp_5 Lum_V   Teff_4 Mass_4 Rp_4 Lum_4</span>
+    <span class="p">[</span><span class="s">&#39;B0.0&#39;</span><span class="p">,</span> <span class="mf">1.200</span><span class="p">,</span> <span class="mi">26841</span><span class="p">,</span> <span class="mf">13.8</span><span class="p">,</span> <span class="mf">6.58</span><span class="p">,</span> <span class="mf">20134.</span><span class="p">,</span> <span class="mi">26911</span><span class="p">,</span> <span class="mf">15.11</span><span class="p">,</span> <span class="mf">7.84</span><span class="p">,</span> <span class="mf">28919.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B0.5&#39;</span><span class="p">,</span> <span class="mf">1.350</span><span class="p">,</span> <span class="mi">24944</span><span class="p">,</span> <span class="mf">11.4</span><span class="p">,</span> <span class="mf">5.82</span><span class="p">,</span> <span class="mf">11742.</span><span class="p">,</span> <span class="mi">24809</span><span class="p">,</span> <span class="mf">12.30</span><span class="p">,</span> <span class="mf">6.90</span><span class="p">,</span> <span class="mf">16183.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.0&#39;</span><span class="p">,</span> <span class="mf">1.500</span><span class="p">,</span> <span class="mi">23213</span><span class="p">,</span> <span class="mf">9.63</span><span class="p">,</span> <span class="mf">5.16</span><span class="p">,</span> <span class="mf">06917.</span><span class="p">,</span> <span class="mi">22915</span><span class="p">,</span> <span class="mf">10.17</span><span class="p">,</span> <span class="mf">6.11</span><span class="p">,</span> <span class="mf">09222.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.5&#39;</span><span class="p">,</span> <span class="mf">1.650</span><span class="p">,</span> <span class="mi">21629</span><span class="p">,</span> <span class="mf">8.17</span><span class="p">,</span> <span class="mf">4.58</span><span class="p">,</span> <span class="mf">04118.</span><span class="p">,</span> <span class="mi">21204</span><span class="p">,</span> <span class="mf">08.54</span><span class="p">,</span> <span class="mf">5.44</span><span class="p">,</span> <span class="mf">05355.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.0&#39;</span><span class="p">,</span> <span class="mf">1.800</span><span class="p">,</span> <span class="mi">20178</span><span class="p">,</span> <span class="mf">7.01</span><span class="p">,</span> <span class="mf">4.08</span><span class="p">,</span> <span class="mf">02478.</span><span class="p">,</span> <span class="mi">19655</span><span class="p">,</span> <span class="mf">07.27</span><span class="p">,</span> <span class="mf">4.87</span><span class="p">,</span> <span class="mf">03171.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.5&#39;</span><span class="p">,</span> <span class="mf">1.875</span><span class="p">,</span> <span class="mi">19498</span><span class="p">,</span> <span class="mf">6.51</span><span class="p">,</span> <span class="mf">3.86</span><span class="p">,</span> <span class="mf">01930.</span><span class="p">,</span> <span class="mi">18935</span><span class="p">,</span> <span class="mf">06.74</span><span class="p">,</span> <span class="mf">4.62</span><span class="p">,</span> <span class="mf">02458.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B3.0&#39;</span><span class="p">,</span> <span class="mf">1.950</span><span class="p">,</span> <span class="mi">18846</span><span class="p">,</span> <span class="mf">6.07</span><span class="p">,</span> <span class="mf">3.65</span><span class="p">,</span> <span class="mf">01508.</span><span class="p">,</span> <span class="mi">18250</span><span class="p">,</span> <span class="mf">06.27</span><span class="p">,</span> <span class="mf">4.39</span><span class="p">,</span> <span class="mf">01915.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B4.0&#39;</span><span class="p">,</span> <span class="mf">2.100</span><span class="p">,</span> <span class="mi">17621</span><span class="p">,</span> <span class="mf">5.31</span><span class="p">,</span> <span class="mf">3.28</span><span class="p">,</span> <span class="mf">00928.</span><span class="p">,</span> <span class="mi">16972</span><span class="p">,</span> <span class="mf">05.48</span><span class="p">,</span> <span class="mf">3.99</span><span class="p">,</span> <span class="mf">01181.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B5.0&#39;</span><span class="p">,</span> <span class="mf">2.250</span><span class="p">,</span> <span class="mi">16493</span><span class="p">,</span> <span class="mf">4.69</span><span class="p">,</span> <span class="mf">2.95</span><span class="p">,</span> <span class="mf">00578.</span><span class="p">,</span> <span class="mi">15810</span><span class="p">,</span> <span class="mf">04.84</span><span class="p">,</span> <span class="mf">3.64</span><span class="p">,</span> <span class="mf">00743.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B6.0&#39;</span><span class="p">,</span> <span class="mf">2.400</span><span class="p">,</span> <span class="mi">15452</span><span class="p">,</span> <span class="mf">4.18</span><span class="p">,</span> <span class="mf">2.67</span><span class="p">,</span> <span class="mf">00364.</span><span class="p">,</span> <span class="mi">14749</span><span class="p">,</span> <span class="mf">04.33</span><span class="p">,</span> <span class="mf">3.36</span><span class="p">,</span> <span class="mf">00478.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B7.0&#39;</span><span class="p">,</span> <span class="mf">2.550</span><span class="p">,</span> <span class="mi">14491</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">,</span> <span class="mf">2.42</span><span class="p">,</span> <span class="mf">00232.</span><span class="p">,</span> <span class="mi">13780</span><span class="p">,</span> <span class="mf">03.91</span><span class="p">,</span> <span class="mf">3.12</span><span class="p">,</span> <span class="mf">00314.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B8.0&#39;</span><span class="p">,</span> <span class="mf">2.700</span><span class="p">,</span> <span class="mi">13601</span><span class="p">,</span> <span class="mf">3.40</span><span class="p">,</span> <span class="mf">2.21</span><span class="p">,</span> <span class="mf">00150.</span><span class="p">,</span> <span class="mi">12893</span><span class="p">,</span> <span class="mf">03.57</span><span class="p">,</span> <span class="mf">2.92</span><span class="p">,</span> <span class="mf">00211.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B9.0&#39;</span><span class="p">,</span> <span class="mf">2.850</span><span class="p">,</span> <span class="mi">12778</span><span class="p">,</span> <span class="mf">3.10</span><span class="p">,</span> <span class="mf">2.03</span><span class="p">,</span> <span class="mf">00098.</span><span class="p">,</span> <span class="mi">12080</span><span class="p">,</span> <span class="mf">03.29</span><span class="p">,</span> <span class="mf">2.76</span><span class="p">,</span> <span class="mf">00145.</span><span class="p">]]</span>    
+
+<span class="n">bestarsdJN1987_3</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># Derived by de Jager &amp; Niewuwenhuijzen 1987 to the main sequence (b=5.) </span>
+    <span class="c">#  lum class IV (b=4.); Used by Cranmer2005</span>
+    <span class="c"># Conclusions with Geneva models: class III is still in the main sequence!</span>
+    <span class="c">#  (but leaving, ~Achernar)</span>
+    <span class="c"># Conclusion: SpTypes appear to be shifhed by -1 step here (cooler stars)</span>
+    <span class="c"># SpType b-val Teff_3 Mass_3 Rp_3 Lum_3</span>
+    <span class="p">[</span><span class="s">&#39;B0.0&#39;</span><span class="p">,</span> <span class="mf">1.200</span><span class="p">,</span> <span class="mi">25030</span><span class="p">,</span> <span class="mf">14.8</span><span class="p">,</span> <span class="mf">9.93</span><span class="p">,</span> <span class="mf">34661.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B0.5&#39;</span><span class="p">,</span> <span class="mf">1.350</span><span class="p">,</span> <span class="mi">23009</span><span class="p">,</span> <span class="mf">12.2</span><span class="p">,</span> <span class="mf">8.92</span><span class="p">,</span> <span class="mf">19969.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.0&#39;</span><span class="p">,</span> <span class="mf">1.500</span><span class="p">,</span> <span class="mi">21198</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">,</span> <span class="mf">8.05</span><span class="p">,</span> <span class="mf">11731.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.5&#39;</span><span class="p">,</span> <span class="mf">1.650</span><span class="p">,</span> <span class="mi">19570</span><span class="p">,</span> <span class="mf">8.65</span><span class="p">,</span> <span class="mf">7.31</span><span class="p">,</span> <span class="mf">07032.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.0&#39;</span><span class="p">,</span> <span class="mf">1.800</span><span class="p">,</span> <span class="mi">18105</span><span class="p">,</span> <span class="mf">7.43</span><span class="p">,</span> <span class="mf">6.69</span><span class="p">,</span> <span class="mf">04305.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.5&#39;</span><span class="p">,</span> <span class="mf">1.875</span><span class="p">,</span> <span class="mi">17427</span><span class="p">,</span> <span class="mf">6.93</span><span class="p">,</span> <span class="mf">6.41</span><span class="p">,</span> <span class="mf">03396.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B3.0&#39;</span><span class="p">,</span> <span class="mf">1.950</span><span class="p">,</span> <span class="mi">16782</span><span class="p">,</span> <span class="mf">6.48</span><span class="p">,</span> <span class="mf">6.16</span><span class="p">,</span> <span class="mf">02693.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B4.0&#39;</span><span class="p">,</span> <span class="mf">2.100</span><span class="p">,</span> <span class="mi">15586</span><span class="p">,</span> <span class="mf">5.71</span><span class="p">,</span> <span class="mf">5.71</span><span class="p">,</span> <span class="mf">01723.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B5.0&#39;</span><span class="p">,</span> <span class="mf">2.250</span><span class="p">,</span> <span class="mi">14502</span><span class="p">,</span> <span class="mf">5.10</span><span class="p">,</span> <span class="mf">5.33</span><span class="p">,</span> <span class="mf">01128.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B6.0&#39;</span><span class="p">,</span> <span class="mf">2.400</span><span class="p">,</span> <span class="mi">13519</span><span class="p">,</span> <span class="mf">4.60</span><span class="p">,</span> <span class="mf">5.03</span><span class="p">,</span> <span class="mf">00756.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B7.0&#39;</span><span class="p">,</span> <span class="mf">2.550</span><span class="p">,</span> <span class="mi">12624</span><span class="p">,</span> <span class="mf">4.20</span><span class="p">,</span> <span class="mf">4.78</span><span class="p">,</span> <span class="mf">00520.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B8.0&#39;</span><span class="p">,</span> <span class="mf">2.700</span><span class="p">,</span> <span class="mi">11809</span><span class="p">,</span> <span class="mf">3.86</span><span class="p">,</span> <span class="mf">4.58</span><span class="p">,</span> <span class="mf">00366.</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B9.0&#39;</span><span class="p">,</span> <span class="mf">2.850</span><span class="p">,</span> <span class="mi">11065</span><span class="p">,</span> <span class="mf">3.59</span><span class="p">,</span> <span class="mf">4.43</span><span class="p">,</span> <span class="mf">00264.</span><span class="p">]]</span>   
+
+<span class="n">bestarsBeAtlas</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># For ob=1.10</span>
+    <span class="c"># SpType Tpole    Teff    Mass   Rp    Lum</span>
+    <span class="p">[</span><span class="s">&#39;B0.0&#39;</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B0.5&#39;</span><span class="p">,</span> <span class="mf">28905.8</span><span class="p">,</span> <span class="mf">26765.7</span><span class="p">,</span> <span class="mf">14.6</span><span class="p">,</span> <span class="mf">7.50</span><span class="p">,</span> <span class="mf">31183.26</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.0&#39;</span><span class="p">,</span> <span class="mf">26945.8</span><span class="p">,</span> <span class="mf">24950.9</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mf">6.82</span><span class="p">,</span> <span class="mf">19471.38</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.5&#39;</span><span class="p">,</span> <span class="mf">25085.2</span><span class="p">,</span> <span class="mf">23228.2</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">,</span> <span class="mf">6.23</span><span class="p">,</span> <span class="mf">12204.70</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.0&#39;</span><span class="p">,</span> <span class="mf">23629.3</span><span class="p">,</span> <span class="mf">21879.9</span><span class="p">,</span> <span class="mf">09.6</span><span class="p">,</span> <span class="mf">5.80</span><span class="p">,</span> <span class="mf">08327.67</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.5&#39;</span><span class="p">,</span> <span class="mf">22296.1</span><span class="p">,</span> <span class="mf">20645.4</span><span class="p">,</span> <span class="mf">08.6</span><span class="p">,</span> <span class="mf">5.43</span><span class="p">,</span> <span class="mf">05785.96</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B3.0&#39;</span><span class="p">,</span> <span class="mf">20919.7</span><span class="p">,</span> <span class="mf">19370.9</span><span class="p">,</span> <span class="mf">07.7</span><span class="p">,</span> <span class="mf">5.11</span><span class="p">,</span> <span class="mf">03971.25</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B4.0&#39;</span><span class="p">,</span> <span class="mf">18739.3</span><span class="p">,</span> <span class="mf">17351.9</span><span class="p">,</span> <span class="mf">06.4</span><span class="p">,</span> <span class="mf">4.62</span><span class="p">,</span> <span class="mf">02090.08</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B5.0&#39;</span><span class="p">,</span> <span class="mf">17063.8</span><span class="p">,</span> <span class="mf">15800.5</span><span class="p">,</span> <span class="mf">05.5</span><span class="p">,</span> <span class="mf">4.26</span><span class="p">,</span> <span class="mf">01221.76</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B6.0&#39;</span><span class="p">,</span> <span class="mf">15587.7</span><span class="p">,</span> <span class="mf">14433.6</span><span class="p">,</span> <span class="mf">04.8</span><span class="p">,</span> <span class="mf">4.02</span><span class="p">,</span> <span class="mf">00757.60</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B7.0&#39;</span><span class="p">,</span> <span class="mf">14300.3</span><span class="p">,</span> <span class="mf">13241.6</span><span class="p">,</span> <span class="mf">04.2</span><span class="p">,</span> <span class="mf">3.72</span><span class="p">,</span> <span class="mf">00459.55</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B8.0&#39;</span><span class="p">,</span> <span class="mf">13329.9</span><span class="p">,</span> <span class="mf">12343.0</span><span class="p">,</span> <span class="mf">03.8</span><span class="p">,</span> <span class="mf">3.55</span><span class="p">,</span> <span class="mf">00315.96</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B9.0&#39;</span><span class="p">,</span> <span class="mf">12307.1</span><span class="p">,</span> <span class="mf">11395.9</span><span class="p">,</span> <span class="mf">03.4</span><span class="p">,</span> <span class="mf">3.37</span><span class="p">,</span> <span class="mf">00206.89</span><span class="p">]]</span>
+
+<span class="n">bestarsBeAtlas_N</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c"># For ob=1.10</span>
+    <span class="c"># SpType Tpole    Teff    Mass   Rp    Lum</span>
+    <span class="p">[</span><span class="s">&#39;B0.0&#39;</span><span class="p">,</span> <span class="mf">28905.8</span><span class="p">,</span> <span class="mf">26765.7</span><span class="p">,</span> <span class="mf">14.6</span><span class="p">,</span> <span class="mf">7.50</span><span class="p">,</span> <span class="mf">31183.26</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B0.5&#39;</span><span class="p">,</span> <span class="mf">26945.8</span><span class="p">,</span> <span class="mf">24950.9</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mf">6.82</span><span class="p">,</span> <span class="mf">19471.38</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.0&#39;</span><span class="p">,</span> <span class="mf">25085.2</span><span class="p">,</span> <span class="mf">23228.2</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">,</span> <span class="mf">6.23</span><span class="p">,</span> <span class="mf">12204.70</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B1.5&#39;</span><span class="p">,</span> <span class="mf">23629.3</span><span class="p">,</span> <span class="mf">21879.9</span><span class="p">,</span> <span class="mf">09.6</span><span class="p">,</span> <span class="mf">5.80</span><span class="p">,</span> <span class="mf">08327.67</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.0&#39;</span><span class="p">,</span> <span class="mf">22296.1</span><span class="p">,</span> <span class="mf">20645.4</span><span class="p">,</span> <span class="mf">08.6</span><span class="p">,</span> <span class="mf">5.43</span><span class="p">,</span> <span class="mf">05785.96</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B2.5&#39;</span><span class="p">,</span> <span class="mf">20919.7</span><span class="p">,</span> <span class="mf">19370.9</span><span class="p">,</span> <span class="mf">07.7</span><span class="p">,</span> <span class="mf">5.11</span><span class="p">,</span> <span class="mf">03971.25</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B3.0&#39;</span><span class="p">,</span> <span class="mf">18739.3</span><span class="p">,</span> <span class="mf">17351.9</span><span class="p">,</span> <span class="mf">06.4</span><span class="p">,</span> <span class="mf">4.62</span><span class="p">,</span> <span class="mf">02090.08</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B4.0&#39;</span><span class="p">,</span> <span class="mf">17063.8</span><span class="p">,</span> <span class="mf">15800.5</span><span class="p">,</span> <span class="mf">05.5</span><span class="p">,</span> <span class="mf">4.26</span><span class="p">,</span> <span class="mf">01221.76</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B5.0&#39;</span><span class="p">,</span> <span class="mf">15587.7</span><span class="p">,</span> <span class="mf">14433.6</span><span class="p">,</span> <span class="mf">04.8</span><span class="p">,</span> <span class="mf">4.02</span><span class="p">,</span> <span class="mf">00757.60</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B6.0&#39;</span><span class="p">,</span> <span class="mf">14300.3</span><span class="p">,</span> <span class="mf">13241.6</span><span class="p">,</span> <span class="mf">04.2</span><span class="p">,</span> <span class="mf">3.72</span><span class="p">,</span> <span class="mf">00459.55</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B7.0&#39;</span><span class="p">,</span> <span class="mf">13329.9</span><span class="p">,</span> <span class="mf">12343.0</span><span class="p">,</span> <span class="mf">03.8</span><span class="p">,</span> <span class="mf">3.55</span><span class="p">,</span> <span class="mf">00315.96</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B8.0&#39;</span><span class="p">,</span> <span class="mf">12307.1</span><span class="p">,</span> <span class="mf">11395.9</span><span class="p">,</span> <span class="mf">03.4</span><span class="p">,</span> <span class="mf">3.37</span><span class="p">,</span> <span class="mf">00206.89</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">&#39;B9.0&#39;</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">,</span> <span class="n">_np</span><span class="o">.</span><span class="n">NaN</span><span class="p">]]</span>
+
+
+<span class="c"># MAIN ###</span>
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li>
+          <li><a href="../pyhdust.html" >pyhdust</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

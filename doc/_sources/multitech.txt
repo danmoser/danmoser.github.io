@@ -1,0 +1,7 @@
+.. Comments
+
+**multitech**: module of multi tecnhinque analysis tools
+===========================================================
+
+.. automodule:: pyhdust.multitech
+    :members:

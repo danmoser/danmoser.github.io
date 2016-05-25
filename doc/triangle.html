@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>triangle: auxiliary module to MCMC plotting &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="prev" title="tabulate: auxiliary module to tablature matrix" href="tabulate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tabulate.html" title="tabulate: auxiliary module to tablature matrix"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.triangle">
+<span id="triangle-auxiliary-module-to-mcmc-plotting"></span><h1><em>triangle</em>: auxiliary module to MCMC plotting<a class="headerlink" href="#module-pyhdust.triangle" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust auxiliary module: third-part MCMC plotting tools.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">co-author:</th><td class="field-body">Daniel Moser</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">Copyright 2013 Daniel Foreman-Mackey</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyhdust.triangle.corner">
+<tt class="descclassname">pyhdust.triangle.</tt><tt class="descname">corner</tt><big>(</big><em>xs</em>, <em>bins=20</em>, <em>range=None</em>, <em>weights=None</em>, <em>color=u'k'</em>, <em>smooth=None</em>, <em>smooth1d=None</em>, <em>labels=None</em>, <em>label_kwargs=None</em>, <em>show_titles=False</em>, <em>title_fmt=u'.2f'</em>, <em>title_kwargs=None</em>, <em>truths=None</em>, <em>truth_color=u'#4682b4'</em>, <em>scale_hist=False</em>, <em>quantiles=None</em>, <em>verbose=False</em>, <em>fig=None</em>, <em>max_n_ticks=5</em>, <em>top_ticks=False</em>, <em>hist_kwargs=None</em>, <em>qtdiff=None</em>, <em>**hist2d_kwargs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/triangle.html#corner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.triangle.corner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a <em>sick</em> corner plot showing the projections of a data set in a
+multi-dimensional space. kwargs are passed to hist2d() or used for
+<cite>matplotlib</cite> styling.</p>
+<dl class="docutils">
+<dt>xs <span class="classifier-delimiter">:</span> <span class="classifier">array_like (nsamples, ndim)</span></dt>
+<dd>The samples. This should be a 1- or 2-dimensional array. For a 1-D
+array this results in a simple histogram. For a 2-D array, the zeroth
+axis is the list of samples and the next axis are the dimensions of
+the space.</dd>
+<dt>weights <span class="classifier-delimiter">:</span> <span class="classifier">array_like (nsamples,)</span></dt>
+<dd>The weight of each sample. If <cite>None</cite> (default), samples are given
+equal weight.</dd>
+<dt>labels <span class="classifier-delimiter">:</span> <span class="classifier">iterable (ndim,) (optional)</span></dt>
+<dd>A list of names for the dimensions. If a <tt class="docutils literal"><span class="pre">xs</span></tt> is a
+<tt class="docutils literal"><span class="pre">pandas.DataFrame</span></tt>, labels will default to column names.</dd>
+<dt>show_titles <span class="classifier-delimiter">:</span> <span class="classifier">bool (optional)</span></dt>
+<dd>Displays a title above each 1-D histogram showing the 0.5 quantile
+with the upper and lower errors supplied by the quantiles argument.</dd>
+<dt>title_fmt <span class="classifier-delimiter">:</span> <span class="classifier">string (optional)</span></dt>
+<dd>The format string for the quantiles given in titles.
+(default: <cite>.2f</cite>)</dd>
+<dt>title_args <span class="classifier-delimiter">:</span> <span class="classifier">dict (optional)</span></dt>
+<dd>Any extra keyword arguments to send to the <cite>add_title</cite> command.</dd>
+<dt>extents <span class="classifier-delimiter">:</span> <span class="classifier">iterable (ndim,) (optional)</span></dt>
+<dd>A list where each element is either a length 2 tuple containing
+lower and upper bounds (extents) or a float in range (0., 1.)
+giving the fraction of samples to include in bounds, e.g.,
+[(0.,10.), (1.,5), 0.999, etc.].
+If a fraction, the bounds are chosen to be equal-tailed.</dd>
+<dt>truths <span class="classifier-delimiter">:</span> <span class="classifier">iterable (ndim,) (optional)</span></dt>
+<dd>A list of reference values to indicate on the plots.  Individual
+values can be omitted by using <tt class="docutils literal"><span class="pre">None</span></tt>.</dd>
+<dt>truth_color <span class="classifier-delimiter">:</span> <span class="classifier">str (optional)</span></dt>
+<dd>A <tt class="docutils literal"><span class="pre">matplotlib</span></tt> style color for the <tt class="docutils literal"><span class="pre">truths</span></tt> makers.</dd>
+<dt>scale_hist <span class="classifier-delimiter">:</span> <span class="classifier">bool (optional)</span></dt>
+<dd>Should the 1-D histograms be scaled in such a way that the zero line
+is visible?</dd>
+<dt>quantiles <span class="classifier-delimiter">:</span> <span class="classifier">iterable (optional)</span></dt>
+<dd>A list of fractional quantiles to show on the 1-D histograms as
+vertical dashed lines.</dd>
+<dt>verbose <span class="classifier-delimiter">:</span> <span class="classifier">bool (optional)</span></dt>
+<dd>If true, print the values of the computed quantiles.</dd>
+<dt>plot_contours <span class="classifier-delimiter">:</span> <span class="classifier">bool (optional)</span></dt>
+<dd>Draw contours for dense regions of the plot.</dd>
+<dt>plot_datapoints <span class="classifier-delimiter">:</span> <span class="classifier">bool (optional)</span></dt>
+<dd>Draw the individual data points.</dd>
+<dt>max_n_ticks: int (optional)</dt>
+<dd>maximum number of ticks to try to use</dd>
+<dt>fig <span class="classifier-delimiter">:</span> <span class="classifier">matplotlib.Figure (optional)</span></dt>
+<dd>Overplot onto the provided figure object.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.triangle.hist2d">
+<tt class="descclassname">pyhdust.triangle.</tt><tt class="descname">hist2d</tt><big>(</big><em>x</em>, <em>y</em>, <em>bins=20</em>, <em>range=None</em>, <em>weights=None</em>, <em>levels=None</em>, <em>smooth=None</em>, <em>ax=None</em>, <em>color=None</em>, <em>plot_datapoints=True</em>, <em>plot_density=True</em>, <em>plot_contours=True</em>, <em>fill_contours=False</em>, <em>contour_kwargs=None</em>, <em>contourf_kwargs=None</em>, <em>data_kwargs=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/triangle.html#hist2d"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.triangle.hist2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a 2-D histogram of samples.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tabulate.html"
+                        title="previous chapter"><em>tabulate</em>: auxiliary module to tablature matrix</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/triangle.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tabulate.html" title="tabulate: auxiliary module to tablature matrix"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

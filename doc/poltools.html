@@ -1,0 +1,1011 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>poltools: module of polarimetric tools &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="next" title="releases: module to control PyHdust releases" href="releases.html" />
+    <link rel="prev" title="phc: module of astronomical functions" href="phc.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="releases.html" title="releases: module to control PyHdust releases"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="phc.html" title="phc: module of astronomical functions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.poltools">
+<span id="poltools-module-of-polarimetric-tools"></span><h1><strong>poltools</strong>: module of polarimetric tools<a class="headerlink" href="#module-pyhdust.poltools" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust <em>poltools</em> module: polarimetry tools</p>
+<p>History:
+-grafpol working for <a href="#id1"><span class="problematic" id="id2">*</span></a>_WP1110....log files!
+-grafpol working for log/out files with more than a single star</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">co-author:</th><td class="field-body">Daniel Bednarski</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">GNU GPL v3.0 <a class="reference external" href="https://github.com/danmoser/pyhdust/blob/master/LICENSE">https://github.com/danmoser/pyhdust/blob/master/LICENSE</a></td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="pyhdust.poltools.chkStdLog">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">chkStdLog</tt><big>(</big><em>f</em>, <em>calc</em>, <em>path=None</em>, <em>delta=3.5</em>, <em>verbose=True</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#chkStdLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.chkStdLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify if there are standards for filter <cite>f</cite> and
+calcite <cite>calc</cite> inside path/std.dat. Return True if
+successful, unless the standard has been reduced
+and marked with <cite>E</cite> flag.</p>
+<p>delta is the allowed variation for the angles between the two
+beams for one same calcite.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.chooseout">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">chooseout</tt><big>(</big><em>objdir</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b24530598c0&gt;</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#chooseout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.chooseout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Olha na noite, qual(is) <a href="#id3"><span class="problematic" id="id4">*</span></a>.OUT(s) de um filtro que tem o menor erro.</p>
+<p>Retorna um mais valores para toda a sequencia (i.e., pasta).
+Criterios definidos no anexo de polarimetria.</p>
+<p>minerror == True: recebe o out de menor erro em qualquer caso.</p>
+<p>sigtol: condicao de tolerancia para pegar o agrupamento de menor erro.
+Se o sigma do agrupamento com todas N posicoes for menor que a funcao
+sigtol sobre o sigma do agrupamento de menor erro, entao usa o agrupamento
+com as N posicoes; do contrario usa o de menor erro.
+Exemplo com 16 posicoes: erro do grupo de 16 posicoes == 0.000230;</p>
+<blockquote>
+<div>menor erro == 0.000200. Se sigtol(sig) = 1.4*sig, como
+sigtol(0.000200) == 0.000240 &gt; 0.000230, usa o agrupamento de 16 posicoes.</div></blockquote>
+<p>O numero de posicoes eh baseado no numero de arquivos <a href="#id5"><span class="problematic" id="id6">*</span></a>.fits daquele
+filtro.</p>
+<dl class="docutils">
+<dt>&#8216;nstar&#8217; == star number inside &#8216;out&#8217; file (usefull when there are</dt>
+<dd>more than a single star inside .out)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.corObjStd">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">corObjStd</tt><big>(</big><em>night</em>, <em>f</em>, <em>calc</em>, <em>path=None</em>, <em>delta=3.5</em>, <em>verbose=True</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#corObjStd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.corObjStd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the correction factor delta theta for filter &#8216;f&#8217;
+inside night &#8216;night&#8217;, for calcite &#8216;calc&#8217; (the last variable
+must be the angle between the ord. and extraord. beams).
+Returns the values for matching standard stars inside
+&#8216;night&#8217;/std.dat file, except when marked with an &#8216;E&#8217; flag.</p>
+<dl class="docutils">
+<dt>NEW: In case of missing data in filter &#8216;f&#8217;, this routine</dt>
+<dd>tries to compute delta theta by using the data from
+another filter, making use of the relations among the
+values of delta theta for each filter). But only the
+estimate presenting the smaller error will be taken.</dd>
+<dt>verbose: auxiliary variable used as False inside</dt>
+<dd>polt.genTarget routine. Keep it as True
+otherwise.</dd>
+<dt>Formulas:</dt>
+<dd><ul class="first last">
+<li><p class="first">dth = fact*th^std_measured - th^std_published</p>
+</li>
+<li><dl class="first docutils">
+<dt>fact = -1  for observations before 2015 March 1st</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">+1</span></kbd></td>
+<td><p class="first last">otherwise</p>
+</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>delta: tolerance, in degree, of angle of two beams for</dt>
+<dd>one same calcite (default: +/-3.5 degree)</dd>
+<dt>Output, in order: stdnames, mdth, smdth, flag, tags</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>stdnames: string with standard star names separated</dt>
+<dd><p class="first last">by commas (,)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>mdth: mean delta theta (corrected by the output factor</dt>
+<dd><p class="first last">+-1 of routine polt.thtFactor())</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">smdth: the error of the mean delta theta</p>
+</li>
+<li><p class="first">flag: flag concerning to the standards.</p>
+</li>
+<li><dl class="first docutils">
+<dt>tags: string with the tags concerning to the standards,</dt>
+<dd><p class="first last">separated by commas (,), or &#8216;&#8212;&#8217; if none.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.countStars">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">countStars</tt><big>(</big><em>objdir</em>, <em>f</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#countStars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.countStars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count how many stars there are inside outfiles in &#8216;objdir&#8217;
+and filter f. Return 0 if there are no outfiles</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.filtra_obs">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">filtra_obs</tt><big>(</big><em>n</em>, <em>obs</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#filtra_obs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.filtra_obs" title="Permalink to this definition">¶</a></dt>
+<dd><p>### FILTER OBSERV. ###</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.filtraobs">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">filtraobs</tt><big>(</big><em>data</em>, <em>r=20</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#filtraobs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.filtraobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>filtro!</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.fitMCMCline">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">fitMCMCline</tt><big>(</big><em>x, y, sx, sy, star='', margin=False, plot_adj=True, fig=None, ax=None, n_burnin=300, n_mcmc=600, n_walkers=120, thet_ran=[0.0, 180.0], b_ran=[-1.0, 1.0], Pb_ran=[0.0, 1.0], Yb_ran=[-1.0, 1.0], Vb_ran=[0.0, 1.0], extens='pdf'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#fitMCMCline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.fitMCMCline" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Fit a line using Markov Chain Monte Carlo for data
+with both x and y errors and with bad points
+from emcee code.</p>
+<p>The model is tha sum of two models:
+a) a line model for the good points, y = ax + b, with
+data displaced ortogonally by a gaussian diplacentment
+(covariance is suposed null!);
+b) a gaussian distribution orthogonal to the line for
+the bad points with amplitude, mean and variance equal
+to Pb, Yb and Vb (see Hoog, Bovy and Lang,
+<a href="#id7"><span class="problematic" id="id8">``</span></a>Data analysis recipes: Fitting a model to data&#8217;&#8216;)</p>
+<p>The MCMC does a <a href="#id9"><span class="problematic" id="id10">``</span></a>mixture&#8217;&#8217; among both model for each
+point. So, it is not needed know about the bad and
+good points necessairly! The five parameters to be
+found are theta=arctan(a), b, Pb, Yb and Vb.</p>
+</div></blockquote>
+<p>INPUT:</p>
+<dl class="docutils">
+<dt>x/y/sx/sy: array/list with the data</dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div><dl class="docutils">
+<dt>star: star name to be printed in the graph and</dt>
+<dd>its filename. If it&#8217;s a void str &#8216;&#8217;, this
+routine give a random number to prevent
+overwriting data.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>margin: marginalize the corner graphs over Pb,</dt>
+<dd>Yb, Vb (generating the graph only for
+theta and b)?</dd>
+</dl>
+</div></blockquote>
+<dl class="last docutils">
+<dt>plot_adj: show a plot of data+fit?</dt>
+<dd><dl class="first last docutils">
+<dt>fig: Figure to append the plots for data+fit.</dt>
+<dd><blockquote class="first">
+<div>If None, a new figure is generated.</div></blockquote>
+<p class="last">ax: Axes, as like fig above.</p>
+</dd>
+</dl>
+</dd>
+<dt>n_burnin: number of iterations for burning-in</dt>
+<dd>n_mcmc: number of iterations to run emcee</dd>
+</dl>
+</dd>
+<dt>n_walkers: number of walkers to map the posterior</dt>
+<dd><blockquote class="first">
+<div>probabilities.</div></blockquote>
+<dl class="last docutils">
+<dt>thet_ran: [thet_min, thet_max]</dt>
+<dd><blockquote class="first">
+<div>b_ran: [b_min, b_max]</div></blockquote>
+<p class="last">Pb_ran: [Pb_min, Pb_max], with Pb_min &gt;= 0
+Yb_ran: [Yb_min, Yb_max]
+Vb_ran: [Vb_min, Vb_max], with Vb_min &gt;= 0
+extens: extension for the graph file</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>OUTPUT:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>theta_fit: [theta, theta_+, <a href="#id23"><span class="problematic" id="id24">theta_</span></a>-], the theta value</dt>
+<dd>and its errors (at right and left from it).
+theta is the median of distribution
+probability and theta_+, <a href="#id25"><span class="problematic" id="id26">theta_</span></a>- are the
+range within which there are 68.3% of the
+points in such distribution.</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>b*cos(theta): Idem, for b*cos(theta).</dt>
+<dd><blockquote class="first">
+<div>Pb: Idem, for Pb.
+Yb: Idem, for Yb.
+Vb: Idem, for Vb.</div></blockquote>
+<dl class="last docutils">
+<dt>fig1: Figure pointer to the corner graph ([]</dt>
+<dd>if show==False).</dd>
+<dt>fig2: Figure pointer to the data+fit graph ([]</dt>
+<dd>if plot_adj==False).</dd>
+</dl>
+</dd>
+</dl>
+<p>FORMULAS:</p>
+<blockquote>
+<div><p>Supposing i as each data point, the log of Likelihood
+function (L) takes form:</p>
+<blockquote>
+<div>log(L) = sum(log(p_good_i+p_bad_i))</div></blockquote>
+<p>with</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>p_good_i = (1-Pb)/sqrt(2*pi*var_i)*</dt>
+<dd><blockquote class="first">
+<div>exp(-0.5*(disp_i**2/var_i)),</div></blockquote>
+<dl class="last docutils">
+<dt>p_bad_i = Pb/sqrt(2*pi*(Vb+var)*</dt>
+<dd>exp(-0.5*(disp_i-Yb)**2)/(Vb+var_i))</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p>where disp_i is the total projection of the (x_i,y_i)
+values over the line and var_i, the projected variance:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>disp_i = v*Z_i -b cos(thet)</dt>
+<dd>var_i = v*S_i*v</dd>
+</dl>
+</div></blockquote>
+<p>with</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>v = (-sin(theta), cos(theta)) (versor orthogonal</dt>
+<dd>to the line)</dd>
+</dl>
+</div></blockquote>
+<p>Z_i = (x_i, y_i)    (data point)
+S_i = | sx_i^2  sxy_i^2| = <a href="#id11"><span class="problematic" id="id12">|</span></a>sx_i^2     0 | = (covariance</p>
+<blockquote>
+<div><a href="#id21"><span class="problematic" id="id22">|syx_i^2   sy_i^2|</span></a>   | 0     sy_i^2|       matrix)</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.genAllLog">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genAllLog</tt><big>(</big><em>path=None</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b2453059f50&gt;</em>, <em>autochoose=False</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genAllLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genAllLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the std.dat/obj.dat for one reduced night</p>
+<p>path: path of night
+delta: tolerance for the angle between the two beams of calcite.</p>
+<blockquote>
+<div>If abs(angle1 - angle2) &lt; delta, both observations 1 and 2
+are assigned as the same calcite.</div></blockquote>
+<dl class="docutils">
+<dt>sigtol: tolerance to use the outfiles with all WP instead the</dt>
+<dd>out with best error. Must be a &#8216;function&#8217; that receives
+a pol sigma value (in decimal system and NOT in per cent,
+i.e., value from 0. to 1., where 1 is a 100% polarized
+source) and return the maximum sigma for which to ignore
+the best out. Its format must be a &#8216;python&#8217;s lambda function&#8217;!
+The default values is sigtol=lambda sigm: 1.4*sigm, while
+the old value was sigtol=lambda sigm: 1.1*sigm + 0.00005. If
+you want to take just the groups with all WP, and none other,
+you can specify sigtol=lambda sigm: 1000.*sigm, for example.</dd>
+<dt>autochoose: choose best outfiles automatically, without</dt>
+<dd>interaction?</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.genJD">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genJD</tt><big>(</big><em>path=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genJD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genJD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate de JD file for the fits inside the folder</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.genLog">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genLog</tt><big>(</big><em>path</em>, <em>subdirs</em>, <em>tgts</em>, <em>fileout</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b2453059e60&gt;</em>, <em>autochoose=False</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the .dat file with data of objects &#8216;tgts[:]&#8217; inside
+&#8216;path&#8217;/&#8217;subdirs[:]&#8217; directories</p>
+<p>Save the results in &#8216;path&#8217;/&#8217;fileout&#8217;
+Usable to generate target and standard lists (obj.dat and std.dat)</p>
+<dl class="docutils">
+<dt>delta: tolerance for the angle between the two beams of calcite.</dt>
+<dd>If abs(angle1 - angle2) &lt; delta, both observations 1 and 2
+are assigned as the same calcite.</dd>
+<dt>sigtol: tolerance to use the outfiles with all WP instead the</dt>
+<dd>out with best error. Must be a &#8216;function&#8217; that receives
+a pol sigma value (in decimal system and NOT in per cent,
+i.e., value from 0. to 1., where 1 is a 100% polarized
+source) and return the maximum sigma for which to ignore
+the best out. Its format must be a &#8216;python&#8217;s lambda function&#8217;!
+The default values is sigtol=lambda sigm: 1.4*sigm, while
+the old value was sigtol=lambda sigm: 1.1*sigm + 0.00005. If
+you want to take just the groups with all WP, and none other,
+you can specify sigtol=lambda sigm: 1000.*sigm, for example.</dd>
+<dt>autochoose: choose best outfiles automatically, without</dt>
+<dd>interaction?</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.genTarget">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genTarget</tt><big>(</big><em>target</em>, <em>path=None</em>, <em>ispol=None</em>, <em>skipdth=False</em>, <em>delta=3.5</em>, <em>epssig=2.0</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genTarget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gen. target</p>
+<p>Generate a table with all observations found for &#8216;target&#8217;,
+unless those which have <cite>E</cite> flag.</p>
+<p>The error in delta theta (factor from observation of standard
+star) IS NOT propagated to the theta of Be star.</p>
+<dl class="docutils">
+<dt>skipdth: skip the observations without estimates for delta</dt>
+<dd>theta (no standard star in none filter and no
+standard star in previous and next nights)? Case
+True, the exception is only when the data is
+&#8216;unpolarized&#8217; (defined by &#8216;epssig&#8217; variable).</dd>
+<dt>epssig: sigP/P max for unpolarized target (sigP/P up to</dt>
+<dd>epssig doesn&#8217;t need standard star when skipdth=True)</dd>
+<dt>ispol: the Serkowski parameters [P_max, lambda_max, theta_IS]</dt>
+<dd>to correct IS polarization (P_max ein % and lambda_max in
+Angstrom). If ispol==None, don&#8217;t make the correction
+of ISP.</dd>
+<dt>Syntax of out tags:   tags1:tags2:tags3, where tags1 is concerning</dt>
+<dd>to the method to calculate delta_theta
+correction factor, tags2 is the tag list of
+the observation of object and tags3 is the
+tags of the standard star that has been used.</dd>
+</dl>
+<p>If no standard star was found in some night for one filter, this
+routine tries to use the standard from another filter to compute
+the delta theta in missing filter. Case there are no standard star
+in the other filters also, the routine tries to read a file named
+as std.link, whose lines content must be [calc   night]. It points to
+a standard from another night <cite>night</cite> in calcite <cite>calc</cite> (an example
+of sintax: [calc   night] = [136.1   15out22]). Caso this file was
+not found, the routine queries directly of what night to use the
+standard stars.</p>
+<dl class="docutils">
+<dt>Formulas:</dt>
+<dd><ul class="first last">
+<li><p class="first">th_eq = fact*th_measured - fact*th^std_measured + th^std_published</p>
+</li>
+<li><p class="first">th_eq = fact*th_measured - dth</p>
+</li>
+<li><p class="first">dth = fact*th^std_measured - th^std_published</p>
+</li>
+<li><dl class="first docutils">
+<dt>fact = -1 for observations before 2015 March 1st</dt>
+<dd><p class="first last">+1 otherwise</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Q_eq = P*cos(2*th_eq*pi/180)</p>
+</li>
+<li><p class="first">U_eq = P*sin(2*th_eq*pi/180)</p>
+</li>
+<li><p class="first">sigth = 28.65*sig/P</p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.graf_qu">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">graf_qu</tt><big>(</big><em>logfile, mode=1, odr=True, mcmc=False, nn=[120, 200, 600], thet_ran=[0.0, 180.0], b_ran=[-1.0, 1.0], Pb_ran=[0.0, 1.0], Yb_ran=[-1.0, 1.0], Vb_ran=[0.0, 1.0], clip=True, sclip=4.5, nmax=5, vfilter=['no-std'], save=False, extens='pdf'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#graf_qu"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.graf_qu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a QU diagram for the Be star in the logfile .log
+file (the outfile from polt.genTarget) and fit a line
+if specified. Propagates error of standard star.</p>
+<blockquote>
+<div><blockquote>
+<div>ODR: dot-line</div></blockquote>
+<p>MCMC: continuous line</p>
+</div></blockquote>
+<p>mode=1 plot BVRI graphs in the same figure + U in another;
+mode=2 plot UBVRI graphs in separated figures.</p>
+<p>INPUT</p>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>logfile: Logfile with QU data</dt>
+<dd><dl class="first last docutils">
+<dt>mode: 1) Plot a figure to filter U and another for</dt>
+<dd><blockquote class="first">
+<div>BVRI filters; 2) Plot a figure for filter</div></blockquote>
+<p class="last">odr: Run phc.fit_linear to fit a line?</p>
+</dd>
+<dt>mcmc: Run fitMCMCline to fit a line?</dt>
+<dd>nn: fitMCMCline: [n_walkers, n_burnin, n_mcmc]</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="docutils">
+<dt>thet_ran: fitMCMCline: [thet_min, thet_max]</dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div>b_ran: fitMCMCline: [b_min, b_max]</div></blockquote>
+<p>Pb_ran: fitMCMCline: [Pb_min, Pb_max], with Pb_min &gt;= 0
+Yb_ran: fitMCMCline: [Yb_min, Yb_max]
+Vb_ran: fitMCMCline: [Vb_min, Vb_max], with Vb_min &gt;= 0</p>
+<blockquote>
+<div><blockquote>
+<div>clip: phc.fit_linear: apply sigma clipping?</div></blockquote>
+<dl class="docutils">
+<dt>sclip: phc.fit_linear: sigma value to clip</dt>
+<dd><dl class="first last docutils">
+<dt>nmax: phc.fit_linear: sigma clipping max number of</dt>
+<dd>iterations</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</div></blockquote>
+<dl class="last docutils">
+<dt>vfilter: list of flags to filter (will be marked with</dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div>a &#8216;x&#8217; symbol and won&#8217;t considered in odr
+fitting). The observations with flag &#8216;no-std&#8217;
+never are shown. mcmc fitting uses the filtered
+observations, except those with &#8216;no-std&#8217; flag.</div></blockquote>
+<p>save: Save the graphs? If False, just shows</p>
+</div></blockquote>
+<p class="last">extens: Extension for the graphs</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+<p>OUTPUT</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">None if odr and mcmc are False</p>
+</li>
+<li><p class="first">When mcmc==True:
+[[[param_u], [sparam_+_u], [<a href="#id27"><span class="problematic" id="id28">sparam_</span></a>-_u], n_u, obj_u],</p>
+<blockquote>
+<div><blockquote>
+<div><p>...</p>
+</div></blockquote>
+<p>[[param_i], [sparam_+_i], [<a href="#id29"><span class="problematic" id="id30">sparam_</span></a>-_i], n_i, obj_i]],</p>
+</div></blockquote>
+<p>where param, sparam_+ and <a href="#id31"><span class="problematic" id="id32">sparam_</span></a>- are arrays with
+the five parameters for MCMC fitting (thet, b, Pb,
+Yb and Vb) and its errors (at right and left), n is
+the number of points and obj is one graphical dummy object.</p>
+</li>
+<li><p class="first">When odr==True AND mcmc==False:
+Idem, but param, sparam_+ and <a href="#id33"><span class="problematic" id="id34">sparam_</span></a>- are arrays with the
+two parameters for ODR fitting (a, b) and its errors.</p>
+</li>
+</ol>
+</div></blockquote>
+<p>CAUTION:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The angle returned IS NOT the PA angle obtained from the slop,
+but the own inclination angle of the fitted line! PA is this
+angle divided by 2.</li>
+<li>PA angle is indefined by a factor of +-90 degrees</li>
+<li>This routine NEVER shows the data with &#8216;no-std&#8217; tag,
+independently of vfilter variable!</li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.graf_t">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">graf_t</tt><big>(</big><em>logfile, vfilter=['no-std'], save=False, extens='pdf', filt='v'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#graf_t"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.graf_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a P_V x t, theta_V x t and P_B/P_I x t graphs for the
+Be star in the logfile .log file (the outfile from
+polt.genTarget). Propagates error of standard star.</p>
+<p>If &#8216;no-std&#8217; is in vfilter, no data with &#8216;no-std&#8217; tag will be
+displayed, but the others filtered data will be showed
+with a &#8216;x&#8217; symbol.
+If &#8216;no-std&#8217; is not in vfilter, the data with &#8216;no-std&#8217; will
+be displayed normally and the other filtered will be
+showed with a &#8216;x&#8217; symbol.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.grafall">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">grafall</tt><big>(</big><em>objdir</em>, <em>filt</em>, <em>nstar=1</em>, <em>n=1</em>, <em>bestouts=</em>, <span class="optional">[</span><span class="optional">]</span><em>shortmode=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#grafall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.grafall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiple plot modulations for the object inside &#8216;objdir&#8217;
+in filter &#8216;filt&#8217;.
+Return a list &#8216;sortout&#8217; with the log files sorted by plot
+number. Allways sortout[0]==&#8217;&#8217; and sortout[i] is the plot #i.</p>
+<dl class="docutils">
+<dt>Optional:</dt>
+<dd><dl class="first last docutils">
+<dt>bestouts - list of outs which have smaller error to</dt>
+<dd>highlight in figures</dd>
+<dt>shortmode - case True, plot only the groups 16001, 08001,</dt>
+<dd>08009 (ver .1 and .2) and an eventual 7th group.</dd>
+<dt>n - is concerning to the n-esim 16-sequence to use.</dt>
+<dd>Exemple, if there are 40 WP positions, n=1 is to plot
+the graphs for positions 1-16; n=2 is for 17-32;
+n=3 is for 33-40.</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.grafpol">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">grafpol</tt><big>(</big><em>filename</em>, <em>nstar=1</em>, <em>fig=None</em>, <em>ax1=None</em>, <em>ax2=None</em>, <em>save=False</em>, <em>extens='png'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#grafpol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.grafpol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Program to plot the best adjust and its residuals of IRAF reduction.
+&#8216;filename&#8217; is the path to the .log output file from reduction.
+nstar is the star number inside out/log files to be plotted.</p>
+<p>NEW: Working for <a href="#id13"><span class="problematic" id="id14">*</span></a>_WP1110....log files!
+NEW (2): Working for logfiles with more than a single star!</p>
+<p>Two working modes:</p>
+<ol class="arabic simple">
+<li>If only filename is given: displays the graph or, case save=True,
+save it into the logfile directory.
+&#8216;extens&#8217; parameter changes the extension.</li>
+<li>If filename, one figure and two axes are given: changes these axes,
+adding plots in them. Doesn&#8217;t display, either save at the end,
+only adds a plot to the axes. Usefull for subplots in same figure.</li>
+</ol>
+<p>Authors: Moser and Bednarski
+Current version: May, 2015</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.lbds">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">lbds</tt><big>(</big><em>color</em>, <em>filt</em>, <em>ccdn</em>, <em>airmass=1.3</em>, <em>skiperror=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#lbds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.lbds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the lambda_eff in angstrom for star with
+color index &#8216;color&#8217;, in filter &#8216;filt&#8217;, CCD &#8216;ccdn&#8217;
+and airmass &#8216;airmass&#8217;. The default airmass is 1.3
+for an average value.</p>
+<p>If skiperror==True, tries to use lambda_eff as the value
+from phc.lbds[] in case of missing information for
+&#8216;filt&#8217; or &#8216;ccd&#8217;.</p>
+<p>CAUTION:
+If filt==&#8217;u&#8217;, the color must be U-B</p>
+<blockquote>
+<div>Otherwise, the color must be B-V</div></blockquote>
+<dl class="docutils">
+<dt>FORMULAS:</dt>
+<dd><ul class="first">
+<li><dl class="first docutils">
+<dt>Atm. reddening:   redn = 2.5*_np.log10(_np.e)*</dt>
+<dd><p class="first last"><a href="#id15"><span class="problematic" id="id16">*</span></a>airmass*(taub-tauv)</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Redd. color:  color_av = color + redn</p>
+</li>
+<li><dl class="first docutils">
+<dt>lambda_eff:      l_eff = l0 + k1*color_av +</dt>
+<dd><ul class="first last simple">
+<li>k2*(color_av**2) +</li>
+<li>k3*(color_av**3)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<blockquote class="last">
+<div>where tauu, taub, tau are the optical deepth of
+atmosphere (values used from Kepler de Oliveira
+et al, Astronomia e Astrofisica).</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.listNights">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">listNights</tt><big>(</big><em>path</em>, <em>tgt</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#listNights"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.listNights" title="Permalink to this definition">¶</a></dt>
+<dd><p>List Nights</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.loadpol">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">loadpol</tt><big>(</big><em>txt</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#loadpol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.loadpol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load polarization txt file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.plotMagStar">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">plotMagStar</tt><big>(</big><em>tgt</em>, <em>path=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#plotMagStar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.plotMagStar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function doc</p>
+<p>&#64;param PARAM: DESCRIPTION
+&#64;return RETURN: DESCRIPTION</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.plotfrompollog">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">plotfrompollog</tt><big>(</big><em>path</em>, <em>star</em>, <em>filters=None</em>, <em>colors=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#plotfrompollog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.plotfrompollog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot default including civil dates</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.propQU">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">propQU</tt><big>(</big><em>p</em>, <em>th</em>, <em>sp</em>, <em>sdth</em>, <em>estim='wk'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#propQU"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.propQU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate the delta theta error over the polarization
+angle, computing the new errors for theta, Q and U.</p>
+<p>Input:</p>
+<ul class="simple">
+<li>p, th: lists holding the P and theta values.</li>
+<li>sp, sdth: lists holding the P and delta theta errors.</li>
+</ul>
+<p>Return lists containing the new errors for theta,
+Q and U.: sth, sq, su.</p>
+<p>Formulas:</p>
+<p>sth = sqrt( sth0^2 + sdth^2 )
+sq = sqrt( (cos(2*th)*sp)^2 + (p*sin(2*th)*sth)**2 )
+su = sqrt( (sin(2*th)*sp)^2 + (p*cos(2*th)*sth)**2 )</p>
+<p>Unbias theta error using &#8216;estim&#8217; estimator:</p>
+<blockquote>
+<div><blockquote>
+<div>if p/sp &lt;= K,   sth0 = psi
+otherwise,      sth0 = propagated error</div></blockquote>
+<p>where K is given by the estimator related to the
+&#8216;estim&#8217; variable:</p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">&#8216;ml&#8217; : Maximum Likelihood (K=1.41, psi=51.96)</p>
+</li>
+<li><p class="first">&#8216;wk&#8217; : Wardle &amp; Kronberg (K=1.0, psi=51.96)</p>
+</li>
+<li><p class="first">&#8216;&#8217;   : None (K=0, psi=51.96)</p>
+</li>
+<li><dl class="first docutils">
+<dt>&#8216;mts&#8217;: Maier, Tenzer &amp; Santangelo (estimates</dt>
+<dd><p class="first last">from Bayesian analysis, psi=61.14)</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.queryout">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">queryout</tt><big>(</big><em>objdir</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b2453059a28&gt;</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#queryout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.queryout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call chooseout for &#8216;obj&#8217; at filter &#8216;f&#8217; (in &#8216;objdir&#8217;),
+print the graphs and query to the user if he wants
+to use the selected outs. If not, he musts answer
+what to use.</p>
+<dl class="docutils">
+<dt>&#8216;nstar&#8217; == star number inside &#8216;out&#8217; file (usefull when there are</dt>
+<dd>more than a single star inside .out)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.readTests">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">readTests</tt><big>(</big><em>tests</em>, <em>tags=None</em>, <em>flag=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#readTests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.readTests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read boolean list &#8216;tests&#8217; concerning to dictests
+dictionary and return a string list with tags and
+the flag value (&#8216;OK&#8217;,&#8217;E&#8217;,&#8217;W&#8217;)</p>
+<p>&#8216;tags&#8217; and &#8216;flag&#8217; are optional and are concerning to
+another tags already assigned and the current flag. The flag
+returned is the worst flag found between them
+(e.g., if input &#8216;flag&#8217; is &#8216;W&#8217; and tests results on flag
+&#8216;OK&#8217;, return flag &#8216;W&#8217;; if tests results in flag &#8216;E&#8217;,
+return &#8216;E&#8217;). Also, if they are given as input, return
+&#8216;tags&#8217;+tags concerning to &#8216;tests&#8217; list.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.readout">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">readout</tt><big>(</big><em>out</em>, <em>nstar=1</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#readout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.readout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the <a href="#id17"><span class="problematic" id="id18">*</span></a>.out file from IRAF reduction and return a float array</p>
+<p>Q   U        SIGMA   P       THETA  SIGMAtheor.  APERTURE  STAR</p>
+<dl class="docutils">
+<dt>&#8216;nstar&#8217; == star number inside &#8216;out&#8217; file (usefull when there are</dt>
+<dd>more than a single star inside .out)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.readoutMJD">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">readoutMJD</tt><big>(</big><em>out</em>, <em>nstar=1</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#readoutMJD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.readoutMJD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the &#8216;out&#8217; file from IRAF reduction in a float array (fout),
+appending the MJD date and the angle of the beams from
+calcite.</p>
+<dl class="docutils">
+<dt>&#8216;nstar&#8217; == star number inside &#8216;out&#8217; file. PS: calcice angle</dt>
+<dd>is allways evaluated using the first star coordinates.</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.serkowski">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">serkowski</tt><big>(</big><em>pmax</em>, <em>lmax</em>, <em>wlen</em>, <em>mode</em>, <em>pa=None</em>, <em>law='w82'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#serkowski"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.serkowski" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mode==1
+Receive ISP parameters &#8216;pmax&#8217;, &#8216;lmax&#8217; e &#8216;pa&#8217; and return
+the Stokes QU parameters concerning to the value
+of Serkowski&#8217;s law at wavelenght &#8216;wlen&#8217;.</p>
+<p>Mode==2
+Receive ISP parameters &#8216;pmax&#8217;, &#8216;lmax&#8217; and return
+the P value computed by the Serkowski&#8217;s law at
+wavelenght &#8216;wlen&#8217;.</p>
+<p>&#8216;wlen&#8217; and &#8216;lmax&#8217; must be in Angstrom.
+&#8216;wlen&#8217; can be &#8216;u&#8217;/&#8217;b&#8217;/&#8217;v&#8217;/&#8217;r&#8217;/&#8217;i&#8217; also.</p>
+<p>&#8216;law&#8217; defines what value use to K parameter:</p>
+<dl class="docutils">
+<dt>w82  -  Wilking (1982)</dt>
+<dd>K = 1.86*lmax - 0.1</dd>
+<dt>w80  -  Wilking (1980)</dt>
+<dd>K = 1.68*lmax - 0.002</dd>
+<dt>serk  -  Serkowski</dt>
+<dd>K = 1.15</dd>
+<dt>Serkowski&#8217;s Law:</dt>
+<dd>P = pmax*np.exp(-K*np.log(lmax/wlen)**2)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.setCCD">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">setCCD</tt><big>(</big><em>fitsfile</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#setCCD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.setCCD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set CCD name in global variable &#8216;ccd&#8217;.</p>
+<p>The CCD name can be: &#8216;ikon&#8217;, &#8216;ixon&#8217;, &#8216;301&#8217; or
+&#8216;ikon-14912&#8217; (the last one is the Ikon CCD with
+Deep Depletion).</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.sintLeff">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">sintLeff</tt><big>(</big><em>ccdn='ixon'</em>, <em>step=5.0</em>, <em>save=True</em>, <em>extens='pdf'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#sintLeff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.sintLeff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sintetizes the response curve, considering the
+CCD Quantum Efficience (QE) and filter transmitance
+from OPD and the stellar models from Pickles (1998).
+Interpolations are made by using cubic splines.</p>
+<p>This code DON&#8217;T use none curve for sky transmitance!</p>
+<p>Creates two data files:</p>
+<dl class="docutils">
+<dt>leff_stars_[ccdn].dat <span class="classifier-delimiter">:</span> <span class="classifier">table with l_eff calculated</span></dt>
+<dd>for each star type</dd>
+<dt>leff_[ccdn].dat <span class="classifier-delimiter">:</span> <span class="classifier">table with the parameters for the</span></dt>
+<dd>adjusted cubic function for l_eff(b-v)
+(or l_eff(u-b) to the filter U). The
+M-type stars were excluded from the
+adjusts, because the molecular lines
+were affecting these curves.</dd>
+<dt>&#8216;ccdn&#8217;:  CCD to use in QE curve</dt>
+<dd><blockquote class="first">
+<div><blockquote>
+<div>ixon: CON, Frame Transfer
+ikon: High Sensitive, Frame Transfer</div></blockquote>
+<dl class="docutils">
+<dt>ikon-14912: High Sensitive, Frame Transfer</dt>
+<dd>301: not avaible</dd>
+</dl>
+</div></blockquote>
+<p class="last">New eventual CCD files must sample the QE, at least,
+inside the range [2800,11000] Angstrom.</p>
+</dd>
+<dt>&#8216;step&#8217;: step, in angstrom, used for the integration</dt>
+<dd>(Simpson&#8217;s method) to calculate lambda_eff.
+Allowed values are 5, 10, 15, ..., 500.</dd>
+</dl>
+<p>FORMULAS:</p>
+<p>The lbd_eff is computed as <strong>the flux-weighted mean
+wavelenght in terms of photons</strong>:</p>
+<p>lbd_eff = int(lbd*phi(lbd) * d_lbd) / int(phi(lbd) * d_lbd)</p>
+<dl class="docutils">
+<dt>where  phi(lbd) = lbd * F_lbd * QE(lbd) * T(lbd)</dt>
+<dd>F_lbd: stellar flux in erg cm-2 s-1 A-1
+QE(lbd): curve for quantum efficience
+T(lbd):  curve for filter transmitance
+d_lbd: infinitesimal element of wavelength</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.sortLog">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">sortLog</tt><big>(</big><em>filename</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#sortLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.sortLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sort the <a href="#id19"><span class="problematic" id="id20">*</span></a>.out file</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.splitData">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">splitData</tt><big>(</big><em>night</em>, <em>path_raw='raw'</em>, <em>path_red='red'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#splitData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.splitData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split the raw files and reduced files for a night.</p>
+<dl class="docutils">
+<dt>Parameters:</dt>
+<dd>night: path to the night (this directory will be fully preserved)
+path_raw: directory with the raw data of the nights
+path_red: directory with the output files of reduction</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.splitData301">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">splitData301</tt><big>(</big><em>night</em>, <em>path_raw='raw'</em>, <em>path_red='red'</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#splitData301"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.splitData301" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Split the raw files and reduced files for a night, renaming according</dt>
+<dd>CCD iXon nomenclature.</dd>
+<dt>Parameters:</dt>
+<dd>night: path to the night (this directory will be fully preserved)
+path_raw: directory with the raw data of the nights
+path_red: directory with the output files of reduction</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.stdchk">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">stdchk</tt><big>(</big><em>stdname</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#stdchk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.stdchk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the standard star name contains a known name, and return
+its position in <cite>padroes.txt</cite>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.thtFactor">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">thtFactor</tt><big>(</big><em>MJD</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#thtFactor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.thtFactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the factor for polarization angle &#8216;theta&#8217;. This factor
+indicates when theta must be taken as 180-theta (factor==-1)
+or +theta (factor==+1).</p>
+<p>It&#8217;s based on engine of IAGPOL polarimeter.
+If MJD &lt; 57082.5, return -1 (including MJD=-1, for no assigned
+value); otherwise, return +1.</p>
+<p>Theta out from polrap is correct for a WP rotating in
+&#8216;counter-clockwise&#8217; direction, then:</p>
+<p>factor = -1 when WP rotating in clockwise
+factor = +1 when WP rotating in counter-clockwise</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.verStdPol">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">verStdPol</tt><big>(</big><em>std</em>, <em>filt</em>, <em>p</em>, <em>sig</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#verStdPol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.verStdPol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate z test for standard &#8216;std&#8217;, filter &#8216;filt&#8217;, comparing
+the observed polarization &#8216;p&#8217; +- &#8216;sig&#8217; and the published value.</p>
+<p>Return z = abs(ppub-p)/sqrt(sigpub^2+sig^2) or -1 if there is
+no such object or filter.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.verout">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">verout</tt><big>(</big><em>out</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>verbose=True</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#verout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.verout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to do tests on outfile &#8216;out&#8217; concerning to
+star number &#8216;nstar&#8217;, object name &#8216;obj&#8217; in filter &#8216;f&#8217;.
+Tests: (1) test if P_pub for standards is compatible with</p>
+<blockquote>
+<div><blockquote>
+<div>P_obs value within 10 sigmas (10 because
+std pol can changes with the time).</div></blockquote>
+<ol class="arabic" start="2">
+<li><p class="first">test if sig &lt; 3*sig_theorical.</p>
+</li>
+<li><dl class="first docutils">
+<dt>test if there are some standard star (only if</dt>
+<dd><p class="first last">&#8216;obj&#8217; is a target star)</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li>If verbose==True, show warnings in screen</li>
+<li>In objdir==None, outfile is supposed in current dir</li>
+</ul>
+<p>Return a boolean list with three components concerning
+to the tests (1)-(3) above + log string. If some test has failed,
+the concerning value is assigned as &#8220;True&#8221;; otherwise,
+&#8220;False&#8221;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.poltools.writeLog">
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">writeLog</tt><big>(</big><em>path</em>, <em>strin</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#writeLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.writeLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append &#8216;strin&#8217; string into &#8216;path&#8217;/polt.log file</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="phc.html"
+                        title="previous chapter"><strong>phc</strong>: module of astronomical functions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="releases.html"
+                        title="next chapter"><em>releases</em>: module to control PyHdust releases</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/poltools.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="releases.html" title="releases: module to control PyHdust releases"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="phc.html" title="phc: module of astronomical functions"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

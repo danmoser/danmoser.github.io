@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>Parceria USP-Rice BlueGene (BG)</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7614 2013-02-21 15:55:51Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="parceria-usp-rice-bluegene-bg">
+<h1 class="title">Parceria USP-Rice BlueGene (BG)</h1>
+
+<div class="contents topic" id="indice">
+<p class="topic-title first">Índice</p>
+<ul class="simple">
+<li><a class="reference internal" href="#iii-workshop" id="id2">III Workshop</a><ul>
+<li><a class="reference internal" href="#programacao-parcial" id="id3">Programação (parcial)</a></li>
+<li><a class="reference internal" href="#infos" id="id4">Infos</a><ul>
+<li><a class="reference internal" href="#usp-rice-resources" id="id5">USP-Rice Resources</a></li>
+<li><a class="reference internal" href="#other-resources-and-infos" id="id6">Other resources and infos</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#h30-paralelizacao-automatica" id="id7">10h30: Paralelização automática</a></li>
+<li><a class="reference internal" href="#h00-ibm-hpc-eduardo-rodrigues" id="id8">14h00: IBM (HPC) Eduardo Rodrigues</a><ul>
+<li><a class="reference internal" href="#mpi" id="id9">MPI</a></li>
+<li><a class="reference internal" href="#openmp" id="id10">openMP</a></li>
+<li><a class="reference internal" href="#ampi" id="id11">AMPI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#h45-solving-qcd-do-bg-p-ao-bg-q" id="id12">14h45: Solving QCD: do BG/P ao BG/Q</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#antigo-usando-os-recursos-rice" id="id13">Antigo (Usando os recursos Rice)</a><ul>
+<li><a class="reference internal" href="#usando-o-bg-p" id="id14">Usando o BG/P</a></li>
+<li><a class="reference internal" href="#compilando" id="id15">Compilando</a></li>
+<li><a class="reference internal" href="#queues-running" id="id16">Queues + Running</a></li>
+<li><a class="reference internal" href="#tests" id="id17">Tests</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usando-os-recursos-rice-ii-set-2015-jan-2016" id="id18">Usando os recursos Rice II - Set/2015-Jan/2016</a><ul>
+<li><a class="reference internal" href="#inscricao" id="id19">Inscrição</a></li>
+<li><a class="reference internal" href="#primeiros-passos" id="id20">Primeiros passos</a></li>
+<li><a class="reference internal" href="#exemplo-transferencia-de-arquivos" id="id21">Exemplo transferencia de arquivos</a></li>
+<li><a class="reference internal" href="#compilando-e-ajustando" id="id22">Compilando e ajustando</a></li>
+<li><a class="reference internal" href="#id1" id="id23">Queues + Running</a></li>
+<li><a class="reference internal" href="#testes" id="id24">Testes</a></li>
+<li><a class="reference internal" href="#additional-user-support-on-the-bg" id="id25">Additional User Support on the BG</a></li>
+<li><a class="reference internal" href="#extra" id="id26">Extra</a></li>
+<li><a class="reference internal" href="#outros-recursos" id="id27">Outros recursos</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="iii-workshop">
+<h1><a class="toc-backref" href="#id2">III Workshop</a></h1>
+<div class="section" id="programacao-parcial">
+<h2><a class="toc-backref" href="#id3">Programação (parcial)</a></h2>
+<ul class="simple">
+<li>8:30 Registration, welcome reception and breakfast/café da manhã.</li>
+<li>9:15 Opening talk. Vision of collaborative efforts between the universities and student exchanges. Prof. Dr. Vahan Agopyan (Vice-Reitoria da USP), Prof. Dr. José Eduardo Krieger (Pró-Reitoria de Pesquisa), Prof. Dr. José Onuchic (Rice University), Prof. Dr. João Eduardo Ferreira (STI – USP) and Prof. Dr. Carlos Antônio Ruggiero (IFSC) .</li>
+<li>10:00 Prof. Dr. Paul Whitford (Rice University). The BG collaboration, Past, Present, Future. The new available resources.</li>
+<li>10:30 Prof. Dr. Alfredo Goldman (IME) – Aula sobre Paralelização Automática.</li>
+<li>11:45 Open forum for new and existing users’ questions and answers. Traditional HPC and regular cluster usage.</li>
+<li>12:00 Lunch Time</li>
+<li>14:00 Eduardo Rodrigues – IBM Research Brasil:  “Programação paralela híbrida com MPI e OpenMP – uma abordagem prática”.</li>
+</ul>
+</div>
+<div class="section" id="infos">
+<h2><a class="toc-backref" href="#id4">Infos</a></h2>
+<ul class="simple">
+<li>24,576 cores = 84 teraflops</li>
+<li>Low-power processors, but massively parallel</li>
+<li>SMP mode ...</li>
+<li>VN (virtual node) 4 independent MPI process</li>
+<li>DUAL (dual node) 2 processors, 2 threads each</li>
+<li>SUSE Linux</li>
+<li>ppc450 compute cores</li>
+<li>BG/Q also requires cross compilation</li>
+</ul>
+<p>&quot;You should always start with scalability tests&quot;.</p>
+<p>MPI, openMP, hybrid MPI+openMP...</p>
+<p>Performance reproductible = compare the computing time a few times (and see if they are the same).</p>
+<p>HPC Toolkit (Mellor-Crunmmey) = compreensive resources information (idle processors, etc...)</p>
+<p>Possible competitive allocation process
+- User need to show scaling data !!!!</p>
+<div class="section" id="usp-rice-resources">
+<h3><a class="toc-backref" href="#id5">USP-Rice Resources</a></h3>
+<blockquote>
+<p><strong>BG/Q</strong>:</p>
+<ul class="simple">
+<li>2,1 GFLOPS/W</li>
+<li>16384</li>
+<li>16+1spare+1for O/S (cores per node)</li>
+<li>16GB per node</li>
+<li>Possible threads per core 4</li>
+<li>minimum nodes/job 32 (512 physical cores)</li>
+<li>Scratch disk space 120TB (2 weeks)</li>
+</ul>
+<p><strong>DaVinci</strong>:</p>
+<ul class="simple">
+<li>25 TeraFLOPS</li>
+<li>GPGPUs (Fermi)</li>
+<li>2,8GHz intel westmere</li>
+</ul>
+<p><strong>PowerOmics</strong></p>
+<ul class="simple">
+<li>10 TeraFLOPS</li>
+<li>3,0GHz POWER8 12 core processors</li>
+<li>For applications with very high memory demands</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="other-resources-and-infos">
+<h3><a class="toc-backref" href="#id6">Other resources and infos</a></h3>
+<p>If you need MILLIONS of CPU hours, XSEDE is for you.</p>
+<ul class="simple">
+<li>XSEDE requires a US researcher to be part of the them.</li>
+<li>In Europe, there is PRACE = similar opportunities.</li>
+</ul>
+<p>AGORA: Transição no cluster, do &quot;BlueGene P&quot; para &quot;BlueGene Q&quot;.</p>
+<p>Paul Whitford (available for help) <a class="reference external" href="mailto:pcw2&#64;rice.edu">pcw2&#64;rice.edu</a></p>
+</div>
+</div>
+<div class="section" id="h30-paralelizacao-automatica">
+<h2><a class="toc-backref" href="#id7">10h30: Paralelização automática</a></h2>
+<p>Modelo <em>polyhedral</em></p>
+<p>Exemplos práticos indo fonte original para GPU.</p>
+<p>Evolução HPC rápida: heterogeneidade dos elementos de processadomente, GPU, FPGAS (Xilinx, Altera), Xeon Phi (arranjo de processadores).</p>
+<p>Não há uma migração automática para usar as novas plataformas. Kits de desenvolvimento ainda não são maduros.</p>
+<ul class="simple">
+<li>Tradução <em>source-to-source</em> (via fonte)</li>
+<li>Tradução via binários!!!</li>
+</ul>
+<p>Abordagens</p>
+<blockquote>
+<ul class="simple">
+<li>Uso de diretivas de Compilação (principalmente C e Fortran).</li>
+<li>Paralelização automática</li>
+</ul>
+</blockquote>
+<p>Diretivas de compilação:</p>
+<blockquote>
+<p>O código é anotado com diretivas de preprocessamento (<tt class="docutils literal">#pragma</tt>)</p>
+<ul class="simple">
+<li>OpenMP</li>
+<li>hiCUDA</li>
+<li>CGCM</li>
+<li>PGI: OpenACGG</li>
+<li>OpenMC (OpenMP para GPUs)</li>
+</ul>
+</blockquote>
+<p>Paralelização automática:</p>
+<blockquote>
+<p>Nenhuma auteração do código</p>
+<ul class="simple">
+<li>Par4All</li>
+<li>KernelGen</li>
+<li>PPCG</li>
+<li>C-to-CUDA</li>
+</ul>
+</blockquote>
+<p>Modelo Polyhedral a partir de laços.
+Domínio, <em>scatering</em>, função de acesso à memória. <strong>SCoPs</strong></p>
+<p>Ferramentas que extraem: SCoPs, clan e pet</p>
+<p>Gerador de código para C: ClooG...</p>
+<p>PPCG usa as bibliotecas pet e isl ...</p>
+<p>O Polly é um projeto do LLVM que implementa o modelo polyhedral para código intermediário (LLVM-IR).</p>
+<p>LLVM (<a class="reference external" href="http://llvm.org">http://llvm.org</a>) é um projeto que fornece uma infraestrutura para a construção de compiladores (University of Illinois at Urbana-Champaign).</p>
+<p>Contato: Rogério Gonçalves (<a class="reference external" href="mailto:rogerioag&#64;utfpr.edu.br">rogerioag&#64;utfpr.edu.br</a>) e Alfredo Goldman (<a class="reference external" href="mailto:gold&#64;ime.usp.br">gold&#64;ime.usp.br</a>).</p>
+</div>
+<div class="section" id="h00-ibm-hpc-eduardo-rodrigues">
+<h2><a class="toc-backref" href="#id8">14h00: IBM (HPC) Eduardo Rodrigues</a></h2>
+<p>Tutorial - Programação paralela hĩbrida com MPI e open MP = uma abordagem prãtica</p>
+<p>IBM Research... Jobs open!</p>
+<p>AMPI - load balancing</p>
+<p>Paralelizações:</p>
+<ul class="simple">
+<li>Fork-join (compartilhamento de memória = multi-cores)</li>
+<li>Message passing</li>
+</ul>
+<p>Why MPI/openMP ?? Answer: They are open standards !</p>
+<div class="section" id="mpi">
+<h3><a class="toc-backref" href="#id9">MPI</a></h3>
+<p>6 comandos básicos:</p>
+<ul class="simple">
+<li>MPI_Init</li>
+<li>MPI_Finalize</li>
+<li>MPI_Comm_rank (tipo de id)</li>
+<li>MPI_Comm_size</li>
+<li>MPI_Send</li>
+<li>MPI_Recv</li>
+</ul>
+<pre class="code literal-block">
+#include &lt;mpi.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argr, char**, argv...)
+
+...
+
+mpi_finalize();
+return 0
+</pre>
+<p>Send/Recv flavors</p>
+<ul class="simple">
+<li>MPI_Send, MPI_Recv (processador pára)</li>
+<li>MPI_Isend, MPI_Irecv (processador non-idle)</li>
+<li>MPI_Bsend</li>
+<li>MPI_Ssend</li>
+<li>MPI_Rsend</li>
+</ul>
+<p>Collective communication (Broadcast)</p>
+<ul class="simple">
+<li>MPI_Bast</li>
+<li>MPI_All_Reduce</li>
+</ul>
+<p>Livro: Peter Pacheco - Introduction to  pararallel...</p>
+<p>(Some) New features</p>
+<ul class="simple">
+<li>Process creation (MPI_Comm_spawn); <em>não disponível no BG</em>.</li>
+<li>MPI I/O (melhor HDF5 sobre MPI I/O)</li>
+<li>Non-blocking collectives;</li>
+<li>One-sided communication</li>
+</ul>
+<p>(Tudo isso sem se preocupar com threads).</p>
+<p>4 Tipos de níveis:</p>
+<ul class="simple">
+<li>MPI_THREAD_SINGLE (sem threads)</li>
+<li>MPI_THREAD_FUNNELED - level 1: só um thread gera chamadas/comunicações</li>
+<li>MPI_THREAD_SERIALIZED - level 2: vários podem chamar, mas 1 de cada vez</li>
+<li>MPI_THREAD_MULTIPLE - level 3: todos ao mesmo tempo</li>
+</ul>
+<p>int MPI_Init_thread(...)</p>
+</div>
+<div class="section" id="openmp">
+<h3><a class="toc-backref" href="#id10">openMP</a></h3>
+<p>...  OpenPower</p>
+</div>
+<div class="section" id="ampi">
+<h3><a class="toc-backref" href="#id11">AMPI</a></h3>
+<p>MPI em Charm++</p>
+<p>Benefícios da virtualização: .......</p>
+</div>
+</div>
+<div class="section" id="h45-solving-qcd-do-bg-p-ao-bg-q">
+<h2><a class="toc-backref" href="#id12">14h45: Solving QCD: do BG/P ao BG/Q</a></h2>
+<p>Atillio IFSC</p>
+<p>Quantum Chromodynamics (análogo a Eletrodinâmica).</p>
+<p>QCD vs. QED !</p>
+<p>Técnica: QCD on a Lattice</p>
+</div>
+</div>
+<div class="section" id="antigo-usando-os-recursos-rice">
+<h1><a class="toc-backref" href="#id13">Antigo (Usando os recursos Rice)</a></h1>
+<div class="section" id="usando-o-bg-p">
+<h2><a class="toc-backref" href="#id14">Usando o BG/P</a></h2>
+<p>E-mail + conversa no <a class="reference external" href="mailto:lcca&#64;usp.br">lcca&#64;usp.br</a>. Então, aprovação do Paul (ele me mandou um e-mail).</p>
+<p>Acesso a máquina <strong>bluegene.rice.edu</strong> (aliased to bgp-fn.rcsg.rice.edu). If you are not on the Rice network, this is accomplished by tunneling a connection through shark.lcca.usp.br or gw.rcsg.rice.edu.</p>
+<p>If you do not have an account on shark, contact LCCA.</p>
+<p>gw.rcsg.rice.edu will use your Rice NetID account information.</p>
+<p><em>When using secure shell to transfer files, it helps to employ a simpler encryption algorithm, use '-c arcfour' to speed up transfers.</em></p>
+<p>E-mail para o <a class="reference external" href="mailto:lcca&#64;usp.br">lcca&#64;usp.br</a> em 17/04/15:</p>
+<pre class="literal-block">
+Eu já recebi a aprovação do Paul. Quais são os próximos passos???
+
+- O username (Rice NetID) será automaticamente gerado??
+
+    Foi. Userr dm#
+
+- Minha conta será para o BG/P, Q ou ambos? Pelo que eu entendi, o endereço bluegene.rice.edu apontará para o Q.
+Como acessar o P?
+
+    Só o P.
+
+- No site rice.usp.br, quando eu clico em &quot;Getting Started on BG/P&quot; ele automaticamente vai para a página do &quot;Q&quot;...
+Os procedimentos são os mesmos em ambos?
+
+- O número mínimo de cores a serem solicitados no Q são 512? Como (e onde) fazer os testes com meu código?
+Os testes deveriam ser feitos com menos cores...
+
+A referência do código desenvolvido pelo meu orientador é http://adslabs.org/adsabs/abs/2006ApJ...639.1081C/
+</pre>
+</div>
+<div class="section" id="compilando">
+<h2><a class="toc-backref" href="#id15">Compilando</a></h2>
+<p>mpi/gcc - erro no mpif90. Serial ok.</p>
+<p>mpi/fast (XL IBM compiler). mpif90/mpif77; Não usar xlf90/xlf ou xlc,
+usar <strong>bgxlf_r</strong> e <strong>bgxlc_r</strong>;</p>
+<pre class="code literal-block">
+...
+(.text+0x1f258): undefined reference to `fxdrrl'
+inicializa.o: In function `create_averaged_temp_file':
+(.text+0x1f9d0): undefined reference to `fxdrrl'
+inicializa.o: In function `create_averaged_temp_file':
+(.text+0x1f9ec): undefined reference to `fxdrrl'
+inicializa.o:(.text+0x1fa04): more undefined references to `fxdrrl' follow
+inicializa.o: In function `create_averaged_temp_file':
+(.text+0x1fb8c): undefined reference to `fxdrcls'
+inicializa.o: In function `create_averaged_temp_file':
+(.text+0x20050): undefined reference to `fxdrini'
+inicializa.o: In function `create_averaged_temp_file':
+...
+make: *** [../../runs/hdust/hdustparv2.02.bc] Error 1
+</pre>
+<p>Help: <a class="reference external" href="https://docs.rice.edu/confluence/display/ITDIY/Request+Help+with+Research+Computing+Resources">https://docs.rice.edu/confluence/display/ITDIY/Request+Help+with+Research+Computing+Resources</a></p>
+<p>The above link and HelpDesk are the same!!</p>
+</div>
+<div class="section" id="queues-running">
+<h2><a class="toc-backref" href="#id16">Queues + Running</a></h2>
+<p><a class="reference external" href="https://docs.rice.edu/confluence/display/ITDIY/IBM+Blue+Gene+Documentation">https://docs.rice.edu/confluence/display/ITDIY/IBM+Blue+Gene+Documentation</a></p>
+<pre class="code literal-block">
+#&#64; job_name = hello_dm#
+#&#64; comment = &quot;Hdust test&quot;
+#&#64; error = $(job_name).$(jobid).err
+#&#64; output = $(job_name).$(jobid).out
+#&#64; environment = COPY_ALL
+#&#64; wall_clock_limit = 00:30:00
+#&#64; notification = error
+#&#64; job_type = bluegene
+#&#64; class = devel
+#&#64; group = pcw2
+#&#64; bg_size = 128
+#&#64; queue
+
+/bgsys/drivers/ppcfloor/bin/mpirun -exe /bgpscratch/dm#/hdust/hdustparv2.02.bc \
+-mode VN -np 512 -args &quot; = hdust_bestar2.02.inp&quot;
+</pre>
+<p>The queue managener commands <tt class="docutils literal">llsubmit ./sample.bgq</tt>, <tt class="docutils literal">llq</tt> and <tt class="docutils literal">llcancel <span class="pre">bgp-fn.xxx</span></tt>.</p>
+</div>
+<div class="section" id="tests">
+<h2><a class="toc-backref" href="#id17">Tests</a></h2>
+<p><em>bestar2.02/mod01/mod01b.txt</em>; step1 = 500,000 photons; 33 *.temp files in 20 minutes.</p>
+<p><em>bestar2.02/mod01/mod01b.txt</em>; step1 = 2,000,000 photons; 33 *.temp files in 35 minutes.</p>
+<p>Figure below: blue, distribution; green, BG/P.</p>
+<img alt="figs/usp-rice_tests.png" src="figs/usp-rice_tests.png" style="width: 600px;" />
+<img alt="figs/usp-rice_tests2.png" src="figs/usp-rice_tests2.png" style="width: 600px;" />
+</div>
+</div>
+<div class="section" id="usando-os-recursos-rice-ii-set-2015-jan-2016">
+<h1><a class="toc-backref" href="#id18">Usando os recursos Rice II - Set/2015-Jan/2016</a></h1>
+<div class="section" id="inscricao">
+<h2><a class="toc-backref" href="#id19">Inscrição</a></h2>
+<p>Os passos são:</p>
+<ol class="arabic simple">
+<li>E-mail para o LCCA pedindo uma conta (com info. do HDUST e mini-projeto)</li>
+<li>(LCCA vai confirmar as infos. com o Alex, que responderá com um ok)</li>
+<li>(O LCCA vai encaminhar um e-mail ao Paul, na Rice)</li>
+<li>Preenche-se um formulário solicitando um Rice NetID (coloca-se senha, mas sem <em>username</em>). Informar o Paul como <em>sponsor</em>.</li>
+<li>Receber o Rice NetID (<em>username</em>)</li>
+<li>Preencher um segundo formulário pedindo acesso ao BG/Q</li>
+<li>(O Paul vai liberar o acesso) e pronto! (UFA)</li>
+</ol>
+<ul class="simple">
+<li>Send the following information from your USP email address to <a class="reference external" href="mailto:lcca&#64;usp.br">lcca&#64;usp.br</a>: Your name, position (i.e. grad student, post-doc, professor), department, the name of the PI (make sure to cc the PI when making the request, since they will need to confirm the request), software you want to use on the BG, estimated number of cores per calculation, and a 1-2 paragraph description of the types of calculations you want to perform.</li>
+</ul>
+<div class="line-block">
+<div class="line">Name: Daniel Moser Faes</div>
+<div class="line">Position: PhD Student</div>
+<div class="line">PI: Professor Alex Cavalieri Carciofi</div>
+<div class="line">Institution: IAG-USP</div>
+<div class="line">Code: User developed gfortran code with MPI</div>
+<div class="line">Description of research problem: 3D Non-LTE Monte Carlo simulations of radiative transfer in astrophysics environments (HDUST Code). Our code is capable of simulate winds, disks and dust in interaction with a given radiation field. Our goal is to study the circumstellar disks around Be stars.</div>
+<div class="line">Required software: Fortran and C compilers; MPI</div>
+<div class="line">Requested number of core hours and the number cores per job: Initially, we will study around a hundred of models. Each model will require approximately one hour of computation in 256 core of 3GHz.</div>
+</div>
+<ul class="simple">
+<li>After you receive confirmation from LCCA, request a Rice Guest Account here (<a class="reference external" href="https://my.rice.edu/GuestAccount/form.jsp">https://my.rice.edu/GuestAccount/form.jsp</a>). When requesting the Rice Account, indicate <a class="reference external" href="mailto:pcw2&#64;rice.edu">pcw2&#64;rice.edu</a> as your sponsor (DO NOT select &quot;BlueGene USP Allocation&quot; as the sponsor), and forward the LCCA approval email to that address. It is VERY important that you provide a valid email address when you request an account. If we can not contact you, then your accounts may be terminated without notice. Finally, if you do not obtain approval from LCCA first, the Rice Guest Account will not be approved.</li>
+</ul>
+<p>When your guest account is approved, you will be assigned a Rice NetID.  This will be your login information for all resources located at Rice, so don't lose it. Typically, the Rice ID will be activated within 24 hours. Once the Rice ID is active, we will activate your account on the BG/P. You will also be added to the USP BGP listserve. If you don't receive confirmation within 3 business days about the listserve, or BG/P account, please inquire with the sponsor (Paul Whitford, <a class="reference external" href="mailto:pcw2&#64;rice.edu">pcw2&#64;rice.edu</a>).</p>
+<p>Once your account is activated on the BG, you will need to connect via secure shell (bluegene.rice.edu). If you are not on the Rice network, this is accomplished by tunneling a connection through shark.lcca.usp.br or gw.rcsg.rice.edu. If you do not have an account on shark, contact LCCA. gw.rcsg.rice.edu will use your Rice NetID account information.</p>
+<p>Dúvidas aqui:
+<a class="reference external" href="http://usp.rice.edu">http://usp.rice.edu</a></p>
+</div>
+<div class="section" id="primeiros-passos">
+<h2><a class="toc-backref" href="#id20">Primeiros passos</a></h2>
+<p><a class="reference external" href="https://docs.rice.edu/confluence/display/ITDIY/Bluegene+Q+Getting+Started+Guide">https://docs.rice.edu/confluence/display/ITDIY/Bluegene+Q+Getting+Started+Guide</a></p>
+<ol class="arabic">
+<li><p class="first">$ ssh <a class="reference external" href="mailto:dm#&#64;gw.rcsg.rice.edu">dm#&#64;gw.rcsg.rice.edu</a></p>
+</li>
+<li><p class="first">$ ssh bluegene.rice.edu</p>
+</li>
+<li><p class="first">Módulos <a class="reference external" href="https://docs.rice.edu/confluence/display/ITDIY/Customizing+Your+Environment+with+the+Module+Command">https://docs.rice.edu/confluence/display/ITDIY/Customizing+Your+Environment+with+the+Module+Command</a></p>
+<blockquote>
+<div class="line-block">
+<div class="line">$ module avail</div>
+<div class="line">$ module load mpi</div>
+<div class="line">$ module list</div>
+<div class="line"># $ module purge</div>
+</div>
+</blockquote>
+</li>
+<li><p class="first">mkdir /bgpscratch/<cite>whoami</cite></p>
+</li>
+</ol>
+<p>Submit ALL jobs from your scratch directory, and job output should only be written to the scratch directory. Executables may remain in your home directory, but do not write to the home during a job.
+Purge Policies</p>
+<p>Files in the scratch directory that are more than 2 weeks old will be removed automatically.</p>
+<ol class="arabic simple" start="5">
+<li>Job scheduling is done via Loadleveler.</li>
+</ol>
+<p>Cores are allocated in blocks of 512 CORES [bg_size=128(*4)]. If you request less than this, you will still be allocated 512 CORES, meaning that the additional cores are going to be sitting idle. Whenever your number of cores is not an integer multiple of 512, there will be idle cores. Please ensure that you do not waste cycles unintentionally.</p>
+</div>
+<div class="section" id="exemplo-transferencia-de-arquivos">
+<h2><a class="toc-backref" href="#id21">Exemplo transferencia de arquivos</a></h2>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>scp /data/hdust.zip dm#&#64;gw.rcsg.rice.edu:/tmp
+The Rice University Network - Unauthorized access is prohibited
+dm#&#64;gw.rcsg.rice.edu<span class="literal string single">'s password:
+hdust.zip                         100%   35MB   3.9MB/s   00:09
+
+$ scp gw.rcsg.rice.edu:/tmp/hdust.zip .
+Warning: Permanently added '</span>gw.rcsg.rice.edu,128.42.60.30<span class="literal string single">' (RSA) to the list of known hosts.
+The Rice University Network - Unauthorized access is prohibited
+dm#&#64;gw.rcsg.rice.edu'</span>s password:
+hdust.zip                                           100%   35MB  35.2MB/s   00:00
+</pre>
+</div>
+<div class="section" id="compilando-e-ajustando">
+<h2><a class="toc-backref" href="#id22">Compilando e ajustando</a></h2>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>vim xdr/v1.06/Makefile
+</pre>
+<pre class="literal-block">
+CC = bgxlc_r
+COPTS =  -c -O -DAIX
+F77 = bgxlf_r
+FOPTS = -c -O
+</pre>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>vim fortran/hdustv2.02/Makefile
+</pre>
+<pre class="literal-block">
+CFLAGS = -O2
+FC = bgxlf95_r
+FC2 = bgxlf_r
+...
+.f.o:
+    $(FC2) $(CFLAGS) -c $*.f
+</pre>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>module load mpi
+<span class="comment"># In the *special* hdustparv2.02 directory, i.e., replace the files with the following ones:
+</span><span class="name variable">$ </span>wget http://dl.dropbox.com/u/6569986/transfer/hdustparv2.02bgp.zip
+<span class="comment">#
+</span><span class="name variable">$ </span>vim fortran/hdustparv2.02bgq/Makefile
+</pre>
+<pre class="literal-block">
+CFLAGS = -O2
+FC = mpixlf95_r
+FC2 = mpixlf77_r
+...
+.f.o:
+    $(FC2) $(CFLAGS) -c $*.f
+</pre>
+<p>E também tem que mudar a pasta temporária dos <cite>controls</cite>:</p>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span><span class="name builtin">cd</span> /bgqscratch/<span class="literal string backtick">`</span>whoami<span class="literal string backtick">`</span>/hdust/runs/hdust
+<span class="name variable">$ </span>mkdir ../tmp
+<span class="name variable">$ </span>vim bestar2.02/controls/controls.txt
+<span class="comment"># line 63:  Path = '../tmp/'</span>
+</pre>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id23">Queues + Running</a></h2>
+<p><a class="reference external" href="https://docs.rice.edu/confluence/pages/viewpage.action?pageId=49974118">https://docs.rice.edu/confluence/pages/viewpage.action?pageId=49974118</a></p>
+<p>Create the file <cite>job.cmd</cite>:</p>
+<pre class="literal-block">
+#&#64; job_name = hdust
+#&#64; comment = &quot;HDUST run&quot;
+#&#64; error = $(job_name).$(bg_size).err
+#&#64; output = $(job_name).$(bg_size).out
+#&#64; environment = COPY_ALL
+#&#64; wall_clock_limit = 24:00:00
+#&#64; notification = error
+#&#64; job_type = bluegene
+#&#64; class = usp
+#&#64; group = usp
+#&#64; bg_size = 32
+#&#64; queue
+
+EXE=&quot;/home/dmf#/hdust/runs/hdust/hdustparv2.02.bc&quot;
+ARGS=&quot; = beauty/mod01/all.inp&quot;
+
+runjob --np 512 --ranks-per-node=16 --exe $EXE --args $ARGS
+</pre>
+<pre class="code bash literal-block">
+<span class="comment"># Submit job
+</span><span class="name variable">$ </span>llsubmit job.cmd
+<span class="comment"># see the queue
+</span><span class="name variable">$ </span>llq
+<span class="comment"># cancel jobs
+</span><span class="name variable">$ </span>llcancel jobID
+</pre>
+</div>
+<div class="section" id="testes">
+<h2><a class="toc-backref" href="#id24">Testes</a></h2>
+<p><strong>BgQ</strong> 512 cores:
+- step1, 10000000, 3.2 min = ~6500 f/min/core
+- step1_refine, 30000000, 8.5 min = ~6500 f/min/core
+- SED (Sob=0), 22500000, 6 min = ~7300 f/min/core</p>
+<p><strong>Acrux</strong> 48 cores:
+- step1, 2500000, 4 min = ~13000 f/min/core
+- step1_refine, 12000000, 19 min = ~13000 f/min/core
+- SED (Sob=0), 1350000000, 370 min = ~76013 f/min/core</p>
+</div>
+<div class="section" id="additional-user-support-on-the-bg">
+<h2><a class="toc-backref" href="#id25">Additional User Support on the BG</a></h2>
+<blockquote>
+<p>There are many people available to help you if you encounter troubles when using the BG. For USP users, you can always email questions to LCCA. All users can also contact Paul Whitford (<a class="reference external" href="mailto:pcw2&#64;rice.edu">pcw2&#64;rice.edu</a>) for any questions that you may have. For assistance running specific applications, you can contact our technical staff member, Xiaoqin Huang at <a class="reference external" href="mailto:xh14&#64;rice.edu">xh14&#64;rice.edu</a>.</p>
+<p>If you are running on BG, and you find that your jobs simply stop working, then there may be an issue with the BG/P itself.  In that case, it is recommended that you file a ticket with the RCSG staff, using the RCSG help request page (<a class="reference external" href="https://docs.rice.edu/confluence/display/ITDIY/Request+Help+with+Research+Computing+Resources">https://docs.rice.edu/confluence/display/ITDIY/Request+Help+with+Research+Computing+Resources</a>).  When filing a ticket, the more information you provide, the more helpful they can be.  For example, send the full error message issued when the job crashed, what directory the job was sent from, what the job number was, etc.</p>
+</blockquote>
+</div>
+<div class="section" id="extra">
+<h2><a class="toc-backref" href="#id26">Extra</a></h2>
+<pre class="literal-block">
+Dear,
+After a code upgrade, we are trying to run our MPI fortran code (HDUST) again at BlueGene. We had some issues in the code last May (2015) still at BGP and Mr. Qiyou Jiang helped us at that time.
+
+The code different sources are:
+- Serial: /home/dmf7/hdust/fortran/hdustv2.02/
+- Parallel (v2.02 corrected version of Mr. Jiang): /home/dmf7/hdust/fortran/hdustparv2.02bgp/
+- Parallel (new version): /home/dmf7/hdust/fortran/hdustparv2.021/
+
+The GNU executables ends with .gc and XL with .bc (/bgqscratch/dmf7/hdust/)
+
+First issue: when I compile the serial code with GNU compilers, it works nicely. When I compile it with XL, I get
+&quot;Ilegal instruction (core image recorded)&quot;
+GNU: ./hdustv2.02.gc input = hdust_bestar2.02.inp
+XL: ./hdustv2.02.bc input = hdust_bestar2.02.inp
+Probably the source of the error is at the SUBROUTINE setup_rigid_star() [line 3672, input_v2.f90]
+
+comment: the codes makes use of a library called XDR. When compiling the parallel version of HDUST with MPI/GCC, the MPI only compiles if the XDR library was compiled with XL compilers (!?).
+On the other hand, the GNU HDUST serial version only works if XDR was compiled with GNU compilers.
+
+Second: The new version (v2.021) is working on x86-based machines, but here it appears that there is an MPI communication error. For example, the status of each slave returning to the master is indicated by the number of photons in the output. It should never be zero, but this is what we are receiving (hdust*.out files).
+
+Could you help us again debugging the new version?
+Regards,
+Daniel
+</pre>
+</div>
+<div class="section" id="outros-recursos">
+<h2><a class="toc-backref" href="#id27">Outros recursos</a></h2>
+<p>Acessos além do BG/P-Q devem ser negociados... DaVinci, STIC, etc...</p>
+</div>
+</div>
+</div>
+</body>
+</html>

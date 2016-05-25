@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>oifits: auxiliary module to read and write oifits files &mdash; Python tools for the BeACoN group Beta documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'Beta',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
+    <link rel="next" title="phc: module of astronomical functions" href="phc.html" />
+    <link rel="prev" title="jdcal: auxiliary module to convert between calendars" href="jdcal.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="phc.html" title="phc: module of astronomical functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="jdcal.html" title="jdcal: auxiliary module to convert between calendars"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pyhdust.oifits">
+<span id="oifits-auxiliary-module-to-read-and-write-oifits-files"></span><h1><em>oifits</em>: auxiliary module to read and write oifits files<a class="headerlink" href="#module-pyhdust.oifits" title="Permalink to this headline">¶</a></h1>
+<p>PyHdust auxiliary module: third-part module for reading/writing OIFITS 
+files.</p>
+<p>I made some modifications, but I keep the original README below.</p>
+<p>This module is NOT related to the OIFITS Python module provided at
+<a class="reference external" href="http://www.mrao.cam.ac.uk/research/OAS/oi_data/oifits.html">http://www.mrao.cam.ac.uk/research/OAS/oi_data/oifits.html</a>
+It is a (better) alternative.</p>
+<p>To open an existing OIFITS file, use the oifits.open(filename)
+function.  This will return an oifits object with the following
+members (any of which can be empty dictionaries or numpy arrays):</p>
+<blockquote>
+<div><p>array: a dictionary of interferometric arrays, as defined by the
+OI_ARRAY tables.  The dictionary key is the name of the array
+(ARRNAME).</p>
+<p>target: a numpy array of targets, as defined by the rows of the
+OI_TARGET table.</p>
+<p>wavelength: a dictionary of wavelength tables (OI_WAVELENGTH).  The
+dictionary key is the name of the instrument/settings (INSNAME).</p>
+<p>vis, vis2 and t3: numpy arrays of objects containing all the
+measurement information.  Each list member corresponds to a row in
+an OI_VIS/OI_VIS2/OI_T3 table.</p>
+</div></blockquote>
+<p>This module makes an ad-hoc, backwards-compatible change to the OIFITS
+revision 1 standard originally described by Pauls et al., 2005, PASP,
+117, 1255.  The OI_VIS and OI_VIS2 tables in OIFITS files produced by
+this file contain two additional columns for the correlated flux,
+CFLUX and CFLUXERR , which are arrays with a length corresponding to
+the number of wavelength elements (just as VISAMP/VIS2DATA).</p>
+<p>The main purpose of this module is to allow easy access to your OIFITS
+data within Python, where you can then analyze it in any way you want.
+As of version 0.3, the module can now be used to create OIFITS files
+from scratch without serious pain.  Be warned, creating an array table
+from scratch is probably like nailing jelly to a tree.  In a future
+verison this will become easier.</p>
+<p>The module also provides a simple mechanism for combining multiple
+oifits objects, achieved by using the &#8216;+&#8217; operator on two oifits
+objects: result = a + b.  The result can then be written to a file
+using result.save(filename).</p>
+<p>Many of the parameters and their meanings are not specifically
+documented here.  However, the nomenclature mirrors that of the OIFITS
+standard, so it is recommended to use this module with the PASP
+reference above in hand.</p>
+<p>Beginning with version 0.3, the OI_VIS/OI_VIS2/OI_T3 classes now use
+masked arrays for convenience, where the mask is defined via the
+&#8216;flag&#8217; member of these classes.  Beware of the following subtlety: as
+before, the array data are accessed via (for example) OI_VIS.visamp;
+however, OI_VIS.visamp is just a method which constructs (on the fly)
+a masked array from OI_VIS._visamp, which is where the data are
+actually stored.  This is done transparently, and the data can be
+accessed and modified transparently via the &#8220;visamp&#8221; hidden attribute.
+The same goes for correlated fluxes, differential/closure phases,
+triple products, etc.  See the notes on the individual classes for a
+list of all the &#8220;hidden&#8221; attributes.</p>
+<p>Example of OIfits merge (same target):</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">pyhdust.oifits</span> <span class="kn">as</span> <span class="nn">oifits</span>
+<span class="n">oidata1</span> <span class="o">=</span> <span class="n">oifits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;file1.fits&#39;</span><span class="p">)</span>
+<span class="n">oidata2</span> <span class="o">=</span> <span class="n">oifits</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s">&#39;file2.fits&#39;</span><span class="p">)</span>
+<span class="n">oifits</span><span class="o">.</span><span class="n">matchtargetbyname</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">merge</span> <span class="o">=</span> <span class="n">oidata1</span> <span class="o">+</span> <span class="n">oidata2</span>
+<span class="n">oimerge</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">&#39;merged.fits&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">co-author:</th><td class="field-body">Daniel Moser</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">Copyright 2014 Paul Boley</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="pyhdust.oifits.AMBER_SPECTRUM">
+<em class="property">class </em><tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">AMBER_SPECTRUM</tt><big>(</big><em>wavelength</em>, <em>interfspec</em>, <em>interfspecerr</em>, <em>spectrum</em>, <em>spectrumerr</em>, <em>eff_wave</em>, <em>eff_band=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#AMBER_SPECTRUM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.AMBER_SPECTRUM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for AMBER_SPECTRUM</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyhdust.oifits.OI_ARRAY">
+<em class="property">class </em><tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">OI_ARRAY</tt><big>(</big><em>frame</em>, <em>arrxyz</em>, <em>stations=()</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#OI_ARRAY"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.OI_ARRAY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains all the data for a single OI_ARRAY table.  Note the
+hidden convenience attributes latitude, longitude, and altitude.</p>
+<dl class="method">
+<dt id="pyhdust.oifits.OI_ARRAY.info">
+<tt class="descname">info</tt><big>(</big><em>verbose=0</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#OI_ARRAY.info"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.OI_ARRAY.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print the array&#8217;s center coordinates.  If verbosity &gt;= 1,
+print information about each station.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pyhdust.oifits.OI_STATION">
+<em class="property">class </em><tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">OI_STATION</tt><big>(</big><em>tel_name=None, sta_name=None, diameter=None, staxyz=[None, None, None]</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#OI_STATION"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.OI_STATION" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class corresponds to a single row (i.e. single
+station/telescope) of an OI_ARRAY table.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyhdust.oifits.OI_T3">
+<em class="property">class </em><tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">OI_T3</tt><big>(</big><em>timeobs</em>, <em>int_time</em>, <em>t3amp</em>, <em>t3amperr</em>, <em>t3phi</em>, <em>t3phierr</em>, <em>flag</em>, <em>u1coord</em>, <em>v1coord</em>, <em>u2coord</em>, <em>v2coord</em>, <em>wavelength</em>, <em>target</em>, <em>array=None</em>, <em>station=(None</em>, <em>None</em>, <em>None)</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#OI_T3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.OI_T3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for storing triple product and closure phase data.
+To access the data, use the following hidden attributes:</p>
+<p>t3amp, t3amperr, t3phi, t3phierr</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyhdust.oifits.OI_VIS">
+<em class="property">class </em><tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">OI_VIS</tt><big>(</big><em>timeobs</em>, <em>int_time</em>, <em>visamp</em>, <em>visamperr</em>, <em>visphi</em>, <em>visphierr</em>, <em>flag</em>, <em>ucoord</em>, <em>vcoord</em>, <em>wavelength</em>, <em>target</em>, <em>array=None</em>, <em>station=(None</em>, <em>None)</em>, <em>cflux=None</em>, <em>cfluxerr=None</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#OI_VIS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.OI_VIS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for storing visibility amplitude and differential phase data.
+To access the data, use the following hidden attributes:</p>
+<p>visamp, visamperr, visphi, visphierr, flag;
+and possibly cflux, cfluxerr.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="pyhdust.oifits.OI_VIS2">
+<em class="property">class </em><tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">OI_VIS2</tt><big>(</big><em>timeobs</em>, <em>int_time</em>, <em>vis2data</em>, <em>vis2err</em>, <em>flag</em>, <em>ucoord</em>, <em>vcoord</em>, <em>wavelength</em>, <em>target</em>, <em>array=None</em>, <em>station=(None</em>, <em>None)</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#OI_VIS2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.OI_VIS2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for storing squared visibility amplitude data.
+To access the data, use the following hidden attributes:</p>
+<p>vis2data, vis2err</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.oifits.getDate">
+<tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">getDate</tt><big>(</big><em>hdu</em>, <em>hdulist</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#getDate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.getDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the header value of DATE-OBS from a hdu.
+If it is not valid, take it from &#8220;hdulist[0]&#8221;.</p>
+<p>DEFINITION: The date of the observation, in the format specified in the
+FITS Standard.  The old date format was &#8216;yy/mm/dd&#8217; and may be used only
+for dates from 1900 through 1999.  The new Y2K compliant date format is
+&#8216;yyyy-mm-dd&#8217; or &#8216;yyyy-mm-ddTHH:MM:SS[.sss]&#8217;.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pyhdust.oifits.open">
+<tt class="descclassname">pyhdust.oifits.</tt><tt class="descname">open</tt><big>(</big><em>filename</em>, <em>quiet=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/oifits.html#open"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.oifits.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open an OIFITS file.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="jdcal.html"
+                        title="previous chapter"><em>jdcal</em>: auxiliary module to convert between calendars</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="phc.html"
+                        title="next chapter"><strong>phc</strong>: module of astronomical functions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/oifits.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="phc.html" title="phc: module of astronomical functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="jdcal.html" title="jdcal: auxiliary module to convert between calendars"
+             >previous</a> |</li>
+        <li><a href="index.html">Python tools for the BeACoN group Beta documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015-2016, D. Moser.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
