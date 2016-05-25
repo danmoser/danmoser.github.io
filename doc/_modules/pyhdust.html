@@ -23,6 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="../index.html" />
     <link rel="up" title="Module code" href="index.html" /> 
   </head>
@@ -52,12 +53,13 @@
 <span class="sd">&quot;&quot;&quot;PyHdust main module: Hdust tools.</span>
 
 <span class="sd">This module contains:</span>
+
 <span class="sd">- PyHdust package routines</span>
 <span class="sd">- Hdust I/O functions</span>
 <span class="sd">- Hdust useful routines and plots</span>
-<span class="sd">- Be quantities convertions</span>
-<span class="sd">- Astro useful and Plots</span>
-<span class="sd">- Astro filters tools</span>
+<span class="sd">- Be stars quantities conversions</span>
+<span class="sd">- Astronomic useful and plotting functions</span>
+<span class="sd">- Astronomic filters tools</span>
 
 <span class="sd">:license: GNU GPL v3.0 https://github.com/danmoser/pyhdust/blob/master/LICENSE</span>
 <span class="sd">&quot;&quot;&quot;</span>
@@ -91,10 +93,9 @@
 
 <span class="c"># Package tools</span>
 <div class="viewcode-block" id="hdtpath"><a class="viewcode-back" href="../pyhdust.html#pyhdust.hdtpath">[docs]</a><span class="k">def</span> <span class="nf">hdtpath</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; Return the path of the module.</span>
-
-<span class="sd">    *no param*</span>
+    <span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">    :rtype: str</span>
+<span class="sd">    :returns: The module path.</span>
 
 <span class="sd">    :Example:</span>
 
@@ -106,15 +107,16 @@
 
 
 <span class="c"># Hdust I/O</span></div>
-<div class="viewcode-block" id="sed2info"><a class="viewcode-back" href="../pyhdust.html#pyhdust.sed2info">[docs]</a><span class="k">def</span> <span class="nf">sed2info</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Read info from SED2 file.</span>
+<div class="viewcode-block" id="sed2info"><a class="viewcode-back" href="../pyhdust.html#pyhdust.sed2info">[docs]</a><span class="k">def</span> <span class="nf">sed2info</span><span class="p">(</span><span class="n">sfile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Read info from a HDUST SED2 file.</span>
 
-<span class="sd">    INPUT: file (path string)</span>
+<span class="sd">    :type  sfile: str</span>
+<span class="sd">    :param sfile: HDUST SED2 file path.</span>
 
-<span class="sd">    OUTPUT: nlbd, nobs, Rstar, Rwind (as floats)</span>
+<span class="sd">    :rtype: tuple of float variables</span>
+<span class="sd">    :returns: HDUST parameters *nlbd, nobs, Rstar, Rwind*</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">f0</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">sfile</span><span class="p">,</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
     <span class="n">fcont</span> <span class="o">=</span> <span class="n">f0</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
     <span class="n">f0</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">info</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
@@ -126,29 +128,32 @@
     <span class="k">return</span> <span class="n">info</span>
 
 </div>
-<div class="viewcode-block" id="readsed2"><a class="viewcode-back" href="../pyhdust.html#pyhdust.readsed2">[docs]</a><span class="k">def</span> <span class="nf">readsed2</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Read data from SED2 file.</span>
+<div class="viewcode-block" id="readsed2"><a class="viewcode-back" href="../pyhdust.html#pyhdust.readsed2">[docs]</a><span class="k">def</span> <span class="nf">readsed2</span><span class="p">(</span><span class="n">sfile</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Read data from HDUST SED2 file.</span>
 
-<span class="sd">    INPUT: file (path string)</span>
+<span class="sd">    Note: this format is different of **readfullsed2**.</span>
 
-<span class="sd">    OUTPUT: array[nobs*nlbd,-1]</span>
-<span class="sd">        number of columns from SED2file replaces &quot;-1&quot;.</span>
-<span class="sd">        NOTE: this format is different of `readfullsed2`.</span>
+<span class="sd">    :type sfile: str</span>
+<span class="sd">    :param sfile: HDUST SED2 file path.</span>
+
+<span class="sd">    :rtype: np.array[nobs*nlbd, -1] (number of columns from SED2 file replaces </span>
+<span class="sd">        &quot;-1&quot;.)</span>
+<span class="sd">    :returns: HDUST SED2 file content.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">nlbd</span><span class="p">,</span> <span class="n">nobs</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">,</span> <span class="n">Rwind</span> <span class="o">=</span> <span class="n">sed2info</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
+    <span class="n">nlbd</span><span class="p">,</span> <span class="n">nobs</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">,</span> <span class="n">Rwind</span> <span class="o">=</span> <span class="n">sed2info</span><span class="p">(</span><span class="n">sfile</span><span class="p">)</span>
     <span class="n">sed2data</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sed2data</span>
 
 </div>
 <div class="viewcode-block" id="readfullsed2"><a class="viewcode-back" href="../pyhdust.html#pyhdust.readfullsed2">[docs]</a><span class="k">def</span> <span class="nf">readfullsed2</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Read data from FULLSED2 file.</span>
+    <span class="sd">&quot;&quot;&quot; Read data from HDUST fullSED2 file.</span>
 
-<span class="sd">    INPUT: file (path string)</span>
+<span class="sd">    :type sfile: str</span>
+<span class="sd">    :param sfile: HDUST fullSED2 file path.</span>
 
-<span class="sd">    OUTPUT: array[nobs,nlbd,-1]</span>
-<span class="sd">        number of columns from SED2file replaces &quot;-1&quot;</span>
+<span class="sd">    :rtype: np.array[nobs, nlbd, -1] (number of columns from fullSED2 file </span>
+<span class="sd">        replaces &quot;-1&quot;.)</span>
+<span class="sd">    :returns: HDUST fullSED2 file content.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">nlbd</span><span class="p">,</span> <span class="n">nobs</span><span class="p">,</span> <span class="n">Rstar</span><span class="p">,</span> <span class="n">Rwind</span> <span class="o">=</span> <span class="n">sed2info</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
     <span class="n">sed2data</span> <span class="o">=</span> <span class="n">_np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -157,7 +162,7 @@
 
 </div>
 <div class="viewcode-block" id="readtemp"><a class="viewcode-back" href="../pyhdust.html#pyhdust.readtemp">[docs]</a><span class="k">def</span> <span class="nf">readtemp</span><span class="p">(</span><span class="n">tfile</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Read *.temp file</span>
+    <span class="sd">&quot;&quot;&quot; Read HDUST temp file</span>
 
 <span class="sd">    - ncr = número de células da simulação na coordenada radial</span>
 <span class="sd">    - ncmu = número de células da simulação na coordenada latitudinal</span>
@@ -176,7 +181,17 @@
 
 <span class="sd">    `data` format is: `data[nLTE+6, ncr, ncmu, ncphi]`</span>
 
-<span class="sd">    Temperature are in `data[3, ...]`. More info see *plottemp* function.</span>
+<span class="sd">    .. seealso::</span>
+
+<span class="sd">        Temperature are in `data[3, ...]`. More info. see :py:func:`plottemp` </span>
+<span class="sd">        function.</span>
+
+<span class="sd">    :type sfile: str</span>
+<span class="sd">    :param sfile: HDUST fullSED2 file path.</span>
+
+<span class="sd">    :rtype: np.array[nobs, nlbd, -1] (number of columns from fullSED2 file </span>
+<span class="sd">        replaces &quot;-1&quot;.)</span>
+<span class="sd">    :returns: HDUST fullSED2 file content.</span>
 
 <span class="sd">    OUTPUT = ncr,ncmu,ncphi,nLTE,nNLTE,Rstar,Ra,beta,data,pcr,pcmu,pcphi</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -1550,14 +1565,13 @@
 
 <span class="c"># Filters tools</span></div>
 <div class="viewcode-block" id="doFilterConv"><a class="viewcode-back" href="../pyhdust.html#pyhdust.doFilterConv">[docs]</a><span class="k">def</span> <span class="nf">doFilterConv</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">filt</span><span class="p">,</span> <span class="n">zeropt</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Return the convolved filter total flux for a given flux profile y0,</span>
+    <span class="sd">r&quot;&quot;&quot; Return the convolved filter total flux for a given flux profile y0,</span>
 <span class="sd">    at wavelengths x0.</span>
 
 <span class="sd">    .. math::</span>
 
-<span class="sd">        zeropt = \frac{\int F(\lambda) Sp(\lambda)\,d\lambda}{\int F(\lambda)</span>
-<span class="sd">            \,d\lambda} </span>
+<span class="sd">        \text{zero}_{\rm pt} = \frac{\int F(\lambda) Sp(\lambda)\,d\lambda}</span>
+<span class="sd">        {\int F(\lambda)\,d\lambda} </span>
 
 <span class="sd">    INPUT: x0 lambda array (**Angstroms**), y0 flux array, filter (string, </span>
 <span class="sd">    uppercase for standard filters)</span>

@@ -23,6 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
     <link rel="next" title="releases: module to control PyHdust releases" href="releases.html" />
     <link rel="prev" title="phc: module of astronomical functions" href="phc.html" /> 
@@ -81,7 +82,7 @@ beams for one same calcite.</p>
 
 <dl class="function">
 <dt id="pyhdust.poltools.chooseout">
-<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">chooseout</tt><big>(</big><em>objdir</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b24530598c0&gt;</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#chooseout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.chooseout" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">chooseout</tt><big>(</big><em>objdir</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2af6b4973758&gt;</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#chooseout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.chooseout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Olha na noite, qual(is) <a href="#id3"><span class="problematic" id="id4">*</span></a>.OUT(s) de um filtro que tem o menor erro.</p>
 <p>Retorna um mais valores para toda a sequencia (i.e., pasta).
 Criterios definidos no anexo de polarimetria.</p>
@@ -327,7 +328,7 @@ S_i = | sx_i^2  sxy_i^2| = <a href="#id11"><span class="problematic" id="id12">|
 
 <dl class="function">
 <dt id="pyhdust.poltools.genAllLog">
-<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genAllLog</tt><big>(</big><em>path=None</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b2453059f50&gt;</em>, <em>autochoose=False</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genAllLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genAllLog" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genAllLog</tt><big>(</big><em>path=None</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2af6b4973de8&gt;</em>, <em>autochoose=False</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genAllLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genAllLog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the std.dat/obj.dat for one reduced night</p>
 <p>path: path of night
 delta: tolerance for the angle between the two beams of calcite.</p>
@@ -358,7 +359,7 @@ you can specify sigtol=lambda sigm: 1000.*sigm, for example.</dd>
 
 <dl class="function">
 <dt id="pyhdust.poltools.genLog">
-<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genLog</tt><big>(</big><em>path</em>, <em>subdirs</em>, <em>tgts</em>, <em>fileout</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b2453059e60&gt;</em>, <em>autochoose=False</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genLog" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">genLog</tt><big>(</big><em>path</em>, <em>subdirs</em>, <em>tgts</em>, <em>fileout</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2af6b4973cf8&gt;</em>, <em>autochoose=False</em>, <em>delta=3.5</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#genLog"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.genLog" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the .dat file with data of objects &#8216;tgts[:]&#8217; inside
 &#8216;path&#8217;/&#8217;subdirs[:]&#8217; directories</p>
 <p>Save the results in &#8216;path&#8217;/&#8217;fileout&#8217;
@@ -718,7 +719,7 @@ otherwise,      sth0 = propagated error</div></blockquote>
 
 <dl class="function">
 <dt id="pyhdust.poltools.queryout">
-<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">queryout</tt><big>(</big><em>objdir</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2b2453059a28&gt;</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#queryout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.queryout" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">pyhdust.poltools.</tt><tt class="descname">queryout</tt><big>(</big><em>objdir</em>, <em>obj</em>, <em>f</em>, <em>nstar=1</em>, <em>sigtol=&lt;function &lt;lambda&gt; at 0x2af6b49738c0&gt;</em><big>)</big><a class="reference internal" href="_modules/pyhdust/poltools.html#queryout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.poltools.queryout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call chooseout for &#8216;obj&#8217; at filter &#8216;f&#8217; (in &#8216;objdir&#8217;),
 print the graphs and query to the user if he wants
 to use the selected outs. If not, he musts answer

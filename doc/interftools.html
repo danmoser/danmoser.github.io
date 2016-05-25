@@ -23,6 +23,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Python tools for the BeACoN group Beta documentation" href="index.html" />
     <link rel="next" title="jdcal: auxiliary module to convert between calendars" href="jdcal.html" />
     <link rel="prev" title="input: module of Hdust input tools" href="input.html" /> 
@@ -88,7 +89,7 @@
 <dd><p>To compute Vieira&#8217;s models.</p>
 <p><cite>lbd</cite> in cm (np.array. If None, default value from _phc.BBlbd), <cite>barz2</cite> is 
 the mean value of the square atomic number, <cite>Td</cite> isothermal disk 
-temperature, <cite>fion</cite> is the ionization fraction, mu () is the 
+temperature, <cite>fion</cite> is the ionization fraction, mu (<span class="math">\(\mu\)</span>) is the 
 mean particle weight (mH units), <cite>gb</cite> is the...</p>
 <p><cite>Ms</cite> is the stellar mass (Msun).</p>
 <dl class="method">
@@ -111,7 +112,7 @@ based on this value, but the stellar emission, that is corrected by the
 <cite>fBBcor</cite> function.</p>
 <p><cite>Rs</cite>, the stellar (equatorial) radius (Rsun).</p>
 <p><cite>iang</cite>, inclination angle (deg).</p>
-<p><cite>bm2n</cite> is the  value.</p>
+<p><cite>bm2n</cite> is the <span class="math">\(-2n+eta &lt; 0\)</span> value.</p>
 <p><cite>fmin</cite>, minimum flux at the semi-major axis as fraction of the thick disk 
 flux.</p>
 <p><cite>Rmax</cite>, maximum radius of the images.</p>
@@ -143,7 +144,7 @@ east == &#8216;left&#8217;). Units in Degrees.</p>
 independent of the <cite>rot</cite> variable.</p>
 <p><cite>lum</cite> = luminosity given in Solar units.
 BUNIT sets the units of the image. Considering that HDUST images
-give the pixels counts as , the same correction as done
+give the pixels counts as <span class="math">\(F_\lambda/F\)</span>, the same correction as done
 to BeAtlas is performed, and the final results are in 10^-17
 erg/s/cm^2/Ang. If <cite>lum</cite> = 0, no change is done.</p>
 <p><cite>coordsinf</cite> = [RA,DEC].
@@ -207,7 +208,7 @@ east == &#8216;left&#8217;). Units according to <cite>deg</cite> bool.</p>
 independent of the <cite>rot</cite> variable. Units according to <cite>deg</cite> bool.</p>
 <p><cite>lum</cite> = luminosity given in Solar units.
 BUNIT sets the units of the image. Considering that HDUST images
-give the pixels counts as , the same correction as done
+give the pixels counts as <span class="math">\(F_\lambda/F\)</span>, the same correction as done
 to BeAtlas is performed, and the final results are in 10^-17
 erg/s/cm^2/Ang. If <cite>lum</cite> = 0, no change is done.</p>
 <p><cite>coordsinf</cite> = [RA,DEC], as [&#8216;21:51:12.055&#8217;, &#8216;+28:51:38.72&#8217;]</p>
@@ -286,7 +287,7 @@ reading features of the <cite>oifits</cite> routine, I prefered do it this way).
 <tt class="descclassname">pyhdust.interftools.</tt><tt class="descname">plot_phi3_res</tt><big>(</big><em>ax, ax2, oidata, colors, names, modfiles, obsdeg=None, dist=None, xlim=None, PAs=[-180, 180], PAsrev=False, PArv=[0, 0], bindata=0, quiet=False, alp=0.75, printsum=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/interftools.html#plot_phi3_res"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.interftools.plot_phi3_res" title="Permalink to this definition">¶</a></dt>
 <dd><p>modfiles = models!</p>
 <p><cite>bindata</cite> refers to vis2.wavelength.eff_wave!! In other words: the binning
-only works on simultaneous observations with different .</p>
+only works on simultaneous observations with different <span class="math">\(\lambda\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -351,7 +352,7 @@ dist is a number
 <tt class="descclassname">pyhdust.interftools.</tt><tt class="descname">plot_v2_res</tt><big>(</big><em>ax, ax2, oidata, colors, names, modfiles, obsdeg=None, dist=None, xlim=None, PAs=[-180, 180], PAsrev=False, PArv=[0, 0], bindata=0, quiet=False, alp=0.75, printsum=False</em><big>)</big><a class="reference internal" href="_modules/pyhdust/interftools.html#plot_v2_res"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyhdust.interftools.plot_v2_res" title="Permalink to this definition">¶</a></dt>
 <dd><p>datas = models!</p>
 <p><cite>bindata</cite> refers to vis2.wavelength.eff_wave!! In other words: the binning
-only works on simultaneous observations with different .</p>
+only works on simultaneous observations with different <span class="math">\(\lambda\)</span>.</p>
 </dd></dl>
 
 <dl class="function">
@@ -386,8 +387,8 @@ eV2_1, V2_2, eV2_2, V2_3, eV2_3].</p>
 <blockquote>
 <div><ul class="simple">
 <li>data = image matrix</li>
-<li>obslist = observers info (<em>i</em>, )</li>
-<li>lbdc = central </li>
+<li>obslist = observers info (<em>i</em>, <span class="math">\(\phi\)</span>)</li>
+<li>lbdc = central <span class="math">\(\lambda\)</span></li>
 <li>Ra = ?</li>
 <li>xmax = image size in Rsun untis</li>
 </ul>
