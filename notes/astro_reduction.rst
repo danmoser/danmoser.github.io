@@ -3,6 +3,13 @@ Observação e redução
 
 .. contents:: Índice
 
+Info and Links
+*****************
+http://beacon.iag.usp.br/joomla/
+
+http://beacon.iag.usp.br/astroweb/admin/
+
+
 Observacional
 **************
 Filtro de densidade

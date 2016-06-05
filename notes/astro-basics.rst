@@ -155,8 +155,14 @@ Pictures
 - APOD - Astronomy Picture of the Day
     http://apod.nasa.gov/
 
+.. figure:: figs/astro-basics_loop.gif
+    :align: center
+
+    The outer planets movement on the sky.
+
 .. figure:: figs/astro-basics_LakeMyvatn_Brady_1080.jpg
     :align: center
+    :width: 800 
 
     Auroras and Star Trails over Iceland
     

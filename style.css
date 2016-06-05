@@ -14,8 +14,9 @@ body {
 	background-attachment:fixed;
 	text-align: left;
 	font-family: Helvetica, Arial,  sans-serif;
-	font-size: 13px;
+	font-size: 16px;
 	color: #F1F5F8;
+  /*color: #6a5772;*/
 }
 *
 {
@@ -134,7 +135,14 @@ font-size:26px;
 color:#000000;
 padding-left:10px;
 padding-right:10px;
+}
 
+#content .content_instance_big h3
+{
+font-size:16px;
+color:#000000;
+padding-left:20px;
+padding-right:10px;
 }
 
 #content .content_instance_big p

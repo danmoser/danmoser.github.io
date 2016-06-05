@@ -9,9 +9,9 @@ Illustrations
 
 Movies
 ********
-`The roundest world object <www.youtube.com/watch?v=ZMByI4s-D-Y>`_  (11 min)
+`The roundest world object <http://www.youtube.com/watch?v=ZMByI4s-D-Y>`_  (11 min)
 
-`The Original Double Slit Experiment <www.youtube.com/watch?v=Iuv6hY6zsd0>`_ (7 min)
+`The Original Double Slit Experiment <http://www.youtube.com/watch?v=Iuv6hY6zsd0>`_ (7 min)
 
 Waves
 ******

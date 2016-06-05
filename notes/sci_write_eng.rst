@@ -16,6 +16,11 @@ Writing tips
 
 - Software citations (AAS policy): http://journals.aas.org/policy/software.html
 
+Grammar
+---------
+Between, among: one use between to refer to two things which are clearly separated, and use among to talk about things which are not clearly separated because they are part of a group or crowd or mass of objects.
+
+
 Definitions
 ===============
 - **Theorem** is a (mathematical) statement that is proved using rigorous mathematical reasoning. Is usually reserved for the most important results or those with long or difficult proofs. A **proposition** is a *theorem* of no particular importance (a statement with a simple proof).
@@ -114,6 +119,15 @@ Doing science
 - Why Do We Procrastinate? (SciShow)
     https://www.youtube.com/watch?v=pKyHX0zqynk
 
+- Precisamos falar sobre a vaidade na vida acadêmica
+    http://www.cartacapital.com.br/sociedade/precisamos-falar-sobre-a-vaidade-na-vida-academica
+
+- Europe announces that all scientific papers should be free by 2020
+    http://www.sciencealert.com/europe-announces-that-all-scientific-articles-should-be-freely-accessible-by-2020
+
+- Análise sistêmica na academia
+    https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutu.be%2FQOSEFDGOq-0%3Ft%3D1h50m24s&h=XAQFFGYP3
+    
 
 Data tools
 ==================

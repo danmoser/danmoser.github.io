@@ -3,14 +3,85 @@ DMF AstroBlog
 
 2016
 ********
-2015-06
+2015-07
 ===========
 TBD
 
+---------
+
+2015-06
+===========
+Reading non-standard FITS specs
+--------------------------------
+E.g.: IUE, ESO-FEROS, ...
+
+.. code:: python
+
+    hdulist  = pyfits.open(fitsfile)
+    tbdata   = hdulist[1].data
+    wave     = tbdata.field('WAVELENGTH')  #Angs
+    flux     = tbdata.field('FLUX')        #erg/cm2/s/A
+    sigma    = tbdata.field('SIGMA')
+    
 ------
 
 2016-05
 ===========
+The language of languages 
+------------------------------
+Languages form the terrain of computing. 
+
+http://matt.might.net/articles/grammars-bnf-ebnf/
+
+-------------
+
+Europe announces that all scientific papers should be free by 2020
+------------------------------------------------------------------------------
+http://www.sciencealert.com/europe-announces-that-all-scientific-articles-should-be-freely-accessible-by-2020
+
+-------------
+
+How to reduce VLTI-PIONIER data
+--------------------------------
+This is not *required*, since the PIONIER deliver the data already reduced.
+
+If details/enhanced precision is needed, the reduction is in two steps: https://forge.osug.fr/svn/ipag-sw/PIONIER/trunk/doc/PNR-MAN-PNDRS.pdf , see Sects. 6 and 7.
+
+Only the second, the calibration, should be tweaked. In this particular case: make sure the interpolation of the transfer function is over all calibrators, and possibly chose s different interpolation law. Also, some files have the fits keyword DET.SAT set to "T", try also to reduce the data without these files.
+
+First, just install the software and get the data to play with. The output is very verbose, a lot of things to look at. 
+
+---------
+
+BeSOS in the sky
+-----------------
+Be Stars Observation Survey (BeSOS) is a catalogue of high resolution spectra, available at http://besos.ifa.uv.cl
+
+-----------
+
+Retrieving and reading IUE spectra
+-------------------------------------
+Access IUE website https://archive.stsci.edu/iue/search.php
+
+To read them with ``pyfits``:
+
+.. code-block:: python
+
+    hdulist  = pyfits.open(file_iue)
+    tbdata   = hdulist[1].data
+    wave     = tbdata.field('WAVELENGTH')  #Angs
+    flux     = tbdata.field('FLUX')        #erg/cm2/s/A
+    sigma    = tbdata.field('SIGMA')
+
+
+---------
+
+Terraforming: Can We Turn Mars Into Earth 2.0?
+-------------------------------------------------
+https://www.youtube.com/watch?v=9F1iWp4Gl3k
+
+---------
+
 The Journal of Open Source Software
 -------------------------------------------------------
 http://www.arfon.org/announcing-the-journal-of-open-source-software

@@ -1,3 +1,6 @@
+.. role:: strike
+    :class: strike
+
 Python and Astronomy
 #######################
 
@@ -95,7 +98,7 @@ This is the right way of dealing with paths, filenames, extensions...
 .. code:: python
 
     observ = '/media/moser/SAMSUNG2TB/interf/interf_PIO/2015/2015-11-29_SCI_alp_Eri_oidataCalibrated.fits'
-    os.path.split(observ) = (os.path.dirname(observ), os.path.basename(observ))
+    os.path.split(observ) == (os.path.dirname(observ), os.path.basename(observ))
 
 
 pip
@@ -212,6 +215,13 @@ to check for str or unicode objects. In Python 3.x, it would be
 http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html
 
 http://eso-python.github.io/ESOPythonTutorials/
+
+
+Adding nice help to your program
+====================================
+:strike:`Use the module ``optparse``` (depricated).
+
+Use ``argparse``: https://docs.python.org/2/library/argparse.html
 
 
 Date & Time
@@ -359,6 +369,21 @@ super               try                 tuple                      type
 unichr              unicode             vars                       while
 with                xrange              yield                      zip
 =================== =================== ========================== =======================
+
+Multi-threading
+*****************
+Definitions
+===========
+- *Thread*: independent process, managed by the operational system. 
+- *Daemon* thread: by default, the main program waits the end of all threads before closing itself. However, this condition can be relaxed, and define the so-called "daemon threads".
+- *Event*: an object to communicate event between the threads.
+- *Semaphore*: an object to flux control (generally, controls the available resources, as CPUs).
+- *Queue*: structure that allows safe sharing of data between threads.
+- *Locking*: process that makes that threads be launched or interrupted under specific circumstances.
+- *Block*: Is a kind o looking. An inactive threading, or a thread without available resources, is put to sleep in the system, until an event reactivates it or a required resource becomes available. In python, this is the standard described as ``(block=True, timeout=None)``. If timeout > 0, timeout defines the maximum allowed time that a thread can sleep before raising an exception (or error). If ``block=False`` a thread can not be put to sleep.
+- *Sleep*: state of an inactive thread.
+
+
 
 Data fitting
 *********************

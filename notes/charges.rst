@@ -137,3 +137,7 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: figs/charge_capitalismo.gif
+    :align: center
+    :height: 500
+

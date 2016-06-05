@@ -117,6 +117,7 @@ Restaurantes/Noite
 - Comida variada / espanhola COSTA BRAVA (Baquedano / Metro Universidad Catolica)
 - Italiano DA RENZO (Providencia)
 - Irlandes (cervejas e petiscos) THE SHAMROCK 
+- Mapao Thai (Las Condes)
 
 
 Trekking 
@@ -180,6 +181,7 @@ Valparaíso/Viña del mar
 - Playa Las Cajas (1h30 ao norte de Viña del mar)
 - Termas: http://www.cityvoz.cl/article/travel-guide-hot-springs-and-thermal-spas-and-resorts-in-central-chile.html
 - Isla Negra + (Casa de Neruda, 1h00 ao sul de Valparaíso)
+- Hostal Napoli http://www.hostalnapoli.cl (bueno y cerca de la UV)
 
 El Morado
 ------------

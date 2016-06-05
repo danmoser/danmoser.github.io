@@ -43,6 +43,7 @@ Pulsation
 - It the variability has a complex shape (no clear frequencies), it is called irregular or stochastic. 
 
 The modes of pulsations can be:
+
 - p-mode = pressure (or acoustic) mode, driven by internal pressure fluctuations within a star; their dynamics being determined by the local speed of sound. Shape: reflections at stellar surface.
 - g-mode = gravity mode, driven by buoyancy (aka restoring force). Shape: elliptical movements around the stellar core.
 - f-mode = surface gravity modes. Shape: akin to ocean waves along the stellar surface.
@@ -74,6 +75,23 @@ http://www.damtp.cam.ac.uk/user/hl278/DAD.html
 
 Observational
 *****************
+=== === === ===
+mes RA0 RAm RAf
+=== === === ===
+Jan 00  08  16
+Fev 02  10  18
+Mar 04  12  20
+Abr 06  14  22
+Mai 08  16  00
+Jun 10  18  02
+Jul 12  20  04
+Ago 14  18  06
+Set 16  00  08
+Out 18  02  10
+Nov 20  04  12
+Dez 22  06  14
+=== === === ===
+
 ESO Periods
 =============
 - Period Odd  - 01 Apr to 30 Sep (RA limits: ~10h to ~02h)

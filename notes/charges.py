@@ -1,9 +1,12 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
-# Modified by D. Moser in 2015-06-02
 
 import os
 from glob import glob
+
+__author__ = "Daniel Moser"
+__email__ = "dmfaes@gmail.com"
+__version__ = "v1.0"
 
 charges = sorted(glob('figs/charge*.*'), key=os.path.getmtime)
 

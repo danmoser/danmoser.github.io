@@ -28,27 +28,98 @@ File example (`here`_)
     ###################
 
     .. contents:: Table of contents
+        :depth: 2
 
     Chapter
     **********
-    
+
     Section
     =========
-    
+
     Subsection
     -----------
-    
+
     Subsubsection
     ^^^^^^^^^^^^^^^
-    
+
     Import paragraph
     """"""""""""""""""
-    
-    Regular paragraph...
-    
-    - one asterisk (\*): *text* for emphasis (italics),
-    - two asterisks: (\*\*) **text** for strong emphasis (boldface), and
-    - backquotes (\`\`): ``text`` for code samples.
+
+    Subparagraph
+    ~~~~~~~~~~~~~
+
+    .. role:: strike
+        :class: strike
+
+    .. _my-reference-label:
+
+    Section to cross-reference
+    --------------------------
+    It refers to the section itself, see :ref:`my-reference-label`.
+
+    *emphasis*, **strong** 
+    ``literal or code``
+
+    A text with :sub:`Subscript` and :sup:`Superscript`.
+
+    :strike:`This will be crossed out.`
+
+    `Example of hiperlink <http://danmoser.github.io>`_.
+    Lorem ipsum [Ref]_ dolor sit amet.
+
+    .. [Ref] Book or article reference, URL or whatever.
+
+    .. code-block:: python
+    .. code-block:: bash
+
+    .. literalinclude:: example.rb
+       :language: ruby
+       :emphasize-lines: 12,15-18
+       :linenos:
+
+    """ Short description of the function/class, saying what it returns!
+
+    This is a longer explanation, which may include math with latex syntax
+    :math:`\alpha`.
+    Then, you need to provide optional subsection ...
+
+    **Advantages**:
+
+     - Uses sphinx markups, which will certainly be improved in future
+       version
+     - Nice HTML output with the See Also, Note, Warnings directives
+
+    :param arg1: the first value
+    :param arg2: the first value
+    :type arg1: int, float,...
+    :type arg2: int, float,...
+    :rtype: int, float
+    :returns: arg1/arg2 +arg3
+
+    :Example:
+
+    >>> import template
+    >>> a = template.MainClass1()
+    >>> a.function1(1,1,1)
+    2
+
+    .. versionadded:: something new
+    .. note:: can be useful to emphasize important feature
+    .. seealso:: :class:`MainClass2`
+    .. warning:: arg2 must be non-zero.
+    .. todo:: check that arg2 is non zero.
+    """
+
+    .. image:: figs/poetry_clouds_prism.jpg
+        :width: 512px
+        :align: center
+        :alt: hdt.plottemp example
+        :height: 100px
+        :scale: 50 %
+
+    A "figure" consists of image data, an optional caption (a single paragraph), and an optional legend (arbitrary body elements). For page-based output media, figures might float to a different position if this helps the page layout.
+
+    thisis\ *one*\ word (with *emph*)!
 
 .. _`here`: example.html
 
