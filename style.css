@@ -15,7 +15,7 @@ body {
 	text-align: left;
 	font-family: Helvetica, Arial,  sans-serif;
 	font-size: 16px;
-	color: #F1F5F8;
+	color:  #fffcd6;
   /*color: #6a5772;*/
 }
 *
@@ -90,7 +90,7 @@ margin-left:20px;
 margin-top:2px;
 padding-right:21px;
 position:relative;
-color:#FFFFFF;
+color:#fffcd6;
 text-align:left;
 font-size:16px;
 font-family:Arial, Helvetica, sans-serif;
@@ -194,12 +194,12 @@ float:left;
 text-align:justify;
 font-size:14px;
 line-height:16px;
-color:#000000;
+color:#2a32d3;
 }
 
 #content .content_instance  h2
 {
-color:#000000;
+color:#343239;
 padding-bottom:7px;
 }
 

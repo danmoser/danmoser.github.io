@@ -81,6 +81,8 @@ Useful expressions
 
 Links
 =======
+- https://www.youtube.com/watch?v=_ZBKX-6Gz6A
+
 - https://cgi.duke.edu/web/sciwriting/index.php?action=lesson1
 
 - http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806

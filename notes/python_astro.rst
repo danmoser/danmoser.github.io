@@ -195,6 +195,17 @@ Python GUI
 If someone needs pretty graphics, interactively, one may think using `pyqtgraph` (http://www.pyqtgraph.org/).
 
 
+Errors
+=========
+.. code:: python
+
+    import sys
+    from __future__ import print_function
+
+    def eprint(*args, **kwargs):
+        print(*args, file=sys.stderr, **kwargs)
+
+
 Check if a variable is string
 =======================================
 In Python 2.x, one would do for the *s* variable
@@ -208,6 +219,14 @@ to check for str or unicode objects. In Python 3.x, it would be
 .. code:: python
 
     isinstance(s, str)
+
+If you're writing 2.x-and-3.x-compatible code, you'll probably want to use ``six``:
+
+.. code:: python
+
+    from six import string_types
+    isinstance(s, string_types)
+
 
 
 *emcee* and other nice stuff
@@ -383,6 +402,7 @@ Definitions
 - *Block*: Is a kind o looking. An inactive threading, or a thread without available resources, is put to sleep in the system, until an event reactivates it or a required resource becomes available. In python, this is the standard described as ``(block=True, timeout=None)``. If timeout > 0, timeout defines the maximum allowed time that a thread can sleep before raising an exception (or error). If ``block=False`` a thread can not be put to sleep.
 - *Sleep*: state of an inactive thread.
 
+`David Beazley - Python Concurrency From the Ground Up (PyCon 2015) <https://www.youtube.com/watch?v=MCs5OvhV9S4>`_.
 
 
 Data fitting
@@ -698,6 +718,8 @@ Random stuff
 
 Python environments and references
 *************************************
+http://python-notes.curiousefficiency.org/
+
 
 General use Python packages in Astronomy
 ===========================================

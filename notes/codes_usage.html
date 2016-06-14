@@ -712,6 +712,7 @@ span.boxed, span.framebox {
 <li><a class="reference internal" href="#running" id="id22">Running</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#numba" id="id23"><tt class="docutils literal">numba</tt></a></li>
 </ul>
 </div>
 <div class="section" id="hdust">
@@ -1038,6 +1039,24 @@ help,amdlibFunction
 include,&quot;/path/to/script.i&quot;;
 </pre>
 </div>
+</div>
+<div class="section" id="numba">
+<h1><a class="toc-backref" href="#id23"><tt class="docutils literal">numba</tt></a></h1>
+<p>It requires <tt class="docutils literal">llvm 3.7.x</tt>. The compilation flag of the binaries at <a class="reference external" href="http://llvm.org">http://llvm.org</a> are not supported on Ubuntu 14.04, so I needed to compile it.</p>
+<p>It makes use of the <tt class="docutils literal">cmake</tt>. And it works like this:</p>
+<pre class="code bash literal-block">
+<span class="comment"># sudo apt-get install cmake
+</span>
+mkdir mybuiltdir
+<span class="name builtin">cd </span>mybuiltdir
+
+cmake path/to/llvm/source/root
+
+cmake --build .
+
+cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name variable">$HOME</span>/.local/ -P cmake_install.cmake
+<span class="comment"># cmake --build . --target install</span>
+</pre>
 </div>
 </div>
 </body>

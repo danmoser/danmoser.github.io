@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
-<title>DMF notes</title>
+<title>R compared to numpy</title>
 <style type="text/css">
 
 /*
@@ -387,82 +387,41 @@ li {
 </style>
 </head>
 <body>
-<div class="document" id="dmf-notes">
-<h1 class="title">DMF notes</h1>
+<div class="document" id="r-compared-to-numpy">
+<h1 class="title">R compared to numpy</h1>
 
 <table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="16%" />
-<col width="29%" />
-<col width="14%" />
-<col width="20%" />
+<col width="48%" />
+<col width="52%" />
 </colgroup>
+<thead valign="bottom">
+<tr><th class="head">R</th>
+<th class="head">numpy</th>
+</tr>
+</thead>
 <tbody valign="top">
-<tr><td><a class="reference external" href="astro-basics.html">astro-basics</a></td>
-<td><a class="reference external" href="astro-blog.html">astro-blog</a></td>
-<td><a class="reference external" href="astro-ph.html">astro-ph</a></td>
-<td><a class="reference external" href="astro-spec.html">astro-spec</a></td>
-<td><a class="reference external" href="astro_reduction.html">astro_reduction</a></td>
+<tr><td>a &lt;- c(33, 44, 92, 58)</td>
+<td>a = np.array(33, 30, 92, 58)</td>
 </tr>
-<tr><td><a class="reference external" href="astro_top-impact.html">astro_top-impact</a></td>
-<td><a class="reference external" href="beacon.html">beacon</a></td>
-<td><a class="reference external" href="beatlas.html">beatlas</a></td>
-<td><a class="reference external" href="bravo.html">bravo</a></td>
-<td><a class="reference external" href="charges.html">charges</a></td>
+<tr><td>a[a&gt;30]</td>
+<td>a(np.where(a&gt;30))</td>
 </tr>
-<tr><td><a class="reference external" href="cheers.html">cheers</a></td>
-<td><a class="reference external" href="codes_usage.html">codes_usage</a></td>
-<td><a class="reference external" href="docs_general-info.html">docs_general-info</a></td>
-<td><a class="reference external" href="drugs.html">drugs</a></td>
-<td><a class="reference external" href="espanol.html">espanol</a></td>
+<tr><td>which.max(a)</td>
+<td>np.where(a == np.max(a))</td>
 </tr>
-<tr><td><a class="reference external" href="estatistica.html">estatistica</a></td>
-<td><a class="reference external" href="events_notes.html">events_notes</a></td>
-<td><a class="reference external" href="example.html">example</a></td>
-<td><a class="reference external" href="francais.html">francais</a></td>
-<td><a class="reference external" href="gai_fits-imgs.html">gai_fits-imgs</a></td>
+<tr><td>match(30, a)</td>
+<td>np.where(a == 30)</td>
 </tr>
-<tr><td><a class="reference external" href="git.html">git</a></td>
-<td><a class="reference external" href="import_wheel.html">import_wheel</a></td>
-<td><img alt="figs/index2.gif" class="first last" src="figs/index2.gif" />
-</td>
-<td><a class="reference external" href="index.html">index</a></td>
-<td><a class="reference external" href="informatics.html">informatics</a></td>
+<tr><td><em>no not work</em>: match(30, a)</td>
+<td><em>okay</em> np.where(30 == a)</td>
 </tr>
-<tr><td><a class="reference external" href="inthepress.html">inthepress</a></td>
-<td><a class="reference external" href="latex.html">latex</a></td>
-<td><a class="reference external" href="linux.html">linux</a></td>
-<td><a class="reference external" href="logbook.html">logbook</a></td>
-<td><a class="reference external" href="math.html">math</a></td>
-</tr>
-<tr><td><a class="reference external" href="numpy_vs_R.html">numpy_vs_R</a></td>
-<td><a class="reference external" href="patagonia.html">patagonia</a></td>
-<td><a class="reference external" href="philos.html">philos</a></td>
-<td><a class="reference external" href="physics.html">physics</a></td>
-<td><a class="reference external" href="poetry.html">poetry</a></td>
-</tr>
-<tr><td><a class="reference external" href="poetry_clouds.html">poetry_clouds</a></td>
-<td><a class="reference external" href="politcs.html">politcs</a></td>
-<td><a class="reference external" href="portugues.html">portugues</a></td>
-<td><a class="reference external" href="psi.html">psi</a></td>
-<td><a class="reference external" href="python_astro.html">python_astro</a></td>
-</tr>
-<tr><td><a class="reference external" href="regex.html">regex</a></td>
-<td><a class="reference external" href="religion.html">religion</a></td>
-<td><a class="reference external" href="rst.html">rst</a></td>
-<td><a class="reference external" href="santiago.html">santiago</a></td>
-<td><a class="reference external" href="sci_write_eng.html">sci_write_eng</a></td>
-</tr>
-<tr><td><a class="reference external" href="sports.html">sports</a></td>
-<td><a class="reference external" href="thermal.html">thermal</a></td>
-<td><img alt="figs/index3a.gif" class="first last" src="figs/index3a.gif" />
-</td>
-<td><a class="reference external" href="travellog.html">travellog</a></td>
-<td><a class="reference external" href="usp-rice.html">usp-rice</a></td>
+<tr><td>summary(a)</td>
+<td>(not in numpy)</td>
 </tr>
 </tbody>
 </table>
+<p>R: <tt class="docutils literal">fx &lt;- function(x) <span class="pre">{x**2}</span></tt>. Python: <tt class="docutils literal">def fx(x): \n&nbsp;&nbsp;&nbsp; return <span class="pre">x**2</span></tt>.</p>
 </div>
 </body>
 </html>

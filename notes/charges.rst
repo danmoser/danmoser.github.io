@@ -141,3 +141,7 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: figs/charge_coxinhas.jpg
+    :align: center
+    :height: 500
+

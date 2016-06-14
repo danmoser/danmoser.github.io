@@ -268,3 +268,24 @@ Running
     // To run a script
     include,"/path/to/script.i";
 
+
+``numba``
+###########
+
+It requires ``llvm 3.7.x``. The compilation flag of the binaries at http://llvm.org are not supported on Ubuntu 14.04, so I needed to compile it.
+
+It makes use of the ``cmake``. And it works like this:
+
+.. code:: bash
+
+    # sudo apt-get install cmake
+
+    mkdir mybuiltdir
+    cd mybuiltdir
+
+    cmake path/to/llvm/source/root
+    
+    cmake --build .
+    
+    cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local/ -P cmake_install.cmake
+    # cmake --build . --target install

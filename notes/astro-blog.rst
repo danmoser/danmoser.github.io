@@ -11,6 +11,43 @@ TBD
 
 2015-06
 ===========
+TBD
+
+-------------
+
+Imaging compression by using (kernel) PCA
+--------------------------------------------
+- http://www.sc.eso.org/~jlillobo/mcmc_coffee/repository.html (2016-06-09)
+- https://en.wikipedia.org/wiki/Kernel_principal_component_analysis
+- http://scikit-learn.org/stable/auto_examples/decomposition/plot_kernel_pca.html
+
+-----
+
+Periodogram tools
+---------------------------
+- `VARTOOLS <http://www.astro.princeton.edu/~jhartman/vartools.html>`_
+- `Period04 <https://www.univie.ac.at/tops/Period04/>`_
+- `NASA Exoplanet Archive Periodogram Service <http://exoplanetarchive.ipac.caltech.edu/cgi-bin/Periodogram/nph-simpleupload>`_
+
+-----
+
+Importance of colors in data analysis
+---------------------------------------
+- `A Better Default Colormap for Matplotlib <https://www.youtube.com/watch?v=xAoljeRJ3lU>`_.
+- `Perceptual Color Maps in matplotlib for Oceanography <https://www.youtube.com/watch?v=XjHzLUnHeM0>`_.
+- `Free color blindness simulator <http://colororacle.org/>`_.
+- `HTML Color Codes <http://htmlcolorcodes.com/>`_.
+
+---------
+
+Galileo's reputation is more hyperbole than truth
+-----------------------------------------------------
+"By the 18th century, Galileo was slipping into obscurity outside of Italy. Then he experienced a remarkable resurrection."
+
+https://aeon.co/ideas/galileo-s-reputation-is-more-hyperbole-than-truth
+
+---------
+
 Reading non-standard FITS specs
 --------------------------------
 E.g.: IUE, ESO-FEROS, ...
@@ -463,14 +500,14 @@ http://hubblesite.org/newscenter/archive/releases/2016/18/
 
 Techniques of calculating :math:`v\sin i` (Part 2)
 --------------------------------------------------------
-Actually, there are three methods to determine the :math:`v\sin i`:
+Actually, there are three (four?) methods to determine the :math:`v\sin i`:
     
     1. From Fourier transform analysis;
     2. From Equivalent Width (EW) measurements
     3. From spectral synthesis.
     4. From the line FWHM
 
-Method 1 relies on some assumptions of the influence of the "non-rotated" line profile and on the limb-darkening coefficients. The foundation of this method is 
+Method 1 relies on some assumptions of the influence of the "non-rotated" line profile and on the limb-darkening coefficients. The foundation of this method is described by Gray `(book) <http://adsabs.harvard.edu/abs/1992oasp.book.....G>`_.
 
 Method 2 must be interesting, because the assumption that EW do not change with rotation is not true... Good reads are `Daflon+ (2007) <http://adsabs.harvard.edu/abs/2007AJ....134.1570D>`_ and `Garmany+ (2015) <http://adsabs.harvard.edu/abs/2015AJ....150...41G>`_.
 

@@ -1,20 +1,19 @@
 DMF notes
 ###########
 
-==================  ===================  ===========================  ====================  ================
-`R_vs_numpy`_       `astro-basics`_      `astro-blog`_                `astro-ph`_           `astro-spec`_
-`astro_reduction`_  `astro_top-impact`_  `beacon`_                    `beatlas`_            `bravo`_
-`charges`_          `cheers`_            `codes_usage`_               `docs_general-info`_  `drugs`_
-`espanol`_          `estatistica`_       `events_notes`_              `example`_            `francais`_
-`gai_fits-imgs`_    `git`_               .. image:: figs/index2.gif   `index`_              `informatics`_
-`inthepress`_       `latex`_             `linux`_                     `logbook`_            `math`_
-`patagonia`_        `philos`_            `physics`_                   `poetry`_             `poetry_clouds`_
-`politcs`_          `portugues`_         `psi`_                       `python_astro`_       `regex`_
-`religion`_         `rst`_               `santiago`_                  `sci_write_eng`_      `sports`_
-`thermal`_          `travellog`_         .. image:: figs/index3a.gif  `usp-rice`_           \
-==================  ===================  ===========================  ====================  ================
+===================  ===============  ===========================  =============  ==================
+`astro-basics`_      `astro-blog`_    `astro-ph`_                  `astro-spec`_  `astro_reduction`_
+`astro_top-impact`_  `beacon`_        `beatlas`_                   `bravo`_       `charges`_
+`cheers`_            `codes_usage`_   `docs_general-info`_         `drugs`_       `espanol`_
+`estatistica`_       `events_notes`_  `example`_                   `francais`_    `gai_fits-imgs`_
+`git`_               `import_wheel`_  .. image:: figs/index2.gif   `index`_       `informatics`_
+`inthepress`_        `latex`_         `linux`_                     `logbook`_     `math`_
+`numpy_vs_R`_        `patagonia`_     `philos`_                    `physics`_     `poetry`_
+`poetry_clouds`_     `politcs`_       `portugues`_                 `psi`_         `python_astro`_
+`regex`_             `religion`_      `rst`_                       `santiago`_    `sci_write_eng`_
+`sports`_            `thermal`_       .. image:: figs/index3a.gif  `travellog`_   `usp-rice`_
+===================  ===============  ===========================  =============  ==================
 
-.. _R_vs_numpy: R_vs_numpy.html
 .. _astro-basics: astro-basics.html
 .. _astro-blog: astro-blog.html
 .. _astro-ph: astro-ph.html
@@ -36,6 +35,7 @@ DMF notes
 .. _francais: francais.html
 .. _gai_fits-imgs: gai_fits-imgs.html
 .. _git: git.html
+.. _import_wheel: import_wheel.html
 .. _index: index.html
 .. _informatics: informatics.html
 .. _inthepress: inthepress.html
@@ -43,6 +43,7 @@ DMF notes
 .. _linux: linux.html
 .. _logbook: logbook.html
 .. _math: math.html
+.. _numpy_vs_R: numpy_vs_R.html
 .. _patagonia: patagonia.html
 .. _philos: philos.html
 .. _physics: physics.html
