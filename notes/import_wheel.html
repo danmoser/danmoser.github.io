@@ -390,7 +390,7 @@ li {
 <div class="document" id="from-otherswork-import-wheel-looking-for-useful-python-packages">
 <h1 class="title"><tt class="docutils literal">from otherswork import wheel</tt>: looking for useful Python packages</h1>
 
-<p>Python is language where simplicity matters. Thus, many features are only accessible through built-in modules, called <em>the standard library</em>. Also, Python emerged from the free software principle, and new useful packages are continuously written. In this talk, I will make a (very) short introduction to Python's <em>standard library</em>, and share my experience in finding and installing packages from Python community -- biased for use in astronomy.</p>
+<p>Python is a language where simplicity matters. Thus, many features are only accessible through built-in modules, called the standard library. Also, new useful packages are continuously written since Python emerged from the free software principle. In this talk, I will make a (very) short introduction to Python's standard library, and share my experience in finding and installing packages from Python community -- biased for use in astronomy.</p>
 <div class="section" id="modules-packages-and-all-that">
 <h1>Modules, Packages, and all that...</h1>
 <ul class="simple">
@@ -402,10 +402,17 @@ li {
 </pre>
 <p>This talk was based on the <a class="reference external" href="https://python4astronomers.github.io/installation/packages.html">python4astronomers article</a>:</p>
 <blockquote>
-<ul class="simple">
-<li>Where does Python look for modules?</li>
-<li>Multiple Pythons on your computer (<tt class="docutils literal">virtualenv</tt>)</li>
+<ul>
+<li><p class="first">Where does Python look for modules?</p>
+</li>
+<li><dl class="first docutils">
+<dt>Multiple Pythons on your computer (<tt class="docutils literal">virtualenv</tt>)</dt>
+<dd><ul class="first last simple">
 <li><em>Anaconda</em> environments</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </blockquote>
 </div>
@@ -420,6 +427,23 @@ li {
 <div class="section" id="a-few-examples">
 <h2>A few examples</h2>
 <ul>
+<li><p class="first">random</p>
+<blockquote>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">random</span>
+<span class="keyword namespace">import</span> <span class="name namespace">numpy.random</span> <span class="keyword namespace">as</span> <span class="name namespace">np_rand</span>
+
+<span class="name">abc</span> <span class="operator">=</span> <span class="name builtin">list</span><span class="punctuation">(</span><span class="literal string">'abcde'</span><span class="punctuation">)</span>
+
+<span class="name">random</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="name">abc</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="comment"># ['c', 'e']</span>
+
+<span class="comment"># np_rand.sample(size=None)  # Return random floats in the half-open interval [0.0, 1.0)</span>
+<span class="name">np_rand</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="comment"># array([ 0.79363627,  0.48012174])</span>
+</pre>
+</blockquote>
+</li>
 <li><p class="first">time, datetime</p>
 <blockquote>
 <pre class="code python literal-block">
@@ -427,9 +451,11 @@ li {
 
 <span class="comment"># Regular and 12 hour format</span>
 <span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span>
+<span class="comment"># ('19:11:49', '07:11:49')</span>
 
 <span class="comment"># Date with full and short year</span>
 <span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%Y/%b/</span><span class="literal string interpol">%d</span><span class="literal string">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string">&quot;</span><span class="punctuation">))</span>
+<span class="comment"># ('2016/Jun/15', '16-06-15')</span>
 </pre>
 </blockquote>
 </li>
@@ -492,6 +518,7 @@ pip install _package_
 <pre class="code bash literal-block">
 python -m ensurepip
 </pre>
+<p>Remember: <tt class="docutils literal">pip</tt> installs binaries in addition to the modules. Add this installation path to your <cite>$PATH</cite> (in unix, is is <cite>$HOME/.local/bin</cite>).</p>
 </div>
 <div class="section" id="lists-of-useful-modules">
 <h1>Lists of useful modules</h1>
@@ -520,6 +547,15 @@ python -m ensurepip
 <li><p class="first"><a class="reference external" href="http://tinydb.readthedocs.io/en/latest/">tinyDB</a></p>
 </li>
 <li><p class="first"><a class="reference external" href="https://pypi.python.org/pypi/virtualenv">virtualenv</a></p>
+<blockquote>
+<pre class="code bash literal-block">
+virtualenv -p /usr/bin/python2.6 /path/to/myvirtualenv
+
+<span class="name builtin">source</span> /path/to/myvirtualenv/bin/activate
+
+deactivate
+</pre>
+</blockquote>
 </li>
 </ul>
 </div>

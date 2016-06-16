@@ -146,3 +146,8 @@ Time series analysis
 http://www.astro.princeton.edu/~jhartman/vartools.html
 
 https://www.univie.ac.at/tops/Period04/
+
+Statistics
+-----------
+Ten Simple Rules for Effective Statistical Practice
+    http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1004961

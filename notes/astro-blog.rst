@@ -15,6 +15,23 @@ TBD
 
 -------------
 
+
+For second time, LIGO detects gravitational waves
+----------------------------------------------------
+Signal was produced by two black holes colliding 1.4 billion light years away.
+
+http://news.mit.edu/2016/second-time-ligo-detects-gravitational-waves-0615
+
+------
+
+Rotation in massive stars
+---------------------------
+by Oscar Ramírez (United Kingdom Astronomy Technology Centre)
+
+    Rotation is a key parameter in the evolution of massive stars (masses larger than 10 solar masses), affecting the evolution, chemical yields, ionizing photon budget, and the final fate as supernovae and long-duration gamma-ray burst. We determine the (projected) rotational velocity for more than 330 O-type stars in 30 Doradus, a starburst region in the Large Magellanic Cloud. It contains the richest population of massive stars in the Local Group and is the best possible laboratory to investigate open questions on the formation and evolution of massive stars. Among our sample stars, we have identified 116 spectroscopic binary systems and 216 presumably single O-type stars. The most distinctive feature of the (projected) rotational velocity distribution of the single star sample is a two-component structure; i.e a low-velocity peak (at ~ 80 km/s) and a high-velocity tail extending up to 600 km/s. We argue that the low-velocity peak is the outcome of formation. The presence of a well populated high-velocity tail is compatible with population synthesis computations that study the effects of binary evolution, i.e. tides and mass transfer (de Mink et al. 2013) and that produces a population of merged objects, and post-mass-transfer binaries that appear as single objects. The distribution of stars in binary systems also presents a low-velocity peak at around the same velocity, as the single sample, however there is no tail of rapidly spinning stars (> 400 km/s). This also concords with binary evolution effects.
+
+-------
+
 Imaging compression by using (kernel) PCA
 --------------------------------------------
 - http://www.sc.eso.org/~jlillobo/mcmc_coffee/repository.html (2016-06-09)

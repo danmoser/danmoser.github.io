@@ -1,6 +1,6 @@
 ``from otherswork import wheel``: looking for useful Python packages
 *********************************************************************
-Python is language where simplicity matters. Thus, many features are only accessible through built-in modules, called *the standard library*. Also, Python emerged from the free software principle, and new useful packages are continuously written. In this talk, I will make a (very) short introduction to Python's *standard library*, and share my experience in finding and installing packages from Python community -- biased for use in astronomy.
+Python is a language where simplicity matters. Thus, many features are only accessible through built-in modules, called the standard library. Also, new useful packages are continuously written since Python emerged from the free software principle. In this talk, I will make a (very) short introduction to Python's standard library, and share my experience in finding and installing packages from Python community -- biased for use in astronomy.
 
 Modules, Packages, and all that...
 ===================================
@@ -15,7 +15,7 @@ This talk was based on the `python4astronomers article <https://python4astronome
 
     - Where does Python look for modules?
     - Multiple Pythons on your computer (``virtualenv``)
-    - *Anaconda* environments 
+        - *Anaconda* environments   
 
 Mandatory reading: the *standard library* documentation
 ==========================================================
@@ -28,6 +28,22 @@ Mandatory reading: the *standard library* documentation
 
 A few examples
 ----------------
+- random
+
+    .. code:: python 
+
+        import random
+        import numpy.random as np_rand
+
+        abc = list('abcde')
+
+        random.sample(abc, 2)
+        # ['c', 'e']
+
+        # np_rand.sample(size=None)  # Return random floats in the half-open interval [0.0, 1.0)
+        np_rand.sample(2)
+        # array([ 0.79363627,  0.48012174])
+
 - time, datetime
 
     .. code:: python
@@ -36,9 +52,11 @@ A few examples
 
         # Regular and 12 hour format
         print (time.strftime("%H:%M:%S"),time.strftime("%I:%M:%S"))
+        # ('19:11:49', '07:11:49')
 
         # Date with full and short year
         print (time.strftime("%Y/%b/%d"), time.strftime("%y-%m-%d"))
+        # ('2016/Jun/15', '16-06-15')
 
 - linecache
 
@@ -98,6 +116,8 @@ https://pypi.python.org or http://cheeseshop.python.org
 
     python -m ensurepip
 
+Remember: ``pip`` installs binaries in addition to the modules. Add this installation path to your `$PATH` (in unix, is is `$HOME/.local/bin`).
+
 
 Lists of useful modules
 ==========================
@@ -122,6 +142,15 @@ A few choices
 - `joblib <https://pythonhosted.org/joblib/>`_
 - `tinyDB <http://tinydb.readthedocs.io/en/latest/>`_
 - `virtualenv <https://pypi.python.org/pypi/virtualenv>`_
+
+    .. code:: bash
+
+        virtualenv -p /usr/bin/python2.6 /path/to/myvirtualenv
+
+        source /path/to/myvirtualenv/bin/activate
+
+        deactivate
+
 
 Packages for Science
 =====================

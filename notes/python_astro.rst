@@ -132,24 +132,25 @@ It is a bug, solved by `setuptools`. In Debian/Ubuntu, run
 
 ipython
 ==========
-`ipython` is not calling the python version I want. What should I do?
+- `ipython` is not calling the python version I want. What should I do?
 
-.. code:: bash
+    .. code:: bash
 
-    # You can discover the `ipython` you are calling typing
-    which ipython
-    # ~/.local/bin/ipython
-    
-    # Then type
-    cat ~/.local/bin/ipython
+        # You can discover the `ipython` you are calling typing
+        which ipython
+        # ~/.local/bin/ipython
+        
+        # Then type
+        cat ~/.local/bin/ipython
 
-    # The first line tells you the python ipython is calling
-    #!/usr/local/bin/python
-    # You may want to change to
-    #!/usr/bin/env python
+        # The first line tells you the python ipython is calling
+        #!/usr/local/bin/python
+        # You may want to change to
+        #!/usr/bin/env python
 
-Remember: `ipython` is equivalent to `python -m IPython`.
+    Remember: `ipython` is equivalent to `python -m IPython`.
 
+- `ipython` v1.0 is the most updated one for Python version equal or smaller than 2.6 ou 3.2.
 
 Shebang
 =============
@@ -624,96 +625,61 @@ Starting at version 2.7.9, Python comes with pip!!!
 Unofficial Windows Binaries for Python Extension Packages
     http://www.lfd.uci.edu/~gohlke/pythonlibs/
 
-Random stuff
-=============
-.. code:: bash
+Compiling Python
+==================
+Compiling Python on Ubuntu:
 
-    export LDFLAGS="-L$HOME/.local/lib -L/lib -L/lib64 -L$HOME/Ureka/python/lib"
-    export CPPFLAGS="-I$HOME/.local/include -I/usr/include -I$HOME/Ureka/python/include"
-    export CXXFLAGS=$CPPFLAGS
-    export CFLAGS=$CPPFLAGS
-    export LD_RUN_PATH=$LD_LIBRARY_PATH
-    export PKG_CONFIG_PATH=/sto/home/moser/.local/lib/pkgconfig:$PKG_CONFIG_PATH
-    
-    
-    # https://sourceware.org/libffi/
-    # #curl -L http://github.com/atgreen/libffi/zipball/master > libffi.zip
-    # #unzip libffi.zip
-    # #cd atgreen-...
-    wget ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
-    tar xpvf libffi-3.2.1.tar.gz
-    cd libffi-3.2.1
-    ./configure --prefix="$HOME/.local"
-    make
-    make install
-    
-    wget http://ftp.gnome.org/pub/gnome/sources/glib/2.44/glib-2.44.0.tar.xz
-    # https://developer.gnome.org/glib/
-    tar xpvf glib-2.44.0.tar.xz
-    cd glib-2.44.0
-    export LIBFFI_CFLAGS="-I$HOME/.local/lib/libffi-3.2.1/include"
-    export LIBFFI_LIBS="-L$HOME/.local/lib -lffi"
-    ./configure --prefix="$HOME/.local" 
-    make
-    make install
-    
-    # http://ftp.gnome.org/pub/gnome/sources/gtk+/
-    wget http://ftp.gnome.org/pub/gnome/sources/gtk+/3.16/gtk+-3.16.2.tar.xz
-    tar xpvf gtk+-3.16.2.tar.xz
-    cd gtk+-3.16.2
-    
-    
-    curl -L https://github.com/geany/geany/zipball/master > geany.zip
-    unzip geany.zip 
-    cd geany-geany-...
-    ./autogen.sh --prefix="$HOME/.local" 
-    
-        ### Nativo: HORRIVEL !!!
-    
-    export LDFLAGS="-L$HOME/.local/lib -L/lib -L/lib64"
-    export CPPFLAGS="-fPIC -I$HOME/.local/include -I/usr/include"
-    export CXXFLAGS=$CPPFLAGS
-    export CFLAGS=$CPPFLAGS
-    export LD_RUN_PATH=$LD_LIBRARY_PATH
-    
-    # Error URLLIB... Recompilar python com openSSL
-    wget http://www.openssl.org/source/openssl-1.0.2a.tar.gz
-    tar xpvf openssl-1.0.2a.tar.gz
-    cd openssl-1.0.2a
-    ./config --prefix="$HOME/.local"
-    make
-    make install
-    
-    wget ftp://ftp.cwru.edu/pub/bash/readline-6.3.tar.gz
-    tar xpvf readline-6.3.tar.gz
-    cd readline-6.3
-    ./configure --prefix="$HOME/.local"
-    make
-    make install
-    ### ERRO: *** WARNING: renaming "readline" since importing it failed: /sto/home/moser/.local/lib/libreadline.so.6: undefined symbol: PC
-    
-    wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz
-    wget https://www.python.org/ftp/python/2.7.9/Python-2.7.9.tar.xz
-        ### 2.7.9 Erro SSL....
-    tar xpvf Python-2.7.9.tar.xz
-    cd Python-2.7.9
-    vim Modules/Setup.dist
-    # descomentar bloco SSL; linha ~220
-    # SSL=/sto/home/moser/.local
-    ### adicionar diretórios setup.py; linha ~440 #Sem efeito
-    ./configure --prefix="$HOME/.local"
-    
-    curl -L https://github.com/cython/cython/zipball/master > cython.zip
-    curl -L https://github.com/numpy/numpy/zipball/master > numpy.zip
-    
-    Python 2.6 or 3.2:
-    wget http://archive.ipython.org/release/1.0.0/ipython-1.0.0.tar.gz
-    tar xpvf ipython-1.0.0.tar.gz
-    
-    curl -L https://github.com/spacetelescope/PyFITS/zipball/master > pyfits.zip
-    
-    wget https://downloads.sourceforge.net/project/matplotlib/matplotlib/matplotlib-1.4.3/matplotlib-1.4.3.tar.gz
-    tar xpvf matplotlib-1.4.3.tar.gz
+- Download the source from `Python website <https://www.python.org/downloads>`_
+- edit the ``setup.py`` and add ``'/usr/lib/x86_64-linux-gnu'`` to the ``lib_dirs`` list:
+
+    .. code:: python
+
+        lib_dirs = self.compiler.library_dirs + [
+                '/lib64', '/usr/lib64',
+                '/lib', '/usr/lib', '/usr/lib/x86_64-linux-gnu']
+
+        # http://stackoverflow.com/questions/10654707/no-module-named-zlib-found
+  
+- edit ``Modules/setup.py`` and uncomment the lines for the module CSV, socket, SSL (set ``SSL=/usr/``), curses, zlib...
+- install a list of dev libraries
+
+    .. code:: bash
+
+        apt-get install libreadline-dev
+        apt-get install libssl-dev
+        apt-get install libbz2-dev
+        apt-get install build-essential
+        apt-get install sqlite3
+        apt-get install tk-dev
+        apt-get install libsqlite3-dev
+        apt-get install libc6-dev
+        apt-get install libgdbm-dev
+        apt-get install libncurses-dev
+
+        # http://stackoverflow.com/questions/19148564/getting-failed-to-build-these-modules-curses-curses-panel-ssl-while-instal
+
+- If you get the following message, there is a bug with SSL. Comment all the lines with "ethod_v2" in the files ``ssl.py`` and ``_ssl.c``:
+
+    .. code::
+
+        "ImportError: cannot import name HTTPSHandler"
+
+
+- In the end, you should get something like this:
+
+    .. code::
+
+        Failed to find the necessary bits to build these modules:
+        _bsddb             _sqlite3           _tkinter        
+        bsddb185           dl                 imageop         
+        linuxaudiodev      ossaudiodev        sunaudiodev     
+        To find the necessary bits, look in setup.py in detect_modules() for the module's name.
+
+
+        Failed to build these modules:
+        readline
+
+- Remember: ``zlib`` and ``ssl`` modules are required for ``pip``.
 
 
 Python environments and references
