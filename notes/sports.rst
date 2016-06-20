@@ -82,6 +82,7 @@ Alguns auxílios de condução:
 - Transmissão semi-automática...
 
 História (em inglês):
+--------------------------
 The Formula One series originated with the European Grand Prix Motor Racing (q.v. for pre-1947 history) of the 1920s and 1930s. The formula is a set of rules which all participants' cars must meet.The first world championship race was held at Silverstone, United Kingdom in 1950. 
 
 Beginning in the 1970s, Bernie Ecclestone rearranged the management of Formula One's commercial rights; he is widely credited with transforming the sport into the multi billion-dollar business it is now.
@@ -94,6 +95,8 @@ Mean atmospheric pressure at mean sea level at the latitude of Paris = 1atm = 1,
 
 IUPAC has recommended that the standard for atmospheric pressure should be harmonized to 100,000 Pa = 1 bar.
 
+Outros
+-----------
 1 Pa = 1 kg/(m.s2)
 
 O hp ou força-de-cavalo é uma unidade de origem inglesa, aproximadamente equivalente ao cv, porém não são iguais.
@@ -167,7 +170,8 @@ Year Team                   Coach                      MVP Player of winning tea
 2013 Miami Heat             Erik Spoelstra (Pat Riley) James         
 2014 San Antonio Spurs      Gregg Popovich             Duncan        
 2015 Golden State Warriors  Steve Kerr                 Curry
-2016 \
+2016 Cleveland Cavaliers    Tyronn Lue                 James
+2017 \
 ==== ====================== ========================== =============================
 
 \* My personal choice 

@@ -11,10 +11,69 @@ TBD
 
 2015-06
 ===========
-TBD
+File compression with ``bz2``
+-----------------------------------
+``bz2`` compression library is natively supported by Python (see `the Standard Library docs <https://docs.python.org/2/library/bz2.html>`_). The compression rate is about as ``gunzip``, although the compression is quite faster.
+
+.. warning::
+
+    There is a parallel version of ``bz2`` which is **not** compatible with the native one in Python 2 (`pbzip2 <http://compression.ca/pbzip2/>`_). In Ubuntu, it can be installed with the command ``apt-get install pbzip2`` and on Python with ``pip install bz2file``. Although using the same algorithm to compression, Python 2 **can not read** these files (my tests with Python 3.4 also did not succeed).
+
+From `the Standard Library docs <https://docs.python.org/2/library/bz2.html>`_:
+
+.. note::
+
+    This class does not support input files containing multiple streams (such as those produced by the ``pbzip2`` tool). When reading such an input file, only the first stream will be accessible. If you require support for multi-stream files, consider using the third-party ``bz2file`` module (available from `PyPI <https://pypi.python.org/pypi/bz2file>`_). This module provides a backport of Python 3.3's ``BZ2File`` class, which does support multi-stream files.
+
+------------------------
+
+Compactação de arquivos, imagens e FITS
+-------------------------------------------
+Existe dois tipos de compactação para arquivos:
+
+- Lossless Compression (zip e cia.); e
+- Lossy Compression (jpg e cia.).
+
+O `fpack <https://heasarc.gsfc.nasa.gov/fitsio/fpack/>`_ é específico para o formato FITS e, por padrão, trabalha com a compactação Lossy, desenvolvido especificamente para ignorar o ruído das imagens e manter a informação de ciência. Ele oferece suporte para a compactação Loseless.
+
+É importante saber que a compressão Lossless tem por fundamento evitar redundâncias nos dados - e por isso não há perdas. Também pode-se, com o Python por exemplo, ler um arquivo ``*.zip``, ``*.bz2`` ou ``*.gz`` diretamente para a memória sem de fato descompactar-lo - isto é, grava-lo no disco - o que torna o processo muito rápido.
+
+Os processos Lossy de um lado perdem uma pequena parte da informação. De outro lado, eles ocupam ainda menos espaço em disco - e podem alimentar a memória de uma maneira muito rápida também.
+
+Se alguém souber do algoritmo Lossy do fpack, eu sou todo ouvidos. Outro algoritmo eficiente para a compactação Lossy de imagens é o "kernel-PCA" - mas que ainda não está implementado num programa de fácil acesso (até onde eu sei).
+
+Testes 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Fator de compactação (qto maior, melhor):
+
+- Zip ~ Bz2 ~ 7z = 1.15x
+- fpack = 7.77x
+- `pyfits` lê um "data array" vazio com a compactação fpack...
+
+----------
+
+Rotational rates of Be stars... again
+----------------------------------------
+The :math:`v\sin(i)` measurement in hot stars is not easy... Some issues for the case of the Be stars:
+
+- There is no photospheric "good line" that can used in the entire B-type spectral range (i.e., working equally good for the B late-types and the B early-types). All the lines present in this spectral range can be *contaminated* by circumstellar (CS) emission features or are *sensible to the rotational effects*.
+- What is said for the lines is true for the different methods (EW, FWHM, etc): works fine for some cases, not for others... With that said, there is no big fundamental changes if the method consider - or not - the rotational effects.
+- Hydrogen lines are never used to the determination of the :math:`v\sin(i)`.
+- Because of the nature of the CS emission:
+    
+    - The lines are not equally affected. Owing to the emission, some lines will appear narrower than others.
+    - With CS emission, **in most cases** the lines will appear narrower that they should be, creating a **systematic underestimation** of the :math:`v\sin(i)` value.
+    - **BUT** this depends on the line analyzed, the inclination angle, and the spectral type of the star... In specific cases, the value can be *overestimated*.
+    - In general, the methods work fine for low *i*, and increase their underestimation as *i* increases.
+    - Rule of thumb: :math:`v\sin(i)` should be used as a **lower limit** value.
+
+- There is a revision on the methodology of measurements of :math:`v\sin(i)` starting in 1975 (and took a while to be used). So, values older than from 1985 should be used with caution (or even don't be used at all). The main difference is that the older values have **overestimated** values when compared to the newer values.
+- The main reference for the method of Fremat+ (2005) is Chauville (2001).
+- Beyond the systematics of the **method**, the rotational effects tends to **underestimate** the :math:`v\sin(i)` (e.g., Townsend 2004)...
+- As seen in Achernar (Rivinius+ 2013), the Be stars do show an intrinsic :math:`\Delta v`, related to the CS activity (:math:`\sim +0.1v\sin(i)`).
+- CONCLUSION: the real s:math:`v\sin(i)` (:math:`== v_{rot}` in i.e., BeAtlas) can be much higher than the measured (or "observational") one.
 
 -------------
-
 
 For second time, LIGO detects gravitational waves
 ----------------------------------------------------

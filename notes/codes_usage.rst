@@ -37,10 +37,11 @@ Step         n_f      time (min)  ncr  :math:`\Sigma_0`  n_proc
 
 Valores para teste (execução em aprox. 1 min em ``mpirun -np 3``):
 
-- step1: 40000
+- step1: 30000
 - SED: 500000 (Sob 0)
-- Ha: 60000 (Sob 1)
-
+- Ha: 50000 (Sob 1)
+- com poeira: 520 (Sob 1; teste para Cesar em 2016-06-17, gridBBre)
+- (valores podem variar de até um fator 1/2 ou 2, dependendo dos parâmetros e máquina usada).
 
 Bugs
 =====
@@ -96,7 +97,7 @@ The submission is
 Running times
 ----------------
 - bestar2.02, step1, 500000/24, one \.temp in 30 sec.
-- bestar2.02, SED, 500000/24, one \.temp in 30 sec.
+- bestar2.02, SED, ?
 
 ``precalcs``
 ==============

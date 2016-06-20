@@ -143,11 +143,17 @@ http://arohatgi.info/WebPlotDigitizer/app/
 
 Time series analysis
 -----------------------
-http://www.astro.princeton.edu/~jhartman/vartools.html
+- `VARTOOLS <http://www.astro.princeton.edu/~jhartman/vartools.html>`_
 
-https://www.univie.ac.at/tops/Period04/
+- `Period04 <https://www.univie.ac.at/tops/Period04/>`_
 
 Statistics
 -----------
-Ten Simple Rules for Effective Statistical Practice
-    http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1004961
+- `Ten Simple Rules for Effective Statistical Practice <http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1004961>`_
+
+
+3D plots and visualization
+------------------------------
+- `Blender3D <https://www.blender.org>`_
+- `POV-Ray <http://www.povray.org/>`_
+- `ParaView <http://www.paraview.org/>`_

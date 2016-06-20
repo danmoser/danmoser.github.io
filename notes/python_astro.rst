@@ -207,6 +207,61 @@ Errors
         print(*args, file=sys.stderr, **kwargs)
 
 
+Status line (printing over the same line)
+============================================
+.. code:: python
+
+    def fnPrintLine(tag, msg, cols=None, sameLine=False, align='left', flush='', full=False):
+        """
+        prints a formated line with a tag, message and time to the screen:
+        [   TAG    ] This is a message....................................... [ 22:36:39 ]
+
+        :author: J. Humberto
+        """
+        if align == 'center':
+            halign = '^'
+        elif align == 'right':
+            halign = '>'
+        else:
+            halign = '<'
+
+        if cols == None:
+            try:
+                cols = get_terminal_width()
+                if cols < 80:
+                    raise
+            except:
+                cols = 100
+
+        if len(msg) > cols - 34:
+            msg = textwrap.wrap(msg, width=cols - 34)
+            if tag == None:
+                string = '{0:^16} {1:{flush}{halign}{w}}'.format('', msg[0], w=cols - 34, halign=halign, flush=flush)
+                for line in msg[1:]:
+                    string += '\n{0:^18} {1:{flush}{halign}{w}}'.format('', line, w=cols - 34, halign=halign, flush=flush)
+            else:
+                string = '[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'.format(tag, msg[0],
+                                                                             datetime.now().strftime('%H:%M:%S'),
+                                                                             w=cols - 34, halign=halign, flush=flush)
+                for line in msg[1:]:
+                    string += '\n{0:^18} {1:{flush}{halign}{w}} {2:^14}'.format('', line, '', w=cols - 34, halign=halign,
+                                                                                flush=flush)
+
+        else:
+            if tag == None:
+                string = '{0:^18} {1:{flush}{halign}{w}}'.format('', msg, w=cols - 34, halign=halign, flush=flush)
+            else:
+                string = '[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'.format(tag, msg, datetime.now().strftime('%H:%M:%S'),
+                                                                             w=cols - 34, halign=halign, flush=flush)
+
+        if sameLine == True:
+            sys.stdout.write('{} \r'.format(string))
+            sys.stdout.flush()
+        elif sameLine == False:
+            print string
+        return
+
+
 Check if a variable is string
 =======================================
 In Python 2.x, one would do for the *s* variable
