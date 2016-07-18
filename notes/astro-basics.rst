@@ -155,6 +155,11 @@ Pictures
 - APOD - Astronomy Picture of the Day
     http://apod.nasa.gov/
 
+.. figure:: figs/astro-basics_year.gif
+    :align: center
+
+    Seasons explained 
+
 .. figure:: figs/astro-basics_loop.gif
     :align: center
 
@@ -180,6 +185,11 @@ Pictures
     :align: center
 
     Another one!!
+
+.. figure:: figs/astro-basics_juno.gif
+    :align: center
+
+    5 years Juno's journey
 
 Observations
 ***************

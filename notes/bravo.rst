@@ -3,96 +3,14 @@ Bravo
 
 .. contents:: Table of Contents
 
-Development
-**************
-ceFca notes
-============
-Walter
--------
-VO CEFCA (random notes)
-
-- Implementation from scratch
-- All libraries/dependencies used are open source
-
-- Storage:
-
-    - 2x14TB SSD for database and web services (for S-PLUS for now)
-    - HDD for images, accesible only when needed by the web services
-
-- Database:
-
-    - Postgres + python codes
-
-- From pipeline to public:
-
-    - Databases used in the pipeline are different than for the public access (note from Walter)
-    - So we would need from CEFCA the database schemas (tables, columns, ...)
-    - pyramid web framework app based on python + VO Services (TAP, etc) -> cone search/"skyserver" -> use alladin, etc
-
-- Front end:
-
-    - implemented Apache HTTP server
-    - implemented website (similar to sdss' skyserver) (even more user friendly), with form searches, SQL searches, cross-match, etc.
-
-Paula
--------
-* implementation done from scratch in Python
-
-    are there libraries?
-        JH: we used libraries (astropy, pywcs,...)
-
-    are we considering shoaring our implementations?
-        JH: we should improve a bit the implementation
-
-    Both JH and Tamara never heard about VO before arriving here. None of them has ever attended an IVOA-interop meeting
-
-    JH: the development is "very specific" and oriented to our data
-
-* Hired
-
-    JH hired for db management and publishing (which ended up being VO)
-
-* Public and private access
-
-    Phase 3 data not public and not accessible via web-portal
-
-    Phase 2 will be private.
-    Password protected data-access (certainly works with Topcat and Aladin)
-
-* protocols
-
-    Cone search, TAP, SIAP
-
-    SSAP still pending
-
-* Data models
-
-    Interops working on data-models on data-cubes
-    ceFca could get involved at some point
-
-* Database
-
-    Deisgned by JH and Tamara
-        It is postgresNG
-    
-    Why postgres?
-        JH: people here were using mySQL. We evaluated the possibilities but JH knew postgres which is known to manage big amount of data better than mySQL and with a bigger data model.
-
-    Do IVOA db documents leave freedom of db implementation?
-        JH: totally free
-
-* Where does the system becomes "VO-compliant"?
-
-    The db can be any. The Python layer receives VO-compliant requests, queries the db
-        and gives VO-compliant replies.
-
-* Registry
-
-    The service will be registered (possibly to the euro-vo registry with the help of SVO)
-
 
 Meetings
 ***********
+Meetings (absence)
+====================
+- March
+- April
+- May
 
 Meeting 05/02/16
 ==================
@@ -231,10 +149,6 @@ Visão geral
 - No BRAVO também contamos com outros 2 post-docs (Alberto, em Portugual) e Paulo (nos EUA), e o prof. Alex (IAG) e que eventualmente nos ajudarão. 
 - Vamos testar 2 soluções: a do GAVO-Dachs (Alemanha) e a do CADC (Canadá). Para isso, criamos 2 VMs no servidor do BRAVO.
 
-Caso de Usuário Beacon
-========================
-TBD
-
 S-Plus survey
 ===============
 S-Data managements docs no GoogleDrive.
@@ -246,11 +160,98 @@ Dados técnicos:
     - VO Space público (e privato).
     - Data Publishing, Toolkit CVO ou GAVO
 
+
+ceFca notes
+--------------
+Walter
+~~~~~~~
+VO CEFCA (random notes)
+
+- Implementation from scratch
+- All libraries/dependencies used are open source
+
+- Storage:
+    - 2x14TB SSD for database and web services (for S-PLUS for now)
+    - HDD for images, accesible only when needed by the web services
+
+- Database:
+    - Postgres + python codes
+
+- From pipeline to public:
+    - Databases used in the pipeline are different than for the public access (note from Walter)
+    - So we would need from CEFCA the database schemas (tables, columns, ...)
+    - pyramid web framework app based on python + VO Services (TAP, etc) -> cone search/"skyserver" -> use alladin, etc
+
+- Front end:
+    - implemented Apache HTTP server
+    - implemented website (similar to sdss' skyserver) (even more user friendly), with form searches, SQL searches, cross-match, etc.
+
+Paula
+~~~~~~~~
+* implementation done from scratch in Python
+
+    are there libraries?
+        JH: we used libraries (astropy, pywcs,...)
+
+    are we considering shoaring our implementations?
+        JH: we should improve a bit the implementation
+
+    Both JH and Tamara never heard about VO before arriving here. None of them has ever attended an IVOA-interop meeting
+
+    JH: the development is "very specific" and oriented to our data
+
+* Hired
+
+    JH hired for db management and publishing (which ended up being VO)
+
+* Public and private access
+
+    Phase 3 data not public and not accessible via web-portal
+
+    Phase 2 will be private.
+    Password protected data-access (certainly works with Topcat and Aladin)
+
+* protocols
+
+    Cone search, TAP, SIAP
+
+    SSAP still pending
+
+* Data models
+
+    Interops working on data-models on data-cubes
+    ceFca could get involved at some point
+
+* Database
+
+    Deisgned by JH and Tamara
+        It is postgresNG
+    
+    Why postgres?
+        JH: people here were using mySQL. We evaluated the possibilities but JH knew postgres which is known to manage big amount of data better than mySQL and with a bigger data model.
+
+    Do IVOA db documents leave freedom of db implementation?
+        JH: totally free
+
+* Where does the system becomes "VO-compliant"?
+
+    The db can be any. The Python layer receives VO-compliant requests, queries the db
+        and gives VO-compliant replies.
+
+* Registry
+
+    The service will be registered (possibly to the euro-vo registry with the help of SVO)
+
+Caso de Usuário Beacon
+========================
+TBD
+
+
 VMs
 ================
 Acesso
 --------
-- https://docs.google.com/forms/d/1mKY9AB-8V73VYz1MXVV3t4sKxcEMYrRyolhX7zHJ8no/viewform?formkey=dERKVTJzU25LdW9mMEUzYVRWS0FkX2c6MA
+- `LAi form <https://docs.google.com/forms/d/1mKY9AB-8V73VYz1MXVV3t4sKxcEMYrRyolhX7zHJ8no/viewform?formkey=dERKVTJzU25LdW9mMEUzYVRWS0FkX2c6MA>`_
 - "gina", 143 107 18 54, porta 20001
 - VPN?
 
@@ -264,12 +265,6 @@ CADC
 --------
 - Debian 8.2
 - 10.180.0.226
-
-
-Atividades
-============
-Meeting 18/12/15
--------------------
 
 
 

@@ -3,14 +3,265 @@ DMF AstroBlog
 
 2016
 ********
-2015-07
+2015-08
 ===========
 TBD
 
 ---------
 
+2015-07
+=========
+Mistery of the hyper-resolution measurements
+------------------------------------------------
+- What is a "reflex velocity"? How a velocity of ~100 cm/s can be measured in a spectrograph with R = 100000 = 3 km/s?
+
+-------
+
+Red-shift and Lyman :math:`\alpha`
+-----------------------------------
+Lyman :math:`\alpha \approx 1215 \AA`
+
+.. math::
+
+    z = \frac{\lambda_{obs}-\lambda_{em}}{\lambda_{em}} 
+
+    \lambda_{obs} = \lambda_{em}(1+z) \\
+    \lambda_{obs}(z=1.9) = 3500 \AA \\
+    \lambda_{obs}(z=7.2) = 10000 \AA
+
+-------
+
+ESO VLT instruments
+----------------------------
+Instruments on the VLT (at 2015:
+
+=== ============== ================= =============== =================
+UT# Telescope name  Cassegrain-Focus Nasmyth-Focus A Nasmyth-Focus B
+=== ============== ================= =============== =================
+1   Antu            FORS2              NACO           KMOS
+2   Kueyen          X-Shooter          FLAMES         UVES
+3   Melipal         VISIR              SPHERE         VIMOS
+4   Yepun           SINFONI            HAWK-I         MUSE
+=== ============== ================= =============== =================
+
+- AMBER: Astronomical Multi-Beam Recombiner. 3 Telescope, R < 15000, JHK bands.
+- CRIRES: Cryogenic Infrared Echelle Spectrograph. R < 100,000, 1 to 5 microns.
+- ESPRESSO: Echelle Spectrograph for Rocky Exoplanet- and Stable Spectroscopic Observations. Fiber-fed capable of operating in 1-UT mode and in 4-UT mode (using all four UT telescopes). Commissioning in 2016.
+- FLAMES/GIRAFFE: Fibre Large Array Multi-Element Spectrograph, fibre feed unit for UVES and GIRAFFE, the latter allowing the capability for simultaneously studying hundreds of individual stars in nearby galaxies at moderate spectral resolution in the visible.
+- FORS (1/2): Focal Reducer and Low Dispersion Spectrograph. Multi Object Spectrograph with a 6.8 arcminute field of view (up to 19 simultaneous objects). 
+- GRAVITY: 4 Telescope, R < 5000, H(?) bands. Commissioning in 2016. 
+- HAWK-I: The High Acuity Wide field K-band Imager. Field of view 8x8 arcminutes.
+- ISAAC: The Infrared Spectrometer And Array Camera (replaced by HAWK-I and KMOS).
+- KMOS: cryogenic near-infrared multi-object spectrometer, observing 24 objects simultaneously.
+- MATISSE: Multi Aperture Mid-Infrared Spectroscopic Experiment. 4 Telescope, R < 1500, LMN bands. Commissioning in 2017.
+- MIDI: 2 Telescope, H(?) band. Retired in March 2015.
+- MOONS: Multi-Object Optical and Near-infrared Spectrograph, currently (mid-2016) in conceptual design.  The aim is to start operations by 2019 (500 sq. arcmin; 1024 fibers).
+- MUSE: High resolution(?) and wide-field IFU.
+- NACO: Nasmyth Adaptive Optics System + Coude Near Infrared Camera. It is an adaptive optics facility, and includes spectroscopic, polarimetric and coronagraphic capabilities.
+- PIONIER: 4 telescopes, H band. 3 or 9 channels (resolution).
+- SINFONI: Spectrograph for Integral Field Observations in the Near Infrared. It is a medium resolution, near-infrared (1-2.5 microns) IFU.
+- SPHERE: Spectro-Polarimetric High-Contrast Exoplanet Research.
+- UVES: Ultraviolet and Visual Echelle Spectrograph (high-resolution)
+- VIMOS: Visible Multi-Object Spectrograph delivers visible images and spectra of up to 1,000 galaxies at a time in a 14 x 14 arcmin field of view.
+- VINCI: test instrument of VLTI (not in use).
+- VISIR: VLT spectrometer and imager for the mid-infrared (10 and 20 microms).
+- X-Shooter: very wide-band [UV to near infrared] single-object spectrometer.
+
+Visitor instruments:
+    - DAZZLE: A visitor instrument; guest focus (?)
+    - ULTRACAM: ?
+
+Groups:
+    - VLTI: VINCI, MIDI, AMBER, GRAVITY, PIONIER
+
+Other instruments:
+    - HARPS (La Silla, 3.6m): High Accuracy Radial velocity Planet Searcher. Fibre-fed high resolution echelle spectrograph.
+    - 4MOST (VISTA Telescope): fibre-fed spectroscopic survey facility with a large enough field-of-view to survey a large frac­tion of the southern sky in a few years. The facility will be able to simultaneously obtain spectra of ~2400 objects distributed over an hexagonal field-of-view of 4 square degrees.
+
+---------
+
+Rare data from a lost satellite
+------------------------------------
+The Hitomi astronomical satellite observed gas motions in the Perseus galaxy cluster shortly before losing contact with Earth. Its findings are invaluable to studies of cluster physics and cosmology. 
+`Nature link3 <http://www.nature.com/nature/journal/v535/n7610/full/535040a.html?WT.feed_name=subjects_astronomy-and-astrophysics>`_
+
+The main result is that the velocities of the gas are quite low, approximately 150 kilometres per second. A notable implication of this is that the additional contribution to the pressure that is associated with turbulence is constrained to be only a few per cent of the thermal pressure (the main component of the total pressure). This means that measurements of cluster mass based on X-ray observations of hot gas, assuming hydrostatic equilibrium and neglecting turbulent pressure, will have only small associated errors. This is good news for studies that use the masses as the basis for constraining cosmological parameters4.
+
+However, these measurements were made for only one cluster and only in the cluster's central region, and are therefore not necessarily applicable to clusters in general.
+
+---------
+
+No neutrinos from black hole smash
+--------------------------------------------------------------
+The first hunt for neutrinos coming from the merger of two black holes -- which last year produced the first direct detection of gravitational waves -- has come up empty.
+`Nature link2 <http://www.nature.com/nature/journal/v535/n7610/full/535010c.html?WT.feed_name=subjects_astronomy-and-astrophysics>`_
+
+The question is: would neutrino emission be expected? What does the no detection imply?
+
+-------------------------------
+
+Martian moons formed in situ
+-------------------------------
+The moons of Mars may have formed from a disk of debris kicked up by the impact of a giant meteorite on the planet. 
+`Nature link <http://www.nature.com/nature/journal/v535/n7610/full/535011a.html?WT.feed_name=subjects_astronomy-and-astrophysics>`_
+
+-------------------------------
+
+Challenges in magnetic studies of Herbig Ae/Be stars
+------------------------------------------------------
+Swetlana HUBRIG (Leibniz Institute for Astrophysics, Potsdam)
+
+    Magnetic fields are of fundamental importance for the intermediate-mass star formation and accretion-ejection processes.
+    Models of magnetically driven accretion and outflows successfully reproduce many observational properties of the classical T Tauri stars, but the picture is less clear for higher-mass stars, the Herbig Ae/Be stars, due to the poor knowledge of their magnetic field topology. So far, the magnetic field geometry is constrained only for two Herbig Ae/Be stars, and only about 20 Herbig stars were reported to host magnetic fields. Studies of the magnetic field topology using spectropolarimetry are extremely important because they enable us to improve our insight into how the magnetic fields in these stars are generated and how they interact with their environment, including the impact on the planet formation processes and the planet-disk interactions. In this talk, I will present the status of the spectropolarimetric studies of Herbig Ae/Be stars carried out during 
+    the last years.
+
+---------
+
+Exploring Markdown
+--------------------
+Markdown is the official syntax of IPython Notebook, and also appears on Slack. It main advantage to reST is when writing LaTeX inputs: ``$\alpha$`` and ``$$f(x) = x$$`` are valid entries. 
+
+However the built-in Sublime render is not able to solve Latex. Then I needed to install ``pandoc``:
+
+.. code:: bash
+
+    sudo apt-get install pandoc
+
+Then you can create HTML with the command:
+
+.. code:: bash
+
+    pandoc test.md -f markdown -t html -s -o test.html
+    # To include support to equations:
+    pandoc test.md -f markdown -t html -s -o test.html --mathjax=https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML -H header
+
+Where the ``header`` file has the following content:
+
+.. code:: html
+
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "all"} } });
+    </script>
+
+----------
+
+Speeding up Python
+--------------------
+About benchmark and languages: `The Computer Language Benchmarks Game <http://benchmarksgame.alioth.debian.org>`_
+
+In IPython, you can measure how long a command takes for running with 
+
+.. code:: bash
+
+    %time command
+
+*OpenCV* is a Python library optimized for RGB images manipulation. 
+
+Python can be "as fac as plain C":
+    - Cython, scipy.weave
+    - JIT (Just-in Time "compilation"); numba, pypy
+
+or "Faster than plain C":
+    - GPU (CUDA, OpenCL...)
+    - Parallelization (MPI, openMP)
+
+Module *multiprocessing*: a lot o limitations: 
+    - large overheads
+    - increased memory usage
+    - Do not work with Classes and Objects
+
+CS: Computational Scientist
+
+---------
+
+The ways of detecting an exoplanet **atmosphere**
+------------------------------------------------------
+Basically, only three methods:
+
+- *Coronagraphy*: blocks the stellar surface, and the the exoplanet appears from the reflected light. Only 4 or 5 possible targets nowadays (2010s).
+- *Spectral subtraction*: just before an exoplanet being occulted (i.e., the planet is about of passing behind the star for the observer) a significant fraction of the stellar flux is reflected, and it can be observed by the subtraction of the spectrum opposite to the occultation.
+- *Transit*: during the transit, the presence of the exoplanet changes the **colors** of the stellar flux, mainly in the IR. These changes reveal the molecular properties of the exoplanet atm.
+
+-----------
+
+Beta Pictoris moving group
+----------------------------
+It is a young moving group of stars located relatively near Earth. A moving group, in astronomy, is a group of stars that share a common motion through space as well as a common origin. This moving group is named for `Beta Pictoris <https://en.wikipedia.org/wiki/Beta_Pictoris>`_.
+
+The Beta Pictoris Moving Group is an important object for astronomical study as it is the closest youthful group of stars to the Earth. The group covers a region of space for the most part visible only in the Southern Hemisphere.
+
+Discovery
+^^^^^^^^^^
+An early estimated age for the star Beta Pictoris at about 10 million years proved problematic due to the star's apparent isolation in space. According to current theory regarding stellar evolution, extremely young stars of this age should be located near other young stars that formed from the same region in space. It is not until significantly later that gravitational interactions with other stars causes stellar 'siblings' to disperse.
+
+In 1999 the situation was resolved by the discovery of a pair of dim red dwarf stars that were found to have a similar velocity and age to β Pictoris, lending credence to the estimated age of the star.
+
+Further work published in 2001 identified a total of 17 stellar systems with a similar motion and age as the Beta Pictoris moving group, named for the primary member of the association.
+
+-----------
+
+How to call for volunteers 
+------------------------------
+    *As it happens many times in life: the more we give, the more we receive. In a troubled world, generosity and kindness are safe investments which will pave your way to a mindset of service (not to be mistaken with slavery) and hence to greatness and fulfilment.*
+
+    *This is achieved by exercising those qualities in every occasion life invite us. This call is one of those.*
+
+    *Don’t miss the chance. Learn by doing.*
+
+-----------
+
+Research fellowships applicable for astronomers in Europe
+-------------------------------------------------------------
+- `Marie Curie <http://ec.europa.eu/research/mariecurieactions/>`_
+- `ERC <https://erc.europa.eu/funding-and-grants/funding-schemes/starting-grants>`_
+- `Humboldt <https://www.humboldt-foundation.de/web/programmes-by-target-group.html>`_
+- `RAS (UK) <https://www.ras.org.uk/awards-and-grants/fellowships>`_
+- `Royal Society <https://royalsociety.org/grants-schemes-awards/grants/university-research/>`_ (not the astronomical one)
+- `Leverhulme Trust <https://www.leverhulme.ac.uk/funding/grant-schemes/early-career-fellowships>`_. This is a **partial** fellowship (host department complements the salary/costs).
+
+-----------
+
+O Futuro da Astronomia Brasileira
+-----------------------------------
+https://t.co/W6fcZ4jXry
+
+----------
+
+PyAstro16
+-------------
+The final (un)proceedings document for the #pyastro16 meeting is now online! 
+
+http://https://t.co/AZiDJQCtA6 #dotastro #python #astronomy
+
+---------
+
+Matemática explica defeitos encontrados em cristais líquidos esméticos
+-----------------------------------------------------------------------
+http://jornal.usp.br/ciencias/ciencias-exatas-e-da-terra/matematica-explica-defeitos-encontrados-em-um-tipo-de-cristal-liquido/
+
+----------
+
+Ultra-powerful radio bursts: the most perplexing mystery in astronomy
+-------------------------------------------------------------------------------
+http://www.nature.com/news/why-ultra-powerful-radio-bursts-are-the-most-perplexing-mystery-in-astronomy-1.20175?WT.mc_id=TWT_NatureNews
+
+`Microwave oven blamed for radio-telescope signals <http://www.nature.com/news/microwave-oven-blamed-for-radio-telescope-signals-1.17510>`_
+
+
 2015-06
 ===========
+Hubble Captures Vivid Auroras in Jupiter's Atmosphere
+------------------------------------------------------------
+http://hubblesite.org/newscenter/archive/releases/2016/24/
+
+---------
+
+Hubble Reveals Stellar Fireworks in 'Skyrocket' Galaxy
+------------------------------------------------------------
+http://hubblesite.org/newscenter/archive/releases/2016/23/
+
+---------
+
 File compression with ``bz2``
 -----------------------------------
 ``bz2`` compression library is natively supported by Python (see `the Standard Library docs <https://docs.python.org/2/library/bz2.html>`_). The compression rate is about as ``gunzip``, although the compression is quite faster.
@@ -71,7 +322,7 @@ The :math:`v\sin(i)` measurement in hot stars is not easy... Some issues for the
 - The main reference for the method of Fremat+ (2005) is Chauville (2001).
 - Beyond the systematics of the **method**, the rotational effects tends to **underestimate** the :math:`v\sin(i)` (e.g., Townsend 2004)...
 - As seen in Achernar (Rivinius+ 2013), the Be stars do show an intrinsic :math:`\Delta v`, related to the CS activity (:math:`\sim +0.1v\sin(i)`).
-- CONCLUSION: the real s:math:`v\sin(i)` (:math:`== v_{rot}` in i.e., BeAtlas) can be much higher than the measured (or "observational") one.
+- CONCLUSION: the real :math:`v\sin(i)` (:math:`== v_{rot}` in i.e., BeAtlas) can be much higher than the measured (or "observational") one.
 
 -------------
 
@@ -136,7 +387,6 @@ E.g.: IUE, ESO-FEROS, ...
     flux     = tbdata.field('FLUX')        #erg/cm2/s/A
     sigma    = tbdata.field('SIGMA')
     
-------
 
 2016-05
 ===========
@@ -852,6 +1102,7 @@ Hubble team announced the record of the farthest galaxy ever seen. Named GN-z11,
 
 "We've taken a major step back in time, beyond what we'd ever expected to be able to do with Hubble." Before astronomers determined the distance for GN-z11, the most distant galaxy measured spectroscopically had a redshift of 8.68 (13.2 billion years in the past). GN-z11 is 25 times smaller than the Milky Way and has just one percent of our galaxy's mass in stars.However, it is growing fast, forming stars at a rate about 20 times greater than our galaxy does today. 
 
+
 2016-02
 ============
 JPAS @ Vitacura
@@ -896,21 +1147,6 @@ Pedro FIGUEIRA, University of Porto.
 
 http://arxiv.org/abs/1601.05107
 
-------
-
-Vocabulary
-------------
-- Syllabus: 1. an outline of the subjects in a course of study or teaching; 2. (in the Roman Catholic Church) a summary of points decided by papal decree regarding heretical doctrines or practices.
-- quirk (cuãrk): equívoco
-- blend: mistura
-- "a first": primeira vez
-- glimpse: vislumbrar
-- currently: atualmente
-- variegated: variado
-- patch (of a cloud): mancha
-- top (axis): pião
-- tradeoff: troca, compensação
-- chunk: pedaço
 
 ------
 
@@ -1069,9 +1305,184 @@ An updated list of international astronomy meetings is available at the Canadian
 
 http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/meetings/
 
+2016-01
+=========
+The discovery of a supernova type Ia progenitor at the heart of a planetary nebula
+------------------------------------------------------------------------------------------
+David Jones (Instituto de Astrofísica de Canarias)
 
-Older
-********
+    I will present the discovery of a super-Chandrasekhar double-degenerate binary system at the heart of the planetary nebula Hen 2-428.  Planetary nebulae (PNe) represent the final stage in the evolution of low- and intermediate-mass stars, forming from the mass ejected by the star during its AGB evolution before being ionised by the star's, now exposed, core.  As binarity is expected to play a key role in the formation of aspherical PN morphologies, we have been intensively searching for new binary central stars in a push towards a statistical sample.  One of our newly-discovered binary systems had a further surprise to reveal, with observations and modelling showing the system to consist of twin evolved stars with a total mass greater than the Chandrasekhar limit.  The short period of the system, only 4.2 hours, means that the two stars will merge together in approximately 700 Myr, resulting in a Supernova Type Ia.  While the super-Chandrasekhar merger of two white dwarfs has long been considered a formation pathway for SN Ia, this is the first system found that is confirmed to be both massive enough and in a tight enough orbit to merge in less than a Hubble time.
+
+References:
+    - Passy+ 2012
+    - Tovmassion+ 2010
+
+Conclusions: "Double-degenerated stars should be rare... but they are not!"
+
+
+2015-12
+=========
+Wolf-Rayet stars as the key for understanding massive stars
+------------------------------------------------------------
+Wolf-Rainer HAMANN (University of Potsdam)
+
+    Wolf-Rayet (WR) stars are characterized by bright and broad emission lines in their optical spectra. Those lines give evidence for strong stellar winds. The quantitative analysis of such spectra requires adequate non-LTE model atmospheres, which account for the absence of local thermodynamical equilibrium and the atmospheric expansion. State-of-the-art model atmospheres, such as the Potsdam Wolf-Rayet (PoWR) code, can reproduce the observed WR spectra sufficiently and thus allow their reliable analysis. The results confirm that WR atmospheres are composed mainly by helium and nitrogen (WN types) and by helium, carbon and oxygen (WC and WO subtypes). A subgroup of WN stars also contain more or less hydrogen, while all other WR stars are hydrogen free. Models for the evolution of WR stars thus have to explain how the hydrogen-rich envelope has been lost. The WR populations of the Milky Way, the Magellanic Clouds, and some other nearby galaxies have been analysed comprehensively. The comparison with stellar evolution tracks reveals yet poor agreement, and demonstrates a strong dependence on the metallicity of the respective population. Interesting questions refer to the physics of the mass loss. As for other hot stars, radiation pressure is probably the main driving force. Such stellar winds are obviously inhomogeneous, which implies questions on the precision of empirical mass-loss rates, and is also relevent for the unsettled problem how such stars generate their X-ray emission. The feedback of hot massive stars by their ionizing radiation and wind has a strong impact on their environment, creating circumstellar nebulae and driving the evolution of their parental clusters. 
+
+Wolf & Rayet were French astronomers that in 1867 detected broad emission lines in some stars (FWHM :math:`\Delta\lambda=24\AA` ~1500 km/s in HeII 4686 :math:`\AA`).
+    - The emission can reach 4x the continuum
+    - Seen in O-type stars 
+    - Beals (1929) call them "Wolf-Rayet stars"
+    - Velocities up to :math:`v_\infty=3000` km/s
+    - :math:`\dot{M}=10^{-4}` Msun/yr
+
+UV resonance lines in **all** O star spectra show *P-Cygni profiles*
+    - Morton & Underhill (1977)
+    - Also seen in CIV, NV, OIV, SiIV
+
+P-Cygni profile:
+    - blue-shifted absorption
+    - red-shifted emission
+
+WR H-deficient... How to get rid of H?
+    - Paczynski (1967): Roche-lobe overflow to a binary
+    - Conti (1975) scenario: stellar wind (H -> He)
+
+Line-driven stellar winds:
+    - Wind transparent in continuum but opaque in many lines
+    - Absorption in radial direction and isotropic remission
+    - Acceleration of the CS material: Doppler shift of the lines
+    - Wind accel. driven by >100 lines: :math:`\dot{M}` dominates stellar evolution
+
+:math:`L/c < \dot{m}v_\infty`
+    - mass loss exceeds single-scattering limit
+    - multiple scattering can drive WR (Gräfener & Hamann 2005, 2008)
+
+CAK theory: 
+    - In **one** line, the intercepted momentum per time is :math:`L_{\nu0}\Delta\nu/c=Lv_\infty/c^2`
+    - :math:`\Delta\nu=\nu_0 v_\infty/c^2`; :math:`L\approx L_{\nu0}\nu_0`
+    - Wind momentum: :math:`\dot{M}v_\infty`
+    - Mass loss by :math:`n_{eff}` thick lines: :math:`\dot{M}=n_{eff}L/c^2`
+    - :math:`L = dE/dA = d/dt(Mc^2)`
+
+Non-LTE solutions are required:
+    - Solution: iteration with Approx. :math:`\lambda` Operators (ALI)
+    - Mihalas, Kunasz & Hummer (1975, 1976): Radiative transfer in the CoMoving Frame (CMF)
+
+Detailed model atoms are required:
+    - All relevant transition rates accounted for
+    - Line oscillator strengths
+    - Photo-ionization cross sections
+    - Collisional cross sections
+
+Equivalent non-LTE codes:
+    - PoWR (Postdam)
+    - CMFGEN (Hillier)
+    - FastWind (Pulst)
+
+
+
+----------------
+
+The "missing water" mistery in exoplanets
+--------------------------------------------
+http://hubblesite.org/newscenter/archive/releases/2015/44/
+
+A survey of 10 hot, Jupiter-sized exoplanets conducted with NASA's Hubble and Spitzer space telescopes has led a team to solve a long-standing mystery -- why some of these worlds seem to have less water than expected. The telescope's Wide Field Camera 3 is capable of detecting water vapor in such exoplanets - but at least half of them had no signal of water.
+
+This study analyzed only **transit** exoplanets. Observing these passages, the difference in planetary radius as measured between visible and infrared wavelengths was used to indicate the type of planetary atmosphere being observed for each planet in the sample, whether hazy or clear. A cloudy planet will appear larger in visible light than at infrared wavelengths, which penetrate deeper into the atmosphere. 
+
+"Our results suggest it's simply clouds hiding the water from prying eyes, and therefore rule out dry hot Jupiters," explained co-author Jonathan Fortney of the University of California, Santa Cruz. "The alternative theory to this is that planets form in an environment deprived of water, but this would require us to completely rethink our current theories of how planets are born."
+
+---------
+
+Chronography of MW Halo with BHB stars
+-------------------------------------------------
+BHB: Blue Horizontal Branch 
+
+Preston (1991): BHB stars in halo, colors shift with distance. Variation of ages of halo stars = a few Gyr. 
+
+Mean colors of BHB stars shift with increasing distance from Galactic Center. Age distance of 2-2.5 Gyr out to ~50kpc, with the oldest stars concentrated in the central ~15kpc of the Galaxy. 
+
+ACS: Ancient Chronographic Sphere (r < 15 kpc)
+    - :math:`\Delta` color = 0.05 (~0.8 Gyr
+    - Includes the Solar Neighborhood.
+
+-------
+
+Compositional diversity of main belt asteroids
+-------------------------------------------------
+Asteroids are classified according to the reflectance spectrum (De Meo+ 2009).
+
+Asteroids with meteoritic analogues = spectrum comparison:
+    - 1/3 mass of belt = metallic, rocky and hydrated (x-OH)
+    -  2/3 mass of belt = low-density, icy asteroids (C-, P- and D-types)
+
+These 2/3 types are unsampled in our terrestrial meteorite collections. Why? volative-rich components = comet-like activity.
+
+Evidence: icy bodies are compatible with compatible with anhydrous (without water) interplanetary dust particles (IDPs).
+
+Themis (a collisional asteroid) family: outer portions of the asteroid belt. One of the more populous families. 
+
+-------
+
+Mystery of "Born again" stars
+-------------------------------
+http://hubblesite.org/newscenter/archive/releases/star-cluster/2015/43/
+
+Some stars weren't evolving as predicted: `Blue-stragglers <https://en.wikipedia.org/wiki/Blue_straggler>`_ are hotter and bluer than they should for their advanced age, appearing to be "reinvigorated". 
+
+Theory: an aging star spills material onto a smaller companion star. The small star bulks up, and become hotter and bluer. The aging star (the donor) collapses to a white dwarf. 
+
+NGC 188 has 21 blue-stragglers (BS): Hubble detected 7 WD companions and in other 7 there is evidence of mass-transfer events.
+
+So ~2/3 of the BS in NGC 188 formed through mass transfer. This is the 1st fraction estimative of BS. BS represent ~25% of evolved stars.
+
+Importance on stellar evolution models and their applications.
+
+-----------
+
+Stellar associations and the different age scales: How far can we go?
+------------------------------------------------------------------------
+David Barrado (Center of Astrobiology, INTA-CSIC) 
+
+    A significant fraction of what we know about stellar properties depend on stellar associations, since they are open windows to understand stellar evolution. Specifically, they allow us to understand the change with time and mass. Thus, they are our laboratories where different theories can be tested. However, age is a key parameter and its estimation is not an easy task. A overview of the different methodologies will be presented, focusing on open clusters, moving groups and star forming regions, and their validity and limits will be discussed.
+
+Main idea: different set of models leads to different answers.
+
+Only two absolute anchors: 
+    - (i) Big Bang 13.799(21) Gyr; 
+    - (ii) Solar System (Sun & asteroids) 4.57 Gyr; 
+    - (Nothing at Myr age scale!!)
+
+LDB: Lithium Depletion Boundary - is a method proposed for dating open clusters based on a determination of the lithium abundances of a cluster's stars whose masses are at about the hydrogen burning mass limit.
+
+Problem: Gaia was blind to very young star associations.
+
+Siz techs to determining ages (Mermilhod 2000):
+    - turn-off
+    - morphological
+    - isochrone
+    - ...(?)
+
+Methods for Globular clusters:
+    - LF (luminosity function; age and distance)
+    - WD cooling time
+    - Asterosismology (Moya+ 2010)
+    - Power spectrum of the light-curve (Lillo-Box+ 2014)
+
+Cornerstone: Pleiades (David+ 2015)
+    - LDB in Pleiades: Stauffer+ (1009)
+    - CMD: Colour-Mag Diagram = 15 < age < 450 Myr
+    - Interferometry: Jones+ (2015)
+    - Gyrochronology: Barnes (2007); Mamajek & Hillenbrand (2008)
+
+Refs
+^^^^^
+- Hansen & Kawaler (1994): depence of mass and age
+- Chaboyer (2001): ingredients to models
+- Soderblom (2010, 2013): methods classification
+
+
 2015-11
 ========
 Intro do (M)HD codes, Luis Kadowaki @ GAi, day 16
@@ -1079,10 +1490,9 @@ Intro do (M)HD codes, Luis Kadowaki @ GAi, day 16
 Soluções: N-corpos, ou dinâmica de fluidos (como SPH), estes em geral escritos em termos das equações de Euller.
 
 Critérios para ser um fluido:
-
-- Livre caminho médio pequeno no sistema
-- Tempo entre colisões >> Tempo de evolução
-- Distância média entre colisões << que o tamanho característico do sistema
+    - Livre caminho médio pequeno no sistema
+    - Tempo entre colisões >> Tempo de evolução
+    - Distância média entre colisões << que o tamanho característico do sistema
 
 Como regra, há 6 variáveis e 6 equações a serem resolvidas (7, no caso MHD): 3 momentos, :math:`\rho`, Pressão (Eq. de estado) e Energia.
 
@@ -1101,7 +1511,429 @@ Há vários métodos para a solução do problema de Rieman: roc, HLL, HLLC, ...
 Inicialmente resolve-se as variáveis primitivas :math:`v, P` e depois as substitui nas variáveis conservativas :math:`mv, E`...
 A estratégia em Godunov é utilizar *sub-time steps* nos cômputos.
 
+2015-04 
+==========
+III Workshop High Performance Computing -- USP - Rice University
+=================================================================
+Programação (parcial)
+-----------------------
+- 8:30 Registration, welcome reception and breakfast/café da manhã.
+- 9:15 Opening talk. Vision of collaborative efforts between the universities and student exchanges. Prof. Dr. Vahan Agopyan (Vice-Reitoria da USP), Prof. Dr. José Eduardo Krieger (Pró-Reitoria de Pesquisa), Prof. Dr. José Onuchic (Rice University), Prof. Dr. João Eduardo Ferreira (STI – USP) and Prof. Dr. Carlos Antônio Ruggiero (IFSC) .
+- 10:00 Prof. Dr. Paul Whitford (Rice University). The BG collaboration, Past, Present, Future. The new available resources.
+- 10:30 Prof. Dr. Alfredo Goldman (IME) – Aula sobre Paralelização Automática.
+- 11:45 Open forum for new and existing users’ questions and answers. Traditional HPC and regular cluster usage. 
+- 12:00 Lunch Time
+- 14:00 Eduardo Rodrigues – IBM Research Brasil:  “Programação paralela híbrida com MPI e OpenMP – uma abordagem prática”.
 
+
+Infos
+----------
+- 24,576 cores = 84 teraflops
+
+- Low-power processors, but massively parallel
+
+- SMP mode ...
+- VN (virtual node) 4 independent MPI process
+- DUAL (dual node) 2 processors, 2 threads each
+
+- SUSE Linux
+- ppc450 compute cores
+
+- BG/Q also requires cross compilation
+
+"You should always start with scalability tests".
+
+MPI, openMP, hybrid MPI+openMP...
+
+Performance reproductible = compare the computing time a few times (and see if they are the same).
+
+HPC Toolkit (Mellor-Crunmmey) = compreensive resources information (idle processors, etc...)
+
+Possible competitive allocation process
+- User need to show scaling data !!!!
+
+USP-Rice Resources 
+^^^^^^^^^^^^^^^^^^^
+    **BG/Q**:
+
+    - 2,1 GFLOPS/W
+    - 16384
+    - 16+1spare+1for O/S (cores per node)
+    - 16GB per node
+    - Possible threads per core 4
+    - minimum nodes/job 32 (512 physical cores)
+    - Scratch disk space 120TB (2 weeks)
+        
+    **DaVinci**:
+
+    - 25 TeraFLOPS
+    - GPGPUs (Fermi)
+    - 2,8GHz intel westmere
+
+    **PowerOmics**
+
+    - 10 TeraFLOPS
+    - 3,0GHz POWER8 12 core processors
+    - For applications with very high memory demands
+
+Other resources and infos
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you need MILLIONS of CPU hours, XSEDE is for you.
+
+- XSEDE requires a US researcher to be part of the them.
+- In Europe, there is PRACE = similar opportunities.
+
+AGORA: Transição no cluster, do "BlueGene P" para "BlueGene Q".
+
+Paul Whitford (available for help) pcw2@rice.edu
+
+
+10h30: Paralelização automática
+---------------------------------
+Modelo *polyhedral*
+
+Exemplos práticos indo fonte original para GPU.
+
+Evolução HPC rápida: heterogeneidade dos elementos de processadomente, GPU, FPGAS (Xilinx, Altera), Xeon Phi (arranjo de processadores).
+
+Não há uma migração automática para usar as novas plataformas. Kits de desenvolvimento ainda não são maduros.
+
+
+- Tradução *source-to-source* (via fonte)
+- Tradução via binários!!!
+
+Abordagens
+
+    - Uso de diretivas de Compilação (principalmente C e Fortran). 
+    - Paralelização automática
+
+Diretivas de compilação:
+
+    O código é anotado com diretivas de preprocessamento (``#pragma``)
+
+    - OpenMP
+    - hiCUDA
+    - CGCM
+    - PGI: OpenACGG
+    - OpenMC (OpenMP para GPUs)
+
+Paralelização automática:
+
+    Nenhuma auteração do código
+
+    - Par4All
+    - KernelGen
+    - PPCG
+    - C-to-CUDA
+
+Modelo Polyhedral a partir de laços.
+Domínio, *scatering*, função de acesso à memória. **SCoPs**
+
+Ferramentas que extraem: SCoPs, clan e pet
+
+Gerador de código para C: ClooG...
+
+PPCG usa as bibliotecas pet e isl ...
+
+O Polly é um projeto do LLVM que implementa o modelo polyhedral para código intermediário (LLVM-IR).
+
+LLVM (http://llvm.org) é um projeto que fornece uma infraestrutura para a construção de compiladores (University of Illinois at Urbana-Champaign).
+
+Contato: Rogério Gonçalves (rogerioag@utfpr.edu.br) e Alfredo Goldman (gold@ime.usp.br).
+
+
+14h00: IBM (HPC) Eduardo Rodrigues
+---------------------------------------
+Tutorial - Programação paralela hĩbrida com MPI e open MP = uma abordagem prãtica
+
+IBM Research... Jobs open!
+
+AMPI - load balancing
+
+Paralelizações:
+
+- Fork-join (compartilhamento de memória = multi-cores)
+- Message passing
+
+Why MPI/openMP ?? Answer: They are open standards !
+
+MPI
+^^^^^^^^^^^^^^^^^^^
+6 comandos básicos:
+
+- MPI_Init
+- MPI_Finalize
+- MPI_Comm_rank (tipo de id)
+- MPI_Comm_size
+- MPI_Send
+- MPI_Recv
+
+.. code::
+
+    #include <mpi.h>
+    #include <stdio.h>
+
+    int main(int argr, char**, argv...)
+
+    ...
+
+    mpi_finalize();
+    return 0
+
+Send/Recv flavors
+
+- MPI_Send, MPI_Recv (processador pára)
+- MPI_Isend, MPI_Irecv (processador non-idle)
+- MPI_Bsend
+- MPI_Ssend
+- MPI_Rsend
+
+Collective communication (Broadcast)
+
+- MPI_Bast
+- MPI_All_Reduce
+
+Livro: Peter Pacheco - Introduction to  pararallel...
+
+(Some) New features
+
+- Process creation (MPI_Comm_spawn); *não disponível no BG*.
+- MPI I/O (melhor HDF5 sobre MPI I/O)
+- Non-blocking collectives;
+- One-sided communication
+
+(Tudo isso sem se preocupar com threads).
+
+4 Tipos de níveis:
+
+- MPI_THREAD_SINGLE (sem threads)
+- MPI_THREAD_FUNNELED - level 1: só um thread gera chamadas/comunicações
+- MPI_THREAD_SERIALIZED - level 2: vários podem chamar, mas 1 de cada vez
+- MPI_THREAD_MULTIPLE - level 3: todos ao mesmo tempo
+
+int MPI_Init_thread(...)
+
+
+openMP
+^^^^^^^^^^^^^^^^^^^
+...  OpenPower
+
+AMPI
+^^^^^^^^^^^^^^^^^^^
+MPI em Charm++
+
+Benefícios da virtualização: .......
+
+
+14h45: Solving QCD: do BG/P ao BG/Q
+---------------------------------------
+Atillio IFSC
+
+Quantum Chromodynamics (análogo a Eletrodinâmica).
+
+QCD vs. QED !
+
+Técnica: QCD on a Lattice
+
+
+Workshop Ciência de Dados IAG
+---------------------------------
+.. image:: figs/events_iwbdiag-program.jpg
+    :width: 800px
+    :align: center
+    :alt: alternate text
+
+Apresentação Laerte
+^^^^^^^^^^^^^^^^^^^^
+
+3 itens importantes: (i) Atualidade, (ii) Importância Institucional e (iii) Visibilidade.
+Presença de big data nos 3 departamentos do IAG. Desafios: armazenamento, transferência e processamento.
+
+Muitos post-docs estão arrumando empregos em ciência de dados. Exemplo Nature: PhD da Inglaterra trabalha com desenvolvimento de algoritmos para clientes escolherem suas roupas. 
+
+Exemplo Astro: SDSS. Bilhôes de objetos, desde Sist.Solar à extra-gal.
+
+Importância para o Instituto: 3 deptos. não interagem entre si. Big-data pode ser a ponta que falta para solidificar; Algoritmos e machine-learning para todos.
+II Workshop internacional com 3 áreas: único. Visibilidade. Realizar a Escola FAPESP.
+
+
+Claudia Bauzer Medeiros
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Urban Informatics: sistema público da cidade de Nova York (CUSP-statistics2014, MPCSTAR 5.3)
+
+Computational issues: to extract and present trends, patterns, anomalies, correlations from a (huge) set of *Heterogeneous data*, to *people* ...
+
+Technologies: Hadoop, MapReduce...
+
+eScience: *Joint* research effort (Comp. Science + {X}). With results in computation beyond {X}.
+
+BigData: 3V
+    - Volume
+    - Velocity
+    - Variety
+    - Veracity (4V)
+    - Variability (6V)
+    - Visibility (6V)
+
+Data Science = Big Data + Big Analytics (extrair informações dos dados).
+
+Livros: data scientists at work; Hadoop for Dummies.
+
+Revista básica: Communications of the ACM.
+
+ukdataservice.ac.uk
+
+Paradigma: de "quais dados tem tal valor" para quais dados "possuem determinado perfil"?
+
+
+Fábio M. Porto (LNCC)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+DEXL Lab: Dados crus, integração, análise
+
+"Desenvolver técnicas, métodos, algoritmos para apoio à Gerência e Análise de Dados Científicos".
+
+* Prêmio desafios da computação
+
+"Scientists are spending most of their time manipulating, organizing, finding and moving data, instead of researching. And it's going to get worse".
+
+Início: origem do dados humana. Quantidade podia ser analisada por um único homem.
+Hoje: origem é automática/mecânica. Quantidade deve ser analisada de forma idêntica.
+
+Cada dado tem VÁRIAS dimensões: valor, veracidade, velocidade, etc.
+"One size does not fit all".
+
+OLTP : Main memory database (comércio...)
+OLAP : Column Stores
+NoSQL : Grande scala
+SciDB, Neo... = formas de acessar os dados (tecnologias).
+
+* Procurar padrões
+
+* Projeto NoDB (EPFL), SimDB (Dexl-MACC)...
+
+Gruber : ontologia é uma conceitualização formal e compartilhada da especificação de um domínio.
+
+Hive... = language do Handoop+HDFS+....
+
+1 vs grupo e dados distribuídos = Handoop + Map-Reduce
+
+MayBMS = banco de dados "incertos".
+
+Bernardo Gonçalves, Fabio Porto, PVLDB 2014
+
+Considerações finais:
+    - Interesse em diversas versões (a medida q é processado)
+    - O ponto de intervenção
+    - Identificacao da essencia do problema
+
+    
+Luiz M. R. Gadelha Jr.
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Gerenciamento biodiversidade...
+
+iNaturalist = registro de ocorrências naturais, como identificação de espécies.
+
+
+Paulo Rodrigues T. Coelho (Astro)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Virtual Observatory: an Astronomy's answer to Big Data
+
+Dados complexos e heterogêneos.
+
+VO:
+
+* The vision that astronomical datasets and other resources should work as a seamless whole (IVOA)
+* A collection of interoperating data archives and software tools which utilize the internet to form an environment... (Wiki)
+* A data discovery, access and integration facility (B. Hanisch)
+
+Common language (standards, protocols, data models, etc).
+
+* Standards (Registry, Protocols, Data Models)
+* Tools (30+ VO-enabled applications, from 10+ VO projects)
+* 300+ refereed papers (2015)
+
+VO complied: Canadian Astronomy Data Centre; CdS; ESA (Archives)
+
+BRAVO:
+
+* To stimulate and to encourage the projrects...
+* Organize workshops and schools
+* Act as a partner of the IVOA
+
+I e II WCCA
+Track Astronomy in SBCC
+Desafio BraVO
+BraVO VO Schools (* Escola latino-americana)
+
+VO Day = SAB 2012
+IVOAInterop = 2012
+
+Cluster LAi (FAPESP, 2012) e gina (INCT-A, 2011)
+
+Casos de usuário (2011-2015?)
+
+
+Victor Sacek & Marcelo B. de Bianchi (Geofísica)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Victor: "Experiências do passado e desafios do futuro".
+
+1957-1958 = Ano internacional Geofísico (IGY, em inglês).
+* Teoria que unificou as feições da terra (continentes, cordilheiras, placas tecntônicas, etc). 
+
+IGY World Data Centers (WDC): all observational data shall be available to scientists and scientific institutions in all countries.
+
+* EarthCube
+    * EC3
+    * GeoDeepDive (Exemplo: comparação com Paleobiology Database)
+
+Bianchi:
+Grupo de sismologia. Dados e organização.
+
+Seedlink? (protocol), StationXML... UML organizador.
+
+http://en.wikipedia.org/wiki/Natural_language_processing, Machine learning,
+iniciativa transversal. 
+
+
+Pedro Leite S. Dias & Sergio... (Meteorologia)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Modelos e evolução meteorologia... Centros regionais: problemas de padronização.
+
+Meteorology ... University of Moscow.
+
+IBM: How big data can boost weather forecasting
+
+http://chuvaonline.iag.usp.br
+http://www.starnet.iag.usp.br
+(http://radar.iag.usp.br)
+
+
+Sergio ... Ferreira... (CPTEC)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[*Já cansado demais... detalhes de operação e armazenamento*]
+
+
+(Encerramento)
+^^^^^^^^^^^^^^^
+Pela 1a. vez IAG se reune para discutir problemas históricos.
+
+Dificuldade de recursos humanos = institutos como o IAG não podem contratar especialistas em computação. Necessidade de instituto transversais.
+
+IME tem suporte para desenvolvimento de software livre.
+
+Falta à universidade e ao Brasil uma programa de produção científica. Hoje os esforços são iniciativas individuais.
+
+"Ciência da computação se confunde com a tecnologia da informação". 
+
+
+Outros
+--------
+Banco de dados relacional (MySQL; aplicações comerciais) versus não relacional (aplicações científicas; dados complexos).
+
+
+
+Older
+********
 2013-04
 ========
 Dark Matter review, ? @ Univ. Toledo, day 04
@@ -1119,17 +1951,15 @@ Cold; non-interacting (or weak-scale); Gaussian, adiabatic initial fluctuation (
 Successfully described the creation of structures in the universe.
 
 Precise tests of gravity: 
-
-- CMB = structures formation (large structure). 
-- Solar system dynamics = 13 decimal places of accuracy!
-- Lab. tests.
+    - CMB = structures formation (large structure). 
+    - Solar system dynamics = 13 decimal places of accuracy!
+    - Lab. tests.
 
 DM options:
-
-- WIMPs = Weakly Interacting Massive Particles (the only strongly motivated model from particle theory)
-- Axions or other particle exotica
-- Tiny black holes
-- ...
+    - WIMPs = Weakly Interacting Massive Particles (the only strongly motivated model from particle theory)
+    - Axions or other particle exotica
+    - Tiny black holes
+    - ...
 
 2013-02
 ==========
@@ -1142,17 +1972,15 @@ SPHERE instrument = 10-50 mas; 1.0-2.0 :math:`\mu m`.
 AO = Shack Hartmann wave front sensor
 
 Star cluster formation: almost all stars are born in clustered mode:
-
-#. collapse of molecular clouds
-#. formation in filaments and radiatively out the residual gas
-#. dynamical evolution of the newly formed star cluster
+    #. collapse of molecular clouds
+    #. formation in filaments and radiatively out the residual gas
+    #. dynamical evolution of the newly formed star cluster
 
 Important *ingredients*:
-
-- mass segregation
-- infant mortality
-- IMF
-- binary fraction
+    - mass segregation
+    - infant mortality
+    - IMF
+    - binary fraction
 
 Relation between most massive star and the total cluster mass (Weidner & Kroupa).
 

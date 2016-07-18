@@ -532,27 +532,35 @@ git push
 </div>
 <div class="section" id="general-tips">
 <h2><a class="toc-backref" href="#id9">General tips</a></h2>
-<p>git ignore file extensions: <cite>subl .git/info/exclude</cite>. More info at <cite>git help ignore</cite>.</p>
-<p>Ignore syncing <cite>*.o</cite> (but keep then at PC): <cite>git rm --cached *.o -n</cite> (<cite>-n</cite> is the dry-run). Use <cite>--cached</cite> to keep the file, or <cite>-f</cite> to force removal.</p>
+<p>git ignore file extensions:</p>
+<pre class="code bash literal-block">
+vim .git/info/exclude
+<span class="comment"># More info at
+</span>git <span class="name builtin">help </span>ignore
+</pre>
+<p>Ignore syncing <cite>*.o</cite> (but keep then at PC):</p>
+<pre class="code bash literal-block">
+git rm --cached *.o -n  <span class="comment"># `-n` is the dry-run
+# Use `--cached` to keep the file, or `-f` to force removal.</span>
+</pre>
 <p>Roll back to a previous commit: <cite>git reset --hard f2f730b</cite></p>
-<p>diff:</p>
-<pre class="literal-block">
+<pre class="code bash literal-block">
 git diff --cached f2f730b arquivo.py
 </pre>
 <p>Dump old version file:</p>
-<pre class="literal-block">
+<pre class="code bash literal-block">
 git cat-file -p cf1328e:./poltools.py &gt; poltools.old.py
 </pre>
 <p>Add files from a remote local:</p>
-<pre class="literal-block">
+<pre class="code bash literal-block">
 git remote add origin https://github.com/USER/REPO.git
 </pre>
 <p>Upload your local commit to the web:</p>
-<pre class="literal-block">
+<pre class="code bash literal-block">
 git push origin master
 </pre>
 <p>Download the changes from the repository:</p>
-<pre class="literal-block">
+<pre class="code bash literal-block">
 git pull origin master
 </pre>
 </div>

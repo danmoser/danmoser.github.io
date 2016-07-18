@@ -5,7 +5,7 @@ Python is a language where simplicity matters. Thus, many features are only acce
 Modules, Packages, and all that...
 ===================================
 - *module* is Python code file containing definitions, functions, statements...
-- *package* is structure to share a set of modules.
+- *package* is a structure to share a set of modules.
 
 .. code:: python
 
@@ -24,6 +24,8 @@ Mandatory reading: the *standard library* documentation
     -- its docs
 
     https://docs.python.org/2/library/
+
+    A good way of learning: PyMOTW (`Python 2 <https://pymotw.com/2/>`_, `Python 3 <https://pymotw.com/3/>`_).
 
 
 A few examples

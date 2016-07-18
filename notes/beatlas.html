@@ -670,6 +670,52 @@ span.boxed, span.framebox {
 <div class="document" id="beatlas">
 <h1 class="title">BeAtlas</h1>
 
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#notas" id="id1">Notas</a></li>
+<li><a class="reference internal" href="#parameters-and-conversion" id="id2">Parameters and conversion</a><ul>
+<li><a class="reference internal" href="#simulations" id="id3">Simulations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="notas">
+<h1><a class="toc-backref" href="#id1">Notas</a></h1>
+<dl class="docutils">
+<dt>Idealmente, teríamos 4 trabalhos para o BeAtlas:</dt>
+<dd><ol class="first last arabic simple">
+<li>Fotosférico, apresentação e &quot;calibração&quot;</li>
+<li>Fotosférico, aplicação Be e Bn</li>
+<li>Com disco, apresentação e &quot;calibração&quot;</li>
+<li>Com disco, aplicação Be e Bn</li>
+</ol>
+</dd>
+</dl>
+<p>Comparações entre observações e valores intrínsecos: Analizando Fremat+ 2005, vemos que a tabela de valores foca apenas nas grandezas APARENTES, e não intrínsecas. O modelo PNRC está como referência para recuperar-se os valores intrínsecos.</p>
+<p>Fremat+ 2005 compara os casos com GD e OB com ou sem estes efeitos (PNRC). Como resultado, GD+OB <strong>sempre</strong> diminuem <em>Teff, log(g) Vsin(i)</em>, sendo as alterações mais sensíveis em altas taxas de rotação - e para altos ângulos de inclinação (i.e., edge-on), e (devem) variar entre tipos espectrais.</p>
+<p>Além das fórmulas dadas no artigo, pode-se recuperar as grandezas intrínsecas como um &quot;teste de sanidade&quot;:</p>
+<div class="formula">
+log<sub>10</sub><i>g</i> = log<sub>10</sub><span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>GM</i></span><span class="ignored">)/(</span><span class="denominator"><i>R</i><span class="scripts"><sup class="script">2</sup><sub class="script"><i>e</i></sub></span></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span>
+</div>
+<div class="formula">
+<i>V</i><sub><i>c</i></sub> = <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>GM</i></span><span class="ignored">)/(</span><span class="denominator"><i>R</i><sub><i>e</i></sub></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span>
+</div>
+<div class="formula">
+<i>M</i> = <i>V</i><span class="scripts"><sup class="script">2</sup><sub class="script"><i>c</i></sub></span><i>R</i><sub><i>e</i></sub> ⁄ <i>G</i>
+</div>
+<div class="formula">
+<i>V</i><span class="scripts"><sup class="script">2</sup><sub class="script"><i>c</i></sub></span> = 10<sup>log<i>g</i></sup><i>R</i><sub><i>e</i></sub>
+</div>
+<div class="formula">
+<i>R</i><sub><i>e</i></sub> = <i>V</i><span class="scripts"><sup class="script">2</sup><sub class="script"><i>c</i></sub></span> ⁄ 10<sup>log<i>g</i></sup>
+</div>
+<pre class="code python literal-block">
+<span class="name">R</span> <span class="operator">=</span> <span class="punctuation">(</span><span class="name">vc</span><span class="operator">*</span><span class="literal number float">1e5</span><span class="punctuation">)</span><span class="operator">**</span><span class="literal number integer">2</span><span class="operator">/</span><span class="literal number integer">10</span><span class="operator">**</span><span class="name">logg</span><span class="operator">/</span><span class="name">phc</span><span class="operator">.</span><span class="name">Rsun</span><span class="operator">.</span><span class="name">cgs</span>
+</pre>
+</div>
+<div class="section" id="parameters-and-conversion">
+<h1><a class="toc-backref" href="#id2">Parameters and conversion</a></h1>
 <table border="1" class="docutils">
 <colgroup>
 <col width="27%" />
@@ -724,8 +770,33 @@ span.boxed, span.framebox {
 <img alt="figs/beatlas_conv.png" src="figs/beatlas_conv.png" />
 <p class="caption">Converged in blue and not in red.</p>
 </div>
-<p>Done: <strong>step1, step1_refine, H, Br13, SED, Ha, Hb</strong> for the converged grid and a few <em>Hg, Hd, ..., H13</em>.</p>
-<p>Next: UV, K, Brg.</p>
+<div class="section" id="simulations">
+<h2><a class="toc-backref" href="#id3">Simulations</a></h2>
+<p>9 parâmetros no total: <span class="formula">Σ<sub>0</sub></span>
+, nr, ht, Renv, M, ob, Hf, Z, <span class="formula">cos(<i>i</i>)</span>
+.</p>
+<p>Se <span class="formula">Σ<sub>0</sub> = 0</span>
+ deve-se replica-lo para todos os parâmetros da grade... Na verdade, a única propagação (neste momento) é para nr. Futuramente, para Renv, e ht (ou seja, propação só para parâmetros do disco, não fotosféricos).</p>
+<p>A escolha para a grade é escala <span class="formula">Σ<sub>0</sub></span>
+ como s (escala de densidade). Há uma função no <tt class="docutils literal">pyhdust.beatlas</tt> para isto.</p>
+<dl class="docutils">
+<dt>Por enquanto:</dt>
+<dd><ul class="first last simple">
+<li>s [0-1]</li>
+<li>nr [3.0-4.5]</li>
+<li>ht (72)</li>
+<li>Renv (40)</li>
+<li>M [03.8-14.6]</li>
+<li>ob [1.10-1.45]</li>
+<li>Hf [0.08-0.77]</li>
+<li>Z (0.014)</li>
+<li><span class="formula">cos(<i>i</i>)</span>
+ [0-1]</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </body>
 </html>

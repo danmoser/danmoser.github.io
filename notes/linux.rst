@@ -22,6 +22,15 @@ Multiple files edition (substitution)
     
 Reminder: if you want to substitute a special character, write "\\" before it (e.g., "\\/").
 
+
+Is there a way to echo an alias?
+-----------------------------------
+.. code:: bash
+
+    alias ls
+    # alias ls='ls --color=auto'
+
+
 Disk usage
 --------------
 .. code:: bash

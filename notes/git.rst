@@ -111,29 +111,48 @@ Merge
 
 General tips
 =============
-git ignore file extensions: `subl .git/info/exclude`. More info at `git help ignore`.
+git ignore file extensions: 
 
-Ignore syncing `*.o` (but keep then at PC): `git rm --cached *.o -n` (`-n` is the dry-run). Use `--cached` to keep the file, or `-f` to force removal.
+.. code:: bash
+
+    vim .git/info/exclude 
+    # More info at 
+    git help ignore
+
+Ignore syncing `*.o` (but keep then at PC): 
+
+.. code:: bash
+
+    git rm --cached *.o -n  # `-n` is the dry-run
+    # Use `--cached` to keep the file, or `-f` to force removal.
 
 Roll back to a previous commit: `git reset --hard f2f730b`
 
-diff: ::
+.. code:: bash
 
     git diff --cached f2f730b arquivo.py
 
-Dump old version file: ::
+Dump old version file: 
+
+.. code:: bash
 
     git cat-file -p cf1328e:./poltools.py > poltools.old.py
 
-Add files from a remote local::
+Add files from a remote local:
+
+.. code:: bash
 
     git remote add origin https://github.com/USER/REPO.git
 
-Upload your local commit to the web::
+Upload your local commit to the web:
+
+.. code:: bash
 
     git push origin master
 
-Download the changes from the repository::
+Download the changes from the repository:
+
+.. code:: bash
 
     git pull origin master
 

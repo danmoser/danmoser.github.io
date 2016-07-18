@@ -43,6 +43,8 @@ O pacote de redução `beacon` recomenda-se o download pelo `git`:
 
 E o software OPERA com o módulo do Musicos
 
+    [Antigo] http://dl.dropbox.com/u/6569986/transfer/opera-1.0.zip
+
     http://dl.dropbox.com/u/6569986/transfer/opera-1.0_ForMUSICOS-OES_2016-03-22.zip
 
 

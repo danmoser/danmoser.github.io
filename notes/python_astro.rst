@@ -70,6 +70,32 @@ The latter two purposes can conflict, so many folks prefer a double-underscore `
 
 http://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python
 
+numpy compared to R
+====================
+
+=========================== =============================
+R                           numpy
+=========================== =============================
+a <- c(33, 44, 92, 58)      a = np.array(33, 30, 92, 58)
+a[a>30]                     a(np.where(a>30))
+which.max(a)                np.where(a == np.max(a))
+match(30, a)                np.where(a == 30)
+*no not work*: match(a,30)  *okay* np.where(30 == a)
+summary(a)                  (not in numpy)
+
+=========================== =============================
+
+.. code::
+
+    # R: 
+    fx <- function(x) {x**2}
+
+.. code:: python
+
+    # Python:
+    def fx(x): 
+        return x**2
+
 
 Python ``super()`` considered super!
 ======================================
@@ -99,6 +125,11 @@ This is the right way of dealing with paths, filenames, extensions...
 
     observ = '/media/moser/SAMSUNG2TB/interf/interf_PIO/2015/2015-11-29_SCI_alp_Eri_oidataCalibrated.fits'
     os.path.split(observ) == (os.path.dirname(observ), os.path.basename(observ))
+
+
+``input`` vs ``raw_input``
+=============================
+``raw_input`` does not exists in Python 3.x. It was renamed to ``input``.
 
 
 pip
@@ -200,11 +231,40 @@ Errors
 =========
 .. code:: python
 
-    import sys
-    from __future__ import print_function
+    # DO NOT USE THIS!
+    # import sys
+    # from __future__ import print_function
+    # 
+    # def eprint(*args, **kwargs):
+    #     print(*args, file=sys.stderr, **kwargs)
 
-    def eprint(*args, **kwargs):
-        print(*args, file=sys.stderr, **kwargs)
+    # USE THIS:
+    import warnings
+
+    warnings.warn('Be aware of what can happen when you read this...')
+
+    raise TypeError('A `TypeError` happened here! Program stops')
+
+- More about ``warnings``: https://pymotw.com/2/warnings/
+- Following the updated recipe, the warnings (and the errors) will be printed automatically on ``sys.stderr``
+- The nuilt-in error classes are listed here: https://docs.python.org/2/library/exceptions.html
+- ``raise`` by default stops the program (so does ``raise Warning('Message')`` )
+
+
+VO tables
+============
+https://github.com/astropy/astropy/blob/master/docs/io/votable/index.rst
+
+.. code:: python
+
+    import astropy.io.votable as votable
+    votable = votable.parse("/data/Downloads/simbad")  # xml file
+    table = votable.get_first_table()
+    # table  # prints the table
+    data = table.array
+    # data[0] will NOT work! (It is a np structured array)
+    datacols = list(data.dtype.names)
+    arr = np.array(data[datacols[0]])
 
 
 Status line (printing over the same line)
@@ -455,7 +515,7 @@ Definitions
 - *Semaphore*: an object to flux control (generally, controls the available resources, as CPUs).
 - *Queue*: structure that allows safe sharing of data between threads.
 - *Locking*: process that makes that threads be launched or interrupted under specific circumstances.
-- *Block*: Is a kind o looking. An inactive threading, or a thread without available resources, is put to sleep in the system, until an event reactivates it or a required resource becomes available. In python, this is the standard described as ``(block=True, timeout=None)``. If timeout > 0, timeout defines the maximum allowed time that a thread can sleep before raising an exception (or error). If ``block=False`` a thread can not be put to sleep.
+- *Block*: Is a kind of locking. An inactive threading, or a thread without available resources, is put to sleep in the system, until an event reactivates it or a required resource becomes available. In python, this is the standard described as ``(block=True, timeout=None)``. If timeout > 0, timeout defines the maximum allowed time that a thread can sleep before raising an exception (or error). If ``block=False`` a thread can not be put to sleep.
 - *Sleep*: state of an inactive thread.
 
 `David Beazley - Python Concurrency From the Ground Up (PyCon 2015) <https://www.youtube.com/watch?v=MCs5OvhV9S4>`_.
@@ -735,6 +795,27 @@ Compiling Python on Ubuntu:
         readline
 
 - Remember: ``zlib`` and ``ssl`` modules are required for ``pip``.
+
+
+``numba``
+-------------
+It requires ``llvm 3.7.x``. The compilation flag of the binaries at http://llvm.org are not supported on Ubuntu 14.04, so I needed to compile it.
+
+It makes use of the ``cmake``. And it works like this:
+
+.. code:: bash
+
+    # sudo apt-get install cmake
+
+    mkdir mybuiltdir
+    cd mybuiltdir
+
+    cmake path/to/llvm/source/root
+    
+    cmake --build .
+    
+    cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local/ -P cmake_install.cmake
+    # cmake --build . --target install
 
 
 Python environments and references

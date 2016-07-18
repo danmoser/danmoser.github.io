@@ -148,49 +148,24 @@ Interferometers
 ****************************
 ESO interferometers
 ====================
-
-VINCI
-------
-First VLTI generation. ? BAND, 2 telescopes, ? resolution
-
-MIDI
-------
-Second VLTI generation. ? BAND, 2 telescopes, ? resolution
-
-AMBER
--------
-VLTI. JHK bands, 3 telescopes. R=(30?, 1500 and 12000) resolution modes.
-PROBLEMS with absolute visibilities calibration. 
-
-PIONIER
----------
-VLTI. H band. 4 telescopes. 3, 9 channels (resolution)
-
-MATISSE
----------
-?
-
-GRAVITY
------------
-Seminar@IAG-USP!
+- VINCI: First VLTI generation. ? BAND, 2 telescopes, ? resolution
+- MIDI: Second VLTI generation. ? BAND, 2 telescopes, ? resolution
+- AMBER: JHK bands, 3 telescopes. R=(30?, 1500 and 12000) resolution modes. PROBLEMS with absolute visibilities calibration. 
+- PIONIER: H band. 4 telescopes. 3, 9 channels (resolution)
+- MATISSE: ?
+- GRAVITY: ?
 
 
 CHARA interferometers
 ======================
-ALOHA
-------
-H band. 4? telescopes. R=1250-9300? (resolution)
-
-MIRC
-------
-?
+- ALOHA: H band. 4? telescopes. R=1250-9300? (resolution)
+- MIRC: H band?
+- VEGA: ?
 
 Other interferometers
 =======================
-NPOI
-------
-Kenneth J. Johnston, Navy Precision Optical Interferometer. 
-V band (Halpha).?
+- NPOI: Kenneth J. Johnston, Navy Precision Optical Interferometer. V band (Halpha).?
+
 
 Organize
 **********

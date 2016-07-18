@@ -192,6 +192,17 @@ Solution 1:
 Solution 2:
 - In the *login.cl* file, change `stdimage` to `imt2048` (or the desired number of pixels)
 
+Fatiamento (slicing)
+-------------------------
+O IRAF tem uma imagem embutida nele que se chama ``dev$pix``. Você pode testar os comandos abaixo com dela.
+
+.. code:: 
+
+    display image[10:20,*]
+    # Exibe as colunas de 10 a 20, e todas as "linhas" da imagem
+   
+    imstat cube[*, *, 3]
+    #Roda o comando somente na 3a imagem do cubo FITS
 
 
 Redução ECASS
@@ -479,6 +490,13 @@ Por melhor que sejam os modelos do átomo de Hidrogênio, efeitos quânticos com
 Assim, o valor do :math:`\lambda_0` no arquivo *simulation* do *HDUST* só pode ser determinado "empiricamente" - ou se você recuperar a fórmula e todos os valores das constantes utilizados no programa.
 
 
+Interferometry
+***************
+- ``OIDATA_APP``: all observational info (big files, no plot gen.)
+- ``OIDATA_APP_AVG``: average of observ. info (small files, plot)
+- ``OIDATA_APP_AVG_SPEC_PRO``: wavelength corrected (``SPEC``) + V2+DP corrected from calibrators (nights without calibrators not have these files)
+
+
 Logs
 ********
 Noites spec
@@ -529,3 +547,4 @@ Pedido Xuxu, entregue em 14/03/15. Noites com dados:
 - 141013, MUSICOS, R, 3 specs, *error order 42*.
 - 141118, MUSICOS, R, 3 specs, *error order 26*.
 - 150402, MUSICOS, R, 5 specs, *error cpp*.
+
