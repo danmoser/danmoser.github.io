@@ -5,9 +5,10 @@ Politics
 
 Democracy
 *************
-Socialized Risks, Private Profits
-====================================
-`Chomsky speech <movs/polits_chomsky.mp4>`_
+- `Socialized Risks, Private Profits | Noam Chomsky <http://dl.dropbox.com/u/6569986/webpage/big/polits_chomsky.mp4>`_
+
+- `Capitalism will eat democracy | Yanis Varoufakis <https://www.youtube.com/watch?v=GB4s5b9NL3I>`_
+
 
 Inequality
 =============

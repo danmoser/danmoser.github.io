@@ -110,7 +110,7 @@ File example (`here`_)
     .. todo:: check that arg2 is non zero.
     """
 
-    .. image:: figs/poetry_clouds_prism.jpg
+    .. image:: ../figs/poetry_clouds_prism.jpg
         :width: 512px
         :align: center
         :alt: hdt.plottemp example

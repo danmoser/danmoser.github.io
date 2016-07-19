@@ -20,11 +20,11 @@ Voculario
 
 Frases
 ----------
-.. figure:: figs/espanol_frases0.jpg
+.. figure:: ../figs/espanol_frases0.jpg
     :align: center
     :width: 800px
 
-.. figure:: figs/espanol_campana.jpg
+.. figure:: ../figs/espanol_campana.jpg
     :align: center
     :width: 800px
 

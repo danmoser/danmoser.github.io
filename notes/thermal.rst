@@ -207,13 +207,13 @@ Phase transition
 =======================
 A phase **transition** is the transformation of a thermodynamic system from one phase or **state of matter to another** one by heat transfer. A phase of a thermodynamic system and the states of matter have **uniform physical properties**. During a phase transition of a given medium certain properties of the medium change, often discontinuously. The measurement of the external conditions at which the transformation occurs is termed the phase transition.
 
-.. figure:: figs/thermal_phaseTr.png
+.. figure:: ../figs/thermal_phaseTr.png
     :align: center
     :width: 400
 
     Nomenclature of different phase transitions.
 
-.. figure:: figs/thermal_phasediag.png
+.. figure:: ../figs/thermal_phasediag.png
     :align: center
     :width: 400
     
@@ -223,7 +223,7 @@ Triple point
 ----------------
 Triple point of a substance is the temperature and pressure at which the three phases (gas, liquid, and solid) of that substance coexist in thermodynamic equilibrium.
 
-.. figure:: figs/thermal_Carbon_dioxide_pressure-temperature_phase_diagram.svg.png
+.. figure:: ../figs/thermal_Carbon_dioxide_pressure-temperature_phase_diagram.svg.png
     :align: center
 
     Carbon dioxide pressure-temperature phase diagram showing the triple point and critical point of carbon dioxide
@@ -232,7 +232,7 @@ Critical point
 ----------------   
 Critical point (or critical state) is the end point of a phase equilibrium curve. The most prominent example is the liquid-vapor critical point, the end point of the pressure-temperature curve that designates conditions under which a liquid and its vapor can coexist. At the critical point, defined by a critical temperature :math:`T_c` and a critical pressure :math:`P_c`, phase boundaries vanish.
 
-.. figure:: figs/thermal_Real_Gas_Isotherms.svg.png
+.. figure:: ../figs/thermal_Real_Gas_Isotherms.svg.png
     :align: center
     :width: 400
 

@@ -17,6 +17,21 @@ Mistery of the hyper-resolution measurements
 
 -------
 
+Julian Day(s)
+--------------
+===== ============= ===================== =======================
+Short Name          Epoch                 Calculation
+===== ============= ===================== =======================
+RJD   Reduced JD    12h Nov 16, 1858      JD − 2400000
+MJD   Modified JD   0h Nov 17, 1858       JD − 2400000.5
+TJD   Truncated JD  0h May 24, 1968       JD − 2440000.5
+RD    Rata Die      Jan 1, 1              JD − 1721424.5
+===== ============= ===================== =======================
+
+https://en.wikipedia.org/wiki/Julian_day
+
+-------
+
 Red-shift and Lyman :math:`\alpha`
 -----------------------------------
 Lyman :math:`\alpha \approx 1215 \AA`
@@ -475,7 +490,7 @@ Sandage's Last Paper
 
 Por qué se requiere mayor presupuesto para Fondecyt
 -----------------------------------------------------
-The `Letter <static/astro-blog_mas_presupuesto_para_fondecyt.pdf>`_.
+The `Letter <../static/astro-blog_mas_presupuesto_para_fondecyt.pdf>`_.
 
 In 2009, the number of post-doc proposals to the Chilean institute Fondecyt was 140. In 2016, it should be ~970! It results in an average grow rate of 32%/year.
 
@@ -598,7 +613,7 @@ Definitions of *i* and PA in astronomy
 ----------------------------------------
 In principle, :math:`-\pi/2 \leq i \leq \pi/2`, but it is often seen as :math:`0 \leq i \leq \pi/2`. With the drawings below (and supported by the work of Roettenbacher+ 2016) I show that :math:`-\pi/2 \leq i \leq \pi/2` is do required and that :math:`i=0` corresponds to the rotational axis pointed to the observers direction (assuming the "right-hand rule" for the 3D rotation.)
 
-.. figure:: figs/astro-blog_PAi.png
+.. figure:: ../figs/astro-blog_PAi.png
      :width: 640
 
      Conclusion of the drawing: :math:`0 \leq i \leq \pi/2` is inconsistent with the "right-hand" rule.
@@ -617,10 +632,10 @@ To compensate this, there are two options: mirror the image or add a negative va
 
 Rotational rates of Be stars
 ------------------------------
-.. figure:: figs/astro-blog_vcrit3.png
+.. figure:: ../figs/astro-blog_vcrit3.png
     :width: 640 
 
-.. figure:: figs/astro-blog_vcrit.png
+.. figure:: ../figs/astro-blog_vcrit.png
     :width: 640
 
     Distributions using *i* values from above (and not :math:`\cos^{-1}(\mu)`)
@@ -661,7 +676,7 @@ Rivinius+ (2013) affirms that :math:`\bar{W}` and :math:`W100\sim0.7` do not dep
 
 However, the efficiency to transfer a B-normal star into a Be star *does* depends on the spectral type. Let's suppose a **constant number of B-type stars** for a given rotational rate and the following "efficiency" curve to become a Be star:
 
-.. figure:: figs/astro-blog_vcrit2.png
+.. figure:: ../figs/astro-blog_vcrit2.png
     :width: 640
 
 where *Wmin* and *W100* have arbitrary values. Using the values from Rivinius+ (2013; i.e., :math:`\bar{W}=0.8`, *W100* = 0.64 to early-type Be stars and *W100* = 0.95 to late-type), which are the values of *Wmin* for them?
@@ -1738,7 +1753,7 @@ Técnica: QCD on a Lattice
 
 Workshop Ciência de Dados IAG
 ---------------------------------
-.. image:: figs/events_iwbdiag-program.jpg
+.. image:: ../figs/events_iwbdiag-program.jpg
     :width: 800px
     :align: center
     :alt: alternate text

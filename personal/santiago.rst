@@ -33,14 +33,14 @@ Resumo
 
 Santiago
 ==========
-- `E-Book <static/santiago_ebook_v1-2-2.pdf>`_
+- `E-Book <../static/santiago_ebook_v1-2-2.pdf>`_
 - `Santiago Trip Advisor <http://www.tripadvisor.com/Attractions-g294305-Activities-Santiago_Santiago_Metropolitan_Region.html>`_
 
 Bici
 -----
 - `Mapa ciclovias <https://www.google.com/maps/d/viewer?mid=zvBMMeqnQFNI.k_3VZmLi0Ab0&hl=en_US>`_
 
-.. figure:: figs/santiago_CRV_mapa.jpg
+.. figure:: ../figs/santiago_CRV_mapa.jpg
     :width: 800px
     
     Circuito aos domingos
@@ -110,7 +110,7 @@ Restaurantes/Noite
 - Bar Azotea de Matilde (Belavista; hacer reserva!)
 - Sarita Colonia (Santa Lucía; hacer reserva!)
 - El Mesón Nerudiano (Belavista, com boa música. http://www.elmesonnerudiano.cl/)
-- `Video Heineken <movs/santiago_hein.mp4>`_
+- `Video Heineken <http://dl.dropbox.com/u/6569986/webpage/big/santiago_hein.mp4>`_
 - Coreano Sukine (Patronato)
 - Arabe (para comer Kebab) / Shawarma (Patronato)
 - Bar Nacional (Plaza de armas & outros locais)
@@ -147,7 +147,7 @@ Parque naturales Cordillera
 -------------------------------
 http://asociacionparquecordillera.cl/red-de-parques-naturales/
 
-.. figure:: figs/santiago_mapa-pqcord.jpg
+.. figure:: ../figs/santiago_mapa-pqcord.jpg
 
 - Aguas de Ramón 
 - San Carlos de Apoquindo (Las Condes)
@@ -196,14 +196,14 @@ Roteiro (93 km de Santiago, por Puente Alto):
 
 - `El Morado Trip advisor <http://www.tripadvisor.com/Attractions-g303680-Activities-San_Jose_de_Maipo_Santiago_Metropolitan_Region.html>`_
 - http://www.cajondelmaipo.com/
-- `Guia Turismo PDF <static/santiago_cajonmaipotur.pdf>`_
+- `Guia Turismo PDF <http://dl.dropbox.com/u/6569986/webpage/big/santiago_cajonmaipotur.pdf>`_
 
-.. figure:: figs/santiago_cajonmaipo.jpg
+.. figure:: ../figs/santiago_cajonmaipo.jpg
 
 Radal Siete Tazas
 -------------------------------
 - http://www.sietetazas.cl
-- `Mapa <static/santiago_mapa_7tazas.pdf>`_
+- `Mapa <../static/santiago_mapa_7tazas.pdf>`_
 
 Termas Panimávida, Quinamávida, Catillo
 -----------------------------------------

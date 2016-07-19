@@ -5,7 +5,7 @@ Physics
 
 Illustrations
 ***************
-- `Contact waves <movs/astro-basics_physics_waves.mp4>`_
+- `Contact waves <../movs/astro-basics_physics_waves.mp4>`_
 
 Movies
 ********

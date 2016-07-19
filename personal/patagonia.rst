@@ -15,7 +15,7 @@ General idea & planning
 - For sleeping, camping and hostels. Camping from ~3000 CLP and hostel from ~8000 CLP.
 - On average, do 250 km/day in the carretera. Stop to do some trekking in previously defined sites.
 - To do the full length, 8 days minimum is required (more than 1200 km).
-- There is a "circuit option" to Quellón; `Motorcycle Map (15 days) <figs/patagonia_carreteramapamoto.jpg>`_. Problem: price (and time) of the ferries. In high season, once a week!! Must be reserved in advance.
+- There is a "circuit option" to Quellón; `Motorcycle Map (15 days) <../figs/patagonia_carreteramapamoto.jpg>`_. Problem: price (and time) of the ferries. In high season, once a week!! Must be reserved in advance.
 - From internet: it is possible to do it with a *regular* car (e.g., Toyota Corolla).
 - Dates: from 30/01 (D Asmus) until 12/02 (D Moser restriction).
 
@@ -155,9 +155,9 @@ Distances - Southern Section
 Useful info
 ==============
 - `Guia Aysén (info por Km) <http://www.recorreaysen.cl/carretera-austral/>`_
-- `ChileEsTuyo Guide <static/patagonia_rutacarretera.pdf>`_
-- `Road Map <figs/patagonia_carreteramapaHR.jpg>`_
-- `Motorcycle Map (15 days) <figs/patagonia_carreteramapamoto.jpg>`_
+- `ChileEsTuyo Guide <../static/patagonia_rutacarretera.pdf>`_
+- `Road Map <../figs/patagonia_carreteramapaHR.jpg>`_
+- `Motorcycle Map (15 days) <../figs/patagonia_carreteramapamoto.jpg>`_
 - `Trekking info at WikiLoc <http://www.wikiloc.com/wikiloc/map.do?lt=-45.500000&ln=-72.000000&z=10&k=1&tab=0&act=1,21,48>`_
 
 Ferries 

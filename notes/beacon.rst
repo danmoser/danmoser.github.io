@@ -14,7 +14,7 @@ Links
 - Formulários (usuários OPD)
     http://www.lna.br/opd/info_obs/info_obs.html
 
-- `Spartans movie <movs/beacon_spartans.zip>`_
+- `Spartans movie <../movs/beacon_spartans.zip>`_
 
 
 Meetings
@@ -433,5 +433,5 @@ Other
 *********
 Spartans
 ============
-- `Subtitles <movs/spartans.srt>`_
-- `Movie <movs/spartans.mp4>`_
+- `Subtitles <../movs/spartans.srt>`_
+- `Movie <../movs/spartans.mp4>`_

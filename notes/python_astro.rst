@@ -860,6 +860,11 @@ General use Python packages in Astronomy
 - PyQt-Fit (regression toolbox in Python)
     http://pythonhosted.org/PyQt-Fit/
 
+- PyData tools
+    http://pydata.org/downloads.html
+
+        - The Blaze Ecosystem: http://blaze.pydata.org/
+
 
 Python learning for astronomers
 ================================

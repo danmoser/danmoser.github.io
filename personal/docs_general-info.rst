@@ -5,7 +5,7 @@ General Info.
 
 Other
 **********
-.. figure:: figs/docs_general-info_languages.jpg
+.. figure:: ../figs/docs_general-info_languages.jpg
     :align: center
         
 

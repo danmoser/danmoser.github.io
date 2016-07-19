@@ -9,7 +9,7 @@ Extrasensory perception
 =========================
 Extrasensory perception or **ESP**, also called sixth sense, includes reception of information not gained through the recognized physical senses but sensed with the mind. The term was adopted by Duke University psychologist J. B. Rhine to denote psychic abilities such as telepathy, clairaudience, and clairvoyance, and their trans-temporal operation as precognition or retrocognition.
 
-.. figure:: figs/psi_732px-Cartas_Zener.svg.png
+.. figure:: ../figs/psi_732px-Cartas_Zener.svg.png
     :width: 366 px
     :align: center
 
@@ -320,4 +320,4 @@ Enfim, a minha resposta para pergunta se a homeopatia funciona seria: sim ela fu
 
 PS. Agora uma provocação. A minha impressão depois de ler esse artigo da NHMRC é que ele mostra um vies que, apesar não não estatisticamente significativo (ainda?), é positivo em quase todos os estudos para a eficácia da homeopatia :-)
 
-`Placebo effect <static/psi_journal.pone.0062599.zip>`_
+`Placebo effect <../static/psi_journal.pone.0062599.zip>`_

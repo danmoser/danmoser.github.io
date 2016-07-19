@@ -196,7 +196,7 @@ Gráfico *caixa de bigodes* ou *box-and-whisker plot*
 ------------------------------------------------------
 Um gráfico caixa de bigodes, algumas vezes denominado por *box plot*, é uma representação gráfica na qual uma caixa que extende-se de :math:`Q_1` a :math:`Q_3` e contém uma linha intermediária que corresponde à mediana dos dados. Linhas (chamadas de bigodes ou *whiskers*) em raras vezes ligam o :math:`Q_1` ao dado de menor valor (e :math:`Q_3` ao de maior), mas geralmente marcam a região além do referido quartil :math:`Q_i` até a 1.5 vezes a distância interquartil a partir do mesmo (:math:`L_i=Q_i\pm 1.5*d_q`).
 
-.. image:: figs/estatistica_boxplot.png
+.. image:: ../figs/estatistica_boxplot.png
     :alt: Box-and-whisker plot of just boxplot
     :align: center
 
@@ -403,7 +403,7 @@ Variáveis aleatórias contínuas
 ===============================
 Modelo uniforme
 -----------------
-.. image:: figs/estatistica_modunif.png
+.. image:: ../figs/estatistica_modunif.png
     :align: center
     :width: 500
 
@@ -412,7 +412,7 @@ Modelo uniforme
 
 Modelo normal
 --------------
-.. image:: figs/estatistica_modnorm.png
+.. image:: ../figs/estatistica_modnorm.png
     :align: center
     :width: 500
 
@@ -429,7 +429,7 @@ Por exemplo, :math:`P(0\leq X\leq 1.73)=\frac{45818}{100000}=0.4582`. Se 1.73 fo
 
 Modelo exponencial
 -------------------
-.. image:: figs/estatistica_modexp.png
+.. image:: ../figs/estatistica_modexp.png
     :align: center
     :width: 500
 
@@ -449,7 +449,7 @@ Em matemática, a função gama é uma extensão da função factorial para o co
 
 A função gama nos números reais:
 
-.. image:: figs/estatistica_gamma_func.png
+.. image:: ../figs/estatistica_gamma_func.png
     :width: 400
     :align: center
 
@@ -462,7 +462,7 @@ A função densidade de probabilidade da distribuição :math:`\chi^2`:
 .. math::
     f(\chi_k^2)=\frac{1}{2^{k/2}\Gamma (k/2)}(\chi_k^2)^{k/2-1}e^{-\chi_k^2/2}, \text{se }\chi_k^2>0.
 
-.. image:: figs/estatistica_modchi2.png
+.. image:: ../figs/estatistica_modchi2.png
     :width: 600
     :align: center
 
@@ -483,7 +483,7 @@ Distribuição t-Student
 -----------------------
 A distribuição t de Student é importante para inferências sobre médias populacionais a partir de amostras (quando o desvio padrão é desconhecido), além de outras aplicações.
 
-.. image:: figs/estatistica_modtStu.png
+.. image:: ../figs/estatistica_modtStu.png
     :width: 600
     :align: center
 
@@ -499,7 +499,7 @@ Distribuição F [de (Fisher-)Snedecor]
 ----------------------------------------
 Mede a razão entre duas :math:`\chi^2` independentes. É a *"distribuição nula de uma estatística de teste, particularmente na análise da variância"*.
 
-.. image:: figs/estatistica_moddistF.png
+.. image:: ../figs/estatistica_moddistF.png
     :width: 600
     :align: center
 
@@ -622,13 +622,13 @@ Coeficiente de correlação :math:`CC=\frac{cov}{\sigma_x\sigma_y}`.
 
 Correlação graficament
 ^^^^^^^^^^^^^^^^^^^^^^^^
-.. image:: figs/estatistica_correl.png
+.. image:: ../figs/estatistica_correl.png
     :alt: Several sets of (x, y) points, with the correlation coefficient of x and y for each set. Note that the correlation reflects the non-linearity and direction of a linear relationship (top row), but not the slope of that relationship (middle), nor many aspects of nonlinear relationships (bottom). N.B.: the figure in the center has a slope of 0 but in that case the correlation coefficient is undefined because the variance of Y is zero.
     :align: center
 
 O coeficiente de correlação tradicionalmente definido (de Pearson) **não define** a forma desta correlação. Na figura a seguir 4 conjuntos de dados com a mesma correlação de 0.816 são apresentados.
 
-.. image:: figs/estatistica_correl_problem.png
+.. image:: ../figs/estatistica_correl_problem.png
     :alt: Four sets of data with the same correlation of 0.816
     :align: center
     :width: 500

@@ -81,13 +81,13 @@ http://www.scientificamerican.com/article/black-hole-swallows-star/
 ====================================================================
 NACO instrument images in infrared with AO over 10 years, covering almost 1000 stars orbiting Sgr A\* (a strong radio source).
 
-`Legacy Video <movs/astro_top-impact_eso0226a.mpg>`_
+`Legacy Video <../movs/astro_top-impact_eso0226a.mpg>`_
 
 http://adsabs.harvard.edu/abs/2002Natur.419..694S
 
 2015 Visual evidence
 -----------------------
-`Gas Orbit Video <movs/astro_top-impact_eso1151e.mov>`_
+`Gas Orbit Video <../movs/astro_top-impact_eso1151e.mov>`_
 
 http://adsabs.harvard.edu/abs/2015ApJ...800..125V
 

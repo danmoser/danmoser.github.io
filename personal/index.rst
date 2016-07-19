@@ -4,9 +4,9 @@ DMF notes
 ============  ===========  ===========================  ================  ============
 `charges`_    `cheers`_    `docs_general-info`_         `drugs`_          `english`_
 `espanol`_    `francais`_  `index`_                     `latin`_          `patagonia`_
-`philos`_     `poetry`_    .. image:: figs/index2.gif   `poetry_clouds`_  `politcs`_
+`philos`_     `poetry`_    .. image:: ../figs/index2.gif   `poetry_clouds`_  `politcs`_
 `portugues`_  `psi`_       `religion`_                  `santiago`_       `sports`_
-`travellog`_  \            .. image:: figs/index3a.gif  \                 \
+`travellog`_  \            .. image:: ../figs/index3a.gif  \                 \
 ============  ===========  ===========================  ================  ============
 
 .. _charges: charges.html

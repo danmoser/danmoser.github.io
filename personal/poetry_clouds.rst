@@ -111,73 +111,73 @@ Figuras
 =========
 Nuvens
 --------
-.. figure:: figs/poetry_clouds_genera1.jpg
+.. figure:: ../figs/poetry_clouds_genera1.jpg
     :align: center
     :width: 800
     
 Os aviões em geral viajam acima dos *altocumulus*... 
     
-.. figure:: figs/poetry_clouds_genera2.gif
+.. figure:: ../figs/poetry_clouds_genera2.gif
     :align: center
     :width: 800    
 
 O *cirrostratus* gera um "halo" em torno do Sol (e da Lua, à noite).
     
-.. figure:: figs/poetry_clouds_halo.jpg
+.. figure:: ../figs/poetry_clouds_halo.jpg
     :align: center
     :width: 800    
     
 Outros
 --------
-.. figure:: figs/poetry_clouds_alegoria.jpg
+.. figure:: ../figs/poetry_clouds_alegoria.jpg
     :align: center
 
 Eu conheço o quadro acima como "Alegoria das artes liberais". Pitágoras no topo, as artes dnos elevam. Os "sete céus" podem ser vistos, e Deus acima deles.
 
-.. figure:: figs/poetry_clouds_delphos.jpg
+.. figure:: ../figs/poetry_clouds_delphos.jpg
     :align: center
     :width: 800
 
     O templo de Delfos.
     
-.. figure:: figs/poetry_clouds_endlessriver.jpg
+.. figure:: ../figs/poetry_clouds_endlessriver.jpg
     :align: center
     
     O último álbum do Pink Floyd.
   
 Astronomia
 -----------
-.. figure:: figs/LakeMyvatn_Brady_1080.jpg
+.. figure:: ../figs/LakeMyvatn_Brady_1080.jpg
     :align: center
     :width: 800
 
     Auroras and riscos de estrelas sobre a Islândia
     
-.. figure:: figs/astrobasic_Comet_Lovejoy.jpg
+.. figure:: ../figs/astrobasic_Comet_Lovejoy.jpg
     :align: center
 
     Constelação de Orion e o cometa Lovejoy dia-a-dia
 
 A maioria das estrelas que vemos no céu são azuis.
 
-.. figure:: figs/poetry_clouds_spacewalk.jpg
+.. figure:: ../figs/poetry_clouds_spacewalk.jpg
     :align: center
     :width: 800
 
 O céu é um prisma!
 
-.. figure:: figs/poetry_clouds_prism.jpg
+.. figure:: ../figs/poetry_clouds_prism.jpg
     :align: center
     
 Camille Flammarion
 -------------------
-.. figure:: figs/poetry_clouds_flam.jpg
+.. figure:: ../figs/poetry_clouds_flam.jpg
     :align: center
     :width: 800
     
 A figura do Flammarion era preto e branco. A minha coloração favorita é abaixo.
 
-.. figure:: figs/poetry_clouds_flam_cor.jpg
+.. figure:: ../figs/poetry_clouds_flam_cor.jpg
     :align: center
     :width: 800
     

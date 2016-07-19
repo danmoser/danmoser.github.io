@@ -64,15 +64,15 @@ Paper I (units and world coordinates).
 
 Paper II: celestianl coordinates and projection [!] schemes.
 
-.. image:: figs/gai_fits-imgs_Lab3World_projections.jpg
+.. image:: ../figs/gai_fits-imgs_Lab3World_projections.jpg
     :width: 1024
     :align: center
 
-.. image:: figs/gai_fits-imgs_map-projections.jpg
+.. image:: ../figs/gai_fits-imgs_map-projections.jpg
     :width: 800
     :align: center
 
-.. image:: figs/gai_fits-imgs_skymap_sp_493.gif
+.. image:: ../figs/gai_fits-imgs_skymap_sp_493.gif
     :width: 1024
     :align: center
 
@@ -185,11 +185,11 @@ One example: ramp image with 2 AU in size at 10 parsecs, rotated at 45 degree (b
 
 Output - `Coordinate rotation`_:
 
-.. image:: figs/gai_fits-imgs_model.png
+.. image:: ../figs/gai_fits-imgs_model.png
 
 Output - `Image rotation`_:
 
-.. image:: figs/gai_fits-imgs_model_rotated.png
+.. image:: ../figs/gai_fits-imgs_model_rotated.png
 
-.. _`Coordinate rotation`: static/model.fits
-.. _`Image rotation`: static/model_rotated.fits 
+.. _`Coordinate rotation`: ../static/model.fits
+.. _`Image rotation`: ../static/model_rotated.fits 

@@ -18,7 +18,7 @@ In the Press
     
     http://brasileiros.com.br/EEE9T
 
-    .. figure:: figs/inthepress_capaBras.jpg
+    .. figure:: ../figs/inthepress_capaBras.jpg
         :width: 240
         
 - Instituto de Astronomia da USP adquire supercomputador capaz de fazer 20 trilhões de cálculos por segundo
@@ -43,6 +43,6 @@ In the Press
     `VIDEO1`_
 
 
-.. _VIDEO3: movs/inthepress_33_O_Futuro_E_Agora_Super_Computador.flv
-.. _VIDEO2: movs/inthepress_Gravacao_Brasopolis_eclipse.mp4
-.. _VIDEO1: movs/inthepress_GloboUni.mp4
+.. _VIDEO3: http://dl.dropbox.com/u/6569986/webpage/big/inthepress_33_O_Futuro_E_Agora_Super_Computador.flv
+.. _VIDEO2: ../movs/inthepress_Gravacao_Brasopolis_eclipse.mp4
+.. _VIDEO1: http://dl.dropbox.com/u/6569986/webpage/big/inthepress_GloboUni.mp4

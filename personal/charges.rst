@@ -1,151 +1,151 @@
 Charges
 ##############
 
-.. figure:: figs/charge_calma.jpg
+.. figure:: ../figs/charge_calma.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_terrorist.jpg
+.. figure:: ../figs/charge_terrorist.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_truetruth.jpg
+.. figure:: ../figs/charge_truetruth.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_grandmas.gif
+.. figure:: ../figs/charge_grandmas.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_worldmoney.jpg
+.. figure:: ../figs/charge_worldmoney.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_veget.jpg
+.. figure:: ../figs/charge_veget.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_waterMars.jpg
+.. figure:: ../figs/charge_waterMars.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_ww.jpg
+.. figure:: ../figs/charge_ww.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_dt950205shc0.gif
+.. figure:: ../figs/charge_dt950205shc0.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_freedom.jpg
+.. figure:: ../figs/charge_freedom.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_iphone.jpg
+.. figure:: ../figs/charge_iphone.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_carnetucano.jpg
+.. figure:: ../figs/charge_carnetucano.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_progwine.jpg
+.. figure:: ../figs/charge_progwine.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_sabesp.jpg
+.. figure:: ../figs/charge_sabesp.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_discordar.png
+.. figure:: ../figs/charge_discordar.png
     :align: center
     :height: 500
 
-.. figure:: figs/charge_baby.gif
+.. figure:: ../figs/charge_baby.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_python.png
+.. figure:: ../figs/charge_python.png
     :align: center
     :height: 500
 
-.. figure:: figs/charge_fabio.jpg
+.. figure:: ../figs/charge_fabio.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_midia.jpg
+.. figure:: ../figs/charge_midia.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_calvinLMP.gif
+.. figure:: ../figs/charge_calvinLMP.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_provas.gif
+.. figure:: ../figs/charge_provas.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_jobsritchie.jpg
+.. figure:: ../figs/charge_jobsritchie.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_bacon.jpg
+.. figure:: ../figs/charge_bacon.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_midia2.jpg
+.. figure:: ../figs/charge_midia2.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_europe.jpg
+.. figure:: ../figs/charge_europe.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_deadline.jpg
+.. figure:: ../figs/charge_deadline.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_tyson.gif
+.. figure:: ../figs/charge_tyson.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_codenorris.jpg
+.. figure:: ../figs/charge_codenorris.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_cat.gif
+.. figure:: ../figs/charge_cat.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_midia3.jpg
+.. figure:: ../figs/charge_midia3.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_champagne.gif
+.. figure:: ../figs/charge_champagne.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_ST.gif
+.. figure:: ../figs/charge_ST.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_social.jpg
+.. figure:: ../figs/charge_social.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_capitalism.jpg
+.. figure:: ../figs/charge_capitalism.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_capitalismo.gif
+.. figure:: ../figs/charge_capitalismo.gif
     :align: center
     :height: 500
 
-.. figure:: figs/charge_coxinhas.jpg
+.. figure:: ../figs/charge_coxinhas.jpg
     :align: center
     :height: 500
 
-.. figure:: figs/charge_brexit.jpg
+.. figure:: ../figs/charge_brexit.jpg
     :align: center
     :height: 500
 

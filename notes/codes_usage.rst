@@ -385,10 +385,10 @@ Tests
 
 Figure below: blue, distribution; green, BG/P.
 
-.. image:: figs/usp-rice_tests.png
+.. image:: ../figs/usp-rice_tests.png
     :width: 600px
 
-.. image:: figs/usp-rice_tests2.png
+.. image:: ../figs/usp-rice_tests2.png
     :width: 600px    
 
 

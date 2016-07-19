@@ -4,10 +4,10 @@ DMF notes
 ===================  ===============  ===========================  ==============  ==================
 `astro-basics`_      `astro-blog`_    `astro-ph`_                  `astro-spec`_   `astro_reduction`_
 `astro_top-impact`_  `beacon`_        `beatlas`_                   `bravo`_        `codes_usage`_
-`doing_sci`_         `estatistica`_   .. image:: figs/index2.gif   `example`_      `gai_fits-imgs`_
+`doing_sci`_         `estatistica`_   .. image:: ../figs/index2.gif   `example`_      `gai_fits-imgs`_
 `git`_               `import_wheel`_  `index`_                     `informatics`_  `inthepress`_
 `julia`_             `latex`_         `linux`_                     `math`_         `physics-basics`_
-`python_astro`_      `regex`_         .. image:: figs/index3a.gif  `rst`_          `thermal`_
+`python_astro`_      `regex`_         .. image:: ../figs/index3a.gif  `rst`_          `thermal`_
 ===================  ===============  ===========================  ==============  ==================
 
 .. _astro-basics: astro-basics.html

@@ -88,7 +88,7 @@ Doing science
 - `Academics Admit Feeling Pressure To Embellish Possible Impact Of Research <http://www.iflscience.com/editors-blog/academics-admit-feeling-pressure-embellish-possible-impact-research>`_
 
 - What Google Learned From Its Quest to Build the Perfect Team
-    `google_perfect_team_comments-Moser.pdf <static/google_perfect_team_comments-Moser.pdf>`_ 
+    `google_perfect_team_comments-Moser.pdf <../static/google_perfect_team_comments-Moser.pdf>`_ 
 
 - `Why Do We Procrastinate? (SciShow) <https://www.youtube.com/watch?v=pKyHX0zqynk>`_
 

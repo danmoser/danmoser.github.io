@@ -127,7 +127,7 @@ Terms
 - Imperial: any beer style that includes the word "Imperial" is usually quite high in hops and most certainly higher in alcohol. Another invention of necessity, "Imperials" were usually beers that were made in one country and shipped to another, often bound for the lips of royalty (hence the name Imperial). It's another case of long journeys calling on the properties of higher alcohol and hops to act as preservatives.
 - Red Beers: Mainly from West Flanders, they are the more sharply acidic, reddish, half-brothers to the Brown Beers of East Flanders, with the additional difference that they are often filtered and pasteurized. The sharp acidity and some of the color is derived from aging in large wooden tuns.
 
-.. figure:: figs/cheers_colors.jpg
+.. figure:: ../figs/cheers_colors.jpg
 
 
 Wine space

@@ -281,12 +281,12 @@ The new (Jan. 2015) are: *calib_mus* and *reduce_mus*. With MUSICOS **both** fla
 
 *reduce_mus*: apply bias+flat to obj. images; extract and combine obj. images; apply lamp; normalize spectra (*continuum*); create *cont*. spec.: spec/norm-spec; combine apertures with sum to combined obj. and normalized spec.; final product is summed combined obj./summed normalized spec.
 
-.. image:: figs/astro_reduction_CCD.png
+.. image:: ../figs/astro_reduction_CCD.png
     :width: 600
 
-.. image:: figs/astro_reduction_CCD_prof.png
+.. image:: ../figs/astro_reduction_CCD_prof.png
 
-.. image:: figs/astro_reduction_CCD_Ha.png
+.. image:: ../figs/astro_reduction_CCD_Ha.png
 
 Atenção no *fit* das ordens: use 'k' (razão; ou 'j', resíduo) para ter uma ideia
 de como ficará o resultado. Recomendação é marcar regiões foram da linha com

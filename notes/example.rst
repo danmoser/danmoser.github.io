@@ -76,7 +76,7 @@ Then, you need to provide optional subsection ...
 
 .. warning:: arg2 must be non-zero."""
 
-.. image:: figs/poetry_clouds_prism.jpg
+.. image:: ../figs/poetry_clouds_prism.jpg
     :width: 256px
     :align: center
     :alt: hdt.plottemp example

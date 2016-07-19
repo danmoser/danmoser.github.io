@@ -155,38 +155,38 @@ Pictures
 - APOD - Astronomy Picture of the Day
     http://apod.nasa.gov/
 
-.. figure:: figs/astro-basics_year.gif
+.. figure:: ../figs/astro-basics_year.gif
     :align: center
 
     Seasons explained 
 
-.. figure:: figs/astro-basics_loop.gif
+.. figure:: ../figs/astro-basics_loop.gif
     :align: center
 
     The outer planets movement on the sky.
 
-.. figure:: figs/astro-basics_LakeMyvatn_Brady_1080.jpg
+.. figure:: ../figs/astro-basics_LakeMyvatn_Brady_1080.jpg
     :align: center
     :width: 800 
 
     Auroras and Star Trails over Iceland
     
-.. figure:: figs/astro-basics_Comet_Lovejoy.jpg
+.. figure:: ../figs/astro-basics_Comet_Lovejoy.jpg
     :align: center
 
     Orion constellation and comet Lovejoy day by day
 
-.. figure:: figs/astro-basics_meteor.gif
+.. figure:: ../figs/astro-basics_meteor.gif
     :align: center
 
     A bright meteor!
 
-.. figure:: figs/astro-basics_meteor2.gif
+.. figure:: ../figs/astro-basics_meteor2.gif
     :align: center
 
     Another one!!
 
-.. figure:: figs/astro-basics_juno.gif
+.. figure:: ../figs/astro-basics_juno.gif
     :align: center
 
     5 years Juno's journey
@@ -233,6 +233,6 @@ Brasil and astronomy
 ***********************
 ESO
 ====
-`Letter of Science & Technology minister <static/astro-basics_carta_do_ministro.pdf>`_ (25/06/2015) saying that the government has still interest in joining ESO.
+`Letter of Science & Technology minister <../static/astro-basics_carta_do_ministro.pdf>`_ (25/06/2015) saying that the government has still interest in joining ESO.
 
 
