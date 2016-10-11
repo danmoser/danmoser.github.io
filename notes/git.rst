@@ -22,6 +22,7 @@ The sincronization is:
 Other
 ======
 - Commit your changes or stash them before you can switch branches.
+- `Pull request tutorial <https://yangsu.github.io/pull-request-tutorial/>`_: Or how to send other user your suggestions for modifications.
 
 
 Examples
@@ -159,6 +160,8 @@ Download the changes from the repository:
 
 Refs
 ********
+http://ohshitgit.com/
+
 http://overapi.com/git
 
 http://git-scm.com

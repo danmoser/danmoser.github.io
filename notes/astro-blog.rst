@@ -3,17 +3,265 @@ DMF AstroBlog
 
 2016
 ********
-2015-08
+.. 
+    2016-10
+    =============
+    TBD
+
+    -------------
+
+2016-09
 ===========
-TBD
+News on Dark Matter
+----------------------
+Acceleration relation found among spiral and irregular galaxies challenges current understanding of dark matter
+
+Read more at: http://phys.org/news/2016-09-spiral-irregular-galaxies-current-dark.html#jCp
+
+-------------
+
+In Siberia 1908, a huge exposion came out of nowhere
+------------------------------------------------------------
+Over 100 years after the most powerful explosion in documented history, researchers are still trying to figure out exactly what happened. The `Tunguska mistery <http://www.bbc.com/earth/story/20160706-in-siberia-in-1908-a-huge-explosion-came-out-of-nowhere>`_.
+
+----------
+
+Learn statistics with Scipy!
+------------------------------
+There is a nice tutorials in this page: http://docs.scipy.org/doc/scipy-0.14.0/reference/tutorial/index.html
+
+You can also view all functions available in the code here: http://docs.scipy.org/doc/scipy-0.14.0/reference/stats.html#module-scipy.stats
+
+----------
+
+Python 3 for Scientists
+---------------------------
+The primary aim of the page is to share information about useful new Python 3 features that may be useful to scientists for everyday work, as well as information about things you can do right now to prepare for the Python 3 transition, and how to try Python 3.
+
+http://python-3-for-scientists.readthedocs.io/en/latest/
+
+-------------
+
+Kernel Density Estimation in Python
+--------------------------------------
+Nice article here: https://jakevdp.github.io/blog/2013/12/01/kernel-density-estimation/
+
+--------------
+
+ArXiV minimal statistics checklist
+---------------------------------------
+`This checklist <http://astrost.at/istics/minimal-statistics-checklist.html>`_ should help you identify and fix common errors/misinterpretation in your analysis, or of a paper you are refereeing. I tried to keep it short so you can read the entire document, and provide links if you want to learn more (and find out why something is an error).
+
+-------------
+
+*astroplan*
+--------------
+`astroplan <https://astroplan.readthedocs.io>`_ is an open source Python package to help astronomers plan observations.
+
+----------
+
+PiPresents
+------------
+PiPresents is a very flexible **presentation** tool that runs on the Raspberry Pi.
+
+Nice PiPresents Tutorial: https://www.youtube.com/watch?v=BzuZ2gzXYk4
+
+----------
+
+Astroconda
+-------------
+Forget about `Ureka <http://ssb.stsci.edu/ureka/>`_. The trend now is `Astroconda <https://jwst.stsci.edu/news/News%20items/astroconda-new-release-of-science-software>`_, from the STScI (NASA's James Webb telescope).
+
+----------
+
+NAS4free
+----------
+`NAS4Free <http://www.nas4free.org/>`_ is an Open Source Storage NAS (Network-Attached Storage) distribution based on FreeBSD.
+
+The NAS4Free operating system can be installed on virtually any hardware platform to share computer data storage over a computer network.
+
+--------
+
+AstroGen
+----------------------------
+`Astronomy Genealogy Project (AstroGen) <https://astrogen.aas.org/>`_ is a project of the AAS Historical Astronomy Division . The project will list as many as possible of the world's astronomers with their academic parents (i.e., thesis advisors and supervisors) and enable the reader to trace both academic ancestors and descendants. 
+
+Publications and presentations about AstroGen can be found at https://astrogen.aas.org/PublicationsAndTalks/index.html.
+
+----------------------------
+
+The Journal of Brief Ideas
+----------------------------
+`The Journal of Brief Ideas <http://beta.briefideas.org/about>`_ is a research journal, composed entirely of 'brief ideas'. The goal here is to provide a place for short ideas to be described - in 200 words or less - for these ideas to be archived (courtesy of `Zenodo <http://zenodo.org>`_), searchable and citable.
+
+--------------
+
+Philae found!
+--------------
+The philae probe was found in a high-resolution `image of the comet 67P <http://www.esa.int/Our_Activities/Space_Science/Rosetta/Philae_found>`_.
+
+`APOD 2016-09-12 <http://apod.nasa.gov/apod/ap160912.html>`_ about it.
+
+-------------
+
+ZFOURGE
+-------------
+`ZFourge <http://zfourge.tamu.edu/DR2016/data.html>`_ is a very interesting astronomical survey...
+
+-------------
+
+Social media of ArXiv
+----------------------
+`Vox Charta <http://harvard.voxcharta.org/>`_ is the way Institutes organize and share the new articles discussions from ArXiv
 
 ---------
 
-2015-07
+2016-08
+===========
+Star-disk gap in Be stars
+------------------------------------------------------
+Assuming a spheric star (radius :math:`R`)
+
+.. math::
+
+    \tan\theta= \frac{R}{R+\Delta R_{max}}
+
+    \tan(90-i)=\frac{R}{R+\Delta R_{max}}
+
+    \Delta R_{max}+R = \frac{R}{\tan(90-i)}
+
+    \frac{\Delta R_{max}}{R} = \left( \frac{1}{tan(90-i)}-1 \right)
+
+
+---------------
+
+Combining uncertainties from multiple measurements
+------------------------------------------------------
+.. math::
+
+    \sigma_f^2=\sum_i^n\frac{\sigma_i^2}{n^2}
+
+    \sigma_f = \frac{1}{n}\sqrt{\sum(\sigma_i^2)}
+
+---------------
+
+Tabby's star faded throughout the Kepler mission
+--------------------------------------------------------------
+It seems that Tabby's star has more tricks up in its sleeve than previously thought: a pre-print shows evidence that the WTF star has actually dimmed during the 4-year long Kepler... `Link <https://astrobites.org/2016/08/11/tabbys-star-faded-throughout-the-kepler-mission/>`_
+
+-------------------------------
+
+Nobels and credit for science
+-------------------------------
+Eu não sabia, mais a academia sueca de ciências não dá o prêmio postumamente. Isso poderia explicar porque o Gamow não ganhou o Nobel (quando detectaram a radiação cósmica de fundo), mas é fato é que demoraram tanto para premiar a estrutura do DNA que a Rosalind já havia falecido - reforçando o sexismo na ciência.
+
+`Rosalind Franklin <http://news.nationalgeographic.com/news/2013/13/130519-women-scientists-overlooked-dna-history-science/>`_
+
+    *Born in 1920 in London, Rosalind Franklin used x-rays to take a picture of DNA that would change biology.*
+
+    *Hers is perhaps one of the most well-known -- and shameful -- instances of a researcher being robbed of credit...*
+
+`George Gamow <http://m.teachastronomy.com/astropedia/article/Discovery-of-the-Microwave-Background-Radiation>`_
+
+-----------
+
+Playing with 3D 
+------------------
+- `Leap Motion 3D Controller Mouse Gesture Motion Control For Mac PC <https://www.youtube.com/watch?v=15jgL83VlIQ>`_.
+- `Mayavi Project <http://code.enthought.com/projects/mayavi/>`_
+- `Blender: light-interaction 3D environments <https://www.blender.org/>`_
+
+Blender specify how light interacts with distinct surfaces.
+
+XPD file is a standard on 3 specifications (from Mayavi to Blender).
+
+---------
+
+Finding references
+----------------------
+`Library Genesis <http://libgen.io/>`_ for Scientific articles, Fiction, Comics, Standards and Magazines.
+
+Or `Bookzz <http://bookzz.org/>`_. It automatically search inside `Sci-Hub <http://sci-hub.cc/>`_.
+
+Free books from `Packt <http://bit.ly/1zNpVt0>`_!!
+
+---------
+
+Types of astronomical observations with CCDs
+---------------------------------------------
+- *Imaging*: faithfully (in some way) record of the spatial (angular) distribution of brightness on the sky
+- *Astrometry*: faithfully record the relative or absolute positions of sources on the sky (regardless of brightness)
+- *Photometry*: faithfully record the relative or absolute brightness of sources on the sky (regardless of position and possibly regardless of how flux is distributed on the sky)
+- *Spectroscopy*: faithfully record the relative or absolute flux density as a function of wavelength or frequency
+- *Kinematics*: faithfully record the relative or absolute velocities of objects or parts thereof with respect to a suitable standard of rest
+- *Polarimetry*: faithfully record (relative) polarizations (degree and linear/circular)
+- *Interferometry*: faithfully record (relative) phases or phase distributions of one or more sources
+- *Photon timing*: faithfully record (relative) arrival times of photons from one or more sources
+- mixtures of any of the above: e.g., *surface photometry*, *spectrophotometry*, *integral field spectroscopy*, etc
+
+For imaging, one has to consider the *plate scale* and *geometric distortions* (the latter particularly for off-axis instruments), but depending on the telescope- and instrument-design, even on-axis instruments may show significant geometric distortions.
+
+For photometry, one has to consider *detection* vs. *measurement* (cf. imaging), *aperture* photometry, *curve of growth* photometry, *PSF fitting*, or *differential* photometry. Calibration onto an absolute flux system (*AB magnitudes*) or relative system (e.g., with respect to Vega).
+
+*(from: R. A. Jansen thesis)*
+
+---------
+
+2016-07
 =========
-Mistery of the hyper-resolution measurements
+How to set your code version
+------------------------------
+Just be consistent with `semantic versioning <http://semver.org>`_.
+
+-----------
+
+Object-Oriented vs Functional Programming
+-----------------------------------------------
+Benefits of OO programming: Inheritance, Encapsulation, and Polymorphism (the "Three Pillars of the Paradigm"). However, they can be source of problems: see `Goodbye Object Oriented Programming <https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53#.uofu6c4zr>`_.
+
+A possible alternative: `Functional programming <https://en.wikipedia.org/wiki/Functional_programming>`_.
+
+.. code:: python
+
+    # Printing first 10 fibonacci numbers, iterative
+    def fibonacci(n, first=0, second=1):
+        while n != 0:
+            print(first, end="\n") # side-effect
+            n, first, second = n - 1, second, first + second # assignment
+    fibonacci(10)
+
+    # Printing first 10 fibonacci numbers, functional expression style
+    fibonacci = (lambda n, first=0, second=1:
+        "" if n == 0 else
+        str(first) + "\n" + fibonacci(n - 1, second, first + second))
+    print(fibonacci(10), end="")
+
+    # Printing a list with first 10 fibonacci numbers, with generators
+    def fibonacci(n, first=0, second=1):
+        while n != 0:
+            yield first
+            n, first, second = n - 1, second, first + second # assignment
+    print(list(fibonacci(10)))
+
+    # Printing a list with first 10 fibonacci numbers, functional expression style
+    fibonacci = (lambda n, first=0, second=1:
+        [] if n == 0 else
+        [first] + fibonacci(n - 1, second, first + second))
+    print(fibonacci(10))
+
+-------------
+
+NASA's Hubble Telescope Makes First Atmospheric Study of Earth-Sized Exoplanets
+------------------------------------------------------------------------------------
+http://hubblesite.org/newscenter/archive/releases/2016/27/
+
+-------
+
+Mystery of the hyper-resolution measurements
 ------------------------------------------------
 - What is a "reflex velocity"? How a velocity of ~100 cm/s can be measured in a spectrograph with R = 100000 = 3 km/s?
+
+Simple: with a **precise** wavelength calibration + fitting of line profile over **hundreds** of HR lines.
 
 -------
 
@@ -48,7 +296,7 @@ Lyman :math:`\alpha \approx 1215 \AA`
 
 ESO VLT instruments
 ----------------------------
-Instruments on the VLT (at 2015:
+Instruments on the VLT (at 2015):
 
 === ============== ================= =============== =================
 UT# Telescope name  Cassegrain-Focus Nasmyth-Focus A Nasmyth-Focus B
@@ -263,7 +511,7 @@ http://www.nature.com/news/why-ultra-powerful-radio-bursts-are-the-most-perplexi
 `Microwave oven blamed for radio-telescope signals <http://www.nature.com/news/microwave-oven-blamed-for-radio-telescope-signals-1.17510>`_
 
 
-2015-06
+2016-06
 ===========
 Hubble Captures Vivid Auroras in Jupiter's Atmosphere
 ------------------------------------------------------------

@@ -3,11 +3,23 @@ Math
 
 .. contents:: Table of contents
 
+Relations
+===========
+:math:`\frac{1}{a}\pm\frac{1}{b}=\frac{b\pm a}{ab}`
+
 Approximations
 =================
 :math:`A\exp(-\tau) \approx (1-\tau)A`, if :math:`\tau\ll 1`.
 
 :math:`f(x)\simeq f(x_0)+\frac{f'(x_0)}{1!}(x-x_0)+...+\frac{f^{n}(x_0)}{n!}(x-x0)^n`
+
+Paraxial angles
+-----------------
+:math:`\tan\theta\approx\theta`
+
+:math:`\sin\theta\approx\theta`
+
+:math:`\cos\theta\approx 1-\frac{\theta^2}{ 2}\approx1`
 
 
 Ellipse
@@ -60,3 +72,8 @@ Gaussian
 :math:`\int_{-\infty}^\infty f(x)\,dx=ac\sqrt{2\pi}`, since :math:`\int_{-\infty}^\infty e^{-x^2}dx = \sqrt{\pi}`.
 
 The scale height :math:`H` is :math:`P=P_0e^{-h/H}`.
+
+English
+==========
+`Math expressions in English (PDF) <../static/math_English.pdf>`_
+

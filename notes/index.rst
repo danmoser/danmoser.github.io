@@ -1,14 +1,15 @@
 DMF notes
 ###########
 
-===================  ===============  ==============================  ==============  ==================
-`astro-basics`_      `astro-blog`_    `astro-ph`_                     `astro-spec`_   `astro_reduction`_
-`astro_top-impact`_  `beacon`_        `beatlas`_                      `bravo`_        `codes_usage`_
-`doing_sci`_         `estatistica`_   .. image:: ../figs/index2.gif   `example`_      `gai_fits-imgs`_
-`git`_               `import_wheel`_  `index`_                        `informatics`_  `inthepress`_
-`julia`_             `latex`_         `linux`_                        `math`_         `physics-basics`_
-`python_astro`_      `regex`_         .. image:: ../figs/index3a.gif  `rst`_          `thermal`_
-===================  ===============  ==============================  ==============  ==================
+===================  ===============  ==============================  ================  ==================
+`astro-basics`_      `astro-blog`_    `astro-ph`_                     `astro-spec`_     `astro_reduction`_
+`astro_top-impact`_  `beacon`_        `beatlas`_                      `bravo`_          `codes_usage`_
+`doing_sci`_         `estatistica`_   `example`_                      `gai_fits-imgs`_  `git`_
+`import_wheel`_      `index`_         .. image:: ../figs/index2.gif   `informatics`_    `instrumentation`_
+`inthepress`_        `julia`_         `latex`_                        `linux`_          `math`_
+`physics-basics`_    `python_astro`_  `regex`_                        `rst`_            `thermal`_
+\                    \                .. image:: ../figs/index3a.gif  \                 \
+===================  ===============  ==============================  ================  ==================
 
 .. _astro-basics: astro-basics.html
 .. _astro-blog: astro-blog.html
@@ -28,6 +29,7 @@ DMF notes
 .. _import_wheel: import_wheel.html
 .. _index: index.html
 .. _informatics: informatics.html
+.. _instrumentation: instrumentation.html
 .. _inthepress: inthepress.html
 .. _julia: julia.html
 .. _latex: latex.html

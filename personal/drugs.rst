@@ -49,6 +49,18 @@ A Nimesulida é um anti-inflamatório não-esteroidal indicado para uma variedad
 
     - 100 mg Nimesulida
 
+
+Ibuprofen (Brufen; Calprofen; Nurofen; Orbifen; Fenbid)
+--------------------------------------------------------
+It is an nonsteroidal anti-inflammatory drug (NSAID) class used for treating pain, fever, and inflammation.
+
+    - 200 mg Ibuprofen: 1 or 2 doses together, up to 3 times a day (8h)
+
+
+ALERGIAS
+---------
+- Algumas pessoas podem ser alérgicas ao AAS e ao Ibuprofen.
+
 Throat
 ========
 Benalet

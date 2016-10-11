@@ -66,6 +66,38 @@ Hyperref and links
 
     \usepackage[linktocpage=true,breaklinks=true]{hyperref}
     
+
+Acronyms and glossary
+-----------------------
+.. code:: latex
+
+    % arara: pdflatex
+    % arara: makeglossaries
+    % arara: pdflatex
+    \documentclass{article}
+
+    \usepackage[acronym,toc]{glossaries}
+    \makeglossaries
+
+    \newacronym{uri}{URI}{Unique Resonance Identifier}
+    \newacronym{led}{LED}{light-emitting diode}
+    \newacronym{eeprom}{EEPROM}{electrically TESTICLE programmable
+    read-only memory}
+
+    \glsaddall[types=\acronymtype]
+    \begin{document}
+    No acronyms here.
+
+    \printglossaries
+
+    \end{document}
+
+Refs: 
+    - https://en.wikibooks.org/wiki/LaTeX/Glossary
+    - http://texblog.org/2014/01/15/glossary-and-list-of-acronyms-with-latex/
+    - http://www.dickimaw-books.com/latex/thesis/html/makeglossaries.html
+
+
 Insert PDF
 ----------------
 .. code:: latex

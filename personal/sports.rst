@@ -178,6 +178,6 @@ Year Team                   Coach                      MVP Player of winning tea
 
 Other
 *********
-O homem branco naquela fotografia
+- `O homem branco naquela fotografia <http://www.esquerda.net/artigo/o-homem-branco-naquela-fotografia/39275>`_
 
-- http://www.esquerda.net/artigo/o-homem-branco-naquela-fotografia/39275
+- `The bicycle problem that nearly broke mathematics <http://www.nature.com/news/the-bicycle-problem-that-nearly-broke-mathematics-1.20281?WT.mc_id=TWT_NatureNews>`_

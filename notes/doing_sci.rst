@@ -6,14 +6,14 @@ Writing tips
 ==============
 - Scientists publish IDEAS. Keep that in mind.
 
+- People love *stories*. This could be a good way of writing a motivational letter, for example.
+
 - Avoid:
     - "modern": In most of cases you are trying to say "contemporary". 
     - "due to": In most of cases you are trying to say "owing to" ("due to" has the sense of "attributable to")
     - "despite": In most of cases you are trying to say "although".
 
 - Avoid qualitative expressions like "it is very important". Write HOW it is important.
-
-- People love *stories*. This could be a good way of writing a motivational letter, for example.
 
 
 Useful expressions
@@ -103,6 +103,11 @@ Doing science
 - `The Worst Nobel Prize Ever Awarded (SciShow) <https://www.youtube.com/watch?v=StrsvKSAbT8>`_
 
 - `The Psychology of Trolling <https://www.youtube.com/watch?v=5gqHTlBp6iY>`_
+
+- `Young researchers thrive in life after academia` <http://go.nature.com/2dwztqC>`_
+
+- `Mystery deportation of particle physicist leads to swell of protest <http://www.nature.com/news/mystery-deportation-of-particle-physicist-leads-to-swell-of-protest-1.20587>`_
+
 
 Data tools
 ==================

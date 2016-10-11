@@ -152,13 +152,21 @@ After installing Python 2.7.9+, you need to run
 
     python -m ensurepip
 
-“Could not find .egg-info" 
+"Could not find .egg-info"
 ---------------------------
 It is a bug, solved by `setuptools`. In Debian/Ubuntu, run
 
 .. code:: bash
 
-    sudo pip install setuptools
+    sudo pip install pip -U
+    sudo pip install setuptools -U
+
+Setting up virtual environments 
+----------------------------------
+.. code:: bash
+
+    pip freeze > requirements.txt
+    pip install -r requirements.txt
 
 
 ipython
@@ -198,14 +206,28 @@ This is a *religious* question.
 http://stackoverflow.com/questions/81584/what-ide-to-use-for-python
 
 
-Matplotlib taking long to start
-================================
+Matplotlib
+==========
+Taking long to start
+---------------------
 If you are getting this message:
 
     /home/moser/.local/lib/python2.7/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.
       warnings.warn('Matplotlib is building the font cache using fc-list. This may take a moment.')
 
 erase the contents of ``mpl.get_cachedir()``. Additionally, you may need to delete ``~/.config/matplotlib`` and ``~/.cache/fontconfig``.
+
+*ThemeChanged* error
+-----------------------
+.. code:: python
+
+    can't invoke "event" command: application has been destroyed
+    while executing "event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+    "ttk::ThemeChanged"
+
+Solution: Write this line after you import matplotlib in ipython: ``%matplotlib inline``. 
 
 ``figsize``
 ------------
@@ -350,6 +372,10 @@ If you're writing 2.x-and-3.x-compatible code, you'll probably want to use ``six
 http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html
 
 http://eso-python.github.io/ESOPythonTutorials/
+
+https://github.com/ESO-python/ESOPythonTutorials/tree/master/notebooks
+
+http://www.sc.eso.org/~bdias/pycoffee/refs.html
 
 
 Adding nice help to your program

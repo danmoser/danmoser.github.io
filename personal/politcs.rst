@@ -9,6 +9,7 @@ Democracy
 
 - `Capitalism will eat democracy | Yanis Varoufakis <https://www.youtube.com/watch?v=GB4s5b9NL3I>`_
 
+- `Why People Are Irrational about Politics | Michael Huemer <http://www.owl232.net/irrationality.htm>`_;`PT-BR <http://criticanarede.com/irracionalidadepolitica.html>`_
 
 Inequality
 =============

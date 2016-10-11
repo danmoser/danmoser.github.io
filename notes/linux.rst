@@ -185,7 +185,6 @@ Number of cores
 
 General Tips
 ================
-
 Terminal
 -----------
 - *Ctrl+Shift+T* Open it
@@ -209,6 +208,10 @@ Scripts
 -----------
 Script starts with ``#!/bin/bash``
 
+Keeping windows opened
+-------------------------
+After opening then with ``program &``, just type ``disown``.
+
 
 Useful keyboard shortcuts
 ---------------------------
@@ -220,6 +223,12 @@ Useful keyboard shortcuts
     qmmp -t  #Pause
     amixer set Master 7%- -q
     amixer set Master 7%+ -q
+
+Win programs alternatives
+---------------------------
+.. figure:: ../figs/linux_ref_progs.jpg
+    :align: center
+    :width: 640 px
 
 Image tools
 ---------------

@@ -194,5 +194,6 @@ http://astronomy.swin.edu.au/~cblake/stats.html
 VO
 ********
 ESA Sky: 
-- http://arxiv.org/abs/1512.00842
-- http://archives.esac.esa.int/esasky-beta/
+    - http://arxiv.org/abs/1512.00842
+    - http://archives.esac.esa.int/esasky-beta/
+

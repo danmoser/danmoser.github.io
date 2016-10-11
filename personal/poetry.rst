@@ -8,245 +8,257 @@ Selected poems
 
 O outro Brasil que vem aí (1926)
 ---------------------------------
-| Eu ouço as vozes
-| eu vejo as cores
-| eu sinto os passos
-| de outro Brasil que vem aí
-| mais tropical
-| mais fraternal
-| mais brasileiro.
-| O mapa desse Brasil em vez das cores dos Estados
-| terá as cores das produções e dos trabalhos.
-| Os homens desse Brasil em vez das cores das três raças
-| terão as cores das profissões e regiões.
-| As mulheres do Brasil em vez das cores boreais
-| terão as cores variamente tropicais.
-| Todo brasileiro poderá dizer: é assim que eu quero o Brasil,
-| todo brasileiro e não apenas o bacharel ou o doutor
-| o preto, o pardo, o roxo e não apenas o branco e o semibranco.
-| Qualquer brasileiro poderá governar esse Brasil
-| lenhador
-| lavrador
-| pescador
-| vaqueiro
-| marinheiro
-| funileiro
-| carpinteiro
-| contanto que seja digno do governo do Brasil
-| que tenha olhos para ver pelo Brasil,
-| ouvidos para ouvir pelo Brasil
-| coragem de morrer pelo Brasil
-| ânimo de viver pelo Brasil
-| mãos para agir pelo Brasil
-| mãos de escultor que saibam lidar com o barro forte e novo dos Brasis
-| mãos de engenheiro que lidem com ingresias e tratores europeus e norte-americanos a serviço do Brasil
-| mãos sem anéis (que os anéis não deixam o homem criar nem trabalhar).
-| mãos livres
-| mãos criadoras
-| mãos fraternais de todas as cores
-| mãos desiguais que trabalham por um Brasil sem Azeredos,
-| sem Irineus
-| sem Maurícios de Lacerda.
-| Sem mãos de jogadores
-| nem de especuladores nem de mistificadores.
-| Mãos todas de trabalhadores,
-| pretas, brancas, pardas, roxas, morenas,
-| de artistas
-| de escritores
-| de operários
-| de lavradores
-| de pastores
-| de mães criando filhos
-| de pais ensinando meninos
-| de padres benzendo afilhados
-| de mestres guiando aprendizes
-| de irmãos ajudando irmãos mais moços
-| de lavadeiras lavando
-| de pedreiros edificando
-| de doutores curando
-| de cozinheiras cozinhando
-| de vaqueiros tirando leite de vacas chamadas comadres dos homens.
-| Mãos brasileiras
-| brancas, morenas, pretas, pardas, roxas
-| tropicais
-| sindicais
-| fraternais.
-| Eu ouço as vozes
-| eu vejo as cores
-| eu sinto os passos
-| desse Brasil que vem aí.
+::
+
+    Eu ouço as vozes
+    eu vejo as cores
+    eu sinto os passos
+    de outro Brasil que vem aí
+    mais tropical
+    mais fraternal
+    mais brasileiro.
+    O mapa desse Brasil em vez das cores dos Estados
+    terá as cores das produções e dos trabalhos.
+    Os homens desse Brasil em vez das cores das três raças
+    terão as cores das profissões e regiões.
+    As mulheres do Brasil em vez das cores boreais
+    terão as cores variamente tropicais.
+    Todo brasileiro poderá dizer: é assim que eu quero o Brasil,
+    todo brasileiro e não apenas o bacharel ou o doutor
+    o preto, o pardo, o roxo e não apenas o branco e o semibranco.
+    Qualquer brasileiro poderá governar esse Brasil
+    lenhador
+    lavrador
+    pescador
+    vaqueiro
+    marinheiro
+    funileiro
+    carpinteiro
+    contanto que seja digno do governo do Brasil
+    que tenha olhos para ver pelo Brasil,
+    ouvidos para ouvir pelo Brasil
+    coragem de morrer pelo Brasil
+    ânimo de viver pelo Brasil
+    mãos para agir pelo Brasil
+    mãos de escultor que saibam lidar com o barro forte e novo dos Brasis
+    mãos de engenheiro que lidem com ingresias e tratores europeus e norte-americanos a serviço do Brasil
+    mãos sem anéis (que os anéis não deixam o homem criar nem trabalhar).
+    mãos livres
+    mãos criadoras
+    mãos fraternais de todas as cores
+    mãos desiguais que trabalham por um Brasil sem Azeredos,
+    sem Irineus
+    sem Maurícios de Lacerda.
+    Sem mãos de jogadores
+    nem de especuladores nem de mistificadores.
+    Mãos todas de trabalhadores,
+    pretas, brancas, pardas, roxas, morenas,
+    de artistas
+    de escritores
+    de operários
+    de lavradores
+    de pastores
+    de mães criando filhos
+    de pais ensinando meninos
+    de padres benzendo afilhados
+    de mestres guiando aprendizes
+    de irmãos ajudando irmãos mais moços
+    de lavadeiras lavando
+    de pedreiros edificando
+    de doutores curando
+    de cozinheiras cozinhando
+    de vaqueiros tirando leite de vacas chamadas comadres dos homens.
+    Mãos brasileiras
+    brancas, morenas, pretas, pardas, roxas
+    tropicais
+    sindicais
+    fraternais.
+    Eu ouço as vozes
+    eu vejo as cores
+    eu sinto os passos
+    desse Brasil que vem aí.
 
 **Gilberto Freyre**
 
 
 Via Lactea - XIII
 -------------------
-| Ora (direis) ouvir estrelas! Certo 
-| Perdeste o senso!" E eu vos direi, no entanto, 
-| Que, para ouvi-las, muita vez desperto 
-| E abro as janelas, pálido de espanto...
-|  
-| E conversamos toda a noite, enquanto
-| A via-láctea, como um pálio aberto,
-| Cintila. E, ao vir do sol, saudoso e em pranto,
-| Inda as procuro pelo céu deserto.
-|  
-| Direis agora: "Tresloucado amigo!
-| Que conversas com elas? Que sentido
-| Tem o que dizem, quando estão contigo?"
-|  
-| E eu vos direi: "Amai para entendê-las! 
-| Pois só quem ama pode ter ouvido
-| Capaz de ouvir e de entender estrelas.
+::
+
+    Ora (direis) ouvir estrelas! Certo 
+    Perdeste o senso!" E eu vos direi, no entanto, 
+    Que, para ouvi-las, muita vez desperto 
+    E abro as janelas, pálido de espanto...
+     
+    E conversamos toda a noite, enquanto
+    A via-láctea, como um pálio aberto,
+    Cintila. E, ao vir do sol, saudoso e em pranto,
+    Inda as procuro pelo céu deserto.
+     
+    Direis agora: "Tresloucado amigo!
+    Que conversas com elas? Que sentido
+    Tem o que dizem, quando estão contigo?"
+     
+    E eu vos direi: "Amai para entendê-las! 
+    Pois só quem ama pode ter ouvido
+    Capaz de ouvir e de entender estrelas.
 
 **Olavo Bilac**
 
 O Fortuna
 ----------
-| O Fortuna,
-| velut Luna
-| statu variabilis,
-| semper crescis
-| aut decrescis;
-| vita detestabilis
-| nunc obdurat
-| et tunc curat
-| ludo mentis aciem;
-| egestatem,
-| potestatem,
-| dissolvit ut glaciem.
-| 
-| Sors immanis
-| et inanis,
-| rota tu volubilis,
-| status malus,
-| vana salus
-| semper dissolubilis;
-| obumbrata
-| et velata
-| mihi quoque niteris;
-| nunc per ludum
-| dorsum nudum
-| fero tui sceleris.
-| 
-| Sors salutis
-| et virtutis
-| mihi nunc contraria;
-| est affectus
-| et defectus
-| semper in angaria.
-| hac in hora
-| sine mora
-| cordae pulsum tangite!
-| quod per sortem
-| sternit fortem,
-| mecum omnes plangite! 
+::
+
+    O Fortuna,
+    velut Luna
+    statu variabilis,
+    semper crescis
+    aut decrescis;
+    vita detestabilis
+    nunc obdurat
+    et tunc curat
+    ludo mentis aciem;
+    egestatem,
+    potestatem,
+    dissolvit ut glaciem.
+    
+    Sors immanis
+    et inanis,
+    rota tu volubilis,
+    status malus,
+    vana salus
+    semper dissolubilis;
+    obumbrata
+    et velata
+    mihi quoque niteris;
+    nunc per ludum
+    dorsum nudum
+    fero tui sceleris.
+    
+    Sors salutis
+    et virtutis
+    mihi nunc contraria;
+    est affectus
+    et defectus
+    semper in angaria.
+    hac in hora
+    sine mora
+    cordae pulsum tangite!
+    quod per sortem
+    sternit fortem,
+    mecum omnes plangite! 
  
  
 Mar português - *Portuguese sea*
 ---------------------------------
-| Ó mar salgado, quanto do teu sal
-| São lágrimas de Portugal!
-| Por te cruzarmos, quantas mães choraram,
-| Quantos filhos em vão rezaram!
-| 
-| Quantas noivas ficaram por casar
-| Para que fosses nosso, ó mar!
-| Valeu a pena? Tudo vale a pena
-| Se a alma não é pequena.
-| 
-| Quem quer passar além do Bojador
-| Tem que passar além da dor.
-| Deus ao mar o perigo e o abismo deu,
-| Mas nele é que espelhou o céu.
- 
+::
+
+    Ó mar salgado, quanto do teu sal
+    São lágrimas de Portugal!
+    Por te cruzarmos, quantas mães choraram,
+    Quantos filhos em vão rezaram!
+    
+    Quantas noivas ficaram por casar
+    Para que fosses nosso, ó mar!
+    Valeu a pena? Tudo vale a pena
+    Se a alma não é pequena.
+    
+    Quem quer passar além do Bojador
+    Tem que passar além da dor.
+    Deus ao mar o perigo e o abismo deu,
+    Mas nele é que espelhou o céu.
+     
 **Fernando Pessoa**
- 
-| Oh salty sea, how much of your salt
-| Are Portuguese tears!
-| Due to cross you, how many mothers cried,
-| How many children prayed in vain!
-| 
-| How many brides remained alone
-| To you be ours, oh sea!
-| Was it worth? Everything is worthwhile
-| When the soul is not limited
-| 
-| Who wants to go beyond Boyador
-| Have to go beyond pain.
-| God to the sea danger and abyss gave
-| But on it He mirrored the sky.
+
+::
+     
+    Oh salty sea, how much of your salt
+    Are Portuguese tears!
+    Due to cross you, how many mothers cried,
+    How many children prayed in vain!
+    
+    How many brides remained alone
+    To you be ours, oh sea!
+    Was it worth? Everything is worthwhile
+    When the soul is not limited
+    
+    Who wants to go beyond Boyador
+    Have to go beyond pain.
+    God to the sea danger and abyss gave
+    But on it He mirrored the sky.
 
 
 Zodíaco
 ---------
-| O Círculo Máximo do destino,
-| Zodíaco é palavra de lei.
-| Define até a postura do rei.
-| 
-| Em Áries habita o terror.
-| Sangue borbulhante de quentura.
-| Hamal já deflagra a guerra
-| que destronará o senhor.
-| 
-| Touro, a força.
-| Aldebaran impera em seu espaço.
-| O que é do Touro,
-| dele ninguém tira.
-| 
-| A inteligência de dois em um
-| representa o esplendor dos Gêmeos.
-| Pollux e Castor juntos - imbatíveis.
-| 
-| Não há escudo melhor
-| que a carapaça do Câncer.
-| Tarf é a governanta da constelação.
-| 
-| Na próxima casa achamos o Leão,
-| o Caesar da Roma celestial.
-| Regulus já se mostra em esplendor,
-| a defender qualquer ameaça ao reinado.
-| 
-| Em Virgem encontramos o encanto,
-| a perfeição do ser imaculado.
-| Com pureza de brilho,
-| a alfa Spica se esguia pelo céu.
-| 
-| Mesmo no Zodíaco é necessária a Justiça.
-| Ninguém melhor que a Libra pra
-| equilibrar os horizontes.
-| Zubeneshamali é a estrela-guia.
-| 
-| Logo após, vem a surpresa.
-| Encontramos a Magnitude, ela mesma.
-| Nas garras do Escorpião conhecemos
-| as garras do artista dos céus.
-| Antares é o coração do Escorpião.
-| 
-| Sagitário é seu caçador.
-| Com a Sagita, não tem vez pra Órion.
-| Em Kaus Australis
-| encontramos sua precisão.
-| 
-| No Capricórnio reside o telúrico.
-| O magistral escalador de montanhas.
-| Deneb Algiedi é seu presente
-| aos necessitados de perseverança.
-| 
-| Um recipiente, prospectos do futuro.
-| O Aquário é divino em seu plano.
-| Sadalsuud é refrator de sombras.
-| 
-| Na última casa, o último signo.
-| Vai nascer num Erídano de lágrimas.
-| Os Peixes nadam pelos céus,
-| embarcados na Alpha Piscium.
-| 
-| No Círculo Máximo do destino,
-| doze cavaleiros seguem as trilhas do Sol,
-| e nos revelam a sorte de multidões de desabrigados,
-| muito além do horizonte,
-| muito além de tufões e furacões.
+::
+
+    O Círculo Máximo do destino,
+    Zodíaco é palavra de lei.
+    Define até a postura do rei.
+    
+    Em Áries habita o terror.
+    Sangue borbulhante de quentura.
+    Hamal já deflagra a guerra
+    que destronará o senhor.
+    
+    Touro, a força.
+    Aldebaran impera em seu espaço.
+    O que é do Touro,
+    dele ninguém tira.
+    
+    A inteligência de dois em um
+    representa o esplendor dos Gêmeos.
+    Pollux e Castor juntos - imbatíveis.
+    
+    Não há escudo melhor
+    que a carapaça do Câncer.
+    Tarf é a governanta da constelação.
+    
+    Na próxima casa achamos o Leão,
+    o Caesar da Roma celestial.
+    Regulus já se mostra em esplendor,
+    a defender qualquer ameaça ao reinado.
+    
+    Em Virgem encontramos o encanto,
+    a perfeição do ser imaculado.
+    Com pureza de brilho,
+    a alfa Spica se esguia pelo céu.
+    
+    Mesmo no Zodíaco é necessária a Justiça.
+    Ninguém melhor que a Libra pra
+    equilibrar os horizontes.
+    Zubeneshamali é a estrela-guia.
+    
+    Logo após, vem a surpresa.
+    Encontramos a Magnitude, ela mesma.
+    Nas garras do Escorpião conhecemos
+    as garras do artista dos céus.
+    Antares é o coração do Escorpião.
+    
+    Sagitário é seu caçador.
+    Com a Sagita, não tem vez pra Órion.
+    Em Kaus Australis
+    encontramos sua precisão.
+    
+    No Capricórnio reside o telúrico.
+    O magistral escalador de montanhas.
+    Deneb Algiedi é seu presente
+    aos necessitados de perseverança.
+    
+    Um recipiente, prospectos do futuro.
+    O Aquário é divino em seu plano.
+    Sadalsuud é refrator de sombras.
+    
+    Na última casa, o último signo.
+    Vai nascer num Erídano de lágrimas.
+    Os Peixes nadam pelos céus,
+    embarcados na Alpha Piscium.
+    
+    No Círculo Máximo do destino,
+    doze cavaleiros seguem as trilhas do Sol,
+    e nos revelam a sorte de multidões de desabrigados,
+    muito além do horizonte,
+    muito além de tufões e furacões.
 
 **Richard Martin Souza**
 
@@ -290,37 +302,39 @@ O homem vulgar é um velho Narciso que adora a si mesmo, e que aplaude o vulgar.
 
 Onde o céu é mais azul
 -------------------------
-| Eu já encontrei, um dia, alguém
-| Que me perguntou assim, Iaiá:
-| O seu Brasil, o que é que tem?
-| O seu Brasil, onde é que está?
-| 
-| Onde o céu azul é mais azul
-| E uma cruz de estrelas mostra o sul
-| Aí se encontra o meu país
-| O meu Brasil, grande e tão feliz
-| 
-| Que tem, junto ao mar, palmeirais
-| No sertão, seringais
-| E, no sul, verdes pinheirais
-| Um jangadeiro que namora o mar
-| Verde mar a beijar
-| Brancas praias sem fim, quando paira o ar
-| 
-| Um garimpeiro, que lá no sertão 
-| Procura estrelas raras pelo chão
-| E um boiadeiro que tangendo os bois
-| Trabalha muito pra sonhar depois
-| 
-| E se é grande o céu, a terra e o mar
-| O teu povo bom não é menor
-| Mas o que faz admirar...
-| Eu vou dizer, guarde bem de cor:
-| 
-| Quem vê o Brasil que não tem fim
-| Não chega a saber por que razão
-| Este país tão grande assim
-| Cabe inteirinho no meu coração...
+::
+
+    Eu já encontrei, um dia, alguém
+    Que me perguntou assim, Iaiá:
+    O seu Brasil, o que é que tem?
+    O seu Brasil, onde é que está?
+    
+    Onde o céu azul é mais azul
+    E uma cruz de estrelas mostra o sul
+    Aí se encontra o meu país
+    O meu Brasil, grande e tão feliz
+    
+    Que tem, junto ao mar, palmeirais
+    No sertão, seringais
+    E, no sul, verdes pinheirais
+    Um jangadeiro que namora o mar
+    Verde mar a beijar
+    Brancas praias sem fim, quando paira o ar
+    
+    Um garimpeiro, que lá no sertão 
+    Procura estrelas raras pelo chão
+    E um boiadeiro que tangendo os bois
+    Trabalha muito pra sonhar depois
+    
+    E se é grande o céu, a terra e o mar
+    O teu povo bom não é menor
+    Mas o que faz admirar...
+    Eu vou dizer, guarde bem de cor:
+    
+    Quem vê o Brasil que não tem fim
+    Não chega a saber por que razão
+    Este país tão grande assim
+    Cabe inteirinho no meu coração...
 
 **Alberto Ribeiro, Alcyr Pires Vermelho e João de Barro**
 
@@ -382,151 +396,185 @@ Selected songs
 ================
 Seven Bridges Road
 --------------------
-| There are stars
-| In the Southern sky
-| Southward as you go
-| There is moonlight
-| And moss in the trees
-| Down the Seven Bridges Road
-| 
-| Now I have loved you like a baby
-| Like some lonesome child
-| And I have loved you in a tame way
-| And I have loved you wild
-| 
-| Sometimes there's a part of me
-| Has to turn from here and go
-| Running like a child from these warm stars
-| Down the Seven Bridges Road
-| 
-| There are stars in the Southern sky
-| And if ever you decide
-| You should go
-| There is a taste of thyme sweetened honey
-| Down the Seven Bridges Road
+:: 
+
+    There are stars
+    In the Southern sky
+    Southward as you go
+    There is moonlight
+    And moss in the trees
+    Down the Seven Bridges Road
+    
+    Now I have loved you like a baby
+    Like some lonesome child
+    And I have loved you in a tame way
+    And I have loved you wild
+    
+    Sometimes there's a part of me
+    Has to turn from here and go
+    Running like a child from these warm stars
+    Down the Seven Bridges Road
+    
+    There are stars in the Southern sky
+    And if ever you decide
+    You should go
+    There is a taste of thyme sweetened honey
+    Down the Seven Bridges Road
 
 **Stephen T. Young**
 
 
 Tubi Tupy
 ------------
-| Eu sou feito de restos de estrelas
-| Como o corvo, o carvalho e o carvão
-| As sementes nasceram das cinzas
-| De uma delas depois da explosão
-| Sou o índio da estrela veloz e brilhante
-| O que é forte como o jabuti
-| O de antes de agora em diante
-| E o distante galáxias daqui
-| 
-| Canibal tropical, qual o pau
-| Que dá nome à nação, renasci
-| Natural, analógico e digital
-| Libertado astronauta tupi
-| Eu sou feito do resto de estrelas
-| Daquelas primeiras, depois da explosão,
-| Sou semente nascendo das cinzas
-| Sou o corvo, o carvalho, o carvão
-| 
-| O meu nome é Tupy
-| Gaykuru
-| Meu nome é Peri
-| De Ceci
-| Eu sou neto de Caramuru
-| Sou Galdino, Juruna e Raoni
-| 
-| E no Cosmos de onde eu vim
-| Com a imagem do caos
-| Me projeto futuro sem fim
-| Pelo espaço num tour sideral
-| Minhas roupas estampam em cores
-| A beleza do caos atual
-| As misérias e mil esplendores
-| Do planeta de Neanderthal
+::
+
+    Eu sou feito de restos de estrelas
+    Como o corvo, o carvalho e o carvão
+    As sementes nasceram das cinzas
+    De uma delas depois da explosão
+    Sou o índio da estrela veloz e brilhante
+    O que é forte como o jabuti
+    O de antes de agora em diante
+    E o distante galáxias daqui
+    
+    Canibal tropical, qual o pau
+    Que dá nome à nação, renasci
+    Natural, analógico e digital
+    Libertado astronauta tupi
+    Eu sou feito do resto de estrelas
+    Daquelas primeiras, depois da explosão,
+    Sou semente nascendo das cinzas
+    Sou o corvo, o carvalho, o carvão
+    
+    O meu nome é Tupy
+    Gaykuru
+    Meu nome é Peri
+    De Ceci
+    Eu sou neto de Caramuru
+    Sou Galdino, Juruna e Raoni
+    
+    E no Cosmos de onde eu vim
+    Com a imagem do caos
+    Me projeto futuro sem fim
+    Pelo espaço num tour sideral
+    Minhas roupas estampam em cores
+    A beleza do caos atual
+    As misérias e mil esplendores
+    Do planeta de Neanderthal
 
 **Lenine**
 
 
 Space Oddity
 -------------
-| Ground control to major Tom
-| Ground control to major Tom
-| Lock your Soyuz hatch and put your helmet on
-| Ground control to major Tom
-| Commencing countdown, engines on
-| Detach from Station, and may God's love be with you
-| 
-| This is ground control to major Tom, you've really made the grade
-| And the papers want to know whose shirts you wear
-| But it's time to guide the capsule if you da-a-a-are
-| This is major Tom to ground control, I've left forevermore
-| And I'm floating in a most peculiar way
-| And the stars look very different toda-a-a-ay
-| For here am I sitting in a tin can
-| Far above the world
-| Planet Earth is blue and there's nothing left to do
-| 
-| Though I've flown one hundred thousand miles
-| I'm feeling very still
-| And before too long I know it's time to go
-| Our Commander comes down back to earth and knows
-| Ground control to major Tom,
-| The time is near, there's not too long
-| Can you hear me, Major Tom?
-| Can you hear me, Major Tom?
-| Can you hear me, Major Tom?
-| Can you...
-| Here am I floating in my tin can
-| Last glimpse of the world
-| 
-| Planet Earth is blue, and there's nothing left to do
+::
+
+    Ground control to major Tom
+    Ground control to major Tom
+    Lock your Soyuz hatch and put your helmet on
+    Ground control to major Tom
+    Commencing countdown, engines on
+    Detach from Station, and may God's love be with you
+    
+    This is ground control to major Tom, you've really made the grade
+    And the papers want to know whose shirts you wear
+    But it's time to guide the capsule if you da-a-a-are
+    This is major Tom to ground control, I've left forevermore
+    And I'm floating in a most peculiar way
+    And the stars look very different toda-a-a-ay
+    For here am I sitting in a tin can
+    Far above the world
+    Planet Earth is blue and there's nothing left to do
+    
+    Though I've flown one hundred thousand miles
+    I'm feeling very still
+    And before too long I know it's time to go
+    Our Commander comes down back to earth and knows
+    Ground control to major Tom,
+    The time is near, there's not too long
+    Can you hear me, Major Tom?
+    Can you hear me, Major Tom?
+    Can you hear me, Major Tom?
+    Can you...
+    Here am I floating in my tin can
+    Last glimpse of the world
+    
+    Planet Earth is blue, and there's nothing left to do
 
 **Chris Hadfield, David Bowie**
 
 
 Classe média
 ---------------
-| Sou classe média
-| Papagaio de todo telejornal
-| Eu acredito
-| Na imparcialidade da revista semanal
-| Sou classe média
-| Compro roupa e gasolina no cartão
-| Odeio "coletivos"
-| E vou de carro que comprei a prestação
-| Só pago impostos
-| Estou sempre no limite do meu cheque especial
-| Eu viajo pouco, no máximo um pacote CVC tri-anual
-| 
-| Mas eu "to nem ai"
-| Se o traficante é quem manda na favela
-| Eu não "to nem aqui"
-| Se morre gente ou tem enchente em Itaquera
-| Eu quero é que se exploda a periferia toda
-| Mas fico indignado com estado quando sou incomodado
-| Pelo pedinte esfomeado que me estende a mão
-| 
-| O pára-brisa ensaboado
-| É camelo, biju com bala
-| E as peripécias do artista malabarista do farol
-| Mas se o assalto é em Moema
-| O assassinato é no "Jardins"
-| A filha do executivo é estuprada até o fim
-| 
-| Ai a mídia manifesta a sua opinião regressa
-| De implantar pena de morte, ou reduzir a idade penal
-| E eu que sou bem informado concordo e faço passeata
-| Enquanto aumenta a audiência e a tiragem do jornal
-| 
-| Porque eu não "to nem ai"
-| Se o traficante é quem manda na favela
-| Eu não "to nem aqui"
-| Se morre gente ou tem enchente em Itaquera
-| Eu quero é que se exploda a periferia toda
-| Toda tragédia só me importa quando bate em minha porta
-| Porque é mais fácil condenar quem já cumpre pena de vida
+:: 
+
+    Sou classe média
+    Papagaio de todo telejornal
+    Eu acredito
+    Na imparcialidade da revista semanal
+    Sou classe média
+    Compro roupa e gasolina no cartão
+    Odeio "coletivos"
+    E vou de carro que comprei a prestação
+    Só pago impostos
+    Estou sempre no limite do meu cheque especial
+    Eu viajo pouco, no máximo um pacote CVC tri-anual
+    
+    Mas eu "to nem ai"
+    Se o traficante é quem manda na favela
+    Eu não "to nem aqui"
+    Se morre gente ou tem enchente em Itaquera
+    Eu quero é que se exploda a periferia toda
+    Mas fico indignado com estado quando sou incomodado
+    Pelo pedinte esfomeado que me estende a mão
+    
+    O pára-brisa ensaboado
+    É camelo, biju com bala
+    E as peripécias do artista malabarista do farol
+    Mas se o assalto é em Moema
+    O assassinato é no "Jardins"
+    A filha do executivo é estuprada até o fim
+    
+    Ai a mídia manifesta a sua opinião regressa
+    De implantar pena de morte, ou reduzir a idade penal
+    E eu que sou bem informado concordo e faço passeata
+    Enquanto aumenta a audiência e a tiragem do jornal
+    
+    Porque eu não "to nem ai"
+    Se o traficante é quem manda na favela
+    Eu não "to nem aqui"
+    Se morre gente ou tem enchente em Itaquera
+    Eu quero é que se exploda a periferia toda
+    Toda tragédia só me importa quando bate em minha porta
+    Porque é mais fácil condenar quem já cumpre pena de vida
 
 **Max Gonzaga**
+
+O mal e o sofrimento por 
+--------------------------
+:: 
+
+    Se eu conversasse com Deus
+    Iria lhe perguntar:
+    Por que é que sofremos tanto
+    Quando viemos pra cá?
+    Que dívida é essa 
+    Que a gente tem que morrer pra pagar?
+    Perguntaria também
+    Como é que ele é feito
+    Que não dorme, que não come
+    E assim vive satisfeito.
+    Por que foi que ele não fez
+    A gente do mesmo jeito?
+    Por que existem uns felizes
+    E outros que sofrem tanto?
+    Nascemos do mesmo jeito,
+    Moramos no mesmo canto.
+    Quem foi temperar o choro
+    E acabou salgando o pranto? 
+
+**Leandro Gomes de Barros**
+
 
 Random quotes
 =================

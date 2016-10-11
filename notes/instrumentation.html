@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
-<title>Math</title>
+<title></title>
 <style type="text/css">
 
 /*
@@ -667,285 +667,144 @@ span.boxed, span.framebox {
 </style>
 </head>
 <body>
-<div class="document" id="math">
-<h1 class="title">Math</h1>
+<div class="document">
+
 
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title first">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#relations" id="id1">Relations</a></li>
-<li><a class="reference internal" href="#approximations" id="id2">Approximations</a><ul>
-<li><a class="reference internal" href="#paraxial-angles" id="id3">Paraxial angles</a></li>
+<li><a class="reference internal" href="#instrumentation-notes" id="id1">Instrumentation notes</a><ul>
+<li><a class="reference internal" href="#eletronics" id="id2">Eletronics</a></li>
+<li><a class="reference internal" href="#optics" id="id3">Optics</a><ul>
+<li><a class="reference internal" href="#telescope-calculator" id="id4">Telescope Calculator</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ellipse" id="id4">Ellipse</a><ul>
-<li><a class="reference internal" href="#parametric-ellipse" id="id5">Parametric ellipse</a></li>
+<li><a class="reference internal" href="#mechanics" id="id5">Mechanics</a><ul>
+<li><a class="reference internal" href="#gears-rules" id="id6">Gears rules</a><ul>
+<li><a class="reference internal" href="#gear-trains" id="id7">Gear trains</a></li>
+<li><a class="reference internal" href="#worm-gear" id="id8">Worm gear</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#rotation-matrix-euler-angles-alpha-beta-gamma" id="id6">Rotation matrix (Euler angles <span class="formula"><i>α</i>, <i>β</i>, <i>γ</i></span>
-)</a></li>
-<li><a class="reference internal" href="#gaussian" id="id7">Gaussian</a></li>
-<li><a class="reference internal" href="#english" id="id8">English</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
-<div class="section" id="relations">
-<h1><a class="toc-backref" href="#id1">Relations</a></h1>
-<p><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>a</i></span><span class="ignored">)</span></span>±<span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>b</i></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>b</i>±<i>a</i></span><span class="ignored">)/(</span><span class="denominator"><i>ab</i></span><span class="ignored">)</span></span></span>
-</p>
+<div class="section" id="instrumentation-notes">
+<h1><a class="toc-backref" href="#id1">Instrumentation notes</a></h1>
+<div class="section" id="eletronics">
+<h2><a class="toc-backref" href="#id2">Eletronics</a></h2>
+<ul class="simple">
+<li>AC: Alternating Current</li>
+<li>ADC or A/D: analog-to-digital conversion</li>
+<li>DAC or D/A: digital-to-analog conversion</li>
+<li>DC: Direct Current</li>
+<li>DMA: Direct Memory Access</li>
+<li>DRT|TL: Diode|Resistor|Transistor-to-Transistor Logic</li>
+<li>DSP: Digital Signal Processing</li>
+<li>IEEE: Institute of Electrical and Electronics Engineers</li>
+<li>PCI: Peripheral Component Interconnect</li>
+<li>PXI: PCI eXtensions (for Instrumentation)</li>
+<li>RTSI: Real-Time System Integration bus</li>
+<li>SCC: Signal Conditioning Carriers</li>
+<li>transducer: voltage or current convertion to signal</li>
+<li>IC: Integrated Circuit</li>
+</ul>
+<p>Nyquist Theorem: &quot;The maximum frequency one can detect is always less than half of the sampling rate&quot;.</p>
+<dl class="docutils">
+<dt>Information can be folded in:</dt>
+<dd><ul class="first last simple">
+<li>state</li>
+<li>rate</li>
+<li>level</li>
+<li>shape</li>
+<li>frequency content</li>
+</ul>
+</dd>
+</dl>
 </div>
-<div class="section" id="approximations">
-<h1><a class="toc-backref" href="#id2">Approximations</a></h1>
-<p><span class="formula"><i>A</i>exp( − <i>τ</i>) ≈ (1 − <i>τ</i>)<i>A</i></span>
-, if <span class="formula"><i>τ</i>≪1</span>
-.</p>
-<p><span class="formula"><i>f</i>(<i>x</i>)≃<i>f</i>(<i>x</i><sub>0</sub>) + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>f</i>’(<i>x</i><sub>0</sub>)</span><span class="ignored">)/(</span><span class="denominator">1!</span><span class="ignored">)</span></span>(<i>x</i> − <i>x</i><sub>0</sub>) + ... + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>f</i><sup><i>n</i></sup>(<i>x</i><sub>0</sub>)</span><span class="ignored">)/(</span><span class="denominator"><i>n</i>!</span><span class="ignored">)</span></span>(<i>x</i> − <i>x</i>0)<sup><i>n</i></sup></span>
-</p>
-<div class="section" id="paraxial-angles">
-<h2><a class="toc-backref" href="#id3">Paraxial angles</a></h2>
-<p><span class="formula">tan<i>θ</i> ≈ <i>θ</i></span>
-</p>
-<p><span class="formula">sin<i>θ</i> ≈ <i>θ</i></span>
-</p>
-<p><span class="formula">cos<i>θ</i> ≈ 1 − <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>θ</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator">2</span><span class="ignored">)</span></span> ≈ 1</span>
-</p>
-</div>
-</div>
-<div class="section" id="ellipse">
-<h1><a class="toc-backref" href="#id4">Ellipse</a></h1>
-<p><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>x</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>a</i><sup>2</sup></span><span class="ignored">)</span></span> + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>y</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>b</i><sup>2</sup></span><span class="ignored">)</span></span> = 1</span>
-, where <span class="formula"><i>a</i> &gt; <i>b</i></span>
- and the focus on <span class="formula"><i>x</i></span>
- axis.</p>
-<p><span class="formula"><i>x</i> = <i>a</i>cos<i>θ</i></span>
- and <span class="formula"><i>y</i> = <i>b</i>sin<i>θ</i></span>
-.</p>
-<p>The focus are <span class="formula">±<i>c</i> = ±<i>a</i> × <i>e</i></span>
-, where the eccentricity is <span class="formula"><i>e</i> = <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root">1 − <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>b</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>a</i><sup>2</sup></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span></span>
-.</p>
-<div class="section" id="parametric-ellipse">
-<h2><a class="toc-backref" href="#id5">Parametric ellipse</a></h2>
-<p>Or Trammel of Archimedes is the definition of <span class="formula"><i>a</i> ≡ <i>p</i> + <i>q</i></span>
- and <span class="formula"><i>b</i> = <i>q</i></span>
-.</p>
-<p>If <span class="formula"><i>q</i> ≡ 1</span>
-, then <span class="formula"><i>p</i> = <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root">1 − <i>e</i><sup>2</sup></span><span class="ignored">)</span></span> − 1</span>
-.</p>
-</div>
-</div>
-<div class="section" id="rotation-matrix-euler-angles-alpha-beta-gamma">
-<h1><a class="toc-backref" href="#id6">Rotation matrix (Euler angles <span class="formula"><i>α</i>, <i>β</i>, <i>γ</i></span>
-)</a></h1>
-<div class="formula">
-<i>R</i><sub><i>x</i></sub> = <span class="array"><span class="arrayrow"><span class="bracket align-left">⎡</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎣</span></span></span><span class="array"><span class="arrayrow">
-<span class="arraycell align-c">
-1
-</span>
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-0
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-cos<i>α</i>
-</span>
-<span class="arraycell align-c">
- − sin<i>α</i>
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-sin<i>α</i>
-</span>
-<span class="arraycell align-c">
-cos<i>α</i>
-</span>
-
-</span>
-</span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎤</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎦</span></span></span>
+<div class="section" id="optics">
+<h2><a class="toc-backref" href="#id3">Optics</a></h2>
+<div class="section" id="telescope-calculator">
+<h3><a class="toc-backref" href="#id4">Telescope Calculator</a></h3>
+<div class="figure align-center">
+<object data="../figs/inst_Lens_angle_of_view.svg" type="image/svg+xml">
+../figs/inst_Lens_angle_of_view.svg</object>
 </div>
 <div class="formula">
-<i>R</i><sub><i>y</i></sub> = <span class="array"><span class="arrayrow"><span class="bracket align-left">⎡</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎣</span></span></span><span class="array"><span class="arrayrow">
-<span class="arraycell align-c">
-cos<i>β</i>
-</span>
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-sin<i>β</i>
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-1
-</span>
-<span class="arraycell align-c">
-0
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- − sin<i>β</i>
-</span>
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-cos<i>β</i>
-</span>
-
-</span>
-</span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎤</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎦</span></span></span>
+<i>f</i><sub><i>T</i></sub> = <i>D</i><sub><i>T</i></sub>.<i>f</i><sub>#<i>T</i></sub>
 </div>
 <div class="formula">
-<i>R</i><sub><i>z</i></sub> = <span class="array"><span class="arrayrow"><span class="bracket align-left">⎡</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎢</span></span><span class="arrayrow"><span class="bracket align-left">⎣</span></span></span><span class="array"><span class="arrayrow">
-<span class="arraycell align-c">
-cos<i>γ</i>
-</span>
-<span class="arraycell align-c">
- − sin<i>γ</i>
-</span>
-<span class="arraycell align-c">
-0
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
-sin<i>γ</i>
-</span>
-<span class="arraycell align-c">
-cos<i>γ</i>
-</span>
-<span class="arraycell align-c">
-0
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-<span class="arraycell align-c">
- 
-</span>
-
-</span>
-<span class="arrayrow">
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-0
-</span>
-<span class="arraycell align-c">
-1
-</span>
-
-</span>
-</span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎤</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎥</span></span><span class="arrayrow"><span class="bracket align-right">⎦</span></span></span>
+<i>D</i><sub><i>T</i></sub> = <i>f</i><sub><i>T</i></sub> ⁄ <i>f</i><sub>#<i>T</i></sub>
 </div>
 <div class="formula">
-<i>R</i> = <i>R</i><sub><i>x</i></sub>⋅<i>R</i><sub><i>y</i></sub>⋅<i>R</i><sub><i>z</i></sub>
+<i>f</i><sub><i>E</i></sub> = <span class="text">known</span>
 </div>
-<p>In python:</p>
-<pre class="code python literal-block">
-<span class="name">R</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">dot</span><span class="punctuation">(</span><span class="name">Rz</span><span class="punctuation">,(</span><span class="name">np</span><span class="operator">.</span><span class="name">dot</span><span class="punctuation">(</span><span class="name">R_x</span><span class="punctuation">,</span><span class="name">R_y</span><span class="punctuation">)))</span>
-</pre>
+<div class="formula">
+<i>D</i><sub><i>E</i></sub> = 2<i>f</i><sub><i>E</i></sub>tan(<i>α</i> ⁄ 2) → tan<span class="fraction"><span class="ignored">(</span><span class="numerator"><i>α</i></span><span class="ignored">)/(</span><span class="denominator">2</span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>D</i><sub><i>E</i></sub></span><span class="ignored">)/(</span><span class="denominator">2<i>f</i><sub><i>E</i></sub></span><span class="ignored">)</span></span>
 </div>
-<div class="section" id="gaussian">
-<h1><a class="toc-backref" href="#id7">Gaussian</a></h1>
-<p><span class="formula"><i>f</i>(<i>x</i>) = <i>a</i><i>e</i><sup> − <span class="fraction"><span class="ignored">(</span><span class="numerator">(<i>x</i> − <i>b</i>)<sup>2</sup></span><span class="ignored">)/(</span><span class="denominator">2<i>c</i><sup>2</sup></span><span class="ignored">)</span></span></sup> + <i>d</i></span>
+<p>Barlow = factor at magnification. The <a class="reference external" href="https://en.wikipedia.org/wiki/Barlow_lens">Barlow lens</a> is a diverging lens which, used in series with other optics in an optical system, increases the effective focal length of an optical system as perceived by all components that are after it. The practical result is the image magnification.</p>
+<p>Exit pupil size, <span class="formula"><i>EP</i> = <i>D</i> ⁄ <i>M</i> = <i>D</i>.<i>f</i><sub><i>E</i></sub> ⁄ <i>f</i><sub><i>T</i></sub></span>
+; <span class="formula">1<span class="text">  mm</span> &gt; <i>EP</i> &gt; 7<span class="text">  mm</span></span>
+ (size of human pupil)</p>
+<p>&quot;Natural Telescope FoV&quot;, <span class="formula"><i>α</i><sub><i>N</i></sub> = 2tan<sup> − 1</sup>(<i>D</i><sub><i>T</i></sub> ⁄ 2<i>f</i><sub><i>T</i></sub>)</span>
 </p>
-<p><span class="formula"><span class="limits"><span class="limit"><span class="symbol">∫</span></span></span><span class="scripts"><sup class="script">∞</sup><sub class="script"> − ∞</sub></span><i>f</i>(<i>x</i>) <i>dx</i> = <i>ac</i><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root">2<i>π</i></span><span class="ignored">)</span></span></span>
-, since <span class="formula"><span class="limits"><span class="limit"><span class="symbol">∫</span></span></span><span class="scripts"><sup class="script">∞</sup><sub class="script"> − ∞</sub></span><i>e</i><sup> − <i>x</i><sup>2</sup></sup><i>dx</i> = <span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>π</i></span><span class="ignored">)</span></span></span>
-.</p>
-<p>The scale height <span class="formula"><i>H</i></span>
- is <span class="formula"><i>P</i> = <i>P</i><sub>0</sub><i>e</i><sup> − <i>h</i> ⁄ <i>H</i></sup></span>
+<p>Apparent FoV, <span class="formula"><span class="text">AFOV</span> = <i>α</i> = 2tan<sup> − 1</sup>(<i>D</i><sub><i>E</i></sub> ⁄ 2<i>f</i><sub><i>E</i></sub>)</span>
+</p>
+<p>True FoV, <span class="formula"><i>α</i><sub><i>T</i></sub> = 2tan<sup> − 1</sup>(<i>D</i><sub><i>E</i></sub> ⁄ 2<i>f</i><sub><i>T</i></sub>)</span>
+</p>
+<p>Magnification, <span class="formula"><i>M</i> = <i>f</i><sub><i>T</i></sub> ⁄ <i>f</i><sub><i>E</i></sub></span>
+</p>
+<p>Power per inch, <span class="formula"><span class="text">PPI</span> = <i>M</i> ⁄ <i>D</i><sub><i>T</i></sub><span class="text"> [in]</span></span>
+; <span class="formula">30 &gt; <span class="text"> PPI</span> &gt; 15</span>
+; the lower, the brighter. It can be up to 50, but only under excellent sky conditions.</p>
+<p>(optical) resolving power, <span class="formula"><i>θ</i> = 1.22<i>λ</i> ⁄ <i>D</i><sub><i>T</i></sub></span>
+ [rad]; multiply by 206265 to [arcsec].</p>
+<p><strong>Eye relief</strong> is an eyepiece specification. It is the distance from the eyepiece lens to the point where your eye can best see the full field of view (larger the eye relief, likely larger the field of view).</p>
+</div>
+</div>
+<div class="section" id="mechanics">
+<h2><a class="toc-backref" href="#id5">Mechanics</a></h2>
+<div class="section" id="gears-rules">
+<h3><a class="toc-backref" href="#id6">Gears rules</a></h3>
+<div class="figure align-center">
+<img alt="../figs/inst_mech_gears.jpg" src="../figs/inst_mech_gears.jpg" />
+</div>
+<p>Only gears with the same <strong>diametral pitch</strong> can work together.</p>
+<blockquote>
+<p>diametral pitch = number of teeths/circular pitch</p>
+<p>circular pitch = root diam.+working depth/2 = root diam.+(whole depth-clearence)/2</p>
+</blockquote>
+<p>Usual diametral pitches: 12, 24, 36, 48, 64.</p>
+<div class="section" id="gear-trains">
+<h4><a class="toc-backref" href="#id7">Gear trains</a></h4>
+<dl class="docutils">
+<dt>Given <span class="formula"><i>w</i></span>
+ the angular speed, and <span class="formula"><i>R</i></span>
+ the pitch radius, and <span class="formula"><i>N</i></span>
+ the number of teeths, the following rules apply:</dt>
+<dd><ul class="first last simple">
+<li><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>2</sub></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>R</i><sub>2</sub></span><span class="ignored">)/(</span><span class="denominator"><i>R</i><sub>1</sub></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>2</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub></span><span class="ignored">)</span></span></span>
+</li>
+</ul>
+</dd>
+</dl>
+<p>In a <strong>serial</strong> combination of gears, the number/size of intermediate gears are irrelevant. For example, in an 4-gear series <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>4</sub></span><span class="ignored">)</span></span> =  − <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>4</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub></span><span class="ignored">)</span></span></span>
+, independent of <span class="formula"><i>N</i><sub>2</sub>, <i>N</i><sub>3</sub></span>
+.
+In a serial combination of gears, the even gears rotate on opposite direction of odd ones.</p>
+<p>In a gear trains were the gears share the same rotational axis, the above rules do not apply. For example, in a 4-gear series where gears 2 and 3 share the same rotation, <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>4</sub></span><span class="ignored">)</span></span> =  + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>2</sub><i>N</i><sub>4</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub><i>N</i><sub>3</sub></span><span class="ignored">)</span></span></span>
 .</p>
 </div>
-<div class="section" id="english">
-<h1><a class="toc-backref" href="#id8">English</a></h1>
-<p><a class="reference external" href="../static/math_English.pdf">Math expressions in English (PDF)</a></p>
+<div class="section" id="worm-gear">
+<h4><a class="toc-backref" href="#id8">Worm gear</a></h4>
+<p>Works perpedicular to the <strong>wormwheel</strong>. The basic rule is:</p>
+<blockquote>
+one full rotation of the wormwheel = one teeth movement in the wormwheel</blockquote>
+</div>
+</div>
+</div>
 </div>
 </div>
 </body>
