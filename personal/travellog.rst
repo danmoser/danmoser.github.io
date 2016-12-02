@@ -24,6 +24,12 @@ North America
     - NBA game @Detroit
     - Toledo Art Museum
 
+- USA, College Station (3 months)
+    - Aggies game @Kyle Field
+
+- USA, Austin (1 month)
+
+
 South America
 ===============
 - Paraguay, Ciudad del Este (1 day)
@@ -31,7 +37,7 @@ South America
 - Argentina, Puerto Iguazú (1 day)
     - Cataratas del Iguazu
 
-- Chile, Valparaíso+Viña del Mar (2 days)
+- Chile, Valparaíso+Viña del Mar (4 days)
 
 - Chile, Northern Patagonia (8 days)
 

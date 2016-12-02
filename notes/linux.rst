@@ -326,6 +326,27 @@ One example is here:
     Icon=/home/user/.local/share/icons/hicolor/64x64/apps/FoxitReader.png
 
 
+Exporting wifi passwords
+---------------------------
+Network or wifi passwords are saved in ``/etc/NetworkManager/system-connections``. There is a file for each connection with its configuration and password. One need root privileges to read them (the files aren't encrypted).
+
+
+Mounting a disk your user isn't the owner
+--------------------------------------------
+To mount a filesystem with special user id set, use ``bindfs``. 
+
+.. code:: bash
+
+    sudo apt-get install bindfs
+    mkdir ~/myUIDdiskFoo
+    sudo bindfs -u $(id -u) -g $(id -g) /media/diskFoo ~/myUIDdiskFoo
+    # Keep the default mount running (do not eject)
+
+More information: 
+- http://www.penguintutor.com/linux/file-permissions-reference
+- https://askubuntu.com/questions/34066/mounting-filesystem-with-special-user-id-set/353759#353759
+
+
 Firefox + AdBlocl
 -------------------
 Open ``about:config`` in Firefox, and change the option at ``extensions.adblockplus.sidebar_key``!

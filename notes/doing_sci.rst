@@ -75,6 +75,8 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+- `Why Professors Are Writing Crap That Nobody Reads <http://www.intellectualtakeout.org/blog/why-professors-are-writing-crap-nobody-reads>`_
+
 - `Impact of Declining Proposal Success Rates on Scientific Productivity <http://arxiv.org/abs/1510.01647>`_
 
 - `Survey of software use in astronomy <http://arxiv.org/pdf/1507.03989v1.pdf>`_

@@ -1,14 +1,82 @@
 DMF AstroBlog
 ##############
 
-2016
-********
+2017
+**********
 .. 
-    2016-10
+    2017-01
     =============
     TBD
 
     -------------
+
+
+2016
+********
+2016-12
+=============
+25 Gmail Keyboard Shortcuts That Save Me 60 Hours Per Year
+-----------------------------------------------------------
+https://blog.hubspot.com/sales/gmail-keyboard-shortcuts#sm.000hdsmnn1049f4uws92c4dyzzbvk
+
+------------------
+
+12 Books Every Software Engineer Needs to Read
+--------------------------------------------------
+https://jasonroell.com/2015/03/16/12-most-infuential-books-every-software-engineer-needs-to-read/
+
+-------------
+
+2016-11
+=============
+Adaptive Optics in Brazil
+----------------------------
+Prof. Alexandre Mello, UTFPR
+
+http://paginapessoal.utfpr.edu.br/ajmello/optica-adaptativa
+
+-------
+
+2016-10
+=============
+Digital photography tutorials and info
+------------------------------------------
+Nice website: http://digital-photography-school.com/
+
+-------
+
+STScI Newly Created Data Science Mission Office
+----------------------------------------------------------------------
+The Data Science Mission Head is responsible for maximizing the scientific returns from a huge archive containing astronomical observations from 17 space astronomy missions and ground-based observatories.
+
+`Link Data Sci Mission <http://hubblesite.org/newscenter/archive/releases/2016/44/>`_
+
+---------
+
+Marginal evidence for cosmic acceleration from Type Ia supernovae
+----------------------------------------------------------------------
+Statistics don't show expansion acceleration in the Universe. 
+`More here <http://www.nature.com/articles/srep35596?WT.feed_name=subjects_astronomy-and-astrophysics>`_
+
+------------
+
+Phase Function - light scattering
+-----------------------------------
+The phase function is the angular distribution of light intensity scattered by a particle at a given wavelength. It is given at an angle :math:`\theta` which is relative to the incident beam. The phase function is the intensity (radiance) at :math:`\theta` relative to the normalized integral of the scattered intensity at all angles. As defined by Seinfeld & Pandis ('Atmospheric Chemistry and Physics'):
+
+.. math::
+
+    P(\theta) = \frac{F(\theta)}{\int_0^\pi F(\theta)\sin\theta\,d\theta}
+
+where :math:`F` is intensity (radiance).
+
+----------
+
+Supernovae and the "RV problem"
+-----------------------------------------
+There is in the literature the conclusion thate either the dust affecting the luminosities of SNe Ia has a different extinction law (RV = 1.8) than that in the Milky Way (where RV = 3.1), or that there is an additional intrinsic color
+term with luminosity for SNe Ia, independent of the decline rate. Understanding and disentangling these effects is critical for minimizing the systematic uncertainties in future SN Ia cosmology studies (see, e.g., `<https://arxiv.org/pdf/0907.4524>`_).
+
 
 2016-09
 ===========
@@ -114,7 +182,6 @@ Social media of ArXiv
 ----------------------
 `Vox Charta <http://harvard.voxcharta.org/>`_ is the way Institutes organize and share the new articles discussions from ArXiv
 
----------
 
 2016-08
 ===========
@@ -205,7 +272,7 @@ For photometry, one has to consider *detection* vs. *measurement* (cf. imaging),
 
 *(from: R. A. Jansen thesis)*
 
----------
+
 
 2016-07
 =========

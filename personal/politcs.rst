@@ -9,7 +9,16 @@ Democracy
 
 - `Capitalism will eat democracy | Yanis Varoufakis <https://www.youtube.com/watch?v=GB4s5b9NL3I>`_
 
-- `Why People Are Irrational about Politics | Michael Huemer <http://www.owl232.net/irrationality.htm>`_;`PT-BR <http://criticanarede.com/irracionalidadepolitica.html>`_
+- `Why People Are Irrational about Politics | Michael Huemer <http://www.owl232.net/irrationality.htm>`_
+    - `PT-BR <http://criticanarede.com/irracionalidadepolitica.html>`_
+
+- `Dakota Access Pipeline - Honest Government Advert <https://www.youtube.com/watch?v=a9TR9G5bd7w>`_
+
+- `Muhammad Ali - Racismo (Legendado PT-BR) - <https://www.youtube.com/watch?v=e5Gc0r45xMA>`_
+
+- `Lutador <http://www.ocafezinho.com/2016/06/04/lutador/>`_
+
+- `Teaching Quilombismo: An Afro-Brazilian Political Philosophy <Teaching Quilombismo: An Afro-Brazilian Political Philosophy>`_
 
 Inequality
 =============
@@ -168,8 +177,13 @@ http://www.nucleomemoria.org.br/noticias/internas/id/453
 
 Refs
 --------
-http://cartamaior.com.br/?/Editoria/Direitos-Humanos/Morte-e-ressurreicao-de-um-fantasma/5/33703
+- http://cartamaior.com.br/?/Editoria/Direitos-Humanos/Morte-e-ressurreicao-de-um-fantasma/5/33703
 
+- `Por que pobre vota em direita? <https://www.youtube.com/watch?v=uGJQOiOPcKY>`_
+
+- `Os 0,05% do Brasil <https://www.youtube.com/watch?v=H28ttzgVjUg>`_
+
+- `Privatizações: a Distopia do Capital (2014) <https://www.youtube.com/watch?feature=player_embedded&v=A8As8mFaRGU>`_
 
 Slavery
 =========
@@ -294,3 +308,115 @@ Mandeville
 -----------
     [...] numa nação livre em que não sejam permitidos escravos, a riqueza mais segura consiste numa porção de pobres laboriosos. Para fazer a sociedade (que, obviamente consiste de não trabalhadores) feliz, e o povo contente, mesmo nas piores circunstâncias, é necessário que a grande maioria permaneça tanto ignorante quanto pobre.
     (MANDEVILLE, 1728)
+
+Pensadores Libertários
+***********************
+Mundo
+======
+- Noam Chomsky
+- David Harvey, anthropologist and geographer
+- Naomi Klein, author of "The Shock Doctrine"
+- Hannah Arendt
+- Aldous Huxley
+- George Orwell
+- Paul Farrell
+
+AL
+===
+- Enrique Dussel, filósofo e historiador
+- Eduardo Galeano
+
+Brasil
+=======
+- Glauber Rocha, cineasta
+- Milton Santos, geógrafo
+- Chico Mendes, sindicalista
+- Luís Carlos Prestes, político
+- Paulo Freire, pedagogo
+
+Em atividade
+-------------
+- Leonardo Boff, teólogo
+- Ruy Braga, sociólogo
+- Jessé de Souza, sociólogo
+- Ladislau Dowbor, economista
+- Luiz Alberto Moniz Bandeira, cientista político
+- Alysson Mascaro, jurista
+- Luís Carlos Valois, jurista
+- Eugênio Aragão, jurista
+- Pedro Estevam Serrano, jurista
+
+Jornalistas
+------------
+- Fernando Brito
+- Miguel do Rosário
+- Eduardo Guimarães
+
+Anarquismo
+===========
+Figuras
+-----------
+- Mikhail Bakunin (1814-1876): Russian revolutionary anarchist. He is one of the principal founders of the social anarchist tradition.
+
+- Pierre-Joseph Proudhon (1809-1865): French politician and the founder of mutualist philosophy. He was the first person to declare himself an anarchist.
+
+Ideias
+-----------
+- Socialist anarchism is a non-state form of socialism and is considered to be the branch of anarchism which sees individual freedom as being dependent upon mutual aid. Social anarchist thought emphasizes community and social equality as complementary to autonomy and personal freedom.
+
+- Mutualism is an economic theory and anarchist school of thought that advocates a society where each person might possess a means of production, either individually or collectively, with trade representing equivalent amounts of labor in the free market. Integral to the scheme is the establishment of a mutual-credit bank that would lend to producers at a minimal interest rate, just high enough to cover administration.
+
+
+Figuras e ideias marxistas
+===========================
+Figuras
+-----------
+- Leon Trotski: revolucionário bolchevique, rival de Stálin após o golpe e morte de Lenin. Desempenhou um importante papel político no início da URSS. Assasinado no exílio, suas ideias deram origem ao trotskismo, corrente ainda hoje importante.
+
+- Vladimir Lenin: revolucionário bolchevique, participou dos primeiros anos do governo da URSS, sendo depois perseguido e morto por Stálin. Suas ideias deram origem ao leninismo. 
+
+- Karl Johann Kautsky: filósofo tcheco-austríaco, um dos fundadores da ideologia social-democrata e que teve papel importante na Segunda Internacional. 
+
+- Antonio Gramsci (1891-1937): was an Italian neo-Marxist theorist and politician. Gramsci is best known for his theory of cultural hegemony, which describes how states use cultural institutions to maintain power in capitalist societies.
+
+Teoria da dependência
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Theotonio dos Santos
+- Ruy Mauro Marini
+- Vânia Bambirra
+- André Gunder Frank
+- Nildo Ouriques, IELA
+- Marcelo Carcanholo, UFF
+- Marisa Amaral, UFU
+
+Ideias
+--------
+- Lei do desenvolvimento desigual e combinado: é a teoria atribuída a León Trotsky que contempla a ocorrência simultânea de aspectos avançados e atrasados no processo de desenvolvimento econômico dos países. Isso se revela especialmente nos países periféricos do sistema mundial, nos quais um setor extremamente moderno da economia pode existir de forma combinada com o mais atrasado, resultando numa formação social sem grandes contradições entre as classes dominantes (isto é, sem contradições entre burguesia e aristocracia) [ver Teoria da revolução permanente].
+
+- Teoria da revolução permanente: Marx utiliza o termo para descrever a estratégia da classe revolucionária para continuar a buscar os interesses da classe de forma independente e sem o comprometer, apesar das aberturas para alianças políticas, e dos interesses políticos das camadas opostas da sociedade. Trotsky extendeu sua concepção para as particularidades de como o socialismo poderia ocorrer em sociedades que não tinham conseguido atingir o capitalismo avançado. A teoria contempla a impossibilidade do "socialismo em um só país" [ver Lei do desenvolvimento desigual e combinado].
+
+- Teoria da dependência: análise dos processos de reprodução do subdesenvolvimento na periferia do capitalismo mundial, em contraposição às posições marxistas convencionais dos partidos comunistas e à visão estabelecida pela Comissão Econômica para a América Latina e o Caribe (CEPAL). A caracterização dos países como "atrasados" decorre da relação do capitalismo mundial de dependência entre países "centrais" e países "periféricos", sendo que os atrasados sempre continuarão em condições de dependência ("subdesenvolvimento").
+
+- Ideias de Lenin: Nas concepções iniciais do século XIX, acreditava-se que a revolução socialista só ocorreria em países capitalistas avançados, onde existiria uma grande massa proletária. Para Lenin, essa linha não se aplicaria aos países de industrialização tardia, onde apenas o proletariado poderia cumprir as tarefas antes designadas como da revolução burguesa (como a reforma agrária, independência colonial, as condições básicas de educação, saúde, etc). Da mesma forma, Lenin combatia a visão da social democracia, na qual a rotina da classe operária em suas lutas econômicas poderia determinar uma consciência revolucionária de maneira objetiva. Para ele, adquirir essa consciência revolucionária dependia de um fator subjetivo, a intervenção do partido revolucionário nas massas. Para isso, defendia um partido que interviesse de maneira centralizada em todos os espaços de discussão e militância do proletariado (o centralismo democrático).
+
+- Social-democracia: pensamento no qual a contínua luta da classe trabalhadora por melhores salários e condições de trabalho levá-los-ia a uma consciência revolucionária. Para os países atrasados, o kautskismo defendia o "etapismo", no qual uma revolução liderada pela burguesia nacional, estabeleceria a condição prévia para uma revolução proletária num futuro incerto.
+
+- Hegemonia cultural: In Marxist philosophy, cultural hegemony is the domination of a culturally diverse society, by the ruling class who manipulate the culture of that society - the beliefs, explanations, perceptions, values, and mores - so that their imposed, ruling-class worldview becomes the accepted cultural norm; the universally valid dominant ideology, which justifies the social, political, and economic status quo as natural and inevitable, perpetual and beneficial for everyone, rather than as artificial social constructs that benefit only the ruling class.
+
+
+História
+---------
+Karl Marx, e pensamento presente na Primeira Internacional, defendia a revolução do proletariado contra a burguesia, a tomada do poder e a construção de uma sociedade socialista. Marx dizia que isto só seria possível em um país onde o capitalismo já estivesse em um estágio avançado e onde o operariado, trabalhadores da indústria, tivesse uma mentalidade revolucionária. Essas concepções vinham do fato de que apenas num país onde o proletariado adquirisse uma consciência revolucionária, poderia-se concretizar o levante que criaria a ditadura do proletariado. A Segunda Internacional, organização herdeira do marxismo e liderada por Karl Kautsky, defendia uma linha economicista [ver "social-democracia"].
+
+
+Terminologia
+=============
+- Comunismo: do latim communis, ou "coisa pública"; sociedade igualitária, sem classes sociais e apátrida, baseada na propriedade comum dos meios de produção.
+- Inculturação: é a influência recíproca entre o cristianismo e as culturas dos países onde a fé cristã é praticada.
+- Kautskismo: sinônimo de social-democracia, ou "socialismo progressivo".
+- Lawfare: it is a form of asymmetric warfare, consisting of using the legal system against an enemy, such as by damaging or delegitimizing them, tying up their time or winning a public relations victory.
+- Leninismo: procura adaptar a teoria marxista do século XIX à realidade do início do século XX, na fase do capitalismo do imperialismo [ver "Ideias de Lenin"]. Algumas ideais confundem-se com o trotskismo. 
+- Quilombismo: ideologia baseada no entendimento de que os quilombos são centros para a promoção da igualdade e da democracia.
+- Socialismo: administração e propriedade pública ou coletiva dos meios de produção e distribuição de bens. É atribuído a Vladimir Lenin a definição de "socialismo" como uma fase de transição entre o capitalismo e o comunismo.
+- Teologia da Libertação: é uma corrente teológica cristã nascida na América Latina (anos 1970), que parte da premissa de que o Evangelho exige a opção preferencial pelos pobres e que a teologia, para concretar essa opção, deve usar também as ciências humanas e sociais.
+- Trotskismo: defende o marxismo em sua versão "ortodoxa", contra a burocratização promovida por Stálin na União Soviética. Trótski desenvolve a ideia de Revolução Permanente e da "Lei do Desenvolvimento Desigual e Combinado". Algumas ideais confundem-se com o leninismo.

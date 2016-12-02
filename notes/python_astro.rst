@@ -17,8 +17,8 @@ Python style guide are in two PEPs (Python Enhancement Proposals):
 .. _PEP 8: https://www.python.org/dev/peps/pep-0008/
 .. _PEP 257: https://www.python.org/dev/peps/pep-0257/
 
-Highlights
-------------
+Naming variables
+-------------------
 Class names should normally use the *CapWords* convention. 
 
 Function names should be lowercase, with words separated by underscores as necessary to improve readability. 
@@ -43,6 +43,12 @@ Since adjacent string literals are automatically joint into a single string, you
           "stackoverflow people!")
 
 http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings
+
+Formating printing in Python
+-----------------------------
+Using *%* and *.format()* for great good!
+
+https://pyformat.info/
 
 How to get rid of UTF-8 BOM
 ------------------------------
@@ -191,12 +197,22 @@ ipython
 
 - `ipython` v1.0 is the most updated one for Python version equal or smaller than 2.6 ou 3.2.
 
-Shebang
+Encoding
 =============
+Shebang
+--------
 .. code:: python
 
     #!/usr/bin/env python
     # -*- coding:utf-8 -*-
+
+Smart file encoding
+----------------------
+For Python2 (2.6+). It also works in Python3, but it is the native behavior.
+
+.. code:: python
+
+    from io import open
 
 
 What IDE to use for Python?

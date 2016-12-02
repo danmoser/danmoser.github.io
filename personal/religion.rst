@@ -32,6 +32,9 @@ Catholicism
 *Laudato si*
     - http://w2.vatican.va/content/francesco/pt/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html
 
+Sermão da Quarta-feira de Cinzas
+    - http://www.presente.pt/Memento.html Padre Antônio Vieira
+
 Spiritism
 ****************
 Morel Wilkon: estudos do Evangelho

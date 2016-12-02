@@ -65,6 +65,7 @@ Hyperref and links
 .. code:: latex
 
     \usepackage[linktocpage=true,breaklinks=true]{hyperref}
+    % \usepackage[hidelinks]{hyperref}
     
 
 Acronyms and glossary
@@ -270,7 +271,13 @@ To decrease PDF file size (*I'm not sure if it actually works*):
 
 .. code:: bash
 
-    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+    gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf
+
+    # /screen selects low-resolution output similar to the Acrobat Distiller "Screen Optimized" setting.
+    # /default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
+    # /ebook selects medium-resolution output similar to the Acrobat Distiller "eBook" setting.
+    # /printer selects output similar to the Acrobat Distiller "Print Optimized" setting.
+    # /prepress selects output similar to Acrobat Distiller "Prepress Optimized" setting.
 
 Other possibility is to convert PDF to PS, and then PS to PDF.
 

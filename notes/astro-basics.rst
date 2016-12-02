@@ -3,8 +3,14 @@ Basic astronomy concepts
 
 .. contents:: Table of contents
 
+.. figure:: ../figs/astro-basics_books.gif
+    :width: 300 px
+
 Em português
 **************
+.. figure:: ../figs/astro-basics_dreams.jpg
+    :width: 300 px
+
 Links
 =======
 - Livro gratuito de Astronomia.
@@ -190,6 +196,10 @@ Pictures
     :align: center
 
     5 years Juno's journey
+
+.. figure:: ../figs/astro-basics_nebulosa.gif
+    :align: center
+
 
 Observations
 ***************

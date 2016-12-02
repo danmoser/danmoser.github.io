@@ -20,6 +20,7 @@ Vocabulary
 - adobe: um tipo de argila para construção
 - asset: um bem, ativo (mercado)
 - aviary: aviário
+- barf: vomit
 - blend: mistura
 - broker: corretor
 - bulks up: preencher, aumentar massa
@@ -36,12 +37,14 @@ Vocabulary
 - currently: atualmente
 - cornerstone: marco initial, pedra-base
 - dire: terrível
+- disavow: deny any responsibility or support for.
 - equity: equidade; capital próprio
 - feather: pena (de pássaro)
 - fore: dianteira
 - foreclosure: execução (cobrança) de uma hipoteca
 - forefront: primeiro plano
 - foreshadow: prenunciar
+- foster: adotivo
 - glimpse: vislumbrar
 - glower: olhar furioso
 - groove: sulco, estria
@@ -49,11 +52,13 @@ Vocabulary
 - (to) hand: entregar
 - harness: arreio, armadura
 - harnessed: aproveitado, usado
+- harshest: o mais severo
 - hefty: robusto
 - homage: homenagem
 - hype: campanha publicitária
 - idiosyncratic: idiossincrático;  Maneira de agir específica de uma pessoa
 - tenants: inquilinos
+- larceny: pequeno furto
 - lay out: dispor, arranjar
 - lender: credor
 - mortgage: hipoteca
@@ -65,6 +70,7 @@ Vocabulary
 - pop: estouro
 - procure: adquirir, obter
 - quirk (cuãrk): equívoco
+- rash: displaying or proceeding from a lack of careful consideration of the possible consequences of an action. reckless, impulsive, impetuous
 - real estate: imobiliária
 - raft: jangada; grande número/incontável
 - reckless: imprudente
@@ -76,10 +82,12 @@ Vocabulary
 - spill: derramar
 - spillover: infiltração
 - seamless: sem emendas/sem costuras [siimlés]
+- shenanigans: travessuras
 - stance: posição
 - straggler: retardatário
 - sweatshop: fábrica têxtil pequena/clandestina
 - syllabus: 1. an outline of the subjects in a course of study or teaching; 2. (in the Roman Catholic Church) a summary of points decided by papal decree regarding heretical doctrines or practices.
+- telltale: denunciador
 - tenement: apartamento, habitaÇão
 - terraced (housing): habitações verticais (em níveis); prédio
 - tighten: apertar (parafuso)
@@ -102,15 +110,14 @@ Expressions
 - "built to order": feito sob encomenda
 - "Ponzi scheme" is a fraudulent investment operation
 - "then some": e ainda mais. 'It meets the expectations: and then some'
+- "bottom of a [deep] chasm": fundo do poço
+- "foul play": jogo sujo, crime
 
 Acronyms
 -----------
 - wrt: with respect to, with regard to
 - 
 
-Technical
------------
-- specular reflectance: 1-by-1 angle mirror
 
 Other
 ========

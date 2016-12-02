@@ -21,6 +21,12 @@ Paraxial angles
 
 :math:`\cos\theta\approx 1-\frac{\theta^2}{ 2}\approx1`
 
+Trigonometric relations
+------------------------
+:math:`\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)=2\sin\frac{\alpha}{2}\cos\frac{\alpha}{2}+2\sin\frac{\beta}{2}\cos\frac{\beta}{2}`
+
+:math:`\sin\alpha+\sin\beta=2\left(\cos^2\frac{\beta}{2}+\sin^2\frac{\beta}{2}\right)\times\left(\sin\frac{\alpha}{2}\cos\frac{\alpha}{2}\right)+2\left(\cos^2\frac{\alpha}{2}+\sin^2\frac{\alpha}{2}\right)\times\left(\sin\frac{\beta}{2}\cos\frac{\beta}{2}\right)` 
+
 
 Ellipse
 =======

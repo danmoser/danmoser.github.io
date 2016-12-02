@@ -20,6 +20,14 @@ In the Press
 
     .. figure:: ../figs/inthepress_capaBras.jpg
         :width: 240
+
+- Vencedores do prêmio "Destaques da Pós-Graduação do IAG/USP"
+
+    `Link site IAG <http://www.iag.usp.br/noticia/premio-pos-graduacao-simposio-pg-2016>`_
+
+    Vídeo da candidatura da tese de Daniel Moser Faes:
+    
+    `VIDEO4 <http://dl.dropbox.com/u/6569986/webpage/big/inthepress_tese_DMF.mp4>`_ 
         
 - Instituto de Astronomia da USP adquire supercomputador capaz de fazer 20 trilhões de cálculos por segundo
     14 de março de 2012
