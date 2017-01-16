@@ -19,6 +19,9 @@ Links
 - Excelente blog do Prof. Helder.
     http://navegandopelouniverso.blogspot.com.br/ 
 
+- Revista Latino-Americana de Educação em Astronomia
+    http://www.relea.ufscar.br/
+
 - Cálculo do Nascer e Pôr do Sol   
     http://www.inf.ufrgs.br/~cabral/Nascer_Por_Sol.html 
 
@@ -37,6 +40,11 @@ Links
 - Por que a ciência precisa de metafísica?
     http://www.universoracionalista.org/por-que-a-ciencia-precisa-de-metafisica/
 
+- Pesquisa da Nasa diz que ‘motor espacial impossível’, que opera sem combustível, funciona
+    http://trabalhounido.blogspot.com.br/2017/01/pesquisa-da-nasa-diz-que-motor-espacial.html
+
+- 22 observatórios e planetários para visitar ao redor do Brasil
+    http://revistagalileu.globo.com/Ciencia/noticia/2017/01/22-observatorios-e-planetarios-para-visitar-ao-redor-do-brasil.html
 
 Perguntas e respostas
 =======================

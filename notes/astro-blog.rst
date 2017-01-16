@@ -9,12 +9,131 @@ DMF AstroBlog
     TBD
 
     -------------
+ 
+2017-01
+=============
+Big science is hard but worth it
+-------------------------------------
+Editorial article in Science magazine, written by Michael S. Turner (University of
+Chicago).
 
+http://science.sciencemag.org/content/348/6233/375
+
+-----------
+
+Python versions and AstroPy
+-------------------------------------
+The newly-released Python 3.6 appears to run *astropy* faster... 
+
+https://twitter.com/GeertHub/status/817857735484198912
+
+-------------
+
+ESO Long Term Perspectives
+-------------------------------
+Reaching New Heights in Astronomy...
+
+https://arxiv.org/abs/1701.01249
+
+------------------
+
+Cylindrical lens
+------------------
+A cylindrical lens is a lens which focuses light into a line instead of a point, as a spherical lens would. The lens compresses the image in the direction perpendicular to this line, and leaves it unaltered in the direction parallel to it (in the tangent plane).
+
+From: https://en.wikipedia.org/wiki/Cylindrical_lens
+
+-----------
+
+ArXiv to Bibtex
+----------------
+Very useful!!
+
+https://arxiv2bibtex.org/
 
 2016
 ********
 2016-12
 =============
+Why research papers have so many authors
+--------------------------------------------
+`Scientific papers get more authors <http://www.economist.com/blogs/graphicdetail/2016/11/daily-chart-18>`_
+
+`Scientific publications are getting more and more names attached to them <http://www.economist.com/news/science-and-technology/21710792-scientific-publications-are-getting-more-and-more-names-attached-them-why>`_
+
+-----------
+
+A Física das Alianças
+----------------------------
+Diretor do Fermilab fala sobre o megaexperimento sobre neutrinos DUNE (Deep Underground Neutrino Experiment).
+
+http://revistapesquisa.fapesp.br/2015/09/15/a-fisica-das-aliancas/?cat=ciencia
+
+-----------
+
+Eureqa: finding the best mathematical equation to your correlation
+-------------------------------------------------------------------
+From https://en.wikipedia.org/wiki/Eureqa: "Eureqa is a proprietary A.I.-powered modeling engine... that uses evolutionary search to determine mathematical equations that describe sets of data in their simplest form."
+
+-------
+
+Identificação de subestruturas no halo galáctico através de estrelas azuis tardias
+------------------------------------------------------------------------------------------------------------------
+Defesa em 01 de dezembro. 
+
+Boas estrelas para indicação de metalicidade/idade:
+
+- BHB, Blue Horizontal Branch = gigantes no ramo horizontal
+- BSS, Blue Stragglers Stars = estrelas mais quentes que o "contínuo" visto na saída da sequência principal e entrada no ramo das gigantes.
+
+A colisão estelar só é esperada no centro de aglomerados. Fora desta região, a interação deve-se dar por transferência de massa (estruturas tipo disco).
+
+A binaridade das BSS está entre 60%-70%. As BSS não-binárias teriam origem extragalática.
+
+As BSS são estrelas de tipo A, com <log(g)> = 4.3. As BHB, <log(g)> = 3.4. O limite de massa das BSS/BHB é de 2.5 Msun.
+
+--------
+
+The scientific mind on the US army
+--------------------------------------
+It was `Vannevar Bush <https://en.wikipedia.org/wiki/Vannevar_Bush>`_, one of the most important usian of the XX century. 
+
+----------
+
+Rockets and People
+---------------------
+Free NASA books based on the memories of Boris Chertok. 
+
+https://www.nasa.gov/connect/ebooks/rockets_people_vol1_detail.html
+
+Founding fathers of Rocket Science
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- In Soviet Union: Konstantin Tsiolkovsky (1857-1935)
+- In Germany: Hermann Oberth (1894-1989)
+- In USA: Robert Goddard (1882-1945)
+
+More info at http://blog.sfgateway.com/index.php/the-founding-fathers-of-rocket-science/
+
+--------
+
+Space exploration problem: Galileo antenna
+------------------------------------------------
+`The Galileo high gain antenna deployment anomaly <https://ntrs.nasa.gov/search.jsp?R=19940028813>`_
+
+-------
+
+Space engineering problem: Vacuum cold welding
+----------------------------------------------------
+NASA Technical Report 32-1547: `Cold-Welding Test Environment <https://ntrs.nasa.gov/search.jsp?R=19720016873>`_
+
+-----
+
+Scilab - Scientific software
+--------------------------------------------------
+Open-source alternative (or combination) to Matlab and Octave. Natively available on Ubuntu.
+
+-----
+
 25 Gmail Keyboard Shortcuts That Save Me 60 Hours Per Year
 -----------------------------------------------------------
 https://blog.hubspot.com/sales/gmail-keyboard-shortcuts#sm.000hdsmnn1049f4uws92c4dyzzbvk

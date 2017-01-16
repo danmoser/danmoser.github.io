@@ -75,6 +75,10 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+- `There's an awful cost to getting a PhD that no one talks about <https://qz.com/547641/theres-an-awful-cost-to-getting-a-phd-that-no-one-talks-about/>`_
+
+- `Estudo não aumenta eficiência do trabalho no Brasil, diz pesquisa <http://trabalhounido.blogspot.com.br/2017/01/estudo-nao-aumenta-eficiencia-do.html>`_
+
 - `Why Professors Are Writing Crap That Nobody Reads <http://www.intellectualtakeout.org/blog/why-professors-are-writing-crap-nobody-reads>`_
 
 - `Impact of Declining Proposal Success Rates on Scientific Productivity <http://arxiv.org/abs/1510.01647>`_
@@ -109,6 +113,13 @@ Doing science
 - `Young researchers thrive in life after academia` <http://go.nature.com/2dwztqC>`_
 
 - `Mystery deportation of particle physicist leads to swell of protest <http://www.nature.com/news/mystery-deportation-of-particle-physicist-leads-to-swell-of-protest-1.20587>`_
+
+.. figure:: ../figs/doing_sci_citacoes.jpg
+    :width: 800 px
+
+- `Where science and nonsense collide <http://www.nature.com/news/where-science-and-nonsense-collide-1.21266>`_
+
+- `CNPq e Organizações Sociais começam 2017 com orçamento sem lastro <http://ciencia.estadao.com.br/blogs/herton-escobar/cnpq-e-organizacoes-sociais-comecam-2017-com-orcamento-sem-lastro/>`_
 
 
 Data tools
@@ -155,3 +166,5 @@ Info & Links
 - http://letramentoacademico.fflch.usp.br/
 
 - `Library Genesis <http://gen.lib.rus.ec/>`_ is a scientific community targeting collection of books on natural science disciplines and engineering.
+
+- `Sci-Hub <http://sci-hub.cc/>`_ is the first website in the world to provide mass & public access to research papers.
