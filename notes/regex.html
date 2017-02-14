@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
 <title>Expressões regulares (er, re ou regex)</title>
 <style type="text/css">
 
@@ -441,18 +441,18 @@ li {
 
 <span class="keyword namespace">import</span> <span class="name namespace">re</span>
 
-<span class="name">rule</span> <span class="operator">=</span> <span class="literal string single">r'^&gt;([^\n\r]+)[\n\r]([A-Z\n\r]+)'</span>
+<span class="name">rule</span> <span class="operator">=</span> <span class="literal string">r'^&gt;([^\n\r]+)[\n\r]([A-Z\n\r]+)'</span>
 
 <span class="name">regex</span> <span class="operator">=</span> <span class="name">re</span><span class="operator">.</span><span class="name">compile</span><span class="punctuation">(</span><span class="name">rule</span><span class="punctuation">,</span> <span class="name">re</span><span class="operator">.</span><span class="name">MULTILINE</span><span class="punctuation">)</span>
 <span class="name">matches</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="name">m</span><span class="operator">.</span><span class="name">groups</span><span class="punctuation">()</span> <span class="keyword">for</span> <span class="name">m</span> <span class="operator word">in</span> <span class="name">regex</span><span class="operator">.</span><span class="name">finditer</span><span class="punctuation">(</span><span class="name">text</span><span class="punctuation">)]</span>
 
 <span class="keyword">for</span> <span class="name">m</span> <span class="operator word">in</span> <span class="name">matches</span><span class="punctuation">:</span>
-    <span class="keyword">print</span> <span class="literal string single">'Name: </span><span class="literal string interpol">%s</span><span class="literal string escape">\n</span><span class="literal string single">Sequence:</span><span class="literal string interpol">%s</span><span class="literal string single">'</span> <span class="operator">%</span> <span class="punctuation">(</span><span class="name">m</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span> <span class="name">m</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])</span>
+    <span class="keyword">print</span> <span class="literal string">'Name: </span><span class="literal string interpol">%s</span><span class="literal string escape">\n</span><span class="literal string">Sequence:</span><span class="literal string interpol">%s</span><span class="literal string">'</span> <span class="operator">%</span> <span class="punctuation">(</span><span class="name">m</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span> <span class="name">m</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">])</span>
 
-<span class="comment single"># Other way (MUCH better):</span>
-<span class="name">re</span><span class="operator">.</span><span class="name">findall</span><span class="punctuation">(</span><span class="name">rule</span><span class="punctuation">,</span> <span class="name">text</span><span class="punctuation">)</span><span class="comment single">#, re.DOTALL)</span>
+<span class="comment"># Other way (MUCH better):</span>
+<span class="name">re</span><span class="operator">.</span><span class="name">findall</span><span class="punctuation">(</span><span class="name">rule</span><span class="punctuation">,</span> <span class="name">text</span><span class="punctuation">)</span><span class="comment">#, re.DOTALL)</span>
 
-<span class="comment single"># Another:</span>
+<span class="comment"># Another:</span>
 <span class="name">returnmatch</span> <span class="operator">=</span> <span class="name">re</span><span class="operator">.</span><span class="name">compile</span><span class="punctuation">(</span><span class="name">rule</span><span class="punctuation">,</span> <span class="name">re</span><span class="operator">.</span><span class="name">MULTILINE</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">findall</span><span class="punctuation">(</span><span class="name">text</span><span class="punctuation">)</span>
 </pre>
 <p><tt class="docutils literal"><span class="pre">(http(?!.*Trial.*))</span></tt> retorna todas as linhas iniciadas por &quot;http&quot; e que <strong>não</strong> contenham posteriormente a palavra &quot;Trial&quot; (case sensitive).</p>
@@ -462,7 +462,7 @@ li {
     <span class="literal string doc">&quot;&quot;&quot; Function to put a string in Start Case.
 
     It can by vectorized by numpy: ``vecstart = np.vectorize(start_case_words) &quot;&quot;&quot;</span>
-    <span class="keyword">return</span> <span class="name">re</span><span class="operator">.</span><span class="name">sub</span><span class="punctuation">(</span><span class="literal string single">r'\w+'</span><span class="punctuation">,</span> <span class="keyword">lambda</span> <span class="name">m</span><span class="punctuation">:</span><span class="name">m</span><span class="operator">.</span><span class="name">group</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">capitalize</span><span class="punctuation">(),</span> <span class="name">s</span><span class="punctuation">)</span>
+    <span class="keyword">return</span> <span class="name">re</span><span class="operator">.</span><span class="name">sub</span><span class="punctuation">(</span><span class="literal string">r'\w+'</span><span class="punctuation">,</span> <span class="keyword">lambda</span> <span class="name">m</span><span class="punctuation">:</span><span class="name">m</span><span class="operator">.</span><span class="name">group</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">capitalize</span><span class="punctuation">(),</span> <span class="name">s</span><span class="punctuation">)</span>
 </pre>
 </div>
 </div>

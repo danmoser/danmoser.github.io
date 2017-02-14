@@ -450,6 +450,11 @@ SSH Auth
 
 GitHub
 --------
+.. code:: bash
+
+    git config --global user.name "John Doe"
+    git config --global user.email johndoe@example.com
+
 https://help.github.com/articles/generating-ssh-keys/
 
 .. code:: bash
@@ -463,8 +468,8 @@ https://help.github.com/articles/generating-ssh-keys/
     # The key fingerprint is:
     # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db user@gmail.com
     
-    cat /home/user/.ssh/id_github
-    # Copy and paste to https://github.com/settings/ssh
+    cat /home/user/.ssh/id_github.pub
+    # Copy and paste the PUBLIC key to https://github.com/settings/ssh
 
     # These steps may be required:
     # ..

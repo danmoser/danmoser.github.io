@@ -75,6 +75,11 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+- `Um exército de Doutores desempregados <www.brasilpost.com.br/hugo-fernandesferreira/doutores-desemprego_b_9316594.html?ncid=engmodushpmg00000003>`_
+
+- `Facts, beliefs, and identity: The seeds of science skepticism <https://phys.org/news/2017-01-facts-beliefs-identity-seeds-science.html>`_
+- `Ciência vive uma epidemia de estudos inúteis <http://brasil.elpais.com/brasil/2017/01/10/internacional/1484073680_523691.html?id_externo_rsoc=FB_CC>`_
+
 - `There's an awful cost to getting a PhD that no one talks about <https://qz.com/547641/theres-an-awful-cost-to-getting-a-phd-that-no-one-talks-about/>`_
 
 - `Estudo não aumenta eficiência do trabalho no Brasil, diz pesquisa <http://trabalhounido.blogspot.com.br/2017/01/estudo-nao-aumenta-eficiencia-do.html>`_

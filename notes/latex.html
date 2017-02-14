@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
 <title>Latex and typography</title>
 <style type="text/css">
 
@@ -570,7 +570,7 @@ No acronyms here.
 <p>The right usage is <tt class="docutils literal">\short{}</tt>, and not just <tt class="docutils literal">\short</tt>. If you do so, you will have spacing problems after the command!</p>
 <pre class="code latex literal-block">
 <span class="comment">%~ *\mean{}*
-</span><span class="keyword">\def\mean</span>#1<span class="name builtin">{</span><span class="keyword">\left</span>&lt; #1 <span class="keyword">\right</span>&gt;<span class="name builtin">}</span>
+</span><span class="keyword">\def</span><span class="keyword">\mean</span>#1<span class="name builtin">{</span><span class="keyword">\left</span>&lt; #1 <span class="keyword">\right</span>&gt;<span class="name builtin">}</span>
 </pre>
 </div>
 <div class="section" id="highlight-source-codes">
@@ -601,7 +601,7 @@ hyphenation.</p>
 <pre class="code latex literal-block">
 <span class="keyword">\newenvironment</span><span class="name builtin">{</span>rcases<span class="name builtin">}</span>
   <span class="name builtin">{</span><span class="keyword">\left</span>.<span class="keyword">\begin</span><span class="name builtin">{</span>aligned<span class="name builtin">}}</span>
-  <span class="name builtin">{</span><span class="keyword">\end</span><span class="name builtin">{</span>aligned<span class="name builtin">}</span><span class="keyword">\right\rbrace</span><span class="name builtin">}</span>
+  <span class="name builtin">{</span><span class="keyword">\end</span><span class="name builtin">{</span>aligned<span class="name builtin">}</span><span class="keyword">\right</span><span class="keyword">\rbrace</span><span class="name builtin">}</span>
 </pre>
 </div>
 <div class="section" id="cancel">
@@ -699,7 +699,7 @@ b
 <h2><a class="toc-backref" href="#id26">PDF Version</a></h2>
 <p>To generate PDF files with version 1.4:</p>
 <pre class="code bash literal-block">
-dvipdfmx -V <span class="literal number">4</span> test.dvi
+dvipdfmx -V 4 test.dvi
 ps2pdf -dCompatibility<span class="operator">=</span>1.4 test.ps
 </pre>
 <p>The problem with this method is that the structure of chapters do not is generated for navigation within the file.</p>
@@ -710,7 +710,7 @@ ps2pdf -dCompatibility<span class="operator">=</span>1.4 test.ps
 <pre class="code bash literal-block">
 gs -sDEVICE<span class="operator">=</span>pdfwrite -dCompatibilityLevel<span class="operator">=</span>1.4 -dPDFSETTINGS<span class="operator">=</span>/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile<span class="operator">=</span>output.pdf input.pdf
 
-<span class="comment single"># /screen selects low-resolution output similar to the Acrobat Distiller &quot;Screen Optimized&quot; setting.
+<span class="comment"># /screen selects low-resolution output similar to the Acrobat Distiller &quot;Screen Optimized&quot; setting.
 # /default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
 # /ebook selects medium-resolution output similar to the Acrobat Distiller &quot;eBook&quot; setting.
 # /printer selects output similar to the Acrobat Distiller &quot;Print Optimized&quot; setting.

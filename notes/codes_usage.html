@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
 <title></title>
 <style type="text/css">
 
@@ -803,7 +803,8 @@ span.boxed, span.framebox {
 <th class="head">n_f</th>
 <th class="head">time (min)</th>
 <th class="head">ncr</th>
-<th class="head"><span class="formula">Σ<sub>0</sub></span></th>
+<th class="head"><span class="formula">Σ<sub>0</sub></span>
+</th>
 <th class="head">n_proc</th>
 </tr>
 </thead>
@@ -890,15 +891,15 @@ Backtrace for this error:
 <h2><a class="toc-backref" href="#id6">Mesocentre</a></h2>
 <p>Or Licallo at CRIMSON. Info at <a class="reference external" href="https://crimson.oca.eu/spip.php?rubrique57">https://crimson.oca.eu/spip.php?rubrique57</a></p>
 <pre class="code bash literal-block">
-<span class="comment hashbang">#!/bin/bash
-</span><span class="comment single">#OAR -n hdust_dmf
+<span class="comment">#!/bin/bash
+#OAR -n hdust_dmf
 #OAR -l /core=24,walltime=12:00:00
 #OAR -p gpu='NO'
 #OAR -O out.%jobid%
 #OAR -E err.%jobid%
 </span>
 <span class="name builtin">source</span> /softs/env_default.sh
-mpiexec.hydra  -machinefile $OAR_FILE_NODES <span class="literal string escape">\
+mpiexec.hydra  -machinefile <span class="name variable">$OAR_FILE_NODES</span> <span class="literal string escape">\
 </span>-bootstrap ssh -bootstrap-exec /usr/bin/oarsh <span class="literal string escape">\
 </span>-envall ./hdustparv2.02.bc <span class="name variable">input</span> <span class="operator">=</span> hdust_bestar2.02.inp
 </pre>
@@ -977,7 +978,7 @@ IDL &gt; synplot49, 0, 0, 0, wsta=6530, we=6600, vrot=0, atmos=[$
 </pre>
 <p>(acho que é só trocar NAME por FILE).</p>
 <pre class="code bash literal-block">
-$ gfortran -g -fno-automatic -static -o synspec49.exe synspec49.f
+<span class="name variable">$ </span>gfortran -g -fno-automatic -static -o synspec49.exe synspec49.f
 </pre>
 </div>
 </div>
@@ -990,8 +991,8 @@ $ gfortran -g -fno-automatic -static -o synspec49.exe synspec49.f
 <pre class="code bash literal-block">
 vartools -listcommands
 vartools -help
-vartools -help <span class="name variable">$c</span>ommnad
-vartools -example <span class="name variable">$c</span>ommand
+vartools -help <span class="name variable">$commnad</span>
+vartools -example <span class="name variable">$command</span>
 </pre>
 <div class="section" id="basic-rms">
 <h3><a class="toc-backref" href="#id16">Basic RMS</a></h3>
@@ -1009,7 +1010,7 @@ vartools -example <span class="name variable">$c</span>ommand
 <h2><a class="toc-backref" href="#id18">Site examples</a></h2>
 <div class="section" id="fitting-a-quadratic-polynomial-in-jd-to-a-list-of-light-curves">
 <h3><a class="toc-backref" href="#id19">Fitting a quadratic polynomial in JD to a list of light curves</a></h3>
-<p><code class="bash">vartools -l EXAMPLES/lc_list -rms -decorr <span class="literal number">1</span> <span class="literal number">1</span> <span class="literal number">1</span> <span class="literal number">0</span> <span class="literal number">1</span> <span class="literal number">1</span> <span class="literal number">2</span> <span class="literal number">0</span> -rms -chi2 -tab</code></p>
+<p><code class="bash">vartools -l EXAMPLES/lc_list -rms -decorr 1 1 1 0 1 1 2 0 -rms -chi2 -tab</code></p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">-decorr</span> B B B # # B</tt>, decorrelates the light curve against specified signals</dt>
 <dd><ul class="first last simple">
@@ -1028,7 +1029,7 @@ vartools -example <span class="name variable">$c</span>ommand
 </div>
 <div class="section" id="performing-a-lomb-scargle-period-search-on-a-light-curve-and-fitting-a-harmonic-series-to-the-light-curve">
 <h3><a class="toc-backref" href="#id20">Performing a Lomb-Scargle period search on a light curve and fitting a harmonic series to the light curve</a></h3>
-<p><code class="bash">vartools -i EXAMPLES/2 -LS 1.0 2.0 0.01 <span class="literal number">1</span> <span class="literal number">0</span> -Killharm ls <span class="literal number">0</span> <span class="literal number">0</span> <span class="literal number">1</span> EXAMPLES/OUTDIR1 -oneline</code></p>
+<p><code class="bash">vartools -i EXAMPLES/2 -LS 1.0 2.0 0.01 1 0 -Killharm ls 0 0 1 EXAMPLES/OUTDIR1 -oneline</code></p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">-LS</span></tt>, Perform a Generalized Lomb-Scargle (L-S) search of the light curves for periodic sinusoidal signals. The search is done over frequencies between fmin = 1/maxp to fmax = 1/minp, with a uniform frequency step-size of Delta f = subsample/T, where T is the time-span of the observations.</dt>
 <dd><ul class="first last simple">
@@ -1053,7 +1054,7 @@ sudo apt-get install yorick
 </pre>
 <p>Simply unzip the corresponding bin zip and add /path/amdlib-VERSION/bin/amdlib to your <cite>~/.bashrc</cite>:</p>
 <pre class="code bash literal-block">
-<span class="name builtin">alias</span> <span class="name variable">amdlib</span><span class="operator">=</span><span class="literal string double">&quot;</span>$<span class="literal string double">HOME/amdlib/bin/amdlib&quot;</span>
+<span class="name builtin">alias </span><span class="name variable">amdlib</span><span class="operator">=</span><span class="literal string double">&quot;$HOME/amdlib/bin/amdlib&quot;</span>
 </pre>
 </div>
 <div class="section" id="running">
@@ -1232,7 +1233,7 @@ Purge Policies</p>
 <div class="section" id="exemplo-transferencia-de-arquivos">
 <h3><a class="toc-backref" href="#id35">Exemplo transferencia de arquivos</a></h3>
 <pre class="code bash literal-block">
-$ scp /data/hdust.zip dm#&#64;gw.rcsg.rice.edu:/tmp
+<span class="name variable">$ </span>scp /data/hdust.zip dm#&#64;gw.rcsg.rice.edu:/tmp
 The Rice University Network - Unauthorized access is prohibited
 dm#&#64;gw.rcsg.rice.edu<span class="literal string single">'s password:
 hdust.zip                         100%   35MB   3.9MB/s   00:09
@@ -1247,7 +1248,7 @@ hdust.zip                                           100%   35MB  35.2MB/s   00:0
 <div class="section" id="compilando-e-ajustando">
 <h3><a class="toc-backref" href="#id36">Compilando e ajustando</a></h3>
 <pre class="code bash literal-block">
-$ vim xdr/v1.06/Makefile
+<span class="name variable">$ </span>vim xdr/v1.06/Makefile
 </pre>
 <pre class="literal-block">
 CC = bgxlc_r
@@ -1256,7 +1257,7 @@ F77 = bgxlf_r
 FOPTS = -c -O
 </pre>
 <pre class="code bash literal-block">
-$ vim fortran/hdustv2.02/Makefile
+<span class="name variable">$ </span>vim fortran/hdustv2.02/Makefile
 </pre>
 <pre class="literal-block">
 CFLAGS = -O2
@@ -1267,11 +1268,11 @@ FC2 = bgxlf_r
     $(FC2) $(CFLAGS) -c $*.f
 </pre>
 <pre class="code bash literal-block">
-$ module load mpi
-<span class="comment single"># In the *special* hdustparv2.02 directory, i.e., replace the files with the following ones:
-</span>$ wget http://dl.dropbox.com/u/6569986/transfer/hdustparv2.02bgp.zip
-<span class="comment single">#
-</span>$ vim fortran/hdustparv2.02bgq/Makefile
+<span class="name variable">$ </span>module load mpi
+<span class="comment"># In the *special* hdustparv2.02 directory, i.e., replace the files with the following ones:
+</span><span class="name variable">$ </span>wget http://dl.dropbox.com/u/6569986/transfer/hdustparv2.02bgp.zip
+<span class="comment">#
+</span><span class="name variable">$ </span>vim fortran/hdustparv2.02bgq/Makefile
 </pre>
 <pre class="literal-block">
 CFLAGS = -O2
@@ -1283,10 +1284,10 @@ FC2 = mpixlf77_r
 </pre>
 <p>E também tem que mudar a pasta temporária dos <cite>controls</cite>:</p>
 <pre class="code bash literal-block">
-$ <span class="name builtin">cd</span> /bgqscratch/<span class="literal string backtick">`</span>whoami<span class="literal string backtick">`</span>/hdust/runs/hdust
-$ mkdir ../tmp
-$ vim bestar2.02/controls/controls.txt
-<span class="comment single"># line 63:  Path = '../tmp/'</span>
+<span class="name variable">$ </span><span class="name builtin">cd</span> /bgqscratch/<span class="literal string backtick">`</span>whoami<span class="literal string backtick">`</span>/hdust/runs/hdust
+<span class="name variable">$ </span>mkdir ../tmp
+<span class="name variable">$ </span>vim bestar2.02/controls/controls.txt
+<span class="comment"># line 63:  Path = '../tmp/'</span>
 </pre>
 </div>
 <div class="section" id="id1">
@@ -1313,12 +1314,12 @@ ARGS=&quot; = beauty/mod01/all.inp&quot;
 runjob --np 512 --ranks-per-node=16 --exe $EXE --args $ARGS
 </pre>
 <pre class="code bash literal-block">
-<span class="comment single"># Submit job
-</span>$ llsubmit job.cmd
-<span class="comment single"># see the queue
-</span>$ llq
-<span class="comment single"># cancel jobs
-</span>$ llcancel jobID
+<span class="comment"># Submit job
+</span><span class="name variable">$ </span>llsubmit job.cmd
+<span class="comment"># see the queue
+</span><span class="name variable">$ </span>llq
+<span class="comment"># cancel jobs
+</span><span class="name variable">$ </span>llcancel jobID
 </pre>
 </div>
 <div class="section" id="testes">

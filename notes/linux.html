@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
 <title>Linux tips</title>
 <style type="text/css">
 
@@ -452,7 +452,7 @@ li {
 <h2><a class="toc-backref" href="#id2">Print line interval</a></h2>
 <p>Print from lines 4400 to 4500 of a file</p>
 <pre class="code bash literal-block">
-cat file <span class="punctuation">|</span> head -n <span class="literal number">4500</span> <span class="punctuation">|</span> tail -n 100
+cat file | head -n 4500 | tail -n 100
 </pre>
 </div>
 <div class="section" id="multiple-files-edition-substitution">
@@ -465,8 +465,8 @@ sed -i <span class="literal string double">&quot;s/INPUT/OUTPUT/g&quot;</span> *
 <div class="section" id="is-there-a-way-to-echo-an-alias">
 <h2><a class="toc-backref" href="#id4">Is there a way to echo an alias?</a></h2>
 <pre class="code bash literal-block">
-<span class="name builtin">alias</span> ls
-<span class="comment single"># alias ls='ls --color=auto'</span>
+<span class="name builtin">alias </span>ls
+<span class="comment"># alias ls='ls --color=auto'</span>
 </pre>
 </div>
 <div class="section" id="disk-usage">
@@ -531,7 +531,7 @@ ls -ltr --time-style<span class="operator">=</span>full
 `xargs`    pass input from pipeline as argument to a command.
 </pre>
 <pre class="code bash literal-block">
-<span class="comment single"># examples
+<span class="comment"># examples
 </span>cat command_list.txt
 more command_list.txt
 head command_list.txt
@@ -561,8 +561,8 @@ awk <span class="literal string single">'{print $2,$1}'</span> data/listagem.dat
 sed -e <span class="literal string double">&quot;s/example/exemplo/g&quot;</span> -e <span class="literal string double">&quot;s/:/&gt;/g&quot;</span> command_list.txt
 find ./ -name <span class="literal string single">'*.dat'</span>
 ln -s data/numeros.dat numbers.dat
-nohup &lt;normal command&gt; &gt; output.txt <span class="punctuation">&amp;</span>
-chmod <span class="literal number">755</span> helloworld.sh
+nohup &lt;normal <span class="name builtin">command</span>&gt; &gt; output.txt &amp;
+chmod 755 helloworld.sh
 </pre>
 </div>
 <div class="section" id="symbolic-link">
@@ -581,9 +581,9 @@ nproc
 <h2><a class="toc-backref" href="#id10"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></h2>
 <pre class="code bash literal-block">
 find . -name <span class="literal string double">&quot;*~&quot;</span> -exec rm -r <span class="literal string double">&quot;{}&quot;</span> <span class="literal string escape">\;</span>
-<span class="comment single"># or
-</span>find . -name <span class="literal string double">&quot;*~&quot;</span> -print0 <span class="punctuation">|</span> xargs -0 rm
-<span class="comment single"># or for directories
+<span class="comment"># or
+</span>find . -name <span class="literal string double">&quot;*~&quot;</span> -print0 | xargs -0 rm
+<span class="comment"># or for directories
 </span>find . -name <span class="literal string double">&quot;svn&quot;</span> -type d -exec rmdir <span class="literal string double">&quot;{}&quot;</span> <span class="literal string escape">\;</span>
 </pre>
 </div>
@@ -591,28 +591,28 @@ find . -name <span class="literal string double">&quot;*~&quot;</span> -exec rm 
 <h2><a class="toc-backref" href="#id11"><tt class="docutils literal">rsync</tt></a></h2>
 <pre class="code bash literal-block">
 rsync -azP --delete --dry-run --rsh<span class="operator">=</span><span class="literal string single">'ssh -p20001'</span> Scripts/ user&#64;machine:/paht/Scripts2
-    <span class="comment single"># &quot;/&quot; = very important. Otherwise, without &quot;/&quot;, it goes /paht/Scripts2/Scripts
-</span>    <span class="comment single"># -a = arquive (recursive)
-</span>    <span class="comment single"># -z = zip (for network)
-</span>    <span class="comment single"># --delete = to sync deletions
-</span>    <span class="comment single"># --dry-run = only show results
-</span>    <span class="comment single"># -P = partially (resume)
-</span>    <span class="comment single"># --exclude X = ignora arquivos X, e.g. &quot;*.pro&quot;
-</span>    <span class="comment single"># --update = somente sobrescreve arquivos mais novos
-</span>    <span class="comment single"># --stats = estatistica da transferencia
+    <span class="comment"># &quot;/&quot; = very important. Otherwise, without &quot;/&quot;, it goes /paht/Scripts2/Scripts
+</span>    <span class="comment"># -a = arquive (recursive)
+</span>    <span class="comment"># -z = zip (for network)
+</span>    <span class="comment"># --delete = to sync deletions
+</span>    <span class="comment"># --dry-run = only show results
+</span>    <span class="comment"># -P = partially (resume)
+</span>    <span class="comment"># --exclude X = ignora arquivos X, e.g. &quot;*.pro&quot;
+</span>    <span class="comment"># --update = somente sobrescreve arquivos mais novos
+</span>    <span class="comment"># --stats = estatistica da transferencia
 </span>
 rsync -a -f <span class="literal string single">'- /*/*/'</span> /dirA/ host:/dirB/
-    <span class="comment single"># -a triggers the archive mode that activates recursion
-</span>    <span class="comment single"># -f is short for --filter=, which adds a file-filtering rule.
-</span>    <span class="comment single">#     The pattern is inside single quotes so that the shell does not expand
-</span>    <span class="comment single">#         wildcards; double quotes would work equally well in this case.
-</span>    <span class="comment single">#     - means this is an exclude pattern.
-</span>    <span class="comment single">#     The leading / means the pattern must start at dirA/ (the rsync &quot;transfer-root&quot;).
-</span>    <span class="comment single">#     The */* part of the pattern refers to anything inside of a subdirectory.
-</span>    <span class="comment single">#     The trailing / limits the exclusion to directories.
-</span>    <span class="comment single">#     Files inside a subdirectory of dirA/ are not affected.
+    <span class="comment"># -a triggers the archive mode that activates recursion
+</span>    <span class="comment"># -f is short for --filter=, which adds a file-filtering rule.
+</span>    <span class="comment">#     The pattern is inside single quotes so that the shell does not expand
+</span>    <span class="comment">#         wildcards; double quotes would work equally well in this case.
+</span>    <span class="comment">#     - means this is an exclude pattern.
+</span>    <span class="comment">#     The leading / means the pattern must start at dirA/ (the rsync &quot;transfer-root&quot;).
+</span>    <span class="comment">#     The */* part of the pattern refers to anything inside of a subdirectory.
+</span>    <span class="comment">#     The trailing / limits the exclusion to directories.
+</span>    <span class="comment">#     Files inside a subdirectory of dirA/ are not affected.
 </span>
-<span class="comment single"># So in the end, rsync copies nothing more than one level down (and also does not
+<span class="comment"># So in the end, rsync copies nothing more than one level down (and also does not
 # create second-level directories).</span>
 </pre>
 </div>
@@ -650,12 +650,12 @@ rsync -a -f <span class="literal string single">'- /*/*/'</span> /dirA/ host:/di
 <div class="section" id="useful-keyboard-shortcuts">
 <h2><a class="toc-backref" href="#id16">Useful keyboard shortcuts</a></h2>
 <pre class="code bash literal-block">
-exaile -t  <span class="comment single">#Pause
-</span>exaile -p  <span class="comment single">#Previous
-</span>exaile -n  <span class="comment single">#Next
-</span>qmmp -t  <span class="comment single">#Pause
-</span>amixer <span class="name builtin">set</span> Master 7%- -q
-amixer <span class="name builtin">set</span> Master 7%+ -q
+exaile -t  <span class="comment">#Pause
+</span>exaile -p  <span class="comment">#Previous
+</span>exaile -n  <span class="comment">#Next
+</span>qmmp -t  <span class="comment">#Pause
+</span>amixer <span class="name builtin">set </span>Master 7%- -q
+amixer <span class="name builtin">set </span>Master 7%+ -q
 </pre>
 </div>
 <div class="section" id="win-programs-alternatives">
@@ -668,23 +668,23 @@ amixer <span class="name builtin">set</span> Master 7%+ -q
 <h2><a class="toc-backref" href="#id18">Image tools</a></h2>
 <pre class="code bash literal-block">
 sudo apt-get install imagemagick
-mogrify -quality <span class="literal number">75</span> *
+mogrify -quality 75 *
 
-<span class="comment single"># Para mudar a resolucao, onde nao havera nenhuma imagem com largura ou
+<span class="comment"># Para mudar a resolucao, onde nao havera nenhuma imagem com largura ou
 #  altura maior do que 1280 pxs (O 'aspect ratio' eh sempre preservado):
 </span>mogrify -resize <span class="literal string single">'1280x1280&gt;'</span> *.jpg
-<span class="comment single"># Exemplos: 4608x3072 -&gt; 1280x852
+<span class="comment"># Exemplos: 4608x3072 -&gt; 1280x852
 # Exemplos: 3072x4608 -&gt; 852x1280
 </span>
-mogrify -resize <span class="literal string single">'1920x1920&gt;'</span> -quality <span class="literal number">75</span> *.jpg
-mogrify -resize <span class="literal string single">'1920x1920&gt;'</span> -quality <span class="literal number">75</span> *.JPG
+mogrify -resize <span class="literal string single">'1920x1920&gt;'</span> -quality 75 *.jpg
+mogrify -resize <span class="literal string single">'1920x1920&gt;'</span> -quality 75 *.JPG
 
-<span class="comment single"># fusao vertical
+<span class="comment"># fusao vertical
 </span>convert -gravity Center -append input*.eps output.png
-<span class="comment single"># fusao horizontal
+<span class="comment"># fusao horizontal
 </span>convert -gravity Center +append input*.eps output.png
 
-<span class="comment single"># Exemplo mais avancados
+<span class="comment"># Exemplo mais avancados
 </span>montage rrm.pdf pol.pdf -geometry 800x800 output.pdf
 convert output.pdf -crop 1600x600+0+100 +repage out2.pdf
 
@@ -760,7 +760,7 @@ Icon=/home/user/.local/share/icons/hicolor/64x64/apps/FoxitReader.png
 sudo apt-get install bindfs
 mkdir ~/myUIDdiskFoo
 sudo bindfs -u <span class="keyword">$(</span>id -u<span class="keyword">)</span> -g <span class="keyword">$(</span>id -g<span class="keyword">)</span> /media/diskFoo ~/myUIDdiskFoo
-<span class="comment single"># Keep the default mount running (do not eject)</span>
+<span class="comment"># Keep the default mount running (do not eject)</span>
 </pre>
 <p>More information:
 - <a class="reference external" href="http://www.penguintutor.com/linux/file-permissions-reference">http://www.penguintutor.com/linux/file-permissions-reference</a>
@@ -777,22 +777,22 @@ sudo bindfs -u <span class="keyword">$(</span>id -u<span class="keyword">)</span
 chmod a<span class="operator">[</span>ll<span class="operator">]</span>,g<span class="operator">[</span>roup<span class="operator">]</span>,u<span class="operator">[</span>ser<span class="operator">]</span> +/-x,r,w
 <span class="name variable">1</span> <span class="operator">=</span> execute
 <span class="name variable">2</span> <span class="operator">=</span> write
-<span class="name variable">4</span> <span class="operator">=</span> <span class="name builtin">read</span>
-<span class="name variable">7</span> <span class="operator">=</span> 1+2+4
+<span class="name variable">4</span> <span class="operator">=</span> <span class="name builtin">read
+</span><span class="name variable">7</span> <span class="operator">=</span> 1+2+4
 </pre>
 <p>To do it recursively:</p>
 <pre class="code bash literal-block">
-<span class="comment single"># To recursively give directories read&amp;execute privileges:
-</span>find /path/to/base/dir -type d -print0 <span class="punctuation">|</span> xargs -0 chmod -f 775
-<span class="comment single"># To recursively give files read privileges:
-</span>find /path/to/base/dir -type f -print0 <span class="punctuation">|</span> xargs -0 chmod 664
-<span class="comment single">#
+<span class="comment"># To recursively give directories read&amp;execute privileges:
+</span>find /path/to/base/dir -type d -print0 | xargs -0 chmod -f 775
+<span class="comment"># To recursively give files read privileges:
+</span>find /path/to/base/dir -type f -print0 | xargs -0 chmod 664
+<span class="comment">#
 # Other (not so efficient) ways are:
-</span>find /path/to/base/dir -type d -exec chmod <span class="literal number">755</span> <span class="operator">{}</span> +
-find /path/to/base/dir -type f -exec chmod <span class="literal number">644</span> <span class="operator">{}</span> +
-<span class="comment single"># Or
-</span>chmod <span class="literal number">755</span> <span class="keyword">$(</span>find /path/to/base/dir -type d<span class="keyword">)</span>
-chmod <span class="literal number">644</span> <span class="keyword">$(</span>find /path/to/base/dir -type f<span class="keyword">)</span>
+</span>find /path/to/base/dir -type d -exec chmod 755 <span class="operator">{}</span> +
+find /path/to/base/dir -type f -exec chmod 644 <span class="operator">{}</span> +
+<span class="comment"># Or
+</span>chmod 755 <span class="keyword">$(</span>find /path/to/base/dir -type d<span class="keyword">)</span>
+chmod 644 <span class="keyword">$(</span>find /path/to/base/dir -type f<span class="keyword">)</span>
 </pre>
 <div class="section" id="how-to-apply-default-permissions">
 <h2><a class="toc-backref" href="#id27">How to apply default permissions</a></h2>
@@ -840,34 +840,38 @@ sudo usermod -a -G sudo &lt;username&gt;
 <div class="section" id="run-at-local-pc">
 <h2><a class="toc-backref" href="#id31">1- Run at local PC</a></h2>
 <pre class="code bash literal-block">
-$ ssh-keygen -t rsa
-<span class="comment single">#(3x type ENTER)
+<span class="name variable">$ </span>ssh-keygen -t rsa
+<span class="comment">#(3x type ENTER)
 #Your public key has been saved in &lt;your_home_dir&gt;/.ssh/id_rsa.pub
-</span>$ scp ~/.ssh/id_rsa.pub USER&#64;HOST:/sto/home/USER/id_rsa.pub
-<span class="comment single">#(Type your server's password)</span>
+</span><span class="name variable">$ </span>scp ~/.ssh/id_rsa.pub USER&#64;HOST:/sto/home/USER/id_rsa.pub
+<span class="comment">#(Type your server's password)</span>
 </pre>
 </div>
 <div class="section" id="run-at-remote-pc">
 <h2><a class="toc-backref" href="#id32">2- Run at remote PC</a></h2>
 <pre class="code bash literal-block">
-$ cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
-$ chmod <span class="literal number">700</span> ~/.ssh/authorized_keys
-$ rm id_rsa.pub
+<span class="name variable">$ </span>cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+<span class="name variable">$ </span>chmod 700 ~/.ssh/authorized_keys
+<span class="name variable">$ </span>rm id_rsa.pub
 </pre>
 </div>
 <div class="section" id="one-may-need-to-run-at-remote-pc">
 <h2><a class="toc-backref" href="#id33">3- One may need to run at remote PC</a></h2>
 <pre class="code bash literal-block">
-$ <span class="name builtin">exec</span> ssh-agent bash
-$ ssh-add
+<span class="name variable">$ </span><span class="name builtin">exec </span>ssh-agent bash
+<span class="name variable">$ </span>ssh-add
 </pre>
 </div>
 <div class="section" id="github">
 <h2><a class="toc-backref" href="#id34">GitHub</a></h2>
+<pre class="code bash literal-block">
+git config --global user.name <span class="literal string double">&quot;John Doe&quot;</span>
+git config --global user.email johndoe&#64;example.com
+</pre>
 <p><a class="reference external" href="https://help.github.com/articles/generating-ssh-keys/">https://help.github.com/articles/generating-ssh-keys/</a></p>
 <pre class="code bash literal-block">
-ssh-keygen -t rsa -b <span class="literal number">4096</span> -C <span class="literal string double">&quot;user&#64;gmail.com&quot;</span>
-<span class="comment single"># Enter file in which to save the key (/home/user/.ssh/id_rsa): /home/user/.ssh/id_github
+ssh-keygen -t rsa -b 4096 -C <span class="literal string double">&quot;user&#64;gmail.com&quot;</span>
+<span class="comment"># Enter file in which to save the key (/home/user/.ssh/id_rsa): /home/user/.ssh/id_github
 #
 # Type your github password...
 #
@@ -875,10 +879,10 @@ ssh-keygen -t rsa -b <span class="literal number">4096</span> -C <span class="li
 # The key fingerprint is:
 # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db user&#64;gmail.com
 </span>
-cat /home/user/.ssh/id_github
-<span class="comment single"># Copy and paste to https://github.com/settings/ssh
+cat /home/user/.ssh/id_github.pub
+<span class="comment"># Copy and paste the PUBLIC key to https://github.com/settings/ssh
 </span>
-<span class="comment single"># These steps may be required:
+<span class="comment"># These steps may be required:
 # ..
 # start the ssh-agent in the background
 # eval &quot;$(ssh-agent -s)&quot;
@@ -923,9 +927,9 @@ pactl load-module module-loopback latency_msec=1
 </pre>
 <p>To turn it off:</p>
 <pre class="code bash literal-block">
-<span class="comment single"># Find the module NUMBER with
+<span class="comment"># Find the module NUMBER with
 </span>pacmd list-modules
-<span class="comment single"># then to unload it:
+<span class="comment"># then to unload it:
 </span>pactl unload-module 27
 </pre>
 <p>To add this permanently, you need to load the module when pulseaudio starts. To do this, you need to add a line to the <tt class="docutils literal">/etc/pulse/default.pa</tt> (as sudo). The line can be added at the end of the file:</p>

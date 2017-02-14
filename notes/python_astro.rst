@@ -174,6 +174,25 @@ Setting up virtual environments
     pip freeze > requirements.txt
     pip install -r requirements.txt
 
+which pip
+-----------
+Problem: ``ImportError: No module named ...``
+
+Explanation: Your ``pip`` is probably using a different ``python`` executable.
+Check it:
+
+.. code:: bash
+
+    $ head -n1 $(which pip)
+
+Solution: you can choose to use a ``virtualenv``, or install ``pip`` using ``/usr/local/bin/python``:
+
+.. code:: bash
+
+    curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | /usr/local/bin/python
+
+For more installation instructions, see http://www.pip-installer.org/en/latest/installing.html.
+
 
 ipython
 ==========
@@ -906,6 +925,9 @@ General use Python packages in Astronomy
     http://pydata.org/downloads.html
 
         - The Blaze Ecosystem: http://blaze.pydata.org/
+
+- statsmodels
+    http://statsmodels.sourceforge.net/
 
 
 Python learning for astronomers

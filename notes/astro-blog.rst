@@ -4,7 +4,7 @@ DMF AstroBlog
 2017
 **********
 .. 
-    2017-01
+    2017-02
     =============
     TBD
 
@@ -12,6 +12,69 @@ DMF AstroBlog
  
 2017-01
 =============
+NZstars2016 conference material
+------------------------------------
+In the links below you’ll find the PDFs of the talks and posters of the New Zealand meeting. You’ll find useful material on binary stars, binary star evolution, winds, SNe, etc.
+
+- `Talks <https://drive.google.com/drive/folders/0B7vqPPPgOdtId0RTaFZoQWhUbHc?usp=sharing>`_
+- `Posters <https://drive.google.com/drive/folders/0B7vqPPPgOdtIOFZ1UDdFVlhUT0k?usp=sharing>`_
+
+----------
+
+System Engineering in SPIE
+-------------------------------
+Volume 9911 -- Modeling, Systems Engineering, and Project Management for Astronomy VI. June, 2016.
+
+http://proceedings.spiedigitallibrary.org/volume.aspx?volumeid=17724
+
+-----------
+
+The Mauna Kea land fight
+---------------------------
+In 2014, this mountaintop was the scene of a cosmic traffic jam: honking horns, vans and trucks full of astronomers, V.I.P.s, journalists, businesspeople, politicians, protesters and police — all snarled at a roadblock just short of the summit.
+
+https://mobile.nytimes.com/2016/10/04/science/hawaii-thirty-meter-telescope-mauna-kea.html
+
+-----
+
+Our place in Space
+----------------------
+Since the dawn of civilization, we have gazed into the night sky and attempted to make sense of what we saw there, asking questions such as: Where do we come from? What is our place in the universe? And are we alone? As we ask those questions today and new technology expands our horizons further into space, our yearning for their answers only grows. For 26 years, the NASA/ESA Hubble Space Telescope has been expanding our cosmic horizons. In capturing an astronomical number of images, Hubble has revealed and shared the beauty, wonder, and complexity of the Universe.
+
+Hubble-inspired art works by contemporary Italian artists: 
+
+http://www.spacetelescope.org/news/heic1701
+
+-----------
+
+Space collisions
+-----------------
+Space collisions is a very interesting topic!
+
+https://en.wikipedia.org/wiki/Satellite_collision
+
+-----------
+
+Venus surf
+------------
+A Japanese spacecraft has spotted a massive gravity wave in Venus' atmosphere
+
+http://www.theverge.com/2017/1/16/14264886/japanese-spacecraft-akatsuki-gravity-wave-venus-atmosphere
+
+----------
+
+Specs search
+----------------
+Specifications, Standards, Handbooks and Mil-Spec documents
+
+http://everyspec.com/
+
+Open ESA Software Engineering and Standardisation
+
+http://www.esa.int/TEC/Software_engineering_and_standardisation/TECBUCUXBQE_0.html
+
+------------
+
 Big science is hard but worth it
 -------------------------------------
 Editorial article in Science magazine, written by Michael S. Turner (University of

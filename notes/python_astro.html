@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
 <title>Python and Astronomy</title>
 <style type="text/css">
 
@@ -692,73 +692,74 @@ span.boxed, span.framebox {
 <li><a class="reference internal" href="#pip-not-found" id="id15"><cite>pip</cite> not found</a></li>
 <li><a class="reference internal" href="#could-not-find-egg-info" id="id16">&quot;Could not find .egg-info&quot;</a></li>
 <li><a class="reference internal" href="#setting-up-virtual-environments" id="id17">Setting up virtual environments</a></li>
+<li><a class="reference internal" href="#which-pip" id="id18">which pip</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ipython" id="id18">ipython</a></li>
-<li><a class="reference internal" href="#encoding" id="id19">Encoding</a><ul>
-<li><a class="reference internal" href="#shebang" id="id20">Shebang</a></li>
-<li><a class="reference internal" href="#smart-file-encoding" id="id21">Smart file encoding</a></li>
+<li><a class="reference internal" href="#ipython" id="id19">ipython</a></li>
+<li><a class="reference internal" href="#encoding" id="id20">Encoding</a><ul>
+<li><a class="reference internal" href="#shebang" id="id21">Shebang</a></li>
+<li><a class="reference internal" href="#smart-file-encoding" id="id22">Smart file encoding</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-ide-to-use-for-python" id="id22">What IDE to use for Python?</a></li>
-<li><a class="reference internal" href="#matplotlib" id="id23">Matplotlib</a><ul>
-<li><a class="reference internal" href="#taking-long-to-start" id="id24">Taking long to start</a></li>
-<li><a class="reference internal" href="#themechanged-error" id="id25"><em>ThemeChanged</em> error</a></li>
-<li><a class="reference internal" href="#figsize" id="id26"><tt class="docutils literal">figsize</tt></a></li>
-<li><a class="reference internal" href="#bugs" id="id27">Bugs</a></li>
+<li><a class="reference internal" href="#what-ide-to-use-for-python" id="id23">What IDE to use for Python?</a></li>
+<li><a class="reference internal" href="#matplotlib" id="id24">Matplotlib</a><ul>
+<li><a class="reference internal" href="#taking-long-to-start" id="id25">Taking long to start</a></li>
+<li><a class="reference internal" href="#themechanged-error" id="id26"><em>ThemeChanged</em> error</a></li>
+<li><a class="reference internal" href="#figsize" id="id27"><tt class="docutils literal">figsize</tt></a></li>
+<li><a class="reference internal" href="#bugs" id="id28">Bugs</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#python-gui" id="id28">Python GUI</a></li>
-<li><a class="reference internal" href="#errors" id="id29">Errors</a></li>
-<li><a class="reference internal" href="#vo-tables" id="id30">VO tables</a></li>
-<li><a class="reference internal" href="#status-line-printing-over-the-same-line" id="id31">Status line (printing over the same line)</a></li>
-<li><a class="reference internal" href="#check-if-a-variable-is-string" id="id32">Check if a variable is string</a></li>
-<li><a class="reference internal" href="#emcee-and-other-nice-stuff" id="id33"><em>emcee</em> and other nice stuff</a></li>
-<li><a class="reference internal" href="#adding-nice-help-to-your-program" id="id34">Adding nice help to your program</a></li>
-<li><a class="reference internal" href="#date-time" id="id35">Date &amp; Time</a></li>
-<li><a class="reference internal" href="#profile" id="id36">Profile</a></li>
-<li><a class="reference internal" href="#broadcasting" id="id37">Broadcasting</a></li>
-<li><a class="reference internal" href="#pandas" id="id38">Pandas</a></li>
-<li><a class="reference internal" href="#list-of-reserved-words-in-python" id="id39">List of reserved words in Python</a></li>
+<li><a class="reference internal" href="#python-gui" id="id29">Python GUI</a></li>
+<li><a class="reference internal" href="#errors" id="id30">Errors</a></li>
+<li><a class="reference internal" href="#vo-tables" id="id31">VO tables</a></li>
+<li><a class="reference internal" href="#status-line-printing-over-the-same-line" id="id32">Status line (printing over the same line)</a></li>
+<li><a class="reference internal" href="#check-if-a-variable-is-string" id="id33">Check if a variable is string</a></li>
+<li><a class="reference internal" href="#emcee-and-other-nice-stuff" id="id34"><em>emcee</em> and other nice stuff</a></li>
+<li><a class="reference internal" href="#adding-nice-help-to-your-program" id="id35">Adding nice help to your program</a></li>
+<li><a class="reference internal" href="#date-time" id="id36">Date &amp; Time</a></li>
+<li><a class="reference internal" href="#profile" id="id37">Profile</a></li>
+<li><a class="reference internal" href="#broadcasting" id="id38">Broadcasting</a></li>
+<li><a class="reference internal" href="#pandas" id="id39">Pandas</a></li>
+<li><a class="reference internal" href="#list-of-reserved-words-in-python" id="id40">List of reserved words in Python</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#multi-threading" id="id40">Multi-threading</a><ul>
-<li><a class="reference internal" href="#definitions" id="id41">Definitions</a></li>
+<li><a class="reference internal" href="#multi-threading" id="id41">Multi-threading</a><ul>
+<li><a class="reference internal" href="#definitions" id="id42">Definitions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#data-fitting" id="id42">Data fitting</a><ul>
-<li><a class="reference internal" href="#curve-fit" id="id43"><tt class="docutils literal">curve_fit</tt></a></li>
-<li><a class="reference internal" href="#leastsq" id="id44"><tt class="docutils literal">leastsq</tt></a></li>
-<li><a class="reference internal" href="#pyhdust-leastsq" id="id45"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></li>
-<li><a class="reference internal" href="#pyhdust-curve-fit" id="id46"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></li>
+<li><a class="reference internal" href="#data-fitting" id="id43">Data fitting</a><ul>
+<li><a class="reference internal" href="#curve-fit" id="id44"><tt class="docutils literal">curve_fit</tt></a></li>
+<li><a class="reference internal" href="#leastsq" id="id45"><tt class="docutils literal">leastsq</tt></a></li>
+<li><a class="reference internal" href="#pyhdust-leastsq" id="id46"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></li>
+<li><a class="reference internal" href="#pyhdust-curve-fit" id="id47"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#global-variables" id="id47">Global variables</a></li>
-<li><a class="reference internal" href="#control-flow" id="id48">Control Flow</a></li>
-<li><a class="reference internal" href="#values-representation-and-text-encoding" id="id49">Values representation and text encoding</a></li>
-<li><a class="reference internal" href="#hard-install-reference" id="id50">Hard install reference</a><ul>
-<li><a class="reference internal" href="#start" id="id51">Start</a></li>
-<li><a class="reference internal" href="#systems" id="id52">Systems</a><ul>
-<li><a class="reference internal" href="#ms-windows" id="id53">MS-Windows</a></li>
+<li><a class="reference internal" href="#global-variables" id="id48">Global variables</a></li>
+<li><a class="reference internal" href="#control-flow" id="id49">Control Flow</a></li>
+<li><a class="reference internal" href="#values-representation-and-text-encoding" id="id50">Values representation and text encoding</a></li>
+<li><a class="reference internal" href="#hard-install-reference" id="id51">Hard install reference</a><ul>
+<li><a class="reference internal" href="#start" id="id52">Start</a></li>
+<li><a class="reference internal" href="#systems" id="id53">Systems</a><ul>
+<li><a class="reference internal" href="#ms-windows" id="id54">MS-Windows</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#compiling-python" id="id54">Compiling Python</a><ul>
-<li><a class="reference internal" href="#numba" id="id55"><tt class="docutils literal">numba</tt></a></li>
+<li><a class="reference internal" href="#compiling-python" id="id55">Compiling Python</a><ul>
+<li><a class="reference internal" href="#numba" id="id56"><tt class="docutils literal">numba</tt></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#python-environments-and-references" id="id56">Python environments and references</a><ul>
-<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id57">General use Python packages in Astronomy</a></li>
-<li><a class="reference internal" href="#python-learning-for-astronomers" id="id58">Python learning for astronomers</a></li>
-<li><a class="reference internal" href="#python-distributions" id="id59">Python distributions</a></li>
-<li><a class="reference internal" href="#python-environments" id="id60">Python environments</a></li>
-<li><a class="reference internal" href="#utilities" id="id61">Utilities</a><ul>
-<li><a class="reference internal" href="#package-index" id="id62">Package Index</a></li>
-<li><a class="reference internal" href="#cookbooks" id="id63">Cookbooks</a></li>
-<li><a class="reference internal" href="#articles" id="id64">Articles</a></li>
-<li><a class="reference internal" href="#python-code-revision" id="id65">Python code revision</a></li>
-<li><a class="reference internal" href="#visualization-tools" id="id66">Visualization tools</a></li>
+<li><a class="reference internal" href="#python-environments-and-references" id="id57">Python environments and references</a><ul>
+<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id58">General use Python packages in Astronomy</a></li>
+<li><a class="reference internal" href="#python-learning-for-astronomers" id="id59">Python learning for astronomers</a></li>
+<li><a class="reference internal" href="#python-distributions" id="id60">Python distributions</a></li>
+<li><a class="reference internal" href="#python-environments" id="id61">Python environments</a></li>
+<li><a class="reference internal" href="#utilities" id="id62">Utilities</a><ul>
+<li><a class="reference internal" href="#package-index" id="id63">Package Index</a></li>
+<li><a class="reference internal" href="#cookbooks" id="id64">Cookbooks</a></li>
+<li><a class="reference internal" href="#articles" id="id65">Articles</a></li>
+<li><a class="reference internal" href="#python-code-revision" id="id66">Python code revision</a></li>
+<li><a class="reference internal" href="#visualization-tools" id="id67">Visualization tools</a></li>
 </ul>
 </li>
 </ul>
@@ -783,7 +784,7 @@ span.boxed, span.framebox {
 <p>Function names should be lowercase, with words separated by underscores as necessary to improve readability.</p>
 <p><em>single_trailing_underscore_</em> : used by convention to avoid conflicts with Python keyword, e.g.</p>
 <pre class="code python literal-block">
-<span class="name">Tkinter</span><span class="operator">.</span><span class="name">Toplevel</span><span class="punctuation">(</span><span class="name">master</span><span class="punctuation">,</span> <span class="name">class_</span><span class="operator">=</span><span class="literal string single">'ClassName'</span><span class="punctuation">)</span>
+<span class="name">Tkinter</span><span class="operator">.</span><span class="name">Toplevel</span><span class="punctuation">(</span><span class="name">master</span><span class="punctuation">,</span> <span class="name">class_</span><span class="operator">=</span><span class="literal string">'ClassName'</span><span class="punctuation">)</span>
 </pre>
 <p>You can define functions as <strong>is_xxx</strong> or <strong>has_xxx</strong> to return Boolean values.</p>
 </div>
@@ -792,8 +793,8 @@ span.boxed, span.framebox {
 <p>How is the best way to spam a string over multiple lines?</p>
 <p>Since adjacent string literals are automatically joint into a single string, you can just use the implied line continuation inside parentheses as recommended by PEP 8:</p>
 <pre class="code python literal-block">
-<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;Why, hello there wonderful &quot;</span>
-      <span class="literal string double">&quot;stackoverflow people!&quot;</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;Why, hello there wonderful &quot;</span>
+      <span class="literal string">&quot;stackoverflow people!&quot;</span><span class="punctuation">)</span>
 </pre>
 <p><a class="reference external" href="http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings">http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings</a></p>
 </div>
@@ -807,12 +808,12 @@ span.boxed, span.framebox {
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">codecs</span>
 <span class="name">f0</span> <span class="operator">=</span> <span class="name builtin">open</span><span class="punctuation">(</span><span class="name builtin">file</span><span class="punctuation">)</span>
-<span class="comment single"># DO NOT WORK</span>
-<span class="comment single"># lines = f0.read().decode('utf-8-sig').encode('utf-8')</span>
+<span class="comment"># DO NOT WORK</span>
+<span class="comment"># lines = f0.read().decode('utf-8-sig').encode('utf-8')</span>
 <span class="name">lines</span> <span class="operator">=</span> <span class="name">f0</span><span class="operator">.</span><span class="name">readlines</span><span class="punctuation">()</span>
 <span class="name">f0</span><span class="operator">.</span><span class="name">close</span><span class="punctuation">()</span>
 <span class="keyword">if</span> <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">startswith</span><span class="punctuation">(</span><span class="name">codecs</span><span class="operator">.</span><span class="name">BOM_UTF8</span><span class="punctuation">):</span>
-    <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">replace</span><span class="punctuation">(</span><span class="name">codecs</span><span class="operator">.</span><span class="name">BOM_UTF8</span><span class="punctuation">,</span> <span class="literal string single">''</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">)</span>
+    <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="name">lines</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">replace</span><span class="punctuation">(</span><span class="name">codecs</span><span class="operator">.</span><span class="name">BOM_UTF8</span><span class="punctuation">,</span> <span class="literal string">''</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">)</span>
 </pre>
 </div>
 <div class="section" id="the-use-of-underscore-in-python">
@@ -867,7 +868,7 @@ span.boxed, span.framebox {
 fx &lt;- function(x) {x**2}
 </pre>
 <pre class="code python literal-block">
-<span class="comment single"># Python:</span>
+<span class="comment"># Python:</span>
 <span class="keyword">def</span> <span class="name function">fx</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">):</span>
     <span class="keyword">return</span> <span class="name">x</span><span class="operator">**</span><span class="literal number integer">2</span>
 </pre>
@@ -884,7 +885,7 @@ fx &lt;- function(x) {x**2}
     <span class="keyword">for</span> <span class="name">item</span> <span class="operator word">in</span> <span class="name">x</span><span class="operator">.</span><span class="name">_vis2data</span><span class="punctuation">:</span>
         <span class="name">result</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="name">item</span><span class="punctuation">)</span>
 
-<span class="comment single"># is equivalent to:</span>
+<span class="comment"># is equivalent to:</span>
 <span class="name">tmp2</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="name">item</span> <span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name">oidata</span><span class="operator">.</span><span class="name">vis2</span> <span class="keyword">for</span> <span class="name">item</span> <span class="operator word">in</span> <span class="name">x</span><span class="operator">.</span><span class="name">_vis2data</span><span class="punctuation">]</span>
 </pre>
 <p>There is a general answer for arbitrary nested case in Python Cookbood (3rd ed).</p>
@@ -893,7 +894,7 @@ fx &lt;- function(x) {x**2}
 <h2><a class="toc-backref" href="#id11">os.path</a></h2>
 <p>This is the right way of dealing with paths, filenames, extensions...</p>
 <pre class="code python literal-block">
-<span class="name">observ</span> <span class="operator">=</span> <span class="literal string single">'/media/moser/SAMSUNG2TB/interf/interf_PIO/2015/2015-11-29_SCI_alp_Eri_oidataCalibrated.fits'</span>
+<span class="name">observ</span> <span class="operator">=</span> <span class="literal string">'/media/moser/SAMSUNG2TB/interf/interf_PIO/2015/2015-11-29_SCI_alp_Eri_oidataCalibrated.fits'</span>
 <span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">split</span><span class="punctuation">(</span><span class="name">observ</span><span class="punctuation">)</span> <span class="operator">==</span> <span class="punctuation">(</span><span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">dirname</span><span class="punctuation">(</span><span class="name">observ</span><span class="punctuation">),</span> <span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">basename</span><span class="punctuation">(</span><span class="name">observ</span><span class="punctuation">))</span>
 </pre>
 </div>
@@ -906,7 +907,7 @@ fx &lt;- function(x) {x**2}
 <div class="section" id="installing-in-a-custom-folder">
 <h3><a class="toc-backref" href="#id14">Installing in a custom folder</a></h3>
 <pre class="code bash literal-block">
-pip install --install-option<span class="operator">=</span><span class="literal string double">&quot;--prefix=</span>$<span class="literal string double">PREFIX_PATH&quot;</span> package_name
+pip install --install-option<span class="operator">=</span><span class="literal string double">&quot;--prefix=$PREFIX_PATH&quot;</span> package_name
 </pre>
 <p><strong>Important</strong>: pip will add <cite>/lib/pythonX.X/site-packages/</cite> to the <cite>$PREFIX_PATH</cite> defined.</p>
 <p>In <em>Ureka</em>, this should be <cite>$UREKA_PATH/python/</cite>.</p>
@@ -933,21 +934,35 @@ pip freeze &gt; requirements.txt
 pip install -r requirements.txt
 </pre>
 </div>
+<div class="section" id="which-pip">
+<h3><a class="toc-backref" href="#id18">which pip</a></h3>
+<p>Problem: <tt class="docutils literal">ImportError: No module named ...</tt></p>
+<p>Explanation: Your <tt class="docutils literal">pip</tt> is probably using a different <tt class="docutils literal">python</tt> executable.
+Check it:</p>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>head -n1 <span class="keyword">$(</span>which pip<span class="keyword">)</span>
+</pre>
+<p>Solution: you can choose to use a <tt class="docutils literal">virtualenv</tt>, or install <tt class="docutils literal">pip</tt> using <tt class="docutils literal">/usr/local/bin/python</tt>:</p>
+<pre class="code bash literal-block">
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | /usr/local/bin/python
+</pre>
+<p>For more installation instructions, see <a class="reference external" href="http://www.pip-installer.org/en/latest/installing.html">http://www.pip-installer.org/en/latest/installing.html</a>.</p>
+</div>
 </div>
 <div class="section" id="ipython">
-<h2><a class="toc-backref" href="#id18">ipython</a></h2>
+<h2><a class="toc-backref" href="#id19">ipython</a></h2>
 <ul>
 <li><p class="first"><cite>ipython</cite> is not calling the python version I want. What should I do?</p>
 <blockquote>
 <pre class="code bash literal-block">
-<span class="comment single"># You can discover the `ipython` you are calling typing
+<span class="comment"># You can discover the `ipython` you are calling typing
 </span>which ipython
-<span class="comment single"># ~/.local/bin/ipython
+<span class="comment"># ~/.local/bin/ipython
 </span>
-<span class="comment single"># Then type
+<span class="comment"># Then type
 </span>cat ~/.local/bin/ipython
 
-<span class="comment single"># The first line tells you the python ipython is calling
+<span class="comment"># The first line tells you the python ipython is calling
 #!/usr/local/bin/python
 # You may want to change to
 #!/usr/bin/env python</span>
@@ -960,16 +975,16 @@ pip install -r requirements.txt
 </ul>
 </div>
 <div class="section" id="encoding">
-<h2><a class="toc-backref" href="#id19">Encoding</a></h2>
+<h2><a class="toc-backref" href="#id20">Encoding</a></h2>
 <div class="section" id="shebang">
-<h3><a class="toc-backref" href="#id20">Shebang</a></h3>
+<h3><a class="toc-backref" href="#id21">Shebang</a></h3>
 <pre class="code python literal-block">
-<span class="comment hashbang">#!/usr/bin/env python</span>
-<span class="comment single"># -*- coding:utf-8 -*-</span>
+<span class="comment">#!/usr/bin/env python</span>
+<span class="comment"># -*- coding:utf-8 -*-</span>
 </pre>
 </div>
 <div class="section" id="smart-file-encoding">
-<h3><a class="toc-backref" href="#id21">Smart file encoding</a></h3>
+<h3><a class="toc-backref" href="#id22">Smart file encoding</a></h3>
 <p>For Python2 (2.6+). It also works in Python3, but it is the native behavior.</p>
 <pre class="code python literal-block">
 <span class="keyword namespace">from</span> <span class="name namespace">io</span> <span class="keyword namespace">import</span> <span class="name builtin">open</span>
@@ -977,14 +992,14 @@ pip install -r requirements.txt
 </div>
 </div>
 <div class="section" id="what-ide-to-use-for-python">
-<h2><a class="toc-backref" href="#id22">What IDE to use for Python?</a></h2>
+<h2><a class="toc-backref" href="#id23">What IDE to use for Python?</a></h2>
 <p>This is a <em>religious</em> question.</p>
 <p><a class="reference external" href="http://stackoverflow.com/questions/81584/what-ide-to-use-for-python">http://stackoverflow.com/questions/81584/what-ide-to-use-for-python</a></p>
 </div>
 <div class="section" id="matplotlib">
-<h2><a class="toc-backref" href="#id23">Matplotlib</a></h2>
+<h2><a class="toc-backref" href="#id24">Matplotlib</a></h2>
 <div class="section" id="taking-long-to-start">
-<h3><a class="toc-backref" href="#id24">Taking long to start</a></h3>
+<h3><a class="toc-backref" href="#id25">Taking long to start</a></h3>
 <p>If you are getting this message:</p>
 <blockquote>
 <dl class="docutils">
@@ -995,18 +1010,18 @@ pip install -r requirements.txt
 <p>erase the contents of <tt class="docutils literal">mpl.get_cachedir()</tt>. Additionally, you may need to delete <tt class="docutils literal"><span class="pre">~/.config/matplotlib</span></tt> and <tt class="docutils literal"><span class="pre">~/.cache/fontconfig</span></tt>.</p>
 </div>
 <div class="section" id="themechanged-error">
-<h3><a class="toc-backref" href="#id25"><em>ThemeChanged</em> error</a></h3>
+<h3><a class="toc-backref" href="#id26"><em>ThemeChanged</em> error</a></h3>
 <pre class="code python literal-block">
-<span class="name">can</span><span class="literal string single">'t invoke &quot;event&quot; command: application has been destroyed</span>
-<span class="keyword">while</span> <span class="name">executing</span> <span class="literal string double">&quot;event generate $w &lt;&lt;ThemeChanged&gt;&gt;&quot;</span>
-<span class="punctuation">(</span><span class="name">procedure</span> <span class="literal string double">&quot;ttk::ThemeChanged&quot;</span> <span class="name">line</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
+<span class="name">can</span><span class="literal string">'t invoke &quot;event&quot; command: application has been destroyed</span>
+<span class="keyword">while</span> <span class="name">executing</span> <span class="literal string">&quot;event generate $w &lt;&lt;ThemeChanged&gt;&gt;&quot;</span>
+<span class="punctuation">(</span><span class="name">procedure</span> <span class="literal string">&quot;ttk::ThemeChanged&quot;</span> <span class="name">line</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
 <span class="name">invoked</span> <span class="keyword namespace">from</span> <span class="name namespace">within</span>
-<span class="literal string double">&quot;ttk::ThemeChanged&quot;</span>
+<span class="literal string">&quot;ttk::ThemeChanged&quot;</span>
 </pre>
 <p>Solution: Write this line after you import matplotlib in ipython: <tt class="docutils literal">%matplotlib inline</tt>.</p>
 </div>
 <div class="section" id="figsize">
-<h3><a class="toc-backref" href="#id26"><tt class="docutils literal">figsize</tt></a></h3>
+<h3><a class="toc-backref" href="#id27"><tt class="docutils literal">figsize</tt></a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="32%" />
@@ -1023,7 +1038,7 @@ pip install -r requirements.txt
 </table>
 </div>
 <div class="section" id="bugs">
-<h3><a class="toc-backref" href="#id27">Bugs</a></h3>
+<h3><a class="toc-backref" href="#id28">Bugs</a></h3>
 <ul class="simple">
 <li><cite>eps</cite> = no transparency.</li>
 <li><cite>pdf</cite> = no hatches in patches.</li>
@@ -1031,26 +1046,26 @@ pip install -r requirements.txt
 </div>
 </div>
 <div class="section" id="python-gui">
-<h2><a class="toc-backref" href="#id28">Python GUI</a></h2>
+<h2><a class="toc-backref" href="#id29">Python GUI</a></h2>
 <p>&quot;Always&quot; the first option is to use <cite>Tkinter</cite> because it is part of the standard Python module and runs in most of the systems. However it is not so beautiful as the <cite>Qt</cite> library.</p>
 <p>If someone needs pretty graphics, interactively, one may think using <cite>pyqtgraph</cite> (<a class="reference external" href="http://www.pyqtgraph.org/">http://www.pyqtgraph.org/</a>).</p>
 </div>
 <div class="section" id="errors">
-<h2><a class="toc-backref" href="#id29">Errors</a></h2>
+<h2><a class="toc-backref" href="#id30">Errors</a></h2>
 <pre class="code python literal-block">
-<span class="comment single"># DO NOT USE THIS!</span>
-<span class="comment single"># import sys</span>
-<span class="comment single"># from __future__ import print_function</span>
-<span class="comment single">#</span>
-<span class="comment single"># def eprint(*args, **kwargs):</span>
-<span class="comment single">#     print(*args, file=sys.stderr, **kwargs)</span>
+<span class="comment"># DO NOT USE THIS!</span>
+<span class="comment"># import sys</span>
+<span class="comment"># from __future__ import print_function</span>
+<span class="comment">#</span>
+<span class="comment"># def eprint(*args, **kwargs):</span>
+<span class="comment">#     print(*args, file=sys.stderr, **kwargs)</span>
 
-<span class="comment single"># USE THIS:</span>
+<span class="comment"># USE THIS:</span>
 <span class="keyword namespace">import</span> <span class="name namespace">warnings</span>
 
-<span class="name">warnings</span><span class="operator">.</span><span class="name">warn</span><span class="punctuation">(</span><span class="literal string single">'Be aware of what can happen when you read this...'</span><span class="punctuation">)</span>
+<span class="name">warnings</span><span class="operator">.</span><span class="name">warn</span><span class="punctuation">(</span><span class="literal string">'Be aware of what can happen when you read this...'</span><span class="punctuation">)</span>
 
-<span class="keyword">raise</span> <span class="name exception">TypeError</span><span class="punctuation">(</span><span class="literal string single">'A `TypeError` happened here! Program stops'</span><span class="punctuation">)</span>
+<span class="keyword">raise</span> <span class="name exception">TypeError</span><span class="punctuation">(</span><span class="literal string">'A `TypeError` happened here! Program stops'</span><span class="punctuation">)</span>
 </pre>
 <ul class="simple">
 <li>More about <tt class="docutils literal">warnings</tt>: <a class="reference external" href="https://pymotw.com/2/warnings/">https://pymotw.com/2/warnings/</a></li>
@@ -1060,35 +1075,35 @@ pip install -r requirements.txt
 </ul>
 </div>
 <div class="section" id="vo-tables">
-<h2><a class="toc-backref" href="#id30">VO tables</a></h2>
+<h2><a class="toc-backref" href="#id31">VO tables</a></h2>
 <p><a class="reference external" href="https://github.com/astropy/astropy/blob/master/docs/io/votable/index.rst">https://github.com/astropy/astropy/blob/master/docs/io/votable/index.rst</a></p>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">astropy.io.votable</span> <span class="keyword namespace">as</span> <span class="name namespace">votable</span>
-<span class="name">votable</span> <span class="operator">=</span> <span class="name">votable</span><span class="operator">.</span><span class="name">parse</span><span class="punctuation">(</span><span class="literal string double">&quot;/data/Downloads/simbad&quot;</span><span class="punctuation">)</span>  <span class="comment single"># xml file</span>
+<span class="name">votable</span> <span class="operator">=</span> <span class="name">votable</span><span class="operator">.</span><span class="name">parse</span><span class="punctuation">(</span><span class="literal string">&quot;/data/Downloads/simbad&quot;</span><span class="punctuation">)</span>  <span class="comment"># xml file</span>
 <span class="name">table</span> <span class="operator">=</span> <span class="name">votable</span><span class="operator">.</span><span class="name">get_first_table</span><span class="punctuation">()</span>
-<span class="comment single"># table  # prints the table</span>
+<span class="comment"># table  # prints the table</span>
 <span class="name">data</span> <span class="operator">=</span> <span class="name">table</span><span class="operator">.</span><span class="name">array</span>
-<span class="comment single"># data[0] will NOT work! (It is a np structured array)</span>
+<span class="comment"># data[0] will NOT work! (It is a np structured array)</span>
 <span class="name">datacols</span> <span class="operator">=</span> <span class="name builtin">list</span><span class="punctuation">(</span><span class="name">data</span><span class="operator">.</span><span class="name">dtype</span><span class="operator">.</span><span class="name">names</span><span class="punctuation">)</span>
 <span class="name">arr</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">array</span><span class="punctuation">(</span><span class="name">data</span><span class="punctuation">[</span><span class="name">datacols</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]])</span>
 </pre>
 </div>
 <div class="section" id="status-line-printing-over-the-same-line">
-<h2><a class="toc-backref" href="#id31">Status line (printing over the same line)</a></h2>
+<h2><a class="toc-backref" href="#id32">Status line (printing over the same line)</a></h2>
 <pre class="code python literal-block">
-<span class="keyword">def</span> <span class="name function">fnPrintLine</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">cols</span><span class="operator">=</span><span class="name builtin pseudo">None</span><span class="punctuation">,</span> <span class="name">sameLine</span><span class="operator">=</span><span class="name builtin pseudo">False</span><span class="punctuation">,</span> <span class="name">align</span><span class="operator">=</span><span class="literal string single">'left'</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">full</span><span class="operator">=</span><span class="name builtin pseudo">False</span><span class="punctuation">):</span>
+<span class="keyword">def</span> <span class="name function">fnPrintLine</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">cols</span><span class="operator">=</span><span class="name builtin pseudo">None</span><span class="punctuation">,</span> <span class="name">sameLine</span><span class="operator">=</span><span class="name builtin pseudo">False</span><span class="punctuation">,</span> <span class="name">align</span><span class="operator">=</span><span class="literal string">'left'</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">full</span><span class="operator">=</span><span class="name builtin pseudo">False</span><span class="punctuation">):</span>
     <span class="literal string doc">&quot;&quot;&quot;
     prints a formated line with a tag, message and time to the screen:
     [   TAG    ] This is a message....................................... [ 22:36:39 ]
 
     :author: J. Humberto
     &quot;&quot;&quot;</span>
-    <span class="keyword">if</span> <span class="name">align</span> <span class="operator">==</span> <span class="literal string single">'center'</span><span class="punctuation">:</span>
-        <span class="name">halign</span> <span class="operator">=</span> <span class="literal string single">'^'</span>
-    <span class="keyword">elif</span> <span class="name">align</span> <span class="operator">==</span> <span class="literal string single">'right'</span><span class="punctuation">:</span>
-        <span class="name">halign</span> <span class="operator">=</span> <span class="literal string single">'&gt;'</span>
+    <span class="keyword">if</span> <span class="name">align</span> <span class="operator">==</span> <span class="literal string">'center'</span><span class="punctuation">:</span>
+        <span class="name">halign</span> <span class="operator">=</span> <span class="literal string">'^'</span>
+    <span class="keyword">elif</span> <span class="name">align</span> <span class="operator">==</span> <span class="literal string">'right'</span><span class="punctuation">:</span>
+        <span class="name">halign</span> <span class="operator">=</span> <span class="literal string">'&gt;'</span>
     <span class="keyword">else</span><span class="punctuation">:</span>
-        <span class="name">halign</span> <span class="operator">=</span> <span class="literal string single">'&lt;'</span>
+        <span class="name">halign</span> <span class="operator">=</span> <span class="literal string">'&lt;'</span>
 
     <span class="keyword">if</span> <span class="name">cols</span> <span class="operator">==</span> <span class="name builtin pseudo">None</span><span class="punctuation">:</span>
         <span class="keyword">try</span><span class="punctuation">:</span>
@@ -1101,26 +1116,26 @@ pip install -r requirements.txt
     <span class="keyword">if</span> <span class="name builtin">len</span><span class="punctuation">(</span><span class="name">msg</span><span class="punctuation">)</span> <span class="operator">&gt;</span> <span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">:</span>
         <span class="name">msg</span> <span class="operator">=</span> <span class="name">textwrap</span><span class="operator">.</span><span class="name">wrap</span><span class="punctuation">(</span><span class="name">msg</span><span class="punctuation">,</span> <span class="name">width</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">)</span>
         <span class="keyword">if</span> <span class="name">tag</span> <span class="operator">==</span> <span class="name builtin pseudo">None</span><span class="punctuation">:</span>
-            <span class="name">string</span> <span class="operator">=</span> <span class="literal string single">'{0:^16} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
+            <span class="name">string</span> <span class="operator">=</span> <span class="literal string">'{0:^16} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
             <span class="keyword">for</span> <span class="name">line</span> <span class="operator word">in</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">:]:</span>
-                <span class="name">string</span> <span class="operator">+=</span> <span class="literal string single">'</span><span class="literal string escape">\n</span><span class="literal string single">{0:^18} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">line</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
+                <span class="name">string</span> <span class="operator">+=</span> <span class="literal string">'</span><span class="literal string escape">\n</span><span class="literal string">{0:^18} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">line</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
         <span class="keyword">else</span><span class="punctuation">:</span>
-            <span class="name">string</span> <span class="operator">=</span> <span class="literal string single">'[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span>
-                                                                         <span class="name">datetime</span><span class="operator">.</span><span class="name">now</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string single">'%H:%M:%S'</span><span class="punctuation">),</span>
+            <span class="name">string</span> <span class="operator">=</span> <span class="literal string">'[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span>
+                                                                         <span class="name">datetime</span><span class="operator">.</span><span class="name">now</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">'%H:%M:%S'</span><span class="punctuation">),</span>
                                                                          <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
             <span class="keyword">for</span> <span class="name">line</span> <span class="operator word">in</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">:]:</span>
-                <span class="name">string</span> <span class="operator">+=</span> <span class="literal string single">'</span><span class="literal string escape">\n</span><span class="literal string single">{0:^18} {1:{flush}{halign}{w}} {2:^14}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">line</span><span class="punctuation">,</span> <span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span>
+                <span class="name">string</span> <span class="operator">+=</span> <span class="literal string">'</span><span class="literal string escape">\n</span><span class="literal string">{0:^18} {1:{flush}{halign}{w}} {2:^14}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">line</span><span class="punctuation">,</span> <span class="literal string">''</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span>
                                                                             <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
 
     <span class="keyword">else</span><span class="punctuation">:</span>
         <span class="keyword">if</span> <span class="name">tag</span> <span class="operator">==</span> <span class="name builtin pseudo">None</span><span class="punctuation">:</span>
-            <span class="name">string</span> <span class="operator">=</span> <span class="literal string single">'{0:^18} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
+            <span class="name">string</span> <span class="operator">=</span> <span class="literal string">'{0:^18} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
         <span class="keyword">else</span><span class="punctuation">:</span>
-            <span class="name">string</span> <span class="operator">=</span> <span class="literal string single">'[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">datetime</span><span class="operator">.</span><span class="name">now</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string single">'%H:%M:%S'</span><span class="punctuation">),</span>
+            <span class="name">string</span> <span class="operator">=</span> <span class="literal string">'[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">datetime</span><span class="operator">.</span><span class="name">now</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">'%H:%M:%S'</span><span class="punctuation">),</span>
                                                                          <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
 
     <span class="keyword">if</span> <span class="name">sameLine</span> <span class="operator">==</span> <span class="name builtin pseudo">True</span><span class="punctuation">:</span>
-        <span class="name">sys</span><span class="operator">.</span><span class="name">stdout</span><span class="operator">.</span><span class="name">write</span><span class="punctuation">(</span><span class="literal string single">'{} </span><span class="literal string escape">\r</span><span class="literal string single">'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">string</span><span class="punctuation">))</span>
+        <span class="name">sys</span><span class="operator">.</span><span class="name">stdout</span><span class="operator">.</span><span class="name">write</span><span class="punctuation">(</span><span class="literal string">'{} </span><span class="literal string escape">\r</span><span class="literal string">'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">string</span><span class="punctuation">))</span>
         <span class="name">sys</span><span class="operator">.</span><span class="name">stdout</span><span class="operator">.</span><span class="name">flush</span><span class="punctuation">()</span>
     <span class="keyword">elif</span> <span class="name">sameLine</span> <span class="operator">==</span> <span class="name builtin pseudo">False</span><span class="punctuation">:</span>
         <span class="keyword">print</span> <span class="name">string</span>
@@ -1128,7 +1143,7 @@ pip install -r requirements.txt
 </pre>
 </div>
 <div class="section" id="check-if-a-variable-is-string">
-<h2><a class="toc-backref" href="#id32">Check if a variable is string</a></h2>
+<h2><a class="toc-backref" href="#id33">Check if a variable is string</a></h2>
 <p>In Python 2.x, one would do for the <em>s</em> variable</p>
 <pre class="code python literal-block">
 <span class="name builtin">isinstance</span><span class="punctuation">(</span><span class="name">s</span><span class="punctuation">,</span> <span class="name builtin">basestring</span><span class="punctuation">)</span>
@@ -1144,27 +1159,27 @@ pip install -r requirements.txt
 </pre>
 </div>
 <div class="section" id="emcee-and-other-nice-stuff">
-<h2><a class="toc-backref" href="#id33"><em>emcee</em> and other nice stuff</a></h2>
+<h2><a class="toc-backref" href="#id34"><em>emcee</em> and other nice stuff</a></h2>
 <p><a class="reference external" href="http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html">http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html</a></p>
 <p><a class="reference external" href="http://eso-python.github.io/ESOPythonTutorials/">http://eso-python.github.io/ESOPythonTutorials/</a></p>
 <p><a class="reference external" href="https://github.com/ESO-python/ESOPythonTutorials/tree/master/notebooks">https://github.com/ESO-python/ESOPythonTutorials/tree/master/notebooks</a></p>
 <p><a class="reference external" href="http://www.sc.eso.org/~bdias/pycoffee/refs.html">http://www.sc.eso.org/~bdias/pycoffee/refs.html</a></p>
 </div>
 <div class="section" id="adding-nice-help-to-your-program">
-<h2><a class="toc-backref" href="#id34">Adding nice help to your program</a></h2>
+<h2><a class="toc-backref" href="#id35">Adding nice help to your program</a></h2>
 <p><span class="strike">Use the module ``optparse``</span> (depricated).</p>
 <p>Use <tt class="docutils literal">argparse</tt>: <a class="reference external" href="https://docs.python.org/2/library/argparse.html">https://docs.python.org/2/library/argparse.html</a></p>
 </div>
 <div class="section" id="date-time">
-<h2><a class="toc-backref" href="#id35">Date &amp; Time</a></h2>
+<h2><a class="toc-backref" href="#id36">Date &amp; Time</a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">time</span>
 
-<span class="comment single">## Regular and 12 hour format ##</span>
-<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span>
+<span class="comment">## Regular and 12 hour format ##</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span>
 
-<span class="comment single">## Date with full and short year ##</span>
-<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%Y/%m/</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">))</span>
+<span class="comment">## Date with full and short year ##</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%Y/%m/</span><span class="literal string interpol">%d</span><span class="literal string">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string">&quot;</span><span class="punctuation">))</span>
 </pre>
 <table border="1" class="docutils">
 <colgroup>
@@ -1247,13 +1262,13 @@ pip install -r requirements.txt
 </table>
 </div>
 <div class="section" id="profile">
-<h2><a class="toc-backref" href="#id36">Profile</a></h2>
+<h2><a class="toc-backref" href="#id37">Profile</a></h2>
 <pre class="code bash literal-block">
 python -m cProfile script.py
 </pre>
 </div>
 <div class="section" id="broadcasting">
-<h2><a class="toc-backref" href="#id37">Broadcasting</a></h2>
+<h2><a class="toc-backref" href="#id38">Broadcasting</a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword namespace">as</span> <span class="name namespace">np</span>
 <span class="keyword namespace">from</span> <span class="name namespace">itertools</span> <span class="keyword namespace">import</span> <span class="name">product</span> <span class="keyword">as</span> <span class="name">itprod</span>
@@ -1269,40 +1284,40 @@ python -m cProfile script.py
 </pre>
 </div>
 <div class="section" id="pandas">
-<h2><a class="toc-backref" href="#id38">Pandas</a></h2>
+<h2><a class="toc-backref" href="#id39">Pandas</a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">pandas</span>
 
-<span class="name">df</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">read_csv</span><span class="punctuation">(</span><span class="name">csvfilename</span><span class="punctuation">,</span> <span class="name">sep</span><span class="operator">=</span><span class="literal string single">','</span><span class="punctuation">)</span> <span class="comment single">#,header=None)</span>
+<span class="name">df</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">read_csv</span><span class="punctuation">(</span><span class="name">csvfilename</span><span class="punctuation">,</span> <span class="name">sep</span><span class="operator">=</span><span class="literal string">','</span><span class="punctuation">)</span> <span class="comment">#,header=None)</span>
 <span class="name">df</span><span class="operator">.</span><span class="name">values</span><span class="punctuation">[:</span><span class="literal number integer">10</span><span class="punctuation">,</span><span class="literal number integer">2</span><span class="punctuation">]</span>
 
-<span class="name">idx</span> <span class="operator">=</span> <span class="name">df</span><span class="punctuation">[</span><span class="literal string single">'col3'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">str</span><span class="operator">.</span><span class="name">contains</span><span class="punctuation">(</span><span class="name">regex</span><span class="punctuation">)</span>
+<span class="name">idx</span> <span class="operator">=</span> <span class="name">df</span><span class="punctuation">[</span><span class="literal string">'col3'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">str</span><span class="operator">.</span><span class="name">contains</span><span class="punctuation">(</span><span class="name">regex</span><span class="punctuation">)</span>
 <span class="name">subdf</span> <span class="operator">=</span> <span class="name">df</span><span class="punctuation">[</span><span class="name">idx</span><span class="punctuation">]</span>
 
-<span class="comment single"># Create a DataFrame and save a CSV file</span>
-<span class="name">full_data</span> <span class="operator">=</span> <span class="punctuation">{</span><span class="literal string single">'first_name'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal string single">'Jason'</span><span class="punctuation">,</span> <span class="literal string single">'Molly'</span><span class="punctuation">,</span> <span class="literal string single">'Tina'</span><span class="punctuation">,</span> <span class="literal string single">'Jake'</span><span class="punctuation">,</span> <span class="literal string single">'Amy'</span><span class="punctuation">],</span>
-        <span class="literal string single">'last_name'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal string single">'Miller'</span><span class="punctuation">,</span> <span class="literal string single">'Jacobson'</span><span class="punctuation">,</span> <span class="literal string single">'Ali'</span><span class="punctuation">,</span> <span class="literal string single">'Milner'</span><span class="punctuation">,</span> <span class="literal string single">'Cooze'</span><span class="punctuation">],</span>
-        <span class="literal string single">'age'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">42</span><span class="punctuation">,</span> <span class="literal number integer">52</span><span class="punctuation">,</span> <span class="literal number integer">36</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">73</span><span class="punctuation">],</span>
-        <span class="literal string single">'preTestScore'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">31</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span>
-        <span class="literal string single">'postTestScore'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">25</span><span class="punctuation">,</span> <span class="literal number integer">94</span><span class="punctuation">,</span> <span class="literal number integer">57</span><span class="punctuation">,</span> <span class="literal number integer">62</span><span class="punctuation">,</span> <span class="literal number integer">70</span><span class="punctuation">]}</span>
+<span class="comment"># Create a DataFrame and save a CSV file</span>
+<span class="name">full_data</span> <span class="operator">=</span> <span class="punctuation">{</span><span class="literal string">'first_name'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal string">'Jason'</span><span class="punctuation">,</span> <span class="literal string">'Molly'</span><span class="punctuation">,</span> <span class="literal string">'Tina'</span><span class="punctuation">,</span> <span class="literal string">'Jake'</span><span class="punctuation">,</span> <span class="literal string">'Amy'</span><span class="punctuation">],</span>
+        <span class="literal string">'last_name'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal string">'Miller'</span><span class="punctuation">,</span> <span class="literal string">'Jacobson'</span><span class="punctuation">,</span> <span class="literal string">'Ali'</span><span class="punctuation">,</span> <span class="literal string">'Milner'</span><span class="punctuation">,</span> <span class="literal string">'Cooze'</span><span class="punctuation">],</span>
+        <span class="literal string">'age'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">42</span><span class="punctuation">,</span> <span class="literal number integer">52</span><span class="punctuation">,</span> <span class="literal number integer">36</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">73</span><span class="punctuation">],</span>
+        <span class="literal string">'preTestScore'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">31</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span>
+        <span class="literal string">'postTestScore'</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="literal number integer">25</span><span class="punctuation">,</span> <span class="literal number integer">94</span><span class="punctuation">,</span> <span class="literal number integer">57</span><span class="punctuation">,</span> <span class="literal number integer">62</span><span class="punctuation">,</span> <span class="literal number integer">70</span><span class="punctuation">]}</span>
 
-<span class="name">data</span> <span class="operator">=</span> <span class="punctuation">[[</span><span class="literal string single">'Jason'</span><span class="punctuation">,</span> <span class="literal string single">'Molly'</span><span class="punctuation">,</span> <span class="literal string single">'Tina'</span><span class="punctuation">,</span> <span class="literal string single">'Jake'</span><span class="punctuation">,</span> <span class="literal string single">'Amy'</span><span class="punctuation">],</span>
-        <span class="punctuation">[</span><span class="literal string single">'Miller'</span><span class="punctuation">,</span> <span class="literal string single">'Jacobson'</span><span class="punctuation">,</span> <span class="literal string single">'Ali'</span><span class="punctuation">,</span> <span class="literal string single">'Milner'</span><span class="punctuation">,</span> <span class="literal string single">'Cooze'</span><span class="punctuation">],</span>
+<span class="name">data</span> <span class="operator">=</span> <span class="punctuation">[[</span><span class="literal string">'Jason'</span><span class="punctuation">,</span> <span class="literal string">'Molly'</span><span class="punctuation">,</span> <span class="literal string">'Tina'</span><span class="punctuation">,</span> <span class="literal string">'Jake'</span><span class="punctuation">,</span> <span class="literal string">'Amy'</span><span class="punctuation">],</span>
+        <span class="punctuation">[</span><span class="literal string">'Miller'</span><span class="punctuation">,</span> <span class="literal string">'Jacobson'</span><span class="punctuation">,</span> <span class="literal string">'Ali'</span><span class="punctuation">,</span> <span class="literal string">'Milner'</span><span class="punctuation">,</span> <span class="literal string">'Cooze'</span><span class="punctuation">],</span>
         <span class="punctuation">[</span><span class="literal number integer">42</span><span class="punctuation">,</span> <span class="literal number integer">52</span><span class="punctuation">,</span> <span class="literal number integer">36</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">73</span><span class="punctuation">],</span>
         <span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="literal number integer">24</span><span class="punctuation">,</span> <span class="literal number integer">31</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">3</span><span class="punctuation">],</span>
         <span class="punctuation">[</span><span class="literal number integer">25</span><span class="punctuation">,</span> <span class="literal number integer">94</span><span class="punctuation">,</span> <span class="literal number integer">57</span><span class="punctuation">,</span> <span class="literal number integer">62</span><span class="punctuation">,</span> <span class="literal number integer">70</span><span class="punctuation">]]</span>
 
-<span class="name">df1</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">data</span><span class="punctuation">,</span> <span class="name">columns</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string single">'first_name'</span><span class="punctuation">,</span> <span class="literal string single">'last_name'</span><span class="punctuation">,</span> <span class="literal string single">'age'</span><span class="punctuation">,</span> <span class="literal string single">'preTestScore'</span><span class="punctuation">,</span> <span class="literal string single">'postTestScore'</span><span class="punctuation">])</span>
+<span class="name">df1</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">data</span><span class="punctuation">,</span> <span class="name">columns</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string">'first_name'</span><span class="punctuation">,</span> <span class="literal string">'last_name'</span><span class="punctuation">,</span> <span class="literal string">'age'</span><span class="punctuation">,</span> <span class="literal string">'preTestScore'</span><span class="punctuation">,</span> <span class="literal string">'postTestScore'</span><span class="punctuation">])</span>
 
 <span class="name">df2</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">full_data</span><span class="punctuation">)</span>
 
 <span class="name">df3</span> <span class="operator">=</span> <span class="name">pandas</span><span class="operator">.</span><span class="name">DataFrame</span><span class="punctuation">(</span><span class="name">data</span><span class="punctuation">)</span>
 
-<span class="name">dfn</span><span class="operator">.</span><span class="name">to_csv</span><span class="punctuation">(</span><span class="literal string single">'filename.csv'</span><span class="punctuation">)</span><span class="comment single">#, sep=',', encoding='utf-8')</span>
+<span class="name">dfn</span><span class="operator">.</span><span class="name">to_csv</span><span class="punctuation">(</span><span class="literal string">'filename.csv'</span><span class="punctuation">)</span><span class="comment">#, sep=',', encoding='utf-8')</span>
 </pre>
 </div>
 <div class="section" id="list-of-reserved-words-in-python">
-<h2><a class="toc-backref" href="#id39">List of reserved words in Python</a></h2>
+<h2><a class="toc-backref" href="#id40">List of reserved words in Python</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
@@ -1536,9 +1551,9 @@ python -m cProfile script.py
 </div>
 </div>
 <div class="section" id="multi-threading">
-<h1><a class="toc-backref" href="#id40">Multi-threading</a></h1>
+<h1><a class="toc-backref" href="#id41">Multi-threading</a></h1>
 <div class="section" id="definitions">
-<h2><a class="toc-backref" href="#id41">Definitions</a></h2>
+<h2><a class="toc-backref" href="#id42">Definitions</a></h2>
 <ul class="simple">
 <li><em>Thread</em>: independent process, managed by the operational system.</li>
 <li><em>Daemon</em> thread: by default, the main program waits the end of all threads before closing itself. However, this condition can be relaxed, and define the so-called &quot;daemon threads&quot;.</li>
@@ -1553,10 +1568,11 @@ python -m cProfile script.py
 </div>
 </div>
 <div class="section" id="data-fitting">
-<h1><a class="toc-backref" href="#id42">Data fitting</a></h1>
+<h1><a class="toc-backref" href="#id43">Data fitting</a></h1>
 <div class="section" id="curve-fit">
-<h2><a class="toc-backref" href="#id43"><tt class="docutils literal">curve_fit</tt></a></h2>
-<p>Consider errors for fitting. The solution returns the covariation matrix. Its diagnonal is the variance (the squared root, <span class="formula"><i>σ</i></span>)!!</p>
+<h2><a class="toc-backref" href="#id44"><tt class="docutils literal">curve_fit</tt></a></h2>
+<p>Consider errors for fitting. The solution returns the covariation matrix. Its diagnonal is the variance (the squared root, <span class="formula"><i>σ</i></span>
+)!!</p>
 <pre class="code python literal-block">
 <span class="keyword namespace">from</span> <span class="name namespace">scipy.optimize</span> <span class="keyword namespace">import</span> <span class="name">curve_fit</span>
 
@@ -1567,17 +1583,17 @@ python -m cProfile script.py
 <span class="name">p0</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal number float">1.</span><span class="punctuation">,</span> <span class="name">vels</span><span class="punctuation">[</span><span class="name">i0</span><span class="punctuation">],</span> <span class="literal number float">40.</span><span class="punctuation">]</span>
 <span class="name">coeff0</span><span class="punctuation">,</span> <span class="name">cov</span> <span class="operator">=</span> <span class="name">curve_fit</span><span class="punctuation">(</span><span class="name">gauss</span><span class="punctuation">,</span> <span class="name">x</span><span class="punctuation">,</span> <span class="name">y</span><span class="punctuation">,</span> <span class="name">p0</span><span class="operator">=</span><span class="name">p0</span><span class="punctuation">,</span> <span class="name">sigma</span><span class="operator">=</span><span class="name">yerr</span><span class="punctuation">)</span>
 
-<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string single">'# Best coefficients are:'</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">'# Best coefficients are:'</span><span class="punctuation">)</span>
 <span class="keyword">print</span><span class="punctuation">(</span><span class="name">coeff0</span><span class="punctuation">)</span>
 </pre>
 </div>
 <div class="section" id="leastsq">
-<h2><a class="toc-backref" href="#id44"><tt class="docutils literal">leastsq</tt></a></h2>
+<h2><a class="toc-backref" href="#id45"><tt class="docutils literal">leastsq</tt></a></h2>
 <p>Consider errors for fitting. The solution, however, has no errors in the parameters.</p>
 <p><a class="reference external" href="http://wiki.scipy.org/Cookbook/FittingData">http://wiki.scipy.org/Cookbook/FittingData</a></p>
 </div>
 <div class="section" id="pyhdust-leastsq">
-<h2><a class="toc-backref" href="#id45"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></h2>
+<h2><a class="toc-backref" href="#id46"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword namespace">as</span> <span class="name namespace">phc</span>
 
@@ -1595,7 +1611,7 @@ python -m cProfile script.py
 </pre>
 </div>
 <div class="section" id="pyhdust-curve-fit">
-<h2><a class="toc-backref" href="#id46"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></h2>
+<h2><a class="toc-backref" href="#id47"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword namespace">as</span> <span class="name namespace">phc</span>
 
@@ -1613,7 +1629,7 @@ python -m cProfile script.py
 </div>
 </div>
 <div class="section" id="global-variables">
-<h1><a class="toc-backref" href="#id47">Global variables</a></h1>
+<h1><a class="toc-backref" href="#id48">Global variables</a></h1>
 <p>One needs to declare a variable <cite>global</cite> in a function when one wants that function to be able to modify the global variable. If you one wants to access it, then the <cite>global</cite> is not needed.</p>
 <pre class="code python literal-block">
 <span class="keyword">def</span> <span class="name function">func1</span><span class="punctuation">():</span>
@@ -1648,27 +1664,27 @@ python -m cProfile script.py
 <pre class="code python literal-block">
 <span class="name">d</span> <span class="operator">=</span> <span class="punctuation">{}</span>
 <span class="name">l</span> <span class="operator">=</span> <span class="punctuation">[]</span>
-<span class="name">o</span> <span class="operator">=</span> <span class="name builtin">type</span><span class="punctuation">(</span><span class="literal string double">&quot;object&quot;</span><span class="punctuation">,</span> <span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">,),</span> <span class="punctuation">{})()</span>
+<span class="name">o</span> <span class="operator">=</span> <span class="name builtin">type</span><span class="punctuation">(</span><span class="literal string">&quot;object&quot;</span><span class="punctuation">,</span> <span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">,),</span> <span class="punctuation">{})()</span>
 
-<span class="keyword">def</span> <span class="name function">valid</span><span class="punctuation">():</span>     <span class="comment single"># these are all valid without declaring any names global!</span>
-   <span class="name">d</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>      <span class="comment single"># changes what's in d, but d still points to the same object</span>
-   <span class="name">d</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">+=</span> <span class="literal number integer">1</span>     <span class="comment single"># ditto</span>
-   <span class="name">d</span><span class="operator">.</span><span class="name">clear</span><span class="punctuation">()</span>     <span class="comment single"># ditto! d is now empty but it`s still the same object!</span>
-   <span class="name">l</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">)</span>   <span class="comment single"># l is still the same list but has an additional member</span>
-   <span class="name">o</span><span class="operator">.</span><span class="name">test</span> <span class="operator">=</span> <span class="literal number integer">1</span>    <span class="comment single"># creating new attribute on o, but o is still the same object</span>
+<span class="keyword">def</span> <span class="name function">valid</span><span class="punctuation">():</span>     <span class="comment"># these are all valid without declaring any names global!</span>
+   <span class="name">d</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>      <span class="comment"># changes what's in d, but d still points to the same object</span>
+   <span class="name">d</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">+=</span> <span class="literal number integer">1</span>     <span class="comment"># ditto</span>
+   <span class="name">d</span><span class="operator">.</span><span class="name">clear</span><span class="punctuation">()</span>     <span class="comment"># ditto! d is now empty but it`s still the same object!</span>
+   <span class="name">l</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">0</span><span class="punctuation">)</span>   <span class="comment"># l is still the same list but has an additional member</span>
+   <span class="name">o</span><span class="operator">.</span><span class="name">test</span> <span class="operator">=</span> <span class="literal number integer">1</span>    <span class="comment"># creating new attribute on o, but o is still the same object</span>
 <span class="keyword">return</span>
 </pre>
 </div>
 <div class="section" id="control-flow">
-<h1><a class="toc-backref" href="#id48">Control Flow</a></h1>
+<h1><a class="toc-backref" href="#id49">Control Flow</a></h1>
 <p>The syntax is the <tt class="docutils literal">*</tt> and <tt class="docutils literal">**</tt>. The names <tt class="docutils literal">*args</tt> and <tt class="docutils literal">**kwargs</tt> are only by convention but there's no hard requirement to use them.</p>
 <p>You would use <tt class="docutils literal">args</tt> when you're not sure how many arguments might be passed to your function, i.e. it allows you pass an arbitrary number of arguments to your function. For example:</p>
 <pre class="code python literal-block">
 <span class="operator">&gt;&gt;&gt;</span> <span class="keyword">def</span> <span class="name function">print_everything</span><span class="punctuation">(</span><span class="operator">*</span><span class="name">args</span><span class="punctuation">):</span>
         <span class="keyword">for</span> <span class="name">count</span><span class="punctuation">,</span> <span class="name">thing</span> <span class="operator word">in</span> <span class="name builtin">enumerate</span><span class="punctuation">(</span><span class="name">args</span><span class="punctuation">):</span>
-<span class="operator">...</span>         <span class="keyword">print</span> <span class="literal string single">'{0}. {1}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">count</span><span class="punctuation">,</span> <span class="name">thing</span><span class="punctuation">)</span>
+<span class="operator">...</span>         <span class="keyword">print</span> <span class="literal string">'{0}. {1}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">count</span><span class="punctuation">,</span> <span class="name">thing</span><span class="punctuation">)</span>
 <span class="operator">...</span>
-<span class="operator">&gt;&gt;&gt;</span> <span class="name">print_everything</span><span class="punctuation">(</span><span class="literal string single">'apple'</span><span class="punctuation">,</span> <span class="literal string single">'banana'</span><span class="punctuation">,</span> <span class="literal string single">'cabbage'</span><span class="punctuation">)</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">print_everything</span><span class="punctuation">(</span><span class="literal string">'apple'</span><span class="punctuation">,</span> <span class="literal string">'banana'</span><span class="punctuation">,</span> <span class="literal string">'cabbage'</span><span class="punctuation">)</span>
 <span class="literal number float">0.</span> <span class="name">apple</span>
 <span class="literal number float">1.</span> <span class="name">banana</span>
 <span class="literal number float">2.</span> <span class="name">cabbage</span>
@@ -1677,9 +1693,9 @@ python -m cProfile script.py
 <pre class="code python literal-block">
 <span class="operator">&gt;&gt;&gt;</span> <span class="keyword">def</span> <span class="name function">table_things</span><span class="punctuation">(</span><span class="operator">**</span><span class="name">kwargs</span><span class="punctuation">):</span>
 <span class="operator">...</span>     <span class="keyword">for</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">value</span> <span class="operator word">in</span> <span class="name">kwargs</span><span class="operator">.</span><span class="name">items</span><span class="punctuation">():</span>
-<span class="operator">...</span>         <span class="keyword">print</span> <span class="literal string single">'{0} = {1}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">name</span><span class="punctuation">,</span> <span class="name">value</span><span class="punctuation">)</span>
+<span class="operator">...</span>         <span class="keyword">print</span> <span class="literal string">'{0} = {1}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">name</span><span class="punctuation">,</span> <span class="name">value</span><span class="punctuation">)</span>
 <span class="operator">...</span>
-<span class="operator">&gt;&gt;&gt;</span> <span class="name">table_things</span><span class="punctuation">(</span><span class="name">apple</span> <span class="operator">=</span> <span class="literal string single">'fruit'</span><span class="punctuation">,</span> <span class="name">cabbage</span> <span class="operator">=</span> <span class="literal string single">'vegetable'</span><span class="punctuation">)</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">table_things</span><span class="punctuation">(</span><span class="name">apple</span> <span class="operator">=</span> <span class="literal string">'fruit'</span><span class="punctuation">,</span> <span class="name">cabbage</span> <span class="operator">=</span> <span class="literal string">'vegetable'</span><span class="punctuation">)</span>
 <span class="name">cabbage</span> <span class="operator">=</span> <span class="name">vegetable</span>
 <span class="name">apple</span> <span class="operator">=</span> <span class="name">fruit</span>
 </pre>
@@ -1691,16 +1707,16 @@ python -m cProfile script.py
 <p>You can also use the <tt class="docutils literal">*</tt> and <tt class="docutils literal">**</tt> syntax when calling a function. For example:</p>
 <pre class="code python literal-block">
 <span class="operator">&gt;&gt;&gt;</span> <span class="keyword">def</span> <span class="name function">print_three_things</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span><span class="punctuation">,</span> <span class="name">c</span><span class="punctuation">):</span>
-<span class="operator">...</span>     <span class="keyword">print</span> <span class="literal string single">'a = {0}, b = {1}, c = {2}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span><span class="name">b</span><span class="punctuation">,</span><span class="name">c</span><span class="punctuation">)</span>
+<span class="operator">...</span>     <span class="keyword">print</span> <span class="literal string">'a = {0}, b = {1}, c = {2}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">,</span><span class="name">b</span><span class="punctuation">,</span><span class="name">c</span><span class="punctuation">)</span>
 <span class="operator">...</span>
-<span class="operator">&gt;&gt;&gt;</span> <span class="name">mylist</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string single">'aardvark'</span><span class="punctuation">,</span> <span class="literal string single">'baboon'</span><span class="punctuation">,</span> <span class="literal string single">'cat'</span><span class="punctuation">]</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">mylist</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string">'aardvark'</span><span class="punctuation">,</span> <span class="literal string">'baboon'</span><span class="punctuation">,</span> <span class="literal string">'cat'</span><span class="punctuation">]</span>
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">print_three_things</span><span class="punctuation">(</span><span class="operator">*</span><span class="name">mylist</span><span class="punctuation">)</span>
 <span class="name">a</span> <span class="operator">=</span> <span class="name">aardvark</span><span class="punctuation">,</span> <span class="name">b</span> <span class="operator">=</span> <span class="name">baboon</span><span class="punctuation">,</span> <span class="name">c</span> <span class="operator">=</span> <span class="name">cat</span>
 </pre>
 <p>As you can see in this case it takes the list (or tuple) of items and unpacks it. By this it matches them to the arguments in the function. Of course, you could have a <tt class="docutils literal">*</tt> both in the function definition and in the function call.</p>
 </div>
 <div class="section" id="values-representation-and-text-encoding">
-<h1><a class="toc-backref" href="#id49">Values representation and text encoding</a></h1>
+<h1><a class="toc-backref" href="#id50">Values representation and text encoding</a></h1>
 <table border="1" class="docutils">
 <colgroup>
 <col width="14%" />
@@ -1748,32 +1764,32 @@ python -m cProfile script.py
 <p>Of course, work in <tt class="docutils literal">bytes</tt> is much faster than with an encoding, but it is not design to work with text (but instead to <strong>integer</strong> values).</p>
 </div>
 <div class="section" id="hard-install-reference">
-<h1><a class="toc-backref" href="#id50">Hard install reference</a></h1>
+<h1><a class="toc-backref" href="#id51">Hard install reference</a></h1>
 <div class="section" id="start">
-<h2><a class="toc-backref" href="#id51">Start</a></h2>
+<h2><a class="toc-backref" href="#id52">Start</a></h2>
 <pre class="code bash literal-block">
-<span class="comment single"># In ~/.bashrc
-</span><span class="name builtin">export</span> <span class="name variable">PYTHONPATH</span><span class="operator">=</span>$PYTHONPATH:~/pyhdust
+<span class="comment"># In ~/.bashrc
+</span><span class="name builtin">export </span><span class="name variable">PYTHONPATH</span><span class="operator">=</span><span class="name variable">$PYTHONPATH</span>:~/pyhdust
 
-<span class="name variable">PATH</span><span class="operator">=</span>~/.local/bin/:$PATH
+<span class="name variable">PATH</span><span class="operator">=</span>~/.local/bin/:<span class="name variable">$PATH</span>
 
-<span class="name variable">LD_LIBRARY_PATH</span><span class="operator">=</span><span class="literal string double">&quot;</span>$<span class="literal string double">HOME/.local/lib&quot;</span>
-<span class="name builtin">export</span> LD_LIBRARY_PATH PATH
+<span class="name variable">LD_LIBRARY_PATH</span><span class="operator">=</span><span class="literal string double">&quot;$HOME/.local/lib&quot;</span>
+<span class="name builtin">export </span>LD_LIBRARY_PATH PATH
 
-<span class="name builtin">export</span> <span class="name variable">LDFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-L</span>$<span class="literal string double">HOME/.local/lib&quot;</span>
-<span class="name builtin">export</span> <span class="name variable">CPPFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-I</span>$<span class="literal string double">HOME/.local/include&quot;</span>
-<span class="name builtin">export</span> <span class="name variable">CXXFLAGS</span><span class="operator">=</span><span class="name variable">$C</span>PPFLAGS
-<span class="name builtin">export</span> <span class="name variable">CFLAGS</span><span class="operator">=</span><span class="name variable">$C</span>PPFLAGS
-<span class="name builtin">export</span> <span class="name variable">LD_RUN_PATH</span><span class="operator">=</span>$LD_LIBRARY_PATH
+<span class="name builtin">export </span><span class="name variable">LDFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-L$HOME/.local/lib&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CPPFLAGS</span><span class="operator">=</span><span class="literal string double">&quot;-I$HOME/.local/include&quot;</span>
+<span class="name builtin">export </span><span class="name variable">CXXFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">CFLAGS</span><span class="operator">=</span><span class="name variable">$CPPFLAGS</span>
+<span class="name builtin">export </span><span class="name variable">LD_RUN_PATH</span><span class="operator">=</span><span class="name variable">$LD_LIBRARY_PATH</span>
 
-$ python setup.py install --user
-$ ./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;~/.local&quot;</span>
+<span class="name variable">$ </span>python setup.py install --user
+<span class="name variable">$ </span>./configure --prefix<span class="operator">=</span><span class="literal string double">&quot;~/.local&quot;</span>
 </pre>
 </div>
 <div class="section" id="systems">
-<h2><a class="toc-backref" href="#id52">Systems</a></h2>
+<h2><a class="toc-backref" href="#id53">Systems</a></h2>
 <div class="section" id="ms-windows">
-<h3><a class="toc-backref" href="#id53">MS-Windows</a></h3>
+<h3><a class="toc-backref" href="#id54">MS-Windows</a></h3>
 <p>When dialing with binary files in Windows (e.g., <em>struct, xdrlib</em>) open/write the files with the appendix 'b' (i.e., <tt class="docutils literal">rb, wb, r+b</tt>...).</p>
 <p>Starting at version 2.7.9, Python comes with pip!!!</p>
 <dl class="docutils">
@@ -1783,7 +1799,7 @@ $ ./configure --prefix<span class="operator">=</span><span class="literal string
 </div>
 </div>
 <div class="section" id="compiling-python">
-<h2><a class="toc-backref" href="#id54">Compiling Python</a></h2>
+<h2><a class="toc-backref" href="#id55">Compiling Python</a></h2>
 <p>Compiling Python on Ubuntu:</p>
 <ul>
 <li><p class="first">Download the source from <a class="reference external" href="https://www.python.org/downloads">Python website</a></p>
@@ -1792,10 +1808,10 @@ $ ./configure --prefix<span class="operator">=</span><span class="literal string
 <blockquote>
 <pre class="code python literal-block">
 <span class="name">lib_dirs</span> <span class="operator">=</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">compiler</span><span class="operator">.</span><span class="name">library_dirs</span> <span class="operator">+</span> <span class="punctuation">[</span>
-        <span class="literal string single">'/lib64'</span><span class="punctuation">,</span> <span class="literal string single">'/usr/lib64'</span><span class="punctuation">,</span>
-        <span class="literal string single">'/lib'</span><span class="punctuation">,</span> <span class="literal string single">'/usr/lib'</span><span class="punctuation">,</span> <span class="literal string single">'/usr/lib/x86_64-linux-gnu'</span><span class="punctuation">]</span>
+        <span class="literal string">'/lib64'</span><span class="punctuation">,</span> <span class="literal string">'/usr/lib64'</span><span class="punctuation">,</span>
+        <span class="literal string">'/lib'</span><span class="punctuation">,</span> <span class="literal string">'/usr/lib'</span><span class="punctuation">,</span> <span class="literal string">'/usr/lib/x86_64-linux-gnu'</span><span class="punctuation">]</span>
 
-<span class="comment single"># http://stackoverflow.com/questions/10654707/no-module-named-zlib-found</span>
+<span class="comment"># http://stackoverflow.com/questions/10654707/no-module-named-zlib-found</span>
 </pre>
 </blockquote>
 </li>
@@ -1815,7 +1831,7 @@ apt-get install libc6-dev
 apt-get install libgdbm-dev
 apt-get install libncurses-dev
 
-<span class="comment single"># http://stackoverflow.com/questions/19148564/getting-failed-to-build-these-modules-curses-curses-panel-ssl-while-instal</span>
+<span class="comment"># http://stackoverflow.com/questions/19148564/getting-failed-to-build-these-modules-curses-curses-panel-ssl-while-instal</span>
 </pre>
 </blockquote>
 </li>
@@ -1845,30 +1861,30 @@ readline
 </li>
 </ul>
 <div class="section" id="numba">
-<h3><a class="toc-backref" href="#id55"><tt class="docutils literal">numba</tt></a></h3>
+<h3><a class="toc-backref" href="#id56"><tt class="docutils literal">numba</tt></a></h3>
 <p>It requires <tt class="docutils literal">llvm 3.7.x</tt>. The compilation flag of the binaries at <a class="reference external" href="http://llvm.org">http://llvm.org</a> are not supported on Ubuntu 14.04, so I needed to compile it.</p>
 <p>It makes use of the <tt class="docutils literal">cmake</tt>. And it works like this:</p>
 <pre class="code bash literal-block">
-<span class="comment single"># sudo apt-get install cmake
+<span class="comment"># sudo apt-get install cmake
 </span>
 mkdir mybuiltdir
-<span class="name builtin">cd</span> mybuiltdir
+<span class="name builtin">cd </span>mybuiltdir
 
 cmake path/to/llvm/source/root
 
 cmake --build .
 
-cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmake_install.cmake
-<span class="comment single"># cmake --build . --target install</span>
+cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name variable">$HOME</span>/.local/ -P cmake_install.cmake
+<span class="comment"># cmake --build . --target install</span>
 </pre>
 </div>
 </div>
 </div>
 <div class="section" id="python-environments-and-references">
-<h1><a class="toc-backref" href="#id56">Python environments and references</a></h1>
+<h1><a class="toc-backref" href="#id57">Python environments and references</a></h1>
 <p><a class="reference external" href="http://python-notes.curiousefficiency.org/">http://python-notes.curiousefficiency.org/</a></p>
 <div class="section" id="general-use-python-packages-in-astronomy">
-<h2><a class="toc-backref" href="#id57">General use Python packages in Astronomy</a></h2>
+<h2><a class="toc-backref" href="#id58">General use Python packages in Astronomy</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>PyHdust (Python tools for hdust code)</dt>
@@ -1950,10 +1966,16 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </dd>
 </dl>
 </li>
+<li><dl class="first docutils">
+<dt>statsmodels</dt>
+<dd><p class="first last"><a class="reference external" href="http://statsmodels.sourceforge.net/">http://statsmodels.sourceforge.net/</a></p>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 <div class="section" id="python-learning-for-astronomers">
-<h2><a class="toc-backref" href="#id58">Python learning for astronomers</a></h2>
+<h2><a class="toc-backref" href="#id59">Python learning for astronomers</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>CodeCAdemy</dt>
@@ -1988,7 +2010,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-distributions">
-<h2><a class="toc-backref" href="#id59">Python distributions</a></h2>
+<h2><a class="toc-backref" href="#id60">Python distributions</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Ureka*</dt>
@@ -2029,7 +2051,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-environments">
-<h2><a class="toc-backref" href="#id60">Python environments</a></h2>
+<h2><a class="toc-backref" href="#id61">Python environments</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>ipython</dt>
@@ -2058,9 +2080,9 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="utilities">
-<h2><a class="toc-backref" href="#id61">Utilities</a></h2>
+<h2><a class="toc-backref" href="#id62">Utilities</a></h2>
 <div class="section" id="package-index">
-<h3><a class="toc-backref" href="#id62">Package Index</a></h3>
+<h3><a class="toc-backref" href="#id63">Package Index</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>PyPI</dt>
@@ -2071,7 +2093,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h3><a class="toc-backref" href="#id63">Cookbooks</a></h3>
+<h3><a class="toc-backref" href="#id64">Cookbooks</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>ActiveState Python recipes</dt>
@@ -2082,7 +2104,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="articles">
-<h3><a class="toc-backref" href="#id64">Articles</a></h3>
+<h3><a class="toc-backref" href="#id65">Articles</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Survey of software use in astronomy</dt>
@@ -2093,7 +2115,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-code-revision">
-<h3><a class="toc-backref" href="#id65">Python code revision</a></h3>
+<h3><a class="toc-backref" href="#id66">Python code revision</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Landscape</dt>
@@ -2104,7 +2126,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="visualization-tools">
-<h3><a class="toc-backref" href="#id66">Visualization tools</a></h3>
+<h3><a class="toc-backref" href="#id67">Visualization tools</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Seaborn</dt>
