@@ -1,65 +1,134 @@
-Expressões regulares (er, *re* ou *regex*)
+Regular expressions (*re* ou *regex*)
 #############################################
+(**Expressões regulares**)
+
+Daniel Moser
+
+Feb 15th, 2017
+
+2nd IAG Python Boot Camp
 
 .. contents:: Table of contents
 
+Preliminaries
+==============
+.. figure:: ../figs/regex-raiznutella.png
+    :align: center
+    :width: 640 px
+
+=============================== ==============================
+Pythonista raiz                 Pythonista nutella
+=============================== ==============================
+Segue PEP8                      Estilo é o do momento
+Usa ``docstrings``              Comenta com *#*
+Usa editor de texto             Usa *PyCharm*
+Testa código no ``ipython``     Usa *Jupyter/Notebook*
+Codifica em OOP                 Codifica em procedural
+Usa ``regex``                   Manipula strings como ``str``  
+Publica código no ``PyPi``      Publica código no *github*
+=============================== ==============================
+
 Basics
 ==========
-- Em *re*, há o uso de caracteres especiais com ``\`` (ex: ``\n, \t``).
-- ``.`` qualquer caracter, exceto nova linha
-- ``^`` início da string. No modo *MULTILINE*, o início da linha.
-- ``$`` fim da string ou antes do fim da linha
-- ``*`` várias repetições
-- ``+`` uma ou várias repetições
-- ``?`` 0 ou 1 repetição
-- ``{m}`` exatamente o padrão *m*-vezes
-- ``{m,}`` o padrão *m* ou mais vezes
-- ``{m,n}`` o padrão entre *m* e *n* vezes
-- ``{,n}`` o padrão *n* ou menos vezes
-- ... muitos, mas muitos outros.
+A **regular expression** is a sequence of characters that define a **search pattern**. In other words, is a specific textual syntax for representing patterns that a matching text need to conform to.
 
-Sources
----------
-- https://regex101.com/
-- http://overapi.com/regex
+Must read: Paulo Penteado's talk `Processing strings (PDF) <http://dl.dropbox.com/u/6569986/gai/pp_cc_strings.pdf>`_
 
-- https://docs.python.org/2/library/re.html
-- https://docs.python.org/2/howto/regex.html
-- http://www.tutorialspoint.com/python/python_reg_expressions.htm
+And.. *Read the Docs*! 
+    - https://docs.python.org/2/library/re.html
+    - https://docs.python.org/3/library/re.html
+
+- regex recognizes special characters with ``"\"`` (example: ``\n, \t``).
+- ``.`` any character, but new line.  If the *DOTALL* flag has been specified, this matches any character including a newline.
+- ``^`` beginning of a string. In Python *MULTILINE* mode, the beginning of a line
+- ``$`` end of a string or before the end of a line
+- ``*`` many occurrences 
+- ``+`` one or more occurrences
+- ``?`` 0 or 1 occurrence
+- ``{m}`` the exact pattern *m*-times
+- ``{m,}`` the exact pattern *m* or more times
+- ``{m,n}`` the exact pattern between *m* and *n* times
+- ``{,n}`` the exact pattern *n* or less times
+- ``\w`` Matches any alphanumeric character; this is equivalent to the class [a-zA-Z0-9\_].
+- ``\W`` Matches any non-alphanumeric character; this is equivalent to the class [^a-zA-Z0-9\_].
+- ... many, many more.
+
+
+Examples
+==========
+From Wikipedia:
+-----------------
+Text to be working over::
+
+    "at", "bat", "cat", "hat", "[rat]", "dog";
+    "at", "ccat", "chat", "hcat", "hhat", "s", "saw", "seed".
+
+Regex: 
+
+- ``.at`` matches any three-character string ending with "at", including "hat", "cat", and "bat".
+
+- ``[hc]at`` matches "hat" and "cat".
+
+- ``[^b]at`` matches all strings matched by .at except "bat".
+
+- ``[^hc]at`` matches all strings matched by .at other than "hat" and "cat".
+
+- ``^[hc]at`` matches "hat" and "cat", but only at the beginning of the string or line.
+
+- ``[hc]at$`` matches "hat" and "cat", but only at the end of the string or line.
+
+- ``\[.\]`` matches any single character surrounded by "[" and "]" since the brackets are escaped, for example: "[a]" and "[b]".
+
+- ``s.*`` matches s followed by zero or more characters, for example: "s" and "saw" and "seed".
+
+- ``[hc]+at`` matches "hat", "cat", "hhat", "chat", "hcat", "cchchat", and so on, but not "at".
+
+- ``[hc]?at`` matches "hat", "cat", and "at".
+
+- ``[hc]*at`` matches "hat", "cat", "hhat", "chat", "hcat", "cchchat", "at", and so on.
+
+- ``cat|dog`` matches "cat" or "dog".
+ 
+
+Others
+-----------
+- ``[^\s]+`` returns a word until the first space/empty character.
+
+- ``^\"(?!.*s.*).*`` returns all line content starting with ``"`` and that *do not* contain the letter "s" (case sensitive); *MULTILINE* mode.
+
+
+Online testers
+================
+Choose one (or several)!!
+
+- https://regex101.com
+- http://www.regexpal.com
+- http://regex.larsolavtorvik.com
+- http://www.nregex.com
+- http://www.rubular.com
+- http://www.myregexp.com
 
 
 Python
-==========
-``re``: built-in regex module; ``regex``: third-part regex module (a bit more features).
+=========
+- ``re``: built-in regex module
+- ``regex``: third-part regex module (a bit more features)
 
-Examples
-----------
-
+Python examples
+------------------
 .. code:: python
 
-    """Code to remove linebreaks (useful blank lines instead)."""
+    """Split example"""
 
     import re
 
-    rule = r'^>([^\n\r]+)[\n\r]([A-Z\n\r]+)'
-    
-    regex = re.compile(rule, re.MULTILINE)
-    matches = [m.groups() for m in regex.finditer(text)]
-    
-    for m in matches:
-        print 'Name: %s\nSequence:%s' % (m[0], m[1])
+    regex = re.compile(r'\W+')
+    regex.split('This is a test, short and sweet, of split().')
 
-    # Other way (MUCH better):
-    re.findall(rule, text)#, re.DOTALL)
-
-    # Another:
-    returnmatch = re.compile(rule, re.MULTILINE).findall(text)
-
-``(http(?!.*Trial.*))`` retorna todas as linhas iniciadas por "http" e que **não** contenham posteriormente a palavra "Trial" (case sensitive).
-
-``([^\s]+)`` retorna palavra até o primeiro espaço/vazio.
 
 .. code:: python
+
+    """Substitution example"""
     
     def start_case_words(s):
         """ Function to put a string in Start Case. 
@@ -68,36 +137,92 @@ Examples
         return re.sub(r'\w+', lambda m:m.group(0).capitalize(), s)
 
 
-Palestra P. Penteado no GAi
-==============================
-Importância de manipulação de strings é negligenciada. Grande quantidade de informação é representada em strings (caracteres). E.g., internet e bancos de dados.
+.. code:: python
 
-Um exemplo de falha de segurança por uma má parametrização de strings: Heartbleed bug, descoberto em Abril de 2014. Na época de sua descoberta, 17\% dos servidores web certificados por autoridades confiáveis estavam expostos a esta vulnerabilidade.
+    """All matches examples"""
 
-ASCII = única forma de codificar strins no 1980's.
-    - 2$^7$=128 ASCII padrão fixo (até unicode); não há acentuação.
-    - 2$^8$=256 ASCII extendido (várias versões)
+    rule = r'^>([^\n\r]+)[\n\r]([A-Z\n\r]+)'
 
-Unicode foi desenhado para substituir o ASCII. Mais usados:
-    - UTF-8 e Latin1, ou ISO 8859-1
+    regex = re.compile(rule, re.MULTILINE)
+    matches0 = []
+    for m in regex.finditer(text):
+        matches0.append(m.groups())
+    
+    # for m in matches0:
+    #     print 'Name: %s\nSequence:%s' % (m[0], m[1])
 
-Python: "\\u2207" (ou seja, codificação do binário 2207 em unicode, 'u') produz o caracter nabla.
+    # Other way
+    regex = re.compile(rule, re.MULTILINE)
+    matches1 = [m.groups() for m in regex.finditer(text)]
 
-Uma convenção com strings: string == "":
-    - True, se string é vazio.
-    - Falso, se não vazio (inclusive espaços ou tabulação).
+    # Other way (MUCH better):
+    regex = re.compile(rule, re.MULTILINE)
+    matches2 = re.findall(rule, text)  
 
-Exemplo: regex '.+irg\\.cub' specifies:
+    # Another:
+    regex = re.compile(rule, re.MULTILINE)
+    matches3 = re.compile(rule, re.MULTILINE).findall(text)
 
-- One or more occurences (+) of any character (.)
-- followed by an occurence of irg.cub (the period is escaped with the backslash.
 
-Alguns caracteres tem significado específico:
-    - a|bc => "a" ou "b" seguido de "c"
-    - a|b|c == [abc]
-    - ^ = tudo, menos aquilo
+Good references
+===================
+- http://overapi.com/regex
+- https://docs.python.org/2/library/re.html
+- https://docs.python.org/2/howto/regex.html
+- http://www.tutorialspoint.com/python/python_reg_expressions.htm
 
-Boa prática: SEMPRE comentar regex, para não ter que ficar "decifrando" a regra toda vez que ler o código.
+Exercise
+===========
+1. From the text below:
 
-Há uma função Python que troca caracteres especiais para ASCII.
+- a) Retrieve all lines that contains the word "better".
+- b) Count the length of each sentence (in words).
 
+::
+
+    Beautiful is better than ugly.
+    Explicit is better than implicit.
+    Simple is better than complex.
+    Complex is better than complicated.
+    Flat is better than nested.
+    Sparse is better than dense.
+    Readability counts.
+    Special cases aren't special enough to break the rules.
+    Although practicality beats purity.
+    Errors should never pass silently.
+    Unless explicitly silenced.
+    In the face of ambiguity, refuse the temptation to guess.
+    There should be one-- and preferably only one --obvious way to do it.
+    Although that way may not be obvious at first unless you're Dutch.
+    Now is better than never.
+    Although never is often better than *right* now.
+    If the implementation is hard to explain, it's a bad idea.
+    If the implementation is easy to explain, it may be a good idea.
+    Namespaces are one honking great idea -- let's do more of those!
+
+
+2. Create a dictionary in which the keys are the acronyms of the USP institutes and the values the complete name. You **must** use ``regex``!
+
+:: 
+
+    Escola de Artes, Ciências e Humanidades (EACH)
+    Escola de Comunicações e Artes (ECA)
+    Escola de Educação Física e Esporte (EEFE)
+    Escola de Enfermagem (EE)
+    Escola Politécnica (Poli)
+    Faculdade de Arquitetura e Urbanismo (FAU)
+
+
+..  
+    "Best" solution:
+
+    rule = r"^(.*)\((.*)\)"
+
+    Alternative:
+
+    MULTILINE mode
+    rule_vals = r'^(.*?)\('
+    rule_keys = r'\((.*)\)'
+
+    regex = re.compile(rule, re.MULTILINE)
+    matches = [m.groups() for m in regex.finditer(text)]

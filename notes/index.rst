@@ -7,8 +7,8 @@ DMF notes
 `doing_sci`_         `estatistica`_  `example`_                      `gai_fits-imgs`_  `git`_
 `import_wheel`_      `index`_        .. image:: ../figs/index2.gif   `informatics`_    `instrumentation`_
 `inthepress`_        `julia`_        `latex`_                        `linux`_          `math`_
-`physics-basics`_    `python-oop`_   `python_astro`_                 `regex`_          `rst`_
-`thermal`_           \               .. image:: ../figs/index3a.gif  \                 \
+`physics-basics`_    `python-oop`_   `python-packages`_              `python_astro`_   `regex`_
+`rst`_               `thermal`_      .. image:: ../figs/index3a.gif  \                 \
 ===================  ==============  ==============================  ================  ==================
 
 .. _astro-basics: astro-basics.html
@@ -37,6 +37,7 @@ DMF notes
 .. _math: math.html
 .. _physics-basics: physics-basics.html
 .. _python-oop: python-oop.html
+.. _python-packages: python-packages.html
 .. _python_astro: python_astro.html
 .. _regex: regex.html
 .. _rst: rst.html
