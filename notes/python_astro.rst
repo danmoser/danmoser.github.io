@@ -216,6 +216,8 @@ ipython
 
 - `ipython` v1.0 is the most updated one for Python version equal or smaller than 2.6 ou 3.2.
 
+- *Magic functions*: starting with `%`. ``time`` is particurlarly interesting. ``%time`` measures execution time in a **single line**. ``%%time`` measures in a **line block**.
+
 Encoding
 =============
 Shebang
@@ -275,6 +277,10 @@ Bugs
 ------
 - `eps` = no transparency.
 - `pdf` = no hatches in patches.
+
+ANIMATIONS!!!
+-----------------
+Excellent post: `Data Animations With Python and MoviePy <http://zulko.github.io/blog/2014/11/29/data-animations-with-python-and-moviepy/>`_
 
 
 Python GUI

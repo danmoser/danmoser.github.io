@@ -85,8 +85,34 @@ P: **Por que dizem que uma estrela brilha mesmo depois que ela morreu?**
 
 R: Na verdade isso depende da perspectiva em que se olha. Dizem isso pelo seguinte: a luz demora um certo tempo para percorrer grandes distâncias e, como as estrelas estão muito distantes uma das outras, a luz de uma estrela precisa viajar anos e anos até chegar até nós. Assim, se uma estrela morre agora, nós só vamos descobrir isso depois que essa informação viajar anos e anos até aqui. Por exemplo, imagine um vilarejo em que só podemos obter notícias via carta, e um amigo que morasse lá viesse a falecer. Uma pessoa comunicará a morte do amigo por carta, e a carta só chegará dias depois do falecimento. Até a carta chegar, você pensará que seu amigo está vivo, quando ele não mais está. O mesmo aconteceria com uma estrela que morressse agora: sua luz ainda estaria brilhando no céu, pois esta luz foi enviada antes da estrela morrer. Depois de um certo tempo, proporcional à sua distância, é que ela se apagará no céu.
 
-- Gostou das perguntas e respostas? Veja algumas das aparições do nosso grupo na imprensa neste link: `In the press <inthepress.html>`_. 
+P: **Como é a carreira de astrônomo no Brasil?**
 
+R: De uma forma reduzida, a carreira é basicamente a pesquisa acadêmica: fazer o doutorado, e publicar o maior número possível de artigos e tornar-se um professor universitário (em astronomia, 95% destas posições estão em universidades públicas).
+
+P: **Eu vi na internet que o IAG-USP tem cursos aos sábados para quem quer iniciar em astronomia amadora.**
+
+R: Sobre astronomia amadora, não há nenhum curso *oficial* no IAG sobre isso. Oficialmente, só disciplinas optativas para alunos-USP e cursos de curta duração (eg., de verão) para graduandos de outras instituições. Aberto a comunidade, há a Astronomia para a 3a idade - e esporadicamente cursos de extensão de professores de ensino fundamental e médio.
+São conhecidos  dois grupos de astronomia amadora externo e com alguma presença na USP: 
+
+    - CASP, http://www.astrocasp.com/
+    - Sputnik, http://gruposputnik.com/. 
+
+Sugiro entrar em contato com eles sobre cursos. Um ótimo material para começar é este: 
+
+    - http://pt.wikihow.com/Iniciar-na-Astronomia-Amadora.
+
+
+P: **Quero comprar um binóculo ou telescópio para observar o céu. Qual comprar?**
+
+R: Idealmente, conheça um grupo de astronomia amadora. Você poderá (i) ver na prática o que é possível observar com estes equipamentos e (ii) obter dicas atualizadas sobre modelos e lojas para comprar. A dica geral é sempre começar com um binóculo, para depois investir num telescópio. Aqui está um ótimo vídeo sobre o assunto:
+
+    - `Céu da Semana Ep. #15 - Binóculos <https://www.youtube.com/watch?v=QS5YmRmykPk>`_
+
+------
+
+*Gostou das perguntas e respostas? Veja algumas das aparições do nosso grupo na imprensa neste link*: 
+
+    - `In the press <inthepress.html>`_. 
 
 Quero ser astrônomo(a)
 ========================

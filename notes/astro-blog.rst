@@ -9,6 +9,41 @@ DMF AstroBlog
     TBD
 
     -------------
+
+2017-03
+=============
+Teachers must ditch 'neuromyth' of learning styles, say scientists 
+------------------------------------------------------------------------
+Teaching children according to their individual "learning style" does not achieve better results and should be ditched by schools in favour of evidence-based practice, according to leading scientists.
+
+https://www.theguardian.com/education/2017/mar/13/teachers-neuromyth-learning-styles-scientists-neuroscience-education?CMP=fb_gu
+
+------
+
+Interesting e-learning 
+------------------------
+- `Data-Driven Astronomy <https://pt.coursera.org/learn/data-driven-astronomy>`_
+- `Google Machine Learning made simple(r) <http://hackaday.com/2017/03/14/google-machine-learning-made-simpler/>`_
+
+---------
+
+Science journalism can be evidence-based, compelling -- and wrong
+------------------------------------------------------------------
+A ranking of the best science-news outlets misjudges the relationship between research and reporting.
+
+http://www.nature.com/news/science-journalism-can-be-evidence-based-compelling-and-wrong-1.21591?WT.mc_id=FBK_NatureNews
+
+The previous article:
+
+http://acsh.org/news/2017/03/05/infographic-best-and-worst-science-news-sites-10948
+--------
+
+Percepção musical em crianças pode predizer dificuldades de aprendizagem
+-------------
+Pesquisadores brasileiros desenvolvem teste para avaliar percepção musical e, com base no resultado, identificar crianças predispostas a apresentar problemas na aquisição de linguagem oral e escrita.
+
+http://agencia.fapesp.br/percepcao_musical_em_criancas_pode_predizer_dificuldades_de_aprendizagem/24882/
+-------------
  
 2017-01
 =============
