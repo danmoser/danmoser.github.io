@@ -403,6 +403,7 @@ li {
 <li><a class="reference internal" href="#rst2beamer" id="id8">rst2beamer</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#other-example" id="id9">Other example</a></li>
 </ul>
 </div>
 <div class="section" id="how-to-install">
@@ -606,6 +607,103 @@ thisis\ *one*\ word (with *emph*)!
 <span class="name variable">$ </span>pdflatex slides.tex
 </pre>
 </div>
+</div>
+<div class="section" id="other-example">
+<h1><a class="toc-backref" href="#id9">Other example</a></h1>
+<pre class="literal-block">
+&quot;&quot;&quot; **Short** description of the function/class, saying what it returns!
+
+This is a longer explanation, which may include math with latex syntax
+:math:`\\alpha`.
+Then, you need to provide optional subsection ...
+
+**Advantages**:
+
+ - Uses sphinx markups, which will certainly be improved in future
+   version
+ - Nice HTML output with the See Also, Note, Warnings directives
+
+:param arg1: the first value
+:param arg2: the first value
+:type arg1: int, float,...
+:type arg2: int, float,...
+:rtype: int, float
+:returns: arg1/arg2 +arg3
+
+:Example:
+
+&gt;&gt;&gt; import template
+&gt;&gt;&gt; a = template.MainClass1()
+&gt;&gt;&gt; a.function1(1,1,1)
+2
+
+.. note:: can be useful to emphasize important feature
+.. seealso:: :class:`MainClass2`
+.. warning:: arg2 must be non-zero.
+.. todo:: check that arg2 is non zero.
+.. versionadded:: something new.
+&quot;&quot;&quot;
+
+.. image:: _static/plottemp.png
+    :width: 512px
+    :align: center
+    :alt: hdt.plottemp example
+    :height: 100 px
+    :scale: 50 %
+
+A &quot;figure&quot; consists of image data, an optional caption (a single paragraph), and an optional legend (arbitrary body elements). For page-based output media, figures might float to a different position if this helps the page layout.
+
+thisis\ *one*\ word (with *emph*)!
+
+*emphasis*, **strong**, ``literal or code``
+
+A text with :sub:`Subscript` :sup:`Superscript`
+
+.. role:: strike
+    :class: strike
+
+:strike:`This will be crossed out.`
+
+`Example of hiperlink &lt;http://danmoser.github.io&gt;`_
+
+Lorem ipsum [Ref]_ dolor sit amet.
+
+.. [Ref] Book or article reference, URL or whatever.
+
+.. code-block:: python|bash
+
+.. include:: path/file.rst
+
+.. literalinclude:: example.rb
+    :language: ruby
+    :emphasize-lines: 12,15-18
+    :linenos:
+
+Title or main part
+###################
+
+.. contents:: Table of contents
+    :depth: 2
+
+Chapter
+********
+Section
+========
+Subsection
+-----------
+Subsubsection
+^^^^^^^^^^^^^^
+Import paragraph
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+Subparagraph
+~~~~~~~~~~~~~
+
+.. _my-ref-label:
+
+Section to cross-reference
+----------------------------
+It refers to the section itself, see :ref:`my-ref-label`.
+</pre>
 </div>
 </div>
 </body>

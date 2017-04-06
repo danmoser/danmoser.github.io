@@ -212,3 +212,99 @@ rst2beamer
     $ rst2beamer slides.rst > slides.tex
     $ pdflatex slides.tex
 
+Other example
+----------------
+::
+
+    """ **Short** description of the function/class, saying what it returns!
+
+    This is a longer explanation, which may include math with latex syntax
+    :math:`\\alpha`.
+    Then, you need to provide optional subsection ...
+
+    **Advantages**:
+
+     - Uses sphinx markups, which will certainly be improved in future
+       version
+     - Nice HTML output with the See Also, Note, Warnings directives
+
+    :param arg1: the first value
+    :param arg2: the first value
+    :type arg1: int, float,...
+    :type arg2: int, float,...
+    :rtype: int, float
+    :returns: arg1/arg2 +arg3
+
+    :Example:
+
+    >>> import template
+    >>> a = template.MainClass1()
+    >>> a.function1(1,1,1)
+    2
+
+    .. note:: can be useful to emphasize important feature
+    .. seealso:: :class:`MainClass2`
+    .. warning:: arg2 must be non-zero.
+    .. todo:: check that arg2 is non zero.
+    .. versionadded:: something new.
+    """
+
+    .. image:: _static/plottemp.png
+        :width: 512px
+        :align: center
+        :alt: hdt.plottemp example
+        :height: 100 px
+        :scale: 50 %
+
+    A "figure" consists of image data, an optional caption (a single paragraph), and an optional legend (arbitrary body elements). For page-based output media, figures might float to a different position if this helps the page layout.
+
+    thisis\ *one*\ word (with *emph*)!
+
+    *emphasis*, **strong**, ``literal or code``
+
+    A text with :sub:`Subscript` :sup:`Superscript`
+
+    .. role:: strike
+        :class: strike
+
+    :strike:`This will be crossed out.`
+
+    `Example of hiperlink <http://danmoser.github.io>`_
+
+    Lorem ipsum [Ref]_ dolor sit amet.
+
+    .. [Ref] Book or article reference, URL or whatever.
+
+    .. code-block:: python|bash
+
+    .. include:: path/file.rst
+
+    .. literalinclude:: example.rb
+        :language: ruby
+        :emphasize-lines: 12,15-18
+        :linenos:
+
+    Title or main part
+    ###################
+
+    .. contents:: Table of contents
+        :depth: 2
+
+    Chapter
+    ********
+    Section
+    ========
+    Subsection
+    -----------
+    Subsubsection
+    ^^^^^^^^^^^^^^
+    Import paragraph
+    """"""""""""""""""
+    Subparagraph
+    ~~~~~~~~~~~~~
+
+    .. _my-ref-label:
+
+    Section to cross-reference
+    ----------------------------
+    It refers to the section itself, see :ref:`my-ref-label`.

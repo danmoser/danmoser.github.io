@@ -683,22 +683,37 @@ span.boxed, span.framebox {
 </ul>
 </li>
 <li><a class="reference internal" href="#fea" id="id8">FEA</a></li>
-<li><a class="reference internal" href="#vocabulary" id="id9">Vocabulary</a></li>
+<li><a class="reference internal" href="#controle" id="id9">Controle</a><ul>
+<li><a class="reference internal" href="#tela-sino-p-tica" id="id10">Tela sinó(p)tica</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ut-classes" id="id10">UT Classes</a></li>
-<li><a class="reference internal" href="#eletronics" id="id11">Eletronics</a></li>
-<li><a class="reference internal" href="#optics" id="id12">Optics</a><ul>
-<li><a class="reference internal" href="#telescope-calculator" id="id13">Telescope Calculator</a></li>
-<li><a class="reference internal" href="#adc-atmospheric-dispersion-corrector" id="id14">ADC - Atmospheric Dispersion Corrector</a></li>
-<li><a class="reference internal" href="#general" id="id15">General</a></li>
-<li><a class="reference internal" href="#lentes-a-esfericas" id="id16">Lentes a/esféricas</a></li>
+<li><a class="reference internal" href="#vocabulary" id="id11">Vocabulary</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#mechanics" id="id17">Mechanics</a><ul>
-<li><a class="reference internal" href="#gears-rules" id="id18">Gears rules</a><ul>
-<li><a class="reference internal" href="#gear-trains" id="id19">Gear trains</a></li>
-<li><a class="reference internal" href="#worm-gear" id="id20">Worm gear</a></li>
+<li><a class="reference internal" href="#ut-classes" id="id12">UT Classes</a></li>
+<li><a class="reference internal" href="#electronics" id="id13">Electronics</a><ul>
+<li><a class="reference internal" href="#interesting-chips" id="id14">Interesting chips</a></li>
+<li><a class="reference internal" href="#acronyms" id="id15">Acronyms</a></li>
+<li><a class="reference internal" href="#motors" id="id16">Motors</a><ul>
+<li><a class="reference internal" href="#dc-motors" id="id17">DC motors</a></li>
+<li><a class="reference internal" href="#servo-motors" id="id18">Servo motors</a></li>
+<li><a class="reference internal" href="#step-per-motors" id="id19">Step(per) motors</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#random" id="id20">Random</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#optics" id="id21">Optics</a><ul>
+<li><a class="reference internal" href="#telescope-calculator" id="id22">Telescope Calculator</a></li>
+<li><a class="reference internal" href="#adc-atmospheric-dispersion-corrector" id="id23">ADC - Atmospheric Dispersion Corrector</a></li>
+<li><a class="reference internal" href="#general" id="id24">General</a></li>
+<li><a class="reference internal" href="#lentes-a-esfericas" id="id25">Lentes a/esféricas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mechanics" id="id26">Mechanics</a><ul>
+<li><a class="reference internal" href="#gears-rules" id="id27">Gears rules</a><ul>
+<li><a class="reference internal" href="#gear-trains" id="id28">Gear trains</a></li>
+<li><a class="reference internal" href="#worm-gear" id="id29">Worm gear</a></li>
 </ul>
 </li>
 </ul>
@@ -796,15 +811,22 @@ span.boxed, span.framebox {
 <h3><a class="toc-backref" href="#id8">FEA</a></h3>
 <p>Finite element analysis (FEA) is a computerized method for predicting how a product reacts to real-world forces, vibration, heat, fluid flow, and other physical effects. Finite element analysis shows whether a product will break, wear out, or work the way it was designed. FEA ou FEM (finite element method) uses variational methods from the calculus of variations to approximate a solution by minimizing an associated error function.</p>
 </div>
+<div class="section" id="controle">
+<h3><a class="toc-backref" href="#id9">Controle</a></h3>
+<div class="section" id="tela-sino-p-tica">
+<h4><a class="toc-backref" href="#id10">Tela sinó(p)tica</a></h4>
+<p>No subsistema de controle há um display que fica no console de operação, que indica em uma tela gráfica sinó(p)tica, o estado atual do espetrógrafo, e.g., qual a temperatura dentro do espectrógrafo, qual a rede de difração utilizada, o ângulo das câmaras, a tensão de entrada, a pressão na entrada e na saída da linha de água de refrigeração, etc. Quem está de frente para esse painel/display tem acesso a todas as informações sobre o instrumento. As vezes uma tela somente não é suficiente, então há mais de uma tela em cada display, que pode ser trocada como no &quot;windows&quot;, e mais de um display para que dois operadores possam ver telas diferentes ao mesmo tempo. Essa tela é gráfica com um desenho do espectrógrafo e tem pontos de leitura de forma intuitiva nos pontos do desenho. Também é possível operar válvulas, trocar redes de difração, mover as câmaras, etc, por essas telas. Esse sistema é chamado supervisório. Ele tem uma parte que é software e uma parte que é hardware (computadores que recebem as informações do PLC, e os displays).</p>
+</div>
+</div>
 <div class="section" id="vocabulary">
-<h3><a class="toc-backref" href="#id9">Vocabulary</a></h3>
+<h3><a class="toc-backref" href="#id11">Vocabulary</a></h3>
 <ul class="simple">
 <li>specular reflectance: 1-by-1 angle mirror</li>
 </ul>
 </div>
 </div>
 <div class="section" id="ut-classes">
-<h2><a class="toc-backref" href="#id10">UT Classes</a></h2>
+<h2><a class="toc-backref" href="#id12">UT Classes</a></h2>
 <ul class="simple">
 <li>Computer-electronics interface (Labview) - Done</li>
 <li>Mechanical drawing and machining (Invetor+Workshop day) - On going</li>
@@ -812,8 +834,18 @@ span.boxed, span.framebox {
 <li>Electronics (MultiSim) - Near future</li>
 </ul>
 </div>
-<div class="section" id="eletronics">
-<h2><a class="toc-backref" href="#id11">Eletronics</a></h2>
+<div class="section" id="electronics">
+<h2><a class="toc-backref" href="#id13">Electronics</a></h2>
+<div class="section" id="interesting-chips">
+<h3><a class="toc-backref" href="#id14">Interesting chips</a></h3>
+<ul class="simple">
+<li>Arduino = ATmega8, ATmega168, ATmega328, ...</li>
+<li>Attiny85 = low power consumption micro-controller</li>
+<li>ESP8266 = low-cost WiFi chip</li>
+</ul>
+</div>
+<div class="section" id="acronyms">
+<h3><a class="toc-backref" href="#id15">Acronyms</a></h3>
 <ul class="simple">
 <li>AC: Alternating Current</li>
 <li>ADC or A/D: analog-to-digital conversion</li>
@@ -830,6 +862,40 @@ span.boxed, span.framebox {
 <li>transducer: voltage or current convertion to signal</li>
 <li>IC: Integrated Circuit</li>
 </ul>
+</div>
+<div class="section" id="motors">
+<h3><a class="toc-backref" href="#id16">Motors</a></h3>
+<p>The basic working principle of motors is a central permanent magnet surrounded by wires (&quot;coils&quot;). The passing current in a coil create a force that repeals the magnet, that turns (shaft).
+There are 3 basic types of motors:</p>
+<div class="section" id="dc-motors">
+<h4><a class="toc-backref" href="#id17">DC motors</a></h4>
+<p>DC motors are continuously rotating motors. They follow two basic laws:</p>
+<ul class="simple">
+<li>Motor RPM is linearly proportional to the applied voltage</li>
+<li>Motor Torque is linearly proportional to the circuit current</li>
+</ul>
+<p>2 wires only. Reversing the current makes the motor rotate in the opposite direction.</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=GBbdhQI1_f8&amp;list=UU-mVNw_SPFez8OZGc0uNhkQ&amp;index=13">How DC Motors work by Phidgets</a></p>
+</div>
+<div class="section" id="servo-motors">
+<h4><a class="toc-backref" href="#id18">Servo motors</a></h4>
+<p>Servo motors are designed to make movements between precise angles. It is not only a motor but an assembly, usually composed by: a DC motor, a potentiometer, and a control circuit. Servos are controlled by sending an electrical pulse of variable width, or Pulse Width Modulation (PWM). Servo motors are designed to operate at 50 Hz (1 pulse each 20 ms), at the typical pulse length is 1 to 2 ms.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li>positive pulse, 1 ms long = 0 deg position, anti-clockwise movement</li>
+<li>positive pulse, 1.5 ms long = 90 deg position, anti-clockwise movement</li>
+<li>positive pule, 2 ms long = 180 deg position, anti-clockwise movement</li>
+<li>negative pulse, 1.5 ms long = 90 deg position, clockwise movement</li>
+</ul>
+</div>
+<div class="section" id="step-per-motors">
+<h4><a class="toc-backref" href="#id19">Step(per) motors</a></h4>
+<p>Step motors are DC motors that rotates in steps. It can be precisely positioned without any feedback sensor, what represents an open-loop controller.</p>
+<p>Between 4-8 wires.</p>
+</div>
+</div>
+<div class="section" id="random">
+<h3><a class="toc-backref" href="#id20">Random</a></h3>
 <p>Nyquist Theorem: &quot;The maximum frequency one can detect is always less than half of the sampling rate&quot;.</p>
 <dl class="docutils">
 <dt>Information can be folded in:</dt>
@@ -842,11 +908,13 @@ span.boxed, span.framebox {
 </ul>
 </dd>
 </dl>
+<p><strong>Arduino</strong> is open source hardware and software project for creating (digital) microcontrollers.</p>
+</div>
 </div>
 <div class="section" id="optics">
-<h2><a class="toc-backref" href="#id12">Optics</a></h2>
+<h2><a class="toc-backref" href="#id21">Optics</a></h2>
 <div class="section" id="telescope-calculator">
-<h3><a class="toc-backref" href="#id13">Telescope Calculator</a></h3>
+<h3><a class="toc-backref" href="#id22">Telescope Calculator</a></h3>
 <div class="figure align-center">
 <object data="../figs/inst_Lens_angle_of_view.svg" type="image/svg+xml">
 ../figs/inst_Lens_angle_of_view.svg</object>
@@ -885,11 +953,11 @@ span.boxed, span.framebox {
 </p>
 </div>
 <div class="section" id="adc-atmospheric-dispersion-corrector">
-<h3><a class="toc-backref" href="#id14">ADC - Atmospheric Dispersion Corrector</a></h3>
+<h3><a class="toc-backref" href="#id23">ADC - Atmospheric Dispersion Corrector</a></h3>
 <p>An Atmospheric Dispersion Corrector is an optical device usually comprising two thin prisms which can rotate to compensate for the elongation of a star image caused by the wavelength dependence of the refractive index of air. At high airmasses, it is very easily seen on the guider that the star image is not round and small. Using the ADC will make the star look round and small again. The ADC can be left in the beam at all times since it does not absorb a lot of light and does not introduce polarization. It should be noted that the telescope focus will change dramatically when the ADC is moved in or out of the beam.</p>
 </div>
 <div class="section" id="general">
-<h3><a class="toc-backref" href="#id15">General</a></h3>
+<h3><a class="toc-backref" href="#id24">General</a></h3>
 <ul class="simple">
 <li>Adaptive optics: &quot;Zernike 100/200&quot;, the order/speed of the wavefront corrections</li>
 <li>Adaptive optics: Isoplanatic angle, or &quot;FoV&quot; on which the wavefront conditions are roughly the same</li>
@@ -897,7 +965,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="lentes-a-esfericas">
-<h3><a class="toc-backref" href="#id16">Lentes a/esféricas</a></h3>
+<h3><a class="toc-backref" href="#id25">Lentes a/esféricas</a></h3>
 <dl class="docutils">
 <dt>Fiz uma pesquisa rápida, e recomendo eles dois links se vocês quiserem saber mais sobre a questão esférico/aesférico:</dt>
 <dd><ul class="first last simple">
@@ -911,9 +979,9 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="mechanics">
-<h2><a class="toc-backref" href="#id17">Mechanics</a></h2>
+<h2><a class="toc-backref" href="#id26">Mechanics</a></h2>
 <div class="section" id="gears-rules">
-<h3><a class="toc-backref" href="#id18">Gears rules</a></h3>
+<h3><a class="toc-backref" href="#id27">Gears rules</a></h3>
 <div class="figure align-center">
 <img alt="../figs/inst_mech_gears.jpg" src="../figs/inst_mech_gears.jpg" />
 </div>
@@ -924,7 +992,7 @@ span.boxed, span.framebox {
 </blockquote>
 <p>Usual diametral pitches: 12, 24, 36, 48, 64.</p>
 <div class="section" id="gear-trains">
-<h4><a class="toc-backref" href="#id19">Gear trains</a></h4>
+<h4><a class="toc-backref" href="#id28">Gear trains</a></h4>
 <dl class="docutils">
 <dt>Given <span class="formula"><i>w</i></span>
  the angular speed, and <span class="formula"><i>R</i></span>
@@ -944,7 +1012,7 @@ In a serial combination of gears, the even gears rotate on opposite direction of
 .</p>
 </div>
 <div class="section" id="worm-gear">
-<h4><a class="toc-backref" href="#id20">Worm gear</a></h4>
+<h4><a class="toc-backref" href="#id29">Worm gear</a></h4>
 <p>Works perpedicular to the <strong>wormwheel</strong>. The basic rule is:</p>
 <blockquote>
 one full rotation of the wormwheel = one teeth movement in the wormwheel</blockquote>

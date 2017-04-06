@@ -74,6 +74,13 @@ FEA
 -------
 Finite element analysis (FEA) is a computerized method for predicting how a product reacts to real-world forces, vibration, heat, fluid flow, and other physical effects. Finite element analysis shows whether a product will break, wear out, or work the way it was designed. FEA ou FEM (finite element method) uses variational methods from the calculus of variations to approximate a solution by minimizing an associated error function.
 
+Controle
+-----------
+Tela sinó(p)tica
+^^^^^^^^^^^^^^^^^^
+No subsistema de controle há um display que fica no console de operação, que indica em uma tela gráfica sinó(p)tica, o estado atual do espetrógrafo, e.g., qual a temperatura dentro do espectrógrafo, qual a rede de difração utilizada, o ângulo das câmaras, a tensão de entrada, a pressão na entrada e na saída da linha de água de refrigeração, etc. Quem está de frente para esse painel/display tem acesso a todas as informações sobre o instrumento. As vezes uma tela somente não é suficiente, então há mais de uma tela em cada display, que pode ser trocada como no "windows", e mais de um display para que dois operadores possam ver telas diferentes ao mesmo tempo. Essa tela é gráfica com um desenho do espectrógrafo e tem pontos de leitura de forma intuitiva nos pontos do desenho. Também é possível operar válvulas, trocar redes de difração, mover as câmaras, etc, por essas telas. Esse sistema é chamado supervisório. Ele tem uma parte que é software e uma parte que é hardware (computadores que recebem as informações do PLC, e os displays).
+
+
 Vocabulary
 ------------
 - specular reflectance: 1-by-1 angle mirror
@@ -87,8 +94,16 @@ UT Classes
 - Electronics (MultiSim) - Near future
 
 
-Eletronics
-===========
+Electronics
+============
+Interesting chips
+-------------------
+- Arduino = ATmega8, ATmega168, ATmega328, ...
+- Attiny85 = low power consumption micro-controller
+- ESP8266 = low-cost WiFi chip
+
+Acronyms
+----------
 - AC: Alternating Current
 - ADC or A/D: analog-to-digital conversion
 - DAC or D/A: digital-to-analog conversion
@@ -104,6 +119,41 @@ Eletronics
 - transducer: voltage or current convertion to signal
 - IC: Integrated Circuit
 
+Motors
+--------
+The basic working principle of motors is a central permanent magnet surrounded by wires ("coils"). The passing current in a coil create a force that repeals the magnet, that turns (shaft). 
+There are 3 basic types of motors:
+
+DC motors
+^^^^^^^^^^^
+DC motors are continuously rotating motors. They follow two basic laws:
+
+- Motor RPM is linearly proportional to the applied voltage
+- Motor Torque is linearly proportional to the circuit current
+
+2 wires only. Reversing the current makes the motor rotate in the opposite direction.
+
+`How DC Motors work by Phidgets <https://www.youtube.com/watch?v=GBbdhQI1_f8&list=UU-mVNw_SPFez8OZGc0uNhkQ&index=13>`_
+
+Servo motors
+^^^^^^^^^^^^^^^^
+Servo motors are designed to make movements between precise angles. It is not only a motor but an assembly, usually composed by: a DC motor, a potentiometer, and a control circuit. Servos are controlled by sending an electrical pulse of variable width, or Pulse Width Modulation (PWM). Servo motors are designed to operate at 50 Hz (1 pulse each 20 ms), at the typical pulse length is 1 to 2 ms. 
+
+Examples: 
+
+- positive pulse, 1 ms long = 0 deg position, anti-clockwise movement
+- positive pulse, 1.5 ms long = 90 deg position, anti-clockwise movement
+- positive pule, 2 ms long = 180 deg position, anti-clockwise movement
+- negative pulse, 1.5 ms long = 90 deg position, clockwise movement
+
+Step(per) motors
+^^^^^^^^^^^^^^^^^^^^^^^^
+Step motors are DC motors that rotates in steps. It can be precisely positioned without any feedback sensor, what represents an open-loop controller.
+
+Between 4-8 wires.
+
+Random
+---------
 Nyquist Theorem: "The maximum frequency one can detect is always less than half of the sampling rate".
 
 Information can be folded in:
@@ -113,10 +163,11 @@ Information can be folded in:
     - shape
     - frequency content
 
+**Arduino** is open source hardware and software project for creating (digital) microcontrollers.
+
+
 Optics
 ========
-
-
 Telescope Calculator
 ----------------------
 .. figure:: ../figs/inst_Lens_angle_of_view.svg

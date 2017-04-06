@@ -101,6 +101,10 @@ Sugiro entrar em contato com eles sobre cursos. Um ótimo material para começar
 
     - http://pt.wikihow.com/Iniciar-na-Astronomia-Amadora.
 
+O IAG tem um curso [online] gratuito sobre Astrobiologia no Coursera:
+
+    - https://www.coursera.org/learn/origensdavida
+
 
 P: **Quero comprar um binóculo ou telescópio para observar o céu. Qual comprar?**
 

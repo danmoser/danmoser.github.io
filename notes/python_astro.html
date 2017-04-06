@@ -738,29 +738,30 @@ span.boxed, span.framebox {
 <li><a class="reference internal" href="#global-variables" id="id49">Global variables</a></li>
 <li><a class="reference internal" href="#control-flow" id="id50">Control Flow</a></li>
 <li><a class="reference internal" href="#values-representation-and-text-encoding" id="id51">Values representation and text encoding</a></li>
-<li><a class="reference internal" href="#hard-install-reference" id="id52">Hard install reference</a><ul>
-<li><a class="reference internal" href="#start" id="id53">Start</a></li>
-<li><a class="reference internal" href="#systems" id="id54">Systems</a><ul>
-<li><a class="reference internal" href="#ms-windows" id="id55">MS-Windows</a></li>
+<li><a class="reference internal" href="#summary" id="id52">Summary</a></li>
+<li><a class="reference internal" href="#hard-install-reference" id="id53">Hard install reference</a><ul>
+<li><a class="reference internal" href="#start" id="id54">Start</a></li>
+<li><a class="reference internal" href="#systems" id="id55">Systems</a><ul>
+<li><a class="reference internal" href="#ms-windows" id="id56">MS-Windows</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#compiling-python" id="id56">Compiling Python</a><ul>
-<li><a class="reference internal" href="#numba" id="id57"><tt class="docutils literal">numba</tt></a></li>
+<li><a class="reference internal" href="#compiling-python" id="id57">Compiling Python</a><ul>
+<li><a class="reference internal" href="#numba" id="id58"><tt class="docutils literal">numba</tt></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#python-environments-and-references" id="id58">Python environments and references</a><ul>
-<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id59">General use Python packages in Astronomy</a></li>
-<li><a class="reference internal" href="#python-learning-for-astronomers" id="id60">Python learning for astronomers</a></li>
-<li><a class="reference internal" href="#python-distributions" id="id61">Python distributions</a></li>
-<li><a class="reference internal" href="#python-environments" id="id62">Python environments</a></li>
-<li><a class="reference internal" href="#utilities" id="id63">Utilities</a><ul>
-<li><a class="reference internal" href="#package-index" id="id64">Package Index</a></li>
-<li><a class="reference internal" href="#cookbooks" id="id65">Cookbooks</a></li>
-<li><a class="reference internal" href="#articles" id="id66">Articles</a></li>
-<li><a class="reference internal" href="#python-code-revision" id="id67">Python code revision</a></li>
-<li><a class="reference internal" href="#visualization-tools" id="id68">Visualization tools</a></li>
+<li><a class="reference internal" href="#python-environments-and-references" id="id59">Python environments and references</a><ul>
+<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id60">General use Python packages in Astronomy</a></li>
+<li><a class="reference internal" href="#python-learning-for-astronomers" id="id61">Python learning for astronomers</a></li>
+<li><a class="reference internal" href="#python-distributions" id="id62">Python distributions</a></li>
+<li><a class="reference internal" href="#python-environments" id="id63">Python environments</a></li>
+<li><a class="reference internal" href="#utilities" id="id64">Utilities</a><ul>
+<li><a class="reference internal" href="#package-index" id="id65">Package Index</a></li>
+<li><a class="reference internal" href="#cookbooks" id="id66">Cookbooks</a></li>
+<li><a class="reference internal" href="#articles" id="id67">Articles</a></li>
+<li><a class="reference internal" href="#python-code-revision" id="id68">Python code revision</a></li>
+<li><a class="reference internal" href="#visualization-tools" id="id69">Visualization tools</a></li>
 </ul>
 </li>
 </ul>
@@ -1127,9 +1128,7 @@ curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | /usr/local/bin/
             <span class="keyword">for</span> <span class="name">line</span> <span class="operator word">in</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">:]:</span>
                 <span class="name">string</span> <span class="operator">+=</span> <span class="literal string">'</span><span class="literal string escape">\n</span><span class="literal string">{0:^18} {1:{flush}{halign}{w}}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">line</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
         <span class="keyword">else</span><span class="punctuation">:</span>
-            <span class="name">string</span> <span class="operator">=</span> <span class="literal string">'[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span>
-                                                                         <span class="name">datetime</span><span class="operator">.</span><span class="name">now</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">'%H:%M:%S'</span><span class="punctuation">),</span>
-                                                                         <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
+            <span class="name">string</span> <span class="operator">=</span> <span class="literal string">'[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">],</span>                               <span class="name">datetime</span><span class="operator">.</span><span class="name">now</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">'%H:%M:%S'</span><span class="punctuation">),</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
             <span class="keyword">for</span> <span class="name">line</span> <span class="operator word">in</span> <span class="name">msg</span><span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">:]:</span>
                 <span class="name">string</span> <span class="operator">+=</span> <span class="literal string">'</span><span class="literal string escape">\n</span><span class="literal string">{0:^18} {1:{flush}{halign}{w}} {2:^14}'</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="literal string">''</span><span class="punctuation">,</span> <span class="name">line</span><span class="punctuation">,</span> <span class="literal string">''</span><span class="punctuation">,</span> <span class="name">w</span><span class="operator">=</span><span class="name">cols</span> <span class="operator">-</span> <span class="literal number integer">34</span><span class="punctuation">,</span> <span class="name">halign</span><span class="operator">=</span><span class="name">halign</span><span class="punctuation">,</span>
                                                                             <span class="name">flush</span><span class="operator">=</span><span class="name">flush</span><span class="punctuation">)</span>
@@ -1770,10 +1769,108 @@ python -m cProfile script.py
 <p>In Python 3, the text is in UTF-8! There is a class for binary text (<tt class="docutils literal">bytes</tt>), and it you not interact with the string type anymore. The <tt class="docutils literal">bytes</tt> type in Py3 use the direct correspondence of the printable ASCII values, and use an hexadecimal escape sequência to other values.</p>
 <p>Of course, work in <tt class="docutils literal">bytes</tt> is much faster than with an encoding, but it is not design to work with text (but instead to <strong>integer</strong> values).</p>
 </div>
+<div class="section" id="summary">
+<h1><a class="toc-backref" href="#id52">Summary</a></h1>
+<pre class="code python literal-block">
+<span class="comment"># built-in functions</span>
+<span class="keyword">for</span> <span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span> <span class="operator word">in</span> <span class="name builtin">zip</span><span class="punctuation">(</span><span class="name">list1</span><span class="punctuation">,</span> <span class="name">list2</span><span class="punctuation">):</span>
+    <span class="operator">...</span>
+
+<span class="name">mydict</span> <span class="operator">=</span> <span class="name builtin">dict</span><span class="punctuation">(</span><span class="name builtin">zip</span><span class="punctuation">(</span><span class="name">lkeys</span><span class="punctuation">,</span> <span class="name">lvalues</span><span class="punctuation">))</span>
+<span class="name">mydict</span> <span class="operator">=</span> <span class="punctuation">{</span><span class="literal number integer">0</span><span class="punctuation">:</span> <span class="literal string">'a'</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">:</span> <span class="literal string">'b'</span><span class="punctuation">}</span>
+
+<span class="keyword">for</span> <span class="name">i</span><span class="punctuation">,</span> <span class="name">ax</span> <span class="operator word">in</span> <span class="name builtin">enumerate</span><span class="punctuation">(</span><span class="name">axs</span><span class="punctuation">):</span>
+    <span class="operator">...</span>
+
+<span class="name">str1</span><span class="operator">.</span><span class="name">startswith</span><span class="punctuation">(</span><span class="literal string">'a'</span><span class="punctuation">)</span> <span class="operator word">or</span> <span class="name">str1</span><span class="operator">.</span><span class="name">endswith</span><span class="punctuation">(</span><span class="literal string">'z'</span><span class="punctuation">)</span>
+<span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">' '</span><span class="operator">.</span><span class="name">join</span><span class="punctuation">(</span><span class="name">list1</span><span class="punctuation">))</span>
+
+<span class="name">datefmt</span> <span class="operator">=</span> <span class="name">date</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string">'%Y-%m-</span><span class="literal string interpol">%d</span><span class="literal string">'</span><span class="punctuation">)</span>
+
+<span class="name">flines</span> <span class="operator">=</span> <span class="name builtin">open</span><span class="punctuation">(</span><span class="name">file1</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">read</span><span class="punctuation">()</span><span class="operator">.</span><span class="name">split</span><span class="punctuation">(</span><span class="literal string">'</span><span class="literal string escape">\n</span><span class="literal string">'</span><span class="punctuation">)</span>
+
+<span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">split</span><span class="punctuation">(</span><span class="name">file1</span><span class="punctuation">)</span> <span class="operator">==</span> <span class="punctuation">(</span><span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">dirname</span><span class="punctuation">(</span><span class="name">file1</span><span class="punctuation">),</span> <span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">basename</span><span class="punctuation">(</span><span class="name">file1</span><span class="punctuation">))</span>
+<span class="name">fname_wdir</span><span class="punctuation">,</span> <span class="name">fext</span> <span class="operator">=</span> <span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">splitext</span><span class="punctuation">(</span><span class="name builtin">file</span><span class="punctuation">)</span>
+<span class="name">fullpath</span> <span class="operator">=</span> <span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">join</span><span class="punctuation">(</span><span class="name">root</span><span class="punctuation">,</span> <span class="name">subdir</span><span class="punctuation">,</span> <span class="name">filen</span><span class="punctuation">)</span>
+<span class="name">os</span><span class="operator">.</span><span class="name">path</span><span class="operator">.</span><span class="name">isdir</span><span class="punctuation">(</span><span class="name">file1</span><span class="punctuation">)</span>
+<span class="name">dircont</span> <span class="operator">=</span> <span class="name">os</span><span class="operator">.</span><span class="name">listdir</span><span class="punctuation">(</span><span class="literal string">'.'</span><span class="punctuation">)</span>
+
+<span class="keyword namespace">from</span> <span class="name namespace">distutils.dir_util</span> <span class="keyword namespace">import</span> <span class="name">copy_tree</span><span class="punctuation">,</span> <span class="name">remove_tree</span>
+
+<span class="name builtin">set</span><span class="punctuation">(</span><span class="name">list1</span><span class="punctuation">)</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">unique</span><span class="punctuation">(</span><span class="name">list1</span><span class="punctuation">)</span>
+
+<span class="comment"># numpy</span>
+<span class="name">np</span><span class="operator">.</span><span class="name">random</span><span class="operator">.</span><span class="name">seed</span><span class="punctuation">(</span><span class="literal number integer">1234</span><span class="punctuation">)</span>
+
+<span class="name">cumulative</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">cumsum</span><span class="punctuation">()</span>
+<span class="name">std</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">std</span><span class="punctuation">()</span>
+<span class="name">mean</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">mean</span><span class="punctuation">()</span>
+
+<span class="name">xx</span><span class="punctuation">,</span> <span class="name">yy</span> <span class="operator">=</span> <span class="name">np</span><span class="operator">.</span><span class="name">meshgrid</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span> <span class="name">y</span><span class="punctuation">)</span>
+
+<span class="comment"># matplotlib</span>
+<span class="name">font</span> <span class="operator">=</span> <span class="punctuation">{</span>
+    <span class="literal string">'family'</span><span class="punctuation">:</span> <span class="literal string">'normal'</span><span class="punctuation">,</span>
+    <span class="literal string">'weight'</span><span class="punctuation">:</span> <span class="literal string">'bold'</span><span class="punctuation">,</span>
+    <span class="literal string">'size'</span><span class="punctuation">:</span> <span class="literal number integer">22</span>
+<span class="punctuation">}</span>
+<span class="name">matplotlib</span><span class="operator">.</span><span class="name">rc</span><span class="punctuation">(</span><span class="literal string">'font'</span><span class="punctuation">,</span> <span class="operator">**</span><span class="name">font</span><span class="punctuation">)</span>
+
+<span class="name">fig</span><span class="operator">.</span><span class="name">subplots_adjust</span><span class="punctuation">(</span><span class="name">hspace</span><span class="operator">=</span><span class="literal number float">0.01</span><span class="punctuation">)</span>
+
+<span class="name">ax</span><span class="operator">.</span><span class="name">fig</span><span class="punctuation">,</span> <span class="punctuation">(</span><span class="name">ax0</span><span class="punctuation">,</span> <span class="name">ax1</span><span class="punctuation">)</span> <span class="operator">=</span> <span class="name">plt</span><span class="operator">.</span><span class="name">subplots</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">1</span><span class="punctuation">,</span> <span class="name">sharex</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">)</span>
+
+<span class="name">fig</span> <span class="operator">=</span> <span class="name">plt</span><span class="operator">.</span><span class="name">figure</span><span class="punctuation">()</span>
+<span class="name">gs</span> <span class="operator">=</span> <span class="name">matplotlib</span><span class="operator">.</span><span class="name">gridspec</span><span class="operator">.</span><span class="name">GridSpec</span><span class="punctuation">(</span><span class="name">lins</span><span class="punctuation">,</span> <span class="name">cols</span><span class="punctuation">)</span>
+<span class="name">gs</span><span class="operator">.</span><span class="name">update</span><span class="punctuation">(</span><span class="name">hspace</span><span class="operator">=</span><span class="literal number float">0.01</span><span class="punctuation">)</span>
+
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib.lines</span> <span class="keyword namespace">import</span> <span class="name">Line2D</span>
+<span class="name">line</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="name">Line2D</span><span class="punctuation">([</span><span class="literal number integer">1</span><span class="punctuation">],</span> <span class="punctuation">[</span><span class="literal number integer">1</span><span class="punctuation">],</span> <span class="name">color</span><span class="operator">=</span><span class="literal string">'k'</span><span class="punctuation">,</span> <span class="name">marker</span><span class="operator">=</span><span class="literal string">'d'</span><span class="punctuation">,</span> <span class="name">ls</span><span class="operator">=</span><span class="literal string">''</span><span class="punctuation">)]</span>
+<span class="name">label</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string">&quot;B&quot;</span><span class="punctuation">]</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">plot</span><span class="punctuation">([</span><span class="name">np</span><span class="operator">.</span><span class="name">NaN</span><span class="punctuation">],</span> <span class="punctuation">[</span><span class="name">np</span><span class="operator">.</span><span class="name">NaN</span><span class="punctuation">],</span> <span class="name">label</span><span class="operator">=</span><span class="literal string">'A'</span><span class="punctuation">,</span> <span class="name">marker</span><span class="operator">=</span><span class="literal string">'o'</span><span class="punctuation">,</span> <span class="name">ls</span><span class="operator">=</span><span class="literal string">'.-'</span><span class="punctuation">,</span> <span class="name">lw</span><span class="operator">=</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">handles</span><span class="punctuation">,</span> <span class="name">labels</span> <span class="operator">=</span> <span class="name">ax</span><span class="operator">.</span><span class="name">get_legend_handles_labels</span><span class="punctuation">()</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">legend</span><span class="punctuation">(</span><span class="name">handles</span><span class="operator">+</span><span class="name">line</span><span class="punctuation">,</span> <span class="name">labels</span><span class="operator">+</span><span class="name">label</span><span class="punctuation">,</span> <span class="name">loc</span><span class="operator">=</span><span class="literal string">'best'</span><span class="punctuation">,</span> <span class="name">fancybox</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">,</span> <span class="name">framealpha</span><span class="operator">=.</span><span class="literal number integer">5</span><span class="punctuation">,</span>
+    <span class="name">fontsize</span><span class="operator">=</span><span class="literal number integer">8</span><span class="punctuation">,</span> <span class="name">labelspacing</span><span class="operator">=</span><span class="literal number float">0.1</span><span class="punctuation">,</span> <span class="name">ncol</span><span class="operator">=</span><span class="literal number integer">2</span><span class="punctuation">,</span> <span class="name">scatterpoints</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+
+<span class="name">rect</span> <span class="operator">=</span> <span class="name">matplotlib</span><span class="operator">.</span><span class="name">patches</span><span class="operator">.</span><span class="name">Rectangle</span><span class="punctuation">([</span><span class="name">x0</span><span class="punctuation">,</span> <span class="name">y0</span><span class="punctuation">,</span> <span class="name">dx</span><span class="punctuation">,</span> <span class="name">dy</span><span class="punctuation">],</span> <span class="name">ec</span><span class="operator">=</span><span class="literal string">'b'</span><span class="punctuation">,</span> <span class="name">fc</span><span class="operator">=</span><span class="literal string">'b'</span><span class="punctuation">,</span> <span class="name">alpha</span><span class="operator">=.</span><span class="literal number integer">5</span><span class="punctuation">,</span>
+        <span class="name">hatch</span><span class="operator">=</span><span class="literal string">'//'</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">add_patch</span><span class="punctuation">(</span><span class="name">rect</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">fill_between</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span> <span class="name">upper_bound</span><span class="punctuation">,</span> <span class="name">X</span><span class="punctuation">,</span> <span class="name">where</span><span class="operator">=</span><span class="name">X</span><span class="operator">&gt;</span><span class="name">upper_bound</span><span class="punctuation">,</span> <span class="name">facecolor</span><span class="operator">=</span><span class="literal string">'b'</span><span class="punctuation">,</span>
+    <span class="name">alpha</span><span class="operator">=.</span><span class="literal number integer">5</span><span class="punctuation">)</span>
+
+<span class="name">props</span> <span class="operator">=</span> <span class="name builtin">dict</span><span class="punctuation">(</span><span class="name">boxstyle</span><span class="operator">=</span><span class="literal string">'round'</span><span class="punctuation">,</span> <span class="name">facecolor</span><span class="operator">=</span><span class="literal string">'wheat'</span><span class="punctuation">,</span> <span class="name">alpha</span><span class="operator">=.</span><span class="literal number integer">5</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">text</span><span class="punctuation">(</span><span class="literal number float">0.05</span><span class="punctuation">,</span> <span class="literal number float">0.95</span><span class="punctuation">,</span> <span class="name">textstr</span><span class="punctuation">,</span> <span class="name">transform</span><span class="operator">=</span><span class="name">ax</span><span class="operator">.</span><span class="name">transAxes</span><span class="punctuation">,</span> <span class="name">fontsize</span><span class="operator">=</span><span class="literal number integer">14</span><span class="punctuation">,</span>
+    <span class="name">verticalalignment</span><span class="operator">=</span><span class="literal string">'top'</span><span class="punctuation">,</span> <span class="name">horizontalalignment</span><span class="operator">=</span><span class="literal string">'center'</span><span class="punctuation">,</span> <span class="name">bbox</span><span class="operator">=</span><span class="name">props</span><span class="punctuation">)</span>
+
+<span class="name">ax</span><span class="operator">.</span><span class="name">locator_params</span><span class="punctuation">(</span><span class="name">nbins</span><span class="operator">=</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="name">axis</span><span class="operator">=</span><span class="literal string">'y'</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">xaxis</span><span class="operator">.</span><span class="name">set_major_locator</span><span class="punctuation">(</span><span class="name">MaxNLocator</span><span class="punctuation">(</span><span class="name">nbins</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">prune</span><span class="operator">=</span><span class="literal string">'upper|both'</span><span class="punctuation">))</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">xaxis</span><span class="operator">.</span><span class="name">set_major_formatter</span><span class="punctuation">(</span><span class="name">matplotlib</span><span class="operator">.</span><span class="name">ticker</span><span class="operator">.</span><span class="name">FormatStrFormatter</span><span class="punctuation">(</span><span class="literal string">'</span><span class="literal string interpol">%.0e</span><span class="literal string">'</span><span class="punctuation">))</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">set_yticklabels</span><span class="punctuation">(</span><span class="name">ylabs</span><span class="punctuation">,</span> <span class="name">rotation</span><span class="operator">=</span><span class="literal string">'vertical'</span><span class="punctuation">)</span>
+
+<span class="name">ax</span><span class="operator">.</span><span class="name">set_yticks</span><span class="punctuation">(</span><span class="name">list1</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">get_yticklabels</span><span class="punctuation">()[</span><span class="name">idx</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">set_visible</span><span class="punctuation">(</span><span class="name builtin pseudo">False</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">set_xticklabels</span><span class="punctuation">([])</span>
+
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib.ticker</span> <span class="keyword namespace">import</span> <span class="name">AutoMinorLocator</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">xaxis</span><span class="operator">.</span><span class="name">set_minor_locator</span><span class="punctuation">(</span><span class="name">AutoMinorLocator</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="operator">|</span><span class="punctuation">[</span><span class="literal number integer">2</span><span class="punctuation">,</span><span class="literal number integer">4</span><span class="punctuation">,</span><span class="literal number integer">5</span><span class="punctuation">]))</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">xaxis</span><span class="operator">.</span><span class="name">set_tick_params</span><span class="punctuation">(</span><span class="name">width</span><span class="operator">=</span><span class="literal number float">1.3</span><span class="punctuation">,</span> <span class="name">color</span><span class="operator">=</span><span class="literal string">'k'</span><span class="punctuation">,</span> <span class="name">length</span><span class="operator">=</span><span class="literal number integer">4</span><span class="punctuation">,</span> <span class="name">which</span><span class="operator">=</span><span class="literal string">'minor'</span><span class="punctuation">)</span>
+<span class="name">ax</span><span class="operator">.</span><span class="name">minorticks_on</span><span class="punctuation">()</span>
+
+<span class="name">ax</span><span class="operator">.</span><span class="name">invert_yaxis</span><span class="punctuation">()</span>
+
+<span class="name">ax</span><span class="operator">.</span><span class="name">axis</span><span class="punctuation">(</span><span class="literal string">'equal'</span><span class="punctuation">)</span>
+
+<span class="name">ax2</span> <span class="operator">=</span> <span class="name">ax</span><span class="operator">.</span><span class="name">twinx</span><span class="punctuation">()</span>
+<span class="name">ax2</span><span class="operator">.</span><span class="name">spines</span><span class="punctuation">[</span><span class="literal string">'right'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">set_position</span><span class="punctuation">((</span><span class="literal string">'axes'</span><span class="punctuation">,</span> <span class="literal number float">1.05</span><span class="punctuation">))</span>
+
+<span class="name builtin">all</span><span class="punctuation">(</span><span class="name">x</span> <span class="operator word">in</span> <span class="name">list1</span> <span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name">values</span><span class="punctuation">)</span>
+</pre>
+</div>
 <div class="section" id="hard-install-reference">
-<h1><a class="toc-backref" href="#id52">Hard install reference</a></h1>
+<h1><a class="toc-backref" href="#id53">Hard install reference</a></h1>
 <div class="section" id="start">
-<h2><a class="toc-backref" href="#id53">Start</a></h2>
+<h2><a class="toc-backref" href="#id54">Start</a></h2>
 <pre class="code bash literal-block">
 <span class="comment"># In ~/.bashrc
 </span><span class="name builtin">export </span><span class="name variable">PYTHONPATH</span><span class="operator">=</span><span class="name variable">$PYTHONPATH</span>:~/pyhdust
@@ -1794,9 +1891,9 @@ python -m cProfile script.py
 </pre>
 </div>
 <div class="section" id="systems">
-<h2><a class="toc-backref" href="#id54">Systems</a></h2>
+<h2><a class="toc-backref" href="#id55">Systems</a></h2>
 <div class="section" id="ms-windows">
-<h3><a class="toc-backref" href="#id55">MS-Windows</a></h3>
+<h3><a class="toc-backref" href="#id56">MS-Windows</a></h3>
 <p>When dialing with binary files in Windows (e.g., <em>struct, xdrlib</em>) open/write the files with the appendix 'b' (i.e., <tt class="docutils literal">rb, wb, r+b</tt>...).</p>
 <p>Starting at version 2.7.9, Python comes with pip!!!</p>
 <dl class="docutils">
@@ -1806,7 +1903,7 @@ python -m cProfile script.py
 </div>
 </div>
 <div class="section" id="compiling-python">
-<h2><a class="toc-backref" href="#id56">Compiling Python</a></h2>
+<h2><a class="toc-backref" href="#id57">Compiling Python</a></h2>
 <p>Compiling Python on Ubuntu:</p>
 <ul>
 <li><p class="first">Download the source from <a class="reference external" href="https://www.python.org/downloads">Python website</a></p>
@@ -1868,7 +1965,7 @@ readline
 </li>
 </ul>
 <div class="section" id="numba">
-<h3><a class="toc-backref" href="#id57"><tt class="docutils literal">numba</tt></a></h3>
+<h3><a class="toc-backref" href="#id58"><tt class="docutils literal">numba</tt></a></h3>
 <p>It requires <tt class="docutils literal">llvm 3.7.x</tt>. The compilation flag of the binaries at <a class="reference external" href="http://llvm.org">http://llvm.org</a> are not supported on Ubuntu 14.04, so I needed to compile it.</p>
 <p>It makes use of the <tt class="docutils literal">cmake</tt>. And it works like this:</p>
 <pre class="code bash literal-block">
@@ -1888,10 +1985,10 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </div>
 </div>
 <div class="section" id="python-environments-and-references">
-<h1><a class="toc-backref" href="#id58">Python environments and references</a></h1>
+<h1><a class="toc-backref" href="#id59">Python environments and references</a></h1>
 <p><a class="reference external" href="http://python-notes.curiousefficiency.org/">http://python-notes.curiousefficiency.org/</a></p>
 <div class="section" id="general-use-python-packages-in-astronomy">
-<h2><a class="toc-backref" href="#id59">General use Python packages in Astronomy</a></h2>
+<h2><a class="toc-backref" href="#id60">General use Python packages in Astronomy</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>PyHdust (Python tools for hdust code)</dt>
@@ -1982,7 +2079,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="python-learning-for-astronomers">
-<h2><a class="toc-backref" href="#id60">Python learning for astronomers</a></h2>
+<h2><a class="toc-backref" href="#id61">Python learning for astronomers</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>CodeCAdemy</dt>
@@ -2017,7 +2114,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="python-distributions">
-<h2><a class="toc-backref" href="#id61">Python distributions</a></h2>
+<h2><a class="toc-backref" href="#id62">Python distributions</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Ureka*</dt>
@@ -2058,7 +2155,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="python-environments">
-<h2><a class="toc-backref" href="#id62">Python environments</a></h2>
+<h2><a class="toc-backref" href="#id63">Python environments</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>ipython</dt>
@@ -2087,9 +2184,9 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="utilities">
-<h2><a class="toc-backref" href="#id63">Utilities</a></h2>
+<h2><a class="toc-backref" href="#id64">Utilities</a></h2>
 <div class="section" id="package-index">
-<h3><a class="toc-backref" href="#id64">Package Index</a></h3>
+<h3><a class="toc-backref" href="#id65">Package Index</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>PyPI</dt>
@@ -2100,7 +2197,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h3><a class="toc-backref" href="#id65">Cookbooks</a></h3>
+<h3><a class="toc-backref" href="#id66">Cookbooks</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>ActiveState Python recipes</dt>
@@ -2111,7 +2208,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="articles">
-<h3><a class="toc-backref" href="#id66">Articles</a></h3>
+<h3><a class="toc-backref" href="#id67">Articles</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Survey of software use in astronomy</dt>
@@ -2122,7 +2219,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="python-code-revision">
-<h3><a class="toc-backref" href="#id67">Python code revision</a></h3>
+<h3><a class="toc-backref" href="#id68">Python code revision</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Landscape</dt>
@@ -2133,7 +2230,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span><span class="name var
 </ul>
 </div>
 <div class="section" id="visualization-tools">
-<h3><a class="toc-backref" href="#id68">Visualization tools</a></h3>
+<h3><a class="toc-backref" href="#id69">Visualization tools</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Seaborn</dt>

@@ -363,9 +363,7 @@ Status line (printing over the same line)
                 for line in msg[1:]:
                     string += '\n{0:^18} {1:{flush}{halign}{w}}'.format('', line, w=cols - 34, halign=halign, flush=flush)
             else:
-                string = '[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'.format(tag, msg[0],
-                                                                             datetime.now().strftime('%H:%M:%S'),
-                                                                             w=cols - 34, halign=halign, flush=flush)
+                string = '[{0:^16}] {1:{flush}{halign}{w}} [{2:^12}]'.format(tag, msg[0],                               datetime.now().strftime('%H:%M:%S'), w=cols - 34, halign=halign, flush=flush)
                 for line in msg[1:]:
                     string += '\n{0:^18} {1:{flush}{halign}{w}} {2:^14}'.format('', line, '', w=cols - 34, halign=halign,
                                                                                 flush=flush)
@@ -771,6 +769,105 @@ The standard text (string) written in Python 2 is in ASCII (or the binary mode!)
 In Python 3, the text is in UTF-8! There is a class for binary text (``bytes``), and it you not interact with the string type anymore. The ``bytes`` type in Py3 use the direct correspondence of the printable ASCII values, and use an hexadecimal escape sequência to other values.
 
 Of course, work in ``bytes`` is much faster than with an encoding, but it is not design to work with text (but instead to **integer** values). 
+
+
+Summary
+**********
+.. code:: python
+
+    # built-in functions
+    for a, b in zip(list1, list2):
+        ...
+
+    mydict = dict(zip(lkeys, lvalues))
+    mydict = {0: 'a', 1: 'b'}
+
+    for i, ax in enumerate(axs):
+        ...
+
+    str1.startswith('a') or str1.endswith('z')
+    print(' '.join(list1))
+
+    datefmt = date.strftime('%Y-%m-%d')
+
+    flines = open(file1).read().split('\n')
+
+    os.path.split(file1) == (os.path.dirname(file1), os.path.basename(file1))
+    fname_wdir, fext = os.path.splitext(file)
+    fullpath = os.path.join(root, subdir, filen)
+    os.path.isdir(file1)
+    dircont = os.listdir('.')
+
+    from distutils.dir_util import copy_tree, remove_tree
+
+    set(list1) 
+    np.unique(list1)
+
+    # numpy
+    np.random.seed(1234)
+
+    cumulative = np.arange(10).cumsum()
+    std = np.arange(10).std()
+    mean = np.arange(10).mean()
+
+    xx, yy = np.meshgrid(x, y)
+
+    # matplotlib
+    font = {
+        'family': 'normal',
+        'weight': 'bold',
+        'size': 22
+    }
+    matplotlib.rc('font', **font)
+
+    fig.subplots_adjust(hspace=0.01)
+
+    ax.fig, (ax0, ax1) = plt.subplots(2, 1, sharex=True)
+
+    fig = plt.figure()
+    gs = matplotlib.gridspec.GridSpec(lins, cols)
+    gs.update(hspace=0.01)
+
+    from matplotlib.lines import Line2D
+    line = [Line2D([1], [1], color='k', marker='d', ls='')]
+    label = ["B"]
+    ax.plot([np.NaN], [np.NaN], label='A', marker='o', ls='.-', lw=2)
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend(handles+line, labels+label, loc='best', fancybox=True, framealpha=.5,
+        fontsize=8, labelspacing=0.1, ncol=2, scatterpoints=1)
+
+    rect = matplotlib.patches.Rectangle([x0, y0, dx, dy], ec='b', fc='b', alpha=.5,
+            hatch='//')
+    ax.add_patch(rect)
+    ax.fill_between(t, upper_bound, X, where=X>upper_bound, facecolor='b', 
+        alpha=.5)
+
+    props = dict(boxstyle='round', facecolor='wheat', alpha=.5)
+    ax.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=14, 
+        verticalalignment='top', horizontalalignment='center', bbox=props)
+
+    ax.locator_params(nbins=5, axis='y')
+    ax.xaxis.set_major_locator(MaxNLocator(nbins=4, prune='upper|both'))
+    ax.xaxis.set_major_formatter(matplotlib.ticker.FormatStrFormatter('%.0e'))
+    ax.set_yticklabels(ylabs, rotation='vertical')
+
+    ax.set_yticks(list1)
+    ax.get_yticklabels()[idx].set_visible(False)
+    ax.set_xticklabels([])
+
+    from matplotlib.ticker import AutoMinorLocator
+    ax.xaxis.set_minor_locator(AutoMinorLocator(2|[2,4,5]))
+    ax.xaxis.set_tick_params(width=1.3, color='k', length=4, which='minor')
+    ax.minorticks_on()
+
+    ax.invert_yaxis()
+
+    ax.axis('equal')
+
+    ax2 = ax.twinx()
+    ax2.spines['right'].set_position(('axes', 1.05))
+
+    all(x in list1 for x in values)
 
 
 Hard install reference

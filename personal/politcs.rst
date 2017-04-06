@@ -294,6 +294,21 @@ Definitions
 
 Other
 ********
+.. figure:: ../figs/politics_fun01.jpg
+    :width: 300 px
+
+.. figure:: ../figs/politics_fun02.jpg
+    :width: 300 px
+
+.. figure:: ../figs/politics_fun03.jpg
+    :width: 300 px
+
+.. figure:: ../figs/politics_fun04.jpg
+    :width: 300 px
+
+.. figure:: ../figs/politics_fun05.jpg
+    :width: 300 px
+
 Ungrouped
 ============
 - `Leandro Zayd YouTube Channel <https://www.youtube.com/user/leandrozaydvlog>`_

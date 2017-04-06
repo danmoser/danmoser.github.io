@@ -8,7 +8,7 @@ __author__ = "Daniel Moser"
 __email__ = "dmfaes@gmail.com"
 __version__ = "v1.0"
 
-charges = sorted(glob('figs/charge*.*'), key=os.path.getmtime)
+charges = sorted(glob('../figs/charge*.*'), key=os.path.getmtime)
 
 fout = 'Charges\n##############\n\n'
 for c in charges:

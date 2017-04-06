@@ -10,8 +10,66 @@ DMF AstroBlog
 
     -------------
 
+2017-04
+==========
+Cassini's gran finale
+------------------------
+https://www.youtube.com/watch?v=xrGAQCq9BMU
+
+
 2017-03
 =============
+How to hunt for a black hole with a telescope the size of Earth
+------------------------------------------------------------------------
+Astronomers hope to grab the first images of an event horizon -- with the Event Horizon Telescope (EHT), a team-up of radio telescopes stationed across the globe to create a virtual observatory.
+
+http://www.nature.com/news/how-to-hunt-for-a-black-hole-with-a-telescope-the-size-of-earth-1.21693?WT.feed_name=subjects_astronomy-and-astrophysics
+
+------------
+
+Bringing zombie astrophotos back to life
+------------------------------------------------
+Astronomy Rewind is the latest citizen-science program on the Zooniverse platform...
+
+https://m.phys.org/news/2017-03-astronomy-rewind-citizen-scientists-zombie.html
+
+--------------
+
+Lançado primeiro instituto privado de apoio à ciência
+------------------------------------------------------------------------
+João Moreira Salles e sua mulher criaram fundo de R$ 350 milhões para financiar doutores em Medicina, Biologia, Matemática, Química e Física
+
+http://ciencia.estadao.com.br/noticias/geral,lancado-1-instituto-privado-de-apoio-a-ciencia,70001710386
+
+--------------
+
+Diploma inútil? Por que tantos brasileiros não conseguem trabalho em suas áreas
+------------------------------------------------------------------------------------------------
+"instituições privadas [são] responsáveis por 87,4% da educação superior no país [Brasil]."
+
+http://www.bbc.com/portuguese/brasil-37867638?ocid=socialflow_facebook
+
+-------------
+
+Lixo espacial 
+------------------------
+J002E3 é a designação dada a um suposto asteroide, posteriormente identificado com sendo o terceiro estágio do foguete Saturno V que lançou a Apollo 12. O objeto J002E3 foi descoberto pelo astrônomo amador Bill Yeung no dia 3 de setembro de 2002. Quando foi visto, rapidamente se soube que o objeto estava em uma órbita em torno da Terra. Os astrônomos ficaram surpresos com isso já que a Lua é o único grande objeto em uma órbita ao redor da Terra e qualquer outra coisa teria sido ejetada a um tempo atrás, devido a perturbações com a Terra, a Lua e o Sol. Por isso, o objeto deve ter entrado em órbita da Terra muito recentemente, e não havia nenhuma nave espacial recém-lançada que combinava com a órbita do J002E3.
+
+Astrônomos na Universidade do Arizona descobriram que o espectro eletromagnético do objeto era consistente com o branco da pintura de dióxido de titânio, a mesma tinta utilizada pela NASA para os foguetes Saturno V. Voltando o traçado de sua órbita em simulação por computador, os astrônomos descobriram que o objeto está orbitando o Sol há 31 anos e esteve em 1971 nas proximidades da Terra. Isso parece sugerir que era uma parte da missão Apollo 14, mas a NASA sabia o paradeiro de todo o hardware utilizado para esta missão, a terceira fase, por exemplo, foi deliberadamente colidida com a Lua para estudos sísmicos.
+
+A única explicação era que o J002E3 é na verdade o S-IVB, a terceira fase da foguete Saturno V da missão Apollo 12. A NASA tinha planejado originalmente dirigir o S-IVB em uma órbita solar com uma longa queima extra dos motores no espaço; contudo, a descoberta significa que a queima do restante do combustível no tanque do S-IVB não deu energia suficiente para o estágio do foguete escapar do sistema Terra-Lua, e em vez disso o estágio acabou em uma órbita semi-estável em torno da Terra.
+
+Fonte: texto do Facebook
+Refs: NASA (http://neo.jpl.nasa.gov/news/news136.html) e Wikipédia (https://en.wikipedia.org/wiki/J002E3)
+
+---------
+
+Hubble Discovery of Runaway Star Yields Clues to Breakup of Multiple-Star System
+---------------------------------------------------------------------------------------------
+http://hubblesite.org/news_release/news/2017-11
+
+--------
+
 Teachers must ditch 'neuromyth' of learning styles, say scientists 
 ------------------------------------------------------------------------
 Teaching children according to their individual "learning style" does not achieve better results and should be ditched by schools in favour of evidence-based practice, according to leading scientists.
@@ -36,15 +94,16 @@ http://www.nature.com/news/science-journalism-can-be-evidence-based-compelling-a
 The previous article:
 
 http://acsh.org/news/2017/03/05/infographic-best-and-worst-science-news-sites-10948
+
 --------
 
 Percepção musical em crianças pode predizer dificuldades de aprendizagem
--------------
+-------------------------------------------------------------------------------------b
 Pesquisadores brasileiros desenvolvem teste para avaliar percepção musical e, com base no resultado, identificar crianças predispostas a apresentar problemas na aquisição de linguagem oral e escrita.
 
 http://agencia.fapesp.br/percepcao_musical_em_criancas_pode_predizer_dificuldades_de_aprendizagem/24882/
--------------
  
+
 2017-01
 =============
 NZstars2016 conference material
@@ -242,7 +301,6 @@ https://blog.hubspot.com/sales/gmail-keyboard-shortcuts#sm.000hdsmnn1049f4uws92c
 --------------------------------------------------
 https://jasonroell.com/2015/03/16/12-most-infuential-books-every-software-engineer-needs-to-read/
 
--------------
 
 2016-11
 =============
@@ -252,7 +310,6 @@ Prof. Alexandre Mello, UTFPR
 
 http://paginapessoal.utfpr.edu.br/ajmello/optica-adaptativa
 
--------
 
 2016-10
 =============

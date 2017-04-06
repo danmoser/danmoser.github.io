@@ -96,8 +96,6 @@ Others
 -----------
 - ``[^\s]+`` returns a word until the first space/empty character.
 
-- ``^\"(?!.*s.*).*`` returns all line content starting with ``"`` and that *do not* contain the letter "s" (case sensitive); *MULTILINE* mode.
-
 
 Online testers
 ================
@@ -120,6 +118,10 @@ Python examples
 ------------------
 .. code:: python
 
+    import re
+
+.. code:: python
+
     """Rapid `regex` test. Output: True/False"""
 
     if re.search("regex pattern", subject):
@@ -133,6 +135,27 @@ Python examples
         print('Pattern found!')
     else:
         print('Pattern not found!')
+
+.. code:: python
+
+    """Split example"""
+
+    regex = re.compile(r'\W+')
+    out = regex.split('This is a test, short and sweet, of split().')
+    print(out)
+
+.. code:: python
+
+    """Substitution example"""
+    
+    def start_case_words(s):
+        """ Function to put a string in Start Case. 
+        
+        It can by vectorized by numpy: ``vecstart = np.vectorize(start_case_words) """
+        return re.sub(r'\w+', lambda m:m.group(0).capitalize(), s)
+
+    out = start_case_words('This is a test, short and sweet, of split().')
+    print(out)
 
 .. code:: python
 
@@ -152,28 +175,6 @@ Python examples
     else:
         result = ""  # or None
 
-
-.. code:: python
-
-    """Split example"""
-
-    import re
-
-    regex = re.compile(r'\W+')
-    regex.split('This is a test, short and sweet, of split().')
-
-
-.. code:: python
-
-    """Substitution example"""
-    
-    def start_case_words(s):
-        """ Function to put a string in Start Case. 
-        
-        It can by vectorized by numpy: ``vecstart = np.vectorize(start_case_words) """
-        return re.sub(r'\w+', lambda m:m.group(0).capitalize(), s)
-
-
 .. code:: python
 
     """All matches examples"""
@@ -192,13 +193,11 @@ Python examples
     regex = re.compile(rule, re.MULTILINE)
     matches1 = [m.groups() for m in regex.finditer(text)]
 
-    # Other way (MUCH better):
-    regex = re.compile(rule, re.MULTILINE)
-    matches2 = re.findall(rule, text)  
-
     # Another:
-    regex = re.compile(rule, re.MULTILINE)
     matches3 = re.compile(rule, re.MULTILINE).findall(text)
+
+    # Other way (MUCH better):
+    matches2 = re.findall(rule, text)  
 
 
 Good references
@@ -237,6 +236,17 @@ Exercise
     If the implementation is easy to explain, it may be a good idea.
     Namespaces are one honking great idea -- let's do more of those!
 
+.. code:: python
+
+    """Solution from J. Trevisan """
+
+    import re
+
+    t = """..."""
+
+    lineslen = [len(re.findall("[^\s+]", line)) for line in t.split("\n")]
+    print(lineslen)
+
 
 2. Create a dictionary in which the keys are the acronyms of the USP institutes and the values the complete name. You **must** use ``regex``!
 
@@ -250,17 +260,11 @@ Exercise
     Faculdade de Arquitetura e Urbanismo (FAU)
 
 
-..  
-    "Best" solution:
+.. code:: python
 
-    rule = r"^(.*)\((.*)\)"
-    rule = r"^(?P<extenso>.*)\((?<sigla>.*)\)"
+    """Solution from J. Trevisan """
 
-    Alternative:
-
-    MULTILINE mode
-    rule_vals = r'^(.*?)\('
-    rule_keys = r'\((.*)\)'
-
-    regex = re.compile(rule, re.MULTILINE)
-    matches = [m.groups() for m in regex.finditer(text)]
+    z = """..."""
+    
+    d = dict([reversed(x) for x in re.findall("(.+) \((.+)\)", z)])
+    print(d)
