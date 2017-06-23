@@ -114,6 +114,20 @@ Python
 - ``re``: built-in regex module
 - ``regex``: third-part regex module (a bit more features)
 
+
+*regex* Python tip
+-------------------
+The **. (dot)** doesn't have the original *regex* meaning with the default ``re`` in Python.
+
+So, we need to enable it using the flag ``re.DOTALL``. Example:
+
+.. code:: python
+
+    outgroups = re.findall(rule, string, flags=re.DOTALL)
+
+The ``re.DOTALL`` flag tells python to make the **'.'' (dot)** special character match all characters, including newline characters. This is very important when working with multi-line strings.
+
+
 Python examples
 ------------------
 .. code:: python

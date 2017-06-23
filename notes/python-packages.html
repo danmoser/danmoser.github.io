@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>Modules, Packages, PyPi and all that...</title>
 <style type="text/css">
 
@@ -448,7 +448,7 @@ Never run python from a package folder!
 <p>&quot;<tt class="docutils literal">pip</tt> <em>is a package management system used to install and manage software packages written in Python.</em>&quot;</p>
 <pre class="code bash literal-block">
 pip install _package_
-<span class="comment"># --user : local install (no admin rights)
+<span class="comment single"># --user : local install (no admin rights)
 # -U or --upgrade : upgrade existing installation
 # --no-deps : no install of dependencies packages (useful for upgrade)
 # --install-option=&quot;--prefix=$PREFIX_PATH&quot; redirects the install</span>
@@ -496,24 +496,24 @@ they really are worth it (believe me!)
 <h1><a class="toc-backref" href="#id8">How do I generate a <tt class="docutils literal">setup.py</tt> compatible with <tt class="docutils literal">PyPi</tt>?</a></h1>
 <p>Here you have a MWE (minimal working example):</p>
 <pre class="code python literal-block">
-<span class="comment">#!/usr/bin/env python</span>
-<span class="comment"># -*- coding:utf-8 -*-</span>
+<span class="comment hashbang">#!/usr/bin/env python</span>
+<span class="comment single"># -*- coding:utf-8 -*-</span>
 
 <span class="literal string doc">&quot;&quot;&quot; Writing the Setup Script
 
  https://docs.python.org/2/distutils/setupscript.html
 &quot;&quot;&quot;</span>
 
-<span class="keyword namespace">from</span> <span class="name namespace">setuptools</span> <span class="keyword namespace">import</span> <span class="name">setup</span>  <span class="comment"># , find_packages</span>
-<span class="comment"># from distutils.core import setup</span>
+<span class="keyword namespace">from</span> <span class="name namespace">setuptools</span> <span class="keyword namespace">import</span> <span class="name">setup</span>  <span class="comment single"># , find_packages</span>
+<span class="comment single"># from distutils.core import setup</span>
 
-<span class="name">setup</span><span class="punctuation">(</span><span class="name">name</span><span class="operator">=</span><span class="literal string">'iagpyboot'</span><span class="punctuation">,</span>
-      <span class="name">version</span><span class="operator">=</span><span class="literal string">'0.2'</span><span class="punctuation">,</span>
-      <span class="name">description</span><span class="operator">=</span><span class="literal string">'IAG Python Boot Camp example'</span><span class="punctuation">,</span>
-      <span class="name">author</span><span class="operator">=</span><span class="literal string">'Daniel Moser'</span><span class="punctuation">,</span>
-      <span class="name">author_email</span><span class="operator">=</span><span class="literal string">'moser&#64;usp.br'</span><span class="punctuation">,</span>
-      <span class="name">url</span><span class="operator">=</span><span class="literal string">'http://iagpyboot.wixsite.com/pbc2017'</span><span class="punctuation">,</span>
-      <span class="name">packages</span><span class="operator">=</span><span class="punctuation">[</span><span class="literal string">'iagpyboot'</span><span class="punctuation">],</span>
+<span class="name">setup</span><span class="punctuation">(</span><span class="name">name</span><span class="operator">=</span><span class="literal string single">'iagpyboot'</span><span class="punctuation">,</span>
+      <span class="name">version</span><span class="operator">=</span><span class="literal string single">'0.2'</span><span class="punctuation">,</span>
+      <span class="name">description</span><span class="operator">=</span><span class="literal string single">'IAG Python Boot Camp example'</span><span class="punctuation">,</span>
+      <span class="name">author</span><span class="operator">=</span><span class="literal string single">'Daniel Moser'</span><span class="punctuation">,</span>
+      <span class="name">author_email</span><span class="operator">=</span><span class="literal string single">'moser&#64;usp.br'</span><span class="punctuation">,</span>
+      <span class="name">url</span><span class="operator">=</span><span class="literal string single">'http://iagpyboot.wixsite.com/pbc2017'</span><span class="punctuation">,</span>
+      <span class="name">packages</span><span class="operator">=</span><span class="punctuation">[</span><span class="literal string single">'iagpyboot'</span><span class="punctuation">],</span>
       <span class="punctuation">)</span>
 </pre>
 </div>

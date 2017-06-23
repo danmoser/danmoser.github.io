@@ -307,11 +307,37 @@ Use
     \newcommand{\araa}{Annu. Rev. Astron. Astrophys}
     \newcommand{\zap}{Zeitschrift f\"ur Astrophysik}
     \newcommand{\apss}{Astrophysics and Space Science}
+    \newcommand{\aj}{Astronomical Journal}
+    \newcommand{\apjs}{ApJ Supplement}
+    \newcommand{\aaps}{A\&A Supplement}
+    \newcommand{\pasj}{Astronomical Society of Japan}
 
     \bibliographystyle{apalike}  % plainnat, apj, ...
     % \renewcommand\refname{List of Publications}  % rename the Bibliography section name
     \bibliography{/home/user/file}  % file.bib path
 
+Setting the maximum number of authors in the full reference list
+-----------------------------------------------------------------
+Create a custom ``.bst`` file. Find the section ``FUNCTION {format.names}`` and replace as following:
+
+.. code:: latex
+
+      % nameptr #1 >
+      %   { namesleft #1 >
+      nameptr #1 >
+         {
+          nameptr #3
+          #1 + =
+          numnames #5
+          > and
+            { "others" 't :=
+              #1 'namesleft := }
+            'skip$
+          if$
+          namesleft #1 >    
+
+
+More info: `StackExchange <https://tex.stackexchange.com/questions/26575/bibtex-how-can-i-automatically-reduce-long-author-lists-to-xxx-et-al/26582#26582>`_
 
 Captions
 ==========

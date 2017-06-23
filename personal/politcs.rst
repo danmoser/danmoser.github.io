@@ -319,6 +319,9 @@ Ungrouped
 
 - `Politics and the English Language <http://www.orwell.ru/library/essays/politics/english/e_polit/>`_
 
+- `Superhero movies are bad for democracy <http://www.salon.com/2017/06/02/superhero-films-are-bad-for-democracy/>`_
+
+
 Mandeville
 -----------
     [...] numa nação livre em que não sejam permitidos escravos, a riqueza mais segura consiste numa porção de pobres laboriosos. Para fazer a sociedade (que, obviamente consiste de não trabalhadores) feliz, e o povo contente, mesmo nas piores circunstâncias, é necessário que a grande maioria permaneça tanto ignorante quanto pobre.

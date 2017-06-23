@@ -18,10 +18,10 @@ Year    Driver               Team
 1985    Alain Prost           McLaren
 1986    Alain Prost           McLaren
 1987    Nelson Piquet         Benetton
-1988    Airton Senna          McLaren
+1988    Ayrton Senna          McLaren
 1989    Alain Prost           McLaren
-1990    Airton Senna          McLaren
-1991    Airton Senna          McLaren
+1990    Ayrton Senna          McLaren
+1991    Ayrton Senna          McLaren
 1992    Nigel Mansell         Williams
 1993    Alain Prost           Williams
 1994    Michael Schumacher    Benetton
@@ -46,7 +46,8 @@ Year    Driver               Team
 2013    Sebastian Vettel      Red Bull
 2014    Lewis Hamilton        Mercedes
 2015    Lewis Hamilton        Mercedes
-2016    \                     \
+2016    Nico Rosberg          Mercedes
+2017    \
 ======  ==================== ===================
 
 Provollone Cast
@@ -171,7 +172,8 @@ Year Team                   Coach                      MVP Player of winning tea
 2014 San Antonio Spurs      Gregg Popovich             Duncan        
 2015 Golden State Warriors  Steve Kerr                 Curry
 2016 Cleveland Cavaliers    Tyronn Lue                 James
-2017 \
+2017 Golden State Warriors  Steve Kerr                 Durant/Curry
+2018 \
 ==== ====================== ========================== =============================
 
 \* My personal choice 

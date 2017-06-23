@@ -297,6 +297,16 @@ GRUB edit
     sudo vim /etc/default/grub
     sudo update-grub
 
+Changing time-zone
+-------------------
+Using the terminal (command line)
+
+.. code:: bash
+
+    sudo dpkg-reconfigure tzdata.
+
+Follow the directions in the terminal. The timezone info is saved in ``/etc/timezone``.
+
 Mimes and program links in File Managers
 ------------------------------------------
 In Ubuntu, the program-file type association is set is in ``~/.local/share/applications/mimeapps.list``.

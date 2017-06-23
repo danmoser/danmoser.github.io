@@ -147,13 +147,13 @@ Eu conheço o quadro acima como "Alegoria das artes liberais". Pitágoras no top
   
 Astronomia
 -----------
-.. figure:: ../figs/LakeMyvatn_Brady_1080.jpg
+.. figure:: ../figs/astro-basics_LakeMyvatn_Brady_1080
     :align: center
     :width: 800
 
     Auroras and riscos de estrelas sobre a Islândia
     
-.. figure:: ../figs/astrobasic_Comet_Lovejoy.jpg
+.. figure:: ../figs/astro-basics_Comet_Lovejoy.jpg
     :align: center
 
     Constelação de Orion e o cometa Lovejoy dia-a-dia

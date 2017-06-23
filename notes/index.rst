@@ -8,7 +8,7 @@ DMF notes
 `import_wheel`_      `index`_        .. image:: ../figs/index2.gif   `informatics`_    `instrumentation`_
 `inthepress`_        `julia`_        `latex`_                        `linux`_          `math`_
 `physics-basics`_    `python-oop`_   `python-packages`_              `python_astro`_   `regex`_
-`rst`_               `thermal`_      .. image:: ../figs/index3a.gif  \                 \
+`rst`_               `systems-eng`_  .. image:: ../figs/index3a.gif  `thermal`_        \
 ===================  ==============  ==============================  ================  ==================
 
 .. _astro-basics: astro-basics.html
@@ -41,4 +41,5 @@ DMF notes
 .. _python_astro: python_astro.html
 .. _regex: regex.html
 .. _rst: rst.html
+.. _systems-eng: systems-eng.html
 .. _thermal: thermal.html

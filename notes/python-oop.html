@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>Python and object-oriented programming</title>
 <style type="text/css">
 
@@ -463,10 +463,10 @@ end.
 
 
 <span class="name">fibonaccyCounter</span> <span class="operator">=</span> <span class="name">Fibonacci</span><span class="punctuation">()</span>
-<span class="comment"># print(fibonaccyCounter.fib(600))</span>
+<span class="comment single"># print(fibonaccyCounter.fib(600))</span>
 
-<span class="comment"># %time fibonaccyCounter.fib(600)</span>
-<span class="comment"># %time fibonaccyCounter.fib(600)</span>
+<span class="comment single"># %time fibonaccyCounter.fib(600)</span>
+<span class="comment single"># %time fibonaccyCounter.fib(600)</span>
 </pre>
 <p>Why <em>OOP compatible</em>? Because usually in a OOP language one can still work as a  <strong>procedural</strong> language...</p>
 <p>Examples of pure OOP languages: Smalltalk and Self.</p>
@@ -509,30 +509,30 @@ end.
 </ul>
 <pre class="code python literal-block">
 <span class="keyword">class</span> <span class="name class">Pets</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
-    <span class="name">owner</span> <span class="operator">=</span> <span class="literal string">&quot;Python Boot Camp&quot;</span>
+    <span class="name">owner</span> <span class="operator">=</span> <span class="literal string double">&quot;Python Boot Camp&quot;</span>
 
-    <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">,</span> <span class="name">condition</span><span class="operator">=</span><span class="literal string">'healthy'</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;A new pet entry!&quot;</span><span class="punctuation">)</span>
+    <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">,</span> <span class="name">condition</span><span class="operator">=</span><span class="literal string single">'healthy'</span><span class="punctuation">):</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;A new pet entry!&quot;</span><span class="punctuation">)</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">name</span> <span class="operator">=</span> <span class="name">name</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">age</span> <span class="operator">=</span> <span class="name">age</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">condition</span> <span class="operator">=</span> <span class="name">condition</span>
 
     <span class="keyword">def</span> <span class="name function">__repr__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">return</span> <span class="literal string">&quot;Pet '{0}', {1} year(s)&quot;</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">name</span><span class="punctuation">,</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">age</span><span class="punctuation">)</span>
+        <span class="keyword">return</span> <span class="literal string double">&quot;Pet '{0}', {1} year(s)&quot;</span><span class="operator">.</span><span class="name">format</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">name</span><span class="punctuation">,</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">age</span><span class="punctuation">)</span>
 
 <span class="keyword">class</span> <span class="name class">Dog</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">bark</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot; Woof-woof!!&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot; Woof-woof!!&quot;</span><span class="punctuation">)</span>
         <span class="keyword">return</span>
 
 <span class="keyword">class</span> <span class="name class">Monkey</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">):</span>
-    <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">,</span> <span class="name">condition</span><span class="operator">=</span><span class="literal string">''</span><span class="punctuation">):</span>
+    <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">,</span> <span class="name">condition</span><span class="operator">=</span><span class="literal string single">''</span><span class="punctuation">):</span>
         <span class="literal string doc">&quot;&quot;&quot;Overwriting the Pets() constructor&quot;&quot;&quot;</span>
-        <span class="name">condition</span> <span class="operator">=</span> <span class="literal string">'custom'</span>
+        <span class="name">condition</span> <span class="operator">=</span> <span class="literal string single">'custom'</span>
         <span class="name">Pets</span><span class="operator">.</span><span class="name">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">,</span> <span class="name">condition</span><span class="punctuation">)</span>
 
     <span class="keyword">def</span> <span class="name function">gibber</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot; (gibber)!!&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot; (gibber)!!&quot;</span><span class="punctuation">)</span>
         <span class="keyword">return</span>
 
 <span class="keyword">class</span> <span class="name class">Horse</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">):</span>
@@ -540,7 +540,7 @@ end.
         <span class="name builtin">super</span><span class="punctuation">(</span><span class="name">Horse</span><span class="punctuation">,</span> <span class="name builtin pseudo">self</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">__init__</span><span class="punctuation">(</span><span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">)</span>
 
     <span class="keyword">def</span> <span class="name function">neigh</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot; Neigh!!&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot; Neigh!!&quot;</span><span class="punctuation">)</span>
         <span class="keyword">return</span>
 
 <span class="keyword">class</span> <span class="name class">Cat</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">):</span>
@@ -548,7 +548,7 @@ end.
         <span class="name builtin">super</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">,</span> <span class="name builtin pseudo">self</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">__init__</span><span class="punctuation">()</span>
 
     <span class="keyword">def</span> <span class="name function">meow</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot; Meow!!&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot; Meow!!&quot;</span><span class="punctuation">)</span>
         <span class="keyword">return</span>
 </pre>
 <ul class="simple">
@@ -558,7 +558,7 @@ end.
 </ul>
 <pre class="code python literal-block">
 <span class="keyword">class</span> <span class="name class">Toys</span><span class="punctuation">:</span>
-    <span class="name">color</span> <span class="operator">=</span> <span class="literal string">'light blue'</span>
+    <span class="name">color</span> <span class="operator">=</span> <span class="literal string single">'light blue'</span>
 
 <span class="keyword">class</span> <span class="name class">Lassie</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">,</span> <span class="name">Toys</span><span class="punctuation">):</span>
     <span class="keyword">pass</span>
@@ -589,7 +589,7 @@ end.
         <span class="name">x</span> <span class="operator">=</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">d</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">e</span> <span class="operator">+</span> <span class="name">Ab</span> <span class="operator">+</span> <span class="name">Ac</span>
         <span class="keyword">return</span> <span class="name">x</span>
 
-<span class="name">ting</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
+<span class="name">ting</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string double">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
 <span class="name">ling</span> <span class="operator">=</span> <span class="name">B</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">9</span><span class="punctuation">)</span>
 
 <span class="keyword">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">(</span><span class="name">ting</span><span class="operator">.</span><span class="name">b</span><span class="punctuation">,</span> <span class="name">ting</span><span class="operator">.</span><span class="name">c</span><span class="punctuation">)</span>
@@ -617,7 +617,7 @@ end.
         <span class="name">x</span> <span class="operator">=</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">d</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">e</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">A</span><span class="operator">.</span><span class="name">b</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">A</span><span class="operator">.</span><span class="name">c</span>
         <span class="keyword">return</span> <span class="name">x</span>
 
-<span class="name">ting</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
+<span class="name">ting</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string double">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
 <span class="name">ling</span> <span class="operator">=</span> <span class="name">B</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">9</span><span class="punctuation">,</span> <span class="name">ting</span><span class="punctuation">)</span>
 
 <span class="keyword">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">()</span>
@@ -639,7 +639,7 @@ end.
     <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">d</span><span class="punctuation">,</span> <span class="name">e</span><span class="punctuation">):</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">d</span> <span class="operator">=</span> <span class="name">d</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">e</span> <span class="operator">=</span> <span class="name">e</span>
-        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">A</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
+        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">A</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string double">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
 
     <span class="keyword">def</span> <span class="name function">addAllNums</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
         <span class="name">x</span> <span class="operator">=</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">d</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">e</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">A</span><span class="operator">.</span><span class="name">b</span> <span class="operator">+</span> <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">A</span><span class="operator">.</span><span class="name">c</span>
@@ -661,9 +661,9 @@ Remember: those &quot;association/combination&quot; names may vary in the litera
 <pre class="code python literal-block">
 <span class="keyword">class</span> <span class="name class">C</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">a</span> <span class="operator">=</span> <span class="literal number integer">1</span>    <span class="comment"># OK to access directly</span>
-        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">_a</span> <span class="operator">=</span> <span class="literal number integer">2</span>   <span class="comment"># should be considered private</span>
-        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">__a</span> <span class="operator">=</span> <span class="literal number integer">3</span>  <span class="comment"># considered private, name Disfigured</span>
+        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">a</span> <span class="operator">=</span> <span class="literal number integer">1</span>    <span class="comment single"># OK to access directly</span>
+        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">_a</span> <span class="operator">=</span> <span class="literal number integer">2</span>   <span class="comment single"># should be considered private</span>
+        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">__a</span> <span class="operator">=</span> <span class="literal number integer">3</span>  <span class="comment single"># considered private, name Disfigured</span>
 </pre>
 <pre class="literal-block">
 Warning! Some people say that *encapsulation* can prevent the data from being modified. This is **not** the case in Python (and even Java[!]. Other methods need to used to avoid modification).
@@ -678,11 +678,11 @@ Warning! Some people say that *encapsulation* can prevent the data from being mo
 
 <span class="keyword">class</span> <span class="name class">Millionare</span><span class="punctuation">(</span><span class="name">Person</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">pay_bill</span><span class="punctuation">():</span>
-        <span class="keyword">print</span> <span class="literal string">&quot;Here you go! Keep the change!&quot;</span>
+        <span class="keyword">print</span> <span class="literal string double">&quot;Here you go! Keep the change!&quot;</span>
 
 <span class="keyword">class</span> <span class="name class">GradStudent</span><span class="punctuation">(</span><span class="name">Person</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">pay_bill</span><span class="punctuation">():</span>
-        <span class="keyword">print</span> <span class="literal string">&quot;Can I owe you ten bucks or do the dishes?&quot;</span>
+        <span class="keyword">print</span> <span class="literal string double">&quot;Can I owe you ten bucks or do the dishes?&quot;</span>
 </pre>
 <!-- There are four types of polymorphism that a programming language may have (note that not every object-oriented language has implemented all types of polymorphism): -->
 <ul class="simple">
@@ -707,17 +707,17 @@ Warning! Some people say that *encapsulation* can prevent the data from being mo
 <pre class="code python literal-block">
 <span class="keyword">class</span> <span class="name class">Duck</span><span class="punctuation">:</span>
     <span class="keyword">def</span> <span class="name function">quack</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;Quaaaaaack!&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;Quaaaaaack!&quot;</span><span class="punctuation">)</span>
     <span class="keyword">def</span> <span class="name function">feathers</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;The duck has white and gray feathers.&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;The duck has white and gray feathers.&quot;</span><span class="punctuation">)</span>
 
 <span class="keyword">class</span> <span class="name class">Person</span><span class="punctuation">:</span>
     <span class="keyword">def</span> <span class="name function">quack</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;The person imitates a duck.&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;The person imitates a duck.&quot;</span><span class="punctuation">)</span>
     <span class="keyword">def</span> <span class="name function">feathers</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;The person takes a feather from the ground and shows it.&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;The person takes a feather from the ground and shows it.&quot;</span><span class="punctuation">)</span>
     <span class="keyword">def</span> <span class="name function">name</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string">&quot;John Smith&quot;</span><span class="punctuation">)</span>
+        <span class="keyword">print</span><span class="punctuation">(</span><span class="literal string double">&quot;John Smith&quot;</span><span class="punctuation">)</span>
 
 <span class="keyword">def</span> <span class="name function">in_the_forest</span><span class="punctuation">(</span><span class="name">duck</span><span class="punctuation">):</span>
     <span class="name">duck</span><span class="operator">.</span><span class="name">quack</span><span class="punctuation">()</span>
@@ -795,8 +795,8 @@ class test:
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">whatIHave</span> <span class="operator">=</span> <span class="name">whatIHave</span>
 
     <span class="keyword">def</span> <span class="name function">f</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
-        <span class="comment"># Implement behavior using</span>
-        <span class="comment"># methods in WhatIHave:</span>
+        <span class="comment single"># Implement behavior using</span>
+        <span class="comment single"># methods in WhatIHave:</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">whatIHave</span><span class="operator">.</span><span class="name">g</span><span class="punctuation">()</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">whatIHave</span><span class="operator">.</span><span class="name">h</span><span class="punctuation">()</span>
 
@@ -804,18 +804,18 @@ class test:
     <span class="keyword">def</span> <span class="name function">op</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">whatIWant</span><span class="punctuation">):</span>
         <span class="name">whatIWant</span><span class="operator">.</span><span class="name">f</span><span class="punctuation">()</span>
 
-<span class="comment"># Approach 2: build adapter use into op():</span>
+<span class="comment single"># Approach 2: build adapter use into op():</span>
 <span class="keyword">class</span> <span class="name class">WhatIUse2</span><span class="punctuation">(</span><span class="name">WhatIUse</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">op</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">whatIHave</span><span class="punctuation">):</span>
         <span class="name">ProxyAdapter</span><span class="punctuation">(</span><span class="name">whatIHave</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">f</span><span class="punctuation">()</span>
 
-<span class="comment"># Approach 3: build adapter into WhatIHave:</span>
+<span class="comment single"># Approach 3: build adapter into WhatIHave:</span>
 <span class="keyword">class</span> <span class="name class">WhatIHave2</span><span class="punctuation">(</span><span class="name">WhatIHave</span><span class="punctuation">,</span> <span class="name">WhatIWant</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">f</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">g</span><span class="punctuation">()</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">h</span><span class="punctuation">()</span>
 
-<span class="comment"># Approach 4: use an inner class:</span>
+<span class="comment single"># Approach 4: use an inner class:</span>
 <span class="keyword">class</span> <span class="name class">WhatIHave3</span><span class="punctuation">(</span><span class="name">WhatIHave</span><span class="punctuation">):</span>
     <span class="keyword">class</span> <span class="name class">InnerAdapter</span><span class="punctuation">(</span><span class="name">WhatIWant</span><span class="punctuation">):</span>
         <span class="keyword">def</span> <span class="name function">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">outer</span><span class="punctuation">):</span>
@@ -834,11 +834,11 @@ class test:
 <span class="name">whatIHave2</span> <span class="operator">=</span> <span class="name">WhatIHave2</span><span class="punctuation">()</span>
 <span class="name">whatIHave3</span> <span class="operator">=</span> <span class="name">WhatIHave3</span><span class="punctuation">()</span>
 <span class="name">whatIUse</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">adapt</span><span class="punctuation">)</span>
-<span class="comment"># Approach 2:</span>
+<span class="comment single"># Approach 2:</span>
 <span class="name">whatIUse2</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">whatIHave</span><span class="punctuation">)</span>
-<span class="comment"># Approach 3:</span>
+<span class="comment single"># Approach 3:</span>
 <span class="name">whatIUse</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">whatIHave2</span><span class="punctuation">)</span>
-<span class="comment"># Approach 4:</span>
+<span class="comment single"># Approach 4:</span>
 <span class="name">whatIUse</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">whatIHave3</span><span class="operator">.</span><span class="name">whatIWant</span><span class="punctuation">())</span>
 </pre>
 </div>

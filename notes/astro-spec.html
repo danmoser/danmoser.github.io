@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>Tutorial de redução de dados de espectroscopia do OPD/LNA</title>
 <style type="text/css">
 
@@ -508,23 +508,23 @@ apt-get update
 </pre>
 <p>Para instalar o Ureka propriamente:</p>
 <pre class="code bash literal-block">
-<span class="comment"># Choose an installation directory and download this installer
+<span class="comment single"># Choose an installation directory and download this installer
 # Run the installer by typing
 </span>sh install_ureka_1.5.2
 
-<span class="comment"># The installer will ask for permission to edit your login scripts. If you have
+<span class="comment single"># The installer will ask for permission to edit your login scripts. If you have
 # more than one Ureka installation, the installer will also ask you to provide
 # an installation name.
 # If this is your first time installing Ureka:
 </span><span class="name builtin">source</span> ~/.bashrc
 
-<span class="comment"># To select the Ureka environment, type
+<span class="comment single"># To select the Ureka environment, type
 </span>ur_setup
 
-<span class="comment"># If this is the first time you run IRAF, you need to configure it
+<span class="comment single"># If this is the first time you run IRAF, you need to configure it
 # A file `login.cl` will contain this information
 </span>mkiraf
-<span class="comment"># choose xgterm
+<span class="comment single"># choose xgterm
 </span>xgterm -sb -e <span class="literal string double">&quot;cl&quot;</span>
 </pre>
 <div class="section" id="erro-xgterm">
@@ -532,7 +532,7 @@ apt-get update
 <p>Em alguns casos, o <cite>xgterm</cite> parece não funcionar em sistemas 64 bits (erros de biblioteca). Se isso acontecer, vc pode fazer seguinte</p>
 <pre class="code bash literal-block">
 sudo apt-get install libuuid1:i386 libx11-xcb-dev:i386 libx11-xcb1:i386
-mv <span class="name variable">$HOME</span>/Ureka/iraf/lib32/lib/libX11.so.6 <span class="name variable">$HOME</span>/Ureka/iraf/lib32/lib/libX11.so.6.bkp
+mv $HOME/Ureka/iraf/lib32/lib/libX11.so.6 $HOME/Ureka/iraf/lib32/lib/libX11.so.6.bkp
 </pre>
 </div>
 </div>
@@ -545,24 +545,24 @@ sudo apt-get install fftw3 libfftw3-dev libcfitsio3-dev gnuplot
 </pre>
 <p>Atenção: <strong>não instale o OPERA com previlégios root</strong>.</p>
 <pre class="code bash literal-block">
-<span class="comment"># O código abaixo supõem a instalação na pasta `$HOME`.
+<span class="comment single"># O código abaixo supõem a instalação na pasta `$HOME`.
 # Substitua-o caso instale escolha outro diretório.
-</span><span class="name builtin">cd</span> <span class="name variable">$HOME</span>
+</span><span class="name builtin">cd</span> $HOME
 rm -rf opera-1.0
 unzip opera-1.0________.zip
-<span class="name builtin">cd </span>opera-1.0
-./configure --prefix<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0/
-<span class="comment"># Se quiser apagar uma instalacao anterior
+<span class="name builtin">cd</span> opera-1.0
+./configure --prefix<span class="operator">=</span>$HOME/opera-1.0/
+<span class="comment single"># Se quiser apagar uma instalacao anterior
 # make distclean
 </span>make
 make install
-<span class="comment"># . ./setup.sh
+<span class="comment single"># . ./setup.sh
 </span>
-<span class="comment"># Instale o pipeline do MUSICOS e adicione ao PATH
-</span>chmod +x <span class="name variable">$HOME</span>/opera-1.0/pipeline/pyMusicos/*.py
-nano <span class="name variable">$HOME</span>/.bashrc
-<span class="comment"># PATH=$PATH:$HOME/opera-1.0/bin/:$HOME/opera-1.0/pipeline/pyMusicos/
-</span><span class="name builtin">source</span> <span class="name variable">$HOME</span>/.bashrc
+<span class="comment single"># Instale o pipeline do MUSICOS e adicione ao PATH
+</span>chmod +x $HOME/opera-1.0/pipeline/pyMusicos/*.py
+nano $HOME/.bashrc
+<span class="comment single"># PATH=$PATH:$HOME/opera-1.0/bin/:$HOME/opera-1.0/pipeline/pyMusicos/
+</span><span class="name builtin">source</span> $HOME/.bashrc
 </pre>
 <div class="section" id="problemas-com-opera">
 <h4><a class="toc-backref" href="#id11">Problemas com OPERA</a></h4>
@@ -592,30 +592,30 @@ the CFITSIO library, and the version included by the application program:
 <h3><a class="toc-backref" href="#id12"><cite>beacon-reduc</cite></a></h3>
 <p>Pacotes IRAF por padrão são instalados na subpasta <cite>extern</cite>.</p>
 <pre class="code bash literal-block">
-<span class="comment"># O código abaixo supõem a instalação do UREKA na pasta `$HOME`.
+<span class="comment single"># O código abaixo supõem a instalação do UREKA na pasta `$HOME`.
 # Substitua-o caso instale escolha outro diretório.
-</span><span class="name builtin">cd</span> <span class="name variable">$HOME</span>
-<span class="name builtin">cd </span>Ureka/iraf/extern
+</span><span class="name builtin">cd</span> $HOME
+<span class="name builtin">cd</span> Ureka/iraf/extern
 git clone https://github.com/danmoser/beacon.git
 
-<span class="comment"># Caso não tenha o git instalado, pode ser feito a sequencia abaixo
+<span class="comment single"># Caso não tenha o git instalado, pode ser feito a sequencia abaixo
 # curl -L https://github.com/danmoser/beacon/zipball/master &gt; beacon.zip
 # unzip beacon.zip
 # mv danmoser-beacon-d517c82 beacon
 </span>
-<span class="comment"># A seguir é necessário declarar o pacote no IRAF
+<span class="comment single"># A seguir é necessário declarar o pacote no IRAF
 </span>nano ../../unix/hlib/extern.pkg
-<span class="comment"># E em algum lugar antes da palavra keep, adicionar:
+<span class="comment single"># E em algum lugar antes da palavra keep, adicionar:
 # reset beacon    = iraf$extern/beacon/
 # task beacon.pkg = beacon$beacon.cl
 </span>
-<span class="comment"># O último passo eh adicionar a pasta de executáveis do pacote no PATH
+<span class="comment single"># O último passo eh adicionar a pasta de executáveis do pacote no PATH
 # do shell do sistema. Editando o arquivo .bashrc:
-</span>nano <span class="name variable">$HOME</span>/.bashrc
-<span class="comment"># e adicionando a linha
+</span>nano $HOME/.bashrc
+<span class="comment single"># e adicionando a linha
 # PATH=$PATH:$HOME/Ureka/iraf/extern/scripts/
-</span>chmod +x <span class="name variable">$HOME</span>/Ureka/iraf/extern/scripts/*
-<span class="name builtin">source</span> <span class="name variable">$HOME</span>/.bashrc
+</span>chmod +x $HOME/Ureka/iraf/extern/scripts/*
+<span class="name builtin">source</span> $HOME/.bashrc
 </pre>
 </div>
 </div>
@@ -729,15 +729,15 @@ prepare_header_opera.py -B -l <span class="literal string double">&quot;lamp_b*&
 <blockquote>
 <pre class="code bash literal-block">
 mkdir reduc
-operaMusicos.py --datarootdir<span class="operator">=</span>../ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span>./reduc --night<span class="operator">=</span>./ --product<span class="operator">=</span><span class="literal string double">&quot;CALIB&quot;</span> -pvts
-<span class="comment"># &quot;-s&quot; means SIMULATION of the reduction...</span>
+operaMusicos.py --datarootdir<span class="operator">=</span>../ --pipelinehomedir<span class="operator">=</span>$HOME/opera-1.0 --productrootdir<span class="operator">=</span>./reduc --night<span class="operator">=</span>./ --product<span class="operator">=</span><span class="literal string double">&quot;CALIB&quot;</span> -pvts
+<span class="comment single"># &quot;-s&quot; means SIMULATION of the reduction...</span>
 </pre>
 </blockquote>
 </li>
 <li><p class="first">Rodar o processamento dos alvos da noite</p>
 <blockquote>
 <pre class="code bash literal-block">
-operaMusicos.py --datarootdir<span class="operator">=</span>/data/MUSICOS/ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span><span class="name variable">$HOME</span>/Reductions/MUSICOS/ --night<span class="operator">=</span>14set05_R --product<span class="operator">=</span><span class="literal string double">&quot;OPSPC&quot;</span> -pvt
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/MUSICOS/ --pipelinehomedir<span class="operator">=</span>$HOME/opera-1.0 --productrootdir<span class="operator">=</span>$HOME/Reductions/MUSICOS/ --night<span class="operator">=</span>14set05_R --product<span class="operator">=</span><span class="literal string double">&quot;OPSPC&quot;</span> -pvt
 </pre>
 </blockquote>
 </li>
@@ -757,7 +757,7 @@ extract_ms_opera.py
 <div class="section" id="resultados">
 <h3><a class="toc-backref" href="#id24">Resultados</a></h3>
 <pre class="code bash literal-block">
-<span class="name variable">$HOME</span>/opera-1.0/pipeline/pySpectralAnalysis/plotSpectrum.py —spectrumfile<span class="operator">=</span>HR8634_R_001.spc.gz
+$HOME/opera-1.0/pipeline/pySpectralAnalysis/plotSpectrum.py —spectrumfile<span class="operator">=</span>HR8634_R_001.spc.gz
 
 gunzip -c HR8634_R_002.spc.gz &gt; HR8634_R_002.spc
 gnuplot -persist ../14set05Plots/HR8634_RED.gnu

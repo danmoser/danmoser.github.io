@@ -520,6 +520,35 @@ Pandas
     dfn.to_csv('filename.csv')#, sep=',', encoding='utf-8')
 
 
+Capturing the shell output in Python
+=====================================
+This is way easier, but only works on Unix (including Cygwin).
+
+.. code:: python
+
+    import commands
+    print commands.getstatusoutput('wc -l file')
+
+it returns a tuple with the (return_value, output).
+
+https://stackoverflow.com/questions/4760215/running-shell-command-from-python-and-capturing-the-output
+
+
+*regex* Python tip
+====================
+The **'.'' (dot)** doesn't have the original *regex* meaning with the default ``re`` in Python.
+
+So, we need to enable it using the flag ``re.DOTALL``. Example:
+
+.. code:: python
+
+    outgroups = re.findall(rule, string, flags=re.DOTALL)
+
+The ``re.DOTALL`` flag tells python to make the **'.'' (dot)** special character match all characters, including newline characters. This is very important when working with multi-line strings.
+
+http://www.thegeekstuff.com/2014/07/advanced-python-regex/
+
+
 List of reserved words in Python
 ===================================
 
@@ -1050,6 +1079,8 @@ Python learning for astronomers
 - Matplotlib tutorial
     http://www.labri.fr/perso/nrougier/teaching/matplotlib/#other-types-of-plots
 
+- Python Fundamentos para Análise de Dados
+    https://www.datascienceacademy.com.br/public-course?courseid=python-fundamentos
 
 Python distributions
 ======================

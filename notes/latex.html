@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title>Latex and typography</title>
 <style type="text/css">
 
@@ -426,29 +426,30 @@ li {
 <li><a class="reference internal" href="#useful-sheet" id="id29">Useful sheet</a></li>
 <li><a class="reference internal" href="#correction-on-citations-e-g-author-year-letter" id="id30">Correction on citations (e.g., author-year-letter)</a></li>
 <li><a class="reference internal" href="#use" id="id31">Use</a></li>
+<li><a class="reference internal" href="#setting-the-maximum-number-of-authors-in-the-full-reference-list" id="id32">Setting the maximum number of authors in the full reference list</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#captions" id="id32">Captions</a></li>
+<li><a class="reference internal" href="#captions" id="id33">Captions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#typography" id="id33">Typography</a><ul>
-<li><a class="reference internal" href="#tips" id="id34">Tips</a><ul>
-<li><a class="reference internal" href="#letter-case" id="id35">Letter case</a></li>
+<li><a class="reference internal" href="#typography" id="id34">Typography</a><ul>
+<li><a class="reference internal" href="#tips" id="id35">Tips</a><ul>
+<li><a class="reference internal" href="#letter-case" id="id36">Letter case</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general" id="id36">General</a><ul>
-<li><a class="reference internal" href="#sans-serif-ss" id="id37">Sans serif (SS)</a></li>
-<li><a class="reference internal" href="#serif-se" id="id38">Serif (Se)</a></li>
-<li><a class="reference internal" href="#monospace-mo" id="id39">Monospace (Mo)</a></li>
+<li><a class="reference internal" href="#general" id="id37">General</a><ul>
+<li><a class="reference internal" href="#sans-serif-ss" id="id38">Sans serif (SS)</a></li>
+<li><a class="reference internal" href="#serif-se" id="id39">Serif (Se)</a></li>
+<li><a class="reference internal" href="#monospace-mo" id="id40">Monospace (Mo)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id1" id="id40">Latex</a><ul>
-<li><a class="reference internal" href="#id2" id="id41">Sans serif (SS)</a></li>
-<li><a class="reference internal" href="#id3" id="id42">Serif (Se)</a></li>
-<li><a class="reference internal" href="#id4" id="id43">Monospace (Mo)</a></li>
+<li><a class="reference internal" href="#id1" id="id41">Latex</a><ul>
+<li><a class="reference internal" href="#id2" id="id42">Sans serif (SS)</a></li>
+<li><a class="reference internal" href="#id3" id="id43">Serif (Se)</a></li>
+<li><a class="reference internal" href="#id4" id="id44">Monospace (Mo)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#install-otf-or-ttf-ubuntu" id="id44">Install OTF or TTF Ubuntu</a></li>
+<li><a class="reference internal" href="#install-otf-or-ttf-ubuntu" id="id45">Install OTF or TTF Ubuntu</a></li>
 </ul>
 </li>
 </ul>
@@ -570,7 +571,7 @@ No acronyms here.
 <p>The right usage is <tt class="docutils literal">\short{}</tt>, and not just <tt class="docutils literal">\short</tt>. If you do so, you will have spacing problems after the command!</p>
 <pre class="code latex literal-block">
 <span class="comment">%~ *\mean{}*
-</span><span class="keyword">\def</span><span class="keyword">\mean</span>#1<span class="name builtin">{</span><span class="keyword">\left</span>&lt; #1 <span class="keyword">\right</span>&gt;<span class="name builtin">}</span>
+</span><span class="keyword">\def\mean</span>#1<span class="name builtin">{</span><span class="keyword">\left</span>&lt; #1 <span class="keyword">\right</span>&gt;<span class="name builtin">}</span>
 </pre>
 </div>
 <div class="section" id="highlight-source-codes">
@@ -601,7 +602,7 @@ hyphenation.</p>
 <pre class="code latex literal-block">
 <span class="keyword">\newenvironment</span><span class="name builtin">{</span>rcases<span class="name builtin">}</span>
   <span class="name builtin">{</span><span class="keyword">\left</span>.<span class="keyword">\begin</span><span class="name builtin">{</span>aligned<span class="name builtin">}}</span>
-  <span class="name builtin">{</span><span class="keyword">\end</span><span class="name builtin">{</span>aligned<span class="name builtin">}</span><span class="keyword">\right</span><span class="keyword">\rbrace</span><span class="name builtin">}</span>
+  <span class="name builtin">{</span><span class="keyword">\end</span><span class="name builtin">{</span>aligned<span class="name builtin">}</span><span class="keyword">\right\rbrace</span><span class="name builtin">}</span>
 </pre>
 </div>
 <div class="section" id="cancel">
@@ -699,7 +700,7 @@ b
 <h2><a class="toc-backref" href="#id26">PDF Version</a></h2>
 <p>To generate PDF files with version 1.4:</p>
 <pre class="code bash literal-block">
-dvipdfmx -V 4 test.dvi
+dvipdfmx -V <span class="literal number">4</span> test.dvi
 ps2pdf -dCompatibility<span class="operator">=</span>1.4 test.ps
 </pre>
 <p>The problem with this method is that the structure of chapters do not is generated for navigation within the file.</p>
@@ -710,7 +711,7 @@ ps2pdf -dCompatibility<span class="operator">=</span>1.4 test.ps
 <pre class="code bash literal-block">
 gs -sDEVICE<span class="operator">=</span>pdfwrite -dCompatibilityLevel<span class="operator">=</span>1.4 -dPDFSETTINGS<span class="operator">=</span>/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile<span class="operator">=</span>output.pdf input.pdf
 
-<span class="comment"># /screen selects low-resolution output similar to the Acrobat Distiller &quot;Screen Optimized&quot; setting.
+<span class="comment single"># /screen selects low-resolution output similar to the Acrobat Distiller &quot;Screen Optimized&quot; setting.
 # /default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
 # /ebook selects medium-resolution output similar to the Acrobat Distiller &quot;eBook&quot; setting.
 # /printer selects output similar to the Acrobat Distiller &quot;Print Optimized&quot; setting.
@@ -742,15 +743,39 @@ gs -sDEVICE<span class="operator">=</span>pdfwrite -dCompatibilityLevel<span cla
 <span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\araa</span><span class="name builtin">}{</span>Annu. Rev. Astron. Astrophys<span class="name builtin">}</span>
 <span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\zap</span><span class="name builtin">}{</span>Zeitschrift f<span class="keyword">\&quot;</span>ur Astrophysik<span class="name builtin">}</span>
 <span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\apss</span><span class="name builtin">}{</span>Astrophysics and Space Science<span class="name builtin">}</span>
+<span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\aj</span><span class="name builtin">}{</span>Astronomical Journal<span class="name builtin">}</span>
+<span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\apjs</span><span class="name builtin">}{</span>ApJ Supplement<span class="name builtin">}</span>
+<span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\aaps</span><span class="name builtin">}{</span>A<span class="keyword">\&amp;</span>A Supplement<span class="name builtin">}</span>
+<span class="keyword">\newcommand</span><span class="name builtin">{</span><span class="keyword">\pasj</span><span class="name builtin">}{</span>Astronomical Society of Japan<span class="name builtin">}</span>
 
 <span class="keyword">\bibliographystyle</span><span class="name builtin">{</span>apalike<span class="name builtin">}</span>  <span class="comment">% plainnat, apj, ...
 % \renewcommand\refname{List of Publications}  % rename the Bibliography section name
 </span><span class="keyword">\bibliography</span><span class="name builtin">{</span>/home/user/file<span class="name builtin">}</span>  <span class="comment">% file.bib path</span>
 </pre>
 </div>
+<div class="section" id="setting-the-maximum-number-of-authors-in-the-full-reference-list">
+<h3><a class="toc-backref" href="#id32">Setting the maximum number of authors in the full reference list</a></h3>
+<p>Create a custom <tt class="docutils literal">.bst</tt> file. Find the section <tt class="docutils literal">FUNCTION {format.names}</tt> and replace as following:</p>
+<pre class="code latex literal-block">
+<span class="comment">% nameptr #1 &gt;
+%   { namesleft #1 &gt;
+</span>nameptr #1 &gt;
+   <span class="name builtin">{</span>
+    nameptr #3
+    #1 + =
+    numnames #5
+    &gt; and
+      <span class="name builtin">{</span> &quot;others&quot; 't :=
+        #1 'namesleft := <span class="name builtin">}</span>
+      'skip<span class="literal string">$</span><span class="name builtin">
+    if</span><span class="literal string">$</span>
+    namesleft #1 &gt;
+</pre>
+<p>More info: <a class="reference external" href="https://tex.stackexchange.com/questions/26575/bibtex-how-can-i-automatically-reduce-long-author-lists-to-xxx-et-al/26582#26582">StackExchange</a></p>
+</div>
 </div>
 <div class="section" id="captions">
-<h2><a class="toc-backref" href="#id32">Captions</a></h2>
+<h2><a class="toc-backref" href="#id33">Captions</a></h2>
 <p>The default <tt class="docutils literal">\caption</tt> provides two arguments. The first is optional and defines what is set in the List of Tables (LoT), while the latter is mandatory and is used in the setting of the actual caption. If you don't supply the former, it's passed as equivalent to the latter.</p>
 <pre class="code literal-block">
 \caption[&lt;LoT entry&gt;]{&lt;regular caption&gt;}
@@ -758,9 +783,9 @@ gs -sDEVICE<span class="operator">=</span>pdfwrite -dCompatibilityLevel<span cla
 </div>
 </div>
 <div class="section" id="typography">
-<h1><a class="toc-backref" href="#id33">Typography</a></h1>
+<h1><a class="toc-backref" href="#id34">Typography</a></h1>
 <div class="section" id="tips">
-<h2><a class="toc-backref" href="#id34">Tips</a></h2>
+<h2><a class="toc-backref" href="#id35">Tips</a></h2>
 <ul class="simple">
 <li>Online: go sans serif.</li>
 <li>Verdana = Microsoft</li>
@@ -769,52 +794,52 @@ gs -sDEVICE<span class="operator">=</span>pdfwrite -dCompatibilityLevel<span cla
 <li>AVOID Times New Roman!</li>
 </ul>
 <div class="section" id="letter-case">
-<h3><a class="toc-backref" href="#id35">Letter case</a></h3>
+<h3><a class="toc-backref" href="#id36">Letter case</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Letter_case">https://en.wikipedia.org/wiki/Letter_case</a></p>
 <p><em>Start case</em> in the absence of spaces is called <strong>CamelCase</strong>.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/CamelCase">https://en.wikipedia.org/wiki/CamelCase</a></p>
 </div>
 </div>
 <div class="section" id="general">
-<h2><a class="toc-backref" href="#id36">General</a></h2>
+<h2><a class="toc-backref" href="#id37">General</a></h2>
 <div class="section" id="sans-serif-ss">
-<h3><a class="toc-backref" href="#id37">Sans serif (SS)</a></h3>
+<h3><a class="toc-backref" href="#id38">Sans serif (SS)</a></h3>
 <p>Arial/Helvetica
 Droid Sans
 Aurulant Sans (OTF)</p>
 </div>
 <div class="section" id="serif-se">
-<h3><a class="toc-backref" href="#id38">Serif (Se)</a></h3>
+<h3><a class="toc-backref" href="#id39">Serif (Se)</a></h3>
 <p>Georgia
 DejaVu Serif</p>
 </div>
 <div class="section" id="monospace-mo">
-<h3><a class="toc-backref" href="#id39">Monospace (Mo)</a></h3>
+<h3><a class="toc-backref" href="#id40">Monospace (Mo)</a></h3>
 <p>Courier
 Inconsolata (fonts-inconsolata)
 Terminus-font (TTF)</p>
 </div>
 </div>
 <div class="section" id="id1">
-<h2><a class="toc-backref" href="#id40">Latex</a></h2>
+<h2><a class="toc-backref" href="#id41">Latex</a></h2>
 <div class="section" id="id2">
-<h3><a class="toc-backref" href="#id41">Sans serif (SS)</a></h3>
+<h3><a class="toc-backref" href="#id42">Sans serif (SS)</a></h3>
 <p>Cabin(Condensed)
 Comfortaa [style]
 DejaVu</p>
 </div>
 <div class="section" id="id3">
-<h3><a class="toc-backref" href="#id42">Serif (Se)</a></h3>
+<h3><a class="toc-backref" href="#id43">Serif (Se)</a></h3>
 <p>DejaVu Serif
 CCR (Computer Concrete)</p>
 </div>
 <div class="section" id="id4">
-<h3><a class="toc-backref" href="#id43">Monospace (Mo)</a></h3>
+<h3><a class="toc-backref" href="#id44">Monospace (Mo)</a></h3>
 <p>Inconsolata</p>
 </div>
 </div>
 <div class="section" id="install-otf-or-ttf-ubuntu">
-<h2><a class="toc-backref" href="#id44">Install OTF or TTF Ubuntu</a></h2>
+<h2><a class="toc-backref" href="#id45">Install OTF or TTF Ubuntu</a></h2>
 <p>Copy files do <tt class="docutils literal"><span class="pre">~/.fonts/</span></tt>.</p>
 </div>
 </div>

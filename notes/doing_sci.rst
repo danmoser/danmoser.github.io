@@ -126,6 +126,39 @@ Doing science
 
 - `CNPq e Organizações Sociais começam 2017 com orçamento sem lastro <http://ciencia.estadao.com.br/blogs/herton-escobar/cnpq-e-organizacoes-sociais-comecam-2017-com-orcamento-sem-lastro/>`_
 
+- `A verdade matemática <http://cultura.estadao.com.br/blogs/estado-da-arte/a-verdade-e-a-mesma-em-cambridge-e-em-madras-dois-olhares-sobre-a-matematica-2/>`_
+
+- Os custos da corrupção e da crise afetam não só economicamente nossa sociedade. Decisões equivocadas criam obstáculos sérios para o futuro da inovação e da ciência e também para a convivência social. É preciso recorrer aos valores  da integridade, da ética, da solidariedade e do respeito à alteridade, para recompor o tecido social. Educação e comunicação serão fundamentais nessa atividade. E assim também o papel do professor e do cientista. http://portal.if.usp.br/ifusp/pt-br/evento/coloquio-do-ifusp-com-o-dr-belisario-dos-santos-junior
+
+- `Ensino de homeopatia veterinária é deficiente, afirma pesquisadora <http://jornal.usp.br/ciencias/ciencias-da-saude/ensino-de-homeopatia-veterinaria-e-deficiente-afirma-pesquisadora/>`_
+
+- `A homeopatia é uma farsa <https://jornal.usp.br/artigos/a-homeopatia-e-uma-farsa-criminosa/>`_
+
+- `What I learned as a hired consultant to autodidact physicists <https://aeon.co/ideas/what-i-learned-as-a-hired-consultant-for-autodidact-physicists>`_
+
+- `Ensino, Domesticação e Desigualdade <http://rogeriocerqueiraleite.com.br/ensino-domesticacao-e-desigualdade/>`_
+
+- `MEC reconhece centenas de programas de pós-graduação numa tacada só <http://www.diretodaciencia.com/2017/05/23/mec-reconhece-centenas-de-programas-de-pos-graduacao/>`_
+
+- `Êxodo científico impede o país de superar suas crises <http://www.otempo.com.br/interessa/%C3%AAxodo-cient%C3%ADfico-impede-o-pa%C3%ADs-de-superar-suas-crises-1.1303881>`_
+
+- `Depoimento Ulisses Capozzoli <http://www.fiocruz.br/brasiliana/cgi/cgilua.exe/sys/start.htm?infoid=90&sid=31>`_
+
+- `Competitiveness at school may not yield the best exam results <http://www.economist.com/blogs/graphicdetail/2017/04/daily-chart-15>`_
+
+-  `It's time for academics to take back control of research journals <https://www.theguardian.com/higher-education-network/2017/may/25/its-time-for-academics-to-take-back-control-of-research-journals?CMP=share_btn_fb>`_
+
+- `Se tudo der certo, o Brasil será da molecada que trabalha <http://super.abril.com.br/blog/alexandre-versignassi/se-tudo-der-certo-o-brasil-sera-da-molecada-que-trabalha/>`_
+
+- `'Nunca me sonharam' expõe realidades e utopias de alunos no ensino médio do país <http://www.redebrasilatual.com.br/entretenimento/2017/06/nunca-me-sonharam-expoe-realidades-e-utopias-do-ensino-medio-do-opais>`_
+
+- `The Role of Gender in Asking Questions <https://astrobites.org/2017/06/09/the-role-of-gender-in-asking-questions/>`_
+
+- `O que esperar e o que não esperar de um orientador <http://pesquisatec.com/new-blog/2013/5/31/o-que-esperar-e-o-que-no-esperar-de-um-orientador>`_
+
+- `O artista paga alto preço por levar uma vida não convencional <http://zh.clicrbs.com.br/rs/entretenimento/noticia/2016/06/vitor-ramil-o-artista-paga-alto-preco-por-levar-uma-vida-nao-convencional-5825352.html>`_
+
+- `Nova revisão invalida milhares de estudos sobre o cérebro <http://brasil.elpais.com/brasil/2016/07/26/ciencia/1469532340_615895.html?id_externo_rsoc=FB_CC>`_
 
 Data tools
 ==================

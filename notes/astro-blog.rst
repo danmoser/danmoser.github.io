@@ -3,15 +3,177 @@ DMF AstroBlog
 
 2017
 **********
-.. 
-    2017-02
-    =============
-    TBD
+2017-06
+========
+Supernova Cosmology: Thirty Years of Watching Stars Blow Up
+------------------------------------------------------------
+Nicholas B. Suntzeff, Texas A&M University.
 
-    -------------
+"Starting in 1986, Mark Phillips, Mario Hamuy, and I began the study of the properties of nearby supernovae, and were the first to produce a light curve based on CCD data. With Jose Maza, in 1989, we began the concentrated study of nearby supernovae called the Calan/Tololo Survey, which led to discoveries including the establishment of Type Ia supernovae as standardizable candles, the deeper understanding of reddening and temperature effects in light curves and spectra, and with the HST calibration of distances to nearby host galaxies of these SNe, the modern value of the Hubble constant based on the quiet Hubble flow defined by supernovae. In 1994, Brian Schmidt and I founded the High-Z Supernova Team utilizing the Calán/Tololo results and MLCS techniques developed by Riess et al. The image subtraction software was developed by Schmidt and later Tonry. These techniques underlie the discovery by both the HZT and the Supernova Cosmology Project of Saul Perlmutter et al (who developed independent software) of the apparent accelerated expansion of the Universe. All these discoveries rest on the rickety photometric system astronomers have organically developed over the last 70 years. With the improvement in the fundamental calibration system led by HST astronomers, and a reanalysis of astronomical photometric techniques by Stubbs and Tonry, we now see the results of supernova cosmology are limited by the systematic errors in how we do photometry. We founded the Carnegie Supernova Project to create a new and precisely calibrated set of nearby supernovae to dig into these systematic effects and to anchor the acceleration results. In this talk, I will present the background of supernova cosmology and reveal the strengths and pitfalls of this field."
+
+------------
+
+15 anos de pesquisa por nada
+-----------------------------
+Nova revisão invalida milhares de estudos sobre o cérebro. Falha de informática e más práticas generalizadas põem em questão 15 anos de pesquisas.
+
+http://brasil.elpais.com/brasil/2016/07/26/ciencia/1469532340_615895.html?id_externo_rsoc=FB_CC
+
+--------------
+
+Stars are born in pairs
+---------------------------
+"The model can explain the Perseus observations only if all sunlike stars are born with a companion."
+
+Read more at: https://phys.org/news/2017-06-evidence-stars-born-pairs.html#jCp
+https://phys.org/news/2017-06-evidence-stars-born-pairs.html
+
+---------------------------
+
+Can We Explain the Curious Case of Tabby’s Star?
+-------------------------------------------------
+http://www.skyandtelescope.com/astronomy-news/explaining-curious-case-tabbys-star/
+
+------------
+
+Wow! Signal explained?!
+------------------------------------------
+40 years later...
+
+https://astronomynow.com/2017/06/11/comet-claim-for-mysterious-wow-signal-sparks-controversy/
+
+Portuguese: http://g1.globo.com/ciencia-e-saude/blog/observatorio/post/uau-era-um-cometa.html
+
+------------
+
+Einstein's challenge
+------------------------
+Hubble Astronomers Develop a New Use for a Century-Old Relativity Experiment to Measure a White Dwarf's Mass
+
+http://hubblesite.org/news_release/news/2017-25
+
+------------------------
+
+Chernobyl and the small rate in the decomposition of plant material
+------------------------------------------------------------------------------
+https://link.springer.com/article/10.1007%2Fs00442-014-2908-8
+
+Portuguese: http://diariodebiologia.com/2017/06/existe-um-lugar-no-mundo-onde-nada-se-decompoe-desde-1986-cientistas-estao-verdadeiramente-preocupados/
+
+------------------------
+
+Astrostatistics and data visualization
+-----------------------------------------
+Data visualization: http://iopscience.iop.org/journal/1538-3873/page/Techniques-and-Methods-for-Astrophysical-Data-Visualization
+
+Astrostatistics: http://rpubs.com/rafael_astro/270596 (Rafael Souza)
+
+-----------
+
+NASA's asteroid-hunting spacecraft a discovery machine
+---------------------------------------------------------------
+https://phys.org/news/2017-06-nasa-asteroid-hunting-spacecraft-discovery-machine.html
+
+---------
+
+Os cometas na astronomia da "Revolução Científica" 
+----------------------------------------------------
+O estudo dos cometas teve um papel de grande destaque na astronomia do período geralmente conhecido como "Revolução Científica". Notadamente entre 1577 e o fim do século XVII, podemos identificar três frentes de investigação sobre esses corpos celestes que foram muito ativas e produziram impactos profundos sobre as ciências modernas como um todo: 
+
+(1) o problema da determinação de órbitas cometárias a partir de dados observacionais, que adquire grande importância a partir do emprego do método da paralaxe por Tycho Brahe ainda em 1577, e se estabiliza somente mais de um século depois, com a abordagem de Halley e Newton, na década de 1680; 
+
+(2) o debate sobre a natureza celeste ou atmosférica da matéria de que seriam feitos os cometas, que envolve a questão anterior, mas também uma série de considerações filosóficas, e atinge o ponto culminante na polêmica entre Galileu e o padre Orazio Grassi, por volta de 1620; 
+
+(3) a discussão astrológica a respeito da possível influência dos cometas sobre acontecimentos naturais e sociais, que atravessa toda essa época e só perde a força já na virada para o século XVIII. 
+
+A partir de alguns casos selecionados, relativos a cada um desses três grandes eixos que estruturaram o estudo dos cometas no período considerado (incluindo registros e interpretações de observações cometárias nas Américas, particularmente na Bahia colonial), o seminário também buscará apontar para problemas mais gerais da história das ciências, tais como sua relação com a religião e o papel da matemática na intermediação entre teorias e observações.
+
+http://www.astro.iag.usp.br/~astro12h/files/2017/0806.html
+
+
+2017-05
+========
+It's time for academics to take back control of research journals
+----------------------------------------------------------------------------------------
+https://www.theguardian.com/higher-education-network/2017/may/25/its-time-for-academics-to-take-back-control-of-research-journals?CMP=share_btn_fb
+
+-----------
+
+Secondary mirror of ELT successfully cast—largest convex mirror blank ever created
+----------------------------------------------------------------------------------------
+https://phys.org/news/2017-05-secondary-mirror-elt-successfully-castlargest.html?utm_source=nwletter&utm_medium=email&utm_campaign=daily-nwletter
+
+-----------
+
+'Alien Megastructure' Star Keeps Getting Stranger
+--------------------------------------------------------
+http://www.space.com/34303-alien-megastructure-star-strange-dimming-mystery.html
+
+---------
+
+Gestão de Projetos
+---------------------
+J.R. Santiago http://www.jrsantiago.com.br/
+
+----------
+
+Stars as random number generators 
+-----------------------------------
+Stars as random number generators could test foundations of physics
+
+https://phys.org/news/2017-05-stars-random-foundations-physics.html
+
+----------
+
+WWII interactive photos
+-------------------------
+http://interactive.guim.co.uk/embed/2014/apr/image-opacity-slider-master/index.html?ww2-dday
+
+----------
+
+50 Perguntas Que Irão Libertar Sua Mente
+------------------------------------------
+Um Ótimo Questionário Para Reflexão
+
+http://www.fasdapsicanalise.com.br/50-perguntas-que-irao-libertar-sua-mente-um-otimo-questionario-para-reflexao/
+
 
 2017-04
 ==========
+Luz de bactérias
+------------------
+http://www.bbc.com/portuguese/noticias/2016/03/160303_iluminacao_bacterias_df
+
+--------
+
+Anyone Can Do Astronomy with Python and Open Data
+---------------------------------------------------
+https://www.numfocus.org/blog/anyone-can-do-astronomy-with-python-and-open-data/
+
+---------
+
+A História da Astronomia no Brasil
+--------------------------------------
+Livro eletrônico (e-book) gratuito.
+
+http://www.mast.br/HAB2013/index.html
+
+-----
+
+A Reflection on Astrophysical Simulations
+---------------------------------------------
+https://astrobites.org/2014/05/14/a-reflection-on-astrophysical-simulations/
+
+----------
+
+A História e nós
+---------------------
+17 fatos que vão bagunçar totalmente a sua percepção do tempo
+
+https://www.buzzfeed.com/andyneuenschwander/17-fatos-que-vao-baguncar-totalmente-a-sua-percepcao-de-temp?utm_term=.gpP3jGyGW#.joegDA0AZ
+
+--------
+
 Cassini's gran finale
 ------------------------
 https://www.youtube.com/watch?v=xrGAQCq9BMU
