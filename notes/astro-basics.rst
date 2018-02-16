@@ -177,7 +177,7 @@ Quero ser astrônomo(a)
     PS: Talvez você ache interessante a leitura deste `link <http://mulherdasestrelas.com/quer_ser_astrnomoa.html>`_. É o site de uma astrônoma brasileira que trabalhou na NASA e que responde à perguntas para quem quer ser astrônomo(a).
 
 Links
--------
+======
 - http://www.astro.iag.usp.br/~bacharelado/?q=node/5
 - http://mulherdasestrelas.com/quer_ser_astrnomoa.html
 
