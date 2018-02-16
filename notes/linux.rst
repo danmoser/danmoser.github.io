@@ -5,6 +5,29 @@ Linux tips
 
 Useful commands tricks
 ===========================
+Disable Web Notifications Firefox Browser
+----------------------------------------------------
+- Access "about:config"
+- Search for "webnotifications"
+- Disable (**false**) the (1) `dom.webnotifications.enabled` and (2) `dom.webnotifications.serviceworker.enabled`. 
+
+One may also want to clean up the previous authorizations. For that, `Options > Content > Notifications > Choose... > Remove All Sites > Save Changes`.
+
+
+Find a package by filenames
+------------------------------
+``apt-file``: https://wiki.ubuntu.com/AptFile . This is very useful when looking for Latex files, as `*.sty`.
+
+Set size of files in multi-files zip
+---------------------------------------
+.. code:: bash
+
+    7za a -m0=Copy -v512m output.7z input
+    7za a -m0=lzma2 -mx0 output.7z input
+
+    # -mx=[0|1|3|5|7|9]  5   Sets level of compression.
+    # 0 = copy; 1 = fastest; 5 = default; 9 = max.
+
 Print line interval
 ---------------------
 Print from lines 4400 to 4500 of a file
@@ -12,6 +35,11 @@ Print from lines 4400 to 4500 of a file
 .. code:: bash
 
     cat file | head -n 4500 | tail -n 100
+
+
+Good media player
+--------------------
+``mplayer`` (mplayer2) is the best!
 
 
 Multiple files edition (substitution)
@@ -221,6 +249,9 @@ Useful keyboard shortcuts
     exaile -p  #Previous
     exaile -n  #Next
     qmmp -t  #Pause
+    clementine -t  #Pause
+    clementine -r  #Previous
+    clementine -f  #Next
     amixer set Master 7%- -q
     amixer set Master 7%+ -q
 
@@ -297,6 +328,7 @@ GRUB edit
     sudo vim /etc/default/grub
     sudo update-grub
 
+
 Changing time-zone
 -------------------
 Using the terminal (command line)
@@ -306,6 +338,14 @@ Using the terminal (command line)
     sudo dpkg-reconfigure tzdata.
 
 Follow the directions in the terminal. The timezone info is saved in ``/etc/timezone``.
+
+
+Problems with the panel
+------------------------
+On Xubuntu 16.04, if the indicator-multiload has problems ("transparency") or the volume indicator is missing, You might have indicator-plugin missing from the panel. 
+
+Right click on the panel and select it.
+
 
 Mimes and program links in File Managers
 ------------------------------------------

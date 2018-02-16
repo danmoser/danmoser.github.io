@@ -906,6 +906,211 @@ Outra maneira de proceder é calcular o valor-*p*, ou seja,
 Esse valor pequeno de :math:`\hat{\alpha}` leva a rejeição de :math:`H_0`. Para construir um IC(:math:`\mu`;0.95), verificamos na Tabela que o valor :math:`t_\gamma=2.064` e, portanto, IC(:math:`\mu`;0.95)=31.5 :math:`\pm` (2.064)3/:math:`\sqrt{25}` , ou seja, IC(:math:`\mu`;0.95)=]30.26;32.74[.
 
 
+Combinatória
+=============
+A combinatória é um ramo da matemática que estuda coleções finitas de elementos. *Permutação* é muitas vezes usado como sinônimo de *arranjo*. 
+
+Arranjo simples
+----------------------
+Arranjo simples de *k* elementos de um total de *n* elementos em que cada maneira de tomar os elementos **se diferencia** pela ordem e unicidade dos elementos. 
+
+:math:`A=\frac{n!}{(n-k)!}`
+
+Se *k=n*, este arranjo é chamado de *permutação*. Anagramas com letras únicas é um exemplo de permutação (simples).
+
+:math:`P=n!`
+
+Arranjo com repetição
+----------------------
+O arranjo com repetição é usado quando a ordem dos elementos importa e cada elemento pode ser contado mais de uma vez.
+
+:math:`AR=n^k`
+
+Combinação simples
+------------------------
+Na combinação, a ordem em que os elementos são tomados **não** é importante. Se cada elemento pode ser contado apenas uma vez, o número de combinações é o coeficiente binomial:
+
+:math:`C_{n}^{k}=\left(\frac{n}{k}\right)={\frac {n!}{k!\cdot \left(n-k\right)!}}`
+
+Combinação com reposição
+---------------------------
+Quando a ordem não importa, mas cada objeto pode ser escolhido mais de uma vez, o número de combinações é
+
+:math:`CR_{n}^{k}=\left( \frac{n+k-1}{k} \right)={ \frac {(n+k-1)!} {k!(n-1)!} }`
+
+Seleção sem reposição
+--------------------------
+*N* objetos estão dividido em três grupos: *r1* são do grupo A, *r2* são do grupo B, e *r3* são do grupo C, tal que :math:`\sum ri = N`. Um subconjunto de *n* elementos são escolhidos (**sem reposição**). Qual a probabilidade :math:`p_k` que esse subconjunto contenha *k1* elementos de A, *k2* elementos de B e *k3* elementos de C (:math:`\sum ki = n`)?
+
+:math:`p_k\equiv\frac{\binom{r1}{k1}\binom{r2}{k2}\binom{r3}{k3}}{\binom{N}{n}}`.
+
+
+Exercícios
+============
+1. Um barato de 40 cartas contém 4 ases. Se duas cartas são retiradas, qual a probabilidade de se obter um ás?
+
+    P = 4/40x36/39 + 36/40x4/39 = 0.1846.
+    Com Bernoulli. N=40, r=4, k=1, n=2. P = 0.1846.
+
+2. Um dado é lançado três vezes sucessivamente. Qual é a probabilidade de não ocorrerem três números iguais ? 
+
+    A probabilidade de que ocorram três número iguais para um dado número é (1/6)^3. Porém, isso pode ocorrer para qualquer um dos 6 números. Logo a probabilidade para que um dos números seja sorteado 3x é P' = (1/6)^3*6 = 1/36. Porém queremos que **não** ocorra isso. Logo P = 1 - P' = 35/36.
+
+3. Qual a probabilidade da soma do lançamento de dois dados ser 7?
+
+    A primeira jogada define um valor de 1 a 6. Para que a soma seja 7, basta que caia o seu "complemento" no dado. Logo, P = 1/6.
+
+4. Qual a probabilidade da soma do lançamento de dois dados ser 6?
+
+    A soma 6 só pode ocorrer pela combinação de 1+5, 2+4, 3+3, 4+2, 5+1 dentre 36 combinações possíveis. Logo, a probabilidade da soma do lançamento de dois dados ser 6 é P = 5/36.
+
+5. Um dado é lançado 3 vezes. Qual a probabilidade de que um dos números apareça *somente* em dois lançamentos?
+
+    Usando Bernoulli. p=1/6; n=3; k=2. P = 5/72 = 0.06944.
+
+6. Um dado é lançado 5 vezes. Qual a probabilidade de que um dos números apareça em um ou mais lançamentos?
+
+    Usando Bernoulli. 
+    p=1/6; n=5; k=0; P0 = 0.40188.
+    p=1/6; n=5; k=1; P1 = 0.40188.
+    p=1/6; n=5; k=2; P2 = 0.16075.
+    p=1/6; n=5; k=3; P3 = 0.03215.
+    p=1/6; n=5; k=4; P4 = 0.00322.
+    p=1/6; n=5; k=5; P5 = 0.00013.
+    P = 1-P0 = P1+P2+P3+P4+P5 = 0.59812.
+
+7. Meninos tem probabilidade de nascer p=0.51 (meninas, p'=0.49). Numa família com 3 filhos cada, qual a probabilidade de ter filhos de ambos os sexos?
+
+    Usando Bernoulli.
+    Qual a probabilidade de se ter 0 homens (P0')?
+    p=0.51; n=3; k=0; P0' = 0.11765.
+    Repetindo...
+    p=0.51; n=3; k=1; P1' = 0.36735.
+    p=0.51; n=3; k=2; P2' = 0.38235.
+    p=0.51; n=3; k=3; P3' = 0.13265.
+    Tal que a soma de probabilidade de todos os Pn' = 1.0.
+    A probabilidade de se ter filhos de ambos os sexos é P = P1'+P2' = 0.74940.
+
+8. Num grupo de 10 famílias com 3 filhos cada, qual a probabilidade de se encontrar 1 ou mais famílias com todos os três filhos do mesmo gênero (i.e., todos meninos ou todas meninas)?
+
+   Usando do exercício anterior, p = P0'+P3' = 0.2503...
+   p=0.2503; n=10; k=0; P0'' = 0.05609.
+   p=0.2503; n=10; k=1; P1'' = 0.18726.
+   p=0.2503; n=10; k=2; P2'' = 0.28134.
+   p=0.2503; n=10; k=3; P3'' = 0.25048.
+   p=0.2503; n=10; k=4; P4'' = 0.14635.
+   p=0.2503; n=10; k=5; P5'' = 0.05863.
+   p=0.2503; n=10; k=6; P6'' = 0.01631.
+   p=0.2503; n=10; k=7; P7'' = 0.00311.
+   p=0.2503; n=10; k=8; P8'' = 0.00039.
+   p=0.2503; n=10; k=9; P9'' = 0.00003.
+   p=0.2503; n=10; k=10; P10'' = 0.00000.
+   Tal que a soma de probabilidade de todos os Pn'' = 1.0.
+   A probabilidade de se ter 1 família com todos os três filhos do mesmo gênero é P1''=0.18726. A probabilidade de se ter 1 ou mais famílias com todos os três filhos do mesmo gênero é P = 1-P0'' = 0.94391. 
+
+9. Meninos tem probabilidade de nascer p=0.51 (meninas, p'=0.49). Num grupo de 50 famílias com 8 filhos cada, qual a probabilidade de se achar 1 ou mais famílias com todos os filhos do mesmo gênero (i.e., todos meninos ou todas meninas)?
+
+    Usando Bernoulli. 
+    p=0.51; n=8; k=0; P0' = 0.00332.
+    p=0.51; n=8; k=0; P1' = 0.02767.
+    p=0.51; n=8; k=0; P2' = 0.10080.
+    p=0.51; n=8; k=0; P3' = 0.20984.
+    p=0.51; n=8; k=0; P4' = 0.27300.
+    p=0.51; n=8; k=0; P5' = 0.22731.
+    p=0.51; n=8; k=0; P6' = 0.11830.
+    p=0.51; n=8; k=0; P7' = 0.03518.
+    p=0.51; n=8; k=8; P8' = 0.00458.
+    A chance de se encontrar uma família aleatoriamente com todos os filhos do mesmo sexo é P' = P0'+P8' = 0.00790. A chance de se encontrar uma família com filhos de ambos os sexos é P'' = 1-P' = 0.99210.
+    Num grupo de 50 destas famílias, a chance de todas as famílias terem filhos de ambos os sexos é
+    p'=0.99210; n=50; k=50; P50'' = 0.67262. Portanto, a chance de se achar ao menos 1 família com filhos de mesmo gênero é P = 1-P50'' = 0.32738.
+
+10. Mantidas as hipóteses de p=0.51 para meninos e p=0.49 para meninas (com gênero independente entre nascimentos), um casal possui dois filhos, e pelo menos um deles é menina. Com esta informação (condicional, de que um deles é menina), qual a probabilidade de se ter duas meninas?
+
+    A probabilidade de se ter duas meninas é p=0.49^2=0.2401. Usando Bernoulli, a probabilidade de se ter uma menina (e um menino) é p'=0.4998 (alternativamente isso pode ser deduzido como p'=1-0.49^2-0.51^2). 
+    Logo, sabendo que temos pelo menos uma menina, estas probabilidades precisam ser normalizadas. Assim, P'=p'/(p'+p) e P = p/(p'+p) = 0.32450.
+
+11. Susie consegue identificar a orientação sexual das pessoas com 90% de precisão. Numa simplificação, 5% da população é gay e 95% são heterossexuais. Como a maior parte da população é hetero, a imprecisão da Susie fará com que ela perceba que existem mais gays do que realmente há. Se Susie conhecer alguém aleatoriamente, qual a probabilidade dela pensar que essa pessoa é gay?
+
+    P = 0.95x0.10+0.05x0.90 = 0.14.
+
+12. No problema do "Monty Hall" com N portas, qual a probabilidade de se ganhar após o participante permanecer na porta escolhida? E se ele resolver trocar por uma das portas restantes, após n portas serem abertas (evidentemente, sem o prêmio)?
+
+    A probabilidade da porta inicial é P = 1/N. Após a abertura de n portas, quaisquer uma das portas que não for a inicialmente escolhida terá probabilide P = (N-2+n)/[N*(N-2)].
+
+13. Você é uma criança na aula de educação física. Você ama correr e detesta nadar. Na turma de 49 + você de crianças (total 50), o professor vai escolher 20 para nadar e 30 para correr. Qual é a probabilidade de você ser escolhido para correr?
+
+    P = 30/50 = 3/5. Note que a probabilidade de você não ser escolhido como primeira criança é 49/50. A probabilidade de não ser escolhido como segundo é 48/49. Contudo, a probabilidade de não ser escohido cumulativamente (i.e., nem como primeiro e nem como segundo) é p=48/50.
+    O mesmo resultado pode ser obtido utilizando-se uma *distribuição hipergeométrica* (N=50, r=1, n=20 e k=0 de **não** ser selecionado; ou n=30 e k=1 de ser selecionado).
+
+14. Suppose that a test for using a particular drug is 99% sensitive (true positive rate) and 99% specific (true negative rate; that is, the test will produce 99% true positive results for drug users and 99% true negative results for non-drug users). Suppose that 0.5% of people are users of the drug. What is the probability that a randomly selected individual with a positive test is a user?
+
+    P = 0.99x0.005/(0.99x0.005+0.01x0.995) ~ 1/3.
+
+15. Um bastão de 1m de comprimento quebra-se em duas partes: a da esquerda, com comprimento L[m] (desconhecido) e a da direita, de comprimento 1-L[m]. Se há uma probabilidade de 60% que a parte esquerda é menor ou igual a 0.6m, qual é o comprimento esperado da peça direita (em metros)?
+
+    P = (40%*(1.0-0.6)+60%*(0.6-0.0)) = 0.5m
+
+16. Suponha que queremos distribuir *r* bolas em *n* compartimentos, com :math:`r \geq n`, todas as bolas devem ser distribuídas. Vamos calcular a probabilidade de um compartimento conter *k* bolas.
+
+    Observe que *k* bolas podem ser escolhidas de :math:`\left(\begin{array}{c}r\\k\end{array}\right)` maneiras distintas e que *(r-K)* bolas podem ser colocadas nos *(n-1)* compartimentos que restaram de :math:`(n-1)^{r-k}` maneiras. Assim seja *A* = {Um compartimento conter *k* bolas} a probabilidade de que um compartimento contenha *k* bolas é de:
+
+.. math::
+    \mathbb{P}(A)=\left(\begin{array}{c}r\\k\end{array}\right) \cdot \frac{(n-1)^{r-k} }{n^r}.
+
+17. How many anagrams of mississippi don't contain the word psi?
+
+    The set is composed of the letters: S=M,I,S,S,I,S,S,I,P,P,I. This set has cardinality (element count): \|S\|=11, so that P11=11!=39916800 permutations.
+    Then one have to remove repetitions caused by permutations of the same letter. One have P2=2!=2 permutations for the Ps and P4=4!=24 for the Is and again for the Ss. You have 2×24×24=1152 permutations of equal letters, per pattern. 
+    So, by now, we know how many permutations without repetition there are of S=M,I,S,S,I,S,S,I,P,P,I. There are P11P2×P4×P4=39916800/1152=34650.
+    The last part is solving the sub problem of how many permutations of MISSISSIPPI contain PSI. 
+    S=PSI,M,I,I,I,S,S,S,P. This set has cardinality 9, so has P9=9! permutations, from which we have to remove repetitions caused by swapping equal letters (three Is, three Ss). These repetitions are P3×P3=3!×3!=36 per pattern, so just like before, we divide P9P3×P3=10080.
+    Now, there's a bit of a snag. The permutations above will produce, for example, this pattern: PSIMIISSPSI. You'll notice that PSI appears twice. For each of these, there will be a repetition, when the first PSI is swapped with the last PSI. We have to remove these. How many are there? Again, the same method: S=PSI,PSI,M,I,I,S,S cardinality \|S\|=7 with repetitions caused by the two PSIs, the two Is and the two Ss. The number of permutations without repetition is P7P2×P2×P2=7!8=630.
+    The final answer is the number of permutations without repetitions of MISSISSIPPI minus the number of permutations without repetition of PSI and the letters MIIISSSP, after removing the duplicates caused by two PSIs: 34650−(10080−630)=25200.
+
+18. How many flips of a fair coin does it take until you get N heads in a row?
+
+    Let *p* be the probability of flipping a heads. Let *x* be number of flips needed to achieve *h* consecutive heads. The solution is :math:`E(x)=\frac{1−p^h}{p^h(1−p)}`. This expression may be derived as follows. The probability of being successful immediately is :math:`p^r`. However, one might get a tails immediately. In that case, the number of flips needed is *1+E(x)* (one flip has been used and we are back to the original position). We might get a heads and then a tails. In this case two flips have been used and we are back to the original position. Continue this up to *h−1* heads followed by a tails in which case *h* flips have been used and we are back to the original position.
+
+.. math::
+
+    E(x)=hp^h+(1−p)[E(x)+1]+p(1−p)[E(x)+2]+p^2(1−p)[E(x)+3]+...+p^{h−1}(1−p)[E(x)+h]
+
+    E(x)=hp^h+(1−p)\sum^{h−1}_{i=0}p^i[E(x)+i+1]
+
+    E(x)=(1−p^h)E(x)+\sum^{h−1}_{i=0}p^i
+
+    E(x)=(1−p^h)E(x)+\frac{1−p^h}{1−p}
+
+    E(x)=\frac{1−p^h}{p^h(1−p)}
+
+19. Uma certa doença afeta 0.15% da população. O único teste para esta doença tem acurácia (ou sensibilidade) de 99%. Se uma pessoa é diagnosticada como tendo a doença, qual a probabilidade dela efetivamente estar doente?
+
+.. math::
+
+    P(d) = 0.0015
+
+    P(\bar{d}) = 0.9985
+
+    P(+) = P(+|d).P(d) + P(+|\bar{d}).P(\bar{d}) = 0.99\times0.0015+0.01\times0.9985 = 0.01147
+
+    P(d|+) = \frac{P(+|d).P(d)}{P(+)} = 0.129468...
+
+20. Você tem um jarro com dez moedas: nove não normais, e uma delas tem duas caras. Uma pessoa pega uma moeda do jarro e lança a moeda três vezes, obtendo três caras. Qual a probabilidade desta pessoa estar com a moeda de duas caras?
+
+    Seja *j* a moeda justa, e *r* o resultado obtido.
+
+.. math::
+
+    P(j) = 9/10 = 0.9
+    
+    P(\bar{j}) = 0.1
+
+    P(r) = P(r|j).P(j) + P(r|\bar{j}).P(\bar{j}) = (1/2^3)*0.9+(1)*0.1 = 0.2125
+
+    P(\bar{j}|r) = \frac{P(r|\bar{j}).P(\bar{j})}{P(r)} = \frac{0.1}{0.2125} = 0.47059.
+
+
+
 Referências
 ============
 What is the question?

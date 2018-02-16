@@ -321,6 +321,8 @@ Ungrouped
 
 - `Superhero movies are bad for democracy <http://www.salon.com/2017/06/02/superhero-films-are-bad-for-democracy/>`_
 
+- `Charlottesville: Race and Terror - VICE News <https://www.youtube.com/watch?v=P54sP0Nlngg>`_
+
 
 Mandeville
 -----------

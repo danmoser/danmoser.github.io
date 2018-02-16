@@ -60,14 +60,71 @@ P: **Elas [as estrelas Be] são importantes considerando o ponto de vista de nó
 
 R: Diretamente as Be não estão associadas com a Terra ou o Sistema Solar. Isso porquê são estrelas bem mais jovens (algunas centenas de milhões de anos, enquanto que o Sol tem 4,5 bilhões) e não há planetas ao seu redor. Entretanto, estudando estas estrelas podemos melhorar os modelos físicos que temos (por exemplo, para as questões que enumerei na pergunta anterior) e assim compreender melhor as teorias que explicam o funcionamento do Sol, a origem da Terra (que também foi de um disco circunstelar, estrutura existente nas Be), etc. Como exemplo, gosto sempre de lembrar que o conhecimento da física atômica (e possibilidade de se construir bombas e usinas para geração de energia) surgiu estudando o interior das estrelas). Assim, o estudo das Be oferecem condições de estudos que são únicos e que podem complementar a teoria que aplicamos aqui na Terra.
 
+P: **Por que dizem que uma estrela brilha mesmo depois que ela morreu?**
+
+R: Na verdade isso depende da perspectiva em que se olha. Dizem isso pelo seguinte: a luz demora um certo tempo para percorrer grandes distâncias e, como as estrelas estão muito distantes uma das outras, a luz de uma estrela precisa viajar anos e anos até chegar até nós. Assim, se uma estrela morre agora, nós só vamos descobrir isso depois que essa informação viajar anos e anos até aqui. Por exemplo, imagine um vilarejo em que só podemos obter notícias via carta, e um amigo que morasse lá viesse a falecer. Uma pessoa comunicará a morte do amigo por carta, e a carta só chegará dias depois do falecimento. Até a carta chegar, você pensará que seu amigo está vivo, quando ele não mais está. O mesmo aconteceria com uma estrela que morressse agora: sua luz ainda estaria brilhando no céu, pois esta luz foi enviada antes da estrela morrer. Depois de um certo tempo, proporcional à sua distância, é que ela se apagará no céu.
+
+P: **Desvio para o vermelho mostra o aumento (ou/a) da velocidade de expansão dos corpos celestes?**
+
+R: Nossa compreensão atual é a de que o universo está se expandindo, mas de uma maneira bem lenta, que só pode ser detectada em distâncias muito, muito grandes. E quanto mais longe estiver um corpo celeste, maior será a velocidade com que este se afasta de nós. O desvio para o vermelho é uma medida desta velocidade de afastamento, de onde podemos estimar a distância do corpo celeste.
+
+P: **Mas como podemos detectar essa velocidade se estamos também nessa mesma expansão?**
+
+R: A expansão é bem pequena, sendo detectável somente a grandes distâncias. A questão da expansão do resto do universo então fica relativa a nós e nossa vizinhança. Nós podemos nos considerar parados, e todo o resto do universo parecerá estar se afastando em relação a nós (por exemplo, quando estamos dentro de um trem,  podemos dizer que o trem está parado e o resto é que está se movendo). Para a expansão do universo, costuma-se usar a analogia da bexiga: é como se vivêssemos num ponto desta superfície. Quando a bexiga está murcha, todos os outros ponto da superfície estão próximos. Ao ser inflada, todos os pontos da superfície da bexiga ficarão mais distantes uns dos outros. Esta é a expansão do universo, que ainda está "inflando-se".
+
+P: **Estamos portanto mais próximos do ponto central do Big Bang?**
+
+R: A analogia da bexiga dos dá a ideia de um centro. Mas a bexiga é uma superfície, não tem altura (ou espessura). Nós vivemos num ambiente tridimensional, então tal expansão ocorre em todas as direções, não havendo um "centro" para o universo.
+
+
+Astronomia amadora
+~~~~~~~~~~~~~~~~~~~~~
+P: **Eu vi na internet que o IAG-USP tem cursos aos sábados para quem quer iniciar em astronomia amadora.**
+
+R: Sobre astronomia amadora, não há nenhum curso *oficial* no IAG sobre isso. Oficialmente, só disciplinas optativas para alunos-USP e cursos de curta duração (eg., de verão) para graduandos de outras instituições. Aberto a comunidade, há a Astronomia para a 3a idade - e esporadicamente cursos de extensão de professores de ensino fundamental e médio.
+São conhecidos  dois grupos de astronomia amadora externo e com alguma presença na USP: 
+
+    - CASP, http://www.astrocasp.com/
+    - Sputnik, http://gruposputnik.com/
+
+Sugiro entrar em contato com eles sobre cursos. Um ótimo material para começar é este: 
+
+    - http://pt.wikihow.com/Iniciar-na-Astronomia-Amadora
+
+O IAG tem um curso [online] gratuito sobre Astrobiologia no Coursera:
+
+    - https://www.coursera.org/learn/origensdavida
+
+
+P: **Quero comprar um binóculo ou telescópio para observar o céu. Qual comprar?**
+
+R: Idealmente, conheça um grupo de astronomia amadora. Você poderá (i) ver na prática o que é possível observar com estes equipamentos e (ii) obter dicas atualizadas sobre modelos e lojas para comprar. A dica geral é sempre começar com um binóculo, para depois investir num telescópio. Aqui está um ótimo vídeo sobre o assunto:
+
+    - `Céu da Semana Ep. #15 - Binóculos <https://www.youtube.com/watch?v=QS5YmRmykPk>`_
+
+P: **Como observar o céu, isto é, como encontrar objetos interessantes?**
+
+R: Sugiro consultar os recursos abaixo:
+
+    - Visitas com observações no IAG-USP: http://www.iag.usp.br/astronomia/atendimento
+    - Para se orientar no céu com o PC: http://stellarium.org/
+    - Para se orientar no céu com celular (que tenha bússola): https://play.google.com/store/apps/details?id=com.google.android.stardroid
+    - Para ver satélites artificias: http://heavens-above.com/Visitas com observações no IAG: http://www.iag.usp.br/astronomia/atendimento
+
+
+Observacional
+~~~~~~~~~~~~~~~
 P: **Deve ser uma loucura os equipamentos que precisam estar disponíveis para vcs fazerem esses estudos né?**
 
 R: Sim, são bem complicados e envolvem muita tecnologia. Isso tem a ver como a ciência funciona: quando uma tecnologia aparece, os cientistas a utilizam até o seu limite para estudar e compreender a natureza. Vou dar um exemplo para ficar mais concreto: o tamanho dos telescópios. Assim que o Galileu apontou o telescópio para o céus e fez seus primeiros registros, começou uma corrida para quem conseguia "descobrir o que há no universo". Então, percebeu-se que com lentes maiores, poderia se ver mais coisas... Mas aí, viram que não se podem fabricar lentes muito grandes, então criou-se uma nova tecnologia: os telescópios com espelhos. Primeiro pequenos, depois maiores... A cada passo, novas descobertas. Então, chegamos as dias atuais, onde os cientistas, em geral, só conseguem fazer novas descobertas quando utilizam tecnologia de ponta, em condições que eram inacessíveis anteriormente. Vale destacar aqui que tecnologia de ponta não é uma necessidade: algumas vezes se faz ciência em condições que simplesmente ainda são inexploradas, que por alguma razão os cientistas do passado deixaram de estudar. Por exemplo, estudando algumas estrelas por décadas ou centenas de anos... Nesse aspectos, há incluse uma grande contribuição de astrônomos amadores que podem observar estrelas brilhantes com seus pequenos telescópios e ajudam cientistas em suas pesquisas (como anteceu na minha tese).
 
-P: **E como é na pratica [as observações astronômicas], assim, resumindo (lembre-se que eu não entendo nada). Vocês [astrônomos] olham para o céu, conseguem ver essas estrelas e como medem todas aquelas coisas que estão nos descritivos** (*fotometria*, *espectroscopia*, *polarimetria* e *interferometria*) **?**
+P: **E como é na prática [as observações astronômicas], assim, resumindo (lembre-se que eu não entendo nada). Vocês [astrônomos] olham para o céu, conseguem ver essas estrelas e como medem todas aquelas coisas que estão nos descritivos** (*fotometria*, *espectroscopia*, *polarimetria* e *interferometria*) **?**
 
 R: A maior parte do trabalho do astrônomo é feito em escritórios com computadores, incluindo as observações! Aquela cena clássica (e romântica) de um astrônomo pondo o olho numa luneta não acontece mais (descobriu-se que a eletrônica é muito melhor para detectar e registrar a luz que o corpo humano). Assim, numa observação "profissional" o astrônomo comanda o computador, que por sua vez controla a mecânica do telescópio e o mantém apontado para a estrela (lembre-se, por exemplo, que a Terra está girando, e o telescópio precisa acompanhar esse movimento). Assim, só vemos o que o computador vê (essencialmente, uma imagem preto-e-branco; cores por exemplo, são adicionadas depois). As diferentes técnicas observacionais citadas (*fotometria*, *espectroscopia*, *polarimetria* e *interferometria*) implicam em diferentes análises físicas que fazemos com a luz coletada pelo telescópio (por exemplo, fotometria é uma medida de "potência" da luz; espectroscopia é uma medida da "cor" da luz; polarimetria é uma medida da "orientação" da luz, como Norte-Sul ou Leste-Oeste; e interferometria é uma medida que combina a luz de dois ou mais telescópios). Na maioria destes casos não fazemos uma "imagem" da estrela com o telescópio principal (assim, não "vemos" a estrela), mas só o resultado da análise feita com sua luz, pelo computador.
 
+
+Carreira
+~~~~~~~~~~~~~~
 P: **Você sabe quantas pessoas no mundo ou no Brasil estudam essas estrelas?**
 
 R: Em junho de 2014 houve uma conferência dedicada ao estudo das estrelas Be no Canadá, onde compareceram 60 participantes. Como nem todos podem participar de eventos como esse, 100 seria um bom número para dizer quantas pessoas estudam especificamente as Be no mundo. No Brasil, até onde sei, estuda-se Be em São Paulo (IAG-USP e UNIFESP), ON (Observatório Nacional, no Rio de Janeiro) e na UFS (Universidade Federal de Sergipe), envolvendo uns 10 especialistas. 
@@ -81,36 +138,9 @@ P: **Quantos astrônomos profissionais existem no mundo (e no Brasil) hoje?**
 
 R: Na União Astronômica Internacional (IAU em inglês) existem aprox. 11000 membros cadastrados. Como envolvem taxas e outras obrigações, só uma parcela dos astrônomos são vinculados à IAU (por exemplo, eu não sou). Se você incluir cientistas de outros campos, como física, geologia e engenharia que tem interesses de pesquisas relacionados à astronomia, você certamente pode dobrar o número acima. Na Sociedade Astronômica Brasileira (SAB), existem quase 700 membros, onde a maioria são estudantes de pós-graduação.
 
-P: **Por que dizem que uma estrela brilha mesmo depois que ela morreu?**
-
-R: Na verdade isso depende da perspectiva em que se olha. Dizem isso pelo seguinte: a luz demora um certo tempo para percorrer grandes distâncias e, como as estrelas estão muito distantes uma das outras, a luz de uma estrela precisa viajar anos e anos até chegar até nós. Assim, se uma estrela morre agora, nós só vamos descobrir isso depois que essa informação viajar anos e anos até aqui. Por exemplo, imagine um vilarejo em que só podemos obter notícias via carta, e um amigo que morasse lá viesse a falecer. Uma pessoa comunicará a morte do amigo por carta, e a carta só chegará dias depois do falecimento. Até a carta chegar, você pensará que seu amigo está vivo, quando ele não mais está. O mesmo aconteceria com uma estrela que morressse agora: sua luz ainda estaria brilhando no céu, pois esta luz foi enviada antes da estrela morrer. Depois de um certo tempo, proporcional à sua distância, é que ela se apagará no céu.
-
 P: **Como é a carreira de astrônomo no Brasil?**
 
 R: De uma forma reduzida, a carreira é basicamente a pesquisa acadêmica: fazer o doutorado, e publicar o maior número possível de artigos e tornar-se um professor universitário (em astronomia, 95% destas posições estão em universidades públicas).
-
-P: **Eu vi na internet que o IAG-USP tem cursos aos sábados para quem quer iniciar em astronomia amadora.**
-
-R: Sobre astronomia amadora, não há nenhum curso *oficial* no IAG sobre isso. Oficialmente, só disciplinas optativas para alunos-USP e cursos de curta duração (eg., de verão) para graduandos de outras instituições. Aberto a comunidade, há a Astronomia para a 3a idade - e esporadicamente cursos de extensão de professores de ensino fundamental e médio.
-São conhecidos  dois grupos de astronomia amadora externo e com alguma presença na USP: 
-
-    - CASP, http://www.astrocasp.com/
-    - Sputnik, http://gruposputnik.com/. 
-
-Sugiro entrar em contato com eles sobre cursos. Um ótimo material para começar é este: 
-
-    - http://pt.wikihow.com/Iniciar-na-Astronomia-Amadora.
-
-O IAG tem um curso [online] gratuito sobre Astrobiologia no Coursera:
-
-    - https://www.coursera.org/learn/origensdavida
-
-
-P: **Quero comprar um binóculo ou telescópio para observar o céu. Qual comprar?**
-
-R: Idealmente, conheça um grupo de astronomia amadora. Você poderá (i) ver na prática o que é possível observar com estes equipamentos e (ii) obter dicas atualizadas sobre modelos e lojas para comprar. A dica geral é sempre começar com um binóculo, para depois investir num telescópio. Aqui está um ótimo vídeo sobre o assunto:
-
-    - `Céu da Semana Ep. #15 - Binóculos <https://www.youtube.com/watch?v=QS5YmRmykPk>`_
 
 ------
 
@@ -177,6 +207,24 @@ Links
     - Dia (solar): 2 passagens consecutivas pelo meridiano local. 
     - 12h00: ("sombra mínima do dia")
 
+
+Observatórios Virtuais (VO) e Educação em Astronomia
+*******************************************************
+From Janet Evans at ADASS/Chile 2017.
+
+- Existem vários links para educadores em http://chandra.harvard.edu
+
+- Muitos links em http://www.sdss.org/  -- tenho contatos com o Jordan Raddick que está bem envolvido com ideias educacionais para o SDSS, por exemplo, http://skyserver.sdss.org/dr14/en/proj/projhome.aspx
+
+Links da IVOA:
+
+- http://wiki.ivoa.net/bin/view/IVOA/IvoaEducation
+
+- http://www.ivoa.net/astronomers/vo_for_public.html : ver EuroVO for Education!
+
+- http://daepo.china-vo.org/ : IAU Inter-Commission B2-C1-C2 WG
+
+- `Data Driven Astronomy Education and Public Outreach (DAEPO) <http://daepo.china-vo.org/>`_
 
 
 Animations

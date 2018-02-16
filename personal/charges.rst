@@ -169,3 +169,63 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_FMI.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_languages.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_cat2.gif
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_fire.gif
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_capitalismo2.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_academia-weekend.gif
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_wine.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_cat3.gif
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_religiao.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_programador.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_niilism.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_capitalismo3.png
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_caminhao.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_politica05.png
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_organizado.jpg
+    :align: center
+    :height: 500
+

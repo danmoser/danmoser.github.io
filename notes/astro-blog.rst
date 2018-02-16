@@ -1,13 +1,678 @@
 DMF AstroBlog
 ##############
 
+2018
+*********
+2017-02
+=========
+A Picture-Perfect Solar Eclipse Experiment
+-------------------------------------------
+http://www.skyandtelescope.com/astronomy-news/a-picture-perfect-solar-eclipse-experiment/
+
+------------------------------------------
+
+NASA's James Webb Space Telescope Early Science Observations Revealed
+----------------------------------------------------------------------
+http://hubblesite.org/news_release/news/2017-39
+
+--------
+
+ESO's VLT Working as 16-metre Telescope for First Time
+----------------------------------------------------------------
+http://www.eso.org/public/news/eso1806/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+EsoTopNews+%28ESO+Top+News%29
+
+--------
+
+'Still working': Astronomers explain why they don't publish
+---------------------------------------------------------------
+http://www.sciencemag.org/news/2018/02/still-working-astronomers-explain-why-they-don-t-publish?utm_source=sciencemagazine&utm_medium=facebook-text&utm_campaign=dontpublish-17906
+
+-------
+
+USP libera na íntegra aulas de 27 disciplinas de graduação e pós-graduação
+------------------------------------------------------------------------------
+https://canaldoensino.com.br/blog/usp-libera-na-integra-aulas-de-27-disciplinas-de-graduacao-e-pos-graduacao
+
+--------
+
+Why Elon Musk's SpaceX launch is utterly depressing
+------------------------------------------------------------
+There is, perhaps, no better way to appreciate the tragedy of 21st-century global inequality than by watching a billionaire spend $90m launching a $100,000 car into the far reaches of the solar system.
+
+https://www.theguardian.com/commentisfree/2018/feb/07/elon-musk-spacex-launch-utterly-depressing
+
+
+2017-01
+=========
+
+Prof. Krieger na PRP da USP
+------------------------------
+Memória de Atividades da Pró-reitoria de Pesquisa (PRP) no período 2014-2017
+
+As atividades de pesquisa desenvolvidas na USP representam uma parcela importante dos resultados na área de pesquisa e desenvolvimento no Estado e no País. A USP responde por quase 23% das publicações do país em periódicos especializados em todas as áreas do conhecimento; obtém de maneira competitiva cerca de 45-48% dos recursos desembolsados anualmente pela FAPESP (R$ 520 milhões em 2016); coordena 11 dos 17 Projetos FAPESP CEPIDs vigentes, 2 CEPIDs FAPESP/Empresas e participa ou lidera praticamente todos os grandes projetos de pesquisa nacionais. Recentemente, a participação de estrangeiros em publicações envolvendo pesquisadores USP ultrapassou a casa dos 40% e as citações, indicador de relevância de pesquisa, a USP ultrapassou a média mundial. Estes indicadores dão ideia da pujança da pesquisa na Universidade e remetem aos desafios para torná-la mais competitiva e relevante internacionalmente, objeto de ação da Pró-reitoria de Pesquisa (PRP).
+
+As ações da PRP nos últimos quatros anos desta gestão focaram-se em três pilares: Primeiro, desenvolver e aprimorar os programas da PRP com ênfase em aumentar o número de pós-doutores na Universidade. O segundo é oferecer infraestrutura de pesquisa competitiva aos pesquisadores da Universidade de maneira racional e sustentável. O terceiro, aumentar a interação entre os pesquisadores da USP com pesquisadores de outras Universidades no país e no mundo e com representantes dos setores público e privado que produzem ou consomem conhecimento em intensidade. Por fim, visou-se adensar as interações com a sociedade em geral para aumentar as possibilidades de os cidadãos tomarem decisões com bases científicas.
+
+A USP graduou nos últimos oito anos cerca de 6 mil mestres/doutores por ano o que resulta em uma relação de quase 1 mestre/doutor por ano por docente (somos cerca de 6000 docentes). Esta relação cai para 0,3 pós-doutores por docente, que é uma relação baixa comparada àquela observada nas melhores Universidades de pesquisa americanas e VIII europeias, que chega a 3 pós-doutores por docente. Os pós-doutores são vistos nas Universidades de pesquisa como fator essencial para desenvolvimento de resultados relevantes, graças ao seu status de pesquisador quase independente, que domina o método científico, está focado inteiramente na atividade de pesquisa, pois é protegido de qualquer atividade administrativa, e que não tem um produto acabado, dissertação ou tese, para entregar ao final do processo. A formação de mestres e doutores ainda é muito importante para o país, pois por um lado precisa expandir o número de doutores per capita e por outro aumentar a relevância dos resultados da pesquisa, que exige concentração de massa crítica e recursos e. Alcançar esta meta requer um sistema universitário balanceado onde instituições com diferentes vocações desempenham papeis distintos, contrariamente à cultura da isonomia irrestrita vigente no país. Neste sistema, a USP é uma das chamadas Universidades de pesquisa, que são caras, e que têm o desafio de aumentar a relevância dos resultados de pesquisa, enquanto outras, com estruturas mais enxutas, podem concentrar-se mais na formação de recursos especializados para a sociedade. A PRP ao longo destes 4 anos desenvolveu ações para estimular o pós-doc na USP e incluem a regulamentação do programa de pós-doutorado no que diz respeito às suas atividades de pesquisa e participação em atividades didáticas e implementou programas para estimular docentes a solicitar bolsas de pós-doutorado na FAPESP, entre outras. Rebalancear a atividade na formação de mestres/doutores e a supervisão de pós-doutores deve ter impactos importantes para a produção científica da Universidade, que aumentou muito em número nas ultimas 4 décadas, e que só nos últimos 3 anos começa a ver o desejado aumento na relevância mundial.
+
+O desafio de prover infraestrutura de pesquisa competitiva vai além do estímulo à formação de laboratórios multipropósito na Universidade, requer arranjos com agências de fomento, Universidades, Laboratórios de Pesquisa Públicos e Privados no país e no exterior para que os pesquisadores USP tenham acesso a insumos e plataformas tecnológicas necessárias ao desenvolvimento de suas pesquisas. Esta ação coordenadora só pode ser realizada de forma centralizada por uma Universidade de grande porte que tem os meios para isto, não deve ser uma ação do indivíduo. É por isto que culturalmente teremos que compatibilizar a aparente perda de independência, “eu faço tudo no meu laboratório, departamento ou na minha Unidade", para como fazer muito mais na Universidade. Vários passos estão sendo dados nesta direção e incluem a organização da pesquisa em grupos temáticos estimulados internamente como, por exemplo, os Núcleos de Apoio à Pesquisa (NAPs) e os grupos incentivados pelas agências de fomento como os INCTs e CEPIDs.
+
+A PRP vem, ao longo de diferentes gestões, criando mecanismos para racionalizar a infraestrutura de pesquisa e hoje dispomos de várias redes de serviço como a rede de produção de animais de laboratório, serviços internuvem e computação de alto desempenho, entre outras.
+
+A PRP em conjunto com a STI disponibilizou o WeR_USP, que é uma ferramenta corporativa, integra informações de diversos bancos de dados da própria Universidade e de provedores públicos e privados para visualizar indicadores de produção científica de docentes, departamentos, unidades e da universidade como um todo sem que tenhamos que solicitar uma única informação a qualquer pessoa. Uma segunda ferramenta, o GiP, é uma ferramenta de gestão para facilitar aos pesquisadores acompanhar a gestão administrativa e financeira dos seus projetos que deverá ser realizada por escritórios de apoio a gestão de pesquisa da Universidade. Esta ferramenta está em vias de ser integrada ao Agilis-FAPESP o que dispensará também o retrabalho na hora da prestação de contas. Além disto, semelhantemente ao primeiro, é uma plataforma corporativa e se conecta aos demais sistemas USP e à medida que os escritórios de apoio a pesquisa sejam consolidados na Universidade é possível vislumbrar que a ferramenta seja também usada para compras de insumos/equipamentos no país e no exterior com os devidos ganhos de escala que hoje são perdidos pois compras e negociações para serviços são realizados individualmente. 
+
+A incorporação de novos métodos de pesquisa específicos e diversos para um mesmo projeto e a organização em grupos temáticos influenciam a forma como fazemos e divulgamos os resultados de pesquisa. A nova cultura de pesquisa é um desafio mundial e requer a institucionalização deste processo. A criação de um Comitê de Boas Práticas em Pesquisa forneceu instrumentos para auxiliar o pesquisador e os estudantes a se adaptar rapidamente aos novos padrões para garantir a qualidade e a reprodutibilidade dos dados gerados na Universidade. Isto permitirá a Universidade rapidamente disponibilizar plataformas de capacitação e educação continuada para pesquisadores e estudantes combinando tecnologias de informação e ações presenciais.
+
+A sofisticação dos problemas sob investigação nas diferentes áreas do saber exige que pesquisadores de diferentes áreas interajam e que desenvolvam um mínimo de familiarização com processos para os quais não foram treinados. A PRP implementou os Workshops Estratégicos para, de maneira rápida, eficiente e com mínimo de burocracia, reunir pesquisadores de diferentes áreas para discutir temáticas complexas com o intuito de mapear expertises dentro e fora da Universidade e promover a organização de novos arranjos de pesquisa (desde setembro de 2015 31 reuniões foram realizadas). A divulgação de conhecimentos também é uma oportunidade única para a comunidade USP se atualizar sobre assuntos relevantes e discutir sobre o futuro da Universidade. A série USP Lectures visa promover palestras de pesquisadores da USP, de outras Universidades, da sociedade e recipientes de prêmios, como os agraciados com o Nobel para se dirigirem à comunidade USP. A PRP organizou vários destes eventos e se associou a docentes, departamentos e Unidades para apoiá-las e prestigiá-las nesse sentido.
+
+A Universidade tem um papel importante também na difusão de conhecimento para tornar o cidadão mais sábio e capaz de tomar decisões com base em dados científicos. As series USP Talks, realizada na última quarta-feira do mês às 18:30 h no teatro do prédio da Gazeta, e TEDx_USP realizada no campus foram implementadas para atender esta demanda. A primeira foi uma iniciativa das Pró-reitorias de Pesquisa e Gradução com a participação do jornal Estado de São Paulo e apoio inicial da Livraria Cultura e mais recentemente da Fundação Cásper Líbero. Nos dois casos as sessões são transmitidas on line e o material digital e disponibilizado pelos canais da USP e do Youtube.
+
+Finalmente, queremos salientar o esforço realizado por esta gestão na institucionalização das ações da PRP por meio de processos bem estabelecidos, de um staff profissional, enxuto e dedicado, assistidos por docentes (pró-reitor, assessores e colaboradores) e estagiários. As ações da PRP são capilarizadas para a comunidade USP por meio das Comissões de Pesquisa e ganham enorme apoio dos diversos serviços da Universidade a disposição da PRP.
+
+No link são detalhadas a principais atividades da PRP no período: http://prp.usp.br/wp-content/uploads/2018/01/RelatorioPRP.pdf
+
+-- 
+Jose E. Krieger MD, PhD
+
+---------
+
+Airglow 
+----------
+https://www.eso.org/sci/publications/messenger/archive/no.163-mar16/messenger-no163-40-42.pdf
+
+--------
+
+A new definition of a planet
+------------------------------
+https://astronomynow.com/2018/01/22/astrophysicist-proposes-new-definition-of-a-planet/
+
+
 2017
 **********
+2017-12
+==========
+A&A Writing Studio
+-------------------
+https://writingstudio.aws.edpsciences.org/login
+
+--------------
+
+Five Reasons Going To Mars is a TERRIBLE Idea
+--------------------------------------------------------
+https://youtu.be/ESQ1bKd7Los
+
+----------------------------
+
+How Layers in a Latte Form
+----------------------------
+https://www.nytimes.com/2017/12/12/science/lattes-layers-coffee-milk.html?rref=collection%2Fsectioncollection%2Fscience&_r=0
+
+------------------------
+
+Astronomy and Computing
+------------------------
+Astronomy and Computing is a peer-reviewed journal that focuses on the broad area between astronomy, computer science and information technology. 
+
+https://www.journals.elsevier.com/astronomy-and-computing
+
+----------------------
+
+Code publication and citation
+--------------------------------------------
+Aqui sugere publicar no Zenodo. A parte de "Software Citation Principles" também é legal
+
+https://github.com/BES2016Workshop/CodePublication-and-citation
+
+----------------------
+
+Publish your computer code: it is good enough
+------------------------------------------------------------
+Freely provided working code — whatever its quality — improves programming and enables others to engage with your research, says Nick Barnes.
+
+http://www.nature.com/news/2010/101013/full/467753a.html
+
+------------------------------
+
+Astrophysics Source Code Library
+----------------------------------
+http://ascl.net/
+
+https://en.wikipedia.org/wiki/Astrophysics_Source_Code_Library
+
+----------
+
+The Scallop Sees With Space-Age Eyes -- Hundreds of Them
+---------------------------------------------------------
+https://www.nytimes.com/2017/11/30/science/scallops-eyes.html?rref=collection%2Fsectioncollection%2Fscience&referer=
+
+
+2017-11
+=========
+Robotic Astronomy
+-------------------
+https://www.hindawi.com/journals/aa/si/898351/
+
+-------------------
+
+First Interstellar Asteroid is Like Nothing Seen Before
+---------------------------------------------------------------
+A dark, reddish and highly-elongated object
+
+http://www.eso.org/public/news/eso1737/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+EsoTopNews+%28ESO+Top+News%29
+
+---------
+
+The Science of Systems Engineering
+-------------------------------------
+http://se-scholar.com/se-blog/2017/1/12/science-of-se
+
+----------
+
+Update on 'Oumuamua', the First Interstellar Object
+---------------------------------------------------
+http://www.skyandtelescope.com/astronomy-news/update-on-interstellar-object-oumuamua/
+
+----------
+
+The path length of light in opaque media
+-----------------------------------------
+A seemingly paradoxical prediction in physics has now been confirmed in an experiment: No matter whether an object is opaque or transparent, the average length of the light's paths through the object is always the same. 
+
+https://m.phys.org/news/2017-11-path-length-opaque-media.html
+
+----------
+
+Cosmic rays reveal unknown void in the Great Pyramid of Giza
+-------------------------------------------------------------
+http://www.sciencemag.org/news/2017/11/cosmic-rays-reveal-unknown-void-great-pyramid-giza?utm_source=sciencemagazine&utm_medium=facebook-text&utm_campaign=cosmicrays-16152
+
+---------
+
+Hubble Sees Nearby Asteroids Photobombing Distant Galaxies
+-------------------------------------------------------------
+http://hubblesite.org/news_release/news/2017-33
+
+--------
+
+We Exist in a Cyclical Universe
+----------------------------------
+Chinese Scientists Measure Cosmic Expansion With a 'Magic Ruler'.
+
+http://www.dailygalaxy.com/my_weblog/2017/11/we-exist-in-a-cyclical-universe-chinese-astronomers-measure-cosmic-expansion-with-a-magic-ruler-2.html
+
+-------------
+
+Karuro
+--------
+Kakuro (or Kakkuro) is a kind of logic puzzle that is often referred to as a mathematical transliteration of the crossword.
+
+----------
+
+Observing with NASA
+--------------------
+Control your OWN telescope using the MicroObservatory Robotic Telescope Network
+
+http://mo-www.cfa.harvard.edu/OWN/index.html
+
+--------
+
+What are the Most Disliked Programming Languages? 
+--------------------------------------------------
+https://stackoverflow.blog/2017/10/31/disliked-programming-languages/
+
+2017-10
+=========
+Astronomers Spot First-Known Interstellar Comet
+--------------------------------------------------
+http://www.skyandtelescope.com/astronomy-news/astronomers-spot-first-known-interstellar-comet/
+
+Important: with current astronautics technology, it would be impossible to "get a ride" on it.
+
+-----------
+
+Antes do Big Bang
+-------------------
+http://agencia.fapesp.br/antes_do_big_bang/26516/
+
+--------
+
+Vulcano, o planeta que Einstein 'expulsou' do céu
+---------------------------------------------------
+Procurado por mais de meio século...
+
+http://www.bbc.com/portuguese/curiosidades-41304844
+
+-----
+
+Astronomers discover exoplanet where it rains sunscreen
+----------------------------------------------------------------------------
+https://www.salon.com/2017/10/29/astronomers-discover-exoplanet-where-it-rains-sunscreen/
+
+------------------------------------------
+
+Gravitational Waves and Gamma-ray Bursts
+------------------------------------------
+http://briangrefenstette.com/2017/10/17/ligo-grb/
+
+--------
+
+Telescopes and instruments!
+----------------------------
+Here an updated list: http://ast.noao.edu/observing/current-telescopes-instruments
+
+-----
+
+Tools from amateur astronomers to focus telescopes
+---------------------------------------------------
+`Hartmann telescope <https://en.wikipedia.org/wiki/Hartmann_mask>`_, and a much better one, `Bathtinov <https://en.wikipedia.org/wiki/Bahtinov_mask>`_.
+
+---------
+
+Novo satélite sino-brasileiro e a ciência nacional sem rumo
+------------------------------------------------------------
+http://www.redebrasilatual.com.br/revistas/133/enquanto-china-prepara-lancamento-de-satelite-sino-brasileiro-ciencia-nacional-afunda
+
+---------
+
+Sputnik 1: Celebrating 60 Years of Spaceflight
+-------------------------------------------------
+http://www.skyandtelescope.com/astronomy-news/sputnik-1-60-years-of-spaceflight/
+
+-------
+
+What happened to the scientist who stuck his head inside a particle accelerator
+-----------------------------------------------------------------------------------
+The dangerous of science.
+
+https://qz.com/964065/this-is-what-happened-to-the-scientist-who-stuck-his-head-inside-a-particle-accelerator/?utm_source=kwfb&kwp_0=398325&kwp_4=1721733&kwp_1=737045
+
+
+2017-09
+=========
+Physics and music
+-------------------
+How Transgender Composer Wendy (Walter) Carlos Changed Music Forever
+
+http://www.wfmt.com/2016/11/17/transgender-composer-wendy-carlos-changed-music-forever/
+
+-----------
+
+HST Guide Star Catalog
+------------------------
+This is the first full sky star catalog created specifically for navigation in outer space. 945,592,683 stars out to magnitude 21. 
+
+http://gsss.stsci.edu/Catalogs/Catalogs.htm
+
+---------
+
+ALMA memo series
+------------------
+Very interesting material on radio astronomy!!
+
+https://science.nrao.edu/facilities/alma/aboutALMA/Technology/ALMA_Memo_Series
+
+--------
+
+Comet or Asteroid?
+--------------------
+Hubble Discovers that a Unique Object is a Binary
+
+http://hubblesite.org/news_release/news/2017-32
+
+-------------
+
+Astro-tech coursera course
+-----------------------------
+Astronomy and Technology: https://www.coursera.org/learn/astronomy-technology/
+
+Six big revolutions:
+
+- Invention of the telescope ("bigger pupils")
+- Spectroscopy
+- Photography (save data & longer exposure times)
+- Multi-wavelength astronomy
+- Space astronomy
+- Computer revolution
+
+--------
+
+Optical physics: A laser model for cosmology
+------------------------------------------------
+http://www.nature.com/nature/journal/v549/n7671/full/549163a.html?WT.feed_name=subjects_astronomy-and-astrophysics
+
+----------------
+
+STK software
+----------------
+Systems Tool Kit (formerly Satellite Tool Kit) or just STK, is a physics-based software package from Analytical Graphics, Inc. that allows engineers and scientists to perform complex analyses.
+
+https://en.wikipedia.org/wiki/Systems_Tool_Kit
+
+----
+
+Columbia Disaster: What Happened, What NASA Learned
+-------------------------------------------------------
+https://www.space.com/19436-columbia-disaster.html
+
+-----------
+
+Richard Feynman, The Challenger Investigation, And One of History's Greatest Speeches
+------------------------------------------------------------------------------------------
+https://www.farnamstreetblog.com/2013/02/richard-feynman-the-challenger-investigation-and-one-of-historys-greatest-speeches/
+
+The speech: http://www.americanrhetoric.com/speeches/ronaldreaganchallenger.htm
+
+---------------
+
+ESA Exploration of the Moon
+------------------------------
+The Deep Space Gateway will be humanity's first spaceship, a crewed platform in deep space from which human exploration of the Solar System can set forth.
+
+http://exploration.esa.int/moon/59374-overview/
+
+
+2017-08
+===========
+Estimating costs in astronomical instrumentation
+--------------------------------------------------
+TSIP (Telescope System Instrumentation Program) Funding and Public Access Summary: http://ast.noao.edu/system/tsip/more-info/funding-summary .
+
+Many spectrographs for ~8m telescopes costed US$ ~2.5-6.0 Million. This resulted in US$~50,000 Cost/night or US$~600 Cost/night/m2.
+
+-----------
+
+Optical schemes made easy
+----------------------------
+Para os amigos da Ótica desenharem esquemas de experimentos no Inkscape sem esforço, é só baixar o .svg com a biblioteca de elementos óticos e sair control-c-control-v-zando, com licença Creative Commons!
+
+http://www.gwoptics.org/ComponentLibrary/
+
+--------------
+
+
+Eclipse alignment
+--------------------------
+Lining up the Sun, Moon and ISS: Image of 21th August 2017.
+
+https://earthobservatory.nasa.gov/IOTD/view.php?id=48442
+
+https://www.youtube.com/watch?v=lepQoU4oek4&feature=youtu.be
+
+---------
+
+Contingency rate
+----------------------
+Vitruvius Pollio  (born c. 80--70 BC, died after c. 15 BC) was a Roman author, architect and engineer. His discussion of perfect proportion in architecture and the human body, led to the famous Renaissance drawing by Da Vinci of Vitruvian Man.
+
+Vitruvius wrote in "The Ten Books on Architecture":
+
+   In the famous and important Greek city of Ephesus there is said to be an ancient ancestral law, the terms of which are severe, but its justice is not inequitable. When an architect accepts the charge of a public work, he has to promise what the cost of it will be. His estimate is handed to the magistrate, and his property is pledged as security until the work is done. When it is finished, if the outlay agrees with his statement, he is complimented by decrees and marks of honour. If no more than **a fourth** has to be added to his estimate, it is furnished by the treasury and no penalty is inflicted. But when more than one fourth has to be spent in addition on the work, the money required to finish it is taken from his property. 
+
+---------
+
+Machine learning vs. Statistics?
+----------------------------------
+Many people have this doubt, what's the difference between statistics and machine learning? 
+
+http://www.datasciencecentral.com/profiles/blogs/machine-learning-vs-statistics
+
+-----------------
+
+Catalog of visualization graphical types 
+------------------------------------------------------
+There are a lot of visualization methods to choose from, and it can be daunting finding the right visual for your data, especially for those just starting out. The Data Viz Project (http://datavizproject.com/) is a work-in-progress catalog that aims to make the picking process a bit easier. Start with a bunch of chart types and filter by things like shape, purpose, and data format. If you’re stuck, this should help get the juices going.
+
+-----------------
+
+New type of optical fiber
+---------------------------
+Researchers develop a novel type of optical fiber that preserves the properties of light
+
+https://phys.org/news/2017-07-optical-fiber-properties.html
+
+---------
+
+Curved image sensor
+----------------------
+CEA-Leti has developed a fully-functional curved full-frame image sensor
+
+https://www.dpreview.com/news/1869782227/cea-leti-has-developed-a-fully-functional-curved-full-frame-image-sensor
+
+---------
+
+Cortes na ciência brasileira
+-----------------------------
+http://www.nature.com/news/brazilian-scientists-reeling-as-federal-funds-slashed-by-nearly-half-1.21766
+
+""A Coréia do Sul vai investir 5% do seu PIB em ciência. Isso dá em torno de 70,5 bilhões de dólares.
+
+O Brasil vai investir 0,89 bilhões de dólares em ciência. Isso já seria ruim por si só. Mas quando a gente compara com o PIB do Brasil isso significa investir 0,05%, literalmente 100 vezes menos que a Coréia.
+
+Mas comparar com a Coréia é sacanagem. Eles investem pesado em ciência. Vamos comparar com outro país, vamos comparar com a Índia. Para 2017, o orçamento para ciência do país é de 8 bilhões de dólares, 10 vezes maior que o do Brasil. Isso dá um investimento baixíssimo, de 0,3%, o que foi motivo de matéria na Science, inclusive. E é seis vezes mais do que o Brasil vai investir em ciência.
+
+Mas a Índia é de uma realidade muito distinta. E todo mundo sabe de quantos cientistas indianos trabalham nas áreas de física e matemática. É uma realidade totalmente diferente da América Latina. Então vamos comparar com o México. O México também está em crise. Por isso, vai reduzir os investimentos em ciência para 12,9 bilhões de dólares nos EUA, mais de 10 vezes mais dinheiro que o Brasil. O que comparado com o PIB do México é 1,1%, proporcionalmente mais de 20 vezes o que o Brasil vai investir.
+
+Mas vamos pegar um hermano bem lascado mesmo, que esteja vivendo uma crise pesada, os argentinos. Os cortes lá foram severos, reduzindo o orçamento para a ciência para apenas 2,1 bilhões de dólares, pouco mais que o dobro do brasileiro. Porém, quando se compara com o PIB argentino, isso significa um investimento de 0,6%, mais de 10 vezes maior que no Brasil.
+Nem vou falar da Nigéria, que também tem um ministério da ciência e tecnologia unido ao de comunicações. Afinal, o orçamento deles é de 23 bilhões, 3% do PIB nigeriano.
+
+Pensei em comparar com a Etiópia, mas só achei dados de 2013. Neste período, trinta anos já tinham se passado desde a terrível fome que chocou o mundo em fotos que circulam até hoje de crianças desnutridas. A Etiópia estava se reconstruindo com uma ditadura que já durava 21 anos. Havia saltado de um PIB de 8 bilhões de dólares em 1984 para 47 bilhões. Um crescimento impressionante, mas ainda distante dos 1,8 trilhão do Brasil em crise de 2017. Mas ainda assim eles investiam 0,6% do PIB em ciência. Doze vezes mais do que o Brasil em 2017."
+
+"Atualização: Resolvi comparar com o Uganda, por razões de Book of Mormon. O Uganda vai investir míseros 18 milhões de dólares em ciência! Ganhamos!! Mas, peralá. E o PIB? O Uganda não é rico. Mas eles investem pouco mesmo. Menos de 0,1% do PIB!! Vão investir ridículos 0,06% do PIB!!
+Mas é mais que os 0,05% do Brasil."
+
+---------
+
+MAX30105
+--------------
+Um fantástico dispositivo para ensino (mesmo ao nível de PG). Mede 3 bandas espectrais simultaneamente (algo como V,R,I) com uma grande faixa dinâmica e excelente resolução no tempo. Muito bom para medidas da irradiância solar (acho que precisaria de filtro de densidade). Opera com um Arduino, software livre. São necessários quatro cabinhos para conectá-lo ao microprocessador.
+
+https://learn.sparkfun.com/tutorials/max30105-particle-and-pulse-ox-sensor-hookup-guide#example-1---reading-redirgreen
+
+Datasheet bem caprichado em: https://cdn.sparkfun.com/.../learn.../5/7/7/MAX30105_3.pdf
+
+--------
+
+Astrofísica na banheira
+--------------------------
+http://revistapesquisa.fapesp.br/2017/07/18/astrofisica-na-banheira/
+
+--------
+
+Nano space travel
+--------------------
+This paper discusses the physics, engineering and mission architecture relating to a gram-sized interstellar probe propelled by a laser beam...
+
+https://arxiv.org/pdf/1708.03556.pdf
+
+-------
+
+Nuclear weapons experiments
+-------------------------------
+- `Castle Bravo <https://en.wikipedia.org/wiki/Castle_Bravo>`_
+- `Starfish Prime <https://en.wikipedia.org/wiki/Starfish_Prime>`_
+
+--------
+
+Experimental Astronomy Journal
+---------------------------------
+Revista em instrumentação astronômica, https://link.springer.com/journal/10686.
+
+ISSN: 0922-6435 (Print); 1572-9508 (Online).
+
+Description
+
+Many new instruments for observing astronomical objects at a variety of wavelengths have been and are continually being developed. Consequently, a vast amount of effort is being put into new data analysis techniques to cope with rivers of data collected by these instruments.
+
+Experimental Astronomy is a medium for the publication of papers of contemporary scientific interest on astrophysical instrumentation and methods necessary for the conduct of astronomy at all wavelength fields.
+
+Experimental Astronomy publishes full-length articles, research letters and reviews on developments in detection techniques, instruments, and data analysis and image processing techniques. Occasional special issues are published, giving an in-depth presentation of the instrumentation and/or analysis connected with specific projects, such as satellite experiments or ground-based telescopes, or of specialized techniques.
+
+Commonly used title abbreviations: Exp. Astron., Exp Astron, ExA
+
+-------
+
+Áudios em Astronomia - João Steiner
+------------------------------------
+Excelentes temas: http://jornal.usp.br/radio-usp/perfis/joao-steiner/
+
+
+2017-07
+===========
+Statistical methods in astronomy
+------------------------------------
+https://arxiv.org/abs/1707.05834
+
+------------
+
+Detector sampling of optical/IR spectra: how many pixels per FWHM?
+---------------------------------------------------------------------
+https://arxiv.org/abs/1707.06455
+
+------------
+
+Book review: Giant Telescopes
+------------------------------
+Giant Telescopes: Astronomical Ambition and the Promise of Technology by the historian Patrick McCray
+
+http://www.astrobetter.com/blog/2012/02/01/gemini-book-review/
+
+-----------
+
+Building the Giant Magellan Telescope 
+----------------------------------------
+Dr. James (Jim) Fanson
+
+https://www.youtube.com/watch?v=2GufF3pfIyA
+
+------------
+
+The Uninhabitable Earth
+------------------------------------
+Famine, economic collapse, a sun that cooks us: What climate change could wreak — sooner than you think.
+
+------------
+
+Why Does Movie Popcorn Cost So Much?
+--------------------------------------
+A marketing professor says the high price of popcorn at most movie theater concession stands actually benefits moviegoers.
+https://www.gsb.stanford.edu/insights/why-does-movie-popcorn-cost-so-much
+
+----------
+
+Optical interferometry in a balloon
+--------------------------------------
+BETTII: Balloon Experimental Twin Telescope for Infrared Interferometry: https://asd.gsfc.nasa.gov/bettii/
+
+Although it says "infrared", it is **very far** infrared: 30-90 mm, well beyond ALMA. ALMA operates at wavelengths of 0.32 to 3.6 mm (http://www.eso.org/public/teles-instr/alma/).
+
+--------
+
+Astronomers find two classes of gas giant planets
+----------------------------------------------------
+Evidence indicates giant planets form differently depending on their mass. 
+
+http://www.astronomy.com/news/2017/07/two-classes-of-gas-giants
+
+------
+
+AdOptica: adaptive optics manufacturer
+---------------------------------------
+http://www.adoptica.com/
+
+--------
+
+First discovery of an exoplanet with SPHERE/VLT
+------------------------------------------------
+https://www.sciencedaily.com/releases/2017/07/170706072540.htm
+
+------
+
+Book Review: The Art Of The Patent
+------------------------------------
+http://hackaday.com/2017/07/05/book-review-the-art-of-the-patent/
+
+-----
+
+Experiência encerrada - o custo do Ciências sem Fronteiras
+----------------------------------------------------------------------
+http://revistapesquisa.fapesp.br/2017/06/19/experiencia-encerrada/
+
+Além dos problemas já conhecidos (como não exigir contrapartida dos bolsistas), nada como ver os números: Fiquei CHOCADO ao ver que:
+- Quase metade do orçamento foi para universidades estrangeiras (ou seja, financiamos a educação superior alheia enquanto a nossa está tão precária).
+- Incrível (80% !!!) ênfase na *graduação*. Se a proposta é ciência, porque não privilegiar a pós??
+- Incríveis 0,9% para atrair jovens talentos (mesmo argumento do acima). 
+Já temos poucos recursos, e sendo gastos desta forma...
+
+
+
 2017-06
 ========
+Stellar magnetic activity and their effects on exoplanets
+-----------------------------------------------------------
+Aline Vidotto, Trinity College Dublin:
+
+In this talk I will review some recent works on the magnetic activity of Sun-like stars, their winds and potential impact on surrounding exoplanets. Stellar magnetic fields drive space weather on (exo)planets, being responsible for the ejection of stellar winds and bursty events, such as flares and coronal mass ejections. The dramatic differences in the Physical properties of the host stars compared to the properties of our Sun, in addition to the extreme architecture of most of the known exoplanetary systems, can give rise to physical interactions that might not even be recognised in the solar system. These interactions can generate observable signatures, thus providing other avenues for characterising exoplanetary systems, which would otherwise remain unknown.
+
+-----------------------------
+
+ESO Period 100 Proposal Submission Statistics
+----------------------------------------------
+http://www.eso.org/sci/publications/announcements/sciann17026.html
+
+From Dr. Bruno Dias:
+- 1) X-shooter (since 2009) = 287 nights
+- 2) MUSE (since 2014) = 266 nights
+- 3) FORS2 (since 1998!) = 196 nights
+
+FORS on its way to 20 years!! 
+
+-------
+
+Telescopes and spectrographs - Free course
+-------------------------------------------
+http://www.open.edu/openlearn/science-maths-technology/science/telescopes-and-spectrographs/content-section-0#tabs-2
+
+------------------
+
+NASA Planetary Spectrum Generator (PSG) 
+------------------------------------------
+https://ssed.gsfc.nasa.gov/psg/
+
+---------
+
+Books!!! Forgotten and from NASA
+-----------------------------------
+http://www.nasa.gov/connect/ebooks/
+
+https://www.forgottenbooks.com/
+
+-----
+
+Answering Fundamental Scientific Questions with the GMT
+------------------------------------------------------------
+Andy Szentgyorgi (CfA). Streamed live on Dec 3, 2015
+
+https://www.youtube.com/watch?v=jLjX7OkGDGI
+
+-----
+
+Forgotten Books
+------------------
+https://www.forgottenbooks.com/
+
+----------
+
+Da série "nada dá certo neste país": satélite SGDC 
+------------------------------------------------------------
+Satélite subiu, mas antenas de terra não estão prontas.
+
+http://meiobit.com/367679/satelite-sgdc-subiu-mas-antenas-de-terra-nao-estao-prontas-licitacao-saiu-so-agora/
+
+--------
+
 Supernova Cosmology: Thirty Years of Watching Stars Blow Up
 ------------------------------------------------------------
-Nicholas B. Suntzeff, Texas A&M University.
+Nicholas B. Suntzeff, Texas A&M University:
 
 "Starting in 1986, Mark Phillips, Mario Hamuy, and I began the study of the properties of nearby supernovae, and were the first to produce a light curve based on CCD data. With Jose Maza, in 1989, we began the concentrated study of nearby supernovae called the Calan/Tololo Survey, which led to discoveries including the establishment of Type Ia supernovae as standardizable candles, the deeper understanding of reddening and temperature effects in light curves and spectra, and with the HST calibration of distances to nearby host galaxies of these SNe, the modern value of the Hubble constant based on the quiet Hubble flow defined by supernovae. In 1994, Brian Schmidt and I founded the High-Z Supernova Team utilizing the Calán/Tololo results and MLCS techniques developed by Riess et al. The image subtraction software was developed by Schmidt and later Tonry. These techniques underlie the discovery by both the HZT and the Supernova Cosmology Project of Saul Perlmutter et al (who developed independent software) of the apparent accelerated expansion of the Universe. All these discoveries rest on the rickety photometric system astronomers have organically developed over the last 70 years. With the improvement in the fundamental calibration system led by HST astronomers, and a reanalysis of astronomical photometric techniques by Stubbs and Tonry, we now see the results of supernova cosmology are limited by the systematic errors in how we do photometry. We founded the Carnegie Supernova Project to create a new and precisely calibrated set of nearby supernovae to dig into these systematic effects and to anchor the acceleration results. In this talk, I will present the background of supernova cosmology and reveal the strengths and pitfalls of this field."
 
@@ -78,6 +743,8 @@ https://phys.org/news/2017-06-nasa-asteroid-hunting-spacecraft-discovery-machine
 
 Os cometas na astronomia da "Revolução Científica" 
 ----------------------------------------------------
+Por Thomas Haddad:
+
 O estudo dos cometas teve um papel de grande destaque na astronomia do período geralmente conhecido como "Revolução Científica". Notadamente entre 1577 e o fim do século XVII, podemos identificar três frentes de investigação sobre esses corpos celestes que foram muito ativas e produziram impactos profundos sobre as ciências modernas como um todo: 
 
 (1) o problema da determinação de órbitas cometárias a partir de dados observacionais, que adquire grande importância a partir do emprego do método da paralaxe por Tycho Brahe ainda em 1577, e se estabiliza somente mais de um século depois, com a abordagem de Halley e Newton, na década de 1680; 

@@ -267,7 +267,7 @@ The problem with this method is that the structure of chapters do not is generat
 
 Compact PDF
 =============
-To decrease PDF file size (*I'm not sure if it actually works*):
+To decrease PDF file size. I test and it can really deacrese the file size. But the efficiency depends on the file contents:
 
 .. code:: bash
 
@@ -277,6 +277,7 @@ To decrease PDF file size (*I'm not sure if it actually works*):
     # /default selects output intended to be useful across a wide variety of uses, possibly at the expense of a larger output file.
     # /ebook selects medium-resolution output similar to the Acrobat Distiller "eBook" setting.
     # /printer selects output similar to the Acrobat Distiller "Print Optimized" setting.
+    #  There is a bug with the 'printer' option
     # /prepress selects output similar to Acrobat Distiller "Prepress Optimized" setting.
 
 Other possibility is to convert PDF to PS, and then PS to PDF.

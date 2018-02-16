@@ -6,6 +6,8 @@ Python and Astronomy
 
 .. contents:: Table of contents
 
+
+
 General tips
 *************
 Style Guide
@@ -183,7 +185,7 @@ Check it:
 
 .. code:: bash
 
-    $ head -n1 $(which pip)
+    head -n1 $(which pip)
 
 Solution: you can choose to use a ``virtualenv``, or install ``pip`` using ``/usr/local/bin/python``:
 
@@ -192,6 +194,14 @@ Solution: you can choose to use a ``virtualenv``, or install ``pip`` using ``/us
     curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | /usr/local/bin/python
 
 For more installation instructions, see http://www.pip-installer.org/en/latest/installing.html.
+
+getting pip
+-------------
+To install pip, securely download https://bootstrap.pypa.io/get-pip.py
+
+.. code:: bash
+
+    python get-pip.py --user
 
 
 ipython
@@ -330,6 +340,13 @@ https://github.com/astropy/astropy/blob/master/docs/io/votable/index.rst
     arr = np.array(data[datacols[0]])
 
 
+Astropy affiliated packages
+=============================
+Matt Craig, has created this list of Astropy affiliated packages to help improve your experience exploring astronomy using Python. 
+
+https://www.numfocus.org/blog/leveling-up-with-open-astronomy-astropy-affiliated-packages/
+
+
 Status line (printing over the same line)
 ============================================
 .. code:: python
@@ -419,7 +436,7 @@ http://www.sc.eso.org/~bdias/pycoffee/refs.html
 
 Adding nice help to your program
 ====================================
-:strike:`Use the module ``optparse``` (depricated).
+:strike:`Use the module ``optparse`` ` (depricated).
 
 Use ``argparse``: https://docs.python.org/2/library/argparse.html
 
@@ -1013,7 +1030,9 @@ It makes use of the ``cmake``. And it works like this:
 
 Python environments and references
 *************************************
-http://python-notes.curiousefficiency.org/
+- http://python-notes.curiousefficiency.org/
+
+- `What are the Most Disliked Programming Languages? <https://stackoverflow.blog/2017/10/31/disliked-programming-languages/>`_
 
 
 General use Python packages in Astronomy
@@ -1025,6 +1044,9 @@ General use Python packages in Astronomy
     http://www.astropy.org/
     
     - AstroQuery: http://astroquery.readthedocs.org/en/latest/
+
+- SpecViz: 1D Spectral Visualization Tool
+    http://specviz.readthedocs.io/
 
 - astLib (set of Python modules that provides some tools for research astronomers)
     http://astlib.sourceforge.net/

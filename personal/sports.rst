@@ -47,7 +47,8 @@ Year    Driver               Team
 2014    Lewis Hamilton        Mercedes
 2015    Lewis Hamilton        Mercedes
 2016    Nico Rosberg          Mercedes
-2017    \
+2017    Lewis Hamilton        Mercedes
+2018    \
 ======  ==================== ===================
 
 Provollone Cast
@@ -183,3 +184,7 @@ Other
 - `O homem branco naquela fotografia <http://www.esquerda.net/artigo/o-homem-branco-naquela-fotografia/39275>`_
 
 - `The bicycle problem that nearly broke mathematics <http://www.nature.com/news/the-bicycle-problem-that-nearly-broke-mathematics-1.20281?WT.mc_id=TWT_NatureNews>`_
+
+- `Os 100 anos de João Saldanha, o técnico que atormentou a ditadura militar <http://brasil.elpais.com/brasil/2017/07/01/deportes/1498862110_086687.html>`_
+
+- `Westbrook, Durant, and the Rules of NBA Revenge <https://www.theringer.com/nba/2017/11/28/16709590/kevin-durant-russell-westbrook-revenge-game>`_
