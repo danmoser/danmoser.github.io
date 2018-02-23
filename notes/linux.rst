@@ -5,6 +5,27 @@ Linux tips
 
 Useful commands tricks
 ===========================
+How to mount an ISO file
+---------------------------
+.. code:: bash
+
+    sudo mount /path/to/file.iso /path/to/mount -o loop #-t udf #-t iso9660
+    sudo umount /path/to/mount 
+
+How to create an ISO image
+------------------------------
+Creating an ISO from Files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code:: bash
+
+    mkisofs -o new.iso /path/to/folder
+
+Ripping an ISO from a CD
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. code:: bash
+
+    dd if=/dev/cdrom of=/home/user/new.iso
+
 Disable Web Notifications Firefox Browser
 ----------------------------------------------------
 - Access "about:config"
@@ -12,7 +33,6 @@ Disable Web Notifications Firefox Browser
 - Disable (**false**) the (1) `dom.webnotifications.enabled` and (2) `dom.webnotifications.serviceworker.enabled`. 
 
 One may also want to clean up the previous authorizations. For that, `Options > Content > Notifications > Choose... > Remove All Sites > Save Changes`.
-
 
 Find a package by filenames
 ------------------------------
@@ -561,6 +581,15 @@ It must be in the WAV format.
 To work directly on the MP3, you can also use ``audacity``.
 
     http://manual.audacityteam.org/o/man/tutorial_vocal_removal_and_isolation.html
+
+
+No Sound with Headphones but Sound with Stereo
+-------------------------------------------------
+Sound card automaticly change to hdmi output when two applications conflicted with it. I fix that with the following command. It restore output to analog, again.
+
+.. code:: bash
+
+    alsactl -F restore
 
 
 Listen to microphone over the speakers using pulseaudio

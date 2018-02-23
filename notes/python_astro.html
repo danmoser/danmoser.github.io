@@ -756,16 +756,17 @@ span.boxed, span.framebox {
 </ul>
 </li>
 <li><a class="reference internal" href="#python-environments-and-references" id="id63">Python environments and references</a><ul>
-<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id64">General use Python packages in Astronomy</a></li>
-<li><a class="reference internal" href="#python-learning-for-astronomers" id="id65">Python learning for astronomers</a></li>
-<li><a class="reference internal" href="#python-distributions" id="id66">Python distributions</a></li>
-<li><a class="reference internal" href="#python-environments" id="id67">Python environments</a></li>
-<li><a class="reference internal" href="#utilities" id="id68">Utilities</a><ul>
-<li><a class="reference internal" href="#package-index" id="id69">Package Index</a></li>
-<li><a class="reference internal" href="#cookbooks" id="id70">Cookbooks</a></li>
-<li><a class="reference internal" href="#articles" id="id71">Articles</a></li>
-<li><a class="reference internal" href="#python-code-revision" id="id72">Python code revision</a></li>
-<li><a class="reference internal" href="#visualization-tools" id="id73">Visualization tools</a></li>
+<li><a class="reference internal" href="#how-to-clean-up-conda-environments" id="id64">How to clean up conda environments</a></li>
+<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id65">General use Python packages in Astronomy</a></li>
+<li><a class="reference internal" href="#python-learning-for-astronomers" id="id66">Python learning for astronomers</a></li>
+<li><a class="reference internal" href="#python-distributions" id="id67">Python distributions</a></li>
+<li><a class="reference internal" href="#python-environments" id="id68">Python environments</a></li>
+<li><a class="reference internal" href="#utilities" id="id69">Utilities</a><ul>
+<li><a class="reference internal" href="#package-index" id="id70">Package Index</a></li>
+<li><a class="reference internal" href="#cookbooks" id="id71">Cookbooks</a></li>
+<li><a class="reference internal" href="#articles" id="id72">Articles</a></li>
+<li><a class="reference internal" href="#python-code-revision" id="id73">Python code revision</a></li>
+<li><a class="reference internal" href="#visualization-tools" id="id74">Visualization tools</a></li>
 </ul>
 </li>
 </ul>
@@ -2025,8 +2026,18 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 <li><a class="reference external" href="http://python-notes.curiousefficiency.org/">http://python-notes.curiousefficiency.org/</a></li>
 <li><a class="reference external" href="https://stackoverflow.blog/2017/10/31/disliked-programming-languages/">What are the Most Disliked Programming Languages?</a></li>
 </ul>
+<div class="section" id="how-to-clean-up-conda-environments">
+<h2><a class="toc-backref" href="#id64">How to clean up conda environments</a></h2>
+<p><a class="reference external" href="https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments">https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments</a>
+<a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment">https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment</a></p>
+<pre class="code bash literal-block">
+conda info -e
+conda remove --name myenv —all
+conda clean -a -y
+</pre>
+</div>
 <div class="section" id="general-use-python-packages-in-astronomy">
-<h2><a class="toc-backref" href="#id64">General use Python packages in Astronomy</a></h2>
+<h2><a class="toc-backref" href="#id65">General use Python packages in Astronomy</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>PyHdust (Python tools for hdust code)</dt>
@@ -2123,7 +2134,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-learning-for-astronomers">
-<h2><a class="toc-backref" href="#id65">Python learning for astronomers</a></h2>
+<h2><a class="toc-backref" href="#id66">Python learning for astronomers</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>CodeCAdemy</dt>
@@ -2164,7 +2175,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-distributions">
-<h2><a class="toc-backref" href="#id66">Python distributions</a></h2>
+<h2><a class="toc-backref" href="#id67">Python distributions</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Ureka*</dt>
@@ -2205,16 +2216,16 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-environments">
-<h2><a class="toc-backref" href="#id67">Python environments</a></h2>
+<h2><a class="toc-backref" href="#id68">Python environments</a></h2>
 <ul>
 <li><dl class="first docutils">
-<dt>ipython</dt>
+<dt>IPython</dt>
 <dd><p class="first last"><a class="reference external" href="http://ipython.org/">http://ipython.org/</a></p>
 </dd>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>ipython Notebook</dt>
+<dt>The Jupyter Notebook</dt>
 <dd><p class="first last"><a class="reference external" href="http://ipython.org/notebook.html">http://ipython.org/notebook.html</a></p>
 </dd>
 </dl>
@@ -2234,9 +2245,9 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="utilities">
-<h2><a class="toc-backref" href="#id68">Utilities</a></h2>
+<h2><a class="toc-backref" href="#id69">Utilities</a></h2>
 <div class="section" id="package-index">
-<h3><a class="toc-backref" href="#id69">Package Index</a></h3>
+<h3><a class="toc-backref" href="#id70">Package Index</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>PyPI</dt>
@@ -2247,7 +2258,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h3><a class="toc-backref" href="#id70">Cookbooks</a></h3>
+<h3><a class="toc-backref" href="#id71">Cookbooks</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>ActiveState Python recipes</dt>
@@ -2258,7 +2269,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="articles">
-<h3><a class="toc-backref" href="#id71">Articles</a></h3>
+<h3><a class="toc-backref" href="#id72">Articles</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Survey of software use in astronomy</dt>
@@ -2269,7 +2280,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="python-code-revision">
-<h3><a class="toc-backref" href="#id72">Python code revision</a></h3>
+<h3><a class="toc-backref" href="#id73">Python code revision</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Landscape</dt>
@@ -2280,7 +2291,7 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 </ul>
 </div>
 <div class="section" id="visualization-tools">
-<h3><a class="toc-backref" href="#id73">Visualization tools</a></h3>
+<h3><a class="toc-backref" href="#id74">Visualization tools</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Seaborn</dt>

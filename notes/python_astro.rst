@@ -1035,6 +1035,18 @@ Python environments and references
 - `What are the Most Disliked Programming Languages? <https://stackoverflow.blog/2017/10/31/disliked-programming-languages/>`_
 
 
+How to clean up conda environments
+====================================
+https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments
+https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment
+
+.. code:: bash
+
+    conda info -e
+    conda remove --name myenv —all
+    conda clean -a -y
+
+
 General use Python packages in Astronomy
 ===========================================
 - PyHdust (Python tools for hdust code)
@@ -1127,10 +1139,10 @@ Python distributions
 
 Python environments
 ======================
-- ipython
+- IPython
     http://ipython.org/
     
-- ipython Notebook
+- The Jupyter Notebook
     http://ipython.org/notebook.html
     
 - Geany

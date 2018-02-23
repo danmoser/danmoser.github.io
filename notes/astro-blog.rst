@@ -5,6 +5,51 @@ DMF AstroBlog
 *********
 2017-02
 =========
+Amateur astronomer took a Picture of a Supernova While Setting Up His New Camera
+---------------------------------------------------------------------------------
+https://www.nytimes.com/2018/02/21/science/supernova-photo-camera.html
+
+----------------
+
+QFitsView
+----------------
+http://www.mpe.mpg.de/~ott/QFitsView/
+
+At least until version 2, QFitsView only accepts wavelength in **Angstroms**.
+
+----------------
+
+CASSIS and IRS
+----------------
+CASSIS is the Combined Atlas of Sources with Spitzer IRS Spectra.
+
+http://cassis.sirtf.com/
+
+------------
+
+FITS - The Astronomical Image and Table Format
+-------------------------------------------------
+Software tools for image viewing, analysis, and format conversion 
+
+https://fits.gsfc.nasa.gov/fits_viewer.html
+
+------------
+
+Bitcoin and CPU time
+-----------------------
+- Vs Science 1: http://www.bbc.com/news/technology-43056744
+- Vs Science 2: http://www.independent.co.uk/news/world/europe/russia-bitcoin-cryptocurrencies-sarov-supercomputer-federal-nuclear-centre-latest-a8204161.html
+
+---------
+
+As universidades federais
+---------------------------
+`Os gastos das federais <http://opiniao.estadao.com.br/noticias/geral,os-gastos-das-federais,70002191213>`_
+
+`Eles temem o que não entendem <http://www.tijolaco.com.br/blog/eles-temem-o-que-nao-entendem-por-nilson-lage/>`_
+
+------------------------
+
 A Picture-Perfect Solar Eclipse Experiment
 -------------------------------------------
 http://www.skyandtelescope.com/astronomy-news/a-picture-perfect-solar-eclipse-experiment/
