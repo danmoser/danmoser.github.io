@@ -5,6 +5,18 @@ DMF AstroBlog
 *********
 2017-02
 =========
+Brasileiro trabalhando na Atlassian no desenvolvimento do JIRA
+----------------------------------------------------------------
+http://luizricardo.org/2015/12/hello-jira/
+
+----------------
+
+Why Self-Taught Artificial Intelligence Has Trouble With the Real World
+------------------------------------------------------------------------
+https://www.quantamagazine.org/why-self-taught-artificial-intelligence-has-trouble-with-the-real-world-20180221/
+
+----------------
+
 Amateur astronomer took a Picture of a Supernova While Setting Up His New Camera
 ---------------------------------------------------------------------------------
 https://www.nytimes.com/2018/02/21/science/supernova-photo-camera.html

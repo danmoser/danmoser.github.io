@@ -159,6 +159,8 @@ After installing Python 2.7.9+, you need to run
 .. code:: bash
 
     python -m ensurepip
+    # OR
+    python3.6 -m pip install --user pipenv
 
 "Could not find .egg-info"
 ---------------------------
@@ -1066,9 +1068,6 @@ General use Python packages in Astronomy
     
     - AstroQuery: http://astroquery.readthedocs.org/en/latest/
 
-- astroplan: An Open Source Observation Planning Package in Python
-    https://arxiv.org/abs/1712.09631
-
 - SpecViz: 1D Spectral Visualization Tool
     http://specviz.readthedocs.io/
 
@@ -1127,7 +1126,6 @@ Python learning for astronomers
 
 - Python Fundamentos para Análise de Dados
     https://www.datascienceacademy.com.br/public-course?courseid=python-fundamentos
-
 
 Python distributions
 ======================

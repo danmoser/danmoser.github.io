@@ -1,15 +1,16 @@
 DMF notes
 ###########
 
-===================  ==============  ==============================  ================  ==================
-`astro-basics`_      `astro-blog`_   `astro-ph`_                     `astro-spec`_     `astro_reduction`_
-`astro_top-impact`_  `beacon`_       `beatlas`_                      `bravo`_          `codes_usage`_
-`doing_sci`_         `estatistica`_  `example`_                      `gai_fits-imgs`_  `git`_
-`import_wheel`_      `index`_        .. image:: ../figs/index2.gif   `informatics`_    `instrumentation`_
-`inthepress`_        `julia`_        `latex`_                        `linux`_          `math`_
-`physics-basics`_    `python-oop`_   `python-packages`_              `python_astro`_   `regex`_
-`rst`_               `sci-hist`_     .. image:: ../figs/index3a.gif  `systems-eng`_    `thermal`_
-===================  ==============  ==============================  ================  ==================
+===================  ==============  ==============================  ========================================================  ==================
+`astro-basics`_      `astro-blog`_   `astro-ph`_                     `astro-spec`_                                             `astro_reduction`_
+`astro_top-impact`_  `beacon`_       `beatlas`_                      `bravo`_                                                  `codes_usage`_
+`doing_sci`_         `estatistica`_  `example`_                      `gai_fits-imgs`_                                          `git`_
+`import_wheel`_      `index`_        .. image:: ../figs/index2.gif   `informatics`_                                            `instrumentation`_
+`inthepress`_        `julia`_        `latex`_                        `linux`_                                                  `math`_
+`physics-basics`_    `python-oop`_   `python-packages`_              `python_astro (moserinsp's conflicted copy 2018-03-08)`_  `python_astro`_
+`regex`_             `rst`_          `sci-hist`_                     `systems-eng`_                                            `thermal`_
+\                    \               .. image:: ../figs/index3a.gif  \                                                         \
+===================  ==============  ==============================  ========================================================  ==================
 
 .. _astro-basics: astro-basics.html
 .. _astro-blog: astro-blog.html
@@ -38,6 +39,7 @@ DMF notes
 .. _physics-basics: physics-basics.html
 .. _python-oop: python-oop.html
 .. _python-packages: python-packages.html
+.. _python_astro (moserinsp's conflicted copy 2018-03-08): python_astro (moserinsp's conflicted copy 2018-03-08).html
 .. _python_astro: python_astro.html
 .. _regex: regex.html
 .. _rst: rst.html

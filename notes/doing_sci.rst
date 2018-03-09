@@ -2,6 +2,13 @@ Doing Science
 **************************
 .. contents:: Table of contents
 
+Seminars
+==========
+- On average, each word+space has ~7 chars (Portuguese).
+- Titles: Less than 15 words == 100 chars.
+- Abstracts: Less than 200 words == 1400 chars.
+
+
 Writing tips
 ==============
 - Scientists publish IDEAS. Keep that in mind.
@@ -84,6 +91,8 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+- `Educação para o Futuro <https://www.youtube.com/watch?v=B_x8EccxJjU&feature=youtu.be>`_
+
 - `'Still working': Astronomers explain why they don't publish <http://www.sciencemag.org/news/2018/02/still-working-astronomers-explain-why-they-don-t-publish?utm_source=sciencemagazine&utm_medium=facebook-text&utm_campaign=dontpublish-17906>`_
 
 - `Crise na ciência não se deve apenas à falta de recursos, avaliam cientistas <http://agencia.fapesp.br/crise_na_ciencia_nao_se_deve_apenas_a_falta_de_recursos_avaliam_cientistas/27103/>`_
