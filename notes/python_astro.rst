@@ -159,6 +159,8 @@ After installing Python 2.7.9+, you need to run
 .. code:: bash
 
     python -m ensurepip
+    # OR
+    python3.6 -m pip install --user pipenv
 
 "Could not find .egg-info"
 ---------------------------

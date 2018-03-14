@@ -91,6 +91,8 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+- `Suspensão do Brasil de consórcio astronômico reflete falta de política para ciência <https://oglobo.globo.com/sociedade/ciencia/suspensao-do-brasil-de-consorcio-astronomico-reflete-falta-de-politica-para-ciencia-22486965?utm_source=Twitter&utm_medium=Social&utm_campaign=compartilhar>`_
+
 - `Educação para o Futuro <https://www.youtube.com/watch?v=B_x8EccxJjU&feature=youtu.be>`_
 
 - `'Still working': Astronomers explain why they don't publish <http://www.sciencemag.org/news/2018/02/still-working-astronomers-explain-why-they-don-t-publish?utm_source=sciencemagazine&utm_medium=facebook-text&utm_campaign=dontpublish-17906>`_
