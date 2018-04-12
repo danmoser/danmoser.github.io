@@ -188,3 +188,5 @@ Other
 - `Os 100 anos de João Saldanha, o técnico que atormentou a ditadura militar <http://brasil.elpais.com/brasil/2017/07/01/deportes/1498862110_086687.html>`_
 
 - `Westbrook, Durant, and the Rules of NBA Revenge <https://www.theringer.com/nba/2017/11/28/16709590/kevin-durant-russell-westbrook-revenge-game>`_
+
+- `A Gentleman's Guide to the NBA: When Players Agree to Take Plays Off <https://bleacherreport.com/articles/2768585-a-gentlemans-guide-to-the-nba-when-nba-players-agree-to-take-plays-off>`_

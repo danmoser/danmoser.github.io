@@ -367,6 +367,21 @@ On Xubuntu 16.04, if the indicator-multiload has problems ("transparency") or th
 Right click on the panel and select it.
 
 
+Alternative to ``indicator-multiload``
+-----------------------------------------
+Install ``multiload-ng``!!!!
+
+.. code:: bash
+
+    sudo add-apt-repository ppa:nilarimogard/webupd8
+
+    sudo apt update
+
+    sudo apt install xfce4-multiload-ng-plugin
+
+Then, (right click) Panel > Panel Preferences > (tab) Items > "+"
+
+
 Mimes and program links in File Managers
 ------------------------------------------
 In Ubuntu, the program-file type association is set is in ``~/.local/share/applications/mimeapps.list``.

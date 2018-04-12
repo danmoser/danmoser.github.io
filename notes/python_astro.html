@@ -752,22 +752,23 @@ span.boxed, span.framebox {
 </li>
 <li><a class="reference internal" href="#compiling-python" id="id62">Compiling Python</a><ul>
 <li><a class="reference internal" href="#numba" id="id63"><tt class="docutils literal">numba</tt></a></li>
+<li><a class="reference internal" href="#parsl" id="id64"><tt class="docutils literal">parsl</tt></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#python-environments-and-references" id="id64">Python environments and references</a><ul>
-<li><a class="reference internal" href="#how-to-clean-up-conda-environments" id="id65">How to clean up conda environments</a></li>
-<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id66">General use Python packages in Astronomy</a></li>
-<li><a class="reference internal" href="#python-learning-for-astronomers" id="id67">Python learning for astronomers</a></li>
-<li><a class="reference internal" href="#python-distributions" id="id68">Python distributions</a></li>
-<li><a class="reference internal" href="#python-environments" id="id69">Python environments</a></li>
-<li><a class="reference internal" href="#utilities" id="id70">Utilities</a><ul>
-<li><a class="reference internal" href="#package-index" id="id71">Package Index</a></li>
-<li><a class="reference internal" href="#cookbooks" id="id72">Cookbooks</a></li>
-<li><a class="reference internal" href="#articles" id="id73">Articles</a></li>
-<li><a class="reference internal" href="#python-code-revision" id="id74">Python code revision</a></li>
-<li><a class="reference internal" href="#visualization-tools" id="id75">Visualization tools</a></li>
+<li><a class="reference internal" href="#python-environments-and-references" id="id65">Python environments and references</a><ul>
+<li><a class="reference internal" href="#how-to-clean-up-conda-environments" id="id66">How to clean up conda environments</a></li>
+<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id67">General use Python packages in Astronomy</a></li>
+<li><a class="reference internal" href="#python-learning-for-astronomers" id="id68">Python learning for astronomers</a></li>
+<li><a class="reference internal" href="#python-distributions" id="id69">Python distributions</a></li>
+<li><a class="reference internal" href="#python-environments" id="id70">Python environments</a></li>
+<li><a class="reference internal" href="#utilities" id="id71">Utilities</a><ul>
+<li><a class="reference internal" href="#package-index" id="id72">Package Index</a></li>
+<li><a class="reference internal" href="#cookbooks" id="id73">Cookbooks</a></li>
+<li><a class="reference internal" href="#articles" id="id74">Articles</a></li>
+<li><a class="reference internal" href="#python-code-revision" id="id75">Python code revision</a></li>
+<li><a class="reference internal" href="#visualization-tools" id="id76">Visualization tools</a></li>
 </ul>
 </li>
 </ul>
@@ -2029,16 +2030,21 @@ cmake -DCMAKE_INSTALL_PREFIX<span class="operator">=</span>$HOME/.local/ -P cmak
 <span class="comment single"># cmake --build . --target install</span>
 </pre>
 </div>
+<div class="section" id="parsl">
+<h3><a class="toc-backref" href="#id64"><tt class="docutils literal">parsl</tt></a></h3>
+<p>A Parallel Scripting Library for Python.</p>
+<p><a class="reference external" href="http://parsl-project.org/">http://parsl-project.org/</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="python-environments-and-references">
-<h1><a class="toc-backref" href="#id64">Python environments and references</a></h1>
+<h1><a class="toc-backref" href="#id65">Python environments and references</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="http://python-notes.curiousefficiency.org/">http://python-notes.curiousefficiency.org/</a></li>
 <li><a class="reference external" href="https://stackoverflow.blog/2017/10/31/disliked-programming-languages/">What are the Most Disliked Programming Languages?</a></li>
 </ul>
 <div class="section" id="how-to-clean-up-conda-environments">
-<h2><a class="toc-backref" href="#id65">How to clean up conda environments</a></h2>
+<h2><a class="toc-backref" href="#id66">How to clean up conda environments</a></h2>
 <p><a class="reference external" href="https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments">https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments</a>
 <a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment">https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment</a></p>
 <pre class="code bash literal-block">
@@ -2048,7 +2054,7 @@ conda clean -a -y
 </pre>
 </div>
 <div class="section" id="general-use-python-packages-in-astronomy">
-<h2><a class="toc-backref" href="#id66">General use Python packages in Astronomy</a></h2>
+<h2><a class="toc-backref" href="#id67">General use Python packages in Astronomy</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>PyHdust (Python tools for hdust code)</dt>
@@ -2151,7 +2157,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="python-learning-for-astronomers">
-<h2><a class="toc-backref" href="#id67">Python learning for astronomers</a></h2>
+<h2><a class="toc-backref" href="#id68">Python learning for astronomers</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>CodeCAdemy</dt>
@@ -2192,7 +2198,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="python-distributions">
-<h2><a class="toc-backref" href="#id68">Python distributions</a></h2>
+<h2><a class="toc-backref" href="#id69">Python distributions</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>Ureka*</dt>
@@ -2233,7 +2239,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="python-environments">
-<h2><a class="toc-backref" href="#id69">Python environments</a></h2>
+<h2><a class="toc-backref" href="#id70">Python environments</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>IPython</dt>
@@ -2262,9 +2268,9 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="utilities">
-<h2><a class="toc-backref" href="#id70">Utilities</a></h2>
+<h2><a class="toc-backref" href="#id71">Utilities</a></h2>
 <div class="section" id="package-index">
-<h3><a class="toc-backref" href="#id71">Package Index</a></h3>
+<h3><a class="toc-backref" href="#id72">Package Index</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>PyPI</dt>
@@ -2275,7 +2281,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h3><a class="toc-backref" href="#id72">Cookbooks</a></h3>
+<h3><a class="toc-backref" href="#id73">Cookbooks</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>ActiveState Python recipes</dt>
@@ -2286,7 +2292,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="articles">
-<h3><a class="toc-backref" href="#id73">Articles</a></h3>
+<h3><a class="toc-backref" href="#id74">Articles</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Survey of software use in astronomy</dt>
@@ -2297,7 +2303,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="python-code-revision">
-<h3><a class="toc-backref" href="#id74">Python code revision</a></h3>
+<h3><a class="toc-backref" href="#id75">Python code revision</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Landscape</dt>
@@ -2308,7 +2314,7 @@ conda clean -a -y
 </ul>
 </div>
 <div class="section" id="visualization-tools">
-<h3><a class="toc-backref" href="#id75">Visualization tools</a></h3>
+<h3><a class="toc-backref" href="#id76">Visualization tools</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt>Seaborn</dt>

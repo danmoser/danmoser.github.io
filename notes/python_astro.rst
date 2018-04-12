@@ -1038,6 +1038,12 @@ It makes use of the ``cmake``. And it works like this:
     cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local/ -P cmake_install.cmake
     # cmake --build . --target install
 
+``parsl``
+-------------
+A Parallel Scripting Library for Python. 
+
+http://parsl-project.org/
+
 
 Python environments and references
 *************************************

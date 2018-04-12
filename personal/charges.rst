@@ -233,3 +233,7 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_deadline.gif
+    :align: center
+    :height: 500
+

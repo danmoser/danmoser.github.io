@@ -91,6 +91,10 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+- `O doutorado é prejudicial à saúde mental <https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html?id_externo_rsoc=FB_BR_CM>`_
+
+- `The psychological aspects of a well-known issue (PDF) <../static/doing_sci-leaveastro.pdf>`_
+
 - `Suspensão do Brasil de consórcio astronômico reflete falta de política para ciência <https://oglobo.globo.com/sociedade/ciencia/suspensao-do-brasil-de-consorcio-astronomico-reflete-falta-de-politica-para-ciencia-22486965?utm_source=Twitter&utm_medium=Social&utm_campaign=compartilhar>`_
 
 - `Educação para o Futuro <https://www.youtube.com/watch?v=B_x8EccxJjU&feature=youtu.be>`_
@@ -157,9 +161,9 @@ Doing science
 
 - `Como aumentar o impacto de artigos científicos <http://agencia.fapesp.br/como_aumentar_o_impacto_de_artigos_cientificos_/26143/>`_
 
-- `Ciência vive uma epidemia de estudos inúteis <http://brasil.elpais.com/brasil/2017/01/10/internacional/1484073680_523691.html?id_externo_rsoc=FB_CC>`_
-
 - `There's an awful cost to getting a PhD that no one talks about <https://qz.com/547641/theres-an-awful-cost-to-getting-a-phd-that-no-one-talks-about/>`_
+
+- `Ciência vive uma epidemia de estudos inúteis <http://brasil.elpais.com/brasil/2017/01/10/internacional/1484073680_523691.html?id_externo_rsoc=FB_CC>`_
 
 - `Estudo não aumenta eficiência do trabalho no Brasil, diz pesquisa <http://trabalhounido.blogspot.com.br/2017/01/estudo-nao-aumenta-eficiencia-do.html>`_
 

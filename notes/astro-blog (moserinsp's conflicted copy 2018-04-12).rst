@@ -5,13 +5,13 @@ DMF AstroBlog
 *********
 2017-04
 ==========
+A ferramenta gerencial SWOT
+-----------------------------
+Pontos fortes, fracos, oportunidades e ameaças.
 
-Online book depository
-------------------------
-Free delivery worldwide!!
+https://neigrando.wordpress.com/2011/11/24/a-ferramenta-estrategica-de-analise-swot-e-fofa/
 
-https://www.bookdepository.com/
-
+-------
 
 How Do You Count Endangered Species? Look to the Stars
 --------------------------------------------------------
