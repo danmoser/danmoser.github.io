@@ -5,6 +5,11 @@ DMF AstroBlog
 *********
 2017-04
 ==========
+The first spacecraft that will "touch the Sun"
+------------------------------------------------
+http://bgr.com/2018/04/09/solar-probe-parker-nasa-touch-the-sun-mission
+
+--------
 
 Online book depository
 ------------------------
@@ -12,6 +17,15 @@ Free delivery worldwide!!
 
 https://www.bookdepository.com/
 
+-------
+
+A ferramenta gerencial SWOT
+-----------------------------
+Pontos fortes, fracos, oportunidades e ameaças.
+
+https://neigrando.wordpress.com/2011/11/24/a-ferramenta-estrategica-de-analise-swot-e-fofa/
+
+-------
 
 How Do You Count Endangered Species? Look to the Stars
 --------------------------------------------------------

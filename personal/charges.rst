@@ -237,3 +237,11 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_projetos.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_recursos.jpg
+    :align: center
+    :height: 500
+

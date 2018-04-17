@@ -32,6 +32,8 @@ Tg 2, 14-18
 
 Mc 8,27-35
 
+`Pode-se ser santo no mundo secular de hoje? Papa Francisco <https://leonardoboff.wordpress.com/2018/04/16/pode-se-ser-santo-no-mundo-secular-de-hoje-papa-francisco/>`_
+
 `O que a Lava Jato revela sobre a origem 'mágica' do Direito <http://www.bbc.com/portuguese/brasil-40687467>`_
 
 Jesus exerceu o papel de Cidadão 

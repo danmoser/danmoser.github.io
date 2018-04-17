@@ -3,6 +3,20 @@
 Instrumentation notes
 #######################
 
+Important topics for astronomical instrumentation
+----------------------------------------------------
+- Astronomical Spectroscopy
+- Imaging and photometry
+- Active and Adaptive Optics
+- Polarimetry and Spectro-polarimetry
+- Characteristics of astronomical detectors in multiple wavelengths 
+- Spectral imaging (IFU, Fabry-Perot and similar)
+- Data treatment; Astronomical databases
+- Technology of Large Telescopes
+- Factors that affect astronomical observations
+- Signal-to-noise analysis and errors
+
+
 Engineering
 =============
 Steps in Engineering Problem Solving 
