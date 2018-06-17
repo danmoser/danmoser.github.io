@@ -8,6 +8,7 @@ Seminars
 - Titles: Less than 15 words == 100 chars.
 - Abstracts: Less than 200 words == 1400 chars.
 
+.. figure:: ../figs/doing-sci_paper.png
 
 Writing tips
 ==============
@@ -31,6 +32,8 @@ Writing tips
 - `Eight listening-research findings <https://gianfrancoconti.wordpress.com/2017/08/15/eight-listening-research-findings-every-teacher-should-be-aware-of-and-their-implications-for-teaching-and-learning/>`_ every teacher should be aware of and their implications for teaching and learning
 
 - `American and British English Spelling Differences <https://www.eslbuzz.com/american-and-british-english-spelling-differences/>`_
+
+- `How language shapes the way we think -- Lera Boroditsky <https://www.youtube.com/watch?v=RKK7wGAYP6k>`_
 
 Useful expressions
 -------------------
@@ -91,6 +94,18 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 
 Doing science
 ==============
+.. figure:: ../figs/doing-sci_physicists.png
+
+.. figure:: ../figs/doing-sci_phys-color.jpg
+
+.. figure:: ../figs/doing-sci_handwrite.png
+
+- `Não existe ciência exata (e vamos combinar que todas são humanas...) <http://cienciahoje.org.br/artigo/nao-existe-ciencia-exata-e-vamos-combinar-que-todas-sao-humanas/>`_
+
+- `Livro investiga os três modelos mais influentes de educação superior <http://agencia.fapesp.br/livro_investiga_os_tres_modelos_mais_influentes_de_educacao_superior/27840/>`_
+
+- `É preciso acabar com o formato das aulas de 50 minutos <https://brasil.elpais.com/brasil/2017/02/17/economia/1487331225_284546.html?id_externo_rsoc=FB_CC>`_ 
+
 - `O doutorado é prejudicial à saúde mental <https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html?id_externo_rsoc=FB_BR_CM>`_
 
 - `The psychological aspects of a well-known issue (PDF) <../static/doing_sci-leaveastro.pdf>`_
@@ -205,6 +220,9 @@ Doing science
 .. figure:: ../figs/doing_sci_citacoes.jpg
     :width: 800 px
 
+.. figure:: ../figs/doing_sci_fuga.jpg
+    :width: 577 px
+
 - `Where science and nonsense collide <http://www.nature.com/news/where-science-and-nonsense-collide-1.21266>`_
 
 - `CNPq e Organizações Sociais começam 2017 com orçamento sem lastro <http://ciencia.estadao.com.br/blogs/herton-escobar/cnpq-e-organizacoes-sociais-comecam-2017-com-orcamento-sem-lastro/>`_
@@ -275,6 +293,24 @@ Doing science
 
 - `How do emotions affect productivity? <https://www.atlassian.com/blog/apps/new-research-emotional-intelligence-in-the-workplace?utm_source=facebook&utm_medium=social&utm_campaign=atlassian_new-research-emotional-intelligence-in-the-workplace>`_
 
+- `Software citations (AAS policy) <http://journals.aas.org/policy/software.html>`_
+
+- `'Thought Leader’ Gives Talk on 'Thought Leadership' <https://www.youtube.com/watch?v=_ZBKX-6Gz6A>`_
+
+- `Duke's Scientific Writing Resource <https://cgi.duke.edu/web/sciwriting/index.php?action=lesson1>`_
+
+- http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806
+
+- http://www.escritacientifica.com
+
+- http://letramentoacademico.fflch.usp.br/
+
+- `Library Genesis <http://gen.lib.rus.ec/>`_ is a scientific community targeting collection of books on natural science disciplines and engineering.
+
+- `Sci-Hub <http://sci-hub.cc/>`_ is the first website in the world to provide mass & public access to research papers.
+
+
+
 Data tools
 ==================
 Extracting data
@@ -304,20 +340,31 @@ Statistics
 - `ParaView <http://www.paraview.org/>`_
 
 
-Info & Links
-================
-- `Software citations (AAS policy) <http://journals.aas.org/policy/software.html>`_
+Vocabulary
+============
+- Criticality: When a nuclear chain reaction in a mass of fissile material is self-sustaining, the mass is said to be in a critical state in which there is no increase or decrease in power.
+- Demon core: a mass of plutonium that was involved in two criticality accidents.
+- Faster-than-light speed: Gran Sasso neutrinos measurements. See https://en.wikipedia.org/wiki/CERN_Neutrinos_to_Gran_Sasso
+- Fat Man: codename for the second atomic bomb detonated over Japan on 9 August 1945 (Nagasaki).
+- Fermi problem: order of magnitude investigation of problems.
+- Frame-dragging effect: measurement by Gravity Probe B satellite. See https://en.wikipedia.org/wiki/Gravity_Probe_B
+- Little boy: codename for the first atomic bomb detonated over Japan on 6 August 1945 (Hiroshima).
+- Trinity test: the first detonation of a nuclear weapon.
+- `Einstein refrigerator <https://en.wikipedia.org/wiki/Einstein_refrigerator>`_
+- `Milankovitch cycles <https://en.wikipedia.org/wiki/Milankovitch_cycles>`_
+- `Duga radar (Russian Woodpecker at Chernobyl) <https://en.wikipedia.org/wiki/Duga_radar>`_
+- `AeroVironment/DARPA Nano Hummingbird UAV flying  <https://www.youtube.com/watch?v=a8ZbtZqH6Io>`_
+- `Semi-Automatic Ground Environment <https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment>`_
 
-- `'Thought Leader’ Gives Talk on 'Thought Leadership' <https://www.youtube.com/watch?v=_ZBKX-6Gz6A>`_
 
-- `Duke's Scientific Writing Resource <https://cgi.duke.edu/web/sciwriting/index.php?action=lesson1>`_
+Stories
+==========
+- `The rescue to Salyut 7 <https://arstechnica.com/science/2014/09/the-little-known-soviet-mission-to-rescue-a-dead-space-station/>`_
 
-- http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806
 
-- http://www.escritacientifica.com
-
-- http://letramentoacademico.fflch.usp.br/
-
-- `Library Genesis <http://gen.lib.rus.ec/>`_ is a scientific community targeting collection of books on natural science disciplines and engineering.
-
-- `Sci-Hub <http://sci-hub.cc/>`_ is the first website in the world to provide mass & public access to research papers.
+Movies
+=========
+- Fat Man and Little Boy (1989)
+- The Great Global Warming Swindle (?)
+- Feynman and the Challenger (2013)
+- `My YouTube playlist <https://www.youtube.com/playlist?list=PLmw4hG7QKEw_mJ4WXnEpKcTd4M7cF8Ipp>`_

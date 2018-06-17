@@ -79,6 +79,15 @@ Nas irritações e dores orofaríngeas oriundas de infecções ou processos cir�
     - benzocaína 5 mg
     - tirotricina 1,035 mg
 
+Migraine
+============
+Naramig
+--------
+
+Cefalium
+----------
+
+
 Others
 ========
 Amoxicilina

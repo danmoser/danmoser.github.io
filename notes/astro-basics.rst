@@ -122,6 +122,11 @@ P: **E como é na prática [as observações astronômicas], assim, resumindo (l
 
 R: A maior parte do trabalho do astrônomo é feito em escritórios com computadores, incluindo as observações! Aquela cena clássica (e romântica) de um astrônomo pondo o olho numa luneta não acontece mais (descobriu-se que a eletrônica é muito melhor para detectar e registrar a luz que o corpo humano). Assim, numa observação "profissional" o astrônomo comanda o computador, que por sua vez controla a mecânica do telescópio e o mantém apontado para a estrela (lembre-se, por exemplo, que a Terra está girando, e o telescópio precisa acompanhar esse movimento). Assim, só vemos o que o computador vê (essencialmente, uma imagem preto-e-branco; cores por exemplo, são adicionadas depois). As diferentes técnicas observacionais citadas (*fotometria*, *espectroscopia*, *polarimetria* e *interferometria*) implicam em diferentes análises físicas que fazemos com a luz coletada pelo telescópio (por exemplo, fotometria é uma medida de "potência" da luz; espectroscopia é uma medida da "cor" da luz; polarimetria é uma medida da "orientação" da luz, como Norte-Sul ou Leste-Oeste; e interferometria é uma medida que combina a luz de dois ou mais telescópios). Na maioria destes casos não fazemos uma "imagem" da estrela com o telescópio principal (assim, não "vemos" a estrela), mas só o resultado da análise feita com sua luz, pelo computador.
 
+P: **Como eu posso procurar por satélites no céu?**
+
+R: Eu procuro saber de satélites brilhantes neste site: https://heavens-above.com
+Faça login ou clique em *Change your observing location*. Depois vá em *Daily predictions for brighter satellites*. Em *Brightness (mag)* quanto menor o valor, mais brilhante é. Em *Highest point / Azimuth* quanto mais perto de 90 graus, mais alto no céu (atualizado em Maio/2018).
+
 
 Carreira
 ~~~~~~~~~~~~~~

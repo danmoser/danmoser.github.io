@@ -4,7 +4,7 @@ Instrumentation notes
 #######################
 
 Important topics for astronomical instrumentation
-----------------------------------------------------
+====================================================
 - Astronomical Spectroscopy
 - Imaging and photometry
 - Active and Adaptive Optics

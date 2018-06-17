@@ -3,8 +3,343 @@ DMF AstroBlog
 
 2018
 *********
-2017-04
+2018-06
 ==========
+Helium Loss in the Atmosphere of Wasp-107b
+--------------------------------------------------
+https://astrobites.org/2018/06/14/deflating_a_planet_helium_loss_in_wasp_107b/
+
+----------
+
+New experiment to probe dark matter interactions
+--------------------------------------------------
+https://astronomynow.com/2018/06/17/new-experiment-to-probe-dark-matter-interactions/
+
+-----------
+
+'Superblack' bird of paradise feathers absorb 99.95% of light
+------------------------------------------------------------------
+https://www.sciencemag.org/news/2018/01/superblack-bird-paradise-feathers-absorb-9995-light
+
+-----------
+
+SPIE jobs
+-----------
+https://spiecareercenter.org/jobs
+
+-------
+
+The Universe Has a Lot More Huge Stars Than Scientists Thought
+-----------------------------------------------------------------
+http://www.space.com/40841-huge-stars-galaxy-evolution-discovery.html
+
+-----
+
+Microsoft Buys GitHub: The Linux Foundation’s Reaction
+---------------------------------------------------------------
+https://www.linuxfoundation.org/blog/microsoft-buys-github-the-linux-foundations-reaction/
+
+-------
+
+On Elo based prediction models for the FIFA Worldcup 2018
+---------------------------------------------------------------
+https://arxiv.org/abs/1806.01930
+
+-------
+
+Experimental Tests of Spirituality
+-----------------------------------
+https://arxiv.org/abs/1806.01661v1
+
+-------
+
+ALMA and VLT Find Too Many Massive Stars in Starburst Galaxies, Near and Far
+-------------------------------------------------------------------------------
+http://www.eso.org/public/news/eso1817/
+
+-------
+
+Team discover how microbes survive clean rooms and contaminate spacecraft
+-------------------------------------------------------------------------------------
+https://phys.org/news/2018-06-team-microbes-survive-rooms-contaminate.html
+
+2018-05
+==========
+Photometric variability of Be stars
+------------------------------------------------
+An investigation of the photometric variability of confirmed and candidate Galactic Be stars using ASAS-3 data
+
+https://arxiv.org/abs/1805.07665
+
+----
+
+Rival giant telescopes join forces to seek U.S. funding
+------------------------------------------------------------
+http://www.sciencemag.org/news/2018/05/rival-giant-telescopes-join-forces-seek-us-funding
+
+-----
+
+RADMC-3D
+---------------
+RADMC-3D is a code package for diagnostic radiative transfer calculations in astronomy and astrophysics.
+
+http://www.ita.uni-heidelberg.de/~dullemond/software/radmc-3d/
+
+-----
+
+Observatório do CTA/ITA
+---------------------------
+http://press.exoss.org/observatorio-do-cta-e-sua-historia-a-servico-da-astronomia-brasileira/
+
+http://www.iae.cta.br/index.php/observatorio-sobre
+
+--------
+
+Observatório do Pico da Cabras
+-------------------------------
+Ou Observatório Municipal "Jean Nicolini", Campinas, São Paulo
+
+http://www.campinas.sp.gov.br/governo/cultura/museus/omcjn/index.php?idMuseu=11&sigla=OMCJN
+
+---------
+
+Rotation of the Large Magellanic Cloud
+----------------------------------------------------
+https://apod.nasa.gov/apod/ap180516.html
+
+First determined with Hubble, the rotation of the LMC is presented with fine data from the Sun-orbiting Gaia satellite. Gaia measures the positions of stars so accurately that subsequent measurements can reveal slight proper motions of stars not previously detectable. 
+
+--------------------------
+
+Exo-Life Finder Telescope
+--------------------------
+https://www.kickstarter.com/projects/exocube/
+
+A bicycle-shaped telescope!
+
+-----------
+
+SVG = Gráfico Vetorial Escalável
+------------------------------------------------------------------------------
+Do inglês, "Scalable Vector Graphics". O site 
+
+http://maujorsvg.com.br/
+
+tem por finalidade difundir a SVG. Aqui você encontrará matérias comentando as especificações do W3C para a SVG e matérias explicando detalhadamente as funcionalidades da linguagem.
+
+-------------------------------
+
+Disruption of circumstellar discs by large-scale stellar magnetic fields
+------------------------------------------------------------------------------
+Asif ud-Doula, Stanley Owocki, Nathaniel Kee
+
+Penn State Scranton, University of Delaware and University of Tubingen
+
+Spectropolarimetric surveys reveal that 8-10% of OBA stars harbor large-scale magnetic fields, but thus far no such fields have been detected in any classical Be stars. Motivated by this, we present here MHD simulations for how a pre-existing Keplerian disc -- like that inferred to form from decretion of material from rapidly rotating Be stars -- can be disrupted by a rotation-aligned stellar dipole field. For characteristic stellar and disc parameters of a near-critically rotating B2e star, we find that a polar surface field strength of just 10 G can significantly disrupt the disc, while a field of 100 G, near the observational upper limit inferred for most Be stars, completely destroys the disc over just a few days. Our parameter study shows that the efficacy of this magnetic disruption of a disc scales with the characteristic plasma beta (defined as the ratio between thermal and magnetic pressure) in the disc, but is surprisingly insensitive to other variations, e.g. in s!
+ tellar rotation speed, or the mass loss rate of the star's radiatively driven wind. The disc disruption seen here for even a modest field strength suggests that the presumed formation of such Be discs by decretion of material from the star would likely be strongly inhibited by such fields; this provides an attractive explanation for why no large-scale fields are detected from such Be stars.
+
+Reference: MNRAS
+
+Weblink: https://arxiv.org/abs/1805.03001
+
+------------
+
+Google’s Android Things is a new OS for the Internet of Things 
+------------------------------------------------------------------
+https://www.digitaltrends.com/home/google-android-things/
+
+-----------
+
+ALMA System Astronomer
+------------------------
+https://recruitment.eso.org/jobs/2018_0017
+
+(Announced in May 08, 2018).
+
+The Data Management Group:
+
+The JAO Department of Science Operations (DSO) is responsible for the ALMA observations. It consists of three groups: the Array Operations Group (AOG), the Program Management Group (PMG), which is responsible for scheduling and tracking of projects as well as data quality assurance during the observations, and the Data Management Group (DMG), which is responsible for determining the performance of the array, the development and optimization of the array including the calibration plan as well as pipeline operations and data quality assurance. The DMG consists of the Head and Deputy Head of the group, eight System Astronomers and ten Science Archive Content Managers/pipeline operators. The System Astronomers report directly to the Deputy Head of the Data Management Group.
+Duties and responsibilities:
+
+ALMA system astronomers are the experts on the ALMA observatory and its performance, and provide advice and assistance to ALMA operations. They work closely with the ALMA Regional Centers, the system engineers in the ALMA Department of Engineering and the staff in the ALMA Department of Computing. Their duties consist of:
+
+- Monitoring and determining of the long-term performance of the array based on trend analysis.
+- Setting requirements and performing tests and evaluations of the on-line software system, including the correlator software.
+- Optimizing and developing observing sequence execution.
+- Investigating and potentially contributing to corrective action on system level problems discovered in software/hardware.
+- Participating in development and commissioning of new capabilities of ALMA.
+- Maintenance, development, optimization and execution of the ALMA calibration plan.
+- Optimization and development of pipeline software and operations and data quality assurance. 
+
+The System Astronomers also contribute to science operations as Astronomers On Duty, and participate in tests and evaluation of the ALMA software systems relevant to operations (pipeline, data quality assurance, scheduling etc.).
+
+The successful candidate is expected and encouraged to conduct his/her own astronomical research. Research in areas directed towards use of ALMA.
+
+Professional requirements/qualifications:
+
+- PhD in Astronomy or Physics.
+- At least 3 years of relevant experience after the PhD.
+- A strong interest for investigating technical issues, either in software or in hardware.
+- Experience in millimeter/sub-mm radio astronomy, either through commissioning or science operations.
+- Experience in programming in Python.
+- Experience in data reduction of radio astronomical data (using any of the standard packages GILDAS, AIPS, MIRIAD, CASA, etc) will be considered an asset. The successful candidate is expected to master CASA once hired.
+- Experience in statistical analysis and programming (using dedicated languages such as R), will be considered an asset.
+- Proven track record of scientific research.
+- Fluency in the English language (oral and written).
+- Proven good interpersonal communication skills and ability to work in a multidisciplinary team, including operators, astronomers and system/software engineers.
+
+Due to travel requirements and work at high altitudes, a successful high altitude medical check is a necessary condition of employment for this position.
+
+Duty Station / Location of Position
+
+Duty stations: Santiago and the Operations Support Facility (OSF) near San Pedro de Atacama, Chile. The successful applicant will be required to do an average of 8 shifts (' 30%) working at the ALMA sites at OSF (2900m elevation) and, on rare occasions, at the Array Operations Site (5000m elevation). (One shift lasts 8 days and is followed by 6 days of rest.)
+Contract
+
+Depends on Executive
+Remuneration
+
+ALMA International Staff will be recruited as employees of ESO, AUI/NRAO or NAOJ. Each of these employers offer competitive remuneration packages including a competitive salary as well as comprehensive social benefits, and provide financial support in relocating families. Furthermore, if applicable, an expatriation allowance as well as some other allowances will be added.
+Application Process
+
+Qualified applicants are invited to apply by submitting an application to one of the ALMA Executives. Applications must be written in English and include:
+
+- Cover Letter addressing the requirements detailed above;
+- Curriculum Vitae;
+- Research interest statement and list of publications;
+- Three reference letters.
+
+Applicants submitting their application to ESO are invited to apply online at http://recruitment.eso.org/. Reference letters should be sent to vacchile@eso.org.
+
+Applicants submitting their application to AUI/NRAO are invited to apply online at http://jobs.jobvite.com/nrao/jobs. Reference letters should be sent to Candice Waller at cwaller@nrao.edu.
+
+Applicants submitting their application to NAOJ are invited to send their application and reference letters to apply-alma-dmg20180531@nao.ac.jp.
+
+The initial deadline for receipt of applications to be considered for the position is 31 May 2018 . However, applications will continue to be accepted until the position is filled. 
+
+2018-04
+==========
+First low-mass star detected in globular cluster
+-------------------------------------------------
+From 2011...
+
+https://phys.org/news/2011-12-low-mass-star-globular-cluster.html
+
+---------
+
+Casting a $20 Million Mirror for the World’s Largest Telescope 
+----------------------------------------------------------------
+How to achieve sub-micrometric precision in a mirror with 8 meters in diameter and 15 tons so it can be used in modern astronomical observatories?
+
+https://www.youtube.com/watch?v=M2f4zepwcy8
+
+----------
+
+Optical/Infrared properties of Be stars in X-ray Binary systems
+----------------------------------------------------------------
+Be/X-ray binaries, consisting of a Be star and a compact object (neutron star), form the largest subclass of High Mass X-ray Binaries. The orbit of the compact object around the Be star is wide and highly eccentric. Neutron stars in the Be/X-ray binaries are generally quiescent in X-ray emission. Transient X-ray outbursts seen in these objects are thought to be due to the interaction between the compact object and the circumstellar disk of the Be star at the periastron passage. Optical/infrared observations of the companion Be star during these outbursts show that the increase in the X-ray intensity of the neutron star is coupled with the decrease in the optical/infrared flux of the companion star. Apart from the change in optical/infrared flux, dramatic changes in the Be star emission line profiles are also seen during X-ray outbursts. Observational evidences of changes in the emission line profiles and optical/infrared continuum flux along with associated X-ray outbursts from the neutron stars in several Be/X-ray binaries are presented in this paper.
+
+https://popups.uliege.be/0037-9565/index.php?id=7625
+
+---------
+
+Telescópio robótico de 40cm do OPD (ROBO40)
+------------------------------------------------
+http://lnapadrao.lna.br/OPD/telescopios/telescopio-robotico-de-40cm-do-opd-robo40
+
+--------
+
+A Hyper Quick Return to Hypervelocity Stars
+------------------------------------------------
+https://astrobites.org/2018/05/01/a-hyper-quick-return-to-hypervelocity-stars/
+
+--------
+
+Gaia Data Release 2: Observational Hertzsprung-Russell diagrams
+----------------------------------------------------------------
+Recomendo. Os HRDs mais bonitos que já vi.
+Dá para ver nitidamente os eventos de metalicidade. Também alguns efeitos de idade e binaridade.
+
+https://arxiv.org/abs/1804.09378v1
+
+Motion of variable stars in the Gaia colour magnitude diagram:
+https://www.youtube.com/watch?v=Pcy4U5uvL8I
+
+--------
+
+Timeline of astronomy
+------------------------
+From Galileo (actually, much earlier) to the James Webb Space telescope!
+
+https://en.wikipedia.org/wiki/Timeline_of_astronomy
+
+--------
+
+IAG no GAIA
+-----------------
+Com Ramachrisna Teixeira, Ronaldo Eustáquio de Souza e Sandra dos Anjos:
+
+"Nosso envolvimento se dá em uma unidade de trabalho que se chama Development Group (DU470) - Extended Objects". O grupo, que está inserido na unidade de processamento de objetos do DPAC (Consórcio de Análise e Processamento de Dados), tem como objetivo o aproveitamento científico dos objetos extensos como galáxias e nebulosas planetárias que serão detectados pelo satélite.
+
+http://www.iag.usp.br/noticia/esa-gaia-satelite-ramachrisna-teixeira
+
+------------
+
+Using the SVO to construct Stellar Reference Sets
+----------------------------------------------------------------
+In this era of Big Data in Stellar Spectroscopic Surveys it is essential to have comprehensive sets of reference stars that span the parameter space and have spectra at a variety of resolutions and wavelengths. Constructing such reference sets takes a lot of volunteered time and effort, which are often hard to come by.
+
+What if there was a tool that did the hard work for you?
+There is! You can find it here: http://svo2.cab.inta-csic.es/theory/libtest/index.php
+
+The Spanish Virtual Observatory (SVO) and the producers of a range of empirical and theoretical stellar libraries have worked together to create this SVO resource. This is an outcome of the IAU C5 Working Group on Stellar Libraries, established to consider the effectiveness of stellar libraries, which was initiated by the International Workshop on Spectral Stellar Libraries (IWSSL) series.
+
+We warmly encourage you to use this tool for your stellar analysis efforts and to also freely distribute the link to any of your colleagues who may find it useful.
+
+We welcome any feedback on the tool (via the SVO helpdesk), and also any suggestions for other libraries that could be included.
+
+If you are interested to know more about the work of the IAU C5 Working Group please get in touch.
+
+Best wishes,
+
+The SVO and the IAU C5 Working Group on Stellar Libraries
+https://www.iau.org/science/scientific_bodies/working_groups/306/
+----
+
+Integrating optical components into existing chip designs
+---------------------------------------------------------------
+https://phys.org/news/2018-04-optical-components-chip.html
+
+----
+
+Espectrômetro de infravermelho que cabe em um chip
+---------------------------------------------------
+http://agencia.fapesp.br/espectrometro_de_infravermelho_que_cabe_em_um_chip/27628/
+
+-----
+
+There's No Consistent Measuring System For Space, And It's Hurting Astronomy 
+------------------------------------------------------------------------------
+https://www.sciencealert.com/retired-professor-calls-for-standard-measurements-in-astronomy-astrophysics
+
+---------
+
+ASTERIA: Arcsecond Space Telescope Enabling Research in Astrophysics
+--------------------------------------------------------------------------
+https://www.jpl.nasa.gov/cubesat/missions/asteria.php
+
+JPL said Asteria’s payload achieved a rpointing stability of 0.5 arcseconds RMS.
+http://www.pasadenanow.com/main/astrophysics-cubesat-demonstrates-big-potential-in-a-small-package-for-planet-seeking/#.WteFveZG2yI
+
+--------
+
+Sirius qualifica fornecedores para mercado de alta tecnologia
+---------------------------------------------------------------
+Interessante e importante!
+
+http://agencia.fapesp.br/sirius_qualifica_fornecedores_para_mercado_de_alta_tecnologia/27503/
+
+--------
+
 The first spacecraft that will "touch the Sun"
 ------------------------------------------------
 http://bgr.com/2018/04/09/solar-probe-parker-nasa-touch-the-sun-mission
@@ -168,7 +503,6 @@ https://www.theguardian.com/commentisfree/2018/feb/07/elon-musk-spacex-launch-ut
 
 2017-01
 =========
-
 Prof. Krieger na PRP da USP
 ------------------------------
 Memória de Atividades da Pró-reitoria de Pesquisa (PRP) no período 2014-2017

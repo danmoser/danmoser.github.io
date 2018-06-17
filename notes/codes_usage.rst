@@ -69,6 +69,48 @@ Na versão paralela: ocorre devido a um ausência do mpirun no comando de execu�
 
 Mesocentre
 =============
+Comandos:
+
+.. code:: bash
+
+    ssh $USER@ssh-n.oca.eu 
+    ssh $USER@licallo.oca.eu
+
+    # Tunel por uma porta:
+    alias lical="echo '# Redirecting licallo to port 7025...'; ssh -l $USER -L 7025:licallo.oca.eu:22 ssh-n.oca.eu -N"
+
+    # Copiar arquivos:
+    scp hdust.zip $USER@licallo.oca.eu:/beegfs/home/USER
+
+    scp -P7025 $USER@localhost:/beegfs/home/USER/hdust/runs/hdust/R82/models.tar .
+    scp -P7025 *.oar $USER@localhost:/beegfs/home/USER/hdust/runs/hdust/
+    scp -P7025 *.oar *.inp $USER@localhost:/beegfs/home/USER/hdust/runs/hdust
+
+    scp -P7025 $USER@localhost:/beegfs/home/USER/hdust/runs/hdust/be_pol_lines/mod01/* .
+
+
+Exemplos: https://www.oca.eu/fr/acces-fonctionnement/gestion-des-jobs/1340-exemples-de-scripts
+
+Comandos: https://www.oca.eu/fr/acces-fonctionnement/gestion-des-jobs/1359-commencer-avec-slurm
+
+VPN: https://dsi.oca.eu/spip.php?article912
+
+Para compilar o HDUST, Mudar no XDR makefile:
+    - gcc -> icc
+    - gfortran -> ifort
+
+Comandos: 
+
+.. code:: bash
+
+    chmod +x mod01.slurm
+    sbatch ./mod01c.slurm
+    squeue | grep acar
+    scancel numero_do_job
+
+
+Old (2017 and before)
+------------------------
 Or Licallo at CRIMSON. Info at https://crimson.oca.eu/spip.php?rubrique57
 
 .. code:: bash
@@ -95,9 +137,10 @@ The submission is
     oarstat
 
 Running times
-----------------
+~~~~~~~~~~~~~~~
 - bestar2.02, step1, 500000/24, one \.temp in 30 sec.
 - bestar2.02, SED, ?
+
 
 ``precalcs``
 ==============
