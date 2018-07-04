@@ -3,8 +3,133 @@ DMF AstroBlog
 
 2018
 *********
+2018-07
+=========
+Systems Engineering no Brasil
+---------------------------------
+E em São Paulo!
+
+http://www.ezute.org.br/
+
+-----------
+
+NASA Sets March 2021 Launch Date for James Webb Space Telescope
+------------------------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/james-webb-space-telescope-march-2021-launch/
+
+-----------
+
+FEI realiza experimento inédito no Brasil
+-------------------------------------------
+http://www.blogdafei.com.br/?p=6427
+
+------------
+
+Thomas Bayes and the crisis in science
+----------------------------------------
+https://www.the-tls.co.uk/articles/public/thomas-bayes-science-crisis/
+
+-------------------------------
+
+Free Software Foundation in Brazil and Argentina
+----------------------------------------------------
+https://www.fsf.org/blogs/rms/may-2018-photos-from-brazil-and-argentina
+
+---------------------
+
+GNU software list!!!
+---------------------
+https://directory.fsf.org/wiki/GNU
+
 2018-06
 ==========
+Solar System's First Known Interstellar Object Gets Unexpected Speed Boost
+------------------------------------------------------------------------------
+http://hubblesite.org/news_release/news/2018-25
+
+--------
+
+CNPq lança primeira chamada pública de bolsas especiais
+---------------------------------------------------------------
+As bolsas especiais do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), tradicionalmente ofertadas por meio de calendários quadrimestrais, passam, agora, a serem concedidas a partir de chamadas públicas. A primeira Chamada foi lançada nesta quarta-feira para seleção de bolsas no país e no exterior.
+
+A Chamada contempla bolsas no país - Pesquisador Visitante (PV), Pós-Doutorado Junior (PDJ), Pós-Doutorado Sênior (PDS), Doutorado-Sanduíche no País (SWP), Pós-Doutorado Empresarial (PDI) e Doutorado-Sanduíche Empresarial (SWI) - e no exterior - Estágio Sênior (ESN), Pós-Doutorado no Exterior (PDE), Doutorado Sanduíche no Exterior (SWE) e Doutorado Pleno no Exterior (GDE). A modalidade GDE é concedida em caráter excepcional para cursos que não tenham equivalente no País.
+
+Além do ineditismo, a iniciativa se destaca por alterar a periodicidade de quadrimestral para semestral, com seleção em junho e novembro e apresentar os critérios de julgamento, uma reivindicação histórica e um avanço do CNPq na transparência do processo de análise.
+
+O presidente do CNPq, Mario Neto Borges, ressalta que a iniciativa é resultado de discussões da direção do CNPq com os Comitês de Assessoramento na busca de formas de aperfeiçoar a concessão de bolsas. "Por sugestão desses Comitês, decidimos fazer o processo com periodicidade semestral e na forma de Chamada", explicou.
+
+Os prazos para submissão das propostas variam de acordo com as datas de início da vigência da bolsa.
+
+Propostas de bolsas para início entre os meses de março e agosto de 2019, o prazo é até o dia 13 de agosto de 2018 e o julgamento acontecerá em novembro deste ano.
+
+As propostas para bolsas com início entre setembro de 2019 e fevereiro de 2020 podem ser submetidos até o dia 8 de março de 2019. O julgamento dessas propostas será em maio de 2019.
+
+Veja `aqui <https://goo.gl/UtuPva>`_ a chamada na íntegra.
+
+---------
+
+Instrumentation papers on MNRAS
+---------------------------------
+http://adsabs.harvard.edu/abs/2018MNRAS.478.3189B
+
+http://adsabs.harvard.edu/abs/2018MNRAS.478.3149J
+
+--------
+
+FAPESP PIPE - Pesquisa Inovadora em Pequenas Empresas
+---------------------------------------------------------------------------
+http://www.fapesp.br/pipe/
+
+-------------------------
+
+Tax (almost) free
+-------------------
+When going USA, remember checking...
+
+www.taxfreeshopping.com
+
+-------------
+
+Sci-Fi series on Netflix
+-------------------------
+- Voltron
+- Dark Matter
+- Mystery Science Theater 3000
+- The Real Ghostbusters (1986 - 1992)
+
+-------
+
+Extremely Large, Extremely Expensive: The Race for the Next Giant Telescopes
+------------------------------------------------------------------------------
+Even as astronomers await a verdict on construction of a huge telescope on Mauna Kea, they are still trying to figure out how to pay for the next stargazing Goliaths.
+
+https://www.nytimes.com/2018/06/11/science/thirty-meter-telescopes-costs.html
+
+--------
+
+ESO Annual Report 2017
+----------------------------------------------------------------------
+It presents a summary of ESO's many activities throughout the year. The contents include:
+
+- Research highlights from ESO facilities, involving the first detections and discoveries of exotic astronomical objects, and the latest results covering aspects of astronomy ranging from the Sun to planets around other stars and high-redshift galaxies.
+
+- A summary of the activities at ESO's observatories in Chile.
+
+- The latest news from the Atacama Large Millimeter/submillimeter Array (ALMA) and Extremely Large Telescope (ELT) projects.
+
+- News about ESO staff (including the International Staff Association and Local Staff Representatives), new diversity initiatives and ESO buildings -- including the ALMA Residencia and the recently opened ESO Supernova Planetarium & Visitor Centre.
+
+https://www.eso.org/public/archives/annualreports/pdfsm/ar_2017.pdf
+
+----------
+
+New GAIA data reveals mergers in Milky Way
+----------------------------------------------------------------------
+https://m.phys.org/news/2018-06-gaia-reveals-mergers-milky.html
+
+----------
+
 Helium Loss in the Atmosphere of Wasp-107b
 --------------------------------------------------
 https://astrobites.org/2018/06/14/deflating_a_planet_helium_loss_in_wasp_107b/
