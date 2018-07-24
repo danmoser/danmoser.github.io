@@ -249,3 +249,7 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_coffee.jpg
+    :align: center
+    :height: 500
+

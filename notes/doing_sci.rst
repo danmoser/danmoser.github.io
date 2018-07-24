@@ -100,6 +100,8 @@ Doing science
 
 .. figure:: ../figs/doing-sci_handwrite.png
 
+- `Os problemas da USP são estruturais <https://jornalggn.com.br/noticia/os-problemas-da-usp-sao-estruturais-nao-de-falta-de-recursos-por-luis-nassif>`_
+
 - `Não existe ciência exata (e vamos combinar que todas são humanas...) <http://cienciahoje.org.br/artigo/nao-existe-ciencia-exata-e-vamos-combinar-que-todas-sao-humanas/>`_
 
 - `Livro investiga os três modelos mais influentes de educação superior <http://agencia.fapesp.br/livro_investiga_os_tres_modelos_mais_influentes_de_educacao_superior/27840/>`_

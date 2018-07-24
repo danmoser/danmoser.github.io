@@ -353,6 +353,8 @@ Brasil
 - Chico Mendes, sindicalista
 - Luís Carlos Prestes, político
 - Paulo Freire, pedagogo
+- Luiz Alberto Moniz Bandeira, cientista político
+- José Walter Bautista Vidal, engenheiro e físico
 
 Em atividade
 -------------
@@ -360,7 +362,6 @@ Em atividade
 - Ruy Braga, sociólogo
 - Jessé de Souza, sociólogo
 - Ladislau Dowbor, economista
-- Luiz Alberto Moniz Bandeira, cientista político
 - Alysson Mascaro, jurista
 - Luís Carlos Valois, jurista
 - Eugênio Aragão, jurista
@@ -440,3 +441,21 @@ Terminologia
 - Socialismo: administração e propriedade pública ou coletiva dos meios de produção e distribuição de bens. É atribuído a Vladimir Lenin a definição de "socialismo" como uma fase de transição entre o capitalismo e o comunismo.
 - Teologia da Libertação: é uma corrente teológica cristã nascida na América Latina (anos 1970), que parte da premissa de que o Evangelho exige a opção preferencial pelos pobres e que a teologia, para concretar essa opção, deve usar também as ciências humanas e sociais.
 - Trotskismo: defende o marxismo em sua versão "ortodoxa", contra a burocratização promovida por Stálin na União Soviética. Trótski desenvolve a ideia de Revolução Permanente e da "Lei do Desenvolvimento Desigual e Combinado". Algumas ideais confundem-se com o leninismo.
+
+Citações
+*************
+Jessé Souza (*Elite do Atraso*)::
+
+    Um “paradigma” é o horizonte histórico que define os pressupostos para qualquer tipo de conhecimento. (...) A questão principal para a superação dos paradigmas científicos é perceber seus pressupostos. É necessário ganhar distância em relação àquilo, precisamente, que é percebido como óbvio e evidente por todos. 
+
+    Todo o discurso elitista e conservador do liberalismo brasileiro está contido em duas noções que foram desenvolvidas na USP e que depois ganharam o Brasil: as ideias de patrimonialismo e de populismo. (...) As noções de patrimonialismo e populismo são as ideias-guia que permitem à elite arregimentar a classe média. Elas, afinal, são as guardiãs da “distância social” em relação aos pobres, que é a pedra de toque da aliança antipopular construída no Brasil para preservar o privilégio, acesso aos capitais econômico e cultural, de 20% contra os 80% de excluídos. 
+
+Noam Chomsky (*The Function of the University in a Time of Crisis*\*)::
+
+    It is not difficult for members of the university community to delude themselves into believing that they are maintaining a "neutral, value-free" position when they simply respond to demands set elsewhere. In fact, to do so is to make a political decision, namely, to ratify the existing distribution of power, authority, and privilege in the society at large, and to take on a commitment to reinforce it. (...) The university will be able to make its contribution to a free society only to the extent that it overcomes the temptation to conform unthinkingly to the prevailing ideology and to the existing patterns of power and privilege. 
+
+\*This essay is excerpted from Chomsky on Democracy and Education, ed. C. P. Otero (New York: Routledge Falmer, 2003), pp. 178-94.
+
+Judas Tadeu de Campos (*Paulo Freire e as Novas Tendências da Educação*)::
+
+    Para Paulo Freire (Pedagogia do oprimido, 1974) a escola tem uma função conservadora, já que reflete e reproduz injustiças da sociedade. Mas, ao mesmo tempo, é uma força inovadora, já que o professor tem uma autonomia relativa. Assim, o educador tem um papel político-pedagógico destacado, já que não existe educação neutra. 

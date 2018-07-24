@@ -5,6 +5,102 @@ DMF AstroBlog
 *********
 2018-07
 =========
+All-sky like photometric surveys
+----------------------------------
+- ASAS http://www.astrouw.edu.pl/asas/ http://adsabs.harvard.edu/abs/2018MNRAS.479.2909B
+- KELT https://keltsurvey.org/ http://adsabs.harvard.edu/abs/2017AJ....153..252L
+- Evryscope http://evryscope.astro.unc.edu/ TBD
+
+-------
+
+Planck legacy data release
+----------------------------
+The final data release contains precise polarimetric measurements.
+
+https://astronomynow.com/2018/07/21/planck-confirms-standard-big-bang-model-but-tensions-remain/
+
+---------
+
+Hubble and Gaia Team Up to Fuel Cosmic Conundrum
+--------------------------------------------------
+Conundrum: anything that puzzles.
+
+Using Hubble and newly released data from Gaia, Riess’ team measured the present rate of expansion to be 73.5 kilometers (45.6 miles) per second per megaparsec. This means that for every 3.3 million light-years farther away a galaxy is from us, it appears to be moving 73.5 kilometers per second faster. However, the Planck results predict the universe should be expanding today at only 67.0 kilometers (41.6 miles) per second per megaparsec. As the teams’ measurements have become more and more precise, the chasm between them has continued to widen, and is now about 4 times the size of their combined uncertainty.
+
+http://hubblesite.org/news_release/news/2018-34
+
+--------
+
+Python - Guido van Rossum: "you all will be on your own"
+------------------------------------------------------------
+https://mail.python.org/pipermail/python-committers/2018-July/005664.html
+
+---------
+
+Regulamentada a profissão de Físico
+---------------------------------------
+http://portal.imprensanacional.gov.br/web/guest/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/29495403/do1-2018-07-11-lei-n-13-691-de-10-de-julho-de-2018-29495398
+
+-------
+
+The HARP Hyperangular Imaging Polarimeter
+------------------------------------------------
+The HARP Hyperangular Imaging Polarimeter and The Need For Small Satellite Payloads With High Science Payoff For Earth Science Remote Sensing.
+
+Seminário do Laboratório de Física da Atmosfera. Por Vanderlei Martins, Department of Physics, University of Maryland Baltimore County.
+
+Wednesday, 11/July/2018, 11am, Ed. Basílio Jafet, sala 105
+
+Notas
+^^^^^^^
+Sensores e polarização. 
+
+Cubesats usados como contrapeso em lançamento de satélites maiores ("carga útil").
+
+Compra de kits para CubeSats.
+
+HARP Imaging Polarimeter: 6 inches long, 2 kg.
+
+"cloudbow" = arco-íris em nuvens ("gotas de nuvens"), bem menores que as gotas de chuvas. Dependência padrão = tamanho das gotas.
+
+São necessários 3 ângulos (polaróides) para separar duas componentes polarizadas. 3 imagens simultâneas ("adaptação numa Nikon"). 
+
+Requirements: sem filter wheel, sem 3 lentes: Prisma que divide as imagens em 3 (3 CCDs).
+
+Precisão de apontamento em solo = 100m (dito). No site, 0.66km. UHF radio 3Mbits/s.
+
+ACDS = sigla (desconhecida) para apontamento (?).
+
+Tempo de vida do Satélite = "arrasto" (área) x peso + qualidade de componentes (condições inóspitas).
+
+ISS = 400 km. Um cubesat deve durar ~1 ano, puramente por arrasto (reentrada na atm). 
+
+Nos EUA: salário das pessoas vem do projetos, e é a maior parte do custo de um projeto. 
+
+Imageamento por "fatias". Forte dependência angular nas imagens, e ângulo de espalhamento do Sol. "Multi-angle observation".
+
+Protótipo "AirHarp".
+
+Sunglint = espalhamento do Sol no oceano (?). 
+
+Rugosidade do gelo destrói efeito de arco-íris (<50 microns). 
+
+Complemento in situ: PI-Neph (Polarized Imaging Nephelometer). Measures Scattering Angle (P11 and P12/P11). Espalhamento Mie. Picos e vales dependentes de Lambda. W. Reed Espinosa+2017 - AMT. Determina distribuição de tamanhos de partículas. 
+
+--------
+
+Centro Nacional de Pesquisa em Energia e Materiais - CPNEM
+-------------------------------------------------------------------------------
+Centro Nacional de Pesquisa em Energia e Materiais (CNPEM) é uma Organização Social supervisionada pelo Ministério da Ciência, Tecnologia, Inovações e Comunicações (MCTIC). É responsável pela gestão dos Laboratórios Nacionais de Luz Síncrotron (LNLS), de Biociências (LNBio), de Ciência e Tecnologia do Bioetanol (CTBE) e de Nanotecnologia (LNNano).
+
+------
+
+Circuito Vale Europeu, uma rota bem estruturada para sua primeira cicloviagem
+-------------------------------------------------------------------------------
+http://vadebike.org/2018/07/circuito-vale-europeu-santa-catarina-primeira-cicloviagem-cicloturismo/?utm_source=feedburner&utm_medium=email&utm_campaign=Feed%3A+VaDeBike+%28V%C3%A1+de+Bike%21%29
+
+-------
+
 Systems Engineering no Brasil
 ---------------------------------
 E em São Paulo!
