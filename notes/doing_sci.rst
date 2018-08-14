@@ -9,6 +9,7 @@ Seminars
 - Abstracts: Less than 200 words == 1400 chars.
 
 .. figure:: ../figs/doing-sci_paper.png
+    :align: center
 
 Writing tips
 ==============
@@ -91,26 +92,63 @@ Definitions
 
 Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
  
+.. figure:: ../figs/doing_sci-lawtheory.jpg
+    :align: center
+
 
 Doing science
 ==============
 .. figure:: ../figs/doing-sci_physicists.png
+    :align: center
 
 .. figure:: ../figs/doing-sci_phys-color.jpg
+    :align: center
+    :width: 840 px
 
 .. figure:: ../figs/doing-sci_handwrite.png
+    :align: center
+
+.. figure:: ../figs/doing-sci_scientists-dont-know.jpg
+    :align: center
+
+.. figure:: ../figs/doing-sci_nunca-viu.png
+    :align: center
+
+- `Código de Boas Práticas Científicas FAPESP (PDF) <../static/doing-sci_boas-praticas-FAPESP-2014.pdf>`_
+
+- `A evasão no ensino superior brasileiro (PDF) <../static/doing-sci_evasao.pdf>`_
+
+- `The psychological aspects of a well-known issue (PDF) <../static/doing-sci_leaveastro.pdf>`_
+
+- `Repensar a Universidade (PDF) <../static/doing-sci_repensar-a-universidade.pdf>`_
+
+- ` Success in Astronomy? Some Surprising Strategies <https://astrobites.org/2017/10/27/success-in-astronomy-some-surprising-strategies/>`_
+
+- `Por que os alunos pensam em deixar a USP? <http://jpress.jornalismojunior.com.br/2016/07/alunos-pensam-deixar-usp/>`_
+
+- `CAPES envia carta ao MEC por cortes no Orçamento de 2019 <http://www.sbfisica.org.br/v1/home/index.php/pt/acontece/750-conselho-da-capes-envia-carta-ao-mec-por-cortes-no-orcamento-de-2019>`_
+
+- `CNPq diz que verba para pagar bolsas de setembro acabou <https://www.otempo.com.br/capa/brasil/cnpq-diz-que-verba-para-pagar-bolsas-de-setembro-acabou-1.1504973>`_
+
+- `Estudo encontra 999 beneficiários do Bolsa Família que conquistaram 1.288 medalhas em olimpíada de matemática <https://g1.globo.com/educacao/noticia/2018/08/01/estudo-encontra-999-beneficiarios-do-bolsa-familia-que-conquistaram-1288-medalhas-em-olimpiada-de-matematica.ghtml>`_
 
 - `Os problemas da USP são estruturais <https://jornalggn.com.br/noticia/os-problemas-da-usp-sao-estruturais-nao-de-falta-de-recursos-por-luis-nassif>`_
 
 - `Não existe ciência exata (e vamos combinar que todas são humanas...) <http://cienciahoje.org.br/artigo/nao-existe-ciencia-exata-e-vamos-combinar-que-todas-sao-humanas/>`_
 
+- `Done is better than perfect: overcoming PhD perfectionism <blogs.nature.com/naturejobs/2018/07/09/done-is-better-than-perfect-overcoming-phd-perfectionism>`_
+
+- `Why it is not a 'failure' to leave academia <https://www.nature.com/articles/d41586-018-05838-y>`_
+
 - `Livro investiga os três modelos mais influentes de educação superior <http://agencia.fapesp.br/livro_investiga_os_tres_modelos_mais_influentes_de_educacao_superior/27840/>`_
+
+- `Alckmin critica Fapesp por pesquisas 'sem utilidade prática' <https://www1.folha.uol.com.br/ciencia/2016/04/1765028-alckmin-critica-fapesp-por-pesquisas-sem-utilidade-pratica.shtml>`_
+
+- `Fapesp responde críticas de Alckmin sobre pesquisas "sem utilidade prática" <https://jornalggn.com.br/noticia/fapesp-responde-criticas-de-alckmin-sobre-pesquisas-sem-utilidade-pratica>`_
 
 - `É preciso acabar com o formato das aulas de 50 minutos <https://brasil.elpais.com/brasil/2017/02/17/economia/1487331225_284546.html?id_externo_rsoc=FB_CC>`_ 
 
 - `O doutorado é prejudicial à saúde mental <https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html?id_externo_rsoc=FB_BR_CM>`_
-
-- `The psychological aspects of a well-known issue (PDF) <../static/doing_sci-leaveastro.pdf>`_
 
 - `Suspensão do Brasil de consórcio astronômico reflete falta de política para ciência <https://oglobo.globo.com/sociedade/ciencia/suspensao-do-brasil-de-consorcio-astronomico-reflete-falta-de-politica-para-ciencia-22486965?utm_source=Twitter&utm_medium=Social&utm_campaign=compartilhar>`_
 

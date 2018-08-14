@@ -201,6 +201,10 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_neutron.jpg
+    :align: center
+    :height: 500
+
 .. figure:: ../figs/charge_religiao.jpg
     :align: center
     :height: 500
@@ -246,6 +250,10 @@ Charges
     :height: 500
 
 .. figure:: ../figs/charge_politics.png
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_cat4.jpg
     :align: center
     :height: 500
 

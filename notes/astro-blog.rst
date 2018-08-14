@@ -1,11 +1,232 @@
+.. sequence: ### *** === --- ^^^ ~~~ 
+
 DMF AstroBlog
 ##############
 
 2018
 *********
+2018-08
+=========
+Adafruit Industries
+---------------------------------
+Adafruit Industries is an open-source hardware company based in New York City. It was founded by Limor Fried in 2005 (MIT). Famous from their fun DIY electronics and kits.
+
+http://adafruit.com
+
+-----
+
+AMADA at Astronomy and Computing 
+------------------------------------------
+A good example of astronomy-related code publication
+
+http://www.sciencedirect.com/science/article/pii/S2213133715000669
+
+--------------
+
+AstroTaverna
+--------------
+Astronomy plugins for Taverna Workbench. Apache Taverna is an open source software tool for designing and executing workflows in **Java**.
+
+http://wf4ever.github.io/astrotaverna/
+
+-------
+
+Novel optics for ultrafast cameras create new possibilities for imaging
+-------------------------------------------------------------------------------
+https://phys.org/news/2018-08-optics-ultrafast-cameras-possibilities-imaging.html
+
+-------------
+
+First Light: Stars, galaxies and black holes in the epoch of re-ionisation
+-------------------------------------------------------------------------------
+http://www.cadc.hia.nrc.gc.ca/en/meetings/getMeetings.html?number=5749
+
+- Date: Monday, 15 July 2019 - Wednesday, 24 July 2019
+- Location: São Paulo, Brazil
+- Contact: Roderik Overzier
+
+-------------------
+
+Disk-Bearing Binaries & Potential Tatooines
+----------------------------------------------
+https://astrobites.org/2018/08/13/disk-bearing-binaries-potential-tatooines/
+
+In a first reading, the analysis appears biased to me: massive stars (Msun > 4) are considerably more likely to be binaries. Also, a large fraction of massive star (up to 1/3) their disks are due the Be phenomenon (4 < Msun < 15) and are not related to planetary structures.
+
+--------
+
+Python Mode for Processing
+---------------------------
+Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
+
+Processing was initially released with a Java-based syntax, and with a lexicon of graphical primitives that took inspiration from OpenGL, Postscript, Design by Numbers, and other sources. With the gradual addition of alternative progamming interfaces — including JavaScript, Python, and Ruby — it has become increasingly clear that Processing is not a single language, but rather, an arts-oriented approach to learning, teaching, and making things with code.
+
+https://py.processing.org/
+
+-----------
+
+micro:bit vs sino:bit
+----------------------
+The Micro Bit (also referred to as BBC Micro Bit, stylized as micro:bit) is an open source hardware ARM-based embedded system designed by the BBC for use in computer education in the UK.
+
+http://microbit.org/
+
+The sino:bit a single-board microcontroller designed for computer education in China.  It is based on the Calliope miniwith permission of the Calliope mini project. While several modifications are planned, the first was to upgrade the LED matrix from 5×5 to 12×12. This allows for support of Chinese, Japanese, Hindi, Arabic and other non-Latin character based languages. Without this, the vast majority of the World’s children cannot experience the thrill of that first "Hello World" in their own language.
+
+The sino:bit was created by Naomi Wu, an Open Source Hardware evangelist and DIY enthusiast. It was executed and engineered by Elecrow Technology, a Shenzhen based electronics company that offers contract manufacturing and engineering services to Maker and Hardware Enthusiasts.
+
+https://github.com/sinobitorg/hardware
+
+-----
+
+ESP8266
+---------
+The ESP8266 is a low-cost Wi-Fi microchip with full TCP/IP stack and microcontroller capability. For more, search "The Internet of Things with ESP8266". 
+
+http://esp8266.net/
+
+------
+
+MicroPython and pyboard
+-------------------------
+MicroPython is a software implementation of the Python 3 programming language, written in C, that is optimized to run on a microcontroller.
+
+The MicroPython **pyboard** is a compact electronic circuit board that runs MicroPython on the bare metal, giving you a low-level Python operating system that can be used to control all kinds of electronic projects. 
+
+https://micropython.org
+
+-------
+
+Internet controlled telescopes
+-------------------------------
+Iniciatives that allow remote operations of telescopes:
+
+- www.itelescope.net
+- www.slooh.com
+
+Iniciativas que permitem operação remota de telescópios (em inglês).
+
+--------
+
+Apple ten years of proprietary appsploitation
+-----------------------------------------------
+App Store anniversary marks this appsploitation.
+
+You can `package for F-Droid <https://gitlab.com/fdroid/rfp>`_, creating a more robust selection of apps available.
+
+http://www.fsf.org/blogs/community/apple-app-store-anniversary-marks-ten-years-of-proprietary-appsploitation
+
+-------
+
+2018 GMT Science Book
+-------------------------
+Released on Aug 1st!
+
+http://www.gmto.org/astro2020/
+ 
+It can be downloaded directly from this link: 
+http://www.gmto.org/wp-content/uploads/GMT%20Science%20Book%202018.pdf
+
+
 2018-07
 =========
-All-sky like photometric surveys
+Rebutting fake news on full spectral fitting
+---------------------------------------------
+https://arxiv.org/abs/1807.10423
+
+Abstract
+^^^^^^^^^^^^
+A recent paper by Ge et al. performs a series of experiments with two full spectral fitting codes, pPXF and starlight, finding that the two yield consistent results when the input spectrum is not heavily reddened. For E(B-V) > 0.2, however, they claim starlight leads to severe biases in the derived properties. Counterintuitively, and at odds with previous simulations, they find that this behaviour worsens significantly as the signal-to-noise ratio of the input spectrum increases. This communication shows that this is entirely due to an A_V < 1 mag condition imposed while initializing the Markov chains in the code. This choice is normally irrelevant in real-life galaxy work but can become critical in artificial experiments. Alleviating this usually harmless initialization constraint changes the Ge et al. results completely, as was explained to the authors before their publication...
+
+Concluding Remarks
+^^^^^^^^^^^^^^^^^^^^
+A common nightmare among those who offer their codes to public use is that they will be misused or unfairly characterized...
+
+Our Comments
+^^^^^^^^^^^^^
+The owner of pPXF is from University of Oxford (UK) and is the third author of Ge et al.
+
+-----------
+
+First catalogue of X-ray sources in overlapping observations published
+------------------------------------------------------------------------------
+https://www.aip.de/en/news/science/digging-deeper-first-catalogue-of-x-ray-sources-in-overlapping-observations-published?set_language=en
+
+-------
+
+Who Should Pay for the Mistakes on NASA's James Webb Telescope?
+--------------------------------------------------------------------------
+When the concept was first proposed in 1996 as the successor to the famed Hubble Space Telescope, scientists estimated it would cost $500 million and fly by 2007.
+By the start of this year (2018), Webb had a price tag of $8.8 billion and a launch date of spring 2019. 
+Last month (June 2018), NASA officials made a disappointing announcement: Webb would be delayed, again, this time to spring 2021. And it’s would be even more expensive: $9.66 billion.
+
+https://www-theatlantic-com.cdn.ampproject.org/v/s/www.theatlantic.com/amp/article/566186/?amp_js_v=0.1
+
+--------------
+
+NASA's new planet hunter starts work
+-------------------------------------
+TESS in operations!
+
+https://astronomynow.com/2018/07/30/nasas-new-planet-hunter-starts-work/
+
+--------
+
+David Bohm, sua estada no Brasil e a teoria quântica
+-------------------------------------------------------
+Atingido pelo McCarthysm, Bohm perdeu sua posição na Universidade de Princeton e, por isto, veio para o Brasil, onde permaneceu de outubro de 1951 a janeiro de 1955. 
+
+David Bohm ministrou, em português, o curso de Física Teórica durante o ano de 1953 e o de Mecânica Quântica em 1954. As notas do primeiro curso foram objeto de uma publicação interna (12) com o título Curso de física teórica. Entre os alunos estavam Newton Bernardes, Moyses Nussenzveig, Ernst W. Hamburger, Amélia Império, Gerhard Bund e Ewa Cybulska.
+
+http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0103-40141994000100012
+
+---------------------
+
+Produção científica do Brasil e da USP
+---------------------------------------
+- Parte 1 – `Internacionalização e impacto da produção científica da USP: tendências positivas no horizonte – um estudo SciVal (Elsevier) <http://www.sibi.usp.br/?p=24247>`_
+- Parte 2 – `Interesse mundial e a produção científica do Brasil e da USP – um estudo SciVal (Elsevier) <http://www.sibi.usp.br/?p=24517>`_
+- Parte 3 – `Quem financia a pesquisa brasileira? Um estudo InCites sobre o Brasil e a USP <http://www.sibi.usp.br/noticias/quem-financia-a-pesquisa-brasileira-um-estudo-incites-sobre-o-brasil-e-a-usp/>`_
+- Parte 4 – [TBD] Reputação e confiabilidade da pesquisa: produção intelectual e visibilidade da USP – um estudo BDPI (SIBiUSP)
+
+-------------
+
+Desempenho e tendências na pesquisa brasileira
+---------------------------------------------------------
+Documento de jan/2018 que tomei conhecimento.
+http://www.capes.gov.br/sala-de-imprensa/noticias/8726-documento-disponibilizado-a-capes-apresenta-desempenho-e-tendencias-na-pesquisa-brasileira
+
+"Usando recursos bibliométricos, o relatório analisa o desempenho de trabalhos de pesquisa brasileiros publicados entre 2011 e 2016 na Web of Science (...). O relatório da Clarivate identifica destaques na pesquisa brasileira, comparando o país com pares internacionais. Destaca-se que este relatório não reflete a opinião da CAPES."
+
+Tem uns dados muito interessantes, como o fato dos artigos de Astronomia serem os de maior impacto comparado com outras áreas de conhecimento. Há uma forte correlação disto com colaborações internacionais e nenhuma correlação com o volume de papers - e outras coisas mais...
+
+-------------------
+
+Korea joins Gemini
+-------------------
+Republic of Korea Becomes a Full Participant in Gemini #astronomynews July 24, 2018
+
+https://www.gemini.edu/node/21083
+
+--------
+
+Plot yerr/xerr as shaded region rather than error bars
+--------------------------------------------------------
+python plot filled uncertainty
+
+https://stackoverflow.com/questions/12957582/plot-yerr-xerr-as-shaded-region-rather-than-error-bars#13157955
+
+-------
+
+Fractal company
+-------------------
+FRACTAL S.L.N.E. is a private technological company specialized in astronomical instrumentation and scientific software.
+
+FRACTAL has an expert, stable and committed team. We cover the subjects of Astronomy, Management, System Engineering, Optics, Opto-mechanics, Mechanics, Electro-mechanics, Cryogenics, Detectors, Data Acquisition Systems, and Software (Real Time Systems, Distributed Systems, Mechanisms Control, Data Base, Telescope's Control Systems and Data Reduction). 
+
+-------
+
+All-sky 'like' photometric surveys
 ----------------------------------
 - ASAS http://www.astrouw.edu.pl/asas/ http://adsabs.harvard.edu/abs/2018MNRAS.479.2909B
 - KELT https://keltsurvey.org/ http://adsabs.harvard.edu/abs/2017AJ....153..252L
@@ -2783,7 +3004,7 @@ where *Wmin* and *W100* have arbitrary values. Using the values from Rivinius+ (
 If the efficiency curve (plus :math:`\bar{W}` and *W100*) are right, the *Wmin* values could be increased if the number of critical rotators are increased for a given spectral type (i.e., change the number of B-type stars as function of the rotational rate).
 
 Conclusion
-~~~~~~~~~~~
+^^^^^^^^^^^^
 For a given spectral type, the number of Be stars at a given rotational rate *W* is the product of the number of B-type stars rotating at that level times the efficiency to the star become a Be star (assuming no change in *W* before and after the Be phenomenon).
 
 ------

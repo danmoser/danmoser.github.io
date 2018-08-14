@@ -264,6 +264,39 @@ Dilma Rousseff
 
 After her release, Rousseff rebuilt her life in Porto Alegre with Carlos Araújo, who would be her partner for 30 years. Both helped found the Democratic Labour Party (PDT) in Rio Grande do Sul, participating in several of the party's electoral campaigns. She is involved in politics since then.
 
+As grandes questões brasileiras
+=================================
+- Auditoria da dívida pública, principalmente a interna, e seu impacto no orçamento
+- Transferência de capital público para iniciativa privada
+- Desigualdade econômica, de renda e patrimonial
+- Quantidade de dólares que brasileiros possuem no exterior
+- Matriz tributária, sobretaxação do consumo, e consequentemente dos pobres
+- Crise fiscal x crise financeira - benefícios do rentismo
+- Dependência tecnológica, científica e cultural
+- Royalties do Pré-Sal
+- Matriz econômica, exportadora de produtos primários
+- Latifúndios, multinacionais e desindustrialização
+- Quantidade de agrotóxicos e transgênicos - agricultura familiar 75% dos alimentos na mesa dos cidadãos
+- Formação de capital fixo = máquinals e equipamentos
+- Imprensa: monopólio, centralização, conflito de interesses, acúmulo de meios - rádio, jornal, TV
+- Inexistência de rádios comunitárias
+- O judiciário brasileiro: sem participação popular, seletivo, lento, caro, carregado de privilégios
+- Ausência de participação política dos brasileiros
+- O sistema de ensino nacional
+- Qualidade dos serviços públicos e suas métricas
+- "Estado-laico": ética x religião x política
+- Política e lei de responsabilidade fiscal - não inclusão de renegociação da dívida
+- Não basta seguir as leis - injustiças historicamente são legalizadas
+- Democratização do Banco Central e Ministério da Fazenda
+- Grosso da corrupção é via sistema bancário - não cuecas ou malas
+- Lava-Jato: consequência de junho de 2013, ou complemento?
+- Taxas e seletividade do encarceiramento no Brasil
+- Taxas de violência e mortes
+- TV, Igrejas e Universidades = 3 grandes fatores de alienação
+- Caracter essencialmente político da educação
+- Pensamento crítico é "anti-acadêmico"
+- Um conflito só se instala quando o apaziguamento é cancelado
+
 
 Latin America
 ***************

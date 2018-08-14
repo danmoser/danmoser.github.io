@@ -78,6 +78,11 @@ The latter two purposes can conflict, so many folks prefer a double-underscore `
 
 http://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python
 
+Image Filtering in Python
+---------------------------
+A prior: https://code.tutsplus.com/tutorials/image-filtering-in-python--cms-29202
+
+
 numpy compared to R
 ====================
 
@@ -1118,6 +1123,9 @@ General use Python packages in Astronomy
 
 Python learning for astronomers
 ================================
+- Python para zumbis
+    https://www.pycursos.com/python-para-zumbis/
+
 - CodeCAdemy
     http://www.codecademy.com/en/tracks/python
 

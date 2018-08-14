@@ -11,6 +11,9 @@ Em português
 .. figure:: ../figs/astro-basics_dreams.jpg
     :width: 300 px
 
+.. figure:: ../figs/astro-basics_symmetries.jpg
+    :align: center
+
 Links
 =======
 - Livro gratuito de Astronomia.
@@ -101,6 +104,10 @@ P: **Quero comprar um binóculo ou telescópio para observar o céu. Qual compra
 R: Idealmente, conheça um grupo de astronomia amadora. Você poderá (i) ver na prática o que é possível observar com estes equipamentos e (ii) obter dicas atualizadas sobre modelos e lojas para comprar. A dica geral é sempre começar com um binóculo, para depois investir num telescópio. Aqui está um ótimo vídeo sobre o assunto:
 
     - `Céu da Semana Ep. #15 - Binóculos <https://www.youtube.com/watch?v=QS5YmRmykPk>`_
+
+Uma *referência* de preços no link abaixo. Contudo, destaco que não conheço nem o avaliador, nem o material, então não são recomendações. Preço de ago/2018:
+
+    - `5 telescópios bons e baratos para quem está iniciando  <https://www.misteriosdoespaco.blog.br/5-telescopios-bons-e-baratos-para-quem-esta-inciando/>`_
 
 P: **Como observar o céu, isto é, como encontrar objetos interessantes?**
 
@@ -255,6 +262,22 @@ Pictures
 .. figure:: ../figs/astro-basics_year.gif
     :align: center
 
+.. figure:: ../figs/astro-basics_north.jpg
+    :align: center
+
+.. figure:: ../figs/astro-basics_lua2.jpg
+    :align: center
+
+.. figure:: ../figs/astro-basics_eclipse.gif
+    :align: center
+
+.. figure:: ../figs/astro-basics_eclipse2018.jpg
+    :align: center
+
+    `Eclipse 2018 (MP4) <../movs/astro-basics_eclipse-2018.mp4
+
+    `Ondas multi-dimensionais (MP4) <../movs/astro-basics_physics_waves.mp4>`_
+
     Seasons explained 
 
 .. figure:: ../figs/astro-basics_loop.gif
@@ -288,7 +311,13 @@ Pictures
 
     5 years Juno's journey
 
+.. figure:: ../figs/astro-basics_JupiterMoons.jpg
+    :align: center
+
 .. figure:: ../figs/astro-basics_nebulosa.gif
+    :align: center
+
+.. figure:: ../figs/astro-basics_Chemistry.jpg
     :align: center
 
 .. figure:: ../figs/astro-basics_lua.jpg

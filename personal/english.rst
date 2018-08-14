@@ -119,6 +119,12 @@ Acronyms
 - 
 
 
+Prepositions
+-------------
+.. figure:: ../figs/english-prepositions.jpg
+    :align: center
+
+
 Other
 ========
 - `The magic of "untranslatable" words <http://www.scientificamerican.com/article/the-magic-of-untranslatable-words/?WT.mc_id=SA_FB_MB_NEWS>`_

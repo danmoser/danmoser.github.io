@@ -330,6 +330,12 @@ Diante da palavra distância, emprega-se crase se a mesma estiver especificada.
     - *As caixas de som estavam à distância de 200m do público.* (Tem crase).
     - *O detetive vigiava o suspeito a distância.* (Não tem).
 
+Pleonasmo
+============
+Pleonasmo consiste na repetição de um termo da oração ou do significado de uma expressão, isto é, alguma informação que é repetida desnecessariamente.
+
+.. figure:: ../figs/portugues_pleonasmo.jpg
+
 
 Usos
 *******
