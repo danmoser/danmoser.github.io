@@ -7,6 +7,98 @@ DMF AstroBlog
 *********
 2018-08
 =========
+
+The Two Miracles of Systems Engineering 
+----------------------------------------------------------------------
+http://community.vitechcorp.com/index.php/the-two-miracles-of-systems-engineering.aspx
+
+-----------------------------------
+
+Sorting Stars with a Light Touch
+-----------------------------------
+https://astrobites.org/2018/08/29/sorting-stars-with-a-light-touch/
+
+---------
+
+EASE -- EArly Science with ELTs
+---------------------------------
+S347: Early Science with ELTs (EASE)
+
+IAU Symposium http://astronomy2018.cosmoquest.org/newspaper/s347-early-science-with-elts-ease/
+
+----------
+
+CCDs in astronomy
+-------------------
+ASTR 511 (O'Connell) Lecture Notes
+
+http://www.faculty.virginia.edu/rwoclass/astr511/lec11-f03.html
+
+---------
+
+II Workshop Chemical Abundances in Gaseous Nebulae: Open Problems in Nebular Astrophysics
+------------------------------------------------------------------------------------------
+- Date: Monday, 11 March 2019 - Thursday, 14 March 2019
+- Location: São José dos Campos, SP, Brazil
+- Contact: Oli Dors
+- URL: https://www.univap.br/universidade/instituto-de-pesquisa/agenda-e-eventos/chemical-abundances-in-gaseous-nebulae.html
+- Email: olidors@univap.br
+
+-----------
+
+Chamada MCTIC/CNPq Bônus Tecnológico
+--------------------------------------
+Estão abertas submissão de propostas por Micro e Pequenas Empresas (MPE) para a concessão de Bônus Tecnológico conjugados com Bolsas para formação tecnológica, destinados a Projetos de PD&I para soluções em temas de Manufatura Avançada em produtos e processos, realizados por micro e pequenas empresas brasileiras em parceria com médias e grandes empresas (empresas âncora).
+
+Segue a matéria publicada no `site do MCTIC <http://www.mctic.gov.br/mctic/opencms/salaImprensa/noticias/arquivos/2018/08/Programa_do_MCTIC_vai_destinar_R_2_milhoes_para_inovacao_nas_micro_e_pequenas_empresas.html>`_.
+
+Trata-se da Chamada Pública CNPq/MCTIC/SETEC n° 32/2018, publicado no DOU em 16/08/2018 e disponível na pagina do CNPq, neste `link <http://www.cnpq.br/web/guest/chamadas-publicas?p_p_id=resultadosportlet_WAR_resultadoscnpqportlet_INSTANCE_0ZaM&filtro=abertas&detalha=chamadaDivulgada&idDivulgacao=8342>`_.
+
+Em linhas gerais, as principais características dessa Chamada são:
+
+- Chamada Pública lançada pelo CNPq/MCTIC, em parceria com o Sebrae, no valor global de R$1.031.943,00 de concessão de bônus tecnológico + R$ 1.000.000,00 de bolsas;
+- Concessão de bônus tecnológico a micro e pequenas empresas (MPE), no valor máximo de R$30mil em custeio (bônus tecnológico) e de bolsas DTI ou EV no valor máximo de R$30mil, totalizando o aporte por empresa de até R$60mil;
+- Apoio a projetos em temas de manufatura avançada, nas seguintes áreas tecnológicas estratégicas: tecnologias de informação e comunicação, nanotecnologia, computação em nuvem, sensores e atuadores, big data, novos materiais, fotônica, manufatura aditiva, sistemas ciberfísicos, internet das coisas, automação, energias renováveis, simulação e modelagem, interoperabilidade, segurança cibernética, inteligência artificial e robótica avançada;
+- Público-alvo: MPE, incluindo startups, em parceria com empresas âncoras (médias ou grandes empresas);
+- Empresas âncoras devem aportar contrapartida mínima de 20%, econômica ou financeira; 
+- O bônus tecnológico se destina ao pagamento de serviços a ICT da Rede MCTIC (institutos de pesquisa, Embrapii, organizações sociais do MCTIC), instituições das Redes do Sibratec, laboratórios abertos do SibratecShop, Institutos Senai de Inovação ou de Tecnologia e laboratórios acreditados pela CGCRE/Inmetro;
+- As propostas podem ser submetidas na Plataforma Eletrônica do CNPq a partir do dia 24/08/2018 até o dia 02/10/2018.
+
+Uma iniciativa piloto, que pode ser uma oportunidade para se conectar com as startups e o ecossistema de inovação.
+
+----------
+
+Inversão dos polos magnéticos da Terra pode estar próxima
+------------------------------------------------------------
+Segundo estudo, fenômeno poderá ocorrer mais rápido e mais cedo do que se pensava. Mudança pode afetar satélites na órbita terrestre. Última inversão completa ocorreu há cerca de 780 mil anos.
+
+https://www.dw.com/pt-br/invers%C3%A3o-dos-polos-magn%C3%A9ticos-da-terra-pode-estar-pr%C3%B3xima/a-45153660?xtref=https%253A%252F%252Fm.facebook.com%252F
+
+-------
+
+Spinning Away From the Main Sequence
+------------------------------------------
+- https://astrobites.org/2018/08/14/spinning-away-from-the-main-sequence/
+- https://arxiv.org/abs/1807.10779
+
+---------
+
+Mathematicians solve age-old spaghetti mystery
+-----------------------------------------------------------
+A problem not completely solved by Feynman.
+
+https://m.phys.org/news/2018-08-mathematicians-age-old-spaghetti-mystery.html
+
+---------
+
+Hubble Paints Picture of the Evolving Universe
+-----------------------------------------------------------
+Hubble's ultraviolet vision opens a new window on the evolving universe, tracking the birth of stars over the last 11 billion years back to the cosmos' busiest star-forming period, about 3 billion years after the big bang. This photo encompasses a sea of approximately 15,000 galaxies — 12,000 of which are star-forming — widely distributed in time and space. 
+
+http://hubblesite.org/news_release/news/2018-35
+
+---------------------------------
+
 Adafruit Industries
 ---------------------------------
 Adafruit Industries is an open-source hardware company based in New York City. It was founded by Limor Fried in 2005 (MIT). Famous from their fun DIY electronics and kits.

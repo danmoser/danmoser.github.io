@@ -784,7 +784,9 @@ gs -sDEVICE<span class="operator">=</span>pdfwrite -dCompatibilityLevel<span cla
 # /ebook selects medium-resolution output similar to the Acrobat Distiller &quot;eBook&quot; setting.
 # /printer selects output similar to the Acrobat Distiller &quot;Print Optimized&quot; setting.
 #  There is a bug with the 'printer' option
-# /prepress selects output similar to Acrobat Distiller &quot;Prepress Optimized&quot; setting.</span>
+# /prepress selects output similar to Acrobat Distiller &quot;Prepress Optimized&quot; setting.
+</span>
+gs -sDEVICE<span class="operator">=</span>pdfwrite -dColorConversionStrategy<span class="operator">=</span>/Gray -dProcessColorModel<span class="operator">=</span>/DeviceGray -dPDFSETTINGS<span class="operator">=</span>/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile<span class="operator">=</span>output.pdf input.pdf
 </pre>
 <p>Other possibility is to convert PDF to PS, and then PS to PDF.</p>
 </div>

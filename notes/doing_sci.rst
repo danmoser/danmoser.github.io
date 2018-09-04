@@ -114,6 +114,10 @@ Doing science
 .. figure:: ../figs/doing-sci_nunca-viu.png
     :align: center
 
+- `“Faço pesquisa no Brasil por paixão. Se levasse em conta a razão, não faria, a frustração é muito grande” <https://brasil.elpais.com/brasil/2018/08/08/ciencia/1533762807_199045.html?rel=mas>`_
+
+- `Os principais obstáculos ao desenvolvimento da ciência na América Latina por     Moysés Nussenzveig. (PDF) <../static/doing-sci_moyses.pdf>`_
+
 - `Código de Boas Práticas Científicas FAPESP (PDF) <../static/doing-sci_boas-praticas-FAPESP-2014.pdf>`_
 
 - `A evasão no ensino superior brasileiro (PDF) <../static/doing-sci_evasao.pdf>`_
@@ -306,6 +310,8 @@ Doing science
     :height: 500
 
 - `Experiência encerrada [Balanço do Ciências sem Fronteiras] <http://revistapesquisa.fapesp.br/2017/06/19/experiencia-encerrada/>`_
+
+- `Nunca se escreveu tanto, tão errado e se interpretou tão mal <https://www1.folha.uol.com.br/empreendedorsocial/2018/07/nunca-se-escreveu-tanto-tao-errado-e-se-interpretou-tao-mal.shtml>`_
 
 - `Querido Observatório Nacional (ON): o seu curso EAD sobre Sistema Solar tá um tanto errado <https://medium.com/ci%C3%AAncia-descomplicada/querido-observat%C3%B3rio-nacional-on-o-seu-curso-ead-sobre-sistema-solar-t%C3%A1-um-tanto-errado-c651c273a331>`_
 

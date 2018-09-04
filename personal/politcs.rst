@@ -296,7 +296,7 @@ As grandes questões brasileiras
 - Caracter essencialmente político da educação
 - Pensamento crítico é "anti-acadêmico"
 - Um conflito só se instala quando o apaziguamento é cancelado
-
+- `A Progressividade na Tributação Brasileira (PDF) <../static/politcs_progressividade-imposto.pdf>`_
 
 Latin America
 ***************
@@ -355,6 +355,8 @@ Ungrouped
 - `Superhero movies are bad for democracy <http://www.salon.com/2017/06/02/superhero-films-are-bad-for-democracy/>`_
 
 - `Charlottesville: Race and Terror - VICE News <https://www.youtube.com/watch?v=P54sP0Nlngg>`_
+
+- `A grande mentira do carisma de Hitler <https://brasil.elpais.com/brasil/2018/08/09/ciencia/1533806960_942843.html?rel=mas>`_
 
 
 Mandeville

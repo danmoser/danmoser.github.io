@@ -348,6 +348,8 @@ To decrease PDF file size. I test and it can really deacrese the file size. But 
     #  There is a bug with the 'printer' option
     # /prepress selects output similar to Acrobat Distiller "Prepress Optimized" setting.
 
+    gs -sDEVICE=pdfwrite -dColorConversionStrategy=/Gray -dProcessColorModel=/DeviceGray -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output.pdf input.pdf 
+
 Other possibility is to convert PDF to PS, and then PS to PDF.
 
 
