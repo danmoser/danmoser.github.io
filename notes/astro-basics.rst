@@ -274,7 +274,7 @@ Pictures
 .. figure:: ../figs/astro-basics_eclipse2018.jpg
     :align: center
 
-    `Eclipse 2018 (MP4) <../movs/astro-basics_eclipse-2018.mp4
+    `Eclipse 2018 (MP4) <../movs/astro-basics_eclipse-2018.mp4>`_
 
     `Ondas multi-dimensionais (MP4) <../movs/astro-basics_physics_waves.mp4>`_
 

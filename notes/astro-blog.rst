@@ -5,6 +5,288 @@ DMF AstroBlog
 
 2018
 *********
+2018-10
+=========
+Why Don't We Put A Space Telescope On The Moon?
+--------------------------------------------------
+https://www.forbes.com/sites/startswithabang/2018/10/25/why-dont-we-put-a-space-telescope-on-the-moon/
+
+--------
+
+Turbulent fast magnetic reconnection around accretion disk systems: from analytical to numerical studies
+--------------------------------------------------------------------------------------------------------------
+Luis Henrique Sinki Kadowaki - IAG/USP
+
+Fast magnetic reconnection is a crucial mechanism for understanding particle acceleration and very high-energy (gamma and neutrino) emission in magnetized systems in general. A potential model to explain the transition between the High/Soft and Low/Hard X-ray states observed in black hole binaries (BHBs) and Active Galactic Nuclei (AGNs) can be attributed to fast magnetic reconnection induced in the turbulent corona of accretion disks. According to this model, the power released by fast reconnection between the magnetic field lines arising from the inner accretion disk and the lines anchored into the compact source could accelerate relativistic particles in a first-order Fermi process and produce the observed non-thermal high-energy emission.
+
+
+In this talk, we will summarize the main insights of our fast magnetic reconnection analytical model and discuss the results of our recent local magnetohydrodynamic (MHD) and global general-relativistic MHD (GRMHD) simulations of accretion disks around black holes, where turbulence is naturally driven by MHD instabilities, such as the magnetorotational instability (MRI) and the Parker-Rayleigh-Taylor instability (PRTI). We will also present studies of magnetic reconnection driven by kink instabilities inside jets employing special relativistic MHD (SRMHD) simulations. Finally, we will present a detailed statistical analysis to identify the presence of fast magnetic reconnection in the turbulent regions of these numerical models. We have determined the magnetic reconnection rates in these systems obtaining averaged reconnection rates comparable with the predictions of the theory of turbulence-induced fast reconnection.
+
+-------
+
+How can planets be heavier than the disks that formed them?
+------------------------------------------------------------
+https://astrobites.org/2018/10/15/__trashed-8/
+
+-----
+
+The Scientific Paper Is Obsolete. Here's What's Next
+------------------------------------------------------
+https://www.theatlantic.com/amp/article/556676/
+
+-------
+
+What the New Sokal Hoax Reveals About Academia 
+------------------------------------------------
+https://www.theatlantic.com/ideas/archive/2018/10/new-sokal-hoax/572212/
+
+------
+
+IPCC e Prêmio Nobel de Economia 2018
+---------------------------------------------
+PCC faz alerta para a urgência de medidas de redução do ritmo das
+mudanças climáticas
+
+http://agencia.fapesp.br/ipcc-faz-alerta-para-a-urgencia-de-medidas-de-reducao-do-ritmo-das-mudancas-climaticas-/28899/
+
+Tema de Nobel, economia tem relação cada vez mais estreita com ecologia
+
+https://www1.folha.uol.com.br/mercado/2018/10/tema-de-nobel-economia-tem-elacao-cada-vez-mais-estreita-com-ecologia.shtml
+
+Especialistas em clima e inovação tecnológica vencem Nobel de Economia
+
+https://www1.folha.uol.com.br/mercado/2018/10/especialistas-em-clima-e-inovacao-tecnologica-vencem-nobel-de-economia.shtml
+
+--------
+
+O que Programação Orientada a Objeto tem a ver com design?
+------------------------------------------------------------------------
+Herança, encapsulamento, polimorfismo, interfaces, design patterns são conceitos oriundos do Metadesign, que é uma das disciplinas do design, ou uma visão cibernética sobre o ato de fazer design.
+
+-------
+
+The lectures of the IAU 41st International School for Young Astronomers
+------------------------------------------------------------------------
+The lectures of the IAU 41st International School for Young Astronomers - ISYA 2018, held in Santander, Colombia, 8-28 July ,are now available at:
+
+https://eventos.redclara.net/indico/event/842/material/slides/
+
+------
+
+Gaia spots stars flying between galaxies
+-------------------------------------------
+https://phys.org/news/2018-10-gaia-stars-galaxies.html
+
+--------
+
+Astronomia ao meio-dia: Super-terras e habitabilidade
+----------------------------------------------------------------------------
+Sylvio Ferraz Mello, IAG-USP
+
+Data: Quinta-feira, 4 de outubro de 2018 - 12h00
+
+RESUMO:
+
+A zona habitável de uma estrela é a região do espaço, nem tão próxima da estrela que impeça a existência de água na sua superfície, e nem tão distante dela que permita que o CO2 se condense na atmosfera formando nuvens altamente refletoras. É uma definição climatológica, sem outras implicações. Super-terras na zona habitável são alvos de primeira importância entre os planetas descobertos ao redor de outras estrelas da nossa vizinhança pela possibilidade de que possam satisfazer os requisitos necessários para a existência de vida. Diversos sistemas são hoje conhecidos com super-terras na zona habitável: Trappist 1, Kepler 22, Kepler 186, Kepler 452, Proxima Centauri, etc. Porem, não se sabe se as demais condições para a existência de vida ocorrem nesses sistemas. Por outro lado, não é possível excluir outras situações fora da zona habitável propícias à vida. Por exemplo, no nosso Sistema Solar, condições para a existência de vida podem ocorrer nos oceanos existentes sob as crostas de gelo de satélites como Europa, Encélado ou Titan.
+
+Super-terras em sistemas planetários extra-solares não são passíveis de observação direta. Tudo o que observamos são diminuições da luz medida das estrelas quando o planeta passa na frente da estrela (trânsitos). Em alguns casos mais favoráveis, outros efeitos (variações nos tempos dos trânsitos, variações nas velocidades radiais medidas) permitem que se conheça a massa dos planetas. Como o trânsito permite que se avalie o tamanho dos planetas, com as duas informações juntas podemos determinar sua densidade e construir modelos do seu interior. Por exemplo, no caso de Corot-7b, a primeira super-Terra descoberta (que não está em zona habitável), pode-se concluir que possue um grande núcleo metálico (como a Terra) coberto por um manto de silicatos. O estudo das interações entre o planeta e a estrela (marés) permite concluir que sua rotaçao é síncronizada com o movimento orbital de modo que o planeta tem sempre a mesma metade iluminada pela estrela. Por causa da grande proximidade à estrela, essa metade deve estar parcialmente coberta por um oceano de lavas, enquanto a metade escura permanece congelada.
+
+-----
+
+The New Science of Seeing Around Corners
+------------------------------------------
+https://www.quantamagazine.org/the-new-science-of-seeing-around-corners-20180830/
+
+--------
+
+Hundreds of academics at top UK universities accused of bullying 
+------------------------------------------------------------------
+https://www.theguardian.com/education/2018/sep/28/academics-uk-universities-accused-bullying-students-colleagues
+
+
+2018-09
+==========
+Gemini Observatory to Advance Adaptive Optics and Multi-messenger Astronomy with NSF Award 
+----------------------------------------------------------------------------------------------------------------------------
+New funding from the National Science Foundation will enable the international Gemini Observatory to advance its position at the forefront of the new era of “multi-messenger astronomy” by enhancing its scientific capabilities in high-resolution and rapid-response astronomy.
+
+---------
+
+Bizarre Particles Keep Flying Out of Antarctica's Ice
+--------------------------------------------------------------
+And They Might Shatter Modern Physics... The particles physicists know about -- the collection of particles that make up what scientists call the Standard Model (SM) of particle physics -- shouldn't be able to do that. 
+
+https://www.livescience.com/63692-standard-model-broken-supersymmetry-new-physics.html
+
+--------
+
+
+How to build a teleportation-assisted telescope
+--------------------------------------------------------------
+https://www.technologyreview.com/s/612177/how-to-build-a-teleportation-assisted-telescope/
+
+Quantum-assisted telescopes could significantly increase the maximum size of optical telescope arrays (and the resolution of the images they can produce). 
+
+When a photon arrives from a distant star, it interacts with one of this pair and is immediately teleported to the interferometer, where it can create an image. In this way, an image can be created without the losses that normally limit performance.
+
+More at http://arxiv.org/abs/1809.03396
+
+-----
+
+Astronomers use novel technique to probe stellar rotation
+------------------------------------------------------------------------
+https://astronomynow.com/2018/09/21/astronomers-surprised-how-fast-a-sampling-of-sun-like-stars-rotate/
+
+The technique is based on frequencies of light-curve variation, interpreted in terms of asteroseismology. From asteroseismology theory, it is possible to associate the frequencies with differentially rotating outer layers (convection zones) of Sun-like stars. The underlying mechanisms that generate and sustain differential rotation are poorly understood. 
+
+In this work, for the most significant detections, the stars' equators rotate approximately twice as fast as their midlatitudes. The NASA Kepler spacecraft has provided high-precision, long-duration photometric time series for many stars, which is necessary for the study.
+
+This can not be employed to study the differential rotation of hot stars because their outer layers are radiative, instead of convective (this is true for M > 1.5Msun).
+
+More at http://science.sciencemag.org/content/361/6408/1231
+
+--------
+
+SOAR Visiting Astronomer's Guide
+------------------------------------
+http://www.ctio.noao.edu/soar/content/visiting-astronomers-guide
+
+-------
+
+Python is taking over astronomy
+---------------------------------
+2018Q3 edition: the curve keeps getting steeper! Updated in collaboration with @_russrussruss and @astrowizicist.
+
+Jupyter notebook here: https://t.co/OAu9qMOn6e
+
+---------
+
+The Southern Photometric Local Universe Survey (S-PLUS)
+--------------------------------------------------------------
+by A. Molino & V. Placco
+
+The Southern Photometric Local Universe Survey (S-PLUS) is a Brazilian-led project that comprises imaging 9300 square degrees of the celestial sphere in twelve optical bands using a dedicated 0.8m robotic telescope, T80-South, at Cerro Tololo, Chile.  The telescope is equipped with a large-format camera, with a field-of-view of 2 square degrees, with a plate scale of 0.55"/pixel. The survey consists of (1) two non-contiguous fields at high Galactic latitudes, which together cover an area of 8000 sq. degrees and (2)  two areas of the Galactic Plane and Bulge (for an additional 1300 square degrees). S-PLUS uses the Javalambre 12-band magnitude system which includes ugriz broad-band filters and 7 narrow-band filters centered on prominent stellar spectral features: [OII], Ca H+K, Hdelta, G-band, Mgb triplet, Halpha and Ca triplet. The combination of a Wide FoV telescope+camera and choice of filters will allow the study of a large number of scientific topics, from Solar System to Cosmology. In particular, S-PLUS will deliver accurate photo-zs, providing a map of the local universe. It will also allow the study of star formation and  stellar populations in and around the Milky Way and nearby galaxies and search for quasars, variable sources, and low-metallicity and carbon-enhanced metal-poor stars. The consortium is open to all scientists from the participating institutes, as well as any other scientist (through a vigorous external collaborator program). The first data release of the project is being published to the international community in Sep 26th (in https://datalab.noao.edu/splus). In this talk we will present the survey and we will highlight its usefulness for different science topics of interest to the community.
+
+--------
+
+The International School for Advanced Instrumentation (IScAI)
+--------------------------------------------------------------
+IScAI is a major international initiative in higher education that allows to acquire expertise in all areas related to the construction of cutting-edge scientific instrumentation, with a particular emphasis on astronomical instrumentation.
+
+It has 5 courses, of 20h each:
+- Optics -- telescopes, cameras, and spectrographs, and their common components (mirror, lenses, etc.).
+- Mechanics -- analysis of precision designs for opto-mechanical and robotic systems, and other related disciplines such as materials, mechanical components, cryogenic systems, vacuum technology, structures and mechanical manufacturing processes.
+- Electronics -- focused mainly in the data acquisition systems (getting data with image detectors), in the control systems for mechanisms and other related tasks. A clear procedure will be shown to design, build, integrate and check an entire control system from the beginning until the end of the project.
+- Software -- modern tools and the latest trends in software design. The aim is to guarantee the appropriate quality in software development.
+- Management -- to describe projects in terms of work packages, to establish a schedule with milestones and deadlines, to control budget and cash flow and to discuss requirements and specifications with both the scientists and the engineers to make them understand the project.
+
+------------------
+
+Holistic spectroscopy using a photonic comb 
+--------------------------------------------
+Holistic spectroscopy: complete reconstruction of a wide-field, multiobject spectroscopic image using a photonic comb 
+
+*Our approach allows one to reduce the tolerances of the spectrograph design and increase the rigorosity of the reduction process, though at the cost of more complicated analysis.*
+
+https://doi.org/10.1093/mnras/sty2175
+
+----------------------
+
+Surprise Discovery of a 14-Year-Old Supernova
+-----------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/stellar-science/surprise-discovery-of-a-14-year-old-supernova/
+
+------
+
+Moore's Law is broken (since 2005)
+-------------------------------------------
+Parece que a Lei de Moore está acabando, ou já acabou e não sabíamos, e vamos ter de nos acostumar com isso:
+
+https://spectrum.ieee.org/nanoclast/semiconductors/devices/what-globalfoundries-retreat-really-means
+
+-----
+
+Plectics
+----------
+Plectics is the name that Murray Gell-Mann, a Nobel Laureate in Physics, has suggested for the research area described as "a broad transdisciplinary subject covering aspects of simplicity and complexity as well as the properties of complex adaptive systems".
+
+- https://en.wikipedia.org/wiki/Plectics
+- https://www.spf.pt/magazines/GFIS/89/article/605/pdf (Portuguese)
+
+---------
+
+Carl Sagan on How Humanity Would Transform if Aliens Contacted Earth
+----------------------------------------------------------------------
+https://futurism.com/carl-sagan-on-how-humanity-would-transform-if-aliens-contacted-earth/
+
+Carl Sagan em 'Cosmos': "Se um dia fizermos contato com uma civilização extraterrestre mais avançada, será o encontro amplamente pacífico, mesmo na falta de uma comunicação, como aquele dos franceses com os tlingits, ou seguirá algum protótipo mais sinistro, no qual a sociedade um pouco mais avançada destrói a sociedade tecnicamente mais atrasada?
+
+"A preocupação com a possibilidade de haver intenções malévolas numa civilização avançada com que possamos entrar em contato não tem sentido. É mais provável que o mero fato de terem sobrevivido por tanto tempo signifique que aprenderam a viver consigo mesmos e com outros. Talvez nossos temores de contatos extraterrestres sejam mera expressão de nosso próprio atraso, uma expressão de nossa consciência culpada por nossa história pregressa: a devastação causada a civilizações só um pouco mais atrasadas que nós. Lembramo-nos de Colombo e dos aruaques, Cortés e os astecas, mesmo da sina dos tlingits nas gerações posteriores à de La Pérouse..."
+
+--------------
+
+Finding New Limb-Darkening Coefficients for the LSST
+-------------------------------------------------------
+https://astrobites.org/2018/09/15/finding-new-limb-darkening-coefficients-for-the-lsst/
+
+----------
+
+Astronomia e Sociedade
+------------------------
+- O artigo do Prof. Moysés publicado na SBF (Física) explicam como os estudos dele sobre o arco-íris estão ajudando nos estudos do clima para a determinação do aquecimento global: `Os principais obstáculos ao desenvolvimento da ciência na América Latina por Moysés Nussenzveig <../static/static/doing-sci_moyses.pdf>`_
+
+- `Descoberta da astronomia poderia levar a tratamento eficaz de câncer <https://hypescience.com/descoberta-da-astronomia-poderia-levar-a-tratamento-eficaz-de-cancer/>`_
+
+- Este excelente artigo traz um bom panorama de `como a astronomia pode contribuir para a sociedade em geral <https://hypescience.com/descoberta-da-astronomia-poderia-levar-a-tratamento-eficaz-de-cancer/>`_.
+
+-----------
+
+Systems Engineering and INCOSE references
+------------------------------------------
+- http://systemarchitect.mit.edu = very interesting ideas to apply on projects.
+- http://ssrc.mit.edu/people/rhodes-0 = Donna Rhodes is an incredible researcher.
+- https://www.incose.org/about-incose/foundation = INCOSE...
+
+-------
+
+Museu Virtual do LNA - Laboratório Nacional de Astrofísica
+------------------------------------------------------------
+http://www.lna.br/~museuvirtual/
+
+-------
+
+IAU Strategic Plan 2020-2030
+-------------------------------
+Resolution A1 on the new IAU Strategic Plan 2020–2030 was passed at the IAU General Assembly 2018 in Vienna. The planincludes research, education, development and outreach, describing how the different IAU activities fit together and how they complement each other, long-term goals, and the actions and activities required to meet them.
+
+https://www.iau.org/static/education/strategicplan-2020-2030.pdf
+
+-------
+
+Pesquisadores do IAG em Workshop na Academia Brasileira de Ciencias sobre Grandes Projetos
+----------------------------------------------------------------------------------------------------------------
+Pesquisadores do IAG vao falar sobre grandes projetos internacionais com participacao brasileira, em Workshop da Academia Brasileira de Ciencias nos dias 12 e 13 de setembro. Veja  programa em:
+
+http://www.abc.org.br/wp-content/uploads/2018/09/Programa%C3%A7%C3%A3o_Grandes_Projetos.pdf
+
+-------
+
+Como e por quem a pesquisa científica deve ser avaliada
+-----------------------------------------------------------
+Ciência básica depende fortemente de recursos públicos e sociedade cobra informações sobre financiamento
+
+https://jornal.usp.br/atualidades/como-e-por-quem-a-pesquisa-cientifica-deve-ser-avaliada/
+
+-------
+
+Morse Code’s Vanquished Competitor: The Dial Telegraph
+-----------------------------------------------------------
+In 1842, French watchmaker Louis-François Breguet invented a simpler to use but less efficient alternative
+
+https://spectrum.ieee.org/telecom/standards/morse-codes-vanquished-competitor-the-dial-telegraph
+
+--------
+
 2018-08
 =========
 
@@ -52,7 +334,7 @@ Estão abertas submissão de propostas por Micro e Pequenas Empresas (MPE) para 
 
 Segue a matéria publicada no `site do MCTIC <http://www.mctic.gov.br/mctic/opencms/salaImprensa/noticias/arquivos/2018/08/Programa_do_MCTIC_vai_destinar_R_2_milhoes_para_inovacao_nas_micro_e_pequenas_empresas.html>`_.
 
-Trata-se da Chamada Pública CNPq/MCTIC/SETEC n° 32/2018, publicado no DOU em 16/08/2018 e disponível na pagina do CNPq, neste `link <http://www.cnpq.br/web/guest/chamadas-publicas?p_p_id=resultadosportlet_WAR_resultadoscnpqportlet_INSTANCE_0ZaM&filtro=abertas&detalha=chamadaDivulgada&idDivulgacao=8342>`_.
+Trata-se da Chamada Pública CNPq/MCTIC/SETEC n° 32/2018, publicado no DOU em 16/08/2018 e disponível na pagina do CNPq, neste `link5 <http://www.cnpq.br/web/guest/chamadas-publicas?p_p_id=resultadosportlet_WAR_resultadoscnpqportlet_INSTANCE_0ZaM&filtro=abertas&detalha=chamadaDivulgada&idDivulgacao=8342>`_.
 
 Em linhas gerais, as principais características dessa Chamada são:
 
@@ -2309,7 +2591,7 @@ Combining uncertainties from multiple measurements
 
 Tabby's star faded throughout the Kepler mission
 --------------------------------------------------------------
-It seems that Tabby's star has more tricks up in its sleeve than previously thought: a pre-print shows evidence that the WTF star has actually dimmed during the 4-year long Kepler... `Link <https://astrobites.org/2016/08/11/tabbys-star-faded-throughout-the-kepler-mission/>`_
+It seems that Tabby's star has more tricks up in its sleeve than previously thought: a pre-print shows evidence that the WTF star has actually dimmed during the 4-year long Kepler... `Link 4 <https://astrobites.org/2016/08/11/tabbys-star-faded-throughout-the-kepler-mission/>`_
 
 -------------------------------
 

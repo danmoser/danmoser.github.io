@@ -271,3 +271,15 @@ Worm gear
 Works perpedicular to the **wormwheel**. The basic rule is: 
 
     one full rotation of the wormwheel = one teeth movement in the wormwheel
+
+
+Systems Engineering
+====================
+Plectics
+----------
+- Pléctica (Portuguese; `PDF <../static/instrumentation-Plectica.pdf>`_)
+- https://en.wikipedia.org/wiki/Plectics
+
+.. figure:: ../figs/inst_agile.png
+    :align: center
+    :width: 600

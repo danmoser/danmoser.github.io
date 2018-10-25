@@ -114,11 +114,26 @@ Doing science
 .. figure:: ../figs/doing-sci_nunca-viu.png
     :align: center
 
+.. figure:: ../figs/doing-sci_fitting.png
+    :align: center
+
+- `The Scientific Paper Is Obsolete. Here's what's next <https://www.theatlantic.com/amp/article/556676/>`_
+
+- `What the New Sokal Hoax Reveals About Academia <https://www.theatlantic.com/ideas/archive/2018/10/new-sokal-hoax/572212/>`_
+
+- `Métricas responsáveis <http://revistapesquisa.fapesp.br/2018/08/20/metricas-responsaveis/>`_
+
+- `Dossiê mostra marginalização do ensino de humanidades <https://jornal.usp.br/atualidades/dossie-mostra-marginalizacao-do-ensino-de-humanidades/>`_
+
 - `“Faço pesquisa no Brasil por paixão. Se levasse em conta a razão, não faria, a frustração é muito grande” <https://brasil.elpais.com/brasil/2018/08/08/ciencia/1533762807_199045.html?rel=mas>`_
 
 - `Os principais obstáculos ao desenvolvimento da ciência na América Latina por     Moysés Nussenzveig. (PDF) <../static/doing-sci_moyses.pdf>`_
 
+- `Como e por quem a pesquisa científica deve ser avaliada <https://jornal.usp.br/atualidades/como-e-por-quem-a-pesquisa-cientifica-deve-ser-avaliada/>`_
+
 - `Código de Boas Práticas Científicas FAPESP (PDF) <../static/doing-sci_boas-praticas-FAPESP-2014.pdf>`_
+
+- `A escola não pode ser uma empresa porque a lógica da educação não é a do mercado <https://www.revistaprosaversoearte.com/escola-nao-pode-ser-uma-empresa-porque-logica-da-educacao-nao-e-mercado-nuccio-ordine/>`_
 
 - `A evasão no ensino superior brasileiro (PDF) <../static/doing-sci_evasao.pdf>`_
 
@@ -126,7 +141,7 @@ Doing science
 
 - `Repensar a Universidade (PDF) <../static/doing-sci_repensar-a-universidade.pdf>`_
 
-- ` Success in Astronomy? Some Surprising Strategies <https://astrobites.org/2017/10/27/success-in-astronomy-some-surprising-strategies/>`_
+- `Success in Astronomy? Some Surprising Strategies <https://astrobites.org/2017/10/27/success-in-astronomy-some-surprising-strategies/>`_
 
 - `Por que os alunos pensam em deixar a USP? <http://jpress.jornalismojunior.com.br/2016/07/alunos-pensam-deixar-usp/>`_
 
