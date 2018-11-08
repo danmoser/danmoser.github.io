@@ -5,8 +5,85 @@ DMF AstroBlog
 
 2018
 *********
+2018-11
+=========
+Descoberta por acidente, uma pequena estrela da nossa Via Láctea está entre as menores e mais antigas já observadas
+--------------------------------------------------------------------------------------------------------------------
+No sistema binário 2MASS J18082002-5104378, sua estrela secundária e menor seria um dos astros mais antigos do Universo.
+
+http://scienceblogs.com.br/hypercubic/2018/11/a-estrelinha-mais-velhinha-do-universo/
+
+-----
+
+Astronomers discover new luminous high-redshift quasar
+-------------------------------------------------------
+Redshift 7.02! So far, only two quasars with redshifts over 7.0 have been identified.
+
+https://phys.org/news/2018-11-astronomers-luminous-high-redshift-quasar.html
+
+-----------
+
+First 3D colour X-ray of a human using CERN technology
+----------------------------------------------------------
+First human scanned with next–generation 3D colour scanner using CERN technology 
+
+https://home.cern/news/news/knowledge-sharing/first-3d-colour-x-ray-human-using-cern-technology
+
+-----
+
+"An illusion": Grave doubts over LIGO's 'discovery' of gravitational waves
+------------------------------------------------------------------------------------
+https://www.sott.net/article/399642-An-illusion-Grave-doubts-over-LIGOs-discovery-of-gravitational-waves
+
+------
+
+Adaptive Optics for Extremely Large Telescopes
+-----------------------------------------------
+https://www.worldscientific.com/doi/abs/10.1142/S2251171719500016?af=R
+
+------
+
+Create a Heat Map from your Google Location History in 3 easy Steps
+----------------------------------------------------------------------
+https://towardsdatascience.com/create-a-heat-map-from-your-google-location-history-in-3-easy-steps-e66c93925914
+
+-------
+
+OSIRIS-REx captures first clear images of asteroid Bennu
+----------------------------------------------------------
+During the bare minute elapsed between the first and the last of a total of eight exposures, the asteroid rotated 1.2 degrees. The scientific team used a super-resolution algorithm to combine the eight images and produce a higher resolution view of the asteroid. Although Bennu occupies barely 100 pixels in the detector, it is possible to identify some features on its surface, like large boulders.
+
+https://astronomynow.com/2018/11/03/osiris-rex-captures-first-images-of-asteroid-bennu/
+
+
 2018-10
 =========
+Hawaiian Supreme Court Approves TMT on Mauna Kea
+----------------------------------------------------
+https://www.nytimes.com/2018/10/30/science/hawaii-telescope-mauna-kea.html
+
+--------------------------
+
+CANARY: AO Test Platform
+--------------------------
+CANARY is an on-sky tomographic adaptive optics demonstrator installed at the 4.2m William Herschel Telescope in the Canary Islands. Since initial commissioning in 2010, it has since provided the first on-sky demonstrations of NGS and LGS MOAO, LTAO and tomographic LQG control as well as hosting several visitor experiments. CANARY was developed by an EU-wide consortium, led by Durham University and Observatoire de Paris, LESIA. The WHT is operated by the Isaac Newton Group of Telescopes (ING).
+
+------
+
+Using National Instruments and Adaptive Optics to Perform Deep-Tissue Cell Imaging
+----------------------------------------------------------------------------------------------
+http://sine.ni.com/cs/app/doc/p/id/cs-13314
+
+----------
+
+Why NASA is struggling to get its most powerful space telescope off the ground
+---------------------------------------------------------------------------------
+Many experts argue that the blame for JWST’s woes started in the planning phase.
+
+https://www.theverge.com/platform/amp/2018/8/1/17627560/james-webb-space-telescope-cost-estimate-nasa-northrop-grumman
+
+--------
+
 Why Don't We Put A Space Telescope On The Moon?
 --------------------------------------------------
 https://www.forbes.com/sites/startswithabang/2018/10/25/why-dont-we-put-a-space-telescope-on-the-moon/
