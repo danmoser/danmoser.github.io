@@ -117,6 +117,9 @@ Doing science
 .. figure:: ../figs/doing-sci_fitting.png
     :align: center
 
+.. figure:: ../figs/doing-sci_vocab.jpg
+    :align: center
+
 - `The Scientific Paper Is Obsolete. Here's what's next <https://www.theatlantic.com/amp/article/556676/>`_
 
 - `What the New Sokal Hoax Reveals About Academia <https://www.theatlantic.com/ideas/archive/2018/10/new-sokal-hoax/572212/>`_
@@ -352,7 +355,7 @@ Doing science
 
 - `Why Men Don’t Believe the Data on Gender Bias in Science <https://www.wired.com/story/why-men-dont-believe-the-data-on-gender-bias-in-science/>`_
 
-- `How do emotions affect productivity? <https://www.atlassian.com/blog/apps/new-research-emotional-intelligence-in-the-workplace?utm_source=facebook&utm_medium=social&utm_campaign=atlassian_new-research-emotional-intelligence-in-the-workplace>`_
+- `How do emotions affect productivity? <https://www.atlassian.com/blog/apps/new-research-emotional-intelligence-in-the-workplace>`_
 
 - `Software citations (AAS policy) <http://journals.aas.org/policy/software.html>`_
 
@@ -370,7 +373,7 @@ Doing science
 
 - `Sci-Hub <http://sci-hub.cc/>`_ is the first website in the world to provide mass & public access to research papers.
 
-
+- `Riscos e benefícios da homeopatia <http://www.esquerda.net/artigo/riscos-e-benef%C3%ADcios-da-homeopatia/30934>`_
 
 Data tools
 ==================

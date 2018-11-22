@@ -1079,6 +1079,8 @@ General use Python packages in Astronomy
     
     - AstroQuery: http://astroquery.readthedocs.org/en/latest/
 
+    - PhotUtils: https://photutils.readthedocs.io/en/stable/
+
 - astroplan: An Open Source Observation Planning Package in Python
     https://arxiv.org/abs/1712.09631
 
@@ -1125,6 +1127,9 @@ Python learning for astronomers
 ================================
 - Python para zumbis
     https://www.pycursos.com/python-para-zumbis/
+
+- Python para desenvolvedores
+    http://ricardoduarte.github.io/python-para-desenvolvedores/
 
 - CodeCAdemy
     http://www.codecademy.com/en/tracks/python

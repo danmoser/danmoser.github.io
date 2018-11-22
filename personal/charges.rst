@@ -5,31 +5,7 @@ Charges
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_bacon.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_progwine.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_jobsritchie.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_deadline.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_fabio.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_discordar.png
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_iphone.jpg
+.. figure:: ../figs/charge_midia.jpg
     :align: center
     :height: 500
 
@@ -37,19 +13,7 @@ Charges
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_worldmoney.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_carnetucano.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_baby.gif
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_midia2.jpg
+.. figure:: ../figs/charge_grandmas.gif
     :align: center
     :height: 500
 
@@ -57,19 +21,7 @@ Charges
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_python.png
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_ww.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_freedom.jpg
-    :align: center
-    :height: 500
-
-.. figure:: ../figs/charge_midia.jpg
+.. figure:: ../figs/charge_bacon.jpg
     :align: center
     :height: 500
 
@@ -77,11 +29,39 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_iphone.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_ww.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_jobsritchie.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_sabesp.jpg
+    :align: center
+    :height: 500
+
 .. figure:: ../figs/charge_waterMars.jpg
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_calvinLMP.gif
+.. figure:: ../figs/charge_fabio.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_python.png
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_discordar.png
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_midia2.jpg
     :align: center
     :height: 500
 
@@ -89,11 +69,11 @@ Charges
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_provas.gif
+.. figure:: ../figs/charge_calvinLMP.gif
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_grandmas.gif
+.. figure:: ../figs/charge_progwine.jpg
     :align: center
     :height: 500
 
@@ -101,7 +81,27 @@ Charges
     :align: center
     :height: 500
 
-.. figure:: ../figs/charge_sabesp.jpg
+.. figure:: ../figs/charge_freedom.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_baby.gif
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_carnetucano.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_provas.gif
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_worldmoney.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_deadline.jpg
     :align: center
     :height: 500
 
@@ -258,6 +258,10 @@ Charges
     :height: 500
 
 .. figure:: ../figs/charge_coffee.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/charge_web-devs.jpg
     :align: center
     :height: 500
 

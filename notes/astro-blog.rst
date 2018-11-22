@@ -7,6 +7,52 @@ DMF AstroBlog
 *********
 2018-11
 =========
+Calculate Statistics about the Linux Kernel
+--------------------------------------------------------
+https://github.com/udoprog/kernelstats
+
+------------
+
+Python para desenvolvedores
+----------------------------
+http://ricardoduarte.github.io/python-para-desenvolvedores/
+
+--------
+
+Types of Telescopes - Tips for Buying Your First Telescope
+----------------------------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-equipment/types-of-telescopes/
+
+---------
+
+A revista eletrônica do Laboratório Nacional de Astrofísica
+---------------------------------------------------------------------------------
+"LNA em dia"!
+
+http://lnapadrao.lna.br/pesquisadores/lna-em-dia
+
+---------
+
+Cientistas desenvolvem combustível líquido que pode armazenar a energia do sol por até 18 anos 
+------------------------------------------------------------------------------------------------------------------
+Cientistas na Suécia desenvolveram um fluido especializado, chamado de combustível solar térmico, que pode armazenar energia do sol por mais de uma década. 
+
+http://socientifica.com.br/2018/11/cientistas-desenvolvem-combustivel-liquido-que-pode-armazenar-energia-do-sol-por-ate-18-anos/
+
+-----
+
+Twenty things I wish I’d known when I started my PhD
+---------------------------------------------------------
+https://www.nature.com/articles/d41586-018-07332-x
+
+------
+
+Single conjugate adaptive optics for the ELT instrument METIS
+---------------------------------------------------------------
+https://arxiv.org/abs/1810.07578
+
+------
+
 Descoberta por acidente, uma pequena estrela da nossa Via Láctea está entre as menores e mais antigas já observadas
 --------------------------------------------------------------------------------------------------------------------
 No sistema binário 2MASS J18082002-5104378, sua estrela secundária e menor seria um dos astros mais antigos do Universo.

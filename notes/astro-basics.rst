@@ -101,9 +101,11 @@ O IAG tem um curso [online] gratuito sobre Astrobiologia no Coursera:
 
 P: **Quero comprar um binóculo ou telescópio para observar o céu. Qual comprar?**
 
-R: Idealmente, conheça um grupo de astronomia amadora. Você poderá (i) ver na prática o que é possível observar com estes equipamentos e (ii) obter dicas atualizadas sobre modelos e lojas para comprar. A dica geral é sempre começar com um binóculo, para depois investir num telescópio. Aqui está um ótimo vídeo sobre o assunto:
+R: Idealmente, conheça um grupo de astronomia amadora. Você poderá (i) ver na prática o que é possível observar com estes equipamentos e (ii) obter dicas atualizadas sobre modelos e lojas para comprar. A dica geral é sempre começar com um binóculo, para depois investir num telescópio. Aqui está um ótimo vídeo e algumas reportagens sobre o assunto:
 
     - `Céu da Semana Ep. #15 - Binóculos <https://www.youtube.com/watch?v=QS5YmRmykPk>`_
+
+    - `[Em inglês] Types of Telescopes - Tips for Buying Your First Telescope <https://www.skyandtelescope.com/astronomy-equipment/types-of-telescopes/>`_
 
 Uma *referência* de preços no link abaixo. Contudo, destaco que não conheço nem o avaliador, nem o material, então não são recomendações. Preço de ago/2018:
 
