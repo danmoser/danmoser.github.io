@@ -190,3 +190,5 @@ Other
 - `Westbrook, Durant, and the Rules of NBA Revenge <https://www.theringer.com/nba/2017/11/28/16709590/kevin-durant-russell-westbrook-revenge-game>`_
 
 - `A Gentleman's Guide to the NBA: When Players Agree to Take Plays Off <https://bleacherreport.com/articles/2768585-a-gentlemans-guide-to-the-nba-when-nba-players-agree-to-take-plays-off>`_
+
+- `LeBron James: "Is He More Michael or Magic?" <http://www.espn.com/nba/story/_/id/25379580/nba-magic-make-lakers-offense-disappear-stretch>`_

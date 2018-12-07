@@ -5,8 +5,65 @@ DMF AstroBlog
 
 2018
 *********
+2018-12
+==========
+What our science fiction says about us
+---------------------------------------
+http://www.bbc.com/culture/story/20181203-what-our-science-fiction-says-about-us
+
+---------
+
+Does teaching with PowerPoint increase students' learning? A meta-analysis
+------------------------------------------------------------------------------
+https://www.sciencedirect.com/science/article/pii/S0360131518302070
+
+To provide or not to provide course PowerPoint slides? The impact of instructor-provided slides upon student attendance and performance: https://www.sciencedirect.com/science/article/pii/S0360131515000433
+
+---------
+
+My two cents
+--------------
+"My two cents" ("my 2¢") and its longer version "put my two cents in" is an American idiomatic expression. It is used to preface a tentative statement of one's opinion or **contribution**. 
+
+https://en.wikipedia.org/wiki/My_two_cents
+
+--------------
+
+A reference of an astronomical instrumentation school
+-------------------------------------------------------
+University of Copenhagen (Denmark),  July 3-12, 2017 
+
+https://opticon-schools.nbi.ku.dk/other-schools/instrumentation-school/
+
+-------
+
+How science supports São Paulo
+--------------------------------------
+Brazil's richest state has a long history of applied research. 
+
+https://www.nature.com/articles/d41586-018-07536-1
+
+
 2018-11
 =========
+The radius anomaly: a tale told by short-period low-mass eclipsing binaries
+------------------------------------------------------------------------------
+Patricia Cruz - IAG/USP
+ 
+Eclipsing binaries are an excellent case study for testing stellar evolutionary models, as they allow a complete characterization of their physical and orbital parameters when photometric and spectroscopic data are combined. The majority of short-period low-mass eclipsing binaries in the literature present measured stellar radii that are usually 5 to 20% bigger than the expected values when compared to stellar models. This inflation trend is known as the radius anomaly of low-mass stars. I will present our latest results on the search for new low-mass systems and their place in the present radius inflation scenario.
+
+-------
+
+Water Has Been Detected in The Atmosphere of a Planet 179 Light Years Away
+--------------------------------------------------------------------------------------------
+From Keck observations...
+
+https://www.sciencealert.com/water-has-been-detected-in-the-atmosphere-of-a-planet-179-light-years-away
+
+Rehearsing for more detailed spectroscopic exoplanet analyses: https://astronomynow.com/2018/11/23/rehearsing-for-more-detailed-spectroscopic-exoplanet-analyses/
+
+--------
+
 Calculate Statistics about the Linux Kernel
 --------------------------------------------------------
 https://github.com/udoprog/kernelstats

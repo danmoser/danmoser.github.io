@@ -120,6 +120,8 @@ Doing science
 .. figure:: ../figs/doing-sci_vocab.jpg
     :align: center
 
+- `Pesquisadores exploram pós-doutorandos estrangeiros nos EUA <http://www.diretodaciencia.com/2018/11/23/pesquisadores-exploram-pos-doutorandos-estrangeiros-nos-eua-afirma-estudo/>`_
+
 - `The Scientific Paper Is Obsolete. Here's what's next <https://www.theatlantic.com/amp/article/556676/>`_
 
 - `What the New Sokal Hoax Reveals About Academia <https://www.theatlantic.com/ideas/archive/2018/10/new-sokal-hoax/572212/>`_
