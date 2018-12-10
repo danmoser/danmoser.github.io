@@ -7,6 +7,18 @@ DMF AstroBlog
 *********
 2018-12
 ==========
+Chang'e 4 Probe Heads to the Lunar Farside
+------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/change-4-probe-heads-to-the-lunar-farside/
+
+----------
+
+How data transformed NBA
+---------------------------
+https://www.youtube.com/watch?v=oUvvfHkXyOA
+
+--------
+
 What our science fiction says about us
 ---------------------------------------
 http://www.bbc.com/culture/story/20181203-what-our-science-fiction-says-about-us
