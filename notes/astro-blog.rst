@@ -3,10 +3,75 @@
 DMF AstroBlog
 ##############
 
+2019
+**********
+2019-01
+=========
+Space Missions to watch in 2019
+---------------------------------
+https://www.skyandtelescope.com/astronomy-news/space-missions-to-watch-in-2019/
+
+-------
+
+Solar and Lunar Eclipses in 2019
+---------------------------------
+https://www.skyandtelescope.com/observing/solar-and-lunar-eclipses-in-2019/
+
+January 20--21: Total Lunar Eclipse. Partial eclipse begins at 9:34pm (CST). Middle of totality, 11:12pm (CST).
+
+
 2018
 *********
 2018-12
 ==========
+Top 10 Astronomy News Stories of 2018
+--------------------------------------
+https://www.skyandtelescope.com/astronomy-news/the-top-10-astronomy-news-stories-of-2018/
+
+------
+
+French astronomer Aims For Space-Based Hypertelescope
+------------------------------------------------------
+https://trabalhounido.blogspot.com/2018/12/antoine-labeyrie-aims-for-space-based.html
+
+------
+
+NASA Space Telescopes Provide a 3D Journey Through the Orion Nebula
+---------------------------------------------------------------------
+http://hubblesite.org/news_release/news/2018-04
+
+`Flight Through the Orion Nebula in Visible and Infrared Light [Ultra HD] <https://www.youtube.com/watch?v=07dve0EnUX8>`_
+
+------
+
+ESO to Host Cherenkov Telescope Array-South at Paranal
+---------------------------------------------------------------------
+ESO enters partnership with the world’s largest gamma-ray observatory
+
+https://www.eso.org/public/news/eso1841/
+
+-------
+
+How to Weigh a Black Hole Using NASA's Webb Space Telescope
+--------------------------------------------------------------------------
+http://hubblesite.org/news_release/news/2018-37
+
+--------
+
+Key Points a Systems Engineer Needs to Know about Software Engineering
+--------------------------------------------------------------------------
+https://www.sebokwiki.org/wiki/Key_Points_a_Systems_Engineer_Needs_to_Know_about_Software_Engineering
+
+------
+
+Guia orienta cientistas da USP para se relacionarem com a mídia
+----------------------------------------------------------------
+Material gratuito da SCS/USP traz orientações práticas sobre comunicação e jornalismo para cientistas que querem divulgar seus trabalhos.
+
+https://jornal.usp.br/ciencias/publicacao-mostra-caminhos-para-transformar-ciencia-em-noticia/
+
+-------
+
 Chang'e 4 Probe Heads to the Lunar Farside
 ------------------------------------------------------
 https://www.skyandtelescope.com/astronomy-news/change-4-probe-heads-to-the-lunar-farside/
