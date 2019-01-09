@@ -7,6 +7,12 @@ DMF AstroBlog
 **********
 2019-01
 =========
+Optics and Photonics Global Salary Report
+------------------------------------------------------------------
+https://spiecareercenter.org/survey
+
+----
+
 Space Missions to watch in 2019
 ---------------------------------
 https://www.skyandtelescope.com/astronomy-news/space-missions-to-watch-in-2019/
