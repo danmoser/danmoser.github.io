@@ -355,7 +355,7 @@ Using the terminal (command line)
 
 .. code:: bash
 
-    sudo dpkg-reconfigure tzdata.
+    sudo dpkg-reconfigure tzdata
 
 Follow the directions in the terminal. The timezone info is saved in ``/etc/timezone``.
 

@@ -7,6 +7,18 @@ DMF AstroBlog
 **********
 2019-01
 =========
+Future of Optical-infrared Interferometry in Europe
+-----------------------------------------------------
+https://link.springer.com/journal/10686/topicalCollection/AC_20a157efd5555be5b10f77fdc1db737d
+
+------
+
+Five Works of Hard Science Fiction That Bypass the Gatekeepers
+--------------------------------------------------------------------------
+https://www.tor.com/2018/12/17/five-works-of-hard-science-fiction-that-bypass-the-gatekeepers/
+
+----
+
 Optics and Photonics Global Salary Report
 ------------------------------------------------------------------
 https://spiecareercenter.org/survey
