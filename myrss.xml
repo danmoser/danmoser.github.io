@@ -5,8 +5,174 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Wed, 16 Jan 2019 18:53:32 -0000</lastBuildDate>
+<lastBuildDate>Wed, 27 Feb 2019 16:04:12 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>New radio map reveals huge number of previously unseen galaxies</title>
+<description>https://astronomynow.com/2019/02/19/new-radio-map-reveals-huge-number-of-previously-unseen-galaxies/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#new-radio-map-reveals-huge-number-of-previously-unseen-galaxies</link>
+</item>
+
+
+<item>
+<title>Gravity waves may help resolve Hubble constant conundrum</title>
+<description>https://astronomynow.com/2019/02/16/gravity-waves-may-help-resolve-hubble-constant-conundrum/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#gravity-waves-may-help-resolve-hubble-constant-conundrum</link>
+</item>
+
+
+<item>
+<title>Mini-curso Introduction to Deep Learning in Astronomy</title>
+<description>Em fevevereiro de 2009 a SPAnet organizou o mini-curso Introduction to Deep Learning in Astronomy, ministrado pelo Dr. Clécio De Bom  (CEFET/RJ e CBPF), com o apoio de dois de seus estudantes, Luciana e Patrick.
+
+O material do curso (pdf, exercícios), bem como as aulas gravadas, pode ser encontrado no link:
+
+http://www.astro.iag.usp.br/~introDL/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#mini-curso-introduction-to-deep-learning-in-astronomy</link>
+</item>
+
+
+<item>
+<title>NASA orbiter spots Chinese lander on the Moon</title>
+<description>https://astronomynow.com/2019/02/21/nasa-orbiter-spots-chinese-lander-on-the-moon/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#nasa-orbiter-spots-chinese-lander-on-the-moon</link>
+</item>
+
+
+<item>
+<title>LRS2 Automatic Data Reduction Pipeline</title>
+<description>Abstract: I will be presenting an overview of the new automatic pipeline for the low resolution spectrograph, LRS2, at the Hobby Eberly Telescope.   LRS2 is an integral field unit spectrograph with 280 fibers covering roughly 7&#x27;&#x27; x 11&quot; on the sky.  The instrument is comprised of two independent spectrographs, B and R, providing wavelength coverage from 3500-7000A and 6500-10500A for the blue and red side, respectively.  As the HET Data Scientist, I have recently built an automatic pipeline that reduces each new night&#x27;s dataset from Jan 1st, 2019 and on (the pipeline is publicly available for older data sets and can be run by a user or reduced at request).  The reduction products reside on the Texas Advanced Computing Center (TACC) and can be accessed easily with an account.  The pipeline running the LRS2 reductions is called, Panacea, and documentation related to the code, algorithms, and data products can be found here: https://github.com/grzeimann/Panacea.  Pipelines are always an ongoing process and feedback from the community is highly welcomed and appreciated.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#lrs-automatic-data-reduction-pipeline</link>
+</item>
+
+
+<item>
+<title>Curiosity captures stunning panorama on slopes of Mount Sharp</title>
+<description>https://astronomynow.com/2019/02/10/curiosity-captures-stunning-panorama-on-slopes-of-mount-sharp/
+
+NASA&#x27;s Curiosity Mars Rover Departs Vera Rubin Ridge (360 View) in 4k !!
+https://www.youtube.com/watch?v=e-gZpz8zuDQ</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#curiosity-captures-stunning-panorama-on-slopes-of-mount-sharp</link>
+</item>
+
+
+<item>
+<title>Random words</title>
+<description>- front burner: a condition or position of top priority.
+- Ceteris paribus: &quot;other things equal&quot;. English translations of the phrase include &quot;all other things being equal&quot; or &quot;other things held constant&quot; or &quot;all else unchanged&quot;.
+
+
+GEMMA Big Ideas</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#random-words</link>
+</item>
+
+
+<item>
+<title>New analysis shows Milky Way a decidedly &quot;warped&quot; spiral</title>
+<description>https://astronomynow.com/2019/02/05/new-analysis-shows-milky-way-a-decidedly-warped-spiral/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#new-analysis-shows-milky-way-a-decidedly-warped-spiral</link>
+</item>
+
+
+<item>
+<title>Famous Mars rovers</title>
+<description>&quot;Mars is the only known planet inhabited exclusively by robots&quot;.
+
+Mars Exploration Rover
+^^^^^^^^^^^^^^^^^^^^^^^^
+Launch 2003, landed 2004. The &quot;Spirit&quot; and &quot;Opportunity&quot; rovers were named through a student essay competition. 
+    - On January 3 and January 24, 2010, Spirit and Opportunity marked six years on Mars, respectively.
+    - On January 26, NASA announced that Spirit will be used as a stationary research platform after several months of unsuccessful attempts to free the rover from soft sand.
+    - On May 22, 2011, NASA announced that it will cease attempts to contact Spirit, which has been stuck in a sand trap for two years. 
+    - On June 10, 2018, Opportunity stopped communications with Earth after rolling more than 28 miles.
+    - Latest news: http://tz.ucweb.com/2_508q4
+
+Curiosity rover
+^^^^^^^^^^^^^^^^^^^^^^^^
+Curiosity is a car-sized rover (900kg).
+    - On September 2018 it already covered 20 km in distance.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#famous-mars-rovers</link>
+</item>
+
+
+<item>
+<title>Six Degrees of Kevin Bacon</title>
+<description>https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon
+
+2019-01</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#six-degrees-of-kevin-bacon</link>
+</item>
+
+
+<item>
+<title>Understanding Linux (and Android) CPU Loads</title>
+<description>http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#understanding-linux-and-android-cpu-loads</link>
+</item>
+
+
+<item>
+<title>Celestial Event Dubbed “The Cow” Puzzles Astronomers</title>
+<description>https://www.skyandtelescope.com/astronomy-news/cow-celestial-event-puzzles-astronomers/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#celestial-event-dubbed-the-cow-puzzles-astronomers</link>
+</item>
+
+
+<item>
+<title>Billion-dollar telescopes could end up beyond the reach of US astronomers</title>
+<description>Alternative title: US astronomers face hard decisions
+
+https://www.nature.com/articles/d41586-018-05985-2</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#billion-dollar-telescopes-could-end-up-beyond-the-reach-of-us-astronomers</link>
+</item>
+
+
+<item>
+<title>The Extraordinary Link Between Deep Neural Networks and the Nature of the Universe</title>
+<description>https://www.technologyreview.com/s/602344/the-extraordinary-link-between-deep-neural-networks-and-the-nature-of-the-universe/
+
+A physical explanation that shows why neural networks are so efficient although mathematically it is a very complex problem.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-extraordinary-link-between-deep-neural-networks-and-the-nature-of-the-universe</link>
+</item>
+
+
+<item>
+<title>Opportunity rover logs 15 years on Mars</title>
+<description>https://astronomynow.com/2019/01/24/opportunity-rover-logs-15-years-on-mars/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#opportunity-rover-logs--years-on-mars</link>
+</item>
+
+
+<item>
+<title>O doutorado é prejudicial à saúde mental</title>
+<description>https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#o-doutorado-e-prejudicial-a-saude-mental</link>
+</item>
+
+
+<item>
+<title>We Don&#x27;t Really Know When the Sun Rises</title>
+<description>https://www.skyandtelescope.com/astronomy-news/we-dont-really-know-when-the-sun-rises/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#we-dont-really-know-when-the-sun-rises</link>
+</item>
+
+
+<item>
+<title>Double Star System Flips Planet-Forming Disk into Pole Position</title>
+<description>Press-release: https://astronomynow.com/2019/01/17/binary-star-system-found-with-polar-dust-disc/
+
+Main paper link: https://www.nature.com/articles/s41550-018-0667-x</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#double-star-system-flips-planet-forming-disk-into-pole-position</link>
+</item>
+
+
+<item>
+<title>How &quot;Light Echoes&quot; Revealed a Black Hole’s Feeding Habits</title>
+<description>https://www.skyandtelescope.com/astronomy-news/how-light-echoes-revealed-black-holes-feeding-habits/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#how-light-echoes-revealed-a-black-holes-feeding-habits</link>
+</item>
 
 
 <item>

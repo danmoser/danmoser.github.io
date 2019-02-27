@@ -110,13 +110,21 @@ Cameras and lenses
 - Very complete benchmarks for photography!!! https://www.dxomark.com
 - Cameras comparison https://cameradecision.com/
 
-Photography
-^^^^^^^^^^^^^^^^^^
-- Depth of Field calculations http://www.dofmaster.com/
+General photography
+^^^^^^^^^^^^^^^^^^^^^
 - https://photographylife.com/
 - https://digital-photography-school.com/
 - https://www.youtube.com/user/VistaClues
 - https://www.youtube.com/channel/UC3DkFux8Iv-aYnTRWzwaiBA
+
+Topics on photography
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+- Depth of Field calculations http://www.dofmaster.com/
+- What Is AF-Lock? https://www.lifewire.com/what-is-af-lock-492613
+- Nikon AE-L / AF-L Button https://photographylife.com/nikon-ae-l-af-l-button
+- How to Use Exposure Bracketing on Your Nikon D5300 https://www.dummies.com/photography/cameras/nikon-camera/how-to-use-exposure-bracketing-on-your-nikon-d5300/
+- How to do Multiple Exposures In-Camera https://digital-photography-school.com/multiple-exposures-camera/
+- Astronomical Optics https://www.handprint.com/ASTRO/ae1.html
 
 Shopping
 ^^^^^^^^^
@@ -276,6 +284,7 @@ f-stop units *i* follows :math:`N = 2^{i/2}`. Here there is a factor 0.5x with t
 ISO units *j* follows: :math:`M = 50*2^{j}`
 
 Shutter Speed units *k* follows: :math:`t = 2^{-k}`. However, it has a 'non-standard' round method: 
+    - (1/8 = 1/8); 
     - 1/16 = 1/15; 
     - 1/32 = 1/30;
     - 1/64 = 1/60;
@@ -515,6 +524,7 @@ AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR Lens
 https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-p-dx-nikkor-18-55mm-f%252f3.5-5.6g-vr.html
 
 - 18mm -- f/3.5 to f/22
+- 35mm -- f/4.8* to f/30*
 - 55mm -- f/5.6 to f/38
 
 Minimum focus distance is 0.25m. 
@@ -648,9 +658,9 @@ Nikon D5300
 --------------
 My acquisition date: 2019-Jan
 
-My rate: ?.?/10.
+My rate: 9.0/10.
 
-My comments: The camera specs created a very high expectation. In particular, the multiple exposure and time-lapse control are great resources. 
+My comments: The camera specs created a very high expectation. In particular, multiple exposure and time-lapse control are great resources. All camera options are not so easy to handle. To be fast requires practice. 
 
 Specs
 ^^^^^^^^^^^^
@@ -692,7 +702,7 @@ Lens tools
 ---------------
 58mm
 ^^^^^^
-- Hood*
+- Hood
 - UV filter
 - 4.0x close-up filter
 - Graduated Neutral Density (ND2?)
@@ -701,7 +711,7 @@ Lens tools
 
 55mm
 ^^^^^^
-- Flower (or collapsible) hood*
+- Flower (or collapsible) hood
 - UV filter
 - FLD filter
 - CPL filter
@@ -711,47 +721,48 @@ Lens tools
 
 52mm
 ^^^^^^
-- Flower (or collapsible) hood*
-- UV filter**
+- Flower (or collapsible) hood
+- UV filter
 
 Other accessories
 ------------------
-- Extension tube set for Nikon (7, 14 and 28mm)**
-- Directional microphone w/ windscreen for cameras**
-- V-shape triple 3 shoe mount bracket for cameras**
-- LED light for cameras**
+Future:
+    - Extension tube set for Nikon (7, 14 and 28mm)**
+    - Directional microphone w/ windscreen for cameras**
+    - V-shape triple 3 shoe mount bracket for cameras**
+    - LED light for cameras**
 
 List of priorities
 -------------------
-- 55+58mm lens hoods = $19
-- DX 35mm lens = $197 (216)
-- 52mm Lens hood = $10 (226)
-- 52mm UV filter = $5 (231)
-- Extension tubes = $23 (254)
-- Var ND 55mm filter = $18 (272)
+- Extra battery = $10
+- 55+58mm lens hoods = $18 (28)
+- DX 35mm lens = $182 (210)
+- 52mm UV filter = $6 (216)
 
-- Mic = $27 (299)
-- Battery = $13 (312)
-- Mount bracket = $11 (323)
-- Light = $37 (360)
-- 58mm CPL (kit) = $15 (375)
+Future:
+    - Extension tubes = $36
+    - Var ND 55mm filter = $18
+    - Mic = $27
+    - Mount bracket = $11
+    - Light = $37
+    - 58mm CPL (kit) = $15
 
 
 My tips
 ==========
 - The DX lens focal lengths **are not** equivalent to 35mm with respect to **image size**. To calculate the image size, "convert" the focal length multiplying it by 1.5x (crop factor).
 
-- Extension tubes are a cheap way to increase lens focal lengths (and enabling macro photography, increasing Bokeh).
+- Extension tubes are a cheap way to increase lens' focal lengths (and enabling macro photography, increasing Bokeh). But remember: no infinite focusing with extension tubes!
 
-- The lower the ISO, the sharper the image is as well as longer is the exposure time.
+- The lower the ISO, the sharper (nicer) the image is, as well as longer is the exposure time.
 
 - Black & White mode reduces the noise of the images. This is very useful when shooting in dark places with high ISO. 
 
-- The smaller the aperture (f/#), the more of the depth of field is in focus and longer the exposure time is.
+- The smaller is the aperture (or higher is f/#), the more of the depth of field is in focus and longer the exposure time is.
 
 - To have the "creamy" effect on long exposures of water and/or clouds, it is needed and exposure of least 15 secs. For than, one must use a ND (Neutral Density) filter (ND8 or darker). 
 
-- A "series of images+median filter" is a much smarter way of removing moving objects of an image than density filters. You can do it either with individual images combined later in a photo editor software, either using the "Multiple exposure" mode from your camera.
+- A series of images is a much smarter way to do the "creamy" effect, than density filters. The mediam filter also is capable of removing moving objects of an image. You can do it either with individual images combined later in a photo editor software, either using the "Multiple exposure" mode from your camera.
 
 - "Shaking hands" should not be a problem on shutter speeds faster than 1/100 sec (1/60 sec). On the other side, if one have a very steady hand, it is possible to shoot at 1/40 sec or even 1/30 sec. 
 
@@ -759,6 +770,12 @@ My tips
     - Small f-number (or f-stop; f/2.8 or faster);
     - Short object distance (check lens minimum focus distance);
     - Long focal length (50mm or longer).
+
+- The power of the low f-number:
+    - f4.8 @ 1/8s == f1.8 @ 1/60s
+    - f4.8 @ 1/60s == f1.8 @ 1/500s
+    - f4.8 @ ISO800 == f1.8 @ ISO100
+    - f4.8 @ ISO12800 == f1.8 @ ISO1600
 
 Flash
 --------
@@ -790,8 +807,8 @@ In Jan 2019 I had a budget of USD~800 and I decided to buy a (Nikon) DSLR instea
 I believe my start was an ideal one. I bought a decent body (Nikon D5300, USD~400) which contains many important features for me (including a fully articulated screen for selfies and time-lapse control) with 3 lenses to cover multiple applications. Here are the lenses selection:
 
     - Standard zoom lens 27-83mm f/3.5-5.6, for landscape and portraits (USD~100);
-    - Telephoto lens 105-450mm f/4.5-6.3G, for nature and close-up (USD~150);
-    - Normal lens 53mm f/1.8, for night sky and low-light environments (USD~200).
+    - Telephoto lens 105-450mm f/4.5-6.3, for nature and close-up (USD~150);
+    - Normal lens ~50mm f/1.8, for night sky and low-light environments (USD~200).
 
 See "my gear" for more details.
 

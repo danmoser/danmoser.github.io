@@ -1122,6 +1122,9 @@ General use Python packages in Astronomy
 - statsmodels
     http://statsmodels.sourceforge.net/
 
+- SpectRes: A Fast Spectral Resampling Tool in Python
+    https://github.com/ACCarnall/SpectRes
+
 
 Python learning for astronomers
 ================================

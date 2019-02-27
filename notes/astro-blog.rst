@@ -5,8 +5,162 @@ DMF AstroBlog
 
 2019
 **********
+2019-02
+=========
+New radio map reveals huge number of previously unseen galaxies
+------------------------------------------------------------------------
+https://astronomynow.com/2019/02/19/new-radio-map-reveals-huge-number-of-previously-unseen-galaxies/
+
+-------
+
+Gravity waves may help resolve Hubble constant conundrum
+------------------------------------------------------------------------
+https://astronomynow.com/2019/02/16/gravity-waves-may-help-resolve-hubble-constant-conundrum/
+
+-------
+
+Mini-curso Introduction to Deep Learning in Astronomy
+------------------------------------------------------------------------
+Em fevevereiro de 2009 a SPAnet organizou o mini-curso Introduction to Deep Learning in Astronomy, ministrado pelo Dr. Clécio De Bom  (CEFET/RJ e CBPF), com o apoio de dois de seus estudantes, Luciana e Patrick.
+
+O material do curso (pdf, exercícios), bem como as aulas gravadas, pode ser encontrado no link:
+
+http://www.astro.iag.usp.br/~introDL/
+
+--------
+
+NASA orbiter spots Chinese lander on the Moon
+-----------------------------------------------
+https://astronomynow.com/2019/02/21/nasa-orbiter-spots-chinese-lander-on-the-moon/
+
+--------
+
+LRS2 Automatic Data Reduction Pipeline
+------------------------------------------
+Abstract: I will be presenting an overview of the new automatic pipeline for the low resolution spectrograph, LRS2, at the Hobby Eberly Telescope.   LRS2 is an integral field unit spectrograph with 280 fibers covering roughly 7'' x 11" on the sky.  The instrument is comprised of two independent spectrographs, B and R, providing wavelength coverage from 3500-7000A and 6500-10500A for the blue and red side, respectively.  As the HET Data Scientist, I have recently built an automatic pipeline that reduces each new night's dataset from Jan 1st, 2019 and on (the pipeline is publicly available for older data sets and can be run by a user or reduced at request).  The reduction products reside on the Texas Advanced Computing Center (TACC) and can be accessed easily with an account.  The pipeline running the LRS2 reductions is called, Panacea, and documentation related to the code, algorithms, and data products can be found here: https://github.com/grzeimann/Panacea.  Pipelines are always an ongoing process and feedback from the community is highly welcomed and appreciated.
+
+------
+
+Curiosity captures stunning panorama on slopes of Mount Sharp
+---------------------------------------------------------------------------
+https://astronomynow.com/2019/02/10/curiosity-captures-stunning-panorama-on-slopes-of-mount-sharp/
+
+NASA's Curiosity Mars Rover Departs Vera Rubin Ridge (360 View) in 4k !!
+https://www.youtube.com/watch?v=e-gZpz8zuDQ
+
+-----------
+
+Random words
+---------------
+- front burner: a condition or position of top priority.
+- Ceteris paribus: "other things equal". English translations of the phrase include "all other things being equal" or "other things held constant" or "all else unchanged".
+
+
+GEMMA Big Ideas
+------------------------------
+Example of a Science survey.
+    - GEMMA - Gemini In The Era of Multi-Messenger Astronomy.
+    - GNAO - Gemini North AO
+    - TDA - Time Domain Astronomy
+
+https://www.gemini.edu/gemma/index.html
+
+-----
+
+New analysis shows Milky Way a decidedly "warped" spiral
+------------------------------------------------------------
+https://astronomynow.com/2019/02/05/new-analysis-shows-milky-way-a-decidedly-warped-spiral/
+
+-----
+
+Famous Mars rovers
+--------------------
+"Mars is the only known planet inhabited exclusively by robots".
+
+Mars Exploration Rover
+^^^^^^^^^^^^^^^^^^^^^^^^
+Launch 2003, landed 2004. The "Spirit" and "Opportunity" rovers were named through a student essay competition. 
+    - On January 3 and January 24, 2010, Spirit and Opportunity marked six years on Mars, respectively.
+    - On January 26, NASA announced that Spirit will be used as a stationary research platform after several months of unsuccessful attempts to free the rover from soft sand.
+    - On May 22, 2011, NASA announced that it will cease attempts to contact Spirit, which has been stuck in a sand trap for two years. 
+    - On June 10, 2018, Opportunity stopped communications with Earth after rolling more than 28 miles.
+    - Latest news: http://tz.ucweb.com/2_508q4
+
+Curiosity rover
+^^^^^^^^^^^^^^^^^^^^^^^^
+Curiosity is a car-sized rover (900kg).
+    - On September 2018 it already covered 20 km in distance.
+
+------
+
+Six Degrees of Kevin Bacon
+----------------------------
+https://en.wikipedia.org/wiki/Six_Degrees_of_Kevin_Bacon
+
 2019-01
 =========
+Understanding Linux (and Android) CPU Loads
+----------------------------------------------------------------
+http://blog.scoutapp.com/articles/2009/07/31/understanding-load-averages
+
+-------
+
+Celestial Event Dubbed “The Cow” Puzzles Astronomers
+----------------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/cow-celestial-event-puzzles-astronomers/
+
+--------
+
+Billion-dollar telescopes could end up beyond the reach of US astronomers
+---------------------------------------------------------------------------
+Alternative title: US astronomers face hard decisions
+
+https://www.nature.com/articles/d41586-018-05985-2
+
+------
+
+The Extraordinary Link Between Deep Neural Networks and the Nature of the Universe
+------------------------------------------------------------------------------------
+https://www.technologyreview.com/s/602344/the-extraordinary-link-between-deep-neural-networks-and-the-nature-of-the-universe/
+
+A physical explanation that shows why neural networks are so efficient although mathematically it is a very complex problem.
+
+------
+
+Opportunity rover logs 15 years on Mars
+------------------------------------------
+https://astronomynow.com/2019/01/24/opportunity-rover-logs-15-years-on-mars/
+
+-----
+
+O doutorado é prejudicial à saúde mental
+------------------------------------------
+https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html
+
+-----
+
+Estudo diz que doutorandos são seis vezes mais propensos a desenvolverem ansiedade ou depressão
+
+We Don't Really Know When the Sun Rises
+----------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/we-dont-really-know-when-the-sun-rises/
+
+-------
+
+Double Star System Flips Planet-Forming Disk into Pole Position
+-----------------------------------------------------------------
+Press-release: https://astronomynow.com/2019/01/17/binary-star-system-found-with-polar-dust-disc/
+
+Main paper link: https://www.nature.com/articles/s41550-018-0667-x
+
+--------
+
+How "Light Echoes" Revealed a Black Hole’s Feeding Habits
+----------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/how-light-echoes-revealed-black-holes-feeding-habits/
+
+------
+
 Future of Optical-infrared Interferometry in Europe
 -----------------------------------------------------
 https://link.springer.com/journal/10686/topicalCollection/AC_20a157efd5555be5b10f77fdc1db737d

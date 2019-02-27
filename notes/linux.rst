@@ -5,6 +5,22 @@ Linux tips
 
 Useful commands tricks
 ===========================
+Command ``cmake`` and ``make``
+--------------------------------
+.. code:: bash
+
+    rm CMakeCache.txt
+    cmake ..
+    make prefix=$HOME/.local/
+    make DESTDIR=$HOME/.local/ install
+    
+Decrease Backlight Below Minimum
+----------------------------------
+..code:: bash
+
+    sudo nano /sys/class/backlight/intel_backlight/brightness
+    # set the value to 1
+
 How to mount an ISO file
 ---------------------------
 .. code:: bash
