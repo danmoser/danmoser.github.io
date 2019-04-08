@@ -48,7 +48,8 @@ Year    Driver               Team
 2015    Lewis Hamilton        Mercedes
 2016    Nico Rosberg          Mercedes
 2017    Lewis Hamilton        Mercedes
-2018    \
+2018    Lewis Hamilton        Mercedes
+2019    \                     \
 ======  ==================== ===================
 
 Provollone Cast
@@ -174,7 +175,8 @@ Year Team                   Coach                      MVP Player of winning tea
 2015 Golden State Warriors  Steve Kerr                 Curry
 2016 Cleveland Cavaliers    Tyronn Lue                 James
 2017 Golden State Warriors  Steve Kerr                 Durant/Curry
-2018 \
+2018 Golden State Warriors  Steve Kerr                 Durant/Curry
+2019 \
 ==== ====================== ========================== =============================
 
 \* My personal choice 

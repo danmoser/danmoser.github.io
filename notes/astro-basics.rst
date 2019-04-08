@@ -19,6 +19,9 @@ Links
 - Livro gratuito de Astronomia.
     `Astronomia e Astrofísica <http://astro.if.ufrgs.br>`_
     
+- The Universe In My Pocket -- textos e fotos acessíveis a crianças de 9 a 99 anos (em português):
+    http://www.tuimp.org/
+
 - Excelente blog do Prof. Helder.
     http://navegandopelouniverso.blogspot.com.br/ 
 

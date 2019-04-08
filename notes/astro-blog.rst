@@ -5,6 +5,86 @@ DMF AstroBlog
 
 2019
 **********
+2019-04
+========
+Why Are Two Ghost Galaxies Missing Dark Matter?
+-------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/ghost-galaxies-missing-dark-matter/
+
+------
+
+GRAVITY instrument breaks new ground in exoplanet imaging
+----------------------------------------------------------
+https://www.eso.org/public/news/eso1905/
+
+---------
+
+Searching for FRBs Using Neural Networks and Machine Learning
+----------------------------------------------------------------------
+https://astrobites.org/2019/04/02/searching-for-fast-radio-bursts-using-neural-networks/
+
+---------
+
+Dust-choked doughnut detected around gargantuan black hole
+----------------------------------------------------------
+https://astronomynow.com/2019/04/05/dust-choked-doughnut-detected-around-gargantuan-black-hole/
+
+----------
+
+A Study in Stereotypes: What People Think of Physicists vs. Biologists
+----------------------------------------------------------------------------
+https://astrobites.org/2019/04/05/a-study-in-stereotypes-what-people-think-of-physicists-vs-biologists/
+
+--------
+
+The peculiar stars corner (and AGN)
+-------------------------------------
+http://www.astrosurf.com/buil/us/peculiar2/peculiar.htm
+
+---------
+
+Prisoner's dilemma
+-------------------
+https://en.wikipedia.org/wiki/Prisoner's_dilemma
+
+In 2012, William H. Press and Freeman Dyson published a new class of strategies for the stochastic iterated prisoner's dilemma called "zero-determinant" (ZD) strategies.
+
+Yes, Freeman Dyson is the guy from the idea of 
+
+---------
+
+IMPRS Summer School "Instrumentation for Ground-based Optical & Infrared Astronomy"
+--------------------------------------------------------------------------------------------
+Date: Monday, 9 September 2019 - Friday, 13 September 2019
+
+Location: Heidelberg, Germany
+
+Max Planck Institute for Astronomy - https://www.imprs-hd.mpg.de/Summer-School
+
+
+2019-03
+========
+No, Data Is Not the New Oil
+--------------------------------------------------------------------
+https://www.wired.com/story/no-data-is-not-the-new-oil/
+
+(alternatively: https://trabalhounido.blogspot.com/2019/03/no-data-is-not-new-oil.html)
+
+-------
+
+Building a Data Analytics library from scratch in Python
+---------------------------------------------------------------------
+Series of videos on how to build a #DataAnalytics library from scratch in #Python by @DunderData https://t.co/GwgCavd8AM #DataScience https://t.co/7MA1TeKfo0
+(https://twitter.com/ga_braganca/status/1101569058829414401?s=03)
+
+--------
+
+IGRINS Spectral Library
+-------------------------
+- https://arxiv.org/abs/1808.06629
+- http://starformation.khu.ac.kr/IGRINS_spectral_library.htm
+
+
 2019-02
 =========
 New radio map reveals huge number of previously unseen galaxies

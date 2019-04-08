@@ -19,6 +19,7 @@ Vocabulary
 ===========
 - adobe: um tipo de argila para construção
 - asset: um bem, ativo (mercado)
+- attorney: advogado/procurador
 - aviary: aviário
 - barf: vomit
 - blend: mistura
@@ -30,16 +31,22 @@ Vocabulary
 - cinder: cinzas, brasas
 - childminder: babá
 - chunk: pedaço
+- cloth: (singular) pano
+- condoning: perdoar, reparar (uma falta), ou concordar com.
 - creep: rastejar
 - creepy: arrepiante
+- crumple: amassar ("bola de papel": he crumpled it into a ball)
 - cumbersome: pesado, incômodo
 - conviction: condenação (criminal)
 - currently: atualmente
 - cornerstone: marco initial, pedra-base
+- depriving: privando
 - dire: terrível
 - disavow: deny any responsibility or support for.
 - equity: equidade; capital próprio
 - feather: pena (de pássaro)
+- flabbergasted: espantado; thunderstruck, dumbstruck, dumfounded, stupefied, dumbfounded
+- flourish: floreio, esplendor, prosperar.
 - fore: dianteira
 - foreclosure: execução (cobrança) de uma hipoteca
 - forefront: primeiro plano
@@ -61,6 +68,8 @@ Vocabulary
 - larceny: pequeno furto
 - lay out: dispor, arranjar
 - lender: credor
+- lining: (of a coat) forro
+- menacingly: ameaçadoramente
 - mortgage: hipoteca
 - nasty: desagradável, sórdido, nojento
 - outright: diretamente
@@ -68,31 +77,44 @@ Vocabulary
 - plunder: pilhagem
 - pillory (pilloried): expor ao pelourinho
 - pop: estouro
+- predicament: dilema, classe/categoria
 - procure: adquirir, obter
 - quirk (cuãrk): equívoco
 - rash: displaying or proceeding from a lack of careful consideration of the possible consequences of an action. reckless, impulsive, impetuous
 - real estate: imobiliária
 - raft: jangada; grande número/incontável
+- rear: parte de trás. [verbo] construir, educar
 - reckless: imprudente
+- remonstrate: reclamar, protestar
 - rife: frequente
 - rig: equipamento
+- rumpled: amarrotado
 - ruthless: cruel
 - shrink: encolher
 - slum: favela
+- snatch: arrebatar, agarrar subitamente
 - spill: derramar
 - spillover: infiltração
 - seamless: sem emendas/sem costuras [siimlés]
+- seasoning: tempero, secagem/cura, atenuação
 - shenanigans: travessuras
+- spoof: paródia, falsificação
 - stance: posição
+- stirred up: agitado
 - straggler: retardatário
+- strain: tensão, esticar
+- subtle: sutil
 - sweatshop: fábrica têxtil pequena/clandestina
 - syllabus: 1. an outline of the subjects in a course of study or teaching; 2. (in the Roman Catholic Church) a summary of points decided by papal decree regarding heretical doctrines or practices.
 - telltale: denunciador
-- tenement: apartamento, habitaÇão
+- tenement: apartamento, habitação
 - terraced (housing): habitações verticais (em níveis); prédio
 - tighten: apertar (parafuso)
 - tip-top: primeira classe
+- tip: dar gorjeta, inclinar, tombar.
 - top (axis): pião
+- torn: (clothing) rasgado 
+- toss: atirar, empurrar
 - trade-off: troca, compensação
 - unmet: não atendido
 - variegated: variado
@@ -100,6 +122,7 @@ Vocabulary
 - wavelet: pequena onda
 - wax: crescer
 - weldment: solda, emenda
+- whim: capricho, extravagância
 - whore: prostituta
 - withdraw: retirar, afastar
 
@@ -107,17 +130,15 @@ Vocabulary
 Expressions
 -------------
 - "a first": primeira vez
+- "a good deal in spots": em vários pontos
 - "built to order": feito sob encomenda
-- "Ponzi scheme" is a fraudulent investment operation
-- "then some": e ainda mais. 'It meets the expectations: and then some'
 - "bottom of a [deep] chasm": fundo do poço
 - "foul play": jogo sujo, crime
-
-Acronyms
------------
-- wrt: with respect to, with regard to
-- 
-
+- "one-off payment": pagamento mútuo
+- "Ponzi scheme": a fraudulent investment operation
+- "to tip his hat": tirar o seu (dele) chapéu
+- "wanted on a charge": sob a acusação de
+- "wildcat strike": greve selvagem 
 
 Prepositions
 -------------

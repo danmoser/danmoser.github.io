@@ -16,7 +16,7 @@ Command ``cmake`` and ``make``
     
 Decrease Backlight Below Minimum
 ----------------------------------
-..code:: bash
+.. code:: bash
 
     sudo nano /sys/class/backlight/intel_backlight/brightness
     # set the value to 1
@@ -326,6 +326,16 @@ Image tools
 
     montage vin.pdf xav.pdf -geometry 600x600 temp.pdf
     convert temp.pdf -crop 1200x460+0+70 +repage newfig1.pdf
+
+Image to PDF format
+----------------------
+In principle, one could use ``convert`` for the job. However, it is annoying aligning and setting border. So, I suggest using ``img2pdf``.
+
+.. code:: bash
+
+    img2pdf input.png --pagesize 210mmx297mm --border 1cm:2.5cm -o out.pdf
+    # --pagesize 210mmx297mm force the portrait mode. 
+    # For landscape (or "auto"), use --pagesize A4.
 
 Image to EPS format
 ----------------------

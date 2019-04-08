@@ -27,7 +27,18 @@ North America
 - USA, College Station (3 months)
     - Aggies game @Kyle Field
 
-- USA, Austin (1 month)
+- USA, Los Angeles (1 week)
+    - NBA game @Clippers
+    - Mount Wilson
+    - Santa Monica beach
+
+- USA, Austin (3 months)
+
+- USA, Arizona (1 week)
+    - Meteor crater 
+    - Grand Canyon
+    - Lowell observatory
+    - Montezuma Castle + Tuzigoot
 
 
 South America
@@ -40,20 +51,35 @@ South America
 - Chile, Valparaíso+Viña del Mar (4 days)
 
 - Chile, Northern Patagonia (8 days)
+    - Puyuhuapi, Coihaique, Villa O'Higgins.
+
+- Chile, La Serena (1 week)
 
 Santiago, Metropolitano
 -------------------------
-- TBD
 - Cerro San Cristóval (Virgen)
-
+- TBD
 
 Brazil
 ========
+- Minas Gerais, Capitólio
+
+- Rio de Janeiro, Trindade
+    - Praia do Sono
+
+- Rio de Janeiro, Arraial do Cabo
+
+- São Paulo, Campos do Jordão
+
 - Paraná, Foz do Iguaçu (10 days)
     - Cataratas do Iguaçú
 
 - Santa Catarina, Piratuba
     - Termas!
+
+- Santa Catarina, Laguna
+
+- Santa Catarina, São Martinho
 
 - Rio Grande do Sul, Porto Alegre
     - Gasômetro
@@ -64,24 +90,31 @@ Brazil
 
 Santa Catarina, Vale do Itajaí
 ---------------------------------
-- TBD
 - Ascurra (2nd home)
 - Corupá (1 day)
     - Trilha das Cachoeiras
+- TBD
 
 São Paulo, região metropolitana
 --------------------------------
-- TBD
 - São Paulo, capital (1st home)
     - Pico do Jaraguá
     - Autódromo de Interlagos (F1, Stock car, arrancadas com dragster)
     - Zoológico
     - Museu do Futebol
     - Ibirapuera (Tangos & Tragédias)
+- Cotia, Kart da Granja
+- TBD
 
 Europe
 ========
+- England, Durham (1 week)
+    - Durham Castle
+    - Durham Cathedral
+
 - France, Paris (10 days)
+
+- France, Grenoble (1 day)
 
 - Italy, Rome (1 day)
 
@@ -119,6 +152,14 @@ France, Côte d'Azur
 - Monaco
 - Êze*
 
+Rest of the World
+=====================
+- Australia
+    - Canberra (1 week)
+    - Sydney (1 week)
+    - Coonabarabran
+        - Siding Spring Observatory (2 days)
+
 Big trips, by date
 =====================
 - 2011: Mexico
@@ -127,4 +168,6 @@ Big trips, by date
 - 2014: Southern France
 - 2015: (None)
 - 2016: Northern Patagonia, Chile
-- 2017: ?
+- 2017: Australia
+- 2018: Capitólio, MG
+- 2019: Texas, USA

@@ -27,7 +27,6 @@ Outros
 
 Documentaries
 ****************
-
 With the process of clustering and homogenization of views in mass media, documentaries becomes an important way for democratic information. This is even more important given the impact of visual entertainment (movies) nowadays.
 
 Environment
