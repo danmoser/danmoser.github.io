@@ -1153,7 +1153,7 @@ Python learning for astronomers
     https://www.datascienceacademy.com.br/public-course?courseid=python-fundamentos
 
 - Series of videos on how to build a #DataAnalytics library from scratch in #Python by @DunderData https://t.co/GwgCavd8AM #DataScience https://t.co/7MA1TeKfo0 
-    (https://twitter.com/ga_braganca/status/1101569058829414401?s=03)
+    s(https://twitter.com/ga_braganca/status/1101569058829414401?s=03)
 
 Python distributions
 ======================

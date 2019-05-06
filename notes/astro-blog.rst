@@ -5,8 +5,187 @@ DMF AstroBlog
 
 2019
 **********
+2019-05
+========
+Binarity and circumstellar disks
+---------------------------------
+- 2017: Polar Alignment of a Protoplanetary Disk around an Eccentric Binary https://iopscience.iop.org/article/10.3847/2041-8213/835/2/L28/meta
+
+- 2019: A circumbinary protoplanetary disk in a polar configuration https://www.nature.com/articles/s41550-018-0667-x
+
+-----
+
+On the verge of revealing a singularity
+------------------------------------------
+https://astrobites.org/2019/05/01/on-the-verge-of-revealing-a-singularity/
+
+AstroSat and Chandra view of the high soft state of 4U 1630-47 (4U 1630-472): evidence of the disk wind and a rapidly spinning black hole.
+
+------
+
 2019-04
 ========
+Over 200 of the Best Machine Learning, NLP, and Python Tutorials -- 2018 Edition
+---------------------------------------------------------------------------------
+A must read!
+
+https://medium.com/machine-learning-in-practice/over-200-of-the-best-machine-learning-nlp-and-python-tutorials-2018-edition-dd8cf53cb7dc
+
+------
+
+The Great Science Publishing Scandal
+----------------------------------------
+Excellent assessment of the current scientific publishing scenario.
+
+Matthew Cobb, Professor of Zoology at the University of Manchester, explores the hidden world of prestige, profits and piracy that lurks behind scientific journals. 
+
+https://www.bbc.co.uk/sounds/play/m0004l7k
+
+---------
+
+Cientistas afirmam que desvendaram fenômeno celeste apelidado de STEVE
+--------------------------------------------------------------------------------
+https://revistagalileu.globo.com/Ciencia/noticia/2019/04/cientistas-afirmam-que-desvendaram-fenomeno-celeste-apelidado-de-steve.html
+
+------
+
+How Astronomers Used Asteroids to Measure Stars
+------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/how-astronomers-used-asteroids-measure-stars/
+
+------
+
+Hubble constant mismatch no fluke; new physics may be needed
+----------------------------------------------------------------
+https://astronomynow.com/2019/04/27/hubble-constant-mismatch-no-fluke-new-physics-may-be-needed/
+
+------
+
+80 Best Data Science Books for Data Scientists
+---------------------------------------------------
+80+ Best #DataScience Books for #DataScientists https://t.co/28HVXCzGPE
+
+#abdsc #BigData #MachineLearning #AI #Statistics #Algorithms #Python #Rstats #DataViz #DataStorytelling #ABtesting #NeuralNetworks #DataMining #DeepLearning #NLProc #RecSys #LinearAlgebra https://t.co/9ULPzJZHQY
+(https://twitter.com/KirkDBorne/status/1122568020918972417?s=03)
+
+------
+
+DataScience Cheat Sheet
+-------------------------
+10-page (PDF) #DataScience Cheat Sheet covers basic concepts in probability, #statistics, statistical learning, #MachineLearning, #DeepLearning, #BigData frameworks, and SQL: https://t.co/JfnKndDuuy
+
+#abdsc #AI #DataScientists #DataLiteracy #BeDataBrilliant https://t.co/i84cj2mRel
+(https://twitter.com/KirkDBorne/status/1121567445544730625?s=03)
+
+-------
+
+ELT End-to-end AO simulation tool using GPU acceleration
+--------------------------------------------------------------------------------
+The COMPASS platform was designed to meet the need of high-performance for the simulation of AO systems. The final product includes a software package for simulating all the critical subcomponents of AO, particularly in the context of the ELT and a real-time core based on several control approaches, with performances consistent with its integration into an instrument. Taking advantage of the specific hardware architecture of the GPU, the COMPASS tool allows to achieve adequate execution speeds to conduct large simulation campaigns caled to the ELT. The COMPASS platform can be used to carry a wide variety of simulations to both test specific components of AO of the E-ELT (such as wavefront analysis device with a pyramid or elongated Laser star), and various systems configurations such as multi-conjugate AO.
+
+https://anr-compass.github.io/compass/
+
+-------
+
+How living on the wrong side of a time zone can be hazardous to your health
+--------------------------------------------------------------------------------
+https://www.washingtonpost.com/business/2019/04/19/how-living-wrong-side-time-zone-can-be-hazardous-your-health/
+
+------
+
+The Duhem--Quine thesis 
+------------------------------------------------
+Also called the Duhem--Quine problem, is that it is impossible to test a scientific hypothesis in isolation, because an empirical test of the hypothesis requires one or more background assumptions (also called auxiliary assumptions or auxiliary hypotheses). 
+
+https://en.wikipedia.org/wiki/Duhem%E2%80%93Quine_thesis
+
+-----
+
+The Astronomer Who'd Rather Build Space Cameras
+------------------------------------------------
+Jim Gunn helped shape the theory of the evolution of the cosmos before building hardware for major observatories like the Hubble Space Telescope.
+
+https://www.quantamagazine.org/jim-gunn-the-astronomer-whod-rather-build-space-cameras-20190418/
+
+--------
+
+Convert images to LaTeX equations
+------------------------------------------------
+Take a screenshot of math and paste the LaTeX into your editor, all with a single keyboard shortcut.
+
+https://mathpix.com/
+
+------
+
+What the Obsolete Art of Mapping the Skies on Glass Plates Can Still Teach Us
+----------------------------------------------------------------------------------
+The first pictures of the sky were taken on glass photographic plates, and these treasured artifacts can still help scientists make discoveries today
+
+https://www.smithsonianmag.com/science-nature/obsolete-art-mapping-skies-glass-plates-can-still-teach-us-180971890/
+
+-----
+
+Pulsations Along Stellar Evolution
+------------------------------------------------------
+Summer School, 11-22 November 2019, La Plata, Argentina.
+
+http://pase.fcaglp.unlp.edu.ar/
+
+--------
+
+Astronomers Capture First Image of a Black Hole
+------------------------------------------------------
+https://www.almaobservatory.org/en/press-release/astronomers-capture-first-image-of-a-black-hole/
+
+Foi anunciado às 10h00 desta 4a-feira (10/abr/2019) a primeira imagem de um buraco negro feita por um consórcio de radiotelescópios espalhados pelo globo.
+
+Destaco dois pontos:
+1) Não é uma "foto", mas a reconstrução de sinais obtidos pelos múltiplos telescópios numa técnica chamada interferometria.
+2) Apesar de muito mais próximo, essa imagem não é do buraco negro no centro da Via Láctea, pois ele não é tão brilhante. Trata-se do buraco negro da galáxia M87, a galáxia mais massiva do aglomerado de virgem.
+
+Recomendo dois vídeos para compreender:
+1) o feito (inglês somente): https://www.youtube.com/watch?v=pAoEHR4aW8I
+2) o que vemos (legendado): https://www.youtube.com/watch?v=zUyH3XhpLTo&t=387s
+
+-------
+
+Images of Venus surface from Venera 13
+--------------------------------------------------
+https://www.space.com/18551-venera-13.html
+
+https://nssdc.gsfc.nasa.gov/photo_gallery/photogallery-venus.html
+
+-------
+
+Solar Eclipse seen by Curiosity
+---------------------------------
+https://www.vox.com/science-and-health/2019/4/4/18295655/mars-solar-eclipse-phobos-deimos-curiosity
+
+-------
+
+Relatividade Geral, Mercúrio e Sobral
+------------------------------------------
+Referências:
+    - Este artigo é muito bom falando sobre os testes da relatividade geral -- a precessão da órbita de Mercúrio é o primeiro: https://en.wikipedia.org/wiki/Tests_of_general_relativity#Perihelion_precession_of_Mercury
+    - O sistema Sol-Mercúrio é um ótimo exemplo da interação de dois corpos sob relatividade: https://en.wikipedia.org/wiki/Two-body_problem_in_general_relativity
+    - Este link contém uma dedução matemática clássica e relativística detalhadas da órbita de Mercúrio: https://sites.math.washington.edu/~morrow/papers/Genrel.pdf
+    - Eclipse de Sobral não tem nada a ver com Mercúrio, e comprova a relatividade geral (e não só a restrita): https://www.bbvaopenmind.com/en/science/physics/the-eclipse-to-confirm-the-general-theory-of-relativity/
+    - Este artigo calcula o desvio da luz de uma estrela que passe próxima do Sol vista da Terra: https://www.mathpages.com/rr/s6-03/6-03.htm
+    - Suporte ao artigo anterior: https://molwick.com/pt/gravitacao/575-lentes-gravitacionais.html
+
+Arranjo experimental:
+    - Lupa = efeito relativístico
+    - Lanterna = Sol
+    - LED = estrela
+
+Sequencia fotos:
+    - Só LED = (sem efeito) nada observado, ou LED "no canto" do quadro.
+    - LED + lupa + lanterna = (situação normal) Sol bloqueando a visão da estrela.
+    - lupa + lanterna = (comparação situação normal) 
+    - LED + lupa = (eclipse) estrela no centro do campo.
+
+-------
+
 Why Are Two Ghost Galaxies Missing Dark Matter?
 -------------------------------------------------
 https://www.skyandtelescope.com/astronomy-news/ghost-galaxies-missing-dark-matter/

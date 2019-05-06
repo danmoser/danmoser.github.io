@@ -382,4 +382,4 @@ ESO
 ====
 `Letter of Science & Technology minister <../static/astro-basics_carta_do_ministro.pdf>`_ (25/06/2015) saying that the government has still interest in joining ESO.
 
-
+`Carta da Sociedade Astronômica Brasileira sobre o ESO e as pesquisas brasileiras <https://sab-astro.org.br/carta-eso/>`_: A Sociedade Astronômica Brasileira está em contato contínuo com o MCTIC [governo federal], na busca conjunta por uma forma realista para a efetivação e assinatura do acordo de adesão [do Brasil ao ESO] (15/03/2018). 
