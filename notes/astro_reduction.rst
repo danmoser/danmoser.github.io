@@ -1,16 +1,13 @@
-Observação e redução
-######################
+Observations and Data Reduction
+##################################
 
-.. contents:: Índice
+.. contents:: Index
 
-Info and Links
-*****************
-http://beacon.iag.usp.br/joomla/
+BeACoN Link
+**********************
+- http://beacon.iag.usp.br/
 
-http://beacon.iag.usp.br/astroweb/admin/
-
-
-Observacional
+Observational
 **************
 Filtro de densidade
 =====================
@@ -113,8 +110,38 @@ Zeiss
 Campo buscadora do Zeiss :math:`\sim 2.5` arcmin (minutos!).
 
 
-Redução
-**********
+Data Reduction
+******************
+Installing IRAF in Ubuntu
+==========================
+I was used to Ureka (http://ssb.stsci.edu/ureka/) from Gemini and STSci, but it was discontinued in 2018. Then, Gemini suggests going to AstroConda (https://astroconda.readthedocs.io).
+
+To install it in a Ubuntu x64 16.04 LTS, I did the following steps (May 2019):
+
+.. code:: bash 
+
+    # If on Debian execute this first (not required on Ubuntu):
+    # sudo dpkg --add-architecture i386
+
+    sudo apt-get update
+    sudo apt-get install libc6:i386 libz1:i386 libncurses5:i386 libbz2-1.0:i386 libuuid1:i386 libxcb1:i386 libxmu6:i386
+
+    # Go to https://docs.conda.io/en/latest/miniconda.html and get the latest
+    # miniconda **64-bit** (x64) installer. Currently, for Linux, the link is:
+    $ wget https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
+    $ sh Miniconda2-latest-Linux-x86_64.sh
+    # Perform the installation
+
+    $ conda config --add channels http://ssb.stsci.edu/astroconda
+    # Writes changes to ~/.condarc
+
+    $ conda create -n iraf27 python=2.7 iraf-all pyraf-all stsci
+    # It will that a while to download everything.......
+
+However, I'm still getting an annoying error... How I miss Ureka!!
+https://github.com/conda/conda/issues/4859
+
+
 Geral IRAF
 ========================
 Saber a data e duração da exposição (iKon/iXon; a confirmar no 301/305):

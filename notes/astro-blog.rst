@@ -7,6 +7,131 @@ DMF AstroBlog
 **********
 2019-05
 ========
+After SpaceX Starlink Launch, a Fear of Satellites That Outnumber All Visible Stars
+---------------------------------------------------------------------------------------------
+Images of the Starlink constellation in orbit have rattled astronomers around the world.
+
+https://www.nytimes.com/2019/06/01/science/starlink-spacex-astronomers.html
+
+-------
+
+"Vermes de corda", autismo e ciência
+--------------------------------------
+Uma passada rápida nos conceitos: uso "*fake news*" para me referir a conteúdo que finge ser notícia, mas na verdade não foi produzido por nenhum órgão sério de imprensa e nem pretende contar um fato verdadeiro: algo criado com a única intenção de enganar as pessoas. Já "*false news*" é a notícia dada de boa-fé, mas que contém inverdades, seja porque o autor foi enganado, enganou-se ou não entende patavina do que está falando. E má conduta científica é isso mesmo, picaretagem feita por cientistas. A ciência também sofre com sua carga de picaretas embarcados, assim como todas as atividades humanas.
+
+http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo
+
+-----
+
+TMT Executive Software Successfully Passes First Phase of Final Design Review
+------------------------------------------------------------------------------------
+Read the whole #PressRelease at the link below: https://www.tmt.org/news/393
+
+------
+
+Academia is built on exploitation. We must break this vicious circle
+-----------------------------------------------------------------------------
+What did I find when I joined a university? Poor mental health, huge workloads, ego-driven professors and rampant plagiarism
+
+https://www.theguardian.com/higher-education-network/2018/may/18/academia-exploitation-university-mental-health-professors-plagiarism
+
+-----------
+
+The phenomenon known as being "Elon Musked"
+---------------------------------------------
+Elon Musk phenomenon: he waded in to your field of expertise with an authoritative statement that the general public loved but that you, as an expert, realized was complete crap.
+
+--------
+
+The phenomenon known as being "Dan Browned"
+---------------------------------------------
+Have you ever picked up a work by a creator who claims (or strongly implies) that his writing is based on thorough and careful research, only to discover what you are actually holding is a steaming pile of lazy assumptions or outright lies?
+
+Congratulations, you've been Dan Browned. 
+
+https://tvtropes.org/pmwiki/pmwiki.php/Main/DanBrowned
+
+-------
+
+SpaceX's Starlink Could Change The Night Sky Forever, And Astronomers Are Not Happy
+--------------------------------------------------------------------------------------
+https://www.forbes.com/sites/jonathanocallaghan/2019/05/27/spacexs-starlink-could-change-the-night-sky-forever-and-astronomers-are-not-happy/
+
+-----
+
+Analyses of seeing measurements on optical astronomical site testing at Abune Yosef Mount, Ethiopia
+---------------------------------------------------------------------------------------------------------------
+http://link.springer.com/10.1007/s10686-019-09628-w
+
+-------
+
+Huge early impact may explain Moon’s different hemispheres
+------------------------------------------------------------------------
+https://astronomynow.com/2019/05/21/huge-early-impact-may-explain-moons-different-hemispheres/
+
+---------
+
+LaTex Bibliography from NADA ADS made easy!
+----------------------------------------------------
+Automated generation of NASA ADS bibtex entries directly from citation keys in your TeX source files 
+
+https://github.com/yymao/adstex#adstex
+
+--------
+
+Astronomers Find First Evidence of Possible Moon Outside Our Solar System
+----------------------------------------------------------------------------
+http://hubblesite.org/news_release/news/2018-45
+
+---------
+
+Science, Sensationalism, and the Lessons of ‘Insectageddon’
+----------------------------------------------------------------
+When the media fails to verify the rigor and credibility of a scientific study -- or ignores its shortcomings entirely -- everyone loses.
+
+https://undark.org/article/science-sensationalism-and-the-lessons-of-insectageddon/
+
+--------
+
+Equipamentos multiusuários - Acesso rápido a máquinas e laboratórios
+--------------------------------------------------------------------------------
+USP e Unicamp criam portais para ampliar o compartilhamento de infraestrutura de pesquisa
+
+https://revistapesquisa.fapesp.br/2019/05/10/acesso-rapido-a-maquinas-e-laboratorios/
+
+--------
+
+Tweet from Richard Feynman on students
+----------------------------------------
+Students should be made: to think, to doubt, to communicate, to question, to learn from their mistakes, and most importantly have fun in their learning. 
+
+https://t.co/DsDp0FYsEz
+
+-----
+
+The linear polarization of Southern bright stars measured at the
+parts-per-million level
+-------------------------------------------------------------------------------------------------------------------
+https://academic.oup.com/mnras/article/455/2/1607/1104587
+
+----
+
+H-alpha Photometry of Be Stars in the Cluster NGC 7419
+--------------------------------------------------------
+https://iopscience.iop.org/article/10.3847/2515-5172/ab1d61/meta
+
+----
+
+ESO's current and future instrumentation
+------------------------------------------------------------------
+February 2019, by Joel Vernet.
+
+"I will present the suite of instruments currently in operations at Paranal Observervatory focussing on the most recently commisionned facilities. This will be followed by an introduciton to the instruments currently in construction for the VLT and La SiIlla observatories. I will finish by describing the intruments currently in development for the ELT."
+
+https://ui.adsabs.harvard.edu/abs/2019lgei.confE...6V/abstract
+
+---
+
 Binarity and circumstellar disks
 ---------------------------------
 - 2017: Polar Alignment of a Protoplanetary Disk around an Eccentric Binary https://iopscience.iop.org/article/10.3847/2041-8213/835/2/L28/meta
@@ -1063,7 +1188,7 @@ https://m.phys.org/news/2018-08-mathematicians-age-old-spaghetti-mystery.html
 
 Hubble Paints Picture of the Evolving Universe
 -----------------------------------------------------------
-Hubble's ultraviolet vision opens a new window on the evolving universe, tracking the birth of stars over the last 11 billion years back to the cosmos' busiest star-forming period, about 3 billion years after the big bang. This photo encompasses a sea of approximately 15,000 galaxies — 12,000 of which are star-forming — widely distributed in time and space. 
+Hubble's ultraviolet vision opens a new window on the evolving universe, tracking the birth of stars over the last 11 billion years back to the cosmos' busiest star-forming period, about 3 billion years after the big bang. This photo encompasses a sea of approximately 15,000 galaxies -- 12,000 of which are star-forming -- widely distributed in time and space. 
 
 http://hubblesite.org/news_release/news/2018-35
 
@@ -1121,7 +1246,7 @@ Python Mode for Processing
 ---------------------------
 Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
 
-Processing was initially released with a Java-based syntax, and with a lexicon of graphical primitives that took inspiration from OpenGL, Postscript, Design by Numbers, and other sources. With the gradual addition of alternative progamming interfaces — including JavaScript, Python, and Ruby — it has become increasingly clear that Processing is not a single language, but rather, an arts-oriented approach to learning, teaching, and making things with code.
+Processing was initially released with a Java-based syntax, and with a lexicon of graphical primitives that took inspiration from OpenGL, Postscript, Design by Numbers, and other sources. With the gradual addition of alternative progamming interfaces -- including JavaScript, Python, and Ruby -- it has become increasingly clear that Processing is not a single language, but rather, an arts-oriented approach to learning, teaching, and making things with code.
 
 https://py.processing.org/
 
@@ -2089,7 +2214,7 @@ https://github.com/BES2016Workshop/CodePublication-and-citation
 
 Publish your computer code: it is good enough
 ------------------------------------------------------------
-Freely provided working code — whatever its quality — improves programming and enables others to engage with your research, says Nick Barnes.
+Freely provided working code -- whatever its quality -- improves programming and enables others to engage with your research, says Nick Barnes.
 
 http://www.nature.com/news/2010/101013/full/467753a.html
 
@@ -2510,7 +2635,7 @@ https://www.youtube.com/watch?v=2GufF3pfIyA
 
 The Uninhabitable Earth
 ------------------------------------
-Famine, economic collapse, a sun that cooks us: What climate change could wreak — sooner than you think.
+Famine, economic collapse, a sun that cooks us: What climate change could wreak -- sooner than you think.
 
 ------------
 
@@ -2728,7 +2853,7 @@ https://www.theguardian.com/higher-education-network/2017/may/25/its-time-for-ac
 
 -----------
 
-Secondary mirror of ELT successfully cast—largest convex mirror blank ever created
+Secondary mirror of ELT successfully cast--largest convex mirror blank ever created
 ----------------------------------------------------------------------------------------
 https://phys.org/news/2017-05-secondary-mirror-elt-successfully-castlargest.html?utm_source=nwletter&utm_medium=email&utm_campaign=daily-nwletter
 
@@ -2916,7 +3041,7 @@ http://proceedings.spiedigitallibrary.org/volume.aspx?volumeid=17724
 
 The Mauna Kea land fight
 ---------------------------
-In 2014, this mountaintop was the scene of a cosmic traffic jam: honking horns, vans and trucks full of astronomers, V.I.P.s, journalists, businesspeople, politicians, protesters and police — all snarled at a roadblock just short of the summit.
+In 2014, this mountaintop was the scene of a cosmic traffic jam: honking horns, vans and trucks full of astronomers, V.I.P.s, journalists, businesspeople, politicians, protesters and police -- all snarled at a roadblock just short of the summit.
 
 https://mobile.nytimes.com/2016/10/04/science/hawaii-thirty-meter-telescope-mauna-kea.html
 

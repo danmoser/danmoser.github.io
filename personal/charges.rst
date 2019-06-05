@@ -269,3 +269,7 @@ Charges
     :align: center
     :height: 500
 
+.. figure:: ../figs/charge_eng-flow-chart.png
+    :align: center
+    :height: 500
+

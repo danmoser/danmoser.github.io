@@ -36,6 +36,11 @@ Writing tips
 
 - `How language shapes the way we think -- Lera Boroditsky <https://www.youtube.com/watch?v=RKK7wGAYP6k>`_
 
+- `Academia is built on exploitation. We must break this vicious circle <https://www.theguardian.com/higher-education-network/2018/may/18/academia-exploitation-university-mental-health-professors-plagiarism>`_
+
+- `"Vermes de corda", fake e false news <http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo>`_
+
+
 Useful expressions
 -------------------
 - *Building on results* = aprofundamento de resultados, aprofundamento de resultados
@@ -119,6 +124,8 @@ Doing science
 
 .. figure:: ../figs/doing-sci_vocab.jpg
     :align: center
+
+- `Success in academia is as much about grit as talent <https://trabalhounido.blogspot.com/2019/05/success-in-academia-is-as-much-about.html>`_: in favor of Epistemological anarchism from Paul Feyerabend?
 
 - `Pesquisadores exploram pós-doutorandos estrangeiros nos EUA <http://www.diretodaciencia.com/2018/11/23/pesquisadores-exploram-pos-doutorandos-estrangeiros-nos-eua-afirma-estudo/>`_
 

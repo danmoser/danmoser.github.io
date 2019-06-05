@@ -5,8 +5,149 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Mon, 06 May 2019 16:46:45 -0000</lastBuildDate>
+<lastBuildDate>Wed, 05 Jun 2019 12:30:35 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>After SpaceX Starlink Launch, a Fear of Satellites That Outnumber All Visible Stars</title>
+<description>Images of the Starlink constellation in orbit have rattled astronomers around the world.
+
+https://www.nytimes.com/2019/06/01/science/starlink-spacex-astronomers.html</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#after-spacex-starlink-launch-a-fear-of-satellites-that-outnumber-all-visible-stars</link>
+</item>
+
+
+<item>
+<title>&quot;Vermes de corda&quot;, autismo e ciência</title>
+<description>Uma passada rápida nos conceitos: uso &quot;*fake news*&quot; para me referir a conteúdo que finge ser notícia, mas na verdade não foi produzido por nenhum órgão sério de imprensa e nem pretende contar um fato verdadeiro: algo criado com a única intenção de enganar as pessoas. Já &quot;*false news*&quot; é a notícia dada de boa-fé, mas que contém inverdades, seja porque o autor foi enganado, enganou-se ou não entende patavina do que está falando. E má conduta científica é isso mesmo, picaretagem feita por cientistas. A ciência também sofre com sua carga de picaretas embarcados, assim como todas as atividades humanas.
+
+http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#vermes-de-corda-autismo-e-ciencia</link>
+</item>
+
+
+<item>
+<title>TMT Executive Software Successfully Passes First Phase of Final Design Review</title>
+<description>Read the whole #PressRelease at the link below: https://www.tmt.org/news/393</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#tmt-executive-software-successfully-passes-first-phase-of-final-design-review</link>
+</item>
+
+
+<item>
+<title>Academia is built on exploitation. We must break this vicious circle</title>
+<description>What did I find when I joined a university? Poor mental health, huge workloads, ego-driven professors and rampant plagiarism
+
+https://www.theguardian.com/higher-education-network/2018/may/18/academia-exploitation-university-mental-health-professors-plagiarism</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#academia-is-built-on-exploitation-we-must-break-this-vicious-circle</link>
+</item>
+
+
+<item>
+<title>The phenomenon known as being &quot;Elon Musked&quot;</title>
+<description>Elon Musk phenomenon: he waded in to your field of expertise with an authoritative statement that the general public loved but that you, as an expert, realized was complete crap.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-phenomenon-known-as-being-elon-musked</link>
+</item>
+
+
+<item>
+<title>The phenomenon known as being &quot;Dan Browned&quot;</title>
+<description>Have you ever picked up a work by a creator who claims (or strongly implies) that his writing is based on thorough and careful research, only to discover what you are actually holding is a steaming pile of lazy assumptions or outright lies?
+
+Congratulations, you&#x27;ve been Dan Browned. 
+
+https://tvtropes.org/pmwiki/pmwiki.php/Main/DanBrowned</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-phenomenon-known-as-being-dan-browned</link>
+</item>
+
+
+<item>
+<title>SpaceX&#x27;s Starlink Could Change The Night Sky Forever, And Astronomers Are Not Happy</title>
+<description>https://www.forbes.com/sites/jonathanocallaghan/2019/05/27/spacexs-starlink-could-change-the-night-sky-forever-and-astronomers-are-not-happy/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#spacexs-starlink-could-change-the-night-sky-forever-and-astronomers-are-not-happy</link>
+</item>
+
+
+<item>
+<title>Analyses of seeing measurements on optical astronomical site testing at Abune Yosef Mount, Ethiopia</title>
+<description>http://link.springer.com/10.1007/s10686-019-09628-w</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#analyses-of-seeing-measurements-on-optical-astronomical-site-testing-at-abune-yosef-mount-ethiopia</link>
+</item>
+
+
+<item>
+<title>Huge early impact may explain Moon’s different hemispheres</title>
+<description>https://astronomynow.com/2019/05/21/huge-early-impact-may-explain-moons-different-hemispheres/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#huge-early-impact-may-explain-moons-different-hemispheres</link>
+</item>
+
+
+<item>
+<title>LaTex Bibliography from NADA ADS made easy!</title>
+<description>Automated generation of NASA ADS bibtex entries directly from citation keys in your TeX source files 
+
+https://github.com/yymao/adstex#adstex</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#latex-bibliography-from-nada-ads-made-easy</link>
+</item>
+
+
+<item>
+<title>Astronomers Find First Evidence of Possible Moon Outside Our Solar System</title>
+<description>http://hubblesite.org/news_release/news/2018-45</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#astronomers-find-first-evidence-of-possible-moon-outside-our-solar-system</link>
+</item>
+
+
+<item>
+<title>Science, Sensationalism, and the Lessons of ‘Insectageddon’</title>
+<description>When the media fails to verify the rigor and credibility of a scientific study -- or ignores its shortcomings entirely -- everyone loses.
+
+https://undark.org/article/science-sensationalism-and-the-lessons-of-insectageddon/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#science-sensationalism-and-the-lessons-of-insectageddon</link>
+</item>
+
+
+<item>
+<title>Equipamentos multiusuários - Acesso rápido a máquinas e laboratórios</title>
+<description>USP e Unicamp criam portais para ampliar o compartilhamento de infraestrutura de pesquisa
+
+https://revistapesquisa.fapesp.br/2019/05/10/acesso-rapido-a-maquinas-e-laboratorios/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#equipamentos-multiusuarios---acesso-rapido-a-maquinas-e-laboratorios</link>
+</item>
+
+
+<item>
+<title>Tweet from Richard Feynman on students</title>
+<description>Students should be made: to think, to doubt, to communicate, to question, to learn from their mistakes, and most importantly have fun in their learning. 
+
+https://t.co/DsDp0FYsEz</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#tweet-from-richard-feynman-on-students</link>
+</item>
+
+
+<item>
+<title>parts-per-million level</title>
+<description>https://academic.oup.com/mnras/article/455/2/1607/1104587</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#parts-per-million-level</link>
+</item>
+
+
+<item>
+<title>H-alpha Photometry of Be Stars in the Cluster NGC 7419</title>
+<description>https://iopscience.iop.org/article/10.3847/2515-5172/ab1d61/meta</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#h-alpha-photometry-of-be-stars-in-the-cluster-ngc-</link>
+</item>
+
+
+<item>
+<title>ESO&#x27;s current and future instrumentation</title>
+<description>February 2019, by Joel Vernet.
+
+&quot;I will present the suite of instruments currently in operations at Paranal Observervatory focussing on the most recently commisionned facilities. This will be followed by an introduciton to the instruments currently in construction for the VLT and La SiIlla observatories. I will finish by describing the intruments currently in development for the ELT.&quot;
+
+https://ui.adsabs.harvard.edu/abs/2019lgei.confE...6V/abstract</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#esos-current-and-future-instrumentation</link>
+</item>
 
 
 <item>
@@ -1195,7 +1336,7 @@ https://m.phys.org/news/2018-08-mathematicians-age-old-spaghetti-mystery.html</d
 
 <item>
 <title>Hubble Paints Picture of the Evolving Universe</title>
-<description>Hubble&#x27;s ultraviolet vision opens a new window on the evolving universe, tracking the birth of stars over the last 11 billion years back to the cosmos&#x27; busiest star-forming period, about 3 billion years after the big bang. This photo encompasses a sea of approximately 15,000 galaxies — 12,000 of which are star-forming — widely distributed in time and space. 
+<description>Hubble&#x27;s ultraviolet vision opens a new window on the evolving universe, tracking the birth of stars over the last 11 billion years back to the cosmos&#x27; busiest star-forming period, about 3 billion years after the big bang. This photo encompasses a sea of approximately 15,000 galaxies -- 12,000 of which are star-forming -- widely distributed in time and space. 
 
 http://hubblesite.org/news_release/news/2018-35</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#hubble-paints-picture-of-the-evolving-universe</link>
@@ -1260,7 +1401,7 @@ In a first reading, the analysis appears biased to me: massive stars (Msun &gt; 
 <title>Python Mode for Processing</title>
 <description>Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts.
 
-Processing was initially released with a Java-based syntax, and with a lexicon of graphical primitives that took inspiration from OpenGL, Postscript, Design by Numbers, and other sources. With the gradual addition of alternative progamming interfaces — including JavaScript, Python, and Ruby — it has become increasingly clear that Processing is not a single language, but rather, an arts-oriented approach to learning, teaching, and making things with code.
+Processing was initially released with a Java-based syntax, and with a lexicon of graphical primitives that took inspiration from OpenGL, Postscript, Design by Numbers, and other sources. With the gradual addition of alternative progamming interfaces -- including JavaScript, Python, and Ruby -- it has become increasingly clear that Processing is not a single language, but rather, an arts-oriented approach to learning, teaching, and making things with code.
 
 https://py.processing.org/</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#python-mode-for-processing</link>
@@ -2346,7 +2487,7 @@ https://github.com/BES2016Workshop/CodePublication-and-citation</description>
 
 <item>
 <title>Publish your computer code: it is good enough</title>
-<description>Freely provided working code — whatever its quality — improves programming and enables others to engage with your research, says Nick Barnes.
+<description>Freely provided working code -- whatever its quality -- improves programming and enables others to engage with your research, says Nick Barnes.
 
 http://www.nature.com/news/2010/101013/full/467753a.html</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#publish-your-computer-code-it-is-good-enough</link>
@@ -2827,7 +2968,7 @@ https://www.youtube.com/watch?v=2GufF3pfIyA</description>
 
 <item>
 <title>The Uninhabitable Earth</title>
-<description>Famine, economic collapse, a sun that cooks us: What climate change could wreak — sooner than you think.</description>
+<description>Famine, economic collapse, a sun that cooks us: What climate change could wreak -- sooner than you think.</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#the-uninhabitable-earth</link>
 </item>
 
@@ -3077,9 +3218,9 @@ http://www.astro.iag.usp.br/~astro12h/files/2017/0806.html
 
 
 <item>
-<title>Secondary mirror of ELT successfully cast—largest convex mirror blank ever created</title>
+<title>Secondary mirror of ELT successfully cast--largest convex mirror blank ever created</title>
 <description>https://phys.org/news/2017-05-secondary-mirror-elt-successfully-castlargest.html?utm_source=nwletter&amp;utm_medium=email&amp;utm_campaign=daily-nwletter</description>
-<link>http://danmoser.github.io/notes/astro-blog.html#secondary-mirror-of-elt-successfully-castlargest-convex-mirror-blank-ever-created</link>
+<link>http://danmoser.github.io/notes/astro-blog.html#secondary-mirror-of-elt-successfully-cast--largest-convex-mirror-blank-ever-created</link>
 </item>
 
 
@@ -3282,7 +3423,7 @@ http://proceedings.spiedigitallibrary.org/volume.aspx?volumeid=17724</descriptio
 
 <item>
 <title>The Mauna Kea land fight</title>
-<description>In 2014, this mountaintop was the scene of a cosmic traffic jam: honking horns, vans and trucks full of astronomers, V.I.P.s, journalists, businesspeople, politicians, protesters and police — all snarled at a roadblock just short of the summit.
+<description>In 2014, this mountaintop was the scene of a cosmic traffic jam: honking horns, vans and trucks full of astronomers, V.I.P.s, journalists, businesspeople, politicians, protesters and police -- all snarled at a roadblock just short of the summit.
 
 https://mobile.nytimes.com/2016/10/04/science/hawaii-thirty-meter-telescope-mauna-kea.html</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#the-mauna-kea-land-fight</link>

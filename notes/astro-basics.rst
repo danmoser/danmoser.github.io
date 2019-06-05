@@ -325,6 +325,9 @@ Pictures
 .. figure:: ../figs/astro-basics_Chemistry.jpg
     :align: center
 
+.. figure:: ../figs/astro-basics_nebulae.jpg
+    :align: center    
+
 .. figure:: ../figs/astro-basics_lua.jpg
     :align: center
 
