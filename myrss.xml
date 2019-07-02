@@ -5,8 +5,103 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Wed, 05 Jun 2019 12:30:35 -0000</lastBuildDate>
+<lastBuildDate>Tue, 02 Jul 2019 11:13:17 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>Ciência brasileira vive &quot;a maior provação de sua história&quot;, alertam ex-ministros </title>
+<description>Jornal da USP: https://jornal.usp.br/atualidades/ciencia-brasileira-vive-a-maior-provacao-de-sua-historia-alertam-ex-ministros/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#ciencia-brasileira-vive-a-maior-provacao-de-sua-historia-alertam-ex-ministros-</link>
+</item>
+
+
+<item>
+<title>Bayesian inference problem, MCMC and variational inference</title>
+<description>Overview of the Bayesian inference problem in statistics.
+
+https://towardsdatascience.com/bayesian-inference-problem-mcmc-and-variational-inference-25a8aa9bce29</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#bayesian-inference-problem-mcmc-and-variational-inference</link>
+</item>
+
+
+<item>
+<title>Tiny Lenses Will Enable Design of Miniature Optical Devices</title>
+<description>On Scientific American:
+https://www.scientificamerican.com/article/tiny-lenses-will-enable-design-of-miniature-optical-devices/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#tiny-lenses-will-enable-design-of-miniature-optical-devices</link>
+</item>
+
+
+<item>
+<title>arxiv sanity preserver</title>
+<description>This project is a web interface that attempts to tame the overwhelming flood of papers on Arxiv. It allows researchers to keep track of recent papers, search for papers, sort papers by similarity to any paper, see recent popular papers, to add papers to a personal library, and to get personalized recommendations of (new or old) Arxiv papers
+
+http://www.arxiv-sanity.com/
+
+
+2016-06</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#arxiv-sanity-preserver</link>
+</item>
+
+
+<item>
+<title>Astronomical data fusion: recent progress and future prospects -- a survey</title>
+<description>Keywords: Astronomical data fusion; Multi-messenger astrophysics; Virtual observatory; Cross-matching Astronomical image fusion; Image mosaic 
+
+https://link.springer.com/article/10.1007%2Fs10686-019-09633-z</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#astronomical-data-fusion-recent-progress-and-future-prospects----a-survey</link>
+</item>
+
+
+<item>
+<title>Brasil Ciência: divulgue sua pesquisa!</title>
+<description>https://www.brasilciencia.com.br/divulgue-sua-pesquisa/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#brasil-ciencia-divulgue-sua-pesquisa</link>
+</item>
+
+
+<item>
+<title>Brasil fica para trás na inovação tecnológica</title>
+<description>Do jornal Valor: 
+https://www.valor.com.br/brasil/6318251/brasil-fica-para-tras-na-inovacao-tecnologica
+
+Quase todos os setores produtivos relevantes para o desenvolvimento da economia (...) apresentam baixo nível de investimento em pesquisa. De 37 segmentos analisados num levantamento feito pelo pesquisador Paulo Morceiro, do Nereus-USP, apenas cinco ultrapassam essa fronteira. No outro extremo, um dos piores desempenhos é o de desenvolvimento de softwares, que está na ponta do avanço tecnológico no mundo.
+
+No caso brasileiro, a maior parte (60%) do aporte [em Pesquisa e Desenvolvimento] é feita pelo Estado por meio das universidades públicas, autarquias e institutos de pesquisa. No grupo dos países mais ricos [OCDE], cerca de 75% dos investimentos têm origem no setor privado.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#brasil-fica-para-tras-na-inovacao-tecnologica</link>
+</item>
+
+
+<item>
+<title>Comunicação das universidades ainda despreza interesse público</title>
+<description>Do Observatório da Imprensa:
+&quot;A tese defendida -- ou, em última instância, o livro ou o artigo publicado -- não pode ser considerado o objetivo final do trabalho acadêmico.&quot;
+
+http://observatoriodaimprensa.com.br/ciencia/comunicacao-das-universidades-ainda-despreza-interesse-publico/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#comunicacao-das-universidades-ainda-despreza-interesse-publico</link>
+</item>
+
+
+<item>
+<title>SIBi/USP: Como cumprir a política de acesso aberto da Fapesp</title>
+<description>https://www.sibi.usp.br/?p=35980</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#sibiusp-como-cumprir-a-politica-de-acesso-aberto-da-fapesp</link>
+</item>
+
+
+<item>
+<title>LIneA em números</title>
+<description>No dia 11/06/2019 o LIneA publicou um excelente informativo sobre as características do grupo.
+
+http://www.linea.gov.br/2019/06/linea-em-numeros/
+
+Há bons pontos que em se pode se espelhar (eg., Informações Gerais, Desenvolvimento de Projetos, Colaborações científicas, Formação de Pessoal, Divulgação...).
+
+
+2019-05</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#linea-em-numeros</link>
+</item>
 
 
 <item>

@@ -5,6 +5,87 @@ DMF AstroBlog
 
 2019
 **********
+2016-07
+========
+Ciência brasileira vive "a maior provação de sua história", alertam ex-ministros 
+---------------------------------------------------------------------------------
+Jornal da USP: https://jornal.usp.br/atualidades/ciencia-brasileira-vive-a-maior-provacao-de-sua-historia-alertam-ex-ministros/
+
+------
+
+Bayesian inference problem, MCMC and variational inference
+------------------------------------------------------------
+Overview of the Bayesian inference problem in statistics.
+
+https://towardsdatascience.com/bayesian-inference-problem-mcmc-and-variational-inference-25a8aa9bce29
+
+--------
+
+Tiny Lenses Will Enable Design of Miniature Optical Devices
+-----------------------------------------------------------------
+On Scientific American:
+https://www.scientificamerican.com/article/tiny-lenses-will-enable-design-of-miniature-optical-devices/
+
+--------
+
+arxiv sanity preserver
+---------------------------
+This project is a web interface that attempts to tame the overwhelming flood of papers on Arxiv. It allows researchers to keep track of recent papers, search for papers, sort papers by similarity to any paper, see recent popular papers, to add papers to a personal library, and to get personalized recommendations of (new or old) Arxiv papers
+
+http://www.arxiv-sanity.com/
+
+
+2016-06
+==========
+Astronomical data fusion: recent progress and future prospects -- a survey
+-----------------------------------------------------------------------------
+Keywords: Astronomical data fusion; Multi-messenger astrophysics; Virtual observatory; Cross-matching Astronomical image fusion; Image mosaic 
+
+https://link.springer.com/article/10.1007%2Fs10686-019-09633-z
+
+----
+
+Brasil Ciência: divulgue sua pesquisa!
+-------------------------------------------
+https://www.brasilciencia.com.br/divulgue-sua-pesquisa/
+
+--------
+
+Brasil fica para trás na inovação tecnológica
+------------------------------------------------
+Do jornal Valor: 
+https://www.valor.com.br/brasil/6318251/brasil-fica-para-tras-na-inovacao-tecnologica
+
+Quase todos os setores produtivos relevantes para o desenvolvimento da economia (...) apresentam baixo nível de investimento em pesquisa. De 37 segmentos analisados num levantamento feito pelo pesquisador Paulo Morceiro, do Nereus-USP, apenas cinco ultrapassam essa fronteira. No outro extremo, um dos piores desempenhos é o de desenvolvimento de softwares, que está na ponta do avanço tecnológico no mundo.
+
+No caso brasileiro, a maior parte (60%) do aporte [em Pesquisa e Desenvolvimento] é feita pelo Estado por meio das universidades públicas, autarquias e institutos de pesquisa. No grupo dos países mais ricos [OCDE], cerca de 75% dos investimentos têm origem no setor privado.
+
+----------
+
+Comunicação das universidades ainda despreza interesse público
+------------------------------------------------------------------------
+Do Observatório da Imprensa:
+"A tese defendida -- ou, em última instância, o livro ou o artigo publicado -- não pode ser considerado o objetivo final do trabalho acadêmico."
+
+http://observatoriodaimprensa.com.br/ciencia/comunicacao-das-universidades-ainda-despreza-interesse-publico/
+
+-------
+
+SIBi/USP: Como cumprir a política de acesso aberto da Fapesp
+------------------------------------------------------------------------
+https://www.sibi.usp.br/?p=35980
+
+------------------
+
+LIneA em números
+------------------
+No dia 11/06/2019 o LIneA publicou um excelente informativo sobre as características do grupo.
+
+http://www.linea.gov.br/2019/06/linea-em-numeros/
+
+Há bons pontos que em se pode se espelhar (eg., Informações Gerais, Desenvolvimento de Projetos, Colaborações científicas, Formação de Pessoal, Divulgação...).
+
+
 2019-05
 ========
 After SpaceX Starlink Launch, a Fear of Satellites That Outnumber All Visible Stars

@@ -100,6 +100,7 @@ Source: https://en.wikipedia.org/w/index.php?title=Theorem&oldid=684857654
 .. figure:: ../figs/doing_sci-lawtheory.jpg
     :align: center
 
+- Competências e Habilidades no ensino: o que são e como aplicá-las? https://www.somospar.com.br/competencias-e-habilidades/
 
 Doing science
 ==============

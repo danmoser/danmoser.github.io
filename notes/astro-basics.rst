@@ -340,6 +340,11 @@ Um está no hemisfério norte e o outro no hemisfério sul.
 A Lua orbita a Terra na altura da linha do equador, portanto, um observa a Lua de cima para baixo e o outro de baixo para cima.
 Se houvesse um terceiro observador situado bem em cima da linha do equador, sua foto mostraria a parte iluminada voltada para cima e a parte escura para baixo! Na fase minguante seria ao contrário: a parte iluminada para baixo. A hora está em UTC, sigla em inglês para Tempo Universal Coordenado.
 
+Sistema solar:
+    
+    - Sistema solar em escala - Pocket Solar System https://nightsky.jpl.nasa.gov/download-view.cfm?Doc_ID=392  
+    - As dobraduras me lembraram da (simples) formulação matemática das distâncias entre os planetas de Tidius-Bode (https://en.wikipedia.org/wiki/Titius%E2%80%93Bode_law)
+
 
 Observations
 ***************
