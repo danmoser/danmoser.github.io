@@ -38,6 +38,8 @@ Writing tips
 
 - `Academia is built on exploitation. We must break this vicious circle <https://www.theguardian.com/higher-education-network/2018/may/18/academia-exploitation-university-mental-health-professors-plagiarism>`_
 
+- `"I’ll work on it over the weekend": high workload and other pressures faced by early-career researchers <https://www.nature.com/articles/d41586-019-01914-z>`_
+
 - `"Vermes de corda", fake e false news <http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo>`_
 
 

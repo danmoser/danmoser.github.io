@@ -5,8 +5,196 @@ DMF AstroBlog
 
 2019
 **********
-2016-07
+2019-08
 ========
+Light can scatter from light, CERN physicists confirm
+---------------------------------------------------------------
+https://physicsworld.com/a/light-can-scatter-from-light-cern-physicists-confirm/
+
+-------
+
+GMT AstroLab Conciencia Astronomy
+----------------------------------
+https://www.youtube.com/watch?v=uiTgcaZIwvM
+
+--------
+
+A Photographer Made A Working Replica Of Nasa’s Moon Camera
+----------------------------------------------------------------------
+https://www.wired.com/story/a-photographer-made-a-working-replica-of-nasas-moon-camera/
+
+-----
+
+Solution to spherical aberration
+-----------------------------------
+https://m.phys.org/news/2019-08-physicists-year-old-optical-problem.html
+
+-------
+
+A Rare Look at a Rocky Exoplanet's Surface
+---------------------------------------------
+http://mcdonaldobservatory.org/news/releases/20190819
+
+------
+
+ESO VST -- VLT Survey Telescope
+------------------------------------
+https://www.hq.eso.org/public/teles-instr/paranal-observatory/surveytelescopes/vst/surveys/
+
+https://en.wikipedia.org/wiki/VLT_Survey_Telescope
+
+Polarimetric mode: OmegaPOL https://zenodo.org/record/1304780#.XVqFTxnQgsk
+
+-----
+
+Overview of Python Visualization Tools
+---------------------------------------
+Seaborn, ggplot, Bokeh, pygal, Plotly...
+
+----
+
+
+The Most in Demand Skills for Data Scientists
+----------------------------------------------
+https://towardsdatascience.com/the-most-in-demand-skills-for-data-scientists-4a4a8db896db
+
+----
+
+What is the density of stars near the center of the Milky Way?
+---------------------------------------------------------------
+https://physics.stackexchange.com/questions/25706/what-is-the-density-of-stars-near-the-center-of-the-milky-way
+
+----
+
+Cabo preso em asteroide pode ser usado como estilingue para impulsionar veículos espaciais
+--------------------------------------------------------------------------------------------
+http://agencia.fapesp.br/cabo-preso-em-asteroide-pode-ser-usado-como-estilingue-para-impulsionar-veiculos-espaciais/31214/
+
+------
+
+Programa PIPE-FAPESP anuncia 64 novos projetos selecionados
+---------------------------------------------------------------
+Notícia desta 4a-feira, 14/ago/2019: http://agencia.fapesp.br/programa-pipe-fapesp-anuncia-64-novos-projetos-selecionados/31212/
+
+-------
+
+Tulsi Gabbard -- remember her
+--------------------------------
+Tulsi Gabbard (born April 12, 1981) is an American politician and military veteran serving as the U.S. Representative for Hawaii's 2nd congressional district since 2013. She is a member of the Democratic Party. 
+
+https://en.wikipedia.org/wiki/Tulsi_Gabbard
+
+-------
+
+Scientists must rise above politics — and restate their value to society
+-------------------------------------------------------------------------
+https://www.nature.com/articles/d41586-019-02379-w
+
+------
+
+Gemini Strategic Scientific Plan
+---------------------------------
+http://www.gemini.edu/news/gemini-strategic-scientific-plan
+
+-------
+
+10 mitos sobre a universidade pública no Brasil
+----------------------------------------------------------------
+https://jornal.usp.br/especiais/10-mitos-sobre-a-universidade-publica-no-brasil/
+
+--------
+
+Sócrates, Pokémon e simbolismo sonoro
+--------------------------------------
+https://www.blogs.unicamp.br/linguistica/2018/12/04/socrates-pokemon-e-o-simbolismo-sonoro/
+
+http://www.roseta.org.br/pt/2018/05/13/o-que-ha-em-um-nome-simbolismo-sonoro-e-linguagem/
+
+----
+
+Ranking aponta melhores cursos a distância do Brasil
+-----------------------------------------------------
+https://www.em.com.br/app/noticia/especiais/educacao/2019/08/07/internas_educacao,1075599/ranking-aponta-melhores-cursos-a-distancia-do-brasil.shtml
+
+------
+
+The "Terrascope": On the Possibility of Using the Earth as an Atmospheric Lens
+-------------------------------------------------------------------------------
+https://arxiv.org/pdf/1908.00490
+
+------
+
+As maiores tretas e polêmicas no mundo de Dados
+------------------------------------------------
+Data Hackers Podcast 13
+
+https://medium.com/data-hackers/as-maiores-tretas-e-pol%C3%AAmicas-no-mundo-de-dados-data-hackers-podcast-13-3a9214dcf98a
+
+------------
+
+TESS's First Year of Science
+------------------------------
+https://www.skyandtelescope.com/astronomy-news/exoplanets/tesss-first-year-of-science/
+
+-----
+
+Academia de Ciências do estado de São Paulo (ACIESP)
+------------------------------------------------------------------------------------------------
+https://www.acadciencias.org.br/
+
+-----
+
+A polêmica sobre o vulcão no Havaí que pode ser chave para encontrar vida extraterrestre
+-----------------------------------------------------------------------------------------------
+https://www.bbc.com/portuguese/geral-49184828
+
+
+2019-07
+========
+Ciência em Cheque
+-------------------
+A produção de conhecimento científico, condição sine qua non para o desenvolvimento de qualquer nação minimamente moderna, tem sido colocada em xeque no Brasil de 2019.
+
+http://observatoriodaimprensa.com.br/dilemas-contemporaneos/ciencia-em-xeque/
+
+------
+
+First there were "blue Moons;" now there are "black Moons." What do these terms mean?
+--------------------------------------------------------------------------------------
+https://www.skyandtelescope.com/astronomy-news/august-will-have-two-new-moons-big-deal/
+
+-----
+
+Brasil precisa aumentar participação em grandes projetos de colaboração internacional em ciência
+-------------------------------------------------------------------------------------------------
+"A FAPESP entende que os pesquisadores que apoia precisam procurar algo a mais do que a pesquisa científica que realizarão nesses grandes projetos de colaboração internacional", disse Marcondes Cesar. "Eles devem buscar ter liderança, protagonismo e, sempre que possível, envolvimento na instrumentação e na criação de oportunidades de desenvolvimento tecnológico para indústrias no Estado de São Paulo."
+
+http://agencia.fapesp.br/brasil-precisa-aumentar-participacao-em-grandes-projetos-de-colaboracao-internacional-em-ciencia/31037/
+
+------------------------
+
+What Color is a Mirror?
+------------------------
+https://futurism.com/the-color-of-mirrors
+
+------------------------
+
+FAPESP atualiza normas de Auxílio à Pesquisa Regular 
+--------------------------------------------------------
+Além da nova redação do texto foram realizadas algumas alterações nas normas, com destaque para a exigência de que o pesquisador responsável tenha experiência demonstrada na liderança de projetos de pesquisa internacionalmente competitivos. Seu histórico acadêmico deve demonstrar experiência internacional em pesquisa após o doutoramento ou demonstrar participação ativa em redes internacionais de colaboração em pesquisa.
+
+http://www.fapesp.br/12983
+
+--------
+
+Astro2020 APC White Paper: The Early Career Perspective 
+----------------------------------------------------------
+The Early Career Perspective on the Coming Decade, Astrophysics Career Paths, and the Decadal Survey Process
+
+https://arxiv.org/abs/1907.01676
+
+--------
+
 Ciência brasileira vive "a maior provação de sua história", alertam ex-ministros 
 ---------------------------------------------------------------------------------
 Jornal da USP: https://jornal.usp.br/atualidades/ciencia-brasileira-vive-a-maior-provacao-de-sua-historia-alertam-ex-ministros/
