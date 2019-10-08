@@ -5,6 +5,87 @@ DMF AstroBlog
 
 2019
 **********
+2019-10
+========
+Barry Lyndon
+-------------
+Barry Lyndon is a 1975 period drama film written and directed by Stanley Kubrick. https://en.wikipedia.org/wiki/Barry_Lyndon
+
+Special ultra-fast lenses were used for Barry Lyndon to allow filming using only natural light.
+
+-------
+
+Why the World’s Best Mathematicians are Hoarding Chalk
+-------------------------------------------------------
+https://youtu.be/PhNUjg9X4g8
+
+-------
+
+Consciousness May Exist in the Absence of Matter
+-------------------------------------------------
+https://dailygalaxy.com/2019/09/the-ultimate-mystery-consciousness-may-exist-in-the-absence-of-matter-weekend-feature/
+
+------
+
+A Huge Experiment Has 'Weighed' the Tiny Neutrino, a Particle That Passes Right Through Matter
+-----------------------------------------------------------------------------------------------
+https://gizmodo.com/a-huge-experiment-has-weighed-the-tiny-neutrino-a-part-1838196094
+
+-------
+
+Como o contingenciamento afeta o projeto Sirius, o mais ambicioso da ciência brasileira
+----------------------------------------------------------------------------------------
+"Tempo é muito importante em ciência", lembra Harry Westfahl Junior, diretor científico do LNLS.
+
+"Se a gente conseguisse funcionar hoje, este seria sem dúvida o síncrotron de maior brilho do mundo. Se for daqui a dez anos, vai ser um ótimo síncrotron, mas não vai ser competitivo", diz.
+
+
+2019-09
+========
+A importância -- nem sempre óbvia -- da ciência produzida nas universidades públicas
+---------------------------------------------------------------------------------------
+https://jornal.usp.br/institucional/a-importancia-nem-sempre-obvia-da-ciencia-produzidas-nas-universidades-publicas/
+
+--------------------
+
+Even Physicists Don't Understand Quantum Mechanics
+--------------------------------------------------------
+Worse, they don't seem to want to understand it. By Sean Carroll.
+
+https://www.nytimes.com/2019/09/07/opinion/sunday/quantum-physics.html
+
+-------
+
+Combustível para inovação
+------------------------------
+https://revistapesquisa.fapesp.br/2019/09/06/combustivel-para-inovacao/
+
+---------
+
+Observatório pioneiro em encontrar vapor de água em outras galáxias opõe moradores e cientistas no interior paulista
+------------------------------------------------------------------------------------------------------------------------
+Notícia divulgada no site BBC Brasil. Link para a matéria: https://www.bbc.com/portuguese/brasil-49400038
+
+------------
+
+Uma sequência didática para discutir as relações étnico-raciais (Leis 10.639/03 e 11.645/08) na educação científica
+----------------------------------------------------------------------------------------------------------------------------
+Caderno Brasileiro de Ensino de Física, v. 35, n. 3, p. 917-955, dez. 2018
+DOI: http://dx.doi.org/10.5007/2175-7941.2018v35n3p917
+
+-------
+
+Linear correlation in the presence of upper limits in astronomy
+----------------------------------------------------------------------------
+https://astrodatascience.wordpress.com/2019/09/02/linear-correlation-in-the-presence-of-upper-limits-in-astronomy/
+
+------
+
+Unit-Testing -- Software
+--------------------------
+http://softwaretestingfundamentals.com/unit-testing/
+
+
 2019-08
 ========
 Light can scatter from light, CERN physicists confirm
@@ -223,8 +304,14 @@ This project is a web interface that attempts to tame the overwhelming flood of 
 http://www.arxiv-sanity.com/
 
 
-2016-06
+2019-06
 ==========
+Físico Marcelo Gleiser recebe importante prêmio internacional por trabalho que alia ciência e espiritualidade﻿ 
+------------------------------------------------------------------------------------------------------------------------
+http://conexaoplaneta.com.br/blog/fisico-marcelo-gleiser-recebe-importante-premio-internacional-por-trabalho-que-alia-ciencia-e-espiritualidade/
+
+-------
+
 Astronomical data fusion: recent progress and future prospects -- a survey
 -----------------------------------------------------------------------------
 Keywords: Astronomical data fusion; Multi-messenger astrophysics; Virtual observatory; Cross-matching Astronomical image fusion; Image mosaic 

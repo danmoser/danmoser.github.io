@@ -140,6 +140,17 @@ R: Eu procuro saber de satélites brilhantes neste site: https://heavens-above.c
 Faça login ou clique em *Change your observing location*. Depois vá em *Daily predictions for brighter satellites*. Em *Brightness (mag)* quanto menor o valor, mais brilhante é. Em *Highest point / Azimuth* quanto mais perto de 90 graus, mais alto no céu (atualizado em Maio/2018).
 
 
+P: **É possível saber a idade de um buraco negro, o que levou sua formação e o que ele era?**
+
+R: Não podemos saber a idade de um buraco negro. Só podemos saber a sua origem, e ter uma ideia de suas interações com a vizinhança.
+Para você entender o problema da determinação da idade: em objetos sólidos (como o planeta Terra), podemos usar a medida de decaimento de isótopos. Em objetos que geram energia, como as estrelas, podemos medir o seu brilho e a partir de modelos de reações nucleares determinar por quanto tempo ela pode brilhar. Por exemplo, no sistema Solar, as medidas de isótopos e modelos de energia do Sol ambos coincidem numa idade aproximada de 4.5 bilhões de anos -- tendo o Sol combustível para mais uns 5 bilhões de anos. Já um buraco negro, ele não emite nada. Assim, não temos como modelar o que se passa no seu interior e por isso estabelecer um certo "relógio" ou "gasto", como a energia do Sol. A única coisa que podemos saber com certa segurança de um buraco negro é a sua massa. E isso é obtido a partir da análise da trajetória de estrelas próximas, que orbital o buraco negro pela força da gravidade. Sabemos que buraco negro se originam do colapso do núcleo de estrelas muito massivas (de pelo menos uns 30 massas do Sol), quando o "combustível" destas estrelas se esgota. Ou num raro evento de colisão entre duas estrelas. O buraco negro que se resulta possui algumas poucas massas solares, mas se houver gás ou outros estrelas as seu redor, este material será agregado ao buraco negro e sua massa se expandirá. Com a massa crescente, mais material é atraído, e mais o buraco negro cresce. Acredita-se que no centro na maioria das galáxias existe um buraco negro muito massivo (milhões de massas solares), como o que há no centro da Via Láctea.
+
+
+P: **O professor comentou sobre ondas gravitacionais. Como elas são "captadas"?**
+
+R: Em teoria, as ondas gravitacionais podem ser captadas de várias formas, por diferenças no comportamento do espaço e do tempo. O único método bem sucedido até aqui é baseado na técnica de interferometria. Em resumo, a luz é também uma onda. Ondas, quando combinadas, possuem o fenômeno de combinação (ou interferência) construtiva e negativa (você já deve ter visto isso em ondulatória, que é aplicado em radiocomunicações). Assim, os detectores de ondas gravitacionais monitoram com altíssima precisão o padrão "normal" de interferência da luz, que viaja pelo espaço com velocidade constante. Se uma onda gravitacional atinge o caminho da luz, uma perturbação ocorre neste padrão de interferência. A duração e o formato da perturbação permite determinar as característica da onda gravitacional. Sugiro a leitura do artigo da Wikipedia em inglês https://en.wikipedia.org/wiki/Gravitational_wave
+
+
 Carreira
 ~~~~~~~~~~~~~~
 P: **Você sabe quantas pessoas no mundo ou no Brasil estudam essas estrelas?**
@@ -192,6 +203,21 @@ Quero ser astrônomo(a)
     Ao meu ver, estas são as principais questões que um astronômo se defronta no processo de sua formação. Se ficou alguma dúvida, não hesite em me escrever. E boa sorte na prova de ingresso!
 
     PS: Talvez você ache interessante a leitura deste `link <http://mulherdasestrelas.com/quer_ser_astrnomoa.html>`_. É o site de uma astrônoma brasileira que trabalhou na NASA e que responde à perguntas para quem quer ser astrônomo(a).
+
+
+Sou engenheir@ e quero trabalhar com astronomia
+================================================
+Boa tarde professor, sou aluna do segundo ano de engenharia elétrica no IMT e faço aulas extracurriculares de astrofísica com o professor Pedro Beaklini (que enviou seu contado para tirar eventuais dúvidas sobre astrofísica).
+Tenho muito interesse no assunto e gostaria de saber se posso trabalhar nesta área mesmo fazendo engenharia?
+
+    Olá!
+
+    Espero que esteja gostando do curso de engenharia e das aulas do professor Pedro.
+    E fico contente com seu interesse em astrofísica. 
+
+    Com certeza engenheiros são muito bem-vindos para colaborar nos arranjos experimentais dos físicos. Como você pode deduzir, os arranjos experimentais são complexos, envolvendo múltiplas disciplinas (como Eng. mecânica, eletrônica, óptica, de software, entre outras), e são equipamentos de altíssima tecnologia. Muitas vezes, são desenvolvidas tecnologias especialmente para estes experimentos e que depois chegam no mercado. Como um exemplo, estão os detectores CCD -- que inicialmente foram desenvolvidos para registrar as imagens de telescópios, e hoje estão na maiores das câmeras digitais. Converse com o Prof. Pedro e o Prof. Vanderlei Parro no IMT sobre possibilidades de projetos em astronomia.
+
+
 
 Links
 ======
@@ -319,6 +345,15 @@ Pictures
 .. figure:: ../figs/astro-basics_JupiterMoons.jpg
     :align: center
 
+.. figure:: ../figs/astro-basics_moon-saturn.jpg
+    :align: center
+
+.. figure:: ../figs/astro-basics_planets-to-scale.png
+    :align: center
+
+.. figure:: ../figs/astro-basics_earth-moon.jpg
+    :align: center
+
 .. figure:: ../figs/astro-basics_nebulosa.gif
     :align: center
 
@@ -327,6 +362,15 @@ Pictures
 
 .. figure:: ../figs/astro-basics_nebulae.jpg
     :align: center    
+
+.. figure:: ../figs/astro-basics_suntrail.jpg
+    :align: center
+
+    Este é o céu da Grécia em três épocas do ano:
+    - Início do Verão (linha do Sol mais alta)
+    - Início da Primavera e Outono (linha "do meio")
+    - Início do Inverno (linha mais próxima do horizonte)
+    Cada posição do Sol tem aproximadamente 1hora de diferença.
 
 .. figure:: ../figs/astro-basics_lua.jpg
     :align: center
