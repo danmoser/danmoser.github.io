@@ -25,6 +25,14 @@ The famous *General Catalogue of Variable Stars* was the first list of variable 
 
 The variabilities are classified as photometric or spectroscopic. They can be Periodical, Semiperiodical, Irregular or Unique. Examples: changes in velocities (spec. shifts) are a signal of binary system; abnormal emission or absorption lines indicate circumstellar activity and/or magnetic field...
 
+Chart
+=========
+Dr Ashley J. Ruiter (@growzchilepeps):
+"Chien-Hsiu Lee explains the work being done by ANTARES to make sure current ZTF and future LSST data are distributed for the optimal (for those data) streams (research interests). #iaus357 @LSST @ztfsurvey I am learning about brokers! :)"
+
+.. figure:: ../figs/astro-ph_vars.jpg
+    :align: center
+
 Nomenclature
 =============
 In a given constellation, the first variable star discovered were designates with the letter *R* (and continuously until *Z*). Then, *RR*...*RZ*, *SS*...*ZZ*. Then *AA*...*AZ*, *BB*...*QZ*, with J omitted. After exhausted the total of 334 possibilities, stars as *V335*, *V...*.

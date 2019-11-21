@@ -5,8 +5,281 @@ DMF AstroBlog
 
 2019
 **********
-2019-10
+2019-11
 ========
+Coding habits for data scientists
+-----------------------------------
+Great article on how to improve the quality of your code on ML projects. #machinelearning #python #datascience 
+
+------
+
+IAU e Unesco
+--------------
+Em 10 de novembro a União Astronômica Internacional (IAU) e Unesco celebram também o Dia Mundial da Ciência pela Paz e pelo Desenvolvimento.
+
+-------
+
+Texto de astronomia na Pearson Brasil 
+----------------------------------------
+O texto publciado em https://blogs.oglobo.globo.com/ciencia-matematica/post/origem-dos-elementos-quimicos-da-tabela-periodica.html, como parte da contribuição SAB ao Blog Ciência & Matemática, será incorporado, a partir de 2021, a livros de química da educação básica produzidos pela Pearson Education do Brasil. Vale lembrar que a Base Nacional Comum Curricular em vigor no Brasil é atravessada, em todos os níveis da educação básica, por temas de Astronomia.
+
+------
+
+Have we really measured gravitational waves? 
+---------------------------------------------
+http://backreaction.blogspot.com/2019/11/have-we-really-measured-gravitational.html
+
+-------
+
+Turbo, Parula and Mathematica colormaps for Matplotlib
+-------------------------------------------------------
+https://astrodatascience.wordpress.com/2019/11/02/turbo-parula-and-mathematica-colormaps-for-matplotlib/
+
+-------
+
+Publish or perish: The cost of reformatting academic papers
+------------------------------------------------------------
+Even top researchers often must submit papers to multiple journals before acceptance -- and that means constantly reformatting their manuscripts. A new study quantifies just how time-consuming that process can be.
+
+https://scopeblog.stanford.edu/2019/10/30/publish-or-perish-the-cost-of-reformatting-academic-papers/?sf111577832=1
+
+----------
+
+Arcetri Observatory
+---------------------
+https://en.wikipedia.org/wiki/Arcetri_Observatory
+
+----------
+
+Para explicar a complexidade
+--------------------------------
+Estudo que mapeou influência dos genes no comportamento homossexual destacou-se também pela estratégia de apresentação dos resultados.
+
+"Mesmo reunidas, essas variantes [genéticas] explicariam o comportamento em 8% a 25% das pessoas analisadas -- nas demais, estariam presentes fatores de ordem cultural ou ambiental. "
+
+https://revistapesquisa.fapesp.br/2019/10/07/para-explicar-a-complexidade/
+
+------
+
+Machine Learning in Astronomy: a practical overview
+------------------------------------------------------
+by @dalya_baron is very clearly written and well referenced. Recommended! 
+
+https://arxiv.org/abs/1904.07248
+
+---------
+
+BINGO at PhD Comics
+---------------------
+https://twitter.com/PHDcomics/status/1191812814316265472?s=17
+
+------
+
+Rube Goldberg machine
+----------------------
+https://en.wikipedia.org/wiki/Rube_Goldberg_machine
+
+
+2019-10
+=========
+How To "Work Smarter Not Harder": 3 Secrets From Research - Barking Up The Wrong Tree
+--------------------------------------------------------------------------------------
+https://www.bakadesuyo.com/2018/02/work-smarter-not-harder-2/
+
+------
+
+Entrepreneurship Workshop for Scientists and Engineers
+--------------------------------------------------------
+https://www.ictp-saifr.org/brazilian-entrepeneurship-workshop-for-scientists-and-engineers-2/
+
+--------
+
+How the eerie drone of a 'Star Trek' spaceship's engine lulls people to sleep
+---------------------------------------------------------------------------------------------
+https://mashable.com/article/star-trek-white-noise-explained/
+
+-------
+
+
+Most luminous known galaxy gobbles up its neighbours
+------------------------------------------------------
+https://astronomynow.com/2018/11/18/most-luminous-known-galaxy-gobbles-up-its-neighbours/
+
+--------
+
+Science company in Santiago -- Dani Guzman
+------------------------------------------------
+http://www.andesscientific.com/
+
+--------
+
+The Importance of Telescope Training in Data Interpretation
+----------------------------------------------------------------
+https://arxiv.org/abs/1907.05889
+
+--------
+
+Indicadores e Métricas: como medir o desempenho de pesquisa?
+--------------------------------------------------------------
+Artigo da SIBi/USP sobre ferramentas e indicadores.
+
+O uso de indicadores e métricas de produção científica tornou-se prática rotineira na avaliação da qualidade e desempenho das atividades de pesquisa em renomadas universidades de pesquisa.
+
+https://www.sibi.usp.br/?p=39373
+
+-------
+
+Free Open Source Project Management Software
+------------------------------------------------
+https://sourceforge.net/directory/business-enterprise/project-management/os:windows/os:linux/
+
+--------
+
+The Secret to Being a Top Developer Is Building Things! Here’s a List of Fun Apps to Build!
+--------------------------------------------------------------------------------------------
+https://medium.com/better-programming/the-secret-to-being-a-top-developer-is-building-things-heres-a-list-of-fun-apps-to-build-aac61ac0736c
+
+--------
+
+Evidências de manchas sugere revisão da teoria de envelopes de estrelas quentes
+-----------------------------------------------------------------------------------------
+https://arxiv.org/abs/1910.01584
+
+-------
+
+The reason why the soviets did not land on Moon
+------------------------------------------------
+https://en.wikipedia.org/wiki/Sergei_Korolev
+
+-------
+
+Petroleum seep
+----------------
+Brazilian northeast in 2019?
+
+https://en.wikipedia.org/wiki/Petroleum_seep
+
+------
+
+AAVSO AVSpec.
+---------------
+Increase Astronomical Discoveries by Storing Your Spectroscopic Observations with AVSpec.
+
+Full description and access to the database available via https://www.aavso.org/new-spectroscopic-database
+
+#variableobjects #variablestars
+
+---------
+
+Embraer CBA 123 Vector
+------------------------
+- https://historicalcenter.embraer.com/global/en/cba-123-vector
+- https://en.wikipedia.org/wiki/Embraer/FMA_CBA_123_Vector
+
+Darwin expeditions
+---------------------
+- https://en.wikipedia.org/wiki/Fitz_Roy
+- https://en.wikipedia.org/wiki/Robert_FitzRoy
+- "Viagem de um naturalista ao redor do mundo"
+
+-----
+
+Gemini Observatory Captures Multicolor Image of First-ever Interstellar Comet
+----------------------------------------------------------------------------------
+http://www.gemini.edu/node/21240
+
+-------
+
+Best Systems Engineering Papers of 2018
+-----------------------------------------
+https://onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)1520-6858.Best-Papers-of-2018
+
+-------
+
+Programming Sucks 
+-------------------
+https://www.stilldrinking.org/
+
+https://www.stilldrinking.org/programming-sucks
+
+-------
+
+Middle-Author Publications: Do They Matter for Promotion?
+----------------------------------------------------------
+Even with middle-author publications on the rise, "they count for promotion, but they don't count as much as first- and last-author publications," Jackson notes. "Just like book chapters and review articles, they count, but not as much as original research articles."
+
+https://www.hopkinsmedicine.org/research/advancements-in-research/fundamentals/in-depth/middle-author-publications-do-they-matter-for-promotion
+
+--------
+
+NG Best pictures of the hidden microscopic world
+--------------------------------------------------
+https://www.nationalgeographic.com/science/2019/10/see-years-best-pictures-microscopic-nikon-small-world-2019/
+
+--------
+
+The Hidden Costs of Automated Thinking
+-----------------------------------------
+"Most machine-learning systems don't uncover causal mechanisms. They are statistical-correlation engines. [..] they don't 'think' in any colloquial sense of the word—they only answer. As we [..] integrate their insights into our lives, we will, [..] rack up more intellectual debt...
+
+"Answers without theory, found and deployed in different areas, can complicate one another in unpredictable ways."
+
+https://www.newyorker.com/tech/annals-of-technology/the-hidden-costs-of-automated-thinking
+
+--------
+
+Magdalena Ridge Observatory
+-------------------------------
+http://www.mro.nmt.edu/
+
+--------
+
+How NASA Is Trying to Keep the Voyager 2 Satellite Alive
+------------------------------------------------------------
+https://news.yahoo.com/nasa-trying-keep-voyager-2-183200486.html
+
+-------
+
+Hubble Observes First Confirmed Interstellar Comet
+---------------------------------------------------
+https://hubblesite.org/contents/news-releases/2019/news-2019-53
+
+------
+
+Proper Positioning of a Focal Reducer on a Ritchey-Chrétien Cassegrain Telescope
+-------------------------------------------------------------------------------------------
+http://www.rc-astro.com/resources/reducer.html
+
+------
+
+Visão aguçada
+---------------
+Câmera espacial feita no Brasil poderá identificar a partir da órbita terrestre áreas com apenas 9 metros quadrados
+
+https://revistapesquisa.fapesp.br/2019/09/06/visao-agucada/
+
+---------------
+
+AOtools -- a Python package for adaptive optics modelling and analysis
+------------------------------------------------------------------------------
+https://arxiv.org/abs/1910.04414
+
+-------
+
+These photos are unreal
+--------------------------
+Fantastic article on the astrophotography hobbyists creating amazing photos of the universe in their own backyards by @Astro_Jonny 
+
+https://www.supercluster.com/editorial/how-to-explore-the-cosmos-from-your-own-backyard
+
+----------
+
+Software Risks Digest
+--------------------------
+https://catless.ncl.ac.uk/Risks/
+
+-------------
+
 Barry Lyndon
 -------------
 Barry Lyndon is a 1975 period drama film written and directed by Stanley Kubrick. https://en.wikipedia.org/wiki/Barry_Lyndon

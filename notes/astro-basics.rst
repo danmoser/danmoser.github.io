@@ -14,6 +14,14 @@ Em português
 .. figure:: ../figs/astro-basics_symmetries.jpg
     :align: center
 
+.. figure:: ../figs/astro-basics_starstrees1.jpg
+    :align: center
+
+.. figure:: ../figs/astro-basics_starstrees2.jpg
+    :align: center
+
+    https://www.lensculture.com/articles/ellie-davies-stars
+
 Links
 =======
 - Livro gratuito de Astronomia.
@@ -305,11 +313,14 @@ Pictures
 .. figure:: ../figs/astro-basics_eclipse2018.jpg
     :align: center
 
-    `Eclipse 2018 (MP4) <../movs/astro-basics_eclipse-2018.mp4>`_
+.. figure:: ../figs/astro-basics_paranal.jpg
+    :align: center
 
-    `Ondas multi-dimensionais (MP4) <../movs/astro-basics_physics_waves.mp4>`_
+.. figure:: ../figs/astro-basics_milky.jpg
+    :align: center
 
-    Seasons explained 
+.. figure:: ../figs/astro-basics_agua.jpg
+    :align: center
 
 .. figure:: ../figs/astro-basics_loop.gif
     :align: center
@@ -360,6 +371,9 @@ Pictures
 .. figure:: ../figs/astro-basics_Chemistry.jpg
     :align: center
 
+.. figure:: ../figs/astro-basics_quimica.jpg
+    :align: center
+
 .. figure:: ../figs/astro-basics_nebulae.jpg
     :align: center    
 
@@ -375,14 +389,20 @@ Pictures
 .. figure:: ../figs/astro-basics_lua.jpg
     :align: center
 
-Projeto Astronomia Para Todos - Batatais
+    Projeto Astronomia Para Todos - Batatais
 
-Nesta foto a Lua crescente foi fotografada no mesmo dia, quase na mesma hora, porém em hemisférios diferentes.
-Notem que a parte não iluminada está à esquerda em uma foto e à direita na outra.
-A posição da Lua não mudou em relação a Terra, o que mudou foi a localização dos observadores: um está acima da linha do equador e o outro abaixo.
-Um está no hemisfério norte e o outro no hemisfério sul. 
-A Lua orbita a Terra na altura da linha do equador, portanto, um observa a Lua de cima para baixo e o outro de baixo para cima.
-Se houvesse um terceiro observador situado bem em cima da linha do equador, sua foto mostraria a parte iluminada voltada para cima e a parte escura para baixo! Na fase minguante seria ao contrário: a parte iluminada para baixo. A hora está em UTC, sigla em inglês para Tempo Universal Coordenado.
+    Nesta foto a Lua crescente foi fotografada no mesmo dia, quase na mesma hora, porém em hemisférios diferentes.
+    Notem que a parte não iluminada está à esquerda em uma foto e à direita na outra.
+    A posição da Lua não mudou em relação a Terra, o que mudou foi a localização dos observadores: um está acima da linha do equador e o outro abaixo.
+    Um está no hemisfério norte e o outro no hemisfério sul. 
+    A Lua orbita a Terra na altura da linha do equador, portanto, um observa a Lua de cima para baixo e o outro de baixo para cima.
+    Se houvesse um terceiro observador situado bem em cima da linha do equador, sua foto mostraria a parte iluminada voltada para cima e a parte escura para baixo! Na fase minguante seria ao contrário: a parte iluminada para baixo. A hora está em UTC, sigla em inglês para Tempo Universal Coordenado.
+
+`Eclipse 2018 (MP4) <../movs/astro-basics_eclipse-2018.mp4>`_
+
+`Ondas multi-dimensionais (MP4) <../movs/astro-basics_physics_waves.mp4>`_
+
+`2 Trillion Galaxies (MP4) <../movs/astro-basics_Wonder_of_Science-2_trillion_galaxies.mp4>`_
 
 Sistema solar:
     

@@ -5,8 +5,317 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Tue, 08 Oct 2019 15:47:36 -0000</lastBuildDate>
+<lastBuildDate>Thu, 21 Nov 2019 15:38:18 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>Coding habits for data scientists</title>
+<description>Great article on how to improve the quality of your code on ML projects. #machinelearning #python #datascience </description>
+<link>http://danmoser.github.io/notes/astro-blog.html#coding-habits-for-data-scientists</link>
+</item>
+
+
+<item>
+<title>IAU e Unesco</title>
+<description>Em 10 de novembro a União Astronômica Internacional (IAU) e Unesco celebram também o Dia Mundial da Ciência pela Paz e pelo Desenvolvimento.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#iau-e-unesco</link>
+</item>
+
+
+<item>
+<title>Texto de astronomia na Pearson Brasil </title>
+<description>O texto publciado em https://blogs.oglobo.globo.com/ciencia-matematica/post/origem-dos-elementos-quimicos-da-tabela-periodica.html, como parte da contribuição SAB ao Blog Ciência &amp; Matemática, será incorporado, a partir de 2021, a livros de química da educação básica produzidos pela Pearson Education do Brasil. Vale lembrar que a Base Nacional Comum Curricular em vigor no Brasil é atravessada, em todos os níveis da educação básica, por temas de Astronomia.</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#texto-de-astronomia-na-pearson-brasil-</link>
+</item>
+
+
+<item>
+<title>Have we really measured gravitational waves? </title>
+<description>http://backreaction.blogspot.com/2019/11/have-we-really-measured-gravitational.html</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#have-we-really-measured-gravitational-waves-</link>
+</item>
+
+
+<item>
+<title>Turbo, Parula and Mathematica colormaps for Matplotlib</title>
+<description>https://astrodatascience.wordpress.com/2019/11/02/turbo-parula-and-mathematica-colormaps-for-matplotlib/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#turbo-parula-and-mathematica-colormaps-for-matplotlib</link>
+</item>
+
+
+<item>
+<title>Publish or perish: The cost of reformatting academic papers</title>
+<description>Even top researchers often must submit papers to multiple journals before acceptance -- and that means constantly reformatting their manuscripts. A new study quantifies just how time-consuming that process can be.
+
+https://scopeblog.stanford.edu/2019/10/30/publish-or-perish-the-cost-of-reformatting-academic-papers/?sf111577832=1</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#publish-or-perish-the-cost-of-reformatting-academic-papers</link>
+</item>
+
+
+<item>
+<title>Arcetri Observatory</title>
+<description>https://en.wikipedia.org/wiki/Arcetri_Observatory</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#arcetri-observatory</link>
+</item>
+
+
+<item>
+<title>Para explicar a complexidade</title>
+<description>Estudo que mapeou influência dos genes no comportamento homossexual destacou-se também pela estratégia de apresentação dos resultados.
+
+&quot;Mesmo reunidas, essas variantes [genéticas] explicariam o comportamento em 8% a 25% das pessoas analisadas -- nas demais, estariam presentes fatores de ordem cultural ou ambiental. &quot;
+
+https://revistapesquisa.fapesp.br/2019/10/07/para-explicar-a-complexidade/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#para-explicar-acomplexidade</link>
+</item>
+
+
+<item>
+<title>Machine Learning in Astronomy: a practical overview</title>
+<description>by @dalya_baron is very clearly written and well referenced. Recommended! 
+
+https://arxiv.org/abs/1904.07248</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#machine-learning-in-astronomy-a-practical-overview</link>
+</item>
+
+
+<item>
+<title>BINGO at PhD Comics</title>
+<description>https://twitter.com/PHDcomics/status/1191812814316265472?s=17</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#bingo-at-phd-comics</link>
+</item>
+
+
+<item>
+<title>Rube Goldberg machine</title>
+<description>https://en.wikipedia.org/wiki/Rube_Goldberg_machine
+
+
+2019-10</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#rube-goldberg-machine</link>
+</item>
+
+
+<item>
+<title>How To &quot;Work Smarter Not Harder&quot;: 3 Secrets From Research - Barking Up The Wrong Tree</title>
+<description>https://www.bakadesuyo.com/2018/02/work-smarter-not-harder-2/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#how-to-work-smarter-not-harder--secrets-from-research---barking-up-the-wrong-tree</link>
+</item>
+
+
+<item>
+<title>Entrepreneurship Workshop for Scientists and Engineers</title>
+<description>https://www.ictp-saifr.org/brazilian-entrepeneurship-workshop-for-scientists-and-engineers-2/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#entrepreneurship-workshop-for-scientists-and-engineers</link>
+</item>
+
+
+<item>
+<title>How the eerie drone of a &#x27;Star Trek&#x27; spaceship&#x27;s engine lulls people to sleep</title>
+<description>https://mashable.com/article/star-trek-white-noise-explained/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#how-the-eerie-drone-of-a-star-trek-spaceships-engine-lulls-people-to-sleep</link>
+</item>
+
+
+<item>
+<title>Most luminous known galaxy gobbles up its neighbours</title>
+<description>https://astronomynow.com/2018/11/18/most-luminous-known-galaxy-gobbles-up-its-neighbours/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#most-luminous-known-galaxy-gobbles-up-its-neighbours</link>
+</item>
+
+
+<item>
+<title>Science company in Santiago -- Dani Guzman</title>
+<description>http://www.andesscientific.com/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#science-company-in-santiago----dani-guzman</link>
+</item>
+
+
+<item>
+<title>The Importance of Telescope Training in Data Interpretation</title>
+<description>https://arxiv.org/abs/1907.05889</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-importance-of-telescope-training-in-data-interpretation</link>
+</item>
+
+
+<item>
+<title>Indicadores e Métricas: como medir o desempenho de pesquisa?</title>
+<description>Artigo da SIBi/USP sobre ferramentas e indicadores.
+
+O uso de indicadores e métricas de produção científica tornou-se prática rotineira na avaliação da qualidade e desempenho das atividades de pesquisa em renomadas universidades de pesquisa.
+
+https://www.sibi.usp.br/?p=39373</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#indicadores-e-metricas-como-medir-o-desempenho-de-pesquisa</link>
+</item>
+
+
+<item>
+<title>Free Open Source Project Management Software</title>
+<description>https://sourceforge.net/directory/business-enterprise/project-management/os:windows/os:linux/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#free-open-source-project-management-software</link>
+</item>
+
+
+<item>
+<title>The Secret to Being a Top Developer Is Building Things! Here’s a List of Fun Apps to Build!</title>
+<description>https://medium.com/better-programming/the-secret-to-being-a-top-developer-is-building-things-heres-a-list-of-fun-apps-to-build-aac61ac0736c</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-secret-to-being-a-top-developer-is-building-things-heres-a-list-of-fun-apps-to-build</link>
+</item>
+
+
+<item>
+<title>Evidências de manchas sugere revisão da teoria de envelopes de estrelas quentes</title>
+<description>https://arxiv.org/abs/1910.01584</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#evidencias-de-manchas-sugere-revisao-da-teoria-de-envelopes-de-estrelas-quentes</link>
+</item>
+
+
+<item>
+<title>The reason why the soviets did not land on Moon</title>
+<description>https://en.wikipedia.org/wiki/Sergei_Korolev</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-reason-why-the-soviets-did-not-land-on-moon</link>
+</item>
+
+
+<item>
+<title>Petroleum seep</title>
+<description>Brazilian northeast in 2019?
+
+https://en.wikipedia.org/wiki/Petroleum_seep</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#petroleum-seep</link>
+</item>
+
+
+<item>
+<title>AAVSO AVSpec.</title>
+<description>Increase Astronomical Discoveries by Storing Your Spectroscopic Observations with AVSpec.
+
+Full description and access to the database available via https://www.aavso.org/new-spectroscopic-database
+
+#variableobjects #variablestars</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#aavso-avspec</link>
+</item>
+
+
+<item>
+<title>Embraer CBA 123 Vector</title>
+<description>- https://historicalcenter.embraer.com/global/en/cba-123-vector
+- https://en.wikipedia.org/wiki/Embraer/FMA_CBA_123_Vector
+
+Darwin expeditions</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#embraer-cba--vector</link>
+</item>
+
+
+<item>
+<title>Gemini Observatory Captures Multicolor Image of First-ever Interstellar Comet</title>
+<description>http://www.gemini.edu/node/21240</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#gemini-observatory-captures-multicolor-image-of-first-ever-interstellar-comet</link>
+</item>
+
+
+<item>
+<title>Best Systems Engineering Papers of 2018</title>
+<description>https://onlinelibrary.wiley.com/doi/toc/10.1002/(ISSN)1520-6858.Best-Papers-of-2018</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#best-systems-engineering-papers-of-</link>
+</item>
+
+
+<item>
+<title>Programming Sucks </title>
+<description>https://www.stilldrinking.org/
+
+https://www.stilldrinking.org/programming-sucks</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#programming-sucks-</link>
+</item>
+
+
+<item>
+<title>Middle-Author Publications: Do They Matter for Promotion?</title>
+<description>Even with middle-author publications on the rise, &quot;they count for promotion, but they don&#x27;t count as much as first- and last-author publications,&quot; Jackson notes. &quot;Just like book chapters and review articles, they count, but not as much as original research articles.&quot;
+
+https://www.hopkinsmedicine.org/research/advancements-in-research/fundamentals/in-depth/middle-author-publications-do-they-matter-for-promotion</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#middle-author-publications-do-they-matter-for-promotion</link>
+</item>
+
+
+<item>
+<title>NG Best pictures of the hidden microscopic world</title>
+<description>https://www.nationalgeographic.com/science/2019/10/see-years-best-pictures-microscopic-nikon-small-world-2019/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#ng-best-pictures-of-the-hidden-microscopic-world</link>
+</item>
+
+
+<item>
+<title>The Hidden Costs of Automated Thinking</title>
+<description>&quot;Most machine-learning systems don&#x27;t uncover causal mechanisms. They are statistical-correlation engines. [..] they don&#x27;t &#x27;think&#x27; in any colloquial sense of the word—they only answer. As we [..] integrate their insights into our lives, we will, [..] rack up more intellectual debt...
+
+&quot;Answers without theory, found and deployed in different areas, can complicate one another in unpredictable ways.&quot;
+
+https://www.newyorker.com/tech/annals-of-technology/the-hidden-costs-of-automated-thinking</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-hidden-costs-of-automated-thinking</link>
+</item>
+
+
+<item>
+<title>Magdalena Ridge Observatory</title>
+<description>http://www.mro.nmt.edu/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#magdalena-ridge-observatory</link>
+</item>
+
+
+<item>
+<title>How NASA Is Trying to Keep the Voyager 2 Satellite Alive</title>
+<description>https://news.yahoo.com/nasa-trying-keep-voyager-2-183200486.html</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#how-nasa-is-trying-to-keep-the-voyager--satellite-alive</link>
+</item>
+
+
+<item>
+<title>Hubble Observes First Confirmed Interstellar Comet</title>
+<description>https://hubblesite.org/contents/news-releases/2019/news-2019-53</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#hubble-observes-first-confirmed-interstellar-comet</link>
+</item>
+
+
+<item>
+<title>Proper Positioning of a Focal Reducer on a Ritchey-Chrétien Cassegrain Telescope</title>
+<description>http://www.rc-astro.com/resources/reducer.html</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#proper-positioning-of-a-focal-reducer-on-a-ritchey-chretien-cassegrain-telescope</link>
+</item>
+
+
+<item>
+<title>Visão aguçada</title>
+<description>Câmera espacial feita no Brasil poderá identificar a partir da órbita terrestre áreas com apenas 9 metros quadrados
+
+https://revistapesquisa.fapesp.br/2019/09/06/visao-agucada/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#visao-agucada</link>
+</item>
+
+
+<item>
+<title>AOtools -- a Python package for adaptive optics modelling and analysis</title>
+<description>https://arxiv.org/abs/1910.04414</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#aotools----a-python-package-for-adaptive-optics-modelling-and-analysis</link>
+</item>
+
+
+<item>
+<title>These photos are unreal</title>
+<description>Fantastic article on the astrophotography hobbyists creating amazing photos of the universe in their own backyards by @Astro_Jonny 
+
+https://www.supercluster.com/editorial/how-to-explore-the-cosmos-from-your-own-backyard</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#these-photos-are-unreal</link>
+</item>
+
+
+<item>
+<title>Software Risks Digest</title>
+<description>https://catless.ncl.ac.uk/Risks/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#software-risks-digest</link>
+</item>
 
 
 <item>

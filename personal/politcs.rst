@@ -308,6 +308,13 @@ As grandes questões brasileiras
 - Um conflito só se instala quando o apaziguamento é cancelado
 - `A Progressividade na Tributação Brasileira (PDF) <../static/politcs_progressividade-imposto.pdf>`_
 
+Termos
+=======
+- Esquerda festiva (e seus derivativos: cirandeira, rihappy, #maisamorporfavor entre outros): estamos falando de um discurso que parte, localizadamente, de uma minoria de classe média, branca e bem educada, com acesso a melhores instrumentos e aparelhos de cultura e educação, que se identifica com um discurso de esquerda (pelo bem comum, com perspectiva de igualdade e solidariedade). Mas há uma parte desse segmento que, no afã e inseguranças de posição, prefere (sim, porque isso é uma escolha) utilizar esses mesmos acessos e espaços para construir uma rifa social, e rifar corpos e vivências a partir de sua percepção perimetral do que a realidade convém. Essa rifa costuma colocar na mesma linha do jogo grupos marcados pelo que eles chamam de identitários, como mulheres, negros, população LGBT e imigrantes. E cruza, de maneira absolutamente arbitrária e socialmente insensível, com outros grupos que são seus adversários políticos, como novos movimentos jovens de direita etc. A comparação, feita com grande assimetria, é sempre pela ideia da tática: a suposta agressividade do discurso dos grupos identitários seria comparada a dos grupos de direita, ou seja, ambos usariam o ódio como forma de enfrentamento no debate público. http://www.justificando.com/2017/09/15/esquerda-festiva-que-pula-corpos/ "O MBL, está acostumado com a esquerda cirandeira, aquela que apanha, é assediada e ao invés de responder à altura, busca a solução nas instituições burguesas, no judiciário direitista e, até mesmo, pasmem na ingenuidade, fazendo boletim de ocorrência na própria polícia, guarda-costas do MBL."
+
+- Esquerda caviar: é um termo pejorativo utilizado para descrever alguém que diz ser um socialista, mas que leva uma vida de luxos e glamour. O termo indica que os membros da esquerda caviar não são sinceros em suas crenças, uma vez que prega algo (uma sociedade socialista) e, de maneira hipócrita, faz outro completamente diferente (beneficia-se do sistema capitalista). Termos análogos podem ser champagne socialist no Reino Unido, Limousine Liberal nos Estados Unidos, radical chic em Itália, Chardonnay socialist na Austrália, Salonkommunist (comunista de salão) na Alemanha, red set no Chile, ou esquerda festiva no Brasil.
+
+
 Latin America
 ***************
 Personalities
