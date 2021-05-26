@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>Astrophysics Topics</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="astrophysics-topics">
+<h1 class="title">Astrophysics Topics</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#absolute-flux-units-and-magnitudes" id="id1">Absolute flux units and magnitudes</a></li>
+<li><a class="reference internal" href="#meetings" id="id2">Meetings</a></li>
+<li><a class="reference internal" href="#variable-stars" id="id3">Variable stars</a><ul>
+<li><a class="reference internal" href="#chart" id="id4">Chart</a></li>
+<li><a class="reference internal" href="#nomenclature" id="id5">Nomenclature</a><ul>
+<li><a class="reference internal" href="#intrinsic-variabilities" id="id6">Intrinsic variabilities</a><ul>
+<li><a class="reference internal" href="#pulsation" id="id7">Pulsation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extrinsic-variabilities" id="id8">Extrinsic variabilities</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#shape-missions" id="id9">Shape missions</a></li>
+<li><a class="reference internal" href="#peculiar-stars" id="id10">Peculiar stars</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#astrophysical-disks" id="id11">Astrophysical disks</a></li>
+<li><a class="reference internal" href="#observational" id="id12">Observational</a><ul>
+<li><a class="reference internal" href="#eso-periods" id="id13">ESO Periods</a></li>
+<li><a class="reference internal" href="#opd-periods" id="id14">OPD Periods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#spectro-astrometry" id="id15">Spectro-astrometry</a></li>
+<li><a class="reference internal" href="#about-fluxes-and-conversions" id="id16">About fluxes and conversions</a></li>
+<li><a class="reference internal" href="#interferometers" id="id17">Interferometers</a><ul>
+<li><a class="reference internal" href="#eso-interferometers" id="id18">ESO interferometers</a></li>
+<li><a class="reference internal" href="#chara-interferometers" id="id19">CHARA interferometers</a></li>
+<li><a class="reference internal" href="#other-interferometers" id="id20">Other interferometers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#organize" id="id21">Organize</a><ul>
+<li><a class="reference internal" href="#links" id="id22">Links</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#statistics" id="id23">Statistics</a></li>
+<li><a class="reference internal" href="#vo" id="id24">VO</a></li>
+</ul>
+</div>
+<div class="section" id="absolute-flux-units-and-magnitudes">
+<h1><a class="toc-backref" href="#id1">Absolute flux units and magnitudes</a></h1>
+<p>...</p>
+</div>
+<div class="section" id="meetings">
+<h1><a class="toc-backref" href="#id2">Meetings</a></h1>
+<p><a class="reference external" href="http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/meetings/">http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/meetings/</a></p>
+</div>
+<div class="section" id="variable-stars">
+<h1><a class="toc-backref" href="#id3">Variable stars</a></h1>
+<p>Variable star are defined as &quot;stars having an apparent property changing with time&quot; (usually their brightness). These properties can be:
+- intrinsic: stellar luminosity actually changes (e.g., pulsations);
+- extrinsic: owing to changes in the amount of light reaching Earth (e.g., eclipses).</p>
+<p><em>All</em> stars have some variation in luminosity. The Sun's luminosity varies about 0.1% over a <em>solar cycle</em>.</p>
+<p>The first historical variable star is the Algol system, known nowadays to be a eclipsing binary system. Its variability was record in the old Egypt. In the modern times, it was notes the variability of the Mira star (Omicron Ceti) in 1638.</p>
+<p>The famous <em>General Catalogue of Variable Stars</em> was the first list of variable stars created by the Academy of Sciences of the USSR, and continuously been updated by Russian researchers. In 2008, 46000 variable stars were known in the Milky Way, 10000 in other galaxies and a list of 10000 candidates exist.</p>
+<p>The variabilities are classified as photometric or spectroscopic. They can be Periodical, Semiperiodical, Irregular or Unique. Examples: changes in velocities (spec. shifts) are a signal of binary system; abnormal emission or absorption lines indicate circumstellar activity and/or magnetic field...</p>
+<div class="section" id="chart">
+<h2><a class="toc-backref" href="#id4">Chart</a></h2>
+<p>Dr Ashley J. Ruiter (&#64;growzchilepeps):
+&quot;Chien-Hsiu Lee explains the work being done by ANTARES to make sure current ZTF and future LSST data are distributed for the optimal (for those data) streams (research interests). #iaus357 &#64;LSST &#64;ztfsurvey I am learning about brokers! :)&quot;</p>
+<div class="figure align-center">
+<img alt="../figs/astro-ph_vars.jpg" src="../figs/astro-ph_vars.jpg" />
+</div>
+</div>
+<div class="section" id="nomenclature">
+<h2><a class="toc-backref" href="#id5">Nomenclature</a></h2>
+<p>In a given constellation, the first variable star discovered were designates with the letter <em>R</em> (and continuously until <em>Z</em>). Then, <em>RR</em>...*RZ*, <em>SS</em>...*ZZ*. Then <em>AA</em>...*AZ*, <em>BB</em>...*QZ*, with J omitted. After exhausted the total of 334 possibilities, stars as <em>V335</em>, <em>V...</em>.</p>
+<p>The subgroups of variabilities are divided according to their <em>prototype</em>.</p>
+<div class="section" id="intrinsic-variabilities">
+<h3><a class="toc-backref" href="#id6">Intrinsic variabilities</a></h3>
+<ul class="simple">
+<li>Pulsation, Eruption, Cataclysmic/Explosive...</li>
+</ul>
+<div class="section" id="pulsation">
+<h4><a class="toc-backref" href="#id7">Pulsation</a></h4>
+<ul class="simple">
+<li>Radial or non-radial</li>
+<li><dl class="first docutils">
+<dt>Fundamental frequency (<span class="formula"><i>f</i><sub>0</sub></span>) determining the period.</dt>
+<dd><ul class="first last">
+<li>Harmonic or overtone (<span class="formula"><i>n</i> &gt; 1</span>)</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>It the variability has a complex shape (no clear frequencies), it is called irregular or stochastic.</li>
+</ul>
+<p>The modes of pulsations can be:</p>
+<ul class="simple">
+<li>p-mode = pressure (or acoustic) mode, driven by internal pressure fluctuations within a star; their dynamics being determined by the local speed of sound. Shape: reflections at stellar surface.</li>
+<li>g-mode = gravity mode, driven by buoyancy (aka restoring force). Shape: elliptical movements around the stellar core.</li>
+<li>f-mode = surface gravity modes. Shape: akin to ocean waves along the stellar surface.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="extrinsic-variabilities">
+<h3><a class="toc-backref" href="#id8">Extrinsic variabilities</a></h3>
+<ul class="simple">
+<li>Eclipsing, multiple stars (rv)</li>
+<li>Rotating variables (&quot;spots&quot;)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="shape-missions">
+<h2><a class="toc-backref" href="#id9">Shape missions</a></h2>
+<ul class="simple">
+<li>MOST</li>
+<li>CoRoT</li>
+<li>WIRE</li>
+<li>SOHO (exclusive to the Sun)</li>
+<li>Kepler</li>
+<li>BRITE (a constellation of six nanosatellites. Sizes: cube os 20 cm!)</li>
+</ul>
+</div>
+<div class="section" id="peculiar-stars">
+<h2><a class="toc-backref" href="#id10">Peculiar stars</a></h2>
+<p>Excellent reference is <a class="reference external" href="http://www.astrosurf.com/buil/us/peculiar.htm">http://www.astrosurf.com/buil/us/peculiar.htm</a>, were there are lists of bright Bp/Ap and Herbig Be/Ae stars.</p>
+</div>
+</div>
+<div class="section" id="astrophysical-disks">
+<h1><a class="toc-backref" href="#id11">Astrophysical disks</a></h1>
+<p><a class="reference external" href="http://www.damtp.cam.ac.uk/user/hl278/DAD.html">http://www.damtp.cam.ac.uk/user/hl278/DAD.html</a></p>
+</div>
+<div class="section" id="observational">
+<h1><a class="toc-backref" href="#id12">Observational</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">mes</th>
+<th class="head">RA0</th>
+<th class="head">RAm</th>
+<th class="head">RAf</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Jan</td>
+<td>00</td>
+<td>08</td>
+<td>16</td>
+</tr>
+<tr><td>Fev</td>
+<td>02</td>
+<td>10</td>
+<td>18</td>
+</tr>
+<tr><td>Mar</td>
+<td>04</td>
+<td>12</td>
+<td>20</td>
+</tr>
+<tr><td>Abr</td>
+<td>06</td>
+<td>14</td>
+<td>22</td>
+</tr>
+<tr><td>Mai</td>
+<td>08</td>
+<td>16</td>
+<td>00</td>
+</tr>
+<tr><td>Jun</td>
+<td>10</td>
+<td>18</td>
+<td>02</td>
+</tr>
+<tr><td>Jul</td>
+<td>12</td>
+<td>20</td>
+<td>04</td>
+</tr>
+<tr><td>Ago</td>
+<td>14</td>
+<td>18</td>
+<td>06</td>
+</tr>
+<tr><td>Set</td>
+<td>16</td>
+<td>00</td>
+<td>08</td>
+</tr>
+<tr><td>Out</td>
+<td>18</td>
+<td>02</td>
+<td>10</td>
+</tr>
+<tr><td>Nov</td>
+<td>20</td>
+<td>04</td>
+<td>12</td>
+</tr>
+<tr><td>Dez</td>
+<td>22</td>
+<td>06</td>
+<td>14</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="eso-periods">
+<h2><a class="toc-backref" href="#id13">ESO Periods</a></h2>
+<ul>
+<li><p class="first">Period Odd  - 01 Apr to 30 Sep (RA limits: ~10h to ~02h)</p>
+<blockquote>
+<p><em>deadline</em> ~ 01 Oct</p>
+</blockquote>
+</li>
+<li><p class="first">Period Even - 01 Oct to 31 Mar (RA limits: ~22h to ~14h)</p>
+<blockquote>
+<p><em>deadline</em> ~ 01 Apr</p>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="opd-periods">
+<h2><a class="toc-backref" href="#id14">OPD Periods</a></h2>
+<ul>
+<li><p class="first">Período Verão - 01 set a 28* fev (RA limits ~20h a ~12h)</p>
+<blockquote>
+<p><em>Limite</em> ~ 30 abr</p>
+</blockquote>
+</li>
+<li><p class="first">Período Inverno - 01 mar a 31 ago (RA limits: ~08h a ~00h)</p>
+<blockquote>
+<p><em>Limite</em> ~ 31 oct</p>
+</blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="spectro-astrometry">
+<h1><a class="toc-backref" href="#id15">Spectro-astrometry</a></h1>
+<p>The spectro-astrometric technique is a method for studying the spatial structure of astronomical sources on scales well below the normal limit on resolution set by the seeing disk size or the diffraction limit. It relies on the fact that the relative position of a source at two or more wavelengths can be measured to an accuracy limited only be photon statistics, if the measurements are simultaneous.</p>
+<p>The technique is being used for the study of structure in pre-main-sequence stars, where it can be used to detect binary companions and to study the outflows from the stars. It is also being used to study the structure of the narrow line region in active galactic nuclei.</p>
+</div>
+<div class="section" id="about-fluxes-and-conversions">
+<h1><a class="toc-backref" href="#id16">About fluxes and conversions</a></h1>
+<p>The relation of Black Body curves are:</p>
+<div class="formula">
+<i>I</i>(<i>λ</i>, <i>T</i>)<i>d</i><i>λ</i> = <i>I</i>(<i>ν</i>, <i>T</i>)<i>d</i><i>ν</i>
+</div>
+<p>And convertion of units:</p>
+<pre class="literal-block">
+[Y erg/cm^2/s/Hz]dHz = [X1 erg/cm^2/s/A]dA
+dHz/dA = &quot;(c/A)'dA&quot; = -c/(A)^2
+[Y erg/cm^2/s/Hz] = dA/dHz * [X1 erg/cm^2/s/A]
+[Y erg/cm^2/s/Hz] = (1/c) * [X2 A]^2 * [X1 erg/cm^2/s/A]
+# c = 3e18 A/s
+[Y erg/cm^2/s/Hz] = 3.335641e19 * [X2 A]^2 * [X1 erg/cm^2/s/A]
+</pre>
+<pre class="literal-block">
+# Hdust models: (ergs/s/cm2/mu) * 1e-4 = (ergs/s/cm2/A)
+</pre>
+</div>
+<div class="section" id="interferometers">
+<h1><a class="toc-backref" href="#id17">Interferometers</a></h1>
+<div class="section" id="eso-interferometers">
+<h2><a class="toc-backref" href="#id18">ESO interferometers</a></h2>
+<ul class="simple">
+<li>VINCI: First VLTI generation. ? BAND, 2 telescopes, ? resolution</li>
+<li>MIDI: Second VLTI generation. ? BAND, 2 telescopes, ? resolution</li>
+<li>AMBER: JHK bands, 3 telescopes. R=(30?, 1500 and 12000) resolution modes. PROBLEMS with absolute visibilities calibration.</li>
+<li>PIONIER: H band. 4 telescopes. 3, 9 channels (resolution)</li>
+<li>MATISSE: ?</li>
+<li>GRAVITY: ?</li>
+</ul>
+</div>
+<div class="section" id="chara-interferometers">
+<h2><a class="toc-backref" href="#id19">CHARA interferometers</a></h2>
+<ul class="simple">
+<li>ALOHA: H band. 4? telescopes. R=1250-9300? (resolution)</li>
+<li>MIRC: H band?</li>
+<li>VEGA: ?</li>
+</ul>
+</div>
+<div class="section" id="other-interferometers">
+<h2><a class="toc-backref" href="#id20">Other interferometers</a></h2>
+<ul class="simple">
+<li>NPOI: Kenneth J. Johnston, Navy Precision Optical Interferometer. V band (Halpha).?</li>
+</ul>
+</div>
+</div>
+<div class="section" id="organize">
+<h1><a class="toc-backref" href="#id21">Organize</a></h1>
+<p><a class="reference external" href="http://www.aps.org/publications/apsnews/201501/stories.cfm">http://www.aps.org/publications/apsnews/201501/stories.cfm</a></p>
+<p><a class="reference external" href="http://www.osti.gov/accomplishments/smoot.html">http://www.osti.gov/accomplishments/smoot.html</a></p>
+<p><a class="reference external" href="http://news.ucsc.edu/2014/10/exoplanet-atmosphere.html">http://news.ucsc.edu/2014/10/exoplanet-atmosphere.html</a></p>
+<p><a class="reference external" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/">http://www.nobelprize.org/nobel_prizes/physics/laureates/</a></p>
+<p><a class="reference external" href="http://www.space.com/19425-astronomy-prizes-scientists-awards.html">http://www.space.com/19425-astronomy-prizes-scientists-awards.html</a></p>
+<p><a class="reference external" href="http://www.aps.org/publications/apsnews/201402/newsmakers.cfm">http://www.aps.org/publications/apsnews/201402/newsmakers.cfm</a></p>
+<div class="section" id="links">
+<h2><a class="toc-backref" href="#id22">Links</a></h2>
+<dl class="docutils">
+<dt>Astronomical Imaging using Polarizing Filters and Stokes Parameter Imaging Technique</dt>
+<dd><a class="reference external" href="http://narrowbandimaging.com">http://narrowbandimaging.com</a></dd>
+</dl>
+</div>
+</div>
+<div class="section" id="statistics">
+<h1><a class="toc-backref" href="#id23">Statistics</a></h1>
+<p><a class="reference external" href="http://astronomy.swin.edu.au/~cblake/stats.html">http://astronomy.swin.edu.au/~cblake/stats.html</a></p>
+</div>
+<div class="section" id="vo">
+<h1><a class="toc-backref" href="#id24">VO</a></h1>
+<dl class="docutils">
+<dt>ESA Sky:</dt>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="http://arxiv.org/abs/1512.00842">http://arxiv.org/abs/1512.00842</a></li>
+<li><a class="reference external" href="http://archives.esac.esa.int/esasky-beta/">http://archives.esac.esa.int/esasky-beta/</a></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+</body>
+</html>

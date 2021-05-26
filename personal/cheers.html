@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>cheers.rst</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#beer-space" id="id1">Beer space</a><ul>
+<li><a class="reference internal" href="#untappd-activities" id="id2">Untappd activities</a><ul>
+<li><a class="reference internal" href="#badges-info" id="id3">Badges info</a></li>
+<li><a class="reference internal" href="#beers" id="id4">Beers</a><ul>
+<li><a class="reference internal" href="#kuntsmann" id="id5">Kuntsmann</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#country-list-level-3" id="id6">Country list (level 3)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#types" id="id7">Types</a><ul>
+<li><a class="reference internal" href="#ales" id="id8">Ales</a><ul>
+<li><a class="reference internal" href="#the-difference-between-a-pale-ale-and-an-ipa" id="id9">The Difference Between A Pale Ale And An IPA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lagers" id="id10">Lagers</a><ul>
+<li><a class="reference internal" href="#lager-vs-pilsen" id="id11">Lager vs. Pilsen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#useful-info" id="id12">Useful Info</a><ul>
+<li><a class="reference internal" href="#terms" id="id13">Terms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wine-space" id="id14">Wine space</a><ul>
+<li><a class="reference internal" href="#vivino-activities" id="id15">Vivino activities</a></li>
+<li><a class="reference internal" href="#blog" id="id16">Blog</a></li>
+<li><a class="reference internal" href="#vinhos-tintos" id="id17">Vinhos tintos</a><ul>
+<li><a class="reference internal" href="#cepas-chilenas" id="id18">Cepas chilenas</a></li>
+<li><a class="reference internal" href="#cepas-argentinas" id="id19">Cepas argentinas</a></li>
+<li><a class="reference internal" href="#cepas-majoritariamente-francesas" id="id20">Cepas majoritariamente francesas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vinhos-brancos" id="id21">Vinhos brancos</a></li>
+<li><a class="reference internal" href="#vinhos-rose" id="id22">Vinhos rosé</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=zP21LH3T9yQ">The Science of Alcohol: From Beer to Bourbon</a></p>
+<div class="section" id="beer-space">
+<h1><a class="toc-backref" href="#id1">Beer space</a></h1>
+<div class="section" id="untappd-activities">
+<h2><a class="toc-backref" href="#id2">Untappd activities</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://untappd.com/user/dmoser">https://untappd.com/user/dmoser</a></li>
+<li>via <a class="reference external" href="https://untappd.com/rss/user/dmoser?key=de344df62d9587d6227f8bead7a90d3c">RSS</a></li>
+</ul>
+<div class="section" id="badges-info">
+<h3><a class="toc-backref" href="#id3">Badges info</a></h3>
+<ul class="simple">
+<li>12 beers in 1 day</li>
+<li>3 light americans</li>
+<li><span class="strike">15x same beer w/30d</span></li>
+<li>Birthday check-in</li>
+<li><span class="strike">10x comments w/30d</span></li>
+<li><span class="strike">&quot;Blonde&quot; beers</span></li>
+<li>5 &quot;pints&quot; between 4PM-6PM w/30d</li>
+<li>5 checks between 12PM-2PM w/30d, Monday to Friday only</li>
+<li><span class="strike">Dubbel/Triplel styles (&quot;Belgium&quot;)</span></li>
+<li><span class="strike">10 beers of the same brewery w/30d</span></li>
+<li>Fruit beers</li>
+<li><span class="strike">New Brew Thursday - 3 thursdays w/30d</span></li>
+</ul>
+</div>
+<div class="section" id="beers">
+<h3><a class="toc-backref" href="#id4">Beers</a></h3>
+<div class="section" id="kuntsmann">
+<h4><a class="toc-backref" href="#id5">Kuntsmann</a></h4>
+<ul class="simple">
+<li>Trigo</li>
+<li><span class="strike">Lager</span></li>
+<li><span class="strike">Lager sin Filtrar</span></li>
+<li><span class="strike">Torobayo</span></li>
+<li><span class="strike">Bock</span></li>
+<li><span class="strike">Original Anwandter Rezept</span></li>
+<li>Alkoholfrei</li>
+<li><span class="strike">Honig Ale</span></li>
+<li>Heidelbeere</li>
+<li><span class="strike">Gran Torobayo</span></li>
+</ul>
+</div>
+</div>
+<div class="section" id="country-list-level-3">
+<h3><a class="toc-backref" href="#id6">Country list (level 3)</a></h3>
+<ol class="arabic simple">
+<li>Argentina</li>
+<li>Australia</li>
+<li>Austria</li>
+<li>Belgium</li>
+<li>Bolivia</li>
+<li>Brazil</li>
+<li>Canada</li>
+<li>Chile</li>
+<li>China</li>
+<li>Czech Rep.</li>
+<li>Denmark</li>
+<li>England</li>
+<li>Germany</li>
+<li>Holland</li>
+<li>Ireland</li>
+<li>Mexico</li>
+<li>Peru</li>
+<li>Russia</li>
+<li>Spain</li>
+<li>USA</li>
+<li>?</li>
+</ol>
+</div>
+</div>
+<div class="section" id="types">
+<h2><a class="toc-backref" href="#id7">Types</a></h2>
+<p><a class="reference external" href="http://bendbrewfest.com/beers.html">http://bendbrewfest.com/beers.html</a></p>
+<p>All beers, no matter how great or small, are made from a basic combination of water, malts, hops (<em>lúpulo</em>), and yeast (<em>fermento</em>). So then what really distinguishes an <strong>ale</strong> from a <strong>lager</strong>?</p>
+<p>The difference is yeast. Not whether or not it's used, but the specific type. But from this relatively small variant comes a whole slew of changes and differences that make these two beers very unique.</p>
+<p>Is one style better than the other? Definitely not. It's all a matter of personal taste or what we're craving at that particular moment.</p>
+<div class="section" id="ales">
+<h3><a class="toc-backref" href="#id8">Ales</a></h3>
+<p>Ales are brewed (<em>fermentadas</em>) with a top-fermenting yeast that thrives at mid-range room temperatures. For this reason, ales are typically stored between 60o and 75o Fahrenheit during the fermentation stage. This type of yeast and the fermentation temperature tend to give ales a fruitier and spicier flavor than lagers. In general, ales are more robust and complex. Common styles of ale include <strong>pale ale</strong>, <strong>India pale ale</strong>, <strong>amber ale</strong>, <strong>porters</strong>, and <strong>stouts</strong>.</p>
+<ul class="simple">
+<li>Stout: dark beer made using roasted malt or roasted barley (<em>cevada</em>).  Come in five major categories: Irish Dry, Sweet (Cream), Oatmeal, Foreign and Imperial. Stouts are black in color with the exception of oatmeal and imperial stouts, which can vary from dark copper to black.</li>
+<li>Porter: (a kind of stout) developed in London from well-hopped (<em>alto lúpulo</em>) beers made from brown malt.</li>
+<li>IPA: strong and hoppy beers.</li>
+</ul>
+<div class="section" id="the-difference-between-a-pale-ale-and-an-ipa">
+<h4><a class="toc-backref" href="#id9">The Difference Between A Pale Ale And An IPA</a></h4>
+<p><a class="reference external" href="http://vinepair.com/wine-blog/difference-pale-ale-ipa/">http://vinepair.com/wine-blog/difference-pale-ale-ipa/</a></p>
+<p>There are no two more prominent styles of beers that beer geeks and brewers - both home and professional - obsess over more than Pale Ale and India Pale Ale - better known as IPA - but what's the actual difference between these two hoppy beers, and how did both become so popular in the craft (<em>ofício</em>) community? The answer to both questions lies in some truth, with a bit of legend and myth thrown in, as well as a lot of good old fashioned American pride.</p>
+<p>The first time the term Pale Ale was used in regards to describing a style of beer goes way back to 1703 when a batch of beers that were being made in England utilized malt that happened to be roasted with coke (the coke we're referring to here is a fuel derived from coal that has very little impurities and a very high carbon content, so it doesn't create much smoke, creating a dry heat rather than a smoky heat). The resulting roasted malt was lighter because of the lack of smoke and it wound up creating beers that were lighter in color than others on the market at the time, resulting in the name Pale Ale, since the ale in the glass was visibly lighter when placed next to the other beers at the bar. In addition to the lighter color, because the resulting malt had a milder flavor, the hops were able to shine through more prominently, thus Pale Ales came to be associated not only with their pale color, but their mild (<em>suave</em>) hop flavor as well.</p>
+<p>Pale Ales became quite popular in Britain, where customers would often also refer to them as <strong>Bitters</strong>, due to the hop profile, and they remained the only hoppy beers on the market for a little over 100 years. That is until 1829, when we have the first record of the name IPA being used as a descriptor for a hoppy beer specifically prepared for India that appeared in an ad in the Sydney Gazette And New South Wales Advertiser. This is where much of the legend and myth surrounding the birth of the IPA really takes place.</p>
+<p>As legend has it, prior to that ad appearing in the newspaper for this new style of beer, Brits who had ventured to their new Indian colony were becoming homesick for the beers from back home and so they began to request that their favorite Pale Ales be shipped halfway across the world to India. Fearing the beers would not make the journey and would ultimately arrive sour (<em>azedo, ácido</em>) and flat, it's said brewers fortified them with a much stronger backbone of hops and alcohol, protecting them on their six-month journey across the sea. When they arrived, the beers not only survived the journey, but many preferred their hoppier flavor. And thus, the IPA was born.</p>
+<p>The reason this tale may only be a legend is because at the same time period, stouts and porters were also shipped to both India and America from England, and neither of these styles had their hops increased, yet both survived the journey just fine. This has caused some people to call into question whether this tale is simply a nice way to easily explain how beers called IPAs wound up with stronger hop characteristics than their Pale Ale siblings.</p>
+<p>However IPAs came to be, they really took off during America's current craft beer boom. Starting around 1980, Sierra Nevada began experimenting with the classic Pale Ale style using American hops, which were brighter, fruitier and more resinous than their English counterparts. They released their Sierra Nevada Pale Ale in 1981 and the style took off. The result was an American Pale Ale that was hoppy and distinctly American, due to its inclusion of the American hops - Cascade being the most prevalent. When brewers naturally sought to make a beer even more hoppier than the Pale Ale, of course they referred to it as an IPA.</p>
+<p>So all an IPA technically is, is a more assertively hopped and stronger version of a Pale Ale, yet what that actually means differs depending on the brewer making both beverages. While a Pale Ale is the milder version of a brewer's IPA, the lines definitely blur and you can have a Pale Ale by one brewer than seems just as hoppy as the IPA of another; it all depends on what that brewer's definition of the two terms, since there are no formal rules.</p>
+<p>To make things a bit more confusing, American styles of IPAs also traditionally differ depending on which coast of the United States your beer happened to have been brewed on. West Coast IPAs, which are typically the IPAs most people seem to prefer, are known for their much more intense hop characteristics - paying homage to the plethora of fresh hops available to brewers in the Pacific Northwest. IPAs made on the East Coast, on the other hand, traditionally use a stronger malt presence to bring more balance to the hop intensity.</p>
+</div>
+</div>
+<div class="section" id="lagers">
+<h3><a class="toc-backref" href="#id10">Lagers</a></h3>
+<p>By contrast, lagers are made with bottom-fermenting yeast that work best at cooler temperatures, between 35o and 55o Fahrenheit. Fermentation happens more slowly and the beer is more stable, so it can be stored (or &quot;lagered&quot;) for longer than ales. This yeast tends to have less presence in the finished beer. As compared to ales, lagers have a cleaner and crisper quality with emphasis on the hops and malt flavors. The lager family includes <strong>pilsners</strong>, <strong>bocks</strong>, and <strong>dunkels</strong>.</p>
+<div class="section" id="lager-vs-pilsen">
+<h4><a class="toc-backref" href="#id11">Lager vs. Pilsen</a></h4>
+<p>Na verdade as Lagers americanas (i.e., cervejas comuns brasileiras) foram feitas com base na receita original de cervejas Pilsens, porém elas usam outros ingredientes para baratear o custo de produção, nesse caso, milho ou arroz ou açúcar ou uma mistura do que for mais barato na cotação do momento. Isso com certeza acaba prejudicando não só o sabor, como a qualidade do produto final. Seria mais ou menos como se acrescentássemos &quot;suco tang&quot; de uva pra aumentar a produção de um vinho, ou diluir álcool de posto em cachaça...</p>
+</div>
+</div>
+</div>
+<div class="section" id="useful-info">
+<h2><a class="toc-backref" href="#id12">Useful Info</a></h2>
+<div class="section" id="terms">
+<h3><a class="toc-backref" href="#id13">Terms</a></h3>
+<ul class="simple">
+<li>Hefe: (German) Means &quot;with yeast&quot;. Applies to unfiltered, or bottle-conditioned beers.</li>
+<li>Cask or Bottle-Conditioning: Beer is put into kegs (casks) or bottles with still-active yeasts before fermentation has finished, sometimes with the addition of new fermentables (sugars) so it may naturally carbonate and cask-condition under pressure prior to being dispensed for consumption.</li>
+<li>Hops: A climbing vine (<em>Humulus lupulus</em>) that produces flowers or &quot;cones&quot; which contribute bitterness and aroma in beer. Hops also act as a natural preservative and help clarify the beer during the brewing process. Active ingredient: alpha acid.</li>
+<li>Imperial: any beer style that includes the word &quot;Imperial&quot; is usually quite high in hops and most certainly higher in alcohol. Another invention of necessity, &quot;Imperials&quot; were usually beers that were made in one country and shipped to another, often bound for the lips of royalty (hence the name Imperial). It's another case of long journeys calling on the properties of higher alcohol and hops to act as preservatives.</li>
+<li>Red Beers: Mainly from West Flanders, they are the more sharply acidic, reddish, half-brothers to the Brown Beers of East Flanders, with the additional difference that they are often filtered and pasteurized. The sharp acidity and some of the color is derived from aging in large wooden tuns.</li>
+</ul>
+<div class="figure">
+<img alt="../figs/cheers_colors.jpg" src="../figs/cheers_colors.jpg" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wine-space">
+<h1><a class="toc-backref" href="#id14">Wine space</a></h1>
+<div class="section" id="vivino-activities">
+<h2><a class="toc-backref" href="#id15">Vivino activities</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://www.vivino.com/users/danmoser">https://www.vivino.com/users/danmoser</a></li>
+</ul>
+</div>
+<div class="section" id="blog">
+<h2><a class="toc-backref" href="#id16">Blog</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://decfrance.blogspot.cl/2013/01/registro-44-tudo-sobre-vinhos.html">Parte 1</a></li>
+<li><a class="reference external" href="http://decfrance.blogspot.cl/2013/01/registro-45-tudo-sobre-vinhos-parte-2.html">Parte 2</a></li>
+<li><a class="reference external" href="http://decfrance.blogspot.cl/2013/01/registro-46-tudo-sobre-vinhos-parte-3.html">Parte 3</a></li>
+<li><a class="reference external" href="http://decfrance.blogspot.cl/2013/01/registro-47-traducao-experiencia-com.html">Parte 4 (extra)</a></li>
+<li><a class="reference external" href="http://decfrance.blogspot.cl/2013/01/registro-48-tudo-sobre-vinhos-parte-5.html">Parte 5</a></li>
+</ul>
+</div>
+<div class="section" id="vinhos-tintos">
+<h2><a class="toc-backref" href="#id17">Vinhos tintos</a></h2>
+<div class="section" id="cepas-chilenas">
+<h3><a class="toc-backref" href="#id18">Cepas chilenas</a></h3>
+<ul class="simple">
+<li><strong>Carménère</strong> = origem Médoc, Francia. Foram confundidos com Merlot até que em 1944 um especialista identificou no Chile. Tem aroma de &quot;berries&quot;, em geral um pouco mais suave que o CS.</li>
+<li><strong>Cabernet sauvignon</strong> (CS) = origem Bordeux, Francia. Conhecido por produzir vinhos &quot;frutosos&quot;, concentrados, com alto valor de tanino.</li>
+<li><strong>Merlot</strong> = irmã menor da CS, sendo mais suave.</li>
+<li><strong>Syrah</strong> = origem Rhône, Francia. Cor escura, alto tanino, aroma intenso. Demanda bom envelhecimento.</li>
+<li><strong>Pinot noir</strong> = origem Borgoña, Francia. Cepa muito sensível ao clima. Aroma a frutas y sabor suave, com pouco tanino.</li>
+</ul>
+</div>
+<div class="section" id="cepas-argentinas">
+<h3><a class="toc-backref" href="#id19">Cepas argentinas</a></h3>
+<ul class="simple">
+<li><strong>Malbec</strong> = conhecido pela coloração escura.</li>
+</ul>
+</div>
+<div class="section" id="cepas-majoritariamente-francesas">
+<h3><a class="toc-backref" href="#id20">Cepas majoritariamente francesas</a></h3>
+<ul class="simple">
+<li><strong>Cabernet franc</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="vinhos-brancos">
+<h2><a class="toc-backref" href="#id21">Vinhos brancos</a></h2>
+<ul class="simple">
+<li><strong>Riesling</strong> = a mais doce?</li>
+<li><strong>Chardonnay</strong> = mais popular branco do mundo.</li>
+<li><strong>Sauvignon blanc</strong> = ácido, melhor bebido envelhecido.</li>
+</ul>
+</div>
+<div class="section" id="vinhos-rose">
+<h2><a class="toc-backref" href="#id22">Vinhos rosé</a></h2>
+<p>Até onde descobri, são sempre misturas não muito bem regulares.</p>
+</div>
+</div>
+</div>
+</body>
+</html>

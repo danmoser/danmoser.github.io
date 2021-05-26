@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>BeACoN Meettings</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="beacon-meettings">
+<h1 class="title">BeACoN Meettings</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table of contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#links" id="id6">Links</a></li>
+<li><a class="reference internal" href="#meetings" id="id7">Meetings</a><ul>
+<li><a class="reference internal" href="#moser-opd" id="id8">2015-10-28 [Moser&#64;OPD]</a></li>
+<li><a class="reference internal" href="#xuxu-leandro" id="id9">2015-10-21 Xuxu + Leandro</a><ul>
+<li><a class="reference internal" href="#xuxu-pseudo-photospheric-models" id="id10">Xuxu - Pseudo-photospheric models</a></li>
+<li><a class="reference internal" href="#leandro-fitting-be-stars-lightcurves" id="id11">Leandro - Fitting Be stars lightcurves</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#no-meeting-python-boot-camp" id="id12">2015-10-14 [No meeting = Python Boot Camp]</a></li>
+<li><a class="reference internal" href="#alex-sobolev-rivi" id="id13">2015-10-07 Alex (Sobolev) + Rivi</a></li>
+<li><a class="reference internal" href="#no-meeting-sab" id="id14">2015-09-30 [No meeting = SAB]</a></li>
+<li><a class="reference internal" href="#no-meeting-alex-russia" id="id15">2015-09-23 [No meeting = Alex Russia]</a></li>
+<li><a class="reference internal" href="#id1" id="id16">2015-09-16 [No meeting = Alex Russia]</a></li>
+<li><a class="reference internal" href="#moser-teaser" id="id17">2015-09-09 Moser teaser</a></li>
+<li><a class="reference internal" href="#short-talks-moser-teaser" id="id18">2015-09-02 Short talks/Moser teaser</a></li>
+<li><a class="reference internal" href="#short-talks-andre" id="id19">2015-08-26 Short talks/André</a><ul>
+<li><a class="reference internal" href="#robert-and-radio" id="id20">Robert and radio</a></li>
+<li><a class="reference internal" href="#dai-and-the-b-e" id="id21">Dai and the B[e]</a></li>
+<li><a class="reference internal" href="#andre-and-the-polarization-as-a-diagnostic-tool" id="id22">André and the Polarization as a diagnostic tool</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#to-2015-08-19-no-meetings" id="id23">2015-07-01 to 2015-08-19 [No meetings]</a></li>
+<li><a class="reference internal" href="#moser-vieira" id="id24">2015-06-24 Moser + Vieira</a><ul>
+<li><a class="reference internal" href="#rodrigo-s-papers-i-and-ii" id="id25">Rodrigo's Papers (I and II)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#no-meeting" id="id26">2015-06-17 [No meeting]</a></li>
+<li><a class="reference internal" href="#bednarski-polarimetric-reduction" id="id27">2015-06-10 Bednarski Polarimetric reduction</a><ul>
+<li><a class="reference internal" href="#id2" id="id28">Bednarski: Polarimetric reduction</a><ul>
+<li><a class="reference internal" href="#reduction-with-iraf" id="id29">Reduction with IRAF</a></li>
+<li><a class="reference internal" href="#generating-night-s-tables" id="id30">Generating night's tables</a></li>
+<li><a class="reference internal" href="#extracting-the-temporal-series" id="id31">Extracting the temporal series</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#discussion-with-leandro-rodrigo-and-alex" id="id32">Discussion with Leandro, Rodrigo and Alex</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bruno-daniel-moser-short-talks" id="id33">2015-06-03 Bruno + Daniel Moser short talks</a><ul>
+<li><a class="reference internal" href="#bruno-s-talk-emcee-and-uv-bump-at-2200-aa" id="id34">Bruno's talk: <em>emcee</em> and <em>UV</em> bump at <span class="formula">2200<i>Å</i></span></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3" id="id35">2015-05-26 [No meeting]</a></li>
+<li><a class="reference internal" href="#rubinhos-s-master-preview" id="id36">2015-05-20 Rubinhos's Master preview</a></li>
+<li><a class="reference internal" href="#daiane-s-master-preview" id="id37">2015-05-13 Daiane's Master preview</a></li>
+<li><a class="reference internal" href="#group-s-results" id="id38">2015-05-07 Group's results</a></li>
+<li><a class="reference internal" href="#cyril" id="id39">2015-04-29 Cyril</a></li>
+<li><a class="reference internal" href="#alex-in-canada" id="id40">2015-04-22 [Alex in Canada]</a></li>
+<li><a class="reference internal" href="#id4" id="id41">2015-04-15 [Alex in Canada]</a></li>
+<li><a class="reference internal" href="#id5" id="id42">2015-04-08 Group's results</a></li>
+<li><a class="reference internal" href="#holy-week" id="id43">2015-04-01 [Holy Week]</a></li>
+<li><a class="reference internal" href="#robert" id="id44">2015-03-25 Robert</a></li>
+<li><a class="reference internal" href="#despo" id="id45">2015-03-18 Despo</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other" id="id46">Other</a><ul>
+<li><a class="reference internal" href="#spartans" id="id47">Spartans</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="links">
+<h1><a class="toc-backref" href="#id6">Links</a></h1>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Missões LNA</dt>
+<dd><a class="reference external" href="http://bit.ly/1ZQyzaJ">http://bit.ly/1ZQyzaJ</a></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Distribuição de tempo</dt>
+<dd><a class="reference external" href="http://www.lna.br/distempo/divtempo.html">http://www.lna.br/distempo/divtempo.html</a></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Formulários (usuários OPD)</dt>
+<dd><a class="reference external" href="http://www.lna.br/opd/info_obs/info_obs.html">http://www.lna.br/opd/info_obs/info_obs.html</a></dd>
+</dl>
+</li>
+<li><a class="reference external" href="../movs/beacon_spartans.zip">Spartans movie</a></li>
+</ul>
+</div>
+<div class="section" id="meetings">
+<h1><a class="toc-backref" href="#id7">Meetings</a></h1>
+<div class="section" id="moser-opd">
+<h2>2015-10-28 [<a class="reference external" href="mailto:Moser&#64;OPD">Moser&#64;OPD</a>]</h2>
+</div>
+<div class="section" id="xuxu-leandro">
+<h2><a class="toc-backref" href="#id9">2015-10-21 Xuxu + Leandro</a></h2>
+<div class="section" id="xuxu-pseudo-photospheric-models">
+<h3><a class="toc-backref" href="#id10">Xuxu - Pseudo-photospheric models</a></h3>
+<p>Or disk brightness profile.</p>
+<p><span class="formula"><i>τ</i><sub><i>z</i></sub> ≥ 1</span> (vertical optical depth) sets the transition between thin and thick optical regime for each <span class="formula"><i>λ</i></span>.</p>
+<p>Effective radius <span class="formula"><span class="bar"><i>R</i></span>(<i>λ</i>, <i>n</i><sub>0</sub>, <i>i</i>)</span> is defined at <span class="formula"><i>τ</i> ~ 1</span> at midplane. This is paper I.</p>
+<p>For paper II, Rodrigo is proposing fitting AKARI, WISE and X infrared measurements in and statistical analysis.</p>
+</div>
+<div class="section" id="leandro-fitting-be-stars-lightcurves">
+<h3><a class="toc-backref" href="#id11">Leandro - Fitting Be stars lightcurves</a></h3>
+<p>MACHO survey has a spectroscopic correspondent.</p>
+<p>OGLE does not have. But they are likely Be stars, strong candidates. <em>B</em> and <em>I</em> filters observed.</p>
+<p>Diffusion equation depends on <span class="formula"><i>M</i>, <i>T</i>, <i>α</i></span></p>
+<p>Assuming to exponential components: a growing one and another for dissipation.</p>
+<p>The fitting is done in a grid of <em>singleBe</em> models.</p>
+</div>
+</div>
+<div class="section" id="no-meeting-python-boot-camp">
+<h2><a class="toc-backref" href="#id12">2015-10-14 [No meeting = Python Boot Camp]</a></h2>
+</div>
+<div class="section" id="alex-sobolev-rivi">
+<h2><a class="toc-backref" href="#id13">2015-10-07 Alex (Sobolev) + Rivi</a></h2>
+</div>
+<div class="section" id="no-meeting-sab">
+<h2><a class="toc-backref" href="#id14">2015-09-30 [No meeting = SAB]</a></h2>
+</div>
+<div class="section" id="no-meeting-alex-russia">
+<h2><a class="toc-backref" href="#id15">2015-09-23 [No meeting = Alex Russia]</a></h2>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id16">2015-09-16 [No meeting = Alex Russia]</a></h2>
+</div>
+<div class="section" id="moser-teaser">
+<h2><a class="toc-backref" href="#id17">2015-09-09 Moser teaser</a></h2>
+<p>True defense preview.</p>
+</div>
+<div class="section" id="short-talks-moser-teaser">
+<h2><a class="toc-backref" href="#id18">2015-09-02 Short talks/Moser teaser</a></h2>
+<p>Alex left earlier...</p>
+</div>
+<div class="section" id="short-talks-andre">
+<h2><a class="toc-backref" href="#id19">2015-08-26 Short talks/André</a></h2>
+<p>Present: Marcelo, Mohammad, Dai, Leandro, Rodrigo, Fellipy, André, Moser</p>
+<div class="section" id="robert-and-radio">
+<h3><a class="toc-backref" href="#id20">Robert and radio</a></h3>
+<p>Robert continued a project to observe stars on radio. The observations (~5 stars) show that disks extends up to 200 <span class="formula">200<i>R</i><sub><i>eq</i></sub></span>. Fitting the SED, from visible to radio wavelengths, shows a systematic slope of <span class="formula"><i>n</i> ≈ 3.1 − 3.2 ≠ 3.5</span> from the steady-state solution, a pure Hydrogen disk.</p>
+<p>This is likely the result of disk temperature decreasing with radius. MAYBE hydrodynamic considerations yield to lower disk temperature to a slope of 3.0.</p>
+<p>Other explanation is the present of Helium as a disk coolant. The presence of Helium in the radiative transfer would change the disk from a isothermal structure to a decreasing temperatures yielding 3.0. This was suggested by earlier studies (~1970's) on stellar WINDS that could be applicable to Be disks.</p>
+</div>
+<div class="section" id="dai-and-the-b-e">
+<h3><a class="toc-backref" href="#id21">Dai and the B[e]</a></h3>
+<p>Dai is fitting and B[e] star (RS ??) in one of the Magellanic Clouds. The distance is 49.97+/-1.11 kpc (Pietzyński, ??). For Dai master, the <span class="formula"><i>Ṁ</i></span> value used for fitting was <span class="formula">1 − 10 × 10<sup> − 6</sup><i>M</i><sub>⊙</sub></span>/yr/sr. She showed the results for <span class="formula">5 × 10<sup> − 5</sup><i>M</i><sub>⊙</sub></span>/yr/sr, and the results appeared to <em>do not converge</em>...</p>
+<p>Alex suggested Dai to present in a future meeting the thesis of Will Robson. One of the main results of his thesis is that, the absence of 9.7 microns feature in some proto-planetary disks can be explained by the creation of a ice mantel around small grains in the disk. This conclusion was based on high-energy particle collisions with dust particles, and offers an alternative explanation to the absence of the feature due to an average bigger size of the disk grains (not likely).</p>
+</div>
+<div class="section" id="andre-and-the-polarization-as-a-diagnostic-tool">
+<h3><a class="toc-backref" href="#id22">André and the Polarization as a diagnostic tool</a></h3>
+<p>Summary of Bjorkman &amp; Bjorkman, 1994, (BJ94) on spectropolarimetry around the Balmer jump (BJ; UV observations).
+The lower level of polarization <em>before</em> the jump could be explained by the central-star high-rotation. This was compared to the polarized SED of the star Zeta Tau.</p>
+<p>A positive slope in the polarized spectrum in visible was not expected and was discovered by Klement et al., 2015.</p>
+<p>André showed images and surface brightness curves of the unpolarized and polarized regions of the Be disks. Conclusion is that polarization is coming from regions very close to the stellar surface.</p>
+<p>The conclusion of the positive slope only occurs for low-density disks <span class="formula">(Σ<sub>0</sub> &lt; 0.1</span> g/cm2) and stars with high-rotation <span class="formula">(<i>R</i><sub><i>eq</i></sub> ⁄ <i>R</i><sub><i>p</i></sub>≳1.4)</span>.</p>
+<p>A new window will be open by the <em>Spektr-RG</em> (SXG or SRG) satellite (<a class="reference external" href="https://en.wikipedia.org/wiki/Spektr-RG">https://en.wikipedia.org/wiki/Spektr-RG</a>), having a spectropolarimeter at UV wavelengths. Other UV satellites are <em>Astrosat</em> (<a class="reference external" href="https://en.wikipedia.org/wiki/Astrosat">https://en.wikipedia.org/wiki/Astrosat</a>) and <em>Spektr-UV</em> (<a class="reference external" href="https://en.wikipedia.org/wiki/Spektr-UV">https://en.wikipedia.org/wiki/Spektr-UV</a>; but it appears to be just another name of the SRG).</p>
+<p><strong>Question to understood</strong>: Why the depolarization is stronger in the UV (i.e., before the BJ) than in the visible (after BJ)? Answer in BJ94.</p>
+<p>According to Brown &amp; McLean 1977, the polarization of Be disks can be understood as function of a <em>shape</em> factor (<span class="formula"><i>γ</i></span>) and <span class="formula"><span class="bar"><i>τ</i></span></span>, the mean scattering optical depth. According to Alex, the rotation necessarily would <strong>decrease</strong> the mean scattering optical depth.</p>
+<p>Alex did not agreed with the models André showed with a <strong>increasing</strong> polarization with rotation in the <em>BeAtlas</em>. Rodrigo emphasized that the goal was not the <strong>level</strong>, but the <strong>slope</strong>. He answered saying that the slope <strong>was</strong> a function of the level, so the directed comparison between models was not accurate.</p>
+<p><strong>Something that wasn't discussed in the meeting</strong>: the polarization in the <em>BeAtlas</em> models <strong>decrease</strong> with rotation, as &quot;expected&quot;, if a inclination angle o <span class="formula"><i>i</i>≲60</span> deg is considered (at least for low-density disks). Rodrigo told me that me models shown were for <span class="formula"><i>i</i> ~ 70</span> deg, were the maximum of polarization occurs. IMHO, for <span class="formula"><i>i</i> &gt; 60</span> deg effects of self absorption become important so that the polarization can <strong>increase</strong>.</p>
+<p>I took a quick look in BJ94, and they predicted I quite strong polarization decrease for <span class="formula"><i>i</i> = 60</span> deg. On the other hand, they used a quite different model for the star <span class="formula">(<i>β</i> = 0.25</span>) and a strange density distribution for the envelope:</p>
+<div class="formula">
+<i>n</i><sub><i>e</i></sub> = <i>n</i><sub>0</sub><span class="fraction"><span class="ignored">(</span><span class="numerator">[1 + <i>B</i>sin<sup><i>m</i></sup><i>θ</i>]</span><span class="ignored">)/(</span><span class="denominator"><i>r</i><sup>2</sup>[1 − 0.96<i>R</i>(<i>θ</i>) ⁄ <i>r</i>]<sup><i>b</i></sup></span><span class="ignored">)</span></span>.
+</div>
+<p>It appears that, while André is exploring the diagnostic potential of the phenomenon, Alex wants to explore the theoretical foundations of it. IMHO, it should be assessed be possibility of &quot;redo&quot; BJ94 with more precise envelope models and Rodrigo's opacity description...</p>
+</div>
+</div>
+<div class="section" id="to-2015-08-19-no-meetings">
+<h2><a class="toc-backref" href="#id23">2015-07-01 to 2015-08-19 [No meetings]</a></h2>
+<p>Vacations + Moser's thesis.</p>
+</div>
+<div class="section" id="moser-vieira">
+<h2><a class="toc-backref" href="#id24">2015-06-24 Moser + Vieira</a></h2>
+<ul class="simple">
+<li>Alex's mug!</li>
+<li>Moser, new results for Achernar!</li>
+</ul>
+<div class="section" id="rodrigo-s-papers-i-and-ii">
+<h3><a class="toc-backref" href="#id25">Rodrigo's Papers (I and II)</a></h3>
+<p>Rodrigo develop an analytic model to the emission of Be systems: star + optical thick + optical thin disk components. It is possible to predict 2D brightness distributions to (roughly) any inclination angle not edge-on (equator-on).</p>
+<p>The model works good for mid/distant-IR, because of gauss factors.</p>
+<p>Rodrigo took archive IR data (IRAS, AKARI, etc) and compared the best fit using Frémat 2004 atmospheric modeling (2MASS, due to short wavelengths, is not good to model). He fitted <span class="formula"><i>n</i><sub>0</sub></span> and <span class="formula"><i>m</i></span>, the volumetric density exponent, to infer the <span class="formula"><i>Ṁ</i></span>. His <span class="formula"><i>Ṁ</i></span> determinations are 2 order of magnitudes lower than the ones predicted by Waters 1987. This agrees with Anahi's work on late 2014.</p>
+<p>He found:</p>
+<ul class="simple">
+<li>3 peaks in <span class="formula"><i>n</i><sub>0</sub></span> distribution: hotter stars tends to create denser disks (Teff&gt;18000; 15000&lt;Teff&lt;18000; Teff&lt;15000)!</li>
+<li>NO DEPENDENCE of Teff with <span class="formula"><i>m</i></span>: MYTH of late-B types have more stable disks busted!</li>
+<li>It is possible to do <span class="formula"><i>m</i></span>-age relations. Ages of disks, and metallicity correlations.</li>
+<li>No <span class="formula"><i>m</i> &lt; 3.5</span> and high <span class="formula"><i>n</i><sub>0</sub></span>: limits on correlations.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="no-meeting">
+<h2><a class="toc-backref" href="#id26">2015-06-17 [No meeting]</a></h2>
+</div>
+<div class="section" id="bednarski-polarimetric-reduction">
+<h2><a class="toc-backref" href="#id27">2015-06-10 Bednarski Polarimetric reduction</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#id28">Bednarski: Polarimetric reduction</a></h3>
+<div class="section" id="reduction-with-iraf">
+<h4><a class="toc-backref" href="#id29">Reduction with IRAF</a></h4>
+<ul class="simple">
+<li><cite>Calib</cite></li>
+<li><cite>Reduce</cite></li>
+</ul>
+<p>Goal: generate <tt class="docutils literal">*.out</tt> files.</p>
+</div>
+<div class="section" id="generating-night-s-tables">
+<h4><a class="toc-backref" href="#id30">Generating night's tables</a></h4>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><cite>GenAllLog</cite>: generate <tt class="docutils literal">std.log</tt> and <tt class="docutils literal">obj.log</tt> files for a night.</dt>
+<dd>Search <tt class="docutils literal">*.out</tt> files in subdirectories.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="extracting-the-temporal-series">
+<h4><a class="toc-backref" href="#id31">Extracting the temporal series</a></h4>
+<ul class="simple">
+<li><cite>genTarget</cite>: generate the times series, looking for <tt class="docutils literal">*.log</tt> files.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="discussion-with-leandro-rodrigo-and-alex">
+<h3><a class="toc-backref" href="#id32">Discussion with Leandro, Rodrigo and Alex</a></h3>
+<div class="formula">
+<i>τ</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">cos<i>i</i></span><span class="ignored">)</span></span>Σ(<i>R</i>, <i>t</i>)<i>κ</i>(<i>R</i>)
+</div>
+<p><em>SPH</em> connected with Xuxu's models (Despina+Rodrigo). Leandro is working on <em>SingleBe</em> and Xuxu's models.</p>
+</div>
+</div>
+<div class="section" id="bruno-daniel-moser-short-talks">
+<h2><a class="toc-backref" href="#id33">2015-06-03 Bruno + Daniel Moser short talks</a></h2>
+<div class="section" id="bruno-s-talk-emcee-and-uv-bump-at-2200-aa">
+<h3><a class="toc-backref" href="#id34">Bruno's talk: <em>emcee</em> and <em>UV</em> bump at <span class="formula">2200<i>Å</i></span></a></h3>
+<p><em>emcee</em>: better results fixing one parameter (e.g., oblateness). Otherwise, parameters are kind of undetermined.</p>
+<p><em>UV</em> bump (2200 <span class="formula"><i>Å</i></span>) = 4.54 <span class="formula"><i>μ</i><i>m</i><sup> − 1</sup></span>. Whole bump between 3 to 6 <span class="formula"><i>μ</i><i>m</i><sup> − 1</sup></span>.</p>
+<p>3 kinds of extinction? = bump strength can change depending on something(?) and on the kind of grains present. This is also related with <span class="formula"><i>R</i><sub><i>V</i></sub></span>.</p>
+<p>Moser's talk: Aeri
+------------------^
+No further details (see log, perhaps).</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#id35">2015-05-26 [No meeting]</a></h2>
+</div>
+<div class="section" id="rubinhos-s-master-preview">
+<h2><a class="toc-backref" href="#id36">2015-05-20 Rubinhos's Master preview</a></h2>
+<ul class="simple">
+<li>45 to 50 minutes</li>
+<li>In Portuguese</li>
+</ul>
+<p>&quot;A Estrutura do Campo Magnético do Meio Interestelar a partir de Observações de Aglomerados Abertos&quot;.</p>
+<p>Intro:</p>
+<ul class="simple">
+<li>MI</li>
+<li>Aglomerados Abertos</li>
+<li>Polarização</li>
+</ul>
+<p>Metodologia:</p>
+<ul>
+<li><p class="first">Observações</p>
+</li>
+<li><p class="first">Parâmetros de Stokes</p>
+</li>
+<li><p class="first">Redução de Dados</p>
+<blockquote>
+<p><span class="formula"><i>P</i> ⁄ <i>σ</i><sub><i>P</i></sub> &gt; 5</span></p>
+</blockquote>
+</li>
+</ul>
+<p>Análise:</p>
+<ul class="simple">
+<li>5 campos</li>
+</ul>
+<p>Conclusões:</p>
+<ul class="simple">
+<li>...</li>
+</ul>
+<p>Perguntas:</p>
+<ul>
+<li><p class="first">Por que aglom. aberto?</p>
+<blockquote>
+<p>Distância e comp. química similares
+Grande número de estrelas</p>
+</blockquote>
+</li>
+<li><p class="first">WEBDA?</p>
+</li>
+<li><p class="first">Primeira média? Média total.</p>
+</li>
+<li><p class="first">Estrelas com números?</p>
+</li>
+<li><p class="first">Q, U = 8% ? Sim!!</p>
+</li>
+<li><p class="first">Incertezas B pequenas...</p>
+</li>
+<li><p class="first">Box diagrama Q, U?</p>
+</li>
+<li><p class="first">Para quê o DHR? Só SP são analisadas?</p>
+</li>
+<li><p class="first">Origem campos uniformes vs. campo turbulento</p>
+</li>
+<li><p class="first">Magnitude 18 no OPD? Redutor focal?</p>
+</li>
+</ul>
+<p>Sugestões:</p>
+<ul class="simple">
+<li><cite>et al</cite>, <cite>box</cite></li>
+<li>&lt; 10%, &gt; 90%</li>
+<li>Fotos na sala de defesa</li>
+<li>Destacar transições</li>
+</ul>
+</div>
+<div class="section" id="daiane-s-master-preview">
+<h2><a class="toc-backref" href="#id37">2015-05-13 Daiane's Master preview</a></h2>
+<ul class="simple">
+<li>45 to 50 minutes</li>
+<li>In Portuguese</li>
+</ul>
+<p>&quot;Envelopes de Estrelas Supergigantes B[e] nas Nuvens de Magalhães&quot;.</p>
+<p>5 estrelas observadas em espectropolarimetria. 1 modelada (<em>hdust</em>).</p>
+<p>Introdução:</p>
+<ul>
+<li><p class="first">Contexto: próximas às LBVs e WRs. B[e]'s:</p>
+<blockquote>
+<ul class="simple">
+<li>Intensas linhas Balmer</li>
+<li>Intenas linhas FeII, proibidas</li>
+<li>Excesso infravermelho</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first">Polarimetria</p>
+</li>
+<li><p class="first">Ventos</p>
+</li>
+<li><p class="first"><em>hdust</em></p>
+</li>
+</ul>
+<p>Observações:</p>
+<ul class="simple">
+<li>Dados brutos e redução</li>
+<li>Explicativa e dados finais</li>
+</ul>
+<p>Modelos:</p>
+<ul class="simple">
+<li>[Dúvida] de onde vieram os parâmetros? Componentes?</li>
+</ul>
+<p>Conclusões:</p>
+<ul class="simple">
+<li>[Dúvida] Polarização meio-interestelar</li>
+</ul>
+<p>Pode ser tirado:</p>
+<ul class="simple">
+<li>excesso WR, LBV, sgB[e]</li>
+<li>HPOL</li>
+<li>(mecanismos de polarização)</li>
+</ul>
+<p>Geral:</p>
+<ul class="simple">
+<li>[Correção] Mudança de escala na apresentação de dados.</li>
+<li>[Correção] Q U com barras de erros</li>
+<li>[Correção] Explicação discrepâncias Q U</li>
+<li>[Dúvida] Distância temporal dos dados</li>
+</ul>
+</div>
+<div class="section" id="group-s-results">
+<h2><a class="toc-backref" href="#id38">2015-05-07 Group's results</a></h2>
+<p>A few notes since my laptop was in use to projection.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Moser's talk about Achernar's <span class="formula"><i>H</i><i>α</i></span> line profiles</dt>
+<dd><ul class="first last">
+<li>Equivalent Width, Peak separation</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Mohammad's talk about the four lightcurve cycles of 28 CMa</dt>
+<dd><ul class="first last">
+<li>Reservoir effect: 2012 article of Alex is &quot;wrong&quot;</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="cyril">
+<h2><a class="toc-backref" href="#id39">2015-04-29 Cyril</a></h2>
+<p>How to run Atsuo's code (3D!).</p>
+<p>Math in appendix of Cyril's paper. Basically are conservative equations (mass, momemtum) with classic perturbation (<span class="formula"><i>e</i><sup><i>wt</i> − <i>φ</i></sup></span>).</p>
+<p>The parameters are stellar ones (<span class="formula"><i>R</i><sub>*</sub>, <i>R</i><sub><i>env</i></sub></span>,etc) + frequency space where perturbations can be propagated (<em>eigenfrequencies</em>).</p>
+<p>There are 3 routines:</p>
+<ul class="simple">
+<li>onearm3D</li>
+<li>ef3D</li>
+<li>table2.5D</li>
+</ul>
+<p>First compile, then run as <tt class="docutils literal">./run_ROUTINE &lt; input_file</tt>.</p>
+</div>
+<div class="section" id="alex-in-canada">
+<h2><a class="toc-backref" href="#id40">2015-04-22 [Alex in Canada]</a></h2>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#id41">2015-04-15 [Alex in Canada]</a></h2>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#id42">2015-04-08 Group's results</a></h2>
+<p>A few notes since my laptop was in use to projection.</p>
+<ul class="simple">
+<li>Cyril and interferometric fitting. Absorption issue.</li>
+<li>Rodrigo and his first paper (new <span class="formula"><i>Ṁ</i></span>).</li>
+<li>Bednarski and field stars.</li>
+</ul>
+</div>
+<div class="section" id="holy-week">
+<h2><a class="toc-backref" href="#id43">2015-04-01 [Holy Week]</a></h2>
+</div>
+<div class="section" id="robert">
+<h2><a class="toc-backref" href="#id44">2015-03-25 Robert</a></h2>
+<p>Beta CMi - choose a stable (an isolated) Be star to explore the disk, mainly the outer part. Archive data to radio.
+Radio observations to constraint its size.</p>
+<p>Be stars are not good targets to ALMA: small angular size.</p>
+<p>Start modeling with the central star: 5 pars = M, Tp, W, Beta* and L (Z is important to Mag. Clouds).
+High rotation rate. Interferometry import to constraint parameters ranges.</p>
+<p>IUE spectrum import to constraint the central star = consensus: B8 and i~35deg.
+Influence of the disk starts at ~2500Angs.</p>
+<blockquote>
+<ul class="simple">
+<li>André's project to BeAtlas: influence of the disk in the IUE spectrum.</li>
+</ul>
+</blockquote>
+<ul class="simple">
+<li>Fixed rotation and inclination = M has no influence in the same spectral range.</li>
+<li>Constrained L and polar radius.</li>
+</ul>
+<p>Halpha, Hbeta, Hgamma and Bracket gamma.
+It is tricky to fit simultaneously Halpha and Hbeta!!</p>
+<p>There are small V/R variations: due to a binary companion. 180 days period.</p>
+<p>HPOL measurements.</p>
+<p>Visible and nearIR are sensible to density of the disk !!!</p>
+<p>Models:</p>
+<ul class="simple">
+<li>parametric = rho_0, n, H0(Tk), Rout</li>
+<li>mixed = rho_0, n, Rout</li>
+<li>self-consistent = Mdot/alpha, R_0, Rout</li>
+</ul>
+<p>Robert is measuring Rbar and no Rout.</p>
+<p>n is not 3.5. It is 3.0. Impossible to fit 3.5 changing Rout.</p>
+<p>3.5 is good til 10 microns. 3.0 is good beyond that.</p>
+<p>n=3.5 wrong BrGamma interferometry.</p>
+<p>Best detailed model of a Be star so far.</p>
+<p>Zeta Tau could be done same analysis if there is no global density waves in the disk.</p>
+<ul class="simple">
+<li>HPOL level = crap</li>
+</ul>
+<p>Best inclination determination comes from AMBER data.</p>
+</div>
+<div class="section" id="despo">
+<h2><a class="toc-backref" href="#id45">2015-03-18 Despo</a></h2>
+<p>Smoothed-particle hydrodynamics
+<a class="reference external" href="http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics">http://en.wikipedia.org/wiki/Smoothed-particle_hydrodynamics</a></p>
+<p>SPH is not a grid code... It 'probes' the dynamics if variable mass particles.</p>
+<p>SPH computational timescale <span class="formula"><i>n</i>*log(<i>n</i>)</span>; <cite>n</cite> = no. of particles</p>
+<p>Binarity: changes the surface density profile: dissipates the outer disk. The inner disk is approx. unchanged. How much mass is transfered to the secondary can be estimated.</p>
+<p>Be-Xray binaries: compact object (Black Hole! or neutron star). Material is accreted in the companion (Be-GammaRay).</p>
+<p>&quot;Watershed&quot; effect: change of the slope in dens. prof. at outer radius due the companion.</p>
+<div class="formula">
+Σ = <i>A</i><span class="fraction"><span class="ignored">(</span><span class="numerator">(<i>r</i> ⁄ <i>R</i><sub><i>t</i></sub>)<sup> − <i>m</i></sup></span><span class="ignored">)/(</span><span class="denominator">1 + (<i>r</i> ⁄ <i>R</i><sub><i>t</i></sub>)<sup><i>n</i></sup></span><span class="ignored">)</span></span>
+</div>
+<div class="formula">
+Σ = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>Ṁ</i></span><span class="ignored">)/(</span><span class="denominator"><i>α</i></span><span class="ignored">)</span></span>…
+</div>
+<!-- Teste :math:`\pi`. E teste continua. -->
+<p>For high eccentric orbit the truncation radius <em>grows</em>, because of the way disk interacts with the companion...</p>
+<p>Euler angles... define misalignment and unambiguously define rotation!
+Pleione is a famous case of misalignment (equatorial plane of the Be star and the companion orbit plane).</p>
+<p>This process could explain the transition seen in some Be stars from shell spectrum to normal Be case! Warped disks!</p>
+<p>Another problem: prograde/retrograde motion between the Be star rotation and the companion.</p>
+<blockquote>
+<ul class="simple">
+<li>Mass injection rate = Mass disk injection (some material returns to the star)</li>
+<li>Mass decretion rate</li>
+<li>Mass-loss rate</li>
+</ul>
+</blockquote>
+</div>
+</div>
+<div class="section" id="other">
+<h1><a class="toc-backref" href="#id46">Other</a></h1>
+<div class="section" id="spartans">
+<h2><a class="toc-backref" href="#id47">Spartans</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="../movs/spartans.srt">Subtitles</a></li>
+<li><a class="reference external" href="../movs/spartans.mp4">Movie</a></li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>

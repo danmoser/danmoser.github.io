@@ -1,0 +1,1364 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>Observations and Data Reduction</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="observations-and-data-reduction">
+<h1 class="title">Observations and Data Reduction</h1>
+
+<div class="contents topic" id="index">
+<p class="topic-title">Index</p>
+<ul class="simple">
+<li><a class="reference internal" href="#beacon-link" id="id1">BeACoN Link</a></li>
+<li><a class="reference internal" href="#observational" id="id2">Observational</a><ul>
+<li><a class="reference internal" href="#filtro-de-densidade" id="id3">Filtro de densidade</a></li>
+<li><a class="reference internal" href="#calculo-de-tempos" id="id4">Cálculo de tempos</a></li>
+<li><a class="reference internal" href="#relacoes-vacuo-ar-e-ar-vacuo" id="id5">Relações vácuo/ar e ar/vácuo</a></li>
+<li><a class="reference internal" href="#sinal-ruido-s-r" id="id6">Sinal/Ruído (S/R)</a></li>
+<li><a class="reference internal" href="#interferometria" id="id7">Interferometria</a><ul>
+<li><a class="reference internal" href="#calculo-de-deslocamento-espacial-e-angular" id="id8">Cálculo de deslocamento espacial e angular</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#opd" id="id9">OPD</a><ul>
+<li><a class="reference internal" href="#geral" id="id10">Geral</a></li>
+<li><a class="reference internal" href="#zeiss" id="id11">Zeiss</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-reduction" id="id12">Data Reduction</a><ul>
+<li><a class="reference internal" href="#installing-iraf-in-ubuntu" id="id13">Installing IRAF in Ubuntu</a></li>
+<li><a class="reference internal" href="#geral-iraf" id="id14">Geral IRAF</a><ul>
+<li><a class="reference internal" href="#instalacao-pacote-beacon" id="id15">Instalação pacote Beacon</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tips" id="id16">Tips</a><ul>
+<li><a class="reference internal" href="#keyboard-input-problem-at-epar" id="id17">Keyboard input problem at epar</a></li>
+<li><a class="reference internal" href="#big-images-i-e-px-512-not-entirely-displayed-in-ds9" id="id18">Big images (i.e., px &gt; 512) not entirely displayed in DS9</a></li>
+<li><a class="reference internal" href="#fatiamento-slicing" id="id19">Fatiamento (slicing)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reducao-ecass" id="id20">Redução ECASS</a><ul>
+<li><a class="reference internal" href="#nome-lampada" id="id21">Nome lâmpada</a></li>
+<li><a class="reference internal" href="#dica-identify" id="id22">Dica <em>identify</em></a></li>
+<li><a class="reference internal" href="#problema-rvcor" id="id23">Problema <em>rvcor</em></a></li>
+<li><a class="reference internal" href="#erro-t-convolve" id="id24">Erro T_CONVOLVE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reducao-iagpol" id="id25">Redução IAGPOL</a><ul>
+<li><a class="reference internal" href="#padronizacao" id="id26">Padronização</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reducao-musicos" id="id27">Redução MUSICOS</a><ul>
+<li><a class="reference internal" href="#normalizacao-linhas-de-emissao" id="id28">Normalização linhas de emissão</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#reducao-musicos-com-opera" id="id29">Redução MUSICOS com OPERA</a><ul>
+<li><a class="reference internal" href="#instalacao" id="id30">Instalação</a></li>
+<li><a class="reference internal" href="#uso" id="id31">Uso</a></li>
+<li><a class="reference internal" href="#resultados" id="id32">Resultados</a></li>
+<li><a class="reference internal" href="#problemas" id="id33">Problemas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stavros-reducao-beacon" id="id34">Stavros - Redução <em>beacon</em></a><ul>
+<li><a class="reference internal" href="#criterios" id="id35">Critérios:</a></li>
+<li><a class="reference internal" href="#dicas" id="id36">Dicas:</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#amdlib" id="id37">amdlib</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notas-sobre-correcoes-em-comprimento-de-onda" id="id38">Notas sobre correções em comprimento de onda</a><ul>
+<li><a class="reference internal" href="#problema-na-calibracao-do-comprimeto-de-onda" id="id39">Problema na calibração do comprimeto de onda</a></li>
+<li><a class="reference internal" href="#calibracao-de-onda-no-vacuo-vs-no-ar" id="id40">Calibração de onda &quot;no vácuo&quot; vs &quot;no ar&quot;</a></li>
+<li><a class="reference internal" href="#ajuste-de-velocidade-heliocentrica" id="id41">Ajuste de velocidade heliocêntrica</a></li>
+<li><a class="reference internal" href="#velocidade-radial-da-estrela" id="id42">Velocidade radial da estrela</a></li>
+<li><a class="reference internal" href="#diferencas-para-com-o-hdust" id="id43">Diferenças para com o HDUST</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#interferometry" id="id44">Interferometry</a></li>
+<li><a class="reference internal" href="#logs" id="id45">Logs</a><ul>
+<li><a class="reference internal" href="#noites-spec" id="id46">Noites spec</a><ul>
+<li><a class="reference internal" href="#ago11" id="id47">14ago11</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alvos-spec" id="id48">Alvos spec</a><ul>
+<li><a class="reference internal" href="#achernar" id="id49">Achernar</a></li>
+<li><a class="reference internal" href="#alpha-col" id="id50">Alpha Col</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="beacon-link">
+<h1><a class="toc-backref" href="#id1">BeACoN Link</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://beacon.iag.usp.br/">http://beacon.iag.usp.br/</a></li>
+</ul>
+</div>
+<div class="section" id="observational">
+<h1><a class="toc-backref" href="#id2">Observational</a></h1>
+<div class="section" id="filtro-de-densidade">
+<h2><a class="toc-backref" href="#id3">Filtro de densidade</a></h2>
+<p>Filtro de densidade é um filtro &quot;espectralmente cinza&quot;, reduzindo em <span class="formula">10<sup> − <i>n</i></sup></span> o fluxo luminoso, onde <span class="formula"><i>n</i></span> é o valor do filtro. Exemplo: filtro de densidade &quot;0.6&quot; reduz em 75% o fluxo. Em magnitudes, isto dá +1.5 mag = <span class="formula"> − 2.5log<sub>10</sub>(10<sup> − 0.6</sup>) =  − 2.5 × 0.6</span>. Assim, um filtro de densidade &quot;1&quot; reduz 2.5 mag.</p>
+<p><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>F</i></span><span class="ignored">)/(</span><span class="denominator"><i>F</i><sub>0</sub></span><span class="ignored">)</span></span> = 10<sup> − <i>d</i></sup></span> ou <span class="formula"><i>d</i> =  − log<sub>10</sub><span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>I</i></span><span class="ignored">)/(</span><span class="denominator"><i>I</i><sub>0</sub></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span></span></p>
+<p>Estes podem ser também chamados de <em>ND filters</em>.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="13%" />
+<col width="40%" />
+<col width="38%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">ND</th>
+<th class="head">area</th>
+<th class="head">optical density</th>
+<th class="head">transmittance</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>ND2</td>
+<td>1/2</td>
+<td>0.3</td>
+<td>50%</td>
+</tr>
+<tr><td>ND4</td>
+<td>1/4</td>
+<td>0.6</td>
+<td>25%</td>
+</tr>
+<tr><td>ND8</td>
+<td>1/8</td>
+<td>0.9</td>
+<td>12.5%</td>
+</tr>
+<tr><td></td>
+<td></td>
+<td>1.0</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p>Em condições ótimas, o CCD satura com integração mínima (0.15 s) numa estrela de mag 4.0 na banda <em>V</em>.</p>
+<p>Exercício: qual o filtro de densidade necessário para Achernar (magV = 0.5) para que o CCD não sature? Resp.: é preciso aumentar a mag. em 3.5. Para isso, usamos um filtro de densidade de d = 1.4 ou maior (<span class="formula">3.5 = 2.5 × 1.4</span>).</p>
+</div>
+<div class="section" id="calculo-de-tempos">
+<h2><a class="toc-backref" href="#id4">Cálculo de tempos</a></h2>
+<p>Tempo de integração:</p>
+<div class="formula">
+<i>t</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>t</i><sub>0</sub></span><span class="ignored">)/(</span><span class="denominator"><span class="text"> Pre-gain</span></span><span class="ignored">)</span></span> × 10<sup><span class="fraction"><span class="ignored">(</span><span class="numerator"> − <i>m</i><sub><span class="text">alvo</span></sub> + <i>m</i><sub><span class="text">min</span></sub> + <i>m</i><sub><span class="text">ND</span></sub> + <i>m</i><sub><span class="text">ceu</span></sub></span><span class="ignored">)/(</span><span class="denominator">2.5</span><span class="ignored">)</span></span></sup>
+</div>
+<p>Exemplos: <span class="formula"><i>t</i> = <i>t</i><sub>0</sub> ⁄ <span class="text"> Pre-gain</span></span> para uma estrela de mag 4.0 e para Achernar com filtro ND1.4.</p>
+<p>Tempo de <strong>execução</strong> por filtro:</p>
+<div class="formula">
+<i>t</i><sub><span class="text">exc</span></sub> ~ 2<span class="text">  min </span> + <i>n</i><sub><span class="text">pos</span></sub> × <i>t</i> × <i>n</i><sub><span class="text">frames</span></sub>
+</div>
+</div>
+<div class="section" id="relacoes-vacuo-ar-e-ar-vacuo">
+<h2><a class="toc-backref" href="#id5">Relações vácuo/ar e ar/vácuo</a></h2>
+<p>The IAU standard for conversion from air to vacuum wavelengths is given by Morton (1991; ApJS, 77, 119).</p>
+<p>From VAC to AIR (<span class="formula"><i>Å</i></span>):</p>
+<p>AIR = VAC/(1.0 + 2.735182e-4 + 131.4182/VAC^2 + 2.76249e8/VAC^4</p>
+<p>From AIR to VAC (<span class="formula"><i>Å</i></span>, reciprocal fitting done):</p>
+<p>VAC = AIR/(1.0 - 2.73443e-4 - 131.275255/AIR^2 - 2.75708212e8/AIR^4</p>
+<p>(Note que o inverso das operações <strong>não é</strong> somente a inversão de sinal nos fatores).</p>
+<p>Exemplo: VAC = 3000.0 <span class="formula"><i>Å</i></span>, AIR = 2999.12566 <span class="formula"><i>Å</i></span>.</p>
+</div>
+<div class="section" id="sinal-ruido-s-r">
+<h2><a class="toc-backref" href="#id6">Sinal/Ruído (S/R)</a></h2>
+<div class="formula">
+<span class="text">S/R</span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>C</i><i>t</i></span><span class="ignored">)/(</span><span class="denominator"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>C</i><i>t</i> + (<i>S</i> + <i>D</i>)<i>t</i> + <i>n</i><sub><i>i</i></sub><i>σ</i><sup>2</sup></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span>≃<span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>t</i></span><span class="ignored">)</span></span>
+</div>
+<p>onde <span class="formula"><i>C</i></span> é o ganho (<span class="formula"><i>e</i><sup> − </sup></span>/s), <span class="formula"><i>S</i></span> é a emissão de céu, <span class="formula"><i>D</i></span> a de <em>dark</em>, <span class="formula"><i>n</i><sub><i>i</i></sub></span> o número de imagens somadas, e <span class="formula"><i>σ</i></span> o erro de leitura do CCD.</p>
+</div>
+<div class="section" id="interferometria">
+<h2><a class="toc-backref" href="#id7">Interferometria</a></h2>
+<p>Visibilidade (complexa) de um disco uniforme é <span class="formula"><i>V</i>(<i>u</i>) = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>J</i><sub>1</sub>(<i>π</i><i>a</i><i>u</i>)</span><span class="ignored">)/(</span><span class="denominator"><i>π</i><i>a</i><i>u</i></span><span class="ignored">)</span></span></span>, onde <span class="formula"><i>u</i> = ∥<i>u⃗</i>∥ = <span class="fraction"><span class="ignored">(</span><span class="numerator">∥<i>B⃗</i><sub><span class="text">proj</span></sub>∥</span><span class="ignored">)/(</span><span class="denominator"><i>λ</i></span><span class="ignored">)</span></span></span> e <span class="formula"><i>a</i></span> é o diâmetro do disco.</p>
+<p>1 mas = 4.8481368e-9 rad e 1 rad = 206264.8 arcsec (&quot;).</p>
+<div class="section" id="calculo-de-deslocamento-espacial-e-angular">
+<h3><a class="toc-backref" href="#id8">Cálculo de deslocamento espacial e angular</a></h3>
+<div class="formula">
+Δ<i>θ</i> = <i>u⃗</i> × <i>r⃗</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>B⃗</i><sub><span class="text">proj</span></sub></span><span class="ignored">)/(</span><span class="denominator"><i>λ</i></span><span class="ignored">)</span></span> × <span class="fraction"><span class="ignored">(</span><span class="numerator">Δ<i>S</i></span><span class="ignored">)/(</span><span class="denominator"><i>d</i></span><span class="ignored">)</span></span>
+</div>
+<p>Para o modelo de referência de Faes+2013, <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>B⃗</i><sub><span class="text">proj</span></sub></span><span class="ignored">)/(</span><span class="denominator"><i>d</i></span><span class="ignored">)</span></span> = 1</span> m/pc e <span class="formula">Δ<i>θ</i> = 8.5<sup>∘</sup></span>. Logo, deduz-se que <span class="formula">Δ<i>S</i>≃14.3<i>R</i><sub>⊙</sub></span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="opd">
+<h1><a class="toc-backref" href="#id9">OPD</a></h1>
+<div class="section" id="geral">
+<h2><a class="toc-backref" href="#id10">Geral</a></h2>
+<p>Modo EM do CCD iXon <strong>inverte o campo</strong> do CCD (<em>espelho</em>).</p>
+<p>Valores CCD <em>iXon</em>:</p>
+<ul class="simple">
+<li>gain 1x, sensitivity: 3.8, noise (ADU): (8.2/3.8=) 2.16</li>
+<li>gain 5x, sensitivity: 0.7, noise (ADU): (5.7/0.7=) 8.14</li>
+</ul>
+<p>Valores CCD <em>iKon</em>:
+- gain 4x, sensititvity = 0.9 e readnoise = 6.66.</p>
+<p>Valores CCD <em>105</em> (ECASS):</p>
+<ul class="simple">
+<li>sensititvity 2.5x, noise (ADU): 2.5</li>
+</ul>
+</div>
+<div class="section" id="zeiss">
+<h2><a class="toc-backref" href="#id11">Zeiss</a></h2>
+<p>Campo buscadora do Zeiss <span class="formula"> ~ 2.5</span> arcmin (minutos!).</p>
+</div>
+</div>
+<div class="section" id="data-reduction">
+<h1><a class="toc-backref" href="#id12">Data Reduction</a></h1>
+<div class="section" id="installing-iraf-in-ubuntu">
+<h2><a class="toc-backref" href="#id13">Installing IRAF in Ubuntu</a></h2>
+<p>I was used to Ureka (<a class="reference external" href="http://ssb.stsci.edu/ureka/">http://ssb.stsci.edu/ureka/</a>) from Gemini and STSci, but it was discontinued in 2018. Then, Gemini suggests going to AstroConda (<a class="reference external" href="https://astroconda.readthedocs.io">https://astroconda.readthedocs.io</a>).</p>
+<p>To install it in a Ubuntu x64 16.04 LTS, I did the following steps (May 2019):</p>
+<pre class="code bash literal-block">
+<span class="comment single"># If on Debian execute this first (not required on Ubuntu):
+# sudo dpkg --add-architecture i386
+</span>
+sudo apt-get update
+sudo apt-get install libc6:i386 libz1:i386 libncurses5:i386 libbz2-1.0:i386 libuuid1:i386 libxcb1:i386 libxmu6:i386
+
+<span class="comment single"># Go to https://docs.conda.io/en/latest/miniconda.html and get the latest
+# miniconda **64-bit** (x64) installer. Currently, for Linux, the link is:
+</span>$ wget https://repo.anaconda.com/miniconda/Miniconda2-latest-Linux-x86_64.sh
+$ sh Miniconda2-latest-Linux-x86_64.sh
+<span class="comment single"># Perform the installation
+</span>
+$ conda config --add channels http://ssb.stsci.edu/astroconda
+<span class="comment single"># Writes changes to ~/.condarc
+</span>
+$ conda create -n iraf27 <span class="name variable">python</span><span class="operator">=</span><span class="literal number">2</span>.7 iraf-all pyraf-all stsci
+<span class="comment single"># It will that a while to download everything.......</span>
+</pre>
+<p>However, I'm still getting an annoying error... How I miss Ureka!!
+<a class="reference external" href="https://github.com/conda/conda/issues/4859">https://github.com/conda/conda/issues/4859</a></p>
+</div>
+<div class="section" id="geral-iraf">
+<h2><a class="toc-backref" href="#id14">Geral IRAF</a></h2>
+<p>Saber a data e duração da exposição (iKon/iXon; a confirmar no 301/305):</p>
+<pre class="literal-block">
+beacon&gt; hselect *.fits DATE-OBS,EXPOSURE,$I yes
+</pre>
+<p>Lembrete: <tt class="docutils literal">DATE</tt> refere-se a data de última modificação.</p>
+<p>Eu criei uma variável no header dos arquivos FITS para corrigir a calibração em comprimento de onda: 'WLSHIFT', qual que o vetor <span class="formula"><i>λ</i><sub><i>f</i></sub> = <i>λ</i><sub>0</sub> + </span>
+WLSHIFT.</p>
+<p>Para salvar uma janela do IRAF = <tt class="docutils literal">:. snap eps</tt>.</p>
+<p>Uso do <cite>splot</cite> ou <cite>identify</cite>:</p>
+<ul class="simple">
+<li>Usar <tt class="docutils literal">a+a</tt> no lugar de <tt class="docutils literal">w+e+e</tt>.</li>
+<li>Usar <tt class="docutils literal">w+f</tt> para inverter imagem.</li>
+</ul>
+<div class="section" id="instalacao-pacote-beacon">
+<h3><a class="toc-backref" href="#id15">Instalação pacote Beacon</a></h3>
+<pre class="code bash literal-block">
+<span class="comment single"># sudo chmod -R 777 /data/Softwares/Ureka/iraf/extern
+</span>ln -s /data/Dropbox/Scripts/beacon /data/Softwares/Ureka/iraf/extern/beacon
+subl /data/Softwares/Ureka/iraf/unix/hlib/extern.pkg
+</pre>
+<pre class="code literal-block">
+reset beacon         = iraf$extern/beacon/
+task beacon.pkg      = beacon$beacon.cl
+</pre>
+<p>Compilar fortran dentro do ambiente CL:</p>
+<pre class="code literal-block">
+# copy and paste is impossible???
+cd iraf$
+cd extern/beacon/pccd/
+del pccd2000gen05.mac.e
+del ccdrap_e.e
+# fc pccd2000gen05.mac.f -o pccd2000gen05.mac.e
+!fort77 pccd2000gen05.mac.f -o pccd2000gen05.mac.e
+# fc ccdrap_e.f -o ccdrap_e.e
+!fort77 ccdrap_e.f -o ccdrap_e.e
+
+# Opcional (na atual versao)
+# unlearn datapars
+# unlearn findpars
+# unlearn centerpars
+# unlearn fitskypars
+# unlearn photpars
+# unlearn daopars
+# unlearn setimpars
+</pre>
+</div>
+</div>
+<div class="section" id="tips">
+<h2><a class="toc-backref" href="#id16">Tips</a></h2>
+<div class="section" id="keyboard-input-problem-at-epar">
+<h3><a class="toc-backref" href="#id17">Keyboard input problem at epar</a></h3>
+<p>Ubuntu 14.04.3, 64-bits, LANG=pt_BR.UTF-8</p>
+<pre class="code literal-block">
+# to type quotation mark (quote)
+alt gr + '
+</pre>
+</div>
+<div class="section" id="big-images-i-e-px-512-not-entirely-displayed-in-ds9">
+<h3><a class="toc-backref" href="#id18">Big images (i.e., px &gt; 512) not entirely displayed in DS9</a></h3>
+<p>Solution 1:
+- <cite>display.fill = yes</cite></p>
+<p>Solution 2:
+- In the <em>login.cl</em> file, change <cite>stdimage</cite> to <cite>imt2048</cite> (or the desired number of pixels)</p>
+</div>
+<div class="section" id="fatiamento-slicing">
+<h3><a class="toc-backref" href="#id19">Fatiamento (slicing)</a></h3>
+<p>O IRAF tem uma imagem embutida nele que se chama <tt class="docutils literal">dev$pix</tt>. Você pode testar os comandos abaixo com dela.</p>
+<pre class="code literal-block">
+display image[10:20,*]
+# Exibe as colunas de 10 a 20, e todas as &quot;linhas&quot; da imagem
+
+imstat cube[*, *, 3]
+#Roda o comando somente na 3a imagem do cubo FITS
+</pre>
+</div>
+</div>
+<div class="section" id="reducao-ecass">
+<h2><a class="toc-backref" href="#id20">Redução ECASS</a></h2>
+<div class="section" id="nome-lampada">
+<h3><a class="toc-backref" href="#id21">Nome lâmpada</a></h3>
+<p>Há vários padrões possíveis, como <em>pref*lamp*filter</em> (recomendado) ou
+<em>pref*filter*lamp</em>. Exemplo: <em>aeri_lamp_r_0001.fits</em>.</p>
+</div>
+<div class="section" id="dica-identify">
+<h3><a class="toc-backref" href="#id22">Dica <em>identify</em></a></h3>
+<p>Para inverter <span class="formula"><i>λ</i></span>, digite 'w+f'.</p>
+</div>
+<div class="section" id="problema-rvcor">
+<h3><a class="toc-backref" href="#id23">Problema <em>rvcor</em></a></h3>
+<pre class="literal-block">
+Warning: Image header parameter not found (UT)
+</pre>
+<p>Digite em 'y:':</p>
+<pre class="literal-block">
+0:0:0
+</pre>
+</div>
+<div class="section" id="erro-t-convolve">
+<h3><a class="toc-backref" href="#id24">Erro T_CONVOLVE</a></h3>
+<pre class="literal-block">
+Error smoothing image: avg_flat_r
+Warning: T_CONVOLVE: Image dimension &gt; 2.
+norm_flat_r is not an image or a number
+
+beacon&gt; imhead avg_*
+avg_bias.fits[645,2048,1][real]: zero
+avg_flat_r.fits[645,2048,1][real]: flat
+</pre>
+<p>Solução: aplicar o read3Dfits nas imagens!!!</p>
+<pre class="literal-block">
+beacon&gt; read3Dfits bias_*.fits
+beacon&gt; del bias_*.fits
+beacon&gt; !renlist.py
+    'cp_'
+    ''
+beacon&gt; !renlist.py
+    '_0001.'
+    '.'
+</pre>
+</div>
+</div>
+<div class="section" id="reducao-iagpol">
+<h2><a class="toc-backref" href="#id25">Redução IAGPOL</a></h2>
+<p>Pacote disponível no <em>github</em>.</p>
+<div class="section" id="padronizacao">
+<h3><a class="toc-backref" href="#id26">Padronização</a></h3>
+<p>Nome dos arquivos = <tt class="docutils literal">(obj)_(suf)_(filter)_0*</tt>, onde <tt class="docutils literal">obj</tt> é o nome tabelado (planilha xls), <tt class="docutils literal">suf</tt> é um sufixo da configuração do CCD (e.g., <tt class="docutils literal">_g5</tt>, <tt class="docutils literal">_full</tt>).</p>
+<p>Cada sequência de um dado alvo é salvo numa pasta.</p>
+<p>A pasta <tt class="docutils literal">calib</tt> é reservada para os arquivos de calibração.</p>
+<p>Não há procedimento específico para diferenciar padrões observadas nas 2 calcitas. Em geral, modifica-se o nome da pasta (e a rotina de redução identifica a calcita pelo ângulo das estrelas).</p>
+<p>Nome dos resultados da redução = <tt class="docutils literal"><span class="pre">w(obj)_(filter)_(pos)00*.(version).out</span></tt> e <tt class="docutils literal">JD_(obj)_(filter)</tt>.</p>
+</div>
+</div>
+<div class="section" id="reducao-musicos">
+<h2><a class="toc-backref" href="#id27">Redução MUSICOS</a></h2>
+<p>The new (Jan. 2015) are: <em>calib_mus</em> and <em>reduce_mus</em>. With MUSICOS <strong>both</strong> flats are important: CCD and dome. MUSICOS use Ikon CCD: gain is 0.9 and readnoise(<span class="formula"><i>e</i><sup> − </sup></span>) is 6.66 (1MHz, gain <em>x4</em>).</p>
+<p><em>calib_mus</em>: combine bias; combine CCD flats; apply bias+CCDflat to dome flats*; combine dome flats*; mark apertures on the flat; apply bias+flat to lamps; identify lamps within marked lamps. PS: * are optional steps.</p>
+<p><em>reduce_mus</em>: apply bias+flat to obj. images; extract and combine obj. images; apply lamp; normalize spectra (<em>continuum</em>); create <em>cont</em>. spec.: spec/norm-spec; combine apertures with sum to combined obj. and normalized spec.; final product is summed combined obj./summed normalized spec.</p>
+<img alt="../figs/astro_reduction_CCD.png" src="../figs/astro_reduction_CCD.png" style="width: 600px;" />
+<img alt="../figs/astro_reduction_CCD_prof.png" src="../figs/astro_reduction_CCD_prof.png" />
+<img alt="../figs/astro_reduction_CCD_Ha.png" src="../figs/astro_reduction_CCD_Ha.png" />
+<p>Atenção no <em>fit</em> das ordens: use 'k' (razão; ou 'j', resíduo) para ter uma ideia
+de como ficará o resultado. Recomendação é marcar regiões foram da linha com
+'s+s'. Porém, na janela seguinte, as regiões <strong>precisam ser removida</strong> ('t+f').</p>
+<p>'h' volta para o gráfico inicial.</p>
+<p>A linha <span class="formula"><i>H</i><i>α</i></span> está na ordem 24 do vermelho.</p>
+<p>Lâmpadas devem estar no formato <em>lamp*filter*</em>. Exemplo: <em>lamp_v_0001.fits</em>.</p>
+<div class="section" id="normalizacao-linhas-de-emissao">
+<h3><a class="toc-backref" href="#id28">Normalização linhas de emissão</a></h3>
+<p>Para imendar as ordens, usa-se a rotina <em>continuum</em>. Porém, ela parece não
+funcionar muito bem na presença de linhas de emissão...</p>
+<p>Exemplo: na estrela spec_14nov18/bcmi, o <span class="formula"><i>H</i><i>α</i></span> esperado era minímo ~
+0.85 e máximo ~ 1.7. Entretando, obteve-se minímo ~
+0.55 e máximo ~ 1.1 disforme.</p>
+<p>Criei então a opção <em>doextr</em>. Se <em>yes</em> (padrão), faz a estração das ordens
+(*.ms*). Se <em>no</em>, só re-faz a normalização, para correção deste erro.</p>
+</div>
+</div>
+<div class="section" id="reducao-musicos-com-opera">
+<h2><a class="toc-backref" href="#id29">Redução MUSICOS com OPERA</a></h2>
+<div class="section" id="instalacao">
+<h3><a class="toc-backref" href="#id30">Instalação</a></h3>
+<p>Usar <tt class="docutils literal">cfitsio</tt> antigo no caso de problemas...</p>
+<p>2+1 arquivos são necessários: opera.zip e fftw.zip, +cfitsio.zip. Após descompactá-los:</p>
+<pre class="code bash literal-block">
+<span class="name builtin">cd</span> opera-1.0
+./configure --prefix<span class="operator">=</span>/path/to/opera-1.0
+<span class="comment single"># se não funcionar,
+#more DEPENDENCIES (gcc, cfitsio, fftw3, zlib, Autotools, gnuplot)
+#autoconf/bootstrap.sh
+</span>
+<span class="comment single">#sudo apt-get install automake autoconf libtool
+#DEP &gt; cfitsio (3.2.9)
+#DEP &gt; fftw3
+</span>
+<span class="comment single">#sudo apt-get install fitsverify
+</span>
+<span class="name builtin">cd</span> ../fftw-x
+./configure
+make
+sudo make install
+<span class="name builtin">cd</span> ../opera-1.0
+
+make
+make install
+<span class="comment single">#. ./setup.sh
+#To uninstall:
+#make distclean</span>
+</pre>
+</div>
+<div class="section" id="uso">
+<h3><a class="toc-backref" href="#id31">Uso</a></h3>
+<p>As rotinas precisam que o header esteja corretamente configurado. Entre as exigências, estão:</p>
+<blockquote>
+<ul class="simple">
+<li>EXPTIME (ou outra KEYWORD) esteja em notação americana, isto é, float divido por &quot;.&quot; (e não &quot;,&quot;).</li>
+<li>&quot;R&quot; ou &quot;B&quot; em FILTER.</li>
+<li>Objeto (FLAT, BIAS, etc) corretamente identificados.</li>
+<li>Para tudo isso, eu criei um script python <tt class="docutils literal">prepare_header_opera.py</tt>. É só rodar na pasta da noite.</li>
+<li>Além disso, todos os arquivos devem estar na raiz da noite.</li>
+</ul>
+</blockquote>
+<p>Abaixo, o PATH <strong>do script</strong> é <tt class="docutils literal"><span class="pre">$HOME/opera-1.0/pipeline/pyMusicos/</span></tt></p>
+<pre class="code bash literal-block">
+<span class="name builtin">cd</span> /data/MUSICOS/14set05_R
+operaQueryImageInfo -r ./ -e <span class="literal string double">&quot;INSTMODE OBSTYPE OBJECT EXPTIME2 DATE MODDATA&quot;</span>
+
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/MUSICOS/ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span><span class="name variable">$HOME</span>/Reductions/MUSICOS/ --night<span class="operator">=</span>14set05_R --product<span class="operator">=</span><span class="literal string double">&quot;CALIB&quot;</span> -pvts
+<span class="comment single"># &quot;-s&quot; means SIMULATION of the reduction...
+</span>
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/MUSICOS/ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span><span class="name variable">$HOME</span>/Reductions/MUSICOS/ --night<span class="operator">=</span>14set05_R --product<span class="operator">=</span><span class="literal string double">&quot;OPSPC&quot;</span> -pvt
+</pre>
+<p>Exemplo:</p>
+<pre class="code bash literal-block">
+<span class="name builtin">cd</span> /data/spec_15set25/
+python prepare_header_opera.py
+
+/data/Softwares/opera-1.0/bin/operaQueryImageInfo -r ./ -e <span class="literal string double">&quot;INSTMODE OBSTYPE OBJECT EXPTIME2 DATE MODDATA&quot;</span>
+
+geany /data/Softwares/opera-1.0/pipeline/pyMusicos/operaMusicos.py
+<span class="comment single"># edit 1st line!
+</span>
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/ --pipelinehomedir<span class="operator">=</span>/data/opera-1.0 --productrootdir<span class="operator">=</span>/data/Reductions/ --night<span class="operator">=</span>spec_15set25 --product<span class="operator">=</span><span class="literal string double">&quot;CALIB&quot;</span> -pvts
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/ --pipelinehomedir<span class="operator">=</span>/data/opera-1.0 --productrootdir<span class="operator">=</span>/data/Reductions/ --night<span class="operator">=</span>spec_15set25 --product<span class="operator">=</span><span class="literal string double">&quot;CALIB&quot;</span> -pvt
+<span class="comment single"># my laptop, 2 cores = only 1 used; 1200 MB memory used
+# my laptop, 1 bias, 1 flat, 1+1 ThAr = X min
+</span>
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/ --pipelinehomedir<span class="operator">=</span>/data/opera-1.0 --productrootdir<span class="operator">=</span>/data/Reductions/ --night<span class="operator">=</span>spec_15set25 --product<span class="operator">=</span><span class="literal string double">&quot;OPSPC&quot;</span> -pvt
+<span class="comment single"># my laptop, 6 files, 1 tgt = X min</span>
+</pre>
+</div>
+<div class="section" id="resultados">
+<h3><a class="toc-backref" href="#id32">Resultados</a></h3>
+<pre class="code bash literal-block">
+<span class="name variable">$HOME</span>/opera-1.0/pipeline/pySpectralAnalysis/plotSpectrum.py —spectrumfile<span class="operator">=</span>HR8634_R_001.spc.gz
+
+gunzip -c HR8634_R_002.spc.gz &gt; HR8634_R_002.spc
+gnuplot -persist ../14set05Plots/HR8634_RED.gnu
+gnuplot -persist ../14set05Plots/HR8634_RED_norm.gnu
+</pre>
+</div>
+<div class="section" id="problemas">
+<h3><a class="toc-backref" href="#id33">Problemas</a></h3>
+<ul class="simple">
+<li>Não encontra <em>object</em>. Solução: verificar header.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="stavros-reducao-beacon">
+<h2><a class="toc-backref" href="#id34">Stavros - Redução <em>beacon</em></a></h2>
+<div class="section" id="criterios">
+<h3><a class="toc-backref" href="#id35">Critérios:</a></h3>
+<ol class="arabic simple">
+<li>Pastas: PATH/calib e PATH/prefix</li>
+<li>Nomes: bias_0#.fits; flat_F_0#.fits; onde F é um dos filtros [u,b,v,r,i]</li>
+<li>Rodar <tt class="docutils literal">ecl&gt; calib</tt></li>
+<li>Na pasta do prefix, Rodar <tt class="docutils literal">ecl&gt; reduce</tt> e <tt class="docutils literal">suffix =</tt></li>
+</ol>
+</div>
+<div class="section" id="dicas">
+<h3><a class="toc-backref" href="#id36">Dicas:</a></h3>
+<ul class="simple">
+<li><tt class="docutils literal">ccdrap</tt>, e <tt class="docutils literal">reject = 70000</tt></li>
+<li><tt class="docutils literal">polrap</tt>, <tt class="docutils literal">pout = 02 01 08</tt>, significa 2 pontos excluídos: o primeiro (01) e o último (08).</li>
+<li>CTRL+U+L &gt; vai para o final da linha no epar !</li>
+<li><tt class="docutils literal">polrap</tt>, <tt class="docutils literal">n = 4</tt>, agrupamentos de 4 posições.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="amdlib">
+<h2><a class="toc-backref" href="#id37">amdlib</a></h2>
+<p>...</p>
+</div>
+</div>
+<div class="section" id="notas-sobre-correcoes-em-comprimento-de-onda">
+<h1><a class="toc-backref" href="#id38">Notas sobre correções em comprimento de onda</a></h1>
+<p>As diferenças em <span class="formula"><i>λ</i></span> (em relação ao repouso) se dão por 4(+1) motivos:</p>
+<ol class="arabic simple">
+<li>Problema na calibração do comprimeto de onda.</li>
+<li>Calibração de onda &quot;no vácuo&quot; vs &quot;no ar&quot; (padrão usual)</li>
+<li>Ajuste de velocidade heliocêntrica</li>
+<li>Velocidade radial da estrela</li>
+<li>(Diferenças para com o HDUST)</li>
+</ol>
+<div class="section" id="problema-na-calibracao-do-comprimeto-de-onda">
+<h2><a class="toc-backref" href="#id39">Problema na calibração do comprimeto de onda</a></h2>
+<p>No padrão de espectro FITS, os espectros são salvos numa única tabela de fluxo. Para isso, o espectro é <strong>linearizado</strong> <span class="formula">(<i>λ</i>(<i>p</i><sub><i>x</i></sub>) = <i>f</i>(<i>p</i><sub><i>x</i></sub>) = <i>a</i> × <i>p</i><sub><i>x</i></sub> + <i>b</i>)</span>, e a info da função do comprimento de onda é salva no <em>header</em> da imagem sob os parâmetros <em>b = CRVAL1</em> e <em>a = CDELT1</em>.</p>
+<p>Assim, quando temos problemas de calibração, eles podem ser em <em>a</em>, em <em>b</em>, ou em ambas.</p>
+<p>Veja que isso não é mandatório: o ESO, por exemplo, salva uma tabela para o fluxo e outra para o comprimento de onda. Pode-se inclusive ter uma tabela para a incerteza no fluxo.</p>
+</div>
+<div class="section" id="calibracao-de-onda-no-vacuo-vs-no-ar">
+<h2><a class="toc-backref" href="#id40">Calibração de onda &quot;no vácuo&quot; vs &quot;no ar&quot;</a></h2>
+<p>O padrão nas observações é comprimento de onda no ar. O <em>HDUST</em> é padronizado para o vácuo. Para passar de um para o outro no <em>PyHudst</em>, use as funções presentes no <tt class="docutils literal">spectools</tt> (<tt class="docutils literal">vac2air</tt> e <tt class="docutils literal">air2vac</tt>).</p>
+</div>
+<div class="section" id="ajuste-de-velocidade-heliocentrica">
+<h2><a class="toc-backref" href="#id41">Ajuste de velocidade heliocêntrica</a></h2>
+<p>A velocidade da Terra girando e se movendo ao redor do Sol faz com que não vejamos os astros sempre com a mesma velocidade de nós. Obviamente, esta correção depende de quando realizamos a observação (ou da Terra com respeito ao Sol).</p>
+<p>Apesar de envolver a Terra, essa correção é chamada de correção &quot;heliocêntrica&quot;, pois calcula a velocidade para um observador que estivessse no Sol. A rotina que calcula isso no IRAF é a <tt class="docutils literal">rvcorrect</tt>. Veja o que diz o seu manual (<a class="reference external" href="http://stsdas.stsci.edu/cgi-bin/gethelp.cgi?rvcorrect">http://stsdas.stsci.edu/cgi-bin/gethelp.cgi?rvcorrect</a>):</p>
+<blockquote>
+The observed radial velocity is corrected for the motion of the observer in the direction of the observation. The components of the observer's motion corrected are those due to the Earth's rotation (diurnal velocity), the motion of the Earth's center about the Earth-Moon barycenter (lunar velocity), the motion of the Earth-Moon barycenter about the center of the Sun (annual velocity), and the motion of the Sun (solar velocity) relative to some specified standard of rest.</blockquote>
+<p>Ao ser executado, o <tt class="docutils literal">rvcorrect</tt> salvará no <em>header</em> do arquivo um campo com a flag <em>VHELIO</em>. Este valor é aplicado usando a rotina <tt class="docutils literal">dopcor</tt> (&quot;Doppler correction&quot;), que alterará os valores de  <em>CRVAL1</em> e <em>CDELT1</em> de acordo com <em>VHELIO</em>.</p>
+<p>É possível mostrar que as correções são feitas de acordo com as equações abaixo:</p>
+<div class="formula">
+<span class="environment"><span class="arrayrow">
+<span class="arraycell align-r">
+<i>λ</i><sub>0</sub>(<i>p</i><sub><i>x</i></sub>) = <i>a</i> × <i>p</i><sub><i>x</i></sub> + <i>b</i>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+<span class="fraction"><span class="ignored">(</span><span class="numerator"><i>λ</i> − <i>λ</i><sub>0</sub></span><span class="ignored">)/(</span><span class="denominator"><i>λ</i></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">Δ<i>v</i></span><span class="ignored">)/(</span><span class="denominator"><i>c</i></span><span class="ignored">)</span></span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+<i>λ</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>λ</i><sub>0</sub><i>c</i></span><span class="ignored">)/(</span><span class="denominator"><i>c</i> − Δ<i>v</i></span><span class="ignored">)</span></span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+<i>λ</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>a</i><i>c</i></span><span class="ignored">)/(</span><span class="denominator"><i>c</i> − Δ<i>v</i></span><span class="ignored">)</span></span><i>p</i><sub><i>x</i></sub> + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>b</i><i>c</i></span><span class="ignored">)/(</span><span class="denominator"><i>c</i> − Δ<i>v</i></span><span class="ignored">)</span></span>
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+ 
+</span>
+
+</span>
+<span class="arrayrow">
+<span class="arraycell align-r">
+<i>λ</i>(<i>p</i><sub><i>x</i></sub>) = <i>a</i>’ × <i>p</i><sub><i>x</i></sub> + <i>b</i>’
+</span>
+
+</span>
+</span>
+</div>
+</div>
+<div class="section" id="velocidade-radial-da-estrela">
+<h2><a class="toc-backref" href="#id42">Velocidade radial da estrela</a></h2>
+<p>Mesmo que tudo seja perfeitamente calibrado, o centro da linha da sua estrela estará deslocado do <span class="formula"><i>λ</i><sub>0</sub></span>. Isto porque ela deve ter um movimento relativo em relação ao Sol, chamado de &quot;velocidade radial&quot;.</p>
+<p>Note que a velocidade radial de uma estrela deve variar se ele tiver outro corpo em seu campo gravitacional, como num sistema binário ou se tiver planetas.</p>
+</div>
+<div class="section" id="diferencas-para-com-o-hdust">
+<h2><a class="toc-backref" href="#id43">Diferenças para com o HDUST</a></h2>
+<p>Por melhor que sejam os modelos do átomo de Hidrogênio, efeitos quânticos complicados (como &quot;acoplamento spin-órbita&quot;) nos impede de <em>precisamente</em> determinar o comprimento de onda das transições eletrônicas (como na fórmula de Rydberg).</p>
+<p>Assim, o valor do <span class="formula"><i>λ</i><sub>0</sub></span> no arquivo <em>simulation</em> do <em>HDUST</em> só pode ser determinado &quot;empiricamente&quot; - ou se você recuperar a fórmula e todos os valores das constantes utilizados no programa.</p>
+</div>
+</div>
+<div class="section" id="interferometry">
+<h1><a class="toc-backref" href="#id44">Interferometry</a></h1>
+<ul class="simple">
+<li><tt class="docutils literal">OIDATA_APP</tt>: all observational info (big files, no plot gen.)</li>
+<li><tt class="docutils literal">OIDATA_APP_AVG</tt>: average of observ. info (small files, plot)</li>
+<li><tt class="docutils literal">OIDATA_APP_AVG_SPEC_PRO</tt>: wavelength corrected (<tt class="docutils literal">SPEC</tt>) + V2+DP corrected from calibrators (nights without calibrators not have these files)</li>
+</ul>
+</div>
+<div class="section" id="logs">
+<h1><a class="toc-backref" href="#id45">Logs</a></h1>
+<div class="section" id="noites-spec">
+<h2><a class="toc-backref" href="#id46">Noites spec</a></h2>
+<div class="section" id="ago11">
+<h3><a class="toc-backref" href="#id47">14ago11</a></h3>
+<p>Observada por D. Bednarski e André Luiz. Sem calibração e lâmpadas !!!</p>
+<p>Copiei <em>bias</em> e <em>flat</em> da noite de spec_14jul15 e, deslocando e redimensionando
+cada uma das aberturas <strong>aparentemente</strong> funcionou:</p>
+<pre class="literal-block">
+a (All flag - keep on)
+s+'yes' (aperture 1)
+g (recenter)
+z (resize)
+</pre>
+</div>
+</div>
+<div class="section" id="alvos-spec">
+<h2><a class="toc-backref" href="#id48">Alvos spec</a></h2>
+<div class="section" id="achernar">
+<h3><a class="toc-backref" href="#id49">Achernar</a></h3>
+<p>Noites com dados na fase ativa de 2013+:
+- 130925, ECASS,
+- 130926, ECASS,
+- 131111, MUSICOS,
+- 131112, MUSICOS,
+- 131209, MUSICOS,
+- 140715, MUSICOS,
+- 140811, MUSICOS,
+- 141013, MUSICOS,
+- 141118, MUSICOS,
+- 150924, MUSICOS,
+- 151028, MUSICOS,</p>
+</div>
+<div class="section" id="alpha-col">
+<h3><a class="toc-backref" href="#id50">Alpha Col</a></h3>
+<p>Pedido Xuxu, entregue em 14/03/15. Noites com dados:
+- 111020, ECASS, R, 6 specs, 1 summed.
+- 120405, ECASS, R, 10 specs, 1 summed.
+- 120910, ECASS, B, 11 specs, 1 summed.
+- 121120, ECASS, R, 20 specs, 1 summed.
+- 130926, ECASS, R, 30 specs, 2 summed.
+- 131111, MUSICOS, B, 10 specs, <em>error orders 75/76</em>.
+- 131112, MUSICOS, R, 5 specs, 1 summed.
+- 131209, MUSICOS, R, 8 specs, 1 summed.
+- 140225, MUSICOS, R, 5 specs, 1 summed.
+- 141013, MUSICOS, R, 3 specs, <em>error order 42</em>.
+- 141118, MUSICOS, R, 3 specs, <em>error order 26</em>.
+- 150402, MUSICOS, R, 5 specs, <em>error cpp</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

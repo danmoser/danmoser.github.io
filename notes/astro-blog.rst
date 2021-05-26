@@ -93,7 +93,7 @@ https://osf.io/8ajqs/
 ----
 
 THELI -- a tool for the automated reduction of astronomical images
----------------------------------------------------------
+--------------------------------------------------------------------
 https://www.astro.uni-bonn.de/theli/
 
 ----
