@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
 from glob import glob
@@ -32,8 +32,8 @@ if lines % 2 == 0:
     mid = tot/2-ncols/2-1
 
 rstfiles += [ '\\' for i in range(tot - lr) ]
-rstfiles.insert(mid, '.. image:: ../figs/index2.gif')
-rstfiles.insert(-(ncols/2), '.. image:: ../figs/index3a.gif')
+rstfiles.insert(int(mid), '.. image:: ../figs/index2.gif')
+rstfiles.insert(-int(ncols/2), '.. image:: ../figs/index3a.gif')
 
 rf = np.array(rstfiles).reshape(-1, ncols)
 f0 = open('index.rst', 'w')
