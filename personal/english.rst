@@ -23,13 +23,16 @@ Vocabulary
 - aviary: aviário
 - barf: vomit
 - blend: mistura
-- broker: corretor
+- broker: corretor (de ações)
+- bruise: ematoma
 - bulks up: preencher, aumentar massa
 - burn out: queimar-se (todo)
 - casting: moldagem
 - ceilings: forro, teto
 - cinder: cinzas, brasas
 - childminder: babá
+- (to) chime: harmonizar
+- chopsticks: hashi (JAP), varetas
 - chunk: pedaço
 - cloth: (singular) pano
 - condoning: perdoar, reparar (uma falta), ou concordar com.
@@ -100,6 +103,7 @@ Vocabulary
 - shenanigans: travessuras
 - spoof: paródia, falsificação
 - stance: posição
+- sticky: pegajoso
 - stirred up: agitado
 - straggler: retardatário
 - strain: tensão, esticar
@@ -122,6 +126,7 @@ Vocabulary
 - wavelet: pequena onda
 - wax: crescer
 - weldment: solda, emenda
+- wipers: limpador (vidro do carro) ou lenço para limpar
 - whim: capricho, extravagância
 - whore: prostituta
 - withdraw: retirar, afastar
@@ -129,16 +134,25 @@ Vocabulary
 
 Expressions
 -------------
-- "a first": primeira vez
+- "a first": um primeira (tentativa)
 - "a good deal in spots": em vários pontos
 - "built to order": feito sob encomenda
 - "bottom of a [deep] chasm": fundo do poço
 - "foul play": jogo sujo, crime
-- "one-off payment": pagamento mútuo
+- "heads-up": (Informal) information or notification -- *He gave me a heads-up on the new security measures*.
+- "in any event": de qualquer modo
+- "let's hope for the best": vamos esperar pelo melhor
+- "let's see what we get": vamos ver o que acontece
+- "one-off payment": pagamento único
 - "Ponzi scheme": a fraudulent investment operation
 - "to tip his hat": tirar o seu (dele) chapéu
 - "wanted on a charge": sob a acusação de
 - "wildcat strike": greve selvagem 
+
+Acronyms
+------------
+- ASB: American Savings Bank
+- CD: Certificate Deposit -- um tipo de investimento feito no/pelo banco.
 
 Prepositions
 -------------

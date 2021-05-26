@@ -128,7 +128,11 @@ Doing science
 .. figure:: ../figs/doing-sci_vocab.jpg
     :align: center
 
+- `Restrict researchers to one paper a year, says UCL professor <https://www.timeshighereducation.com/news/restrict-researchers-one-paper-ayear-says-ucl-professor>`_
+
 - `Success in academia is as much about grit as talent <https://trabalhounido.blogspot.com/2019/05/success-in-academia-is-as-much-about.html>`_: in favor of Epistemological anarchism from Paul Feyerabend?
+
+- `The Role of Luck in Life Success Is Far Greater Than We Realized <https://getpocket.com/explore/item/the-role-of-luck-in-life-success-is-far-greater-than-we-realized?utm_source=pocket-newtab>`_.
 
 - `Pesquisadores exploram pós-doutorandos estrangeiros nos EUA <http://www.diretodaciencia.com/2018/11/23/pesquisadores-exploram-pos-doutorandos-estrangeiros-nos-eua-afirma-estudo/>`_
 
@@ -387,6 +391,9 @@ Doing science
 
 - `Riscos e benefícios da homeopatia <http://www.esquerda.net/artigo/riscos-e-benef%C3%ADcios-da-homeopatia/30934>`_
 
+- `Why Most Published Research Findings Are False (Ioannidis, 2005) <https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124>`_
+
+
 Data tools
 ==================
 Extracting data
@@ -444,3 +451,216 @@ Movies
 - The Great Global Warming Swindle (?)
 - Feynman and the Challenger (2013)
 - `My YouTube playlist <https://www.youtube.com/playlist?list=PLmw4hG7QKEw_mJ4WXnEpKcTd4M7cF8Ipp>`_
+
+
+Publicação de Patentes
+====================================
+por Henri Suzuki 22 e 23/07/2019
+
+Gerais
+--------
+"Patrocínio" da agência USP de notícias.
+
+Nos formamos na graduação e na pós se termos visto sequer uma única patente, mesmo na USP.
+
+Uma patente pode ter mais de uma classificação.
+
+Para evitar conflito de interesses, não se deve convidar "patenteadores" externos à instituição. 
+
+Nunca divulgar patentes antes do depósito formal.
+
+Patentiabilidade = novidade / ausência de anterioridade.
+
+Processo
+---------
+- Pede-se a patente. Nos EUA, processo ganha código YYYY/NUMBER; outros, A###...
+- Fica em sigilo (*se aceito*) por 12 meses
+- Se aceito, é publicado com código [US N,NNN,NNN].
+- Não existe "patente internacional". O que existe é o PCT = Patent Cooperation Treaty. Patentes sob o PCT ganham código WO###...
+
+Descobrir classificação de patentes de interesse
+--------------------------------------------------
+Exemplo: "Medicianal plant extract" -- Área de fitoterápicos. Consulta mostra facilmente que chineses, japoneses e coreanos dominam as patentes. 
+
+É possível montar uma "apostila" de patentes a partir de buscas do Google > formato CSV > Algo da área/não é "busca de anterioridade"
+
+Exemplo 2: Canudo biodegradável ["feito de mandioca"]. Não procurar por "canudo", mas "materiais" feitos de mandioca...
+
+Há outras ferramentas (Patent scope...). Porém, Google é a mais simples e padrão. Quem não usa o Google, não consegue usar as outras.
+
+Contexto de Patentes
+-----------------------
+Patente é só um tipo de Apropriação Intelectual. Há outros, como Direitos Autorais, Propriedade Industrial, etc. É importante conhecer diferenças e adequar o projeto. 
+
+Exemplo: Direitos Autorais. Programas/Software, Manuais, Artigos Científicos. Não depende de registro formal. Válido até 70 anos após a morte do último co-criador. 70 anos é o direito material ($), porém o direito moral (reconhecimento da autoria) não expira.
+
+Exemplo: Propriedade Industrial e Patentes dependem de depósito formal.
+
+Exemplo: Marcas. Identidade de produtos e de empresas num dado segmento de mercado específico (objetivo: distintividade). Não pode ter funcionalidade associada. No Brasil, é somente visual, inclusive 3D. Nos EUA, pode ser sonora (exemplo: escapamento da Harley-Davison). Marca não expira nunca, e depende de depósito formal. 
+
+Não existe a "patente da marca". Marca é somente registrada. Patente é a solução de um problema técnico.
+
+Boa referência: cartilha da propriedade privada, OAB-RS 2015.
+
+Site: "Ten Types of Innovation" -- https://www.doblin.com/ten-types/
+
+    #. Profit Model
+    #. Network
+    #. Structure
+    #. Process
+    #. Product Performance
+    #. Product System
+    #. Service
+    #. Channel
+    #. Brand
+    #. Customer engagement
+
+Classificação: 
+    - 1 a 4: Configuração
+    - 5 e 6: Oferta
+    - 7 a 10: Experiência
+
+#4 a #6 são as mais relevantes para patentes. #5 Confunde-se como a única inovação. Em geral, é a mais facilmente copiada pelos concorrentes.
+
+Indústria farmacêutica é uma das que mais dependem de patentes. 
+
+Serviços ==  modelo de negócios não depende de patente. Não gaste $ com patentes, estude! Grande parte das patentes estão em domínio público!
+
+"Business Model Canvas" == ferramenta visual para organizar ideias. 
+"Personal Canvas" == de pessoa. 
+"Lean Canvas" == para negócios nascentes. Diferenciais competititos == "unfair advantages".
+
+Canvas == proposta de valor -- resolver um problemade maneira única.
+
+R$ 70 custos iniciais de pedido de patente. "Pedido" não é uma métrica, pois pode-ser depositar "qualquer coisa". 
+
+USP recebeu R$ 2 milhões em Royalties (por 14 anos?). Maior patente da USP é da farmácia, Redigida por Henri Suzuki.
+
+Lei de Propriedade Industrial -- Lei no. 9279/96. Toda Universidade/Instituição de Pesquisa deve ter uma "agência de inovação". Todos os pedidos de patentes devem vir por esta agência *de quaisquer pessoas ligadas a instituição*, inclusive alunos.
+
+Patente é por definição um título de propriedade para *impedir terceiros de explorarem sua invenção*.
+
+Batalhas judiciais
+-------------------
+O custo inicial de uma batalha judicial de patentes nos EUA pode facilmente chegar a US$ 2 milhões. 
+
+Non-practicing entities (NPEs) are people who hold patents for a product or process without any intention of developing it. A type of NPE is patent trolls. These trolls gather a large number of patents and plan patent infringements suits. The suits go against individuals and companies that illegally used some of the patent's elements. To differentiate between trolls and NPE, the Federal Trade Commission uses the term patent assertion entities (PAEs) to describe trolls.
+
+NPE são entidades especializadas nos processos de patentes, muito usadas por pequenos patenteadores.
+
+Exemplo: inventor do "bina" == não deu em nada, em virtude da invalidação da redação das patentes.
+
+Dinâmica: navios naufragados 
+---------------------------------
+- com bolinhas de "ping-pong"
+- Telas ao redor do navio
+- Sucção e válvulas
+- "Bicarbonato" = capa mais densa que a água, e infla em contato com a água
+- Balão p/ fazer as bolinhas entrarem
+
+1 atm na praia + 1 atm a cada 10 metros de profundidade.
+
+"Bomba peristáltica" = US 3,332,385.
+
+Como fazer as buscas (e depósito!): "Aparato para trazer à superfície"... "Meios para propelir"... "I claim"... **reinvindicação é tudo**.
+
+É considerado inovação (sujeito a patente) dependendo do estado da técnica à epoca (julgamento **subjetivo**). Julgamento inclui o grau de generalidade do "claim".
+
+"Patent citation": quem a patent cita. "Cited by": quem citou a patente.
+
+Exemplo busca: "Building Block? 5D Bottle Cap?", onde "5D" corresponde a 5 palavras de distância. Há a função "More like this"...
+
+Patente é uma "nova atividade inventiva com aplicação industrial". Consultoria do processo de redação/depósito custa R$ 4000/dia, ou R$ 500/hora (no início de 2019). Como referência, um post-doc FAPESP recebe R$ 45/hora.
+
+Resumo: o objetivo da patente é impedir terceiros. O direito de excluir terceiros não dá direito de explorar. Por exemplo, invenções de terceiros podem impedir de explorar. 
+
+O uso da patente é livre para pesquisas e experimentos. A proibição é de exploração comercial, incluindo testes clínicos. 
+
+Para se evitar engenharia reversa, usa-se "contrato de fornecimento", que não é patente.
+
+Até o fim de 2019, o responsável pelo registro de patentes no Brasil era o INPI -- Instituto Nacional da Propriedade Industrial. Em dezembro de 2019, o governo propôs a fusão do INPI com a Agência Brasileira de Desenvolvimento Industrial (ABDI), que se tornaria Agência Brasileira de Desenvolvimento e Propriedade Industrial (ABDPI).
+
+"Patente de invenção": 20 anos após o depósito, ou pelo menos 10 anos após a concessão.
+
+Modelo de utilidade (objeto de uso prático): "manipulável" -- 15 (anos?) depósito / 7 (anos?) concessão.
+
+Exemplo de "segredo industrial": fórmula da Coca-Cola.
+
+"Patent it yourself": bom livro de referência.
+
+"Prophetic patent example": se um exemplo da patente for localizada (por exemplo, na internet) esta se torna inválida ("patent unenforceable").
+
+
+Como é e quanto custa o processo de patenteamento
+----------------------------------------------------
+Há publicações/taxas que precisam ser monitoradas e pagas **no prazo** determinado, com o risco do pedido de patente "morrer". Sugestão: cadastrar alarme no "Push INPI" (que as vezes falha) e contratar uma empresa especializada. Anuidade (patente?) ~R$ 150. Lá fora é bem mais caro.
+
+Exame técnico/adequação do pedido == 4-5 anos depois do depósito. Exemplo: "prova de que o chá verde é mesmo inseticida".
+
+Nulidade administrativa ou judicial == a patente pode ser anulada por pedido de terceiros. Se acontecer, é como se a patente nunca tivesse existido. 
+
+Pagamento do PCT é de R$ 5000, até 12 meses após o depósito. USP não tem $$$. Então, custeio só com parcerias.
+
+Se não pagar anuidade, a patente deixa de ser válida. 
+
+A patente não precisa se concedida para ser vendida.
+
+"Como se faz uma parceria"? **Antes** de depositar, encontrar a empresa interessada. 
+
+Exemplos buscas
+----------------
+Orbit.com > log-in > easy search > A61K-036 > Show results
+
+Select > graph analysis
+
+EPxxx > patent europeia
+
+Acrônimos:
+    - EPO - European Patent Office
+    - IPC - International Patent Classification
+    - IPBI - Intelectual Property Business Inteligence
+    - WIPO - World Intelectual Property Organization
+    - CPC - Cooperative Patent Classification
+    - Lapsed patent = patente abandonada
+
+Scopus analytica > análise de publicações. Exemplo: "documents by funding sponsor".
+
+DII = "Derwent Innovations Index", é como o Orbit, assinado pela CAPES (em meados em 2019). Grande banco de dados.
+
+Bibliotecário hoje é um cientista da informação (eg., bibliotecário de referência).
+
+SciFinder = Bando de dados de *química*. 
+
+Orbit = $2000/ano 1 licença (ICB). $45.000/ano p/ campus.
+
+Compendex Engineering Index (EI) = portal de engenharia. Desenho industrial tem database gratuito. "Free design database".
+
+Materiais
+------------
+Guia Básico de Patentes - INPI = consulta
+
+Resolução no.124 - Diretrizes = formatação = instrução normativa
+
+Consiste de = *exatamente* (toda a lista de características). 
+
+Compreende de = *incompleto* (lista de características).
+
+*Descoberta* não é patenteável. Só o seu uso para resolução de um problema técnico. 
+
+Exemplo: "Uber surge pricing".
+
+Guias internacionais: National Patent Drafting Course (WIPO) -- Free of charge.
+
+Encher de anterioridades facilita a visibilidade da patente. 
+
+UCP - Universidade & Centro de Pesquisa -- 1/3 dos royalties vão para os pesquisadores. 
+
+PPP - Patent Purchase Partnership.
+
+"Cabe ao proprietário impedir o uso indevido da patente".
+
+Segredo Industrial ou Desenho Industrial podem ser mais eficazes para proteção do projeto do que patente...
+
+EPO - Case Law of the Boards of Appeal of the European Patent Office -- excelente referências históricas.
+
+Livro Ivan Aller (Denis Barbosa?) -- Litígio de patentes.

@@ -72,6 +72,11 @@ Print from lines 4400 to 4500 of a file
 
     cat file | head -n 4500 | tail -n 100
 
+Repair ``rar`` file
+---------------------
+.. code:: bash
+
+    unrar x -kb damaged.rar
 
 Good media player
 --------------------

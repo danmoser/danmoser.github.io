@@ -129,3 +129,9 @@ alguns medicamentos por desempenhar um papel estimulante do sistema nervoso
 central, relaxando a musculatura lisa dos brônquios e agindo como estimulante
 respiratório e potencializador de analgésico do ácido acetil salicílico e do
 paracetamol.
+
+
+Sunscreen
+***********
+- Oxybenzone and octinoxate have been proven to be harmful to coral reefs (source: https://www.khon2.com/local-news/new-laws-in-starting-in-2021-in-hawaii/amp/)
+- Safe and effective alternatives according to the FDA are sunscreens containing zinc oxide and titanium dioxid.

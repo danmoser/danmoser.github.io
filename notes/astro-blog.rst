@@ -3,10 +3,372 @@
 DMF AstroBlog
 ##############
 
+2021
+**********
+2021-04
+========
+JS9 imexam
+-----------
+https://js9.si.edu/js9/demos/js9imexam.html
+
+-----
+
+Calculus made easy
+---------------------
+A friend has just shown me this book "Calculus made easy", published in 1914, and I think it's got one of the best prologues I've ever seen. This is *exactly* what textbooks should be doing. And they should all be honest about how terrifying the topic names are too. https://t.co/8Qodx8dLaq
+
+https://mobile.twitter.com/helenczerski/status/1375915057905856513
+
+
+2020
+**********
+2020-08
+==========
+NASA Launched Laser Beams at the Moon – For the First Time, They Received a Signal Back
+-------------------------------------------------------------------------------------------
+https://scitechdaily.com/nasa-launched-laser-beams-at-the-moon-for-the-first-time-they-received-a-signal-back/
+
+-------
+
+Ozonioterapia
+---------------
+Promessas assim lembram muito os tratamentos “milagrosos” baseados em eletricidade e magnetismo oferecidos no século 19, quando essas forças eram misteriosas, desconhecidas e não faltavam espertalhões dispostos a usá-las para vender falsas esperanças aos doentes ou receitas de “bem-estar” aos hipocondríacos.
+
+https://www.revistaquestaodeciencia.com.br/artigo/2019/03/11/que-mal-que-tem-amputacao-por-ozonioterapia
+
+--------
+
+The ‘Batman Effect’: How having an alter ego empowers you
+------------------------------------------------------------------
+https://www.bbc.com/worklife/article/20200817-the-batman-effect-how-having-an-alter-ego-empowers-you
+
+-----
+
+Common Hawaiian Words 
+-----------------------
+https://poipubeach.org/blog/hawaiian-words-to-know-before-your-kauai-vacation/
+
+-----
+
+What it means having to work in foreign language
+-------------------------------------------------
+What it means having to work in foreign language: fear, time loss, lost opportunities. A triggered by a (kind of warranted) "please write in better English" in a recent referee report & one of my group member's lament on how their English writing sounds like robot writing. 1/2
+
+It means constant fear: of saying something wrong or inappropriate. Of not understanding something, especially a question. Of knowing what you want to say, how you want to answer a question, but not being able to say it in the foreign language. 2/3
+
+It means losing your first language: you look at essays you wrote in high school & know you are not able to express yourself the same way again. Your sentence structure changes. You use the wrong words, the wrong voice, idioms from the foreign language without even realizing. 3/4
+
+It means having your competence and your intelligence constantly questioned: OMG, his talks are the worst! It may be interesting science, but I can't understand him because of the accent! I can't read her papers, they are just incomprehensible. 4/5
+
+It means spending time you don't have: looking up words, making sure to follow obscure grammar rules, thay you don't sound off (short sentences and active voice make you sound like a kindergartener in German; passive voice and complex sentence are to be avoided in English). 5/6
+
+It means knowing how to spell words you read, but having no idea how to pronounce them. Or having heard a word and being unable to look it up because you don't know how it's written. 6/7
+
+It means using outdated rules that offend people ("Dear Sirs", "Fräulein"). It means trying to write in German and people piling on you because you don't do the gendering right (yes, * or : please, but how is a non-native speaker to know?). 7/8
+
+It means lost outreach and engagement opportunities: media interviews that go to native speakers with clear pronunciation. Articles you are not asked to write. You are not funny enough, not witty enough, not expressing yourself clear enough, fast enough. 8/9
+
+Some of the above we could solve with compassion and understanding. Others (the mental load, the time loss) are inherent and may get better with time and age (and thus with influence and less need to rely on opportunities), but never fully goes away ... 9/9
+
+And there we go, me seeing tons of English mistakes in the thread once it is posted 
+
+https://mobile.twitter.com/vicgrinberg/status/1297103574489616384
+
+----
+
+Livro de Física
+----------------
+Recomendação do dia é o livro da Lisa Randall: Batendo à porta do céu: O bóson de Higgs e como a física moderna ilumina o universo.
+
+------
+
+A Graphic Design Revolution For Scientific Conference Posters
+---------------------------------------------------------------
+A new trend at scientific conference poster sessions is waking scientists up to the power of good design. But experts in visual communication think...
+
+https://www.forbes.com/sites/evaamsen/2019/06/18/a-graphic-design-revolution-for-scientific-conference-posters/
+
+https://osf.io/8ajqs/
+
+----
+
+THELI -- a tool for the automated reduction of astronomical images
+---------------------------------------------------------
+https://www.astro.uni-bonn.de/theli/
+
+----
+
+Gamma-ray Scientists "Dust Off" Intensity Interferometry
+---------------------------------------------------------
+https://www.cfa.harvard.edu/news/2020-14
+
+----
+
+Interferometria (e um pouco de Speckle)
+----------------------------------------
+https://slides.com/nicscott/andor
+
+
+2020-07
+=========
+Matlplotlib 3D
+-------------------
+Absolutely blown away by @NPRougier's matplotblog post showing how to render 3D objects in @matplotlib. And it looks like there's an entire book on Scientific Visualization to follow!
+
+https://github.com/rougier/scientific-visualization-book
+
+2019-02
+==========
+Horizontes da astronomia brasileira em 2014
+--------------------------------------------
+De 2014 a 2020, muita coisa mudou.....
+
+https://trabalhounido.blogspot.com/2020/02/horizontes-da-astronomia-brasileira-em.html
+
+-------
+
+The search for extraterrestrial intelligence moves up a gear
+--------------------------------------------------------------
+https://trabalhounido.blogspot.com/2020/02/the-search-for-extraterrestrial.html
+
+----
+
+Bibmanager: A BibTex Manager Designed for Astronomers
+------------------------------------------------------------------
+https://www.astrobetter.com/blog/2020/02/17/bibmanager-a-bibtex-manager-designed-for-astronomers/
+
+--------------
+
+Appeal by Astronomers
+----------------------
+https://astronomersappeal.wordpress.com/
+
+------
+
+Create a Tesla Cybertruck That Drives with Matplotlib
+-------------------------------------------------------
+https://matplotlib.org/matplotblog/posts/create-a-tesla-cybertruck-that-drives/
+
+------
+
+O ‘preço de mercado’ da universidade
+----------------------------------------
+https://trabalhounido.blogspot.com/2020/02/o-preco-de-mercado-da-universidade.html
+
+----
+
+Choose Your Own Adventure: Developing A Values-Oriented Framework for Your Career
+--------------------------------------------------------------------------------------------
+https://arxiv.org/abs/1805.09963
+
+-------
+
+Hawaii astronomy jobs
+-----------------------
+https://www.maunakeaastronomyjobs.org/searchresults.html
+
+----
+
+Don't Believe These 5 Myths About The Big Bang 
+--------------------------------------------------
+https://trabalhounido.blogspot.com/2020/02/dont-believe-these-5-myths-about-big.html
+
+
+2019-01
+========
+Galactic Rainbow -- IOTW1952
+--------------------------------
+The Milky Way hangs poised over the Gemini South telescope
+
+https://nationalastro.org/news/galactic-rainbow-iotw1952/
+
+
 2019
 **********
+2019-12
+========
+The Invention of “Ethical AI”
+--------------------------------
+https://theintercept.com/2019/12/20/mit-ethical-ai-artificial-intelligence/
+
+----
+
+Hayashi Saeko: Three Decades Pushing the Limits of Astronomical Observation with the Subaru Telescope
+---------------------------------------------------------------------------------------------------------------------
+https://www.nippon.com/en/people/e00169/hayashi-saeko-three-decades-pushing-the-limits-of-astronomical-observation-with-the-subaru.html
+
+----
+
+Glassdoor job search and info
+-------------------------------
+Search millions of jobs and get the inside scoop on companies with employee reviews, personalized salary tools,
+
+https://www.glassdoor.com
+
+--------
+
+Astronomers map a neutron star's surface for the first time
+--------------------------------------------------------------
+NASA's NICER instrument reveals that neutron stars are not as simple as we thought.
+
+http://www.astronomy.com/news/2019/12/astronomers-map-a-neutron-stars-surface-for-the-first-time
+
+----
+
+Interactive periodic table
+-------------------------------
+by Keith Enevoldsen 
+
+https://elements.wlonk.com/index.htm
+
+In Portuguese/em português: https://revistagalileu.globo.com/amp/Ciencia/noticia/2016/11/esta-tabela-periodica-interativa-mostra-o-proposito-de-cada-elemento.html
+
+-------
+
+The Cathedral and the Bizarre
+-------------------------------
+A critique of twenty years of open source, by Mark Tarver
+
+http://marktarver.com/thecathedralandthebizarre.html
+
+----------
+
+The deadly race to the South Pole
+------------------------------------
+Three key explorers: Roald Amundsen, Robert Falcon Scott and Ernest Shackleton.
+
+- https://en.wikipedia.org/wiki/Amundsen%27s_South_Pole_expedition
+- https://en.wikipedia.org/wiki/Terra_Nova_Expedition
+- https://en.wikipedia.org/wiki/Imperial_Trans-Antarctic_Expedition
+- Vox DarkRoom video: https://www.youtube.com/watch?v=hpcZmuz2LGY
+- https://www.history.com/news/the-treacherous-race-to-the-south-pole
+
+------
+
+ClickUp
+--------
+To-do lists, 
+Project management,
+Docs & Notes... Trello alternative.
+
+https://clickup.com/
+
+--------
+
+OpticalRayTracer
+-----------------
+A completely rewritten virtual lens/mirror design workshop
+
+https://arachnoid.com/OpticalRayTracer/
+
+-------
+
+Misaligned Stars
+------------------
+On TMT, Mauna Kea and Hawaii.
+
+https://thepolitic.org/misaligned-stars/
+
+-------
+
+What's Going On With The Volcanoes? 
+--------------------------------------
+Hawai'i Volcanoes National Park (U.S. National Park Service)
+
+https://www.nps.gov/havo/planyourvisit/lava2.htm
+
+-------
+
+Create LaTeX tables online
+---------------------------
+http://www.tablesgenerator.com/
+
+-----
+
+Turn your old speakers or Hi-Fi into Bluetooth receivers with a Raspberry Pi
+------------------------------------------------------------------------------
+Very cool project: revive an old hi-fi or speakers (that do not have bluetooth) and turn them into bluetooth speakers with a raspberry pi 
+
+https://t.co/cYKSOuXbSx 
+
+------
+
+TMT: The World's Most Controversial Telescope
+-----------------------------------------------
+https://www.youtube.com/watch?v=XMrIbLx9ElQ
+
+------
+
+Crise é a melhor hora para pensar o futuro da Ciência e da Universidade
+-------------------------------------------------------------------------
+https://jornal.usp.br/ciencias/crise-e-o-melhor-momento-para-pensar-o-futuro-da-ciencia-e-da-universidade/
+
+------
+
+A new view into the history of the universe
+----------------------------------------------
+With an upgrade to the Super-Kamiokande detector, neutrino physicists will gain access to the supernovae of the past.
+
+https://www.symmetrymagazine.org/article/a-new-view-into-the-history-of-the-universe
+
+
+
 2019-11
 ========
+Surely You’re a Creep, Mr. Feynman
+---------------------------------------
+On toxic moral license and the mythos of male scientific genius
+
+https://thebaffler.com/outbursts/surely-youre-a-creep-mr-feynman-mcneill
+
+-------
+
+Spheres, Cones and Cylinders
+-----------------------------
+Cartographers have to cheat when creating maps, because the surface of Earth is curved. Notice how a square on a flat map is distorted differently for different projections!
+
+https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps
+
+-------
+
+The facts and nothing but the facts
+------------------------------------
+At a 2017 workshop on blind analysis, researchers discussed how to keep their expectations out of their results.
+
+https://www.symmetrymagazine.org/article/the-facts-and-nothing-but-the-facts
+
+-------
+
+Characterizing exoplanet atmosphere
+---------------------------------------
+Interesting new ZEIT collaboration paper by Thao et al. from UNC (https://t.co/X3eIo330js, accepted to AJ) characterizing the atmosphere of a young extrasolar Neptune-like planet, K2-25b. They rule out a solar-composition atmosphere and find evidence consistent with clouds
+
+https://arxiv.org/abs/1911.05744
+
+------
+
+Programmers are humans too
+---------------------------
+https://homepages.cwi.nl/~steven/Talks/2019/11-21-dijkstra/
+
+------
+
+Light pollution is key 'bringer of insect apocalypse' 
+-----------------------------------------------------------
+https://www.theguardian.com/environment/2019/nov/22/light-pollution-insect-apocalypse
+
+-------
+
+Exercism -- Code practice and mentorship for everyone
+----------------------------------------------------------------
+Level up your programming skills with 3,092 exercises across 52 languages, and insightful discussion with our dedicated team of welcoming mentors. Exercism is 100% free forever. 
+
+https://exercism.io/tracks/python
+
+Hundreds of hours have gone into making these exercises fun, useful, and challenging to help you enjoy learning.
+
+----------------
+
 Coding habits for data scientists
 -----------------------------------
 Great article on how to improve the quality of your code on ML projects. #machinelearning #python #datascience 

@@ -298,6 +298,9 @@ Pictures
 - APOD - Astronomy Picture of the Day
     http://apod.nasa.gov/
 
+.. figure:: ../figs/astro-basics_jar.jpg
+    :align: center
+
 .. figure:: ../figs/astro-basics_year.gif
     :align: center
 

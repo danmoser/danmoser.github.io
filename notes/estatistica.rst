@@ -534,7 +534,7 @@ Sumário das distribuições
 Modelo        *f(x)*  Parâmetros :math:`\bar{x}, \sigma^2`          *F(x)*
 ============= ======= ========== ================================== ============
 Uniforme      |f11|   |f12|      |f13|                              |f14|
-Exponencial   |f21|   |f22|      :math:`\beta,\beta^2`
+Exponencial   |f21|   |f22|      :math:`\beta,\beta^2` 
 Normal        |f31|   |f32|      :math:`\mu,\sigma^2`
 Gama          |f41|   |f42|      :math:`\alpha\beta,\alpha\beta^2`
 Qui-quadrado  |f51|   |f52|      :math:`\nu,2\nu`
@@ -908,23 +908,37 @@ Esse valor pequeno de :math:`\hat{\alpha}` leva a rejeição de :math:`H_0`. Par
 
 Combinatória
 =============
-A combinatória é um ramo da matemática que estuda coleções finitas de elementos. *Permutação* é muitas vezes usado como sinônimo de *arranjo*. 
+A combinatória é um ramo da matemática que estuda coleções finitas de elementos. *Arranjo* é muitas vezes usado como sinônimo de *permutação* para o caso em que o número elementos avaliados é menor do que o total do conjunto. 
 
-Arranjo simples
-----------------------
+Arranjo simples e permutação
+------------------------------
 Arranjo simples de *k* elementos de um total de *n* elementos em que cada maneira de tomar os elementos **se diferencia** pela ordem e unicidade dos elementos. 
 
 :math:`A=\frac{n!}{(n-k)!}`
 
-Se *k=n*, este arranjo é chamado de *permutação*. Anagramas com letras únicas é um exemplo de permutação (simples).
+Em outras palavras, em quantas diferentes ordens *k* elementos são selecionados de *n*. Exemplo: quantos números de dois dígitos que não se repetem é possível formar? R: *n=10; k=8* -- :math:`A=90`, pois no arranjo simples os elementos não tem reposição (e por isso não podem repetir).
+
+Se *k=n*, este arranjo é chamado de *permutação*. 
 
 :math:`P=n!`
 
-Arranjo com repetição
-----------------------
-O arranjo com repetição é usado quando a ordem dos elementos importa e cada elemento pode ser contado mais de uma vez.
+Anagramas de palavas com letras únicas são um exemplo de permutação (simples). Exemplo: "uva"; anagramas = 6. 
+
+Arranjo com repetição de todos os elementos
+--------------------------------------------
+O arranjo com repetição é usado quando a ordem dos :math:`n` elementos importa e cada elemento pode ser contado mais de uma vez (:math:`k` vezes).
 
 :math:`AR=n^k`
+
+Arranjo com repetição é algumas vezes chamado de *produto*.
+
+Permutação com repetição de alguns elementos
+---------------------------------------------
+Se temos *n* elementos, em que *k* são de um tipo ("indistinguíveis", ou se repetem), *p* são de outro tipo, etc.
+
+:math:`PR=\frac{n!}{k!p!\dots}`
+
+Exemplo: Quantos anagramas da palavras "catraca"? R: 420.
 
 Combinação simples
 ------------------------
@@ -932,11 +946,15 @@ Na combinação, a ordem em que os elementos são tomados **não** é importante
 
 :math:`C_{n}^{k}=\left(\frac{n}{k}\right)={\frac {n!}{k!\cdot \left(n-k\right)!}}`
 
+Exemplo: quantas comissões de *k* pessoas é possível montar com uma equipe de *n* pessoas?
+
 Combinação com reposição
 ---------------------------
 Quando a ordem não importa, mas cada objeto pode ser escolhido mais de uma vez, o número de combinações é
 
 :math:`CR_{n}^{k}=\left( \frac{n+k-1}{k} \right)={ \frac {(n+k-1)!} {k!(n-1)!} }`
+
+Exemplo: Suponha que de *n=3* marcas de refrigerante, queira-se comprar *k=8* unidades. Quantas combinações são possíveis? R: 45.
 
 Seleção sem reposição
 --------------------------
@@ -1067,7 +1085,7 @@ Exercícios
     Now, there's a bit of a snag. The permutations above will produce, for example, this pattern: PSIMIISSPSI. You'll notice that PSI appears twice. For each of these, there will be a repetition, when the first PSI is swapped with the last PSI. We have to remove these. How many are there? Again, the same method: S=PSI,PSI,M,I,I,S,S cardinality \|S\|=7 with repetitions caused by the two PSIs, the two Is and the two Ss. The number of permutations without repetition is P7P2×P2×P2=7!8=630.
     The final answer is the number of permutations without repetitions of MISSISSIPPI minus the number of permutations without repetition of PSI and the letters MIIISSSP, after removing the duplicates caused by two PSIs: 34650−(10080−630)=25200.
 
-18. How many flips of a fair coin does it take until you get N heads in a row?
+18. How many flips of a fair coin does it take until you get *h* heads in a row?
 
     Let *p* be the probability of flipping a heads. Let *x* be number of flips needed to achieve *h* consecutive heads. The solution is :math:`E(x)=\frac{1−p^h}{p^h(1−p)}`. This expression may be derived as follows. The probability of being successful immediately is :math:`p^r`. However, one might get a tails immediately. In that case, the number of flips needed is *1+E(x)* (one flip has been used and we are back to the original position). We might get a heads and then a tails. In this case two flips have been used and we are back to the original position. Continue this up to *h−1* heads followed by a tails in which case *h* flips have been used and we are back to the original position.
 

@@ -167,6 +167,12 @@ After installing Python 2.7.9+, you need to run
     # OR
     python3.6 -m pip install --user pipenv
 
+`pip` is not working: ImportError: No module named 'pip._internal'
+-------------------------------------------------------------------------------
+.. code:: bash
+
+    python3 -m pip install --user --upgrade pip
+
 "Could not find .egg-info"
 ---------------------------
 It is a bug, solved by `setuptools`. In Debian/Ubuntu, run
@@ -1059,14 +1065,18 @@ Python environments and references
 
 How to clean up conda environments
 ====================================
-https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments
-https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment
+- https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments
+- https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment
 
 .. code:: bash
 
     conda info -e
     conda remove --name myenv —all
     conda clean -a -y
+
+Packages install (pip) issues with conda
+------------------------------------------
+This is pretty common issue. What I have found is that the conda env doesn’t play well with the PYTHONPATH. The system seems to always look in the PYTHONPATH locations even when you’re using a conda environment. Now, I always run ``unset PYTHONPATH`` when using a conda environment, and it works much better (I’m on a mac).
 
 
 General use Python packages in Astronomy
