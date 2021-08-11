@@ -5,6 +5,25 @@ DMF AstroBlog
 
 2021
 **********
+2021-08
+========
+A novel definition of life and its implications to cybernetic systems
+----------------------------------------------------------------------
+https://phys.org/news/2021-08-definition-life-implications-cybernetic.html
+
+-----
+
+NOIRLab Launches Integrated Science Website
+---------------------------------------------
+https://noirlab.edu/public/announcements/ann21027/?lang=en
+
+
+2021-07
+========
+Meet the Open-Source Software Powering NASA's Ingenuity Mars Helicopter
+------------------------------------------------------------------------
+https://www.jpl.nasa.gov/news/meet-the-open-source-software-powering-nasas-ingenuity-mars-helicopter
+
 2021-04
 ========
 JS9 imexam
