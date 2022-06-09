@@ -5,6 +5,20 @@ Linux tips
 
 Useful commands tricks
 ===========================
+Disk activity
+----------------
+``iostat`` and ``dstat -d`` do the job. ``dstat`` (without flags) monitor different points: https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html
+
+Partitioning
+--------------
+Newer systems (~2015+) require two additional partitions:
+
+- >300MB EFI
+- >16MB boot
+
+The rest remains the same since the DOS era.
+
+
 Command ``cmake`` and ``make``
 --------------------------------
 .. code:: bash
@@ -694,3 +708,35 @@ Audacity + loopback: mic in the output, with lag. System sound, and record.
 
 Audacity: no mic in the output. System sound and record, no lag.
 
+
+Can't resume an attached screen
+---------------------------------
+``screen -rd`` does the job
+
+https://unix.stackexchange.com/questions/240444/cant-resume-screen-says-i-am-already-attached
+
+
+How to close and kill an ``screen`` session
+-----------------------------------------------
+- Showing keybindings:     Ctrl+a ?
+- Ending session and terminating Screen:   Ctrl+a \
+- Closing the current session:     Ctrl+a X
+- Closing all sessions except the current one:     Ctrl+a Q
+- Splitting current region vertically into two regions:    Ctrl+a l
+- Splitting current region horizontally into two regions:  Ctrl+a S
+- Switching to session number 0:   Ctrl+a ”
+- Switching to the previous session:   Ctrl+a p
+- Switching to the next session:   Ctrl+a n
+- Listing all sessions:    Ctrl+a 0
+
+https://linuxhint.com/how-do-i-close-a-screen-session/
+
+One can not open a ``screen`` in a ``screen``
+-------------------------------------------------
+If I open a screen on my local machine and ssh into a remote one, if I try to open a screen on remote I receive the following error message: ``Cannot find terminfo entry for 'screen.xterm-256color'.`` 
+
+However, if I ssh into remote from a local terminal, screen on remote works fine :-)
+
+Difference between ``.bashrc``, ``.bash-profile``, and ``.profile``
+----------------------------------------------------------------------------
+https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile

@@ -1,10 +1,13 @@
-.. role:: bash(code)
-   :language: bash
-
 Codes Usage
 
 
 .. contents:: Table of contents
+
+General
+##########
+- A few programming languages use a “defer” pattern for resource cleanup: https://kevincox.ca/2022/05/13/wrong-by-default/
+- GCC environment variables: https://gcc.gnu.org/onlinedocs/gcc/Environment-Variables.html
+
 
 
 Hdust
@@ -313,15 +316,37 @@ Running
     include,"/path/to/script.i";
 
 
-compiling errors
+compiling tips
 ##################
+General
+==========
 ``ld: cannot find -lm``
-==========================
+-------------------------------
 It means that an required static library was not found. You can:
 - (Install the library)
 - Specify library location using ``-L`` flag (``-L/usr/lib/x86_x64/``)
 - Or add the location of libraries to ``LIBRARY_PATH`` variable
 - Or don't use the ``-static`` or ``-fast`` compiler options.
+
+What libraries are being used during compile?
+--------------------------------------------------------------
+Do ``make VERBOSE=1 or gcc -v`` and double check where it's picking up libraries from
+
+``cmake``
+===========
+Customize ``cmake`` options
+-----------------------------
+- ``-DCMAKE_INSTALL_PREFIX=/some/other/path``
+- ``-DCMAKE_C_COMPILER=/opt/local/compilers/gcc-7/bin/gcc``
+
+
+Is there an "uninstall" for cmake install?
+-----------------------------------------------
+Typically it's on the library author to support that. ``cmake`` doesn't intrinsically support uninstalling. There is this, though: https://gitlab.kitware.com/cmake/community/-/wikis/FAQ#can-i-do-make-uninstall-with-cmake
+``xargs rm < install_manifest.txt``
+
+
+
 
 
 USP-Rice

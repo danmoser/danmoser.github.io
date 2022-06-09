@@ -72,6 +72,8 @@ Vocabulary
 - lay out: dispor, arranjar
 - lender: credor
 - lining: (of a coat) forro
+- lump: caroco/inchaco
+- lumped: aglomerado
 - menacingly: ameaçadoramente
 - mortgage: hipoteca
 - nasty: desagradável, sórdido, nojento
@@ -84,6 +86,7 @@ Vocabulary
 - procure: adquirir, obter
 - quirk (cuãrk): equívoco
 - rash: displaying or proceeding from a lack of careful consideration of the possible consequences of an action. reckless, impulsive, impetuous
+- raster: padrao de rastreamento (como nas TVs CRT)
 - real estate: imobiliária
 - raft: jangada; grande número/incontável
 - rear: parte de trás. [verbo] construir, educar
@@ -107,8 +110,11 @@ Vocabulary
 - stirred up: agitado
 - straggler: retardatário
 - strain: tensão, esticar
+- stub out: apagar, acabar com
 - subtle: sutil
 - sweatshop: fábrica têxtil pequena/clandestina
+- swell (up): inchar
+- swollen: inchado
 - syllabus: 1. an outline of the subjects in a course of study or teaching; 2. (in the Roman Catholic Church) a summary of points decided by papal decree regarding heretical doctrines or practices.
 - telltale: denunciador
 - tenement: apartamento, habitação
@@ -138,16 +144,24 @@ Expressions
 - "a good deal in spots": em vários pontos
 - "built to order": feito sob encomenda
 - "bottom of a [deep] chasm": fundo do poço
+- "different kettle of fish": very different; a bad state of affairs; mess
 - "foul play": jogo sujo, crime
+- "get into the weeds": get into the details
+- "get into the woods": run away
 - "heads-up": (Informal) information or notification -- *He gave me a heads-up on the new security measures*.
 - "in any event": de qualquer modo
 - "let's hope for the best": vamos esperar pelo melhor
 - "let's see what we get": vamos ver o que acontece
-- "one-off payment": pagamento único
+- "one-off payment": pagamento único/'a vista
 - "Ponzi scheme": a fraudulent investment operation
+- "state of play": the present situation
 - "to tip his hat": tirar o seu (dele) chapéu
-- "wanted on a charge": sob a acusação de
+- "turn-key": pronto para ser usado
+- "under the hood": is not immediately visible or obvious
+- "wall-clock time": refers to elapsed time as determined by a chronometer such as a wristwatch or wall clock
+- "wanted on a charge": procurado sob a acusação de
 - "wildcat strike": greve selvagem 
+
 
 Acronyms
 ------------

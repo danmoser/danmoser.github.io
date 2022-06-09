@@ -157,6 +157,13 @@ Download the changes from the repository:
 
     git pull origin master
 
+mergetool
+------------
+Go for ``smerge`` (Sublime-merge). There are others (``meld``, ``kdiff3``, ``kompare``...).
+
+To configure the git merge tool, use: ``git config --global merge.tool smerge``.
+
+
 
 Refs
 ********

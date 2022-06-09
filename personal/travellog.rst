@@ -171,3 +171,93 @@ Big trips, by date
 - 2017: Australia
 - 2018: Capitólio, MG
 - 2019: Texas, USA
+- 2020: Big Island
+- 2021: Hawaii
+- 2022: New Mexico
+
+ToDo
+=====
+NE NM
+----------------
+- [Taos]
+- [Taos Ski Valley]
+- Capulin Volcano + Crater rim
+- Cimarron Canyon Park
+- (Food) Bavarian restaurant
+- Fort Union National Monument
+
+NO NM
+-------
+- [Farmington]
+- Fajada Butte 
+- Chaco Culture
+- Bisti Badlands trail
+- Aztec Ruins
+- Four corners
+- Red Rock Park
+
+East Santa Fe
+----------------
+- Pecos National Historical Park
+- Fort Union National Monument
+
+Santa Fe
+-----------
+- Dorothy Stewart trail
+
+Los Alamos
+-------------
+- Tent Rocks National Monument
+- Cave Loop and Slot Canyon Trail
+- {done} Bandelier Monument
+- {done} White Rock Overlook
+- Tsankawi trail
+- Bradbury Museum
+- Los Alamos History Museum
+- Los Alamos Nature Center
+- Los Alamos Canyon Dam
+- Valles Caldera
+- Jemez Falls Trail Head
+- Mc Cauley Warm Springs trail
+
+I40 East NM
+-----------------------
+- Mesalands Dinosaur museum
+- {done}(Food) Holly's Drive Inn 
+
+I40 West NM
+----------------
+- Red Rock Park
+
+NE Socorro
+------------
+- Sevilleta National Wildlife Refuge
+- Abo ruins
+- Salinas Pueblos (x3)
+
+Captain/Ruidoso area
+-----------------------
+- Smokey Bear Historical Park
+- Bonito Lake
+- Alto Lake
+- Mescalero Lake
+
+Alamogordo area
+-------------------
+- {done}[Sunspot/Cloudcroft]
+- {done}Museum of Space History
+- {done}White Sands
+- White Sands Backcountry trail
+- White Sands Lucero Lake trail (Jul--Sep)
+- {done}Arcade Dungeon
+- Osha trail 
+
+Las Cruces
+-------------
+- Soledad Canyon
+- (food)Hilsboro General Store
+
+References
+===========
+- 9 Laid Back Hikes In New Mexico: https://www.onlyinyourstate.com/new-mexico/laid-back-hikes-nm/
+- https://www.onlyinyourstate.com/new-mexico/hi

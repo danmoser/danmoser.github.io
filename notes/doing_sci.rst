@@ -146,7 +146,7 @@ Doing science
 
 - `“Faço pesquisa no Brasil por paixão. Se levasse em conta a razão, não faria, a frustração é muito grande” <https://brasil.elpais.com/brasil/2018/08/08/ciencia/1533762807_199045.html?rel=mas>`_
 
-- `Os principais obstáculos ao desenvolvimento da ciência na América Latina por     Moysés Nussenzveig. (PDF) <../static/doing-sci_moyses.pdf>`_
+- `Os principais obstáculos ao desenvolvimento da ciência na América Latina por Moysés Nussenzveig. (PDF) <../static/doing-sci_moyses.pdf>`_
 
 - `Como e por quem a pesquisa científica deve ser avaliada <https://jornal.usp.br/atualidades/como-e-por-quem-a-pesquisa-cientifica-deve-ser-avaliada/>`_
 

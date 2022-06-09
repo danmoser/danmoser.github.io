@@ -3,12 +3,79 @@
 DMF AstroBlog
 ##############
 
+2022
+*********
+2022-06
+========
+Java course
+--------------
+Build Java Project Hotel Management System: https://www.udemy.com/course/build-java-projects-using-jsp-jdbc-servlets-maven-springboot/
+
+
+Harvard computer science course
+-----------------------------------
+https://pll.harvard.edu/course/cs50-introduction-computer-science
+
+2022-05
+=========
+AI and art
+-------------
+DALL·E 2 is a new AI system that can create realistic images and art from a description in natural language.
+
+https://openai.com/dall-e-2/
+
+
 2021
 **********
+2021-10
+=========
+3 Ways To Calibrate Your Camera Using OpenCV and Python
+--------------------------------------------------------
+Fix camera distortions in an easy way.
+
+https://medium.com/vacatronics/3-ways-to-calibrate-your-camera-using-opencv-and-python-395528a51615
+
+https://lensfun.github.io/
+
+
+2021-09
+========
+Building a Globular cluster
+----------------------------
+- paper: https://arxiv.org/abs/2109.13943
+- docs: https://artpop.readthedocs.io/en/latest/
+
+-----
+
+Using Self-Organizing Maps to solve the Traveling Salesman Problem
+------------------------------------------------------------------------
+The Traveling Salesman Problem is a well known challenge in Computer Science: it consists on finding the shortest route possible that traverses all cities in a given map only once.
+
+Although its simple explanation, this problem is, indeed, NP-Complete.
+
+This implies that the difficulty to solve it increases rapidly with the number of cities, and we do not know in fact a general solution that solves the problem.
+
+GitHub https://lnkd.in/ga_ni8Zi
+Blog https://lnkd.in/guAWFaga
+
+----
+
+Retirees help maintain Hubble after 30+ years in orbit
+--------------------------------------------------------
+When something goes wrong with NASA’s workhorse space telescope, the agency relies on a deep bench of retired experts to help out
+
+https://spie.org/news/how-does-nasa-fix-the-30-year-old-hubble
+
+----
+
+How narcissists climb the career ladder quickly
+--------------------------------------------------------------------
+https://www.bbc.com/worklife/article/20210830-how-narcissists-climb-the-career-ladder-quickly
+
 2021-08
 ========
 A novel definition of life and its implications to cybernetic systems
-----------------------------------------------------------------------
+-----------------------------------------------------------------------
 https://phys.org/news/2021-08-definition-life-implications-cybernetic.html
 
 -----
@@ -21,7 +88,7 @@ https://noirlab.edu/public/announcements/ann21027/?lang=en
 2021-07
 ========
 Meet the Open-Source Software Powering NASA's Ingenuity Mars Helicopter
-------------------------------------------------------------------------
+------------------------------------------------------------------------------
 https://www.jpl.nasa.gov/news/meet-the-open-source-software-powering-nasas-ingenuity-mars-helicopter
 
 2021-04
