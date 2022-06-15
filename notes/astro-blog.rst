@@ -7,10 +7,13 @@ DMF AstroBlog
 *********
 2022-06
 ========
+The collapse of complex software
+----------------------------------
+https://nolanlawson.com/2022/06/09/the-collapse-of-complex-software/
+
 Java course
 --------------
 Build Java Project Hotel Management System: https://www.udemy.com/course/build-java-projects-using-jsp-jdbc-servlets-maven-springboot/
-
 
 Harvard computer science course
 -----------------------------------
