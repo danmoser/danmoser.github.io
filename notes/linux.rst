@@ -5,6 +5,33 @@ Linux tips
 
 Useful commands tricks
 ===========================
+``duf`` is a nice alternative to ``df``
+-----------------------------------------
+On Ubunut, ``sudo apt install duf``.
+
+``df -Th`` is also godd!
+
+How to create a service on Linux
+----------------------------------
+Using Tomcat as an example
+
+More on apache-tomcat installation at https://computingforgeeks.com/install-apache-tomcat-9-on-linux-rhel-centos/ 
+
+Interesting commands
+-----------------------
+.. code:: bash
+
+    lsblk
+    free -m
+    df -Th
+    cat /etc/redhat-release 
+    ip addr show
+    ethtool em1
+
+Remove a directory from ``$PATH``
+----------------------------------------
+``PATH=$(echo "$PATH" | sed -e 's/\/home\/wrong\/dir\://')``
+
 Disk activity
 ----------------
 ``iostat`` and ``dstat -d`` do the job. ``dstat`` (without flags) monitor different points: https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html
