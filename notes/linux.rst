@@ -5,6 +5,10 @@ Linux tips
 
 Useful commands tricks
 ===========================
+How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS
+-----------------------------------------------------------------------
+TBC if it works: https://www.how2shout.com/linux/how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts/
+
 ``duf`` is a nice alternative to ``df``
 -----------------------------------------
 On Ubunut, ``sudo apt install duf``.

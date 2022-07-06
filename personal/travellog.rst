@@ -172,7 +172,7 @@ Big trips, by date
 - 2018: Capitólio, MG
 - 2019: Texas, USA
 - 2020: Big Island
-- 2021: Hawaii
+- 2021: Hawaii Islands
 - 2022: New Mexico
 
 ToDo
@@ -244,20 +244,22 @@ Captain/Ruidoso area
 
 Alamogordo area
 -------------------
-- {done}[Sunspot/Cloudcroft]
-- {done}Museum of Space History
-- {done}White Sands
+- {done} [Sunspot/Cloudcroft]
+- {done} Museum of Space History
+- {done} White Sands
 - White Sands Backcountry trail
 - White Sands Lucero Lake trail (Jul--Sep)
-- {done}Arcade Dungeon
-- Osha trail 
+- {done} Arcade Dungeon
+- Osha trail*
+- (food) CJ's Si Señor Restaurant
+- (food) Rizo's Restaurant
 
 Las Cruces
 -------------
 - Soledad Canyon
-- (food)Hilsboro General Store
+- (food) Hilsboro General Store
 
 References
 ===========
-- 9 Laid Back Hikes In New Mexico: https://www.onlyinyourstate.com/new-mexico/laid-back-hikes-nm/
-- https://www.onlyinyourstate.com/new-mexico/hi
+- NM guide: https://www.onlyinyourstate.com/new-mexico/
+- The loneliest roads in America: https://bigthink.com/strange-maps/americas-loneliest-roads/

@@ -51,7 +51,8 @@ Year    Driver               Team
 2018    Lewis Hamilton        Mercedes
 2019    Lewis Hamilton        Mercedes
 2020    Lewis Hamilton        Mercedes
-2021    \                     \
+2021    Max Verstappen        Red Bull
+2022    Max Verstappen        Red Bull
 ======  ==================== ===================
 
 Provollone Cast
@@ -179,7 +180,9 @@ Year Team                   Coach                      MVP Player of winning tea
 2017 Golden State Warriors  Steve Kerr                 Durant/Curry
 2018 Golden State Warriors  Steve Kerr                 Durant/Curry
 2019 Toronto Raptors        Nick Nurse                 Leonard
-2020 Los Angeles Lakers     Frank Vogel                James        
+2020 Los Angeles Lakers     Frank Vogel                James
+2021 Milwaukee Bucks        Mike Budenholzer           Antetokounmpo
+2022 Golden State Warriors  Steve Kerr                 Curry        
 ==== ====================== ========================== =============================
 
 \* My personal choice 
@@ -189,38 +192,40 @@ NFL
 *****
 Super Bowl Winners
 =====================
-==== ====================== ========================== =============================
-Year Team                   Coach                      MVP Player of winning team\*
-==== ====================== ========================== =============================
-1993 Dallas Cowboys         Troy Aikman                Jimmy Johnson
-1994 Dallas Cowboys         Troy Aikman                Jimmy Johnson
-1995 San Francisco 49ers    Steve Young                George Seifert
-1996 Dallas Cowboys         Troy Aikman                Barry Switzer
-1997 Green Bay Packers      Brett Favre                Mike Holmgren
-1998 Denver Broncos         John Elway                 Mike Shanahan
-1999 Denver Broncos         John Elway                 Mike Shanahan
-2000 St. Louis Rams         Kurt Warner                Dick Vermeil
-2001 Baltimore Ravens       Trent Dilfer               Brian Billick
-2002 New England Patriots   Tom Brady                  Bill Belichick
-2003 Tampa Bay Buccaneers   Brad Johnson               Jon Gruden
-2004 New England Patriots   Tom Brady                  Bill Belichick
-2005 New England Patriots   Tom Brady                  Bill Belichick
-2006 Pittsburgh Steelers    Ben Roethlisberger         Bill Cowher
-2007 Indianapolis Colts     Peyton Manning             Tony Dungy
-2008 New York Giants        Eli Manning                Tom Coughlin
-2009 Pittsburgh Steelers    Ben Roethlisberger         Mike Tomlin
-2010 New Orleans Saints     Drew Brees                 Sean Payton
-2011 Green Bay Packers      Aaron Rogers               Mike McCarthy
-2012 New York Giants        Eli Manning                Tom Coughlin
-2013 Baltimore Ravens       Joe Flacco                 John Harbaugh
-2014 Seattle Seahawks       Russell Wilson             Pete Carroll
-2015 New England Patriots   Tom Brady                  Bill Belichick
-2016 Denver Broncos         Peyton Manning             Gary Kubiak
-2017 New England Patriots   Tom Brady                  Bill Belichick
-2018 Philadelphia Eagles    Nick Foles                 Doug Pederson
-2019 New England Patriots   Tom Brady                  Bill Belichick
-2020 Kansas City Chiefs     Patrick Mahones            Andy Reid
-==== ====================== ========================== =============================
+==== ====================== ============================= ====================
+Year Team                   QB of winning team            Coach
+==== ====================== ============================= ====================
+1993 Dallas Cowboys         Troy Aikman                   Jimmy Johnson
+1994 Dallas Cowboys         Troy Aikman                   Jimmy Johnson
+1995 San Francisco 49ers    Steve Young                   George Seifert
+1996 Dallas Cowboys         Troy Aikman                   Barry Switzer
+1997 Green Bay Packers      Brett Favre                   Mike Holmgren
+1998 Denver Broncos         John Elway                    Mike Shanahan
+1999 Denver Broncos         John Elway                    Mike Shanahan
+2000 St. Louis Rams         Kurt Warner                   Dick Vermeil
+2001 Baltimore Ravens       Trent Dilfer                  Brian Billick
+2002 New England Patriots   Tom Brady                     Bill Belichick
+2003 Tampa Bay Buccaneers   Brad Johnson                  Jon Gruden
+2004 New England Patriots   Tom Brady                     Bill Belichick
+2005 New England Patriots   Tom Brady                     Bill Belichick
+2006 Pittsburgh Steelers    Ben Roethlisberger            Bill Cowher
+2007 Indianapolis Colts     Peyton Manning                Tony Dungy
+2008 New York Giants        Eli Manning                   Tom Coughlin
+2009 Pittsburgh Steelers    Ben Roethlisberger            Mike Tomlin
+2010 New Orleans Saints     Drew Brees                    Sean Payton
+2011 Green Bay Packers      Aaron Rogers                  Mike McCarthy
+2012 New York Giants        Eli Manning                   Tom Coughlin
+2013 Baltimore Ravens       Joe Flacco                    John Harbaugh
+2014 Seattle Seahawks       Russell Wilson                Pete Carroll
+2015 New England Patriots   Tom Brady                     Bill Belichick
+2016 Denver Broncos         Peyton Manning                Gary Kubiak
+2017 New England Patriots   Tom Brady                     Bill Belichick
+2018 Philadelphia Eagles    Nick Foles                    Doug Pederson
+2019 New England Patriots   Tom Brady                     Bill Belichick
+2020 Kansas City Chiefs     Patrick Mahones               Andy Reid
+2021 Tampa Bay Buccaneers   Tom Brady                     Todd Bowles
+2022 Los Angeles Rams       Matthew Stafford              Sean McVay
+==== ====================== ============================= ====================
 
 
 Other

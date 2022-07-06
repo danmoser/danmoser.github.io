@@ -5,6 +5,14 @@ DMF AstroBlog
 
 2022
 *********
+2022-07
+===========
+Fink Broker and Gaia DR3
+--------------------------
+https://fink-broker.org/2022-07-05-science-portal-updates/
+
+
+
 2022-06
 ========
 The collapse of complex software
