@@ -15,6 +15,12 @@ https://fink-broker.org/2022-07-05-science-portal-updates/
 
 2022-06
 ========
+Java classifications or types
+------------------------------
+java versions, JRE vs JDK, Java SE vs EE, Oracle Java vs OpenJDK: https://programmingdigest.com/java-versions-jre-vs-jdk-java-se-vs-ee-oracle-java-vs-openjdk-vs-dalvik/
+
+-----
+
 The collapse of complex software
 ----------------------------------
 https://nolanlawson.com/2022/06/09/the-collapse-of-complex-software/

@@ -1,10 +1,63 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>from otherswork import wheel: looking for useful Python packages</title>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 <style type="text/css">
 
 /*
@@ -358,106 +411,50 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 </head>
 <body>
-<div class="document" id="from-otherswork-import-wheel-looking-for-useful-python-packages">
-<h1 class="title"><tt class="docutils literal">from otherswork import wheel</tt>: looking for useful Python packages</h1>
+<main id="from-otherswork-import-wheel-looking-for-useful-python-packages">
+<h1 class="title"><span class="docutils literal">from otherswork import wheel</span>: looking for useful Python packages</h1>
 
 <p>Python is a language where simplicity matters. Thus, many features are only accessible through built-in modules, called the standard library. Also, new useful packages are continuously written since Python emerged from the free software principle. In this talk, I will make a (very) short introduction to Python's standard library, and share my experience in finding and installing packages from Python community -- biased for use in astronomy.</p>
-<div class="section" id="modules-packages-and-all-that">
-<h1>Modules, Packages, and all that...</h1>
+<section id="modules-packages-and-all-that">
+<h2>Modules, Packages, and all that...</h2>
 <ul class="simple">
-<li><em>module</em> is Python code file containing definitions, functions, statements...</li>
-<li><em>package</em> is a structure to share a set of modules.</li>
+<li><p><em>module</em> is Python code file containing definitions, functions, statements...</p></li>
+<li><p><em>package</em> is a structure to share a set of modules.</p></li>
 </ul>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">this</span>
-</pre>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">this</span></code></pre>
 <p>This talk was based on the <a class="reference external" href="https://python4astronomers.github.io/installation/packages.html">python4astronomers article</a>:</p>
 <blockquote>
 <ul class="simple">
-<li>Where does Python look for modules?</li>
-<li><dl class="first docutils">
-<dt>Multiple Pythons on your computer (<tt class="docutils literal">virtualenv</tt>)</dt>
-<dd><ul class="first last">
-<li><em>Anaconda</em> environments</li>
+<li><p>Where does Python look for modules?</p></li>
+<li><dl class="simple">
+<dt>Multiple Pythons on your computer (<span class="docutils literal">virtualenv</span>)</dt>
+<dd><ul>
+<li><p><em>Anaconda</em> environments</p></li>
 </ul>
 </dd>
 </dl>
 </li>
 </ul>
 </blockquote>
-</div>
-<div class="section" id="mandatory-reading-the-standard-library-documentation">
-<h1>Mandatory reading: the <em>standard library</em> documentation</h1>
+</section>
+<section id="mandatory-reading-the-standard-library-documentation">
+<h2>Mandatory reading: the <em>standard library</em> documentation</h2>
 <blockquote>
 <p><em>&quot;Python's</em> standard library <em>is very extensive, offering a wide range of facilities...&quot;</em></p>
-<p class="attribution">&mdash;its docs</p>
+<p class="attribution">—its docs</p>
 </blockquote>
 <blockquote>
 <p><a class="reference external" href="https://docs.python.org/2/library/">https://docs.python.org/2/library/</a></p>
 <p>A good way of learning: PyMOTW (<a class="reference external" href="https://pymotw.com/2/">Python 2</a>, <a class="reference external" href="https://pymotw.com/3/">Python 3</a>).</p>
 </blockquote>
-<div class="section" id="a-few-examples">
-<h2>A few examples</h2>
+<section id="a-few-examples">
+<h3>A few examples</h3>
 <ul>
-<li><p class="first">random</p>
+<li><p>random</p>
 <blockquote>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">random</span>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">random</span>
 <span class="keyword namespace">import</span> <span class="name namespace">numpy.random</span> <span class="keyword">as</span> <span class="name namespace">np_rand</span>
 
 <span class="name">abc</span> <span class="operator">=</span> <span class="name builtin">list</span><span class="punctuation">(</span><span class="literal string single">'abcde'</span><span class="punctuation">)</span>
@@ -467,14 +464,12 @@ li {
 
 <span class="comment single"># np_rand.sample(size=None)  # Return random floats in the half-open interval [0.0, 1.0)</span>
 <span class="name">np_rand</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="comment single"># array([ 0.79363627,  0.48012174])</span>
-</pre>
+<span class="comment single"># array([ 0.79363627,  0.48012174])</span></code></pre>
 </blockquote>
 </li>
-<li><p class="first">time, datetime</p>
+<li><p>time, datetime</p>
 <blockquote>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">time</span>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">time</span>
 
 <span class="comment single"># Regular and 12 hour format</span>
 <span class="name builtin">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span>
@@ -482,23 +477,19 @@ li {
 
 <span class="comment single"># Date with full and short year</span>
 <span class="name builtin">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%Y/%b/</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">))</span>
-<span class="comment single"># ('2016/Jun/15', '16-06-15')</span>
-</pre>
+<span class="comment single"># ('2016/Jun/15', '16-06-15')</span></code></pre>
 </blockquote>
 </li>
-<li><p class="first">linecache</p>
+<li><p>linecache</p>
 <blockquote>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">linecache</span>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">linecache</span>
 
-<span class="name">theline</span> <span class="operator">=</span> <span class="name">linecache</span><span class="operator">.</span><span class="name">getline</span><span class="punctuation">(</span><span class="name">thefilepath</span><span class="punctuation">,</span> <span class="name">desired_line_number</span><span class="punctuation">)</span>
-</pre>
+<span class="name">theline</span> <span class="operator">=</span> <span class="name">linecache</span><span class="operator">.</span><span class="name">getline</span><span class="punctuation">(</span><span class="name">thefilepath</span><span class="punctuation">,</span> <span class="name">desired_line_number</span><span class="punctuation">)</span></code></pre>
 </blockquote>
 </li>
-<li><p class="first">collections</p>
+<li><p>collections</p>
 <blockquote>
-<pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">collections</span> <span class="keyword namespace">import</span> <span class="name">defaultdict</span>
+<pre class="code python literal-block"><code><span class="keyword namespace">from</span> <span class="name namespace">collections</span> <span class="keyword namespace">import</span> <span class="name">defaultdict</span>
 
 <span class="name">dl</span> <span class="operator">=</span> <span class="name">defaultdict</span><span class="punctuation">(</span><span class="name builtin">list</span><span class="punctuation">)</span>
 <span class="name">dl</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span>
@@ -515,100 +506,80 @@ li {
 <span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'d'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">4</span>
 
 <span class="keyword">for</span> <span class="name">it</span> <span class="operator word">in</span> <span class="name">od</span><span class="operator">.</span><span class="name">items</span><span class="punctuation">():</span>
-    <span class="name builtin">print</span><span class="punctuation">(</span><span class="name">it</span><span class="punctuation">)</span>
-</pre>
+    <span class="name builtin">print</span><span class="punctuation">(</span><span class="name">it</span><span class="punctuation">)</span></code></pre>
 </blockquote>
 </li>
-<li><p class="first"><a class="reference external" href="https://docs.python.org/2/library/itertools.html">itertools</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://docs.python.org/2/library/argparse.html">argparse</a></p>
-</li>
+<li><p><a class="reference external" href="https://docs.python.org/2/library/itertools.html">itertools</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/2/library/argparse.html">argparse</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="the-python-package-index-pypi">
-<h1>The Python Package Index: <tt class="docutils literal">PyPi</tt></h1>
+</section>
+</section>
+<section id="the-python-package-index-pypi">
+<h2>The Python Package Index: <span class="docutils literal">PyPi</span></h2>
 <blockquote>
-&quot;The Python Package Index <em>(aka ``PyPI`` -- formerly known as the &quot;Cheese Shop&quot;) is the preferred hub for publishing Python packages and modules. Python's standard library supports code uploads to PyPI through its ``distutils`` module.&quot;</em></blockquote>
+<p>&quot;The Python Package Index <em>(aka ``PyPI`` -- formerly known as the &quot;Cheese Shop&quot;) is the preferred hub for publishing Python packages and modules. Python's standard library supports code uploads to PyPI through its ``distutils`` module.&quot;</em></p>
+</blockquote>
 <p><a class="reference external" href="https://pypi.python.org">https://pypi.python.org</a> or <a class="reference external" href="http://cheeseshop.python.org">http://cheeseshop.python.org</a></p>
-</div>
-<div class="section" id="pip">
-<h1><tt class="docutils literal">pip</tt></h1>
-<pre class="code bash literal-block">
-pip install _package_
+</section>
+<section id="pip">
+<h2><span class="docutils literal">pip</span></h2>
+<pre class="code bash literal-block"><code>pip install _package_
 <span class="comment single"># --user : local install (no admin rights)
 # -U or --upgrade : upgrade existing installation
 # --no-deps : no install of dependencies packages (useful for upgrade)
-# --install-option=&quot;--prefix=$PREFIX_PATH&quot; redirects the install</span>
-</pre>
-<p><tt class="docutils literal">pip</tt> in embedded in 2.7.9+. If you have an updated version of Python and don't find it, run this command:</p>
-<pre class="code bash literal-block">
-python -m ensurepip
-</pre>
-<p>Remember: <tt class="docutils literal">pip</tt> installs binaries in addition to the modules. Add this installation path to your <cite>$PATH</cite> (in unix, is is <cite>$HOME/.local/bin</cite>).</p>
-</div>
-<div class="section" id="lists-of-useful-modules">
-<h1>Lists of useful modules</h1>
+# --install-option=&quot;--prefix=$PREFIX_PATH&quot; redirects the install</span></code></pre>
+<p><span class="docutils literal">pip</span> in embedded in 2.7.9+. If you have an updated version of Python and don't find it, run this command:</p>
+<pre class="code bash literal-block"><code>python -m ensurepip</code></pre>
+<p>Remember: <span class="docutils literal">pip</span> installs binaries in addition to the modules. Add this installation path to your <cite>$PATH</cite> (in unix, is is <cite>$HOME/.local/bin</cite>).</p>
+</section>
+<section id="lists-of-useful-modules">
+<h2>Lists of useful modules</h2>
 <ul class="simple">
-<li>In its <a class="reference external" href="https://wiki.python.org/moin/UsefulModules">wiki</a>, the Python Software Foundation keeps a list of useful modules.</li>
-<li><a class="reference external" href="http://pypi-ranking.info/alltime">PyPi Ranking</a> lists projects on PyPI ranked by downloads.</li>
+<li><p>In its <a class="reference external" href="https://wiki.python.org/moin/UsefulModules">wiki</a>, the Python Software Foundation keeps a list of useful modules.</p></li>
+<li><p><a class="reference external" href="http://pypi-ranking.info/alltime">PyPi Ranking</a> lists projects on PyPI ranked by downloads.</p></li>
 </ul>
-<div class="section" id="a-few-choices">
-<h2>A few choices</h2>
+<section id="a-few-choices">
+<h3>A few choices</h3>
 <ul>
-<li><p class="first"><a class="reference external" href="https://pypi.python.org/pypi/tqdm">tqdm</a></p>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/tqdm">tqdm</a></p>
 <blockquote>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">time</span>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">time</span>
 <span class="keyword namespace">from</span> <span class="name namespace">tqdm</span> <span class="keyword namespace">import</span> <span class="name">tqdm</span>
 
 <span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Starting something low...'</span><span class="punctuation">)</span>
 <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name">tqdm</span><span class="punctuation">(</span><span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">)):</span>
     <span class="name">time</span><span class="operator">.</span><span class="name">sleep</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span>
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Done!'</span><span class="punctuation">)</span>
-</pre>
+<span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Done!'</span><span class="punctuation">)</span></code></pre>
 </blockquote>
 </li>
-<li><p class="first"><a class="reference external" href="https://pythonhosted.org/joblib/">joblib</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="http://tinydb.readthedocs.io/en/latest/">tinyDB</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://pypi.python.org/pypi/virtualenv">virtualenv</a></p>
+<li><p><a class="reference external" href="https://pythonhosted.org/joblib/">joblib</a></p></li>
+<li><p><a class="reference external" href="http://tinydb.readthedocs.io/en/latest/">tinyDB</a></p></li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/virtualenv">virtualenv</a></p>
 <blockquote>
-<pre class="code bash literal-block">
-virtualenv -p /usr/bin/python2.6 /path/to/myvirtualenv
+<pre class="code bash literal-block"><code>virtualenv -p /usr/bin/python2.6 /path/to/myvirtualenv
 
 <span class="name builtin">source</span> /path/to/myvirtualenv/bin/activate
 
-deactivate
-</pre>
+deactivate</code></pre>
 </blockquote>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="packages-for-science">
-<h1>Packages for Science</h1>
+</section>
+</section>
+<section id="packages-for-science">
+<h2>Packages for Science</h2>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=5GlNDD7qbP4">Keynote: State of the Tools | SciPy 2015 | Jake VanderPlas</a>.</p>
 <ul>
-<li><p class="first">ipython</p>
-</li>
-<li><p class="first">Numpy</p>
-</li>
-<li><p class="first">Scipy</p>
-</li>
-<li><p class="first">Matplotlib</p>
-</li>
-<li><p class="first">Pandas</p>
-</li>
-<li><p class="first">SymPy</p>
-</li>
-<li><p class="first">PyMC / emcee</p>
-</li>
-<li><p class="first"><a class="reference external" href="http://numba.pydata.org/">Numba</a></p>
+<li><p>ipython</p></li>
+<li><p>Numpy</p></li>
+<li><p>Scipy</p></li>
+<li><p>Matplotlib</p></li>
+<li><p>Pandas</p></li>
+<li><p>SymPy</p></li>
+<li><p>PyMC / emcee</p></li>
+<li><p><a class="reference external" href="http://numba.pydata.org/">Numba</a></p>
 <blockquote>
-<pre class="code python literal-block">
-<span class="comment hashbang">#!/usr/bin/env python</span>
+<pre class="code python literal-block"><code><span class="comment hashbang">#!/usr/bin/env python</span>
 <span class="comment single"># -*- coding:utf-8 -*-</span>
 
 <span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword">as</span> <span class="name namespace">np</span>
@@ -641,57 +612,54 @@ deactivate
 <span class="keyword">def</span> <span class="name function">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span>
     <span class="keyword">return</span> <span class="name">np</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">astype</span><span class="punctuation">(</span><span class="name builtin">float</span><span class="punctuation">))</span>
 
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="name">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span>
-</pre>
-<pre class="code bash literal-block">
-<span class="comment single"># running cmd
-</span>python -m cProfile -s cumulative numba_ex.py &gt; numba_ex.txt
-</pre>
+<span class="name builtin">print</span><span class="punctuation">(</span><span class="name">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span></code></pre>
+<pre class="code bash literal-block"><code><span class="comment single"># running cmd
+</span>python -m cProfile -s cumulative numba_ex.py &gt; numba_ex.txt</code></pre>
 </blockquote>
 </li>
 </ul>
-<dl class="docutils">
+<dl class="simple">
 <dt>Python conferences:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference external" href="http://conference.scipy.org/">http://conference.scipy.org/</a></li>
-<li><a class="reference external" href="http://www.pycon.org/">http://www.pycon.org/</a></li>
+<dd><ul class="simple">
+<li><p><a class="reference external" href="http://conference.scipy.org/">http://conference.scipy.org/</a></p></li>
+<li><p><a class="reference external" href="http://www.pycon.org/">http://www.pycon.org/</a></p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="lists-of-astronomy-packages">
-<h1>Lists of astronomy packages</h1>
+</section>
+<section id="lists-of-astronomy-packages">
+<h2>Lists of astronomy packages</h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.astropython.org/packages/">AstroPython</a></li>
-<li><a class="reference external" href="https://oneau.wordpress.com/2010/10/02/python-for-astronomy/#a-selection-of-astronomy-libraries">Comfort at 1 AU</a></li>
-<li><a class="reference external" href="http://danmoser.github.io/notes/python_astro.html#python-environments-and-references">DMF personal list</a></li>
+<li><p><a class="reference external" href="http://www.astropython.org/packages/">AstroPython</a></p></li>
+<li><p><a class="reference external" href="https://oneau.wordpress.com/2010/10/02/python-for-astronomy/#a-selection-of-astronomy-libraries">Comfort at 1 AU</a></p></li>
+<li><p><a class="reference external" href="http://danmoser.github.io/notes/python_astro.html#python-environments-and-references">DMF personal list</a></p></li>
 </ul>
-<div class="section" id="guru-google">
-<h2>Guru Google</h2>
-<p>Google <tt class="docutils literal">python blah blah</tt> or <tt class="docutils literal">python astronomy blah blah</tt> works most of the time.</p>
-</div>
-</div>
-<div class="section" id="remember-python-is-not-only-functions">
-<h1>Remember: Python is not only functions</h1>
+<section id="guru-google">
+<h3>Guru Google</h3>
+<p>Google <span class="docutils literal">python blah blah</span> or <span class="docutils literal">python astronomy blah blah</span> works most of the time.</p>
+</section>
+</section>
+<section id="remember-python-is-not-only-functions">
+<h2>Remember: Python is not only functions</h2>
 <p>List of object-oriented features that you might want to look up as you become more experienced:</p>
 <ul class="simple">
-<li>Generators</li>
-<li>Class-level attributes, <tt class="docutils literal">classmethods</tt>, <tt class="docutils literal">staticmethods</tt></li>
-<li>Properties and accessors</li>
-<li>Decorators</li>
-<li>Metaclasses</li>
+<li><p>Generators</p></li>
+<li><p>Class-level attributes, <span class="docutils literal">classmethods</span>, <span class="docutils literal">staticmethods</span></p></li>
+<li><p>Properties and accessors</p></li>
+<li><p>Decorators</p></li>
+<li><p>Metaclasses</p></li>
 </ul>
 <p>Excellent references:</p>
 <ul class="simple">
-<li><a class="reference external" href="http://code.activestate.com/recipes/langs/python/">Popular Python recipes &#64; ActiveState</a></li>
-<li><a class="reference external" href="http://stackoverflow.com/questions/tagged/python">Python questions &#64; stackoverflow</a></li>
-<li><a class="reference external" href="http://www.sc.eso.org/~bdias/pycoffee/forum.html">Foum mailing list PyCoffee &#64; ESO</a></li>
+<li><p><a class="reference external" href="http://code.activestate.com/recipes/langs/python/">Popular Python recipes &#64; ActiveState</a></p></li>
+<li><p><a class="reference external" href="http://stackoverflow.com/questions/tagged/python">Python questions &#64; stackoverflow</a></p></li>
+<li><p><a class="reference external" href="http://www.sc.eso.org/~bdias/pycoffee/forum.html">Foum mailing list PyCoffee &#64; ESO</a></p></li>
 </ul>
-</div>
-<div class="section" id="warning-be-aware-of-the-spirit-of-python">
-<h1>Warning! Be aware of the <em>spirit of Python</em></h1>
+</section>
+<section id="warning-be-aware-of-the-spirit-of-python">
+<h2>Warning! Be aware of the <em>spirit of Python</em></h2>
 <p><strong>&quot;Break free from this subtle destroyer and reclaim a life of passion and purpose&quot;</strong>: <a class="reference external" href="https://www.amazon.com/Spirit-Python-Exposing-Satans-Squeeze/dp/1621362205">The Spirit of Python</a>.</p>
-</div>
-</div>
+</section>
+</main>
 </body>
 </html>

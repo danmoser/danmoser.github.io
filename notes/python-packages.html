@@ -1,10 +1,63 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>Modules, Packages, PyPi and all that...</title>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 <style type="text/css">
 
 /*
@@ -358,171 +411,106 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 </head>
-<body>
-<div class="document" id="modules-packages-pypi-and-all-that">
-<h1 class="title">Modules, Packages, <tt class="docutils literal">PyPi</tt> and all that...</h1>
+<body class="with-toc">
+<main id="modules-packages-pypi-and-all-that">
+<h1 class="title">Modules, Packages, <span class="docutils literal">PyPi</span> and all that...</h1>
 
 <p>Daniel Moser</p>
 <p>Feb 15th, 2017</p>
 <p>2nd IAG Python Boot Camp</p>
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents" role="doc-toc">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#modules-packages-and-all-that" id="id1">Modules, Packages, and all that...</a></li>
-<li><a class="reference internal" href="#how-do-i-import-a-package-in-my-code" id="id2">How do I import a package in my code?</a></li>
-<li><a class="reference internal" href="#how-do-i-properly-install-a-python-package" id="id3">How do I properly install a Python package?</a><ul>
-<li><a class="reference internal" href="#pip" id="id4">pip</a></li>
+<li><p><a class="reference internal" href="#modules-packages-and-all-that" id="toc-entry-1">Modules, Packages, and all that...</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-import-a-package-in-my-code" id="toc-entry-2">How do I import a package in my code?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-properly-install-a-python-package" id="toc-entry-3">How do I properly install a Python package?</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pip" id="toc-entry-4">pip</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#where-do-pip-look-for-packages" id="id5">Where do <tt class="docutils literal">pip</tt> look for packages?</a></li>
-<li><a class="reference internal" href="#how-do-i-publish-in-the-pypi" id="id6">How do I publish in the <tt class="docutils literal">PyPi</tt>??</a></li>
-<li><a class="reference internal" href="#how-a-build-a-module" id="id7">How a build a module?</a></li>
-<li><a class="reference internal" href="#how-do-i-generate-a-setup-py-compatible-with-pypi" id="id8">How do I generate a <tt class="docutils literal">setup.py</tt> compatible with <tt class="docutils literal">PyPi</tt>?</a></li>
-<li><a class="reference internal" href="#how-do-i-upload-to-testpypi" id="id9">How do I upload to <tt class="docutils literal">TestPyPi</tt>?</a></li>
-<li><a class="reference internal" href="#how-do-i-install-my-package-from-testpypi" id="id10">How do I install my package from <tt class="docutils literal">TestPyPi</tt>?</a></li>
-<li><a class="reference internal" href="#final-remark" id="id11">Final remark</a></li>
+<li><p><a class="reference internal" href="#where-do-pip-look-for-packages" id="toc-entry-5">Where do <span class="docutils literal">pip</span> look for packages?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-publish-in-the-pypi" id="toc-entry-6">How do I publish in the <span class="docutils literal">PyPi</span>??</a></p></li>
+<li><p><a class="reference internal" href="#how-a-build-a-module" id="toc-entry-7">How a build a module?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-generate-a-setup-py-compatible-with-pypi" id="toc-entry-8">How do I generate a <span class="docutils literal">setup.py</span> compatible with <span class="docutils literal">PyPi</span>?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-upload-to-testpypi" id="toc-entry-9">How do I upload to <span class="docutils literal">TestPyPi</span>?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-install-my-package-from-testpypi" id="toc-entry-10">How do I install my package from <span class="docutils literal">TestPyPi</span>?</a></p></li>
+<li><p><a class="reference internal" href="#final-remark" id="toc-entry-11">Final remark</a></p></li>
 </ul>
-</div>
-<div class="section" id="modules-packages-and-all-that">
-<h1><a class="toc-backref" href="#id1">Modules, Packages, and all that...</a></h1>
+</nav>
+<section id="modules-packages-and-all-that">
+<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Modules, Packages, and all that...</a></h2>
 <p>Python is a FREE language where simplicity matters. Thus, it should be easy to have (ie., download) published codes and also, publish your own code.</p>
 <p>Standardizing the names:</p>
 <ul class="simple">
-<li><strong>module</strong> is Python code file containing definitions, functions, statements...</li>
-<li><strong>package</strong> is a structure to share a set of modules.</li>
+<li><p><strong>module</strong> is Python code file containing definitions, functions, statements...</p></li>
+<li><p><strong>package</strong> is a structure to share a set of modules.</p></li>
 </ul>
 <p>This talk is complemented by this one: <a class="reference external" href="http://danmoser.github.io/notes/import_wheel.html">from otherswork import wheel: looking for useful Python packages</a>.</p>
-</div>
-<div class="section" id="how-do-i-import-a-package-in-my-code">
-<h1><a class="toc-backref" href="#id2">How do I import a package in my code?</a></h1>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">this</span>
-</pre>
+</section>
+<section id="how-do-i-import-a-package-in-my-code">
+<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">How do I import a package in my code?</a></h2>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">this</span></code></pre>
 <p><em>Answer</em>: if you satisfy one of these 3 conditions:</p>
 <ul class="simple">
-<li>You are running <tt class="docutils literal">python</tt> in the package's folder [<em>Bad!</em>]</li>
-<li>You explicitly asked python to look for it [<em>Okay, but not cool</em>]</li>
-<li>You properly installed it</li>
+<li><p>You are running <span class="docutils literal">python</span> in the package's folder [<em>Bad!</em>]</p></li>
+<li><p>You explicitly asked python to look for it [<em>Okay, but not cool</em>]</p></li>
+<li><p>You properly installed it</p></li>
 </ul>
-<pre class="literal-block">
-Never run python from a package folder!
-</pre>
-</div>
-<div class="section" id="how-do-i-properly-install-a-python-package">
-<h1><a class="toc-backref" href="#id3">How do I properly install a Python package?</a></h1>
+<pre class="literal-block">Never run python from a package folder!</pre>
+</section>
+<section id="how-do-i-properly-install-a-python-package">
+<h2><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">How do I properly install a Python package?</a></h2>
 <p><em>Answer</em>: one of two ways:</p>
 <ul class="simple">
-<li><tt class="docutils literal">python setup.py install</tt> (in the package main folder)</li>
-<li>using <tt class="docutils literal">pip</tt>!!!</li>
+<li><p><span class="docutils literal">python setup.py install</span> (in the package main folder)</p></li>
+<li><p>using <span class="docutils literal">pip</span>!!!</p></li>
 </ul>
-<div class="section" id="pip">
-<h2><a class="toc-backref" href="#id4">pip</a></h2>
-<p>&quot;<tt class="docutils literal">pip</tt> <em>is a package management system used to install and manage software packages written in Python.</em>&quot;</p>
-<pre class="code bash literal-block">
-pip install _package_
+<section id="pip">
+<h3><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">pip</a></h3>
+<p>&quot;<span class="docutils literal">pip</span> <em>is a package management system used to install and manage software packages written in Python.</em>&quot;</p>
+<pre class="code bash literal-block"><code>pip install _package_
 <span class="comment single"># --user : local install (no admin rights)
 # -U or --upgrade : upgrade existing installation
 # --no-deps : no install of dependencies packages (useful for upgrade)
-# --install-option=&quot;--prefix=$PREFIX_PATH&quot; redirects the install</span>
-</pre>
-<p><tt class="docutils literal">pip</tt> in embedded in 2.7.9+. If you have an updated version of Python and don't find it, run this command:</p>
-<pre class="code bash literal-block">
-python -m ensurepip
-</pre>
-<p>Remember: <tt class="docutils literal">pip</tt> installs binaries in addition to the modules. Add this installation path to your <cite>$PATH</cite> (in unix, is is <cite>$HOME/.local/bin</cite>).</p>
-<p><strong>WARNING</strong>: <em>Never</em> combine <tt class="docutils literal">sudo</tt> with <tt class="docutils literal"><span class="pre">--user</span></tt>! Otherwise you will face critical permission problems for your packages!</p>
-<pre class="literal-block">
-Many more from pip can be learned!
-</pre>
-</div>
-</div>
-<div class="section" id="where-do-pip-look-for-packages">
-<h1><a class="toc-backref" href="#id5">Where do <tt class="docutils literal">pip</tt> look for packages?</a></h1>
-<p><em>Answer</em>: In the Python Package Index: <tt class="docutils literal">PyPi</tt>!!!</p>
+# --install-option=&quot;--prefix=$PREFIX_PATH&quot; redirects the install</span></code></pre>
+<p><span class="docutils literal">pip</span> in embedded in 2.7.9+. If you have an updated version of Python and don't find it, run this command:</p>
+<pre class="code bash literal-block"><code>python -m ensurepip</code></pre>
+<p>Remember: <span class="docutils literal">pip</span> installs binaries in addition to the modules. Add this installation path to your <cite>$PATH</cite> (in unix, is is <cite>$HOME/.local/bin</cite>).</p>
+<p><strong>WARNING</strong>: <em>Never</em> combine <span class="docutils literal">sudo</span> with <span class="docutils literal"><span class="pre">--user</span></span>! Otherwise you will face critical permission problems for your packages!</p>
+<pre class="literal-block">Many more from pip can be learned!</pre>
+</section>
+</section>
+<section id="where-do-pip-look-for-packages">
+<h2><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Where do <span class="docutils literal">pip</span> look for packages?</a></h2>
+<p><em>Answer</em>: In the Python Package Index: <span class="docutils literal">PyPi</span>!!!</p>
 <p>&quot;The Python Package Index <em>(aka ``PyPI`` -- formerly known as the &quot;Cheese Shop&quot;) is the preferred hub for publishing Python packages and modules. Python's standard library supports code uploads to PyPI through its ``distutils`` module.&quot;</em></p>
 <p><a class="reference external" href="https://pypi.python.org">https://pypi.python.org</a> or <a class="reference external" href="http://cheeseshop.python.org">http://cheeseshop.python.org</a></p>
-</div>
-<div class="section" id="how-do-i-publish-in-the-pypi">
-<h1><a class="toc-backref" href="#id6">How do I publish in the <tt class="docutils literal">PyPi</tt>??</a></h1>
+</section>
+<section id="how-do-i-publish-in-the-pypi">
+<h2><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">How do I publish in the <span class="docutils literal">PyPi</span>??</a></h2>
 <p><em>Answer</em>: do this check list:</p>
 <ul class="simple">
-<li>Make sure you know how to build a module.</li>
-<li>Make sure your code is working.</li>
-<li>Make sure your revised your code with good programming practices (coding style, documentation [with examples], compatibility between versions, unit testing...)</li>
-<li>Generate a compatible <tt class="docutils literal">setup.py</tt> file.</li>
-<li>Test it uploading to <tt class="docutils literal">testPyPi</tt>.</li>
-<li>Upload it to <tt class="docutils literal">PyPi</tt>.</li>
+<li><p>Make sure you know how to build a module.</p></li>
+<li><p>Make sure your code is working.</p></li>
+<li><p>Make sure your revised your code with good programming practices (coding style, documentation [with examples], compatibility between versions, unit testing...)</p></li>
+<li><p>Generate a compatible <span class="docutils literal">setup.py</span> file.</p></li>
+<li><p>Test it uploading to <span class="docutils literal">testPyPi</span>.</p></li>
+<li><p>Upload it to <span class="docutils literal">PyPi</span>.</p></li>
 </ul>
-<pre class="literal-block">
-This check list is not to discourage you.
+<pre class="literal-block">This check list is not to discourage you.
 It's to encourage you to do these things, because in the long run
-they really are worth it (believe me!)
-</pre>
-</div>
-<div class="section" id="how-a-build-a-module">
-<h1><a class="toc-backref" href="#id7">How a build a module?</a></h1>
+they really are worth it (believe me!)</pre>
+</section>
+<section id="how-a-build-a-module">
+<h2><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">How a build a module?</a></h2>
 <p>That's a very good question!</p>
-<p>Look the <tt class="docutils literal">iagpyboot</tt> module example! (It should be at <a class="reference external" href="https://github.com/IIPBC/Material">https://github.com/IIPBC/Material</a> ...)</p>
-</div>
-<div class="section" id="how-do-i-generate-a-setup-py-compatible-with-pypi">
-<h1><a class="toc-backref" href="#id8">How do I generate a <tt class="docutils literal">setup.py</tt> compatible with <tt class="docutils literal">PyPi</tt>?</a></h1>
+<p>Look the <span class="docutils literal">iagpyboot</span> module example! (It should be at <a class="reference external" href="https://github.com/IIPBC/Material">https://github.com/IIPBC/Material</a> ...)</p>
+</section>
+<section id="how-do-i-generate-a-setup-py-compatible-with-pypi">
+<h2><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">How do I generate a <span class="docutils literal">setup.py</span> compatible with <span class="docutils literal">PyPi</span>?</a></h2>
 <p>Here you have a MWE (minimal working example):</p>
-<pre class="code python literal-block">
-<span class="comment hashbang">#!/usr/bin/env python</span>
+<pre class="code python literal-block"><code><span class="comment hashbang">#!/usr/bin/env python</span>
 <span class="comment single"># -*- coding:utf-8 -*-</span>
 
 <span class="literal string doc">&quot;&quot;&quot; Writing the Setup Script
@@ -540,18 +528,16 @@ they really are worth it (believe me!)
       <span class="name">author_email</span><span class="operator">=</span><span class="literal string single">'moser&#64;usp.br'</span><span class="punctuation">,</span>
       <span class="name">url</span><span class="operator">=</span><span class="literal string single">'http://iagpyboot.wixsite.com/pbc2017'</span><span class="punctuation">,</span>
       <span class="name">packages</span><span class="operator">=</span><span class="punctuation">[</span><span class="literal string single">'iagpyboot'</span><span class="punctuation">],</span>
-      <span class="punctuation">)</span>
-</pre>
-</div>
-<div class="section" id="how-do-i-upload-to-testpypi">
-<h1><a class="toc-backref" href="#id9">How do I upload to <tt class="docutils literal">TestPyPi</tt>?</a></h1>
+      <span class="punctuation">)</span></code></pre>
+</section>
+<section id="how-do-i-upload-to-testpypi">
+<h2><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">How do I upload to <span class="docutils literal">TestPyPi</span>?</a></h2>
 <p><em>Answer</em>: <strong>Read</strong> <a class="reference external" href="https://wiki.python.org/moin/TestPyPI">Test PyPi Server</a>!</p>
 <ol class="arabic simple">
-<li>Register with the site. It has a different user database than the main PyPI server. It also gets cleaned out on a semi-regular basis.</li>
-<li>Fill in your test PyPI credentials in your ~/.pypirc file. You should end up with something like this:</li>
+<li><p>Register with the site. It has a different user database than the main PyPI server. It also gets cleaned out on a semi-regular basis.</p></li>
+<li><p>Fill in your test PyPI credentials in your ~/.pypirc file. You should end up with something like this:</p></li>
 </ol>
-<pre class="code literal-block">
-[distutils]
+<pre class="code literal-block"><code>[distutils]
 index-servers=
     pypi
     testpypi
@@ -564,35 +550,28 @@ password = IAGpbc2017
 [pypi]
 repository = https://pypi.python.org/pypi
 username = &lt;your user name goes here&gt;
-password = &lt;your password goes here&gt;
-</pre>
+password = &lt;your password goes here&gt;</code></pre>
 <ol class="arabic simple" start="3">
-<li>Go to your project <tt class="docutils literal">setup.py</tt> folder. Use the test server URL to register your project (it gives you the right to modify your project on the server):</li>
+<li><p>Go to your project <span class="docutils literal">setup.py</span> folder. Use the test server URL to register your project (it gives you the right to modify your project on the server):</p></li>
 </ol>
-<pre class="code bash literal-block">
-python setup.py register -r https://testpypi.python.org/pypi
-</pre>
+<pre class="code bash literal-block"><code>python setup.py register -r https://testpypi.python.org/pypi</code></pre>
 <ol class="arabic simple" start="4">
-<li>Then uploading it:</li>
+<li><p>Then uploading it:</p></li>
 </ol>
-<pre class="code bash literal-block">
-python setup.py sdist upload -r https://testpypi.python.org/pypi
-</pre>
+<pre class="code bash literal-block"><code>python setup.py sdist upload -r https://testpypi.python.org/pypi</code></pre>
 <ol class="arabic simple" start="5">
-<li>Test it acessing <a class="reference external" href="https://testpypi.python.org/pypi/iagpyboot">https://testpypi.python.org/pypi/iagpyboot</a> !!!</li>
+<li><p>Test it acessing <a class="reference external" href="https://testpypi.python.org/pypi/iagpyboot">https://testpypi.python.org/pypi/iagpyboot</a> !!!</p></li>
 </ol>
-</div>
-<div class="section" id="how-do-i-install-my-package-from-testpypi">
-<h1><a class="toc-backref" href="#id10">How do I install my package from <tt class="docutils literal">TestPyPi</tt>?</a></h1>
-<p><em>Answer</em>: Once your project is on the server, test that you can install your package from <tt class="docutils literal">TestPyPi</tt>:</p>
-<pre class="code bash literal-block">
-pip install -i https://testpypi.python.org/pypi &lt;package name&gt;
-</pre>
-</div>
-<div class="section" id="final-remark">
-<h1><a class="toc-backref" href="#id11">Final remark</a></h1>
+</section>
+<section id="how-do-i-install-my-package-from-testpypi">
+<h2><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">How do I install my package from <span class="docutils literal">TestPyPi</span>?</a></h2>
+<p><em>Answer</em>: Once your project is on the server, test that you can install your package from <span class="docutils literal">TestPyPi</span>:</p>
+<pre class="code bash literal-block"><code>pip install -i https://testpypi.python.org/pypi &lt;package name&gt;</code></pre>
+</section>
+<section id="final-remark">
+<h2><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Final remark</a></h2>
 <p>Good luck publishing your code!</p>
-</div>
-</div>
+</section>
+</main>
 </body>
 </html>

@@ -792,16 +792,17 @@ Testes de Hipóteses
 A construção de um teste de hipóteses para um parâmetro populacional: existe uma variável *x* associada a dada população e tem-se uma hipótese sobre determinado parâmetro :math:`\mu` dessa população (p.e., o valor verdadeiro de :math:`\mu` é :math:`\mu_0`). Colhe-se uma amostra aleatória e deseja-se comprovar tal hipótese.
 
 .. math::
+
     H_0: \mu=\mu_0 \\
     H_1: \mu\neq\mu_0
 
 Erro tipo I: rejeitar :math:`H_0` quando é verdadeira:
 
-    :math:`\alpha` = P(erro do tipo I) = P(rejeitar :math:`H_0`|:math:`H_0` é verdadeira) :math:`\equiv` *nível de significância*.
+    :math:`\alpha` = P(erro do tipo I) = P(rejeitar :math:`H_0|H_0` é verdadeira) :math:`\equiv` *nível de significância*.
 
 Erro tipo II: não rejeitar :math:`H_0` quando é falsa:
 
-    :math:`\beta` = P(erro do tipo II) = P(não rejeitar :math:`H_0`|:math:`H_0` é falsa).
+    :math:`\beta` = P(erro do tipo II) = P(não rejeitar :math:`H_0|H_0` é falsa).
 
 
 Exemplo 1

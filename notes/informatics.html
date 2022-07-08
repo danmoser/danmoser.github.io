@@ -1,10 +1,63 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>Informatics</title>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 <style type="text/css">
 
 /*
@@ -358,168 +411,122 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 </head>
-<body>
-<div class="document" id="informatics">
+<body class="with-toc">
+<main id="informatics">
 <h1 class="title">Informatics</h1>
 
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents" role="doc-toc">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#databases" id="id1">Databases</a><ul>
-<li><a class="reference internal" href="#relational-databases" id="id2">Relational databases</a><ul>
-<li><a class="reference internal" href="#acid-properties" id="id3">ACID Properties</a></li>
-<li><a class="reference internal" href="#join-clause" id="id4">Join clause</a></li>
+<li><p><a class="reference internal" href="#databases" id="toc-entry-1">Databases</a></p>
+<ul>
+<li><p><a class="reference internal" href="#relational-databases" id="toc-entry-2">Relational databases</a></p>
+<ul>
+<li><p><a class="reference internal" href="#acid-properties" id="toc-entry-3">ACID Properties</a></p></li>
+<li><p><a class="reference internal" href="#join-clause" id="toc-entry-4">Join clause</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#non-relational-databases" id="id5">Non-relational databases</a></li>
+<li><p><a class="reference internal" href="#non-relational-databases" id="toc-entry-5">Non-relational databases</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#definitions" id="id6">Definitions</a><ul>
-<li><a class="reference internal" href="#vocabulary" id="id7">Vocabulary</a><ul>
-<li><a class="reference internal" href="#out-of-the-box-feature" id="id8">&quot;Out of the box&quot; (feature)</a></li>
-<li><a class="reference internal" href="#internationalization-and-localization-i18n" id="id9">Internationalization and localization (i18n)</a></li>
-<li><a class="reference internal" href="#grammars-for-text-parsing" id="id10">Grammars for text parsing</a></li>
-<li><a class="reference internal" href="#principle-of-least-astonishment" id="id11">Principle of least astonishment</a></li>
+<li><p><a class="reference internal" href="#definitions" id="toc-entry-6">Definitions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vocabulary" id="toc-entry-7">Vocabulary</a></p>
+<ul>
+<li><p><a class="reference internal" href="#out-of-the-box-feature" id="toc-entry-8">&quot;Out of the box&quot; (feature)</a></p></li>
+<li><p><a class="reference internal" href="#internationalization-and-localization-i18n" id="toc-entry-9">Internationalization and localization (i18n)</a></p></li>
+<li><p><a class="reference internal" href="#grammars-for-text-parsing" id="toc-entry-10">Grammars for text parsing</a></p></li>
+<li><p><a class="reference internal" href="#principle-of-least-astonishment" id="toc-entry-11">Principle of least astonishment</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#tips" id="id12">Tips</a></li>
-<li><a class="reference internal" href="#links" id="id13">Links</a></li>
+<li><p><a class="reference internal" href="#tips" id="toc-entry-12">Tips</a></p></li>
+<li><p><a class="reference internal" href="#links" id="toc-entry-13">Links</a></p></li>
 </ul>
-</div>
-<div class="section" id="databases">
-<h1><a class="toc-backref" href="#id1">Databases</a></h1>
-<div class="section" id="relational-databases">
-<h2><a class="toc-backref" href="#id2">Relational databases</a></h2>
+</nav>
+<section id="databases">
+<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Databases</a></h2>
+<section id="relational-databases">
+<h3><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Relational databases</a></h3>
 <p>A relational database is a digital database whose organization is based on the relational model of data, as proposed by E.F. Codd in 1970. This model organizes data into one or more tables (or &quot;relations&quot;) of rows and columns, with a unique key for each row.</p>
 <p>Prior to the advent of this model, databases were usually hierarchical, and each tended to be organized with a unique mix of indexes, chains, and pointers. The simplicity of the relational model led to it soon becoming the predominant type of database.</p>
 <p>Virtually all relational database systems use SQL (Structured Query Language) as the language for querying and maintaining the database.</p>
-<div class="section" id="acid-properties">
-<h3><a class="toc-backref" href="#id3">ACID Properties</a></h3>
+<section id="acid-properties">
+<h4><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">ACID Properties</a></h4>
 <p>In computer science, <strong>ACID</strong> (<em>Atomicity, Consistency, Isolation, Durability</em>) is a set of properties that guarantee that database transactions are processed reliably. In the context of databases, a single logical operation on the data is called a transaction.</p>
 <ul class="simple">
-<li><em>Atomicity</em> requires that each transaction be &quot;all or nothing&quot;: if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged.</li>
-<li><em>Consistency</em> property ensures that any transaction will bring the database from one valid state to another.</li>
-<li><em>Isolation</em> property ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially, i.e., one after the other.</li>
-<li><em>Durability</em> means that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors.</li>
+<li><p><em>Atomicity</em> requires that each transaction be &quot;all or nothing&quot;: if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged.</p></li>
+<li><p><em>Consistency</em> property ensures that any transaction will bring the database from one valid state to another.</p></li>
+<li><p><em>Isolation</em> property ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially, i.e., one after the other.</p></li>
+<li><p><em>Durability</em> means that once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors.</p></li>
 </ul>
-</div>
-<div class="section" id="join-clause">
-<h3><a class="toc-backref" href="#id4">Join clause</a></h3>
+</section>
+<section id="join-clause">
+<h4><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">Join clause</a></h4>
 <p>A <em>join clause</em> combines records from two or more tables in a relational database. It creates a set that can be saved as a table or used as it is.</p>
-</div>
-</div>
-<div class="section" id="non-relational-databases">
-<h2><a class="toc-backref" href="#id5">Non-relational databases</a></h2>
+</section>
+</section>
+<section id="non-relational-databases">
+<h3><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Non-relational databases</a></h3>
 <p>A NoSQL (often interpreted as Not only SQL) database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Motivations for this approach include simplicity of design, horizontal scaling, and finer control over availability. The data structures used by NoSQL databases (e.g. key-value, graph, or document) differ from those used in relational databases, making some operations faster in NoSQL and others faster in relational databases. The particular suitability of a given NoSQL database depends on the problem it must solve.</p>
 <p>Most NoSQL stores lack true ACID transactions or Join clause, although a few recent systems have made them central to their designs. NoSQL databases are increasingly used in big data and real-time web applications. NoSQL systems are also called &quot;Not only SQL&quot; to emphasize that they may also support SQL-like query languages. The NoSQL discussions become strong around 2009.</p>
-</div>
-</div>
-<div class="section" id="definitions">
-<h1><a class="toc-backref" href="#id6">Definitions</a></h1>
-<div class="section" id="vocabulary">
-<h2><a class="toc-backref" href="#id7">Vocabulary</a></h2>
-<div class="section" id="out-of-the-box-feature">
-<h3><a class="toc-backref" href="#id8">&quot;Out of the box&quot; (feature)</a></h3>
+</section>
+</section>
+<section id="definitions">
+<h2><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Definitions</a></h2>
+<section id="vocabulary">
+<h3><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">Vocabulary</a></h3>
+<section id="out-of-the-box-feature">
+<h4><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">&quot;Out of the box&quot; (feature)</a></h4>
 <p>An out of the box feature or functionality, particularly in software, is a feature or functionality of a product that works immediately after installation without any configuration or modification.</p>
-</div>
-<div class="section" id="internationalization-and-localization-i18n">
-<h3><a class="toc-backref" href="#id9">Internationalization and localization (i18n)</a></h3>
+</section>
+<section id="internationalization-and-localization-i18n">
+<h4><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">Internationalization and localization (i18n)</a></h4>
 <p>In computing, internationalization and localization are means of adapting computer software to different languages, regional differences and technical requirements of a target market (locale).</p>
-<p>The terms are frequently abbreviated to the numeronyms <tt class="docutils literal">i18n</tt> (where 18 stands for the number of letters between the first i and the last n in the word “internationalization,” a usage coined at DEC in the 1970s) and <tt class="docutils literal">L10n</tt> for &quot;localization&quot;, due to the length of the words.</p>
-</div>
-<div class="section" id="grammars-for-text-parsing">
-<h3><a class="toc-backref" href="#id10">Grammars for text parsing</a></h3>
-<dl class="docutils">
+<p>The terms are frequently abbreviated to the numeronyms <span class="docutils literal">i18n</span> (where 18 stands for the number of letters between the first i and the last n in the word “internationalization,” a usage coined at DEC in the 1970s) and <span class="docutils literal">L10n</span> for &quot;localization&quot;, due to the length of the words.</p>
+</section>
+<section id="grammars-for-text-parsing">
+<h4><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">Grammars for text parsing</a></h4>
+<dl class="simple">
 <dt>Backus-Naur Form (BNF), Extended Backus-Naur Form (EBNF) and regular extensions to BNF:</dt>
-<dd><a class="reference external" href="http://matt.might.net/articles/grammars-bnf-ebnf/">http://matt.might.net/articles/grammars-bnf-ebnf/</a></dd>
+<dd><p><a class="reference external" href="http://matt.might.net/articles/grammars-bnf-ebnf/">http://matt.might.net/articles/grammars-bnf-ebnf/</a></p>
+</dd>
 </dl>
-</div>
-<div class="section" id="principle-of-least-astonishment">
-<h3><a class="toc-backref" href="#id11">Principle of least astonishment</a></h3>
-<dl class="docutils">
+</section>
+<section id="principle-of-least-astonishment">
+<h4><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Principle of least astonishment</a></h4>
+<dl class="simple">
 <dt>&quot;if a necessary feature has a high astonishment factor, it may be necessary to redesign the feature.&quot;</dt>
-<dd><a class="reference external" href="https://en.wikipedia.org/wiki/Principle_of_least_astonishment">https://en.wikipedia.org/wiki/Principle_of_least_astonishment</a></dd>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Principle_of_least_astonishment">https://en.wikipedia.org/wiki/Principle_of_least_astonishment</a></p>
+</dd>
 </dl>
-</div>
-</div>
-</div>
-<div class="section" id="tips">
-<h1><a class="toc-backref" href="#id12">Tips</a></h1>
+</section>
+</section>
+</section>
+<section id="tips">
+<h2><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Tips</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://www.howtogeek.com/189974/how-to-share-your-computers-files-with-a-virtual-machine/">http://www.howtogeek.com/189974/how-to-share-your-computers-files-with-a-virtual-machine/</a></li>
+<li><p><a class="reference external" href="http://www.howtogeek.com/189974/how-to-share-your-computers-files-with-a-virtual-machine/">http://www.howtogeek.com/189974/how-to-share-your-computers-files-with-a-virtual-machine/</a></p></li>
 </ul>
-</div>
-<div class="section" id="links">
-<h1><a class="toc-backref" href="#id13">Links</a></h1>
+</section>
+<section id="links">
+<h2><a class="toc-backref" href="#toc-entry-13" role="doc-backlink">Links</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="http://overapi.com/">http://overapi.com/</a></li>
-<li><dl class="first docutils">
+<li><p><a class="reference external" href="http://overapi.com/">http://overapi.com/</a></p></li>
+<li><dl class="simple">
 <dt><a class="reference external" href="http://ppenteado.net/">http://ppenteado.net/</a></dt>
-<dd>&gt; Teaching</dd>
+<dd><p>&gt; Teaching</p>
+</dd>
 </dl>
 </li>
-<li><a class="reference external" href="https://lai.iag.usp.br/projects/seminarios-gai/wiki">https://lai.iag.usp.br/projects/seminarios-gai/wiki</a></li>
-<li><a class="reference external" href="http://research.microsoft.com/en-us/collaboration/fourthparadigm/">http://research.microsoft.com/en-us/collaboration/fourthparadigm/</a></li>
-<li><a class="reference external" href="http://rosettacode.org/">http://rosettacode.org/</a></li>
-<li><a class="reference external" href="http://ccsl.ime.usp.br/">http://ccsl.ime.usp.br/</a></li>
+<li><p><a class="reference external" href="https://lai.iag.usp.br/projects/seminarios-gai/wiki">https://lai.iag.usp.br/projects/seminarios-gai/wiki</a></p></li>
+<li><p><a class="reference external" href="http://research.microsoft.com/en-us/collaboration/fourthparadigm/">http://research.microsoft.com/en-us/collaboration/fourthparadigm/</a></p></li>
+<li><p><a class="reference external" href="http://rosettacode.org/">http://rosettacode.org/</a></p></li>
+<li><p><a class="reference external" href="http://ccsl.ime.usp.br/">http://ccsl.ime.usp.br/</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</main>
 </body>
 </html>

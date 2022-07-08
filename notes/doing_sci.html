@@ -1,10 +1,63 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>Doing Science</title>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 <style type="text/css">
 
 /*
@@ -358,463 +411,407 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 </head>
-<body>
-<div class="document" id="doing-science">
+<body class="with-toc">
+<main id="doing-science">
 <h1 class="title">Doing Science</h1>
 
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents" role="doc-toc">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#seminars" id="id2">Seminars</a></li>
-<li><a class="reference internal" href="#writing-tips" id="id3">Writing tips</a><ul>
-<li><a class="reference internal" href="#useful-expressions" id="id4">Useful expressions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#definitions" id="id5">Definitions</a></li>
-<li><a class="reference internal" href="#id1" id="id6">Doing science</a></li>
-<li><a class="reference internal" href="#data-tools" id="id7">Data tools</a><ul>
-<li><a class="reference internal" href="#extracting-data" id="id8">Extracting data</a></li>
-<li><a class="reference internal" href="#time-series-analysis" id="id9">Time series analysis</a></li>
-<li><a class="reference internal" href="#statistics" id="id10">Statistics</a></li>
-<li><a class="reference internal" href="#d-plots-and-visualization" id="id11">3D plots and visualization</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#vocabulary" id="id12">Vocabulary</a></li>
-<li><a class="reference internal" href="#stories" id="id13">Stories</a></li>
-<li><a class="reference internal" href="#movies" id="id14">Movies</a></li>
-<li><a class="reference internal" href="#publicacao-de-patentes" id="id15">Publicação de Patentes</a><ul>
-<li><a class="reference internal" href="#gerais" id="id16">Gerais</a></li>
-<li><a class="reference internal" href="#processo" id="id17">Processo</a></li>
-<li><a class="reference internal" href="#descobrir-classificacao-de-patentes-de-interesse" id="id18">Descobrir classificação de patentes de interesse</a></li>
-<li><a class="reference internal" href="#contexto-de-patentes" id="id19">Contexto de Patentes</a></li>
-<li><a class="reference internal" href="#batalhas-judiciais" id="id20">Batalhas judiciais</a></li>
-<li><a class="reference internal" href="#dinamica-navios-naufragados" id="id21">Dinâmica: navios naufragados</a></li>
-<li><a class="reference internal" href="#como-e-e-quanto-custa-o-processo-de-patenteamento" id="id22">Como é e quanto custa o processo de patenteamento</a></li>
-<li><a class="reference internal" href="#exemplos-buscas" id="id23">Exemplos buscas</a></li>
-<li><a class="reference internal" href="#materiais" id="id24">Materiais</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="seminars">
-<h1><a class="toc-backref" href="#id2">Seminars</a></h1>
-<ul class="simple">
-<li>On average, each word+space has ~7 chars (Portuguese).</li>
-<li>Titles: Less than 15 words == 100 chars.</li>
-<li>Abstracts: Less than 200 words == 1400 chars.</li>
-</ul>
-<div class="figure align-center">
-<img alt="../figs/doing-sci_paper.png" src="../figs/doing-sci_paper.png" />
-</div>
-</div>
-<div class="section" id="writing-tips">
-<h1><a class="toc-backref" href="#id3">Writing tips</a></h1>
+<li><p><a class="reference internal" href="#seminars" id="toc-entry-1">Seminars</a></p></li>
+<li><p><a class="reference internal" href="#writing-tips" id="toc-entry-2">Writing tips</a></p>
 <ul>
-<li><p class="first">Scientists publish IDEAS. Keep that in mind.</p>
+<li><p><a class="reference internal" href="#useful-expressions" id="toc-entry-3">Useful expressions</a></p></li>
+</ul>
 </li>
-<li><p class="first">People love <em>stories</em>. This could be a good way of writing a motivational letter, for example.</p>
+<li><p><a class="reference internal" href="#definitions" id="toc-entry-4">Definitions</a></p></li>
+<li><p><a class="reference internal" href="#doing-science-1" id="toc-entry-5">Doing science</a></p></li>
+<li><p><a class="reference internal" href="#data-tools" id="toc-entry-6">Data tools</a></p>
+<ul>
+<li><p><a class="reference internal" href="#extracting-data" id="toc-entry-7">Extracting data</a></p></li>
+<li><p><a class="reference internal" href="#time-series-analysis" id="toc-entry-8">Time series analysis</a></p></li>
+<li><p><a class="reference internal" href="#statistics" id="toc-entry-9">Statistics</a></p></li>
+<li><p><a class="reference internal" href="#d-plots-and-visualization" id="toc-entry-10">3D plots and visualization</a></p></li>
+</ul>
 </li>
-<li><dl class="first docutils">
+<li><p><a class="reference internal" href="#vocabulary" id="toc-entry-11">Vocabulary</a></p></li>
+<li><p><a class="reference internal" href="#stories" id="toc-entry-12">Stories</a></p></li>
+<li><p><a class="reference internal" href="#movies" id="toc-entry-13">Movies</a></p></li>
+<li><p><a class="reference internal" href="#publicacao-de-patentes" id="toc-entry-14">Publicação de Patentes</a></p>
+<ul>
+<li><p><a class="reference internal" href="#gerais" id="toc-entry-15">Gerais</a></p></li>
+<li><p><a class="reference internal" href="#processo" id="toc-entry-16">Processo</a></p></li>
+<li><p><a class="reference internal" href="#descobrir-classificacao-de-patentes-de-interesse" id="toc-entry-17">Descobrir classificação de patentes de interesse</a></p></li>
+<li><p><a class="reference internal" href="#contexto-de-patentes" id="toc-entry-18">Contexto de Patentes</a></p></li>
+<li><p><a class="reference internal" href="#batalhas-judiciais" id="toc-entry-19">Batalhas judiciais</a></p></li>
+<li><p><a class="reference internal" href="#dinamica-navios-naufragados" id="toc-entry-20">Dinâmica: navios naufragados</a></p></li>
+<li><p><a class="reference internal" href="#como-e-e-quanto-custa-o-processo-de-patenteamento" id="toc-entry-21">Como é e quanto custa o processo de patenteamento</a></p></li>
+<li><p><a class="reference internal" href="#exemplos-buscas" id="toc-entry-22">Exemplos buscas</a></p></li>
+<li><p><a class="reference internal" href="#materiais" id="toc-entry-23">Materiais</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="seminars">
+<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Seminars</a></h2>
+<ul class="simple">
+<li><p>On average, each word+space has ~7 chars (Portuguese).</p></li>
+<li><p>Titles: Less than 15 words == 100 chars.</p></li>
+<li><p>Abstracts: Less than 200 words == 1400 chars.</p></li>
+</ul>
+<figure class="align-center">
+<img alt="../figs/doing-sci_paper.png" src="../figs/doing-sci_paper.png" />
+</figure>
+</section>
+<section id="writing-tips">
+<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Writing tips</a></h2>
+<ul>
+<li><p>Scientists publish IDEAS. Keep that in mind.</p></li>
+<li><p>People love <em>stories</em>. This could be a good way of writing a motivational letter, for example.</p></li>
+<li><dl>
 <dt>Avoid:</dt>
-<dd><ul class="first simple">
-<li>&quot;modern&quot;: In most of cases you are trying to say &quot;contemporary&quot;.</li>
-<li>&quot;despite&quot;: In most of cases you are trying to say &quot;although&quot;.</li>
-<li>&quot;due to&quot;: In most of cases you are trying to say &quot;owing to&quot; (&quot;due to&quot; has the sense of &quot;attributable to&quot;)</li>
+<dd><ul class="simple">
+<li><p>&quot;modern&quot;: In most of cases you are trying to say &quot;contemporary&quot;.</p></li>
+<li><p>&quot;despite&quot;: In most of cases you are trying to say &quot;although&quot;.</p></li>
+<li><p>&quot;due to&quot;: In most of cases you are trying to say &quot;owing to&quot; (&quot;due to&quot; has the sense of &quot;attributable to&quot;)</p></li>
 </ul>
 <p>&quot;Due to&quot; means &quot;caused by&quot;, however, &quot;Owing to&quot; means &quot;because of&quot; and it comes always at the beginning of the sentence. Besides &quot;owing to&quot; as a result or consequence of something.</p>
-<blockquote class="last">
+<blockquote>
 <ul class="simple">
-<li>Owing to illness, he missed the exam. (because of illness etc.)</li>
-<li>His absence was due to illness. (His absence was caused by...)</li>
+<li><p>Owing to illness, he missed the exam. (because of illness etc.)</p></li>
+<li><p>His absence was due to illness. (His absence was caused by...)</p></li>
 </ul>
 </blockquote>
 </dd>
 </dl>
 </li>
-<li><p class="first">Avoid qualitative expressions like &quot;it is very important&quot;. Write HOW it is important.</p>
-</li>
-<li><p class="first"><a class="reference external" href="https://gianfrancoconti.wordpress.com/2017/08/15/eight-listening-research-findings-every-teacher-should-be-aware-of-and-their-implications-for-teaching-and-learning/">Eight listening-research findings</a> every teacher should be aware of and their implications for teaching and learning</p>
-</li>
-<li><p class="first"><a class="reference external" href="https://www.eslbuzz.com/american-and-british-english-spelling-differences/">American and British English Spelling Differences</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://www.youtube.com/watch?v=RKK7wGAYP6k">How language shapes the way we think -- Lera Boroditsky</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://www.theguardian.com/higher-education-network/2018/may/18/academia-exploitation-university-mental-health-professors-plagiarism">Academia is built on exploitation. We must break this vicious circle</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="https://www.nature.com/articles/d41586-019-01914-z">&quot;I’ll work on it over the weekend&quot;: high workload and other pressures faced by early-career researchers</a></p>
-</li>
-<li><p class="first"><a class="reference external" href="http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo">&quot;Vermes de corda&quot;, fake e false news</a></p>
-</li>
+<li><p>Avoid qualitative expressions like &quot;it is very important&quot;. Write HOW it is important.</p></li>
+<li><p><a class="reference external" href="https://gianfrancoconti.wordpress.com/2017/08/15/eight-listening-research-findings-every-teacher-should-be-aware-of-and-their-implications-for-teaching-and-learning/">Eight listening-research findings</a> every teacher should be aware of and their implications for teaching and learning</p></li>
+<li><p><a class="reference external" href="https://www.eslbuzz.com/american-and-british-english-spelling-differences/">American and British English Spelling Differences</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=RKK7wGAYP6k">How language shapes the way we think -- Lera Boroditsky</a></p></li>
+<li><p><a class="reference external" href="https://www.theguardian.com/higher-education-network/2018/may/18/academia-exploitation-university-mental-health-professors-plagiarism">Academia is built on exploitation. We must break this vicious circle</a></p></li>
+<li><p><a class="reference external" href="https://www.nature.com/articles/d41586-019-01914-z">&quot;I’ll work on it over the weekend&quot;: high workload and other pressures faced by early-career researchers</a></p></li>
+<li><p><a class="reference external" href="http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo">&quot;Vermes de corda&quot;, fake e false news</a></p></li>
 </ul>
-<div class="section" id="useful-expressions">
-<h2><a class="toc-backref" href="#id4">Useful expressions</a></h2>
+<section id="useful-expressions">
+<h3><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Useful expressions</a></h3>
 <ul class="simple">
-<li><dl class="first docutils">
+<li><dl class="simple">
 <dt><em>Building on results</em> = aprofundamento de resultados, aprofundamento de resultados</dt>
-<dd>Building on results from the project, this study shows...</dd>
+<dd><p>Building on results from the project, this study shows...</p>
+</dd>
 </dl>
 </li>
-<li>It provides a useful organization of both observational signatures and theoretical predictions.</li>
-<li>This paper aims to provide an initial classification of the observed properties...</li>
-<li>These goals are being achieved through large observing allocations at the X telescope.</li>
-<li>Although we consider..., two noteworthy objects require a brief mention.</li>
-<li>We present results from the photometric monitoring of ...</li>
-<li>... it is well short of the level required for the significant episodes to occur.</li>
-<li>In this paper we argue that...</li>
-<li>The present paper develops a new model for this feature...</li>
-<li>I am <strong>in</strong> a unique position.</li>
-<li>I'm on a trip.</li>
-<li>For what it's worth (FWIW): considering what limited worth this advice, opinion, or suggestion might have for you; Used to soften the presentation of unsolicited advice or information that may not be relevant (it may be useful information, it may not be, or perhaps differs in opinion from that of the recipients).</li>
-<li>It is about the same age as they are.</li>
+<li><p>It provides a useful organization of both observational signatures and theoretical predictions.</p></li>
+<li><p>This paper aims to provide an initial classification of the observed properties...</p></li>
+<li><p>These goals are being achieved through large observing allocations at the X telescope.</p></li>
+<li><p>Although we consider..., two noteworthy objects require a brief mention.</p></li>
+<li><p>We present results from the photometric monitoring of ...</p></li>
+<li><p>... it is well short of the level required for the significant episodes to occur.</p></li>
+<li><p>In this paper we argue that...</p></li>
+<li><p>The present paper develops a new model for this feature...</p></li>
+<li><p>I am <strong>in</strong> a unique position.</p></li>
+<li><p>I'm on a trip.</p></li>
+<li><p>For what it's worth (FWIW): considering what limited worth this advice, opinion, or suggestion might have for you; Used to soften the presentation of unsolicited advice or information that may not be relevant (it may be useful information, it may not be, or perhaps differs in opinion from that of the recipients).</p></li>
+<li><p>It is about the same age as they are.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="definitions">
-<h1><a class="toc-backref" href="#id5">Definitions</a></h1>
+</section>
+</section>
+<section id="definitions">
+<h2><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">Definitions</a></h2>
 <ul class="simple">
-<li><strong>Theorem</strong> is a (mathematical) statement that is proved using rigorous mathematical reasoning. Is usually reserved for the most important results or those with long or difficult proofs. A <strong>proposition</strong> is a <em>theorem</em> of no particular importance (a statement with a simple proof).</li>
-<li>A <strong>lemma</strong> is a &quot;helping theorem&quot;, a proposition with little applicability except that it forms part of the proof of a larger theorem.</li>
-<li>An <strong>axiom</strong> or <strong>postulate</strong> is a statement that is accepted without proof and regarded as fundamental to a subject. Historically, <em>axiom</em> was regarded as &quot;self-evident&quot;, but nowadays they are used to describe the assumptions of the subject of study.</li>
-<li>A <strong>definition</strong> is also accepted without proof since it simply gives the meaning of a word or phrase in terms of known concepts.</li>
-<li>An unproven statement that is believed true is called a <strong>conjecture</strong> (or sometimes a <strong>hypothesis</strong>).</li>
-<li>A <strong>corollary</strong> is a proposition that follows with little proof from another <em>theorem</em> or <em>definition</em>. Also a <em>corollary</em> is used for a <em>theorem</em> restated for a more restricted special case. A <strong>generalization</strong> is a <em>theorem</em> which includes a previously proven <em>theorem</em> as a special case and hence as a <em>corollary</em>.</li>
-<li>A <strong>rule</strong> is a <em>theorem</em> that establishes a useful formula.</li>
-<li>An <strong>algorithm</strong> is a procedure or formula for solving a problem.</li>
-<li>An <strong>identity</strong> is an equality between two mathematical expressions.</li>
-<li>A <strong>law</strong> or a <strong>principle</strong> is a theorem that applies in a wide range of circumstances.</li>
-<li>A <strong>paradox</strong> is a statement that can be shown to be both true and false.</li>
+<li><p><strong>Theorem</strong> is a (mathematical) statement that is proved using rigorous mathematical reasoning. Is usually reserved for the most important results or those with long or difficult proofs. A <strong>proposition</strong> is a <em>theorem</em> of no particular importance (a statement with a simple proof).</p></li>
+<li><p>A <strong>lemma</strong> is a &quot;helping theorem&quot;, a proposition with little applicability except that it forms part of the proof of a larger theorem.</p></li>
+<li><p>An <strong>axiom</strong> or <strong>postulate</strong> is a statement that is accepted without proof and regarded as fundamental to a subject. Historically, <em>axiom</em> was regarded as &quot;self-evident&quot;, but nowadays they are used to describe the assumptions of the subject of study.</p></li>
+<li><p>A <strong>definition</strong> is also accepted without proof since it simply gives the meaning of a word or phrase in terms of known concepts.</p></li>
+<li><p>An unproven statement that is believed true is called a <strong>conjecture</strong> (or sometimes a <strong>hypothesis</strong>).</p></li>
+<li><p>A <strong>corollary</strong> is a proposition that follows with little proof from another <em>theorem</em> or <em>definition</em>. Also a <em>corollary</em> is used for a <em>theorem</em> restated for a more restricted special case. A <strong>generalization</strong> is a <em>theorem</em> which includes a previously proven <em>theorem</em> as a special case and hence as a <em>corollary</em>.</p></li>
+<li><p>A <strong>rule</strong> is a <em>theorem</em> that establishes a useful formula.</p></li>
+<li><p>An <strong>algorithm</strong> is a procedure or formula for solving a problem.</p></li>
+<li><p>An <strong>identity</strong> is an equality between two mathematical expressions.</p></li>
+<li><p>A <strong>law</strong> or a <strong>principle</strong> is a theorem that applies in a wide range of circumstances.</p></li>
+<li><p>A <strong>paradox</strong> is a statement that can be shown to be both true and false.</p></li>
 </ul>
 <p>Source: <a class="reference external" href="https://en.wikipedia.org/w/index.php?title=Theorem&amp;oldid=684857654">https://en.wikipedia.org/w/index.php?title=Theorem&amp;oldid=684857654</a></p>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../figs/doing_sci-lawtheory.jpg" src="../figs/doing_sci-lawtheory.jpg" />
-</div>
+</figure>
 <ul class="simple">
-<li>Competências e Habilidades no ensino: o que são e como aplicá-las? <a class="reference external" href="https://www.somospar.com.br/competencias-e-habilidades/">https://www.somospar.com.br/competencias-e-habilidades/</a></li>
+<li><p>Competências e Habilidades no ensino: o que são e como aplicá-las? <a class="reference external" href="https://www.somospar.com.br/competencias-e-habilidades/">https://www.somospar.com.br/competencias-e-habilidades/</a></p></li>
 </ul>
-</div>
-<div class="section" id="id1">
-<h1><a class="toc-backref" href="#id6">Doing science</a></h1>
-<div class="figure align-center">
+</section>
+<section id="doing-science-1">
+<h2><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Doing science</a></h2>
+<figure class="align-center">
 <img alt="../figs/doing-sci_physicists.png" src="../figs/doing-sci_physicists.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../figs/doing-sci_phys-color.jpg" src="../figs/doing-sci_phys-color.jpg" style="width: 840px;" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../figs/doing-sci_handwrite.png" src="../figs/doing-sci_handwrite.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../figs/doing-sci_scientists-dont-know.jpg" src="../figs/doing-sci_scientists-dont-know.jpg" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../figs/doing-sci_nunca-viu.png" src="../figs/doing-sci_nunca-viu.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../figs/doing-sci_fitting.png" src="../figs/doing-sci_fitting.png" />
-</div>
-<div class="figure align-center">
+</figure>
+<figure class="align-center">
 <img alt="../figs/doing-sci_vocab.jpg" src="../figs/doing-sci_vocab.jpg" />
-</div>
+</figure>
 <ul class="simple">
-<li><a class="reference external" href="https://www.timeshighereducation.com/news/restrict-researchers-one-paper-ayear-says-ucl-professor">Restrict researchers to one paper a year, says UCL professor</a></li>
-<li><a class="reference external" href="https://trabalhounido.blogspot.com/2019/05/success-in-academia-is-as-much-about.html">Success in academia is as much about grit as talent</a>: in favor of Epistemological anarchism from Paul Feyerabend?</li>
-<li><a class="reference external" href="https://getpocket.com/explore/item/the-role-of-luck-in-life-success-is-far-greater-than-we-realized?utm_source=pocket-newtab">The Role of Luck in Life Success Is Far Greater Than We Realized</a>.</li>
-<li><a class="reference external" href="http://www.diretodaciencia.com/2018/11/23/pesquisadores-exploram-pos-doutorandos-estrangeiros-nos-eua-afirma-estudo/">Pesquisadores exploram pós-doutorandos estrangeiros nos EUA</a></li>
-<li><a class="reference external" href="https://www.theatlantic.com/amp/article/556676/">The Scientific Paper Is Obsolete. Here's what's next</a></li>
-<li><a class="reference external" href="https://www.theatlantic.com/ideas/archive/2018/10/new-sokal-hoax/572212/">What the New Sokal Hoax Reveals About Academia</a></li>
-<li><a class="reference external" href="http://revistapesquisa.fapesp.br/2018/08/20/metricas-responsaveis/">Métricas responsáveis</a></li>
-<li><a class="reference external" href="https://jornal.usp.br/atualidades/dossie-mostra-marginalizacao-do-ensino-de-humanidades/">Dossiê mostra marginalização do ensino de humanidades</a></li>
-<li><a class="reference external" href="https://brasil.elpais.com/brasil/2018/08/08/ciencia/1533762807_199045.html?rel=mas">“Faço pesquisa no Brasil por paixão. Se levasse em conta a razão, não faria, a frustração é muito grande”</a></li>
-<li><a class="reference external" href="../static/doing-sci_moyses.pdf">Os principais obstáculos ao desenvolvimento da ciência na América Latina por     Moysés Nussenzveig. (PDF)</a></li>
-<li><a class="reference external" href="https://jornal.usp.br/atualidades/como-e-por-quem-a-pesquisa-cientifica-deve-ser-avaliada/">Como e por quem a pesquisa científica deve ser avaliada</a></li>
-<li><a class="reference external" href="../static/doing-sci_boas-praticas-FAPESP-2014.pdf">Código de Boas Práticas Científicas FAPESP (PDF)</a></li>
-<li><a class="reference external" href="https://www.revistaprosaversoearte.com/escola-nao-pode-ser-uma-empresa-porque-logica-da-educacao-nao-e-mercado-nuccio-ordine/">A escola não pode ser uma empresa porque a lógica da educação não é a do mercado</a></li>
-<li><a class="reference external" href="../static/doing-sci_evasao.pdf">A evasão no ensino superior brasileiro (PDF)</a></li>
-<li><a class="reference external" href="../static/doing-sci_leaveastro.pdf">The psychological aspects of a well-known issue (PDF)</a></li>
-<li><a class="reference external" href="../static/doing-sci_repensar-a-universidade.pdf">Repensar a Universidade (PDF)</a></li>
-<li><a class="reference external" href="https://astrobites.org/2017/10/27/success-in-astronomy-some-surprising-strategies/">Success in Astronomy? Some Surprising Strategies</a></li>
-<li><a class="reference external" href="http://jpress.jornalismojunior.com.br/2016/07/alunos-pensam-deixar-usp/">Por que os alunos pensam em deixar a USP?</a></li>
-<li><a class="reference external" href="http://www.sbfisica.org.br/v1/home/index.php/pt/acontece/750-conselho-da-capes-envia-carta-ao-mec-por-cortes-no-orcamento-de-2019">CAPES envia carta ao MEC por cortes no Orçamento de 2019</a></li>
-<li><a class="reference external" href="https://www.otempo.com.br/capa/brasil/cnpq-diz-que-verba-para-pagar-bolsas-de-setembro-acabou-1.1504973">CNPq diz que verba para pagar bolsas de setembro acabou</a></li>
-<li><a class="reference external" href="https://g1.globo.com/educacao/noticia/2018/08/01/estudo-encontra-999-beneficiarios-do-bolsa-familia-que-conquistaram-1288-medalhas-em-olimpiada-de-matematica.ghtml">Estudo encontra 999 beneficiários do Bolsa Família que conquistaram 1.288 medalhas em olimpíada de matemática</a></li>
-<li><a class="reference external" href="https://jornalggn.com.br/noticia/os-problemas-da-usp-sao-estruturais-nao-de-falta-de-recursos-por-luis-nassif">Os problemas da USP são estruturais</a></li>
-<li><a class="reference external" href="http://cienciahoje.org.br/artigo/nao-existe-ciencia-exata-e-vamos-combinar-que-todas-sao-humanas/">Não existe ciência exata (e vamos combinar que todas são humanas...)</a></li>
-<li><a class="reference external" href="blogs.nature.com/naturejobs/2018/07/09/done-is-better-than-perfect-overcoming-phd-perfectionism">Done is better than perfect: overcoming PhD perfectionism</a></li>
-<li><a class="reference external" href="https://www.nature.com/articles/d41586-018-05838-y">Why it is not a 'failure' to leave academia</a></li>
-<li><a class="reference external" href="http://agencia.fapesp.br/livro_investiga_os_tres_modelos_mais_influentes_de_educacao_superior/27840/">Livro investiga os três modelos mais influentes de educação superior</a></li>
-<li><a class="reference external" href="https://www1.folha.uol.com.br/ciencia/2016/04/1765028-alckmin-critica-fapesp-por-pesquisas-sem-utilidade-pratica.shtml">Alckmin critica Fapesp por pesquisas 'sem utilidade prática'</a></li>
-<li><a class="reference external" href="https://jornalggn.com.br/noticia/fapesp-responde-criticas-de-alckmin-sobre-pesquisas-sem-utilidade-pratica">Fapesp responde críticas de Alckmin sobre pesquisas &quot;sem utilidade prática&quot;</a></li>
-<li><a class="reference external" href="https://brasil.elpais.com/brasil/2017/02/17/economia/1487331225_284546.html?id_externo_rsoc=FB_CC">É preciso acabar com o formato das aulas de 50 minutos</a></li>
-<li><a class="reference external" href="https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html?id_externo_rsoc=FB_BR_CM">O doutorado é prejudicial à saúde mental</a></li>
-<li><a class="reference external" href="https://oglobo.globo.com/sociedade/ciencia/suspensao-do-brasil-de-consorcio-astronomico-reflete-falta-de-politica-para-ciencia-22486965?utm_source=Twitter&amp;utm_medium=Social&amp;utm_campaign=compartilhar">Suspensão do Brasil de consórcio astronômico reflete falta de política para ciência</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=B_x8EccxJjU&amp;feature=youtu.be">Educação para o Futuro</a></li>
-<li><a class="reference external" href="http://www.sciencemag.org/news/2018/02/still-working-astronomers-explain-why-they-don-t-publish?utm_source=sciencemagazine&amp;utm_medium=facebook-text&amp;utm_campaign=dontpublish-17906">'Still working': Astronomers explain why they don't publish</a></li>
-<li><a class="reference external" href="http://agencia.fapesp.br/crise_na_ciencia_nao_se_deve_apenas_a_falta_de_recursos_avaliam_cientistas/27103/">Crise na ciência não se deve apenas à falta de recursos, avaliam cientistas</a></li>
+<li><p><a class="reference external" href="https://www.timeshighereducation.com/news/restrict-researchers-one-paper-ayear-says-ucl-professor">Restrict researchers to one paper a year, says UCL professor</a></p></li>
+<li><p><a class="reference external" href="https://trabalhounido.blogspot.com/2019/05/success-in-academia-is-as-much-about.html">Success in academia is as much about grit as talent</a>: in favor of Epistemological anarchism from Paul Feyerabend?</p></li>
+<li><p><a class="reference external" href="https://getpocket.com/explore/item/the-role-of-luck-in-life-success-is-far-greater-than-we-realized?utm_source=pocket-newtab">The Role of Luck in Life Success Is Far Greater Than We Realized</a>.</p></li>
+<li><p><a class="reference external" href="http://www.diretodaciencia.com/2018/11/23/pesquisadores-exploram-pos-doutorandos-estrangeiros-nos-eua-afirma-estudo/">Pesquisadores exploram pós-doutorandos estrangeiros nos EUA</a></p></li>
+<li><p><a class="reference external" href="https://www.theatlantic.com/amp/article/556676/">The Scientific Paper Is Obsolete. Here's what's next</a></p></li>
+<li><p><a class="reference external" href="https://www.theatlantic.com/ideas/archive/2018/10/new-sokal-hoax/572212/">What the New Sokal Hoax Reveals About Academia</a></p></li>
+<li><p><a class="reference external" href="http://revistapesquisa.fapesp.br/2018/08/20/metricas-responsaveis/">Métricas responsáveis</a></p></li>
+<li><p><a class="reference external" href="https://jornal.usp.br/atualidades/dossie-mostra-marginalizacao-do-ensino-de-humanidades/">Dossiê mostra marginalização do ensino de humanidades</a></p></li>
+<li><p><a class="reference external" href="https://brasil.elpais.com/brasil/2018/08/08/ciencia/1533762807_199045.html?rel=mas">“Faço pesquisa no Brasil por paixão. Se levasse em conta a razão, não faria, a frustração é muito grande”</a></p></li>
+<li><p><a class="reference external" href="../static/doing-sci_moyses.pdf">Os principais obstáculos ao desenvolvimento da ciência na América Latina por Moysés Nussenzveig. (PDF)</a></p></li>
+<li><p><a class="reference external" href="https://jornal.usp.br/atualidades/como-e-por-quem-a-pesquisa-cientifica-deve-ser-avaliada/">Como e por quem a pesquisa científica deve ser avaliada</a></p></li>
+<li><p><a class="reference external" href="../static/doing-sci_boas-praticas-FAPESP-2014.pdf">Código de Boas Práticas Científicas FAPESP (PDF)</a></p></li>
+<li><p><a class="reference external" href="https://www.revistaprosaversoearte.com/escola-nao-pode-ser-uma-empresa-porque-logica-da-educacao-nao-e-mercado-nuccio-ordine/">A escola não pode ser uma empresa porque a lógica da educação não é a do mercado</a></p></li>
+<li><p><a class="reference external" href="../static/doing-sci_evasao.pdf">A evasão no ensino superior brasileiro (PDF)</a></p></li>
+<li><p><a class="reference external" href="../static/doing-sci_leaveastro.pdf">The psychological aspects of a well-known issue (PDF)</a></p></li>
+<li><p><a class="reference external" href="../static/doing-sci_repensar-a-universidade.pdf">Repensar a Universidade (PDF)</a></p></li>
+<li><p><a class="reference external" href="https://astrobites.org/2017/10/27/success-in-astronomy-some-surprising-strategies/">Success in Astronomy? Some Surprising Strategies</a></p></li>
+<li><p><a class="reference external" href="http://jpress.jornalismojunior.com.br/2016/07/alunos-pensam-deixar-usp/">Por que os alunos pensam em deixar a USP?</a></p></li>
+<li><p><a class="reference external" href="http://www.sbfisica.org.br/v1/home/index.php/pt/acontece/750-conselho-da-capes-envia-carta-ao-mec-por-cortes-no-orcamento-de-2019">CAPES envia carta ao MEC por cortes no Orçamento de 2019</a></p></li>
+<li><p><a class="reference external" href="https://www.otempo.com.br/capa/brasil/cnpq-diz-que-verba-para-pagar-bolsas-de-setembro-acabou-1.1504973">CNPq diz que verba para pagar bolsas de setembro acabou</a></p></li>
+<li><p><a class="reference external" href="https://g1.globo.com/educacao/noticia/2018/08/01/estudo-encontra-999-beneficiarios-do-bolsa-familia-que-conquistaram-1288-medalhas-em-olimpiada-de-matematica.ghtml">Estudo encontra 999 beneficiários do Bolsa Família que conquistaram 1.288 medalhas em olimpíada de matemática</a></p></li>
+<li><p><a class="reference external" href="https://jornalggn.com.br/noticia/os-problemas-da-usp-sao-estruturais-nao-de-falta-de-recursos-por-luis-nassif">Os problemas da USP são estruturais</a></p></li>
+<li><p><a class="reference external" href="http://cienciahoje.org.br/artigo/nao-existe-ciencia-exata-e-vamos-combinar-que-todas-sao-humanas/">Não existe ciência exata (e vamos combinar que todas são humanas...)</a></p></li>
+<li><p><a class="reference external" href="blogs.nature.com/naturejobs/2018/07/09/done-is-better-than-perfect-overcoming-phd-perfectionism">Done is better than perfect: overcoming PhD perfectionism</a></p></li>
+<li><p><a class="reference external" href="https://www.nature.com/articles/d41586-018-05838-y">Why it is not a 'failure' to leave academia</a></p></li>
+<li><p><a class="reference external" href="http://agencia.fapesp.br/livro_investiga_os_tres_modelos_mais_influentes_de_educacao_superior/27840/">Livro investiga os três modelos mais influentes de educação superior</a></p></li>
+<li><p><a class="reference external" href="https://www1.folha.uol.com.br/ciencia/2016/04/1765028-alckmin-critica-fapesp-por-pesquisas-sem-utilidade-pratica.shtml">Alckmin critica Fapesp por pesquisas 'sem utilidade prática'</a></p></li>
+<li><p><a class="reference external" href="https://jornalggn.com.br/noticia/fapesp-responde-criticas-de-alckmin-sobre-pesquisas-sem-utilidade-pratica">Fapesp responde críticas de Alckmin sobre pesquisas &quot;sem utilidade prática&quot;</a></p></li>
+<li><p><a class="reference external" href="https://brasil.elpais.com/brasil/2017/02/17/economia/1487331225_284546.html?id_externo_rsoc=FB_CC">É preciso acabar com o formato das aulas de 50 minutos</a></p></li>
+<li><p><a class="reference external" href="https://brasil.elpais.com/brasil/2018/03/15/ciencia/1521113964_993420.html?id_externo_rsoc=FB_BR_CM">O doutorado é prejudicial à saúde mental</a></p></li>
+<li><p><a class="reference external" href="https://oglobo.globo.com/sociedade/ciencia/suspensao-do-brasil-de-consorcio-astronomico-reflete-falta-de-politica-para-ciencia-22486965?utm_source=Twitter&amp;utm_medium=Social&amp;utm_campaign=compartilhar">Suspensão do Brasil de consórcio astronômico reflete falta de política para ciência</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=B_x8EccxJjU&amp;feature=youtu.be">Educação para o Futuro</a></p></li>
+<li><p><a class="reference external" href="http://www.sciencemag.org/news/2018/02/still-working-astronomers-explain-why-they-don-t-publish?utm_source=sciencemagazine&amp;utm_medium=facebook-text&amp;utm_campaign=dontpublish-17906">'Still working': Astronomers explain why they don't publish</a></p></li>
+<li><p><a class="reference external" href="http://agencia.fapesp.br/crise_na_ciencia_nao_se_deve_apenas_a_falta_de_recursos_avaliam_cientistas/27103/">Crise na ciência não se deve apenas à falta de recursos, avaliam cientistas</a></p></li>
 </ul>
-<div class="figure">
+<figure>
 <img alt="../figs/doing-sci_comoaprendemos.jpg" src="../figs/doing-sci_comoaprendemos.jpg" />
-</div>
+</figure>
 <ul class="simple">
-<li><a class="reference external" href="http://cartacampinas.com.br/2018/01/xrelatorio-internacional-mostra-que-universidade-particular-no-brasil-nao-produzem-conhecimento/">Universidade particular no Brasil não produz conhecimento</a></li>
-<li><a class="reference external" href="http://www.sciencemag.org/news/2016/07/hate-journal-impact-factors-new-study-gives-you-one-more-reason?utm_source=sciencemagazine&amp;utm_medium=facebook-text&amp;utm_campaign=impactfactor-5531">Hate journal impact factors? New study gives you one more reason</a></li>
-<li><a class="reference external" href="http://www.cartaeducacao.com.br/reportagens/capes-descredencia-cursos-em-universidades-de-ponta-2/">Capes descredencia cursos em universidades de ponta em 2018</a></li>
-<li><a class="reference external" href="https://www.nexojornal.com.br/externo/2017/11/19/Por-que-a-filosofia-%C3%A9-t%C3%A3o-importante-no-ensino-da-ci%C3%AAncia?utm_source=socialbttns&amp;utm_medium=article_share&amp;utm_campaign=self">Por que a filosofia é tão importante no ensino da ciência</a></li>
-<li><a class="reference external" href="https://www.linkedin.com/pulse/7-lies-academic-world-keeps-telling-you-mariana-cerdeira">7 lies the academic world keeps telling you</a></li>
-<li><a class="reference external" href="https://revistatrip.uol.com.br/trip/sidarta-ribeiro-lygia-da-veiga-pereira-stevens-rehen-e-outros-pesquisadores-precisam-contrabandear-material-cientifico-para-preservar-o-que-restou-da-ciencia-no-pais">Pesquisadores precisam contrabandear material científico para preservar o que restou da ciência no país</a></li>
-<li><a class="reference external" href="http://jornal.usp.br/universidade/teses-privilegiam-referencias-bibliograficas-em-detrimento-da-narracao/">Teses valorizam mais referências que argumentação</a></li>
-<li><a class="reference external" href="http://backreaction.blogspot.com.br/2017/11/how-popper-killed-particle-physics.html?m=1">Backreaction: How Popper killed Particle Physics</a></li>
-<li><a class="reference external" href="http://www.sciencemag.org/careers/2017/07/what-comes-after-phd-check-out-data?utm_source=sciencemagazine&amp;utm_medium=facebook-text&amp;utm_campaign=whatcomesnext-14321">What comes after a Ph.D.? Check out the data</a></li>
-<li><a class="reference external" href="https://astrobites.org/2017/11/10/research-is-hard/">Research is Hard</a></li>
-<li><a class="reference external" href="http://www.nature.com/nature/journal/v550/n7677/full/550454a.html?WT.mc_id=FBK_NatureNews&amp;sf126572128=1">History: Science and the Reformation</a></li>
-<li><a class="reference external" href="https://schimelwritingscience.wordpress.com/2017/10/29/a-different-solution-to-example-9-9-undermining-your-conclusion/">Undermining your conclusion</a></li>
-<li><a class="reference external" href="https://medium.com/&#64;MariliaMoscou/por-que-n%C3%B3s-doutorandos-nos-suicidamos-b694782f1c9a">Por que nós doutorandos nos suicidamos?</a></li>
-<li><a class="reference external" href="http://www.sciencemag.org/news/2017/10/swiss-university-dissolves-astronomy-institute-after-misconduct-allegations">Swiss university dissolves astronomy institute after misconduct allegations</a></li>
-<li><a class="reference external" href="https://jobseachjournal.wordpress.com/2017/10/25/the-dark-side-of-academia-abuse-power-games-and-harassment/">The Dark Side of Academia: Abuse, Power Games and Harassment</a></li>
-<li><a class="reference external" href="http://www.bbc.com/portuguese/brasil-40504128">Cortes na ciência geram êxodo de cérebros, congelam pesquisas e vão punir Brasil por décadas, diz presidente da academia</a></li>
-<li><a class="reference external" href="https://brasil.elpais.com/brasil/2017/03/01/cultura/1488369509_805958.html?id_externo_rsoc=fb_BR_CM">Os seis conselhos de George Orwell para escrever melhor</a></li>
-<li><a class="reference external" href="http://www.gazetadopovo.com.br/educacao/o-nobel-que-o-brasil-ganhou-e-ninguem-sabia-78pavf4xstt2d1pggqw16c5lj?utm_source=facebook&amp;utm_medium=cpc&amp;utm_campaign=gazeta-do-povo&amp;utm_content=11-10-nobel">O Nobel que o Brasil ganhou e ninguém sabia</a></li>
-<li><a class="reference external" href="http://www.sciencemag.org/news/2017/10/latour-qa">The new phase of Bruno Latour</a></li>
-<li><a class="reference external" href="https://www.parolacce.org/2014/10/05/the-true-story-of-stronzo-bestiale/">The true story of Stronzo Bestiale (and other scientific jokes)</a></li>
-<li><a class="reference external" href="https://www.nexojornal.com.br/ensaio/2017/Investimento-privado-em-pesquisa-e-desenvolvimento-n%C3%A3o-%C3%A9-a-solu%C3%A7%C3%A3o">Investimento privado em pesquisa e desenvolvimento não é a solução</a></li>
-<li><a class="reference external" href="https://www.theguardian.com/commentisfree/2017/sep/30/we-hail-individual-geniuses-success-in-science-collaboration-nobel-prize?CMP=Share_iOSApp_Other">We hail individual geniuses, but success in science comes through collaboration</a></li>
-<li><a class="reference external" href="https://youtu.be/QOSEFDGOq-0?t=1h50m22s">Academia - Um Sistema de Interesses</a></li>
-<li><a class="reference external" href="http://www.nature.com/news/good-data-are-not-enough-1.20906">Good data are not enough for Science</a></li>
-<li><a class="reference external" href="www.brasilpost.com.br/hugo-fernandesferreira/doutores-desemprego_b_9316594.html?ncid=engmodushpmg00000003">Um exército de Doutores desempregados</a></li>
-<li><a class="reference external" href="https://amp.theguardian.com/science/head-quarters/2017/aug/24/clinical-trials-revolution-could-change-the-future-of-medical-research">Clinical trials revolution could change the future of medical research</a></li>
-<li><a class="reference external" href="https://phys.org/news/2017-01-facts-beliefs-identity-seeds-science.html">Facts, beliefs, and identity: The seeds of science skepticism</a></li>
-<li><a class="reference external" href="http://agencia.fapesp.br/como_aumentar_o_impacto_de_artigos_cientificos_/26143/">Como aumentar o impacto de artigos científicos</a></li>
-<li><a class="reference external" href="https://qz.com/547641/theres-an-awful-cost-to-getting-a-phd-that-no-one-talks-about/">There's an awful cost to getting a PhD that no one talks about</a></li>
-<li><a class="reference external" href="http://brasil.elpais.com/brasil/2017/01/10/internacional/1484073680_523691.html?id_externo_rsoc=FB_CC">Ciência vive uma epidemia de estudos inúteis</a></li>
-<li><a class="reference external" href="http://trabalhounido.blogspot.com.br/2017/01/estudo-nao-aumenta-eficiencia-do.html">Estudo não aumenta eficiência do trabalho no Brasil, diz pesquisa</a></li>
-<li><a class="reference external" href="http://www.intellectualtakeout.org/blog/why-professors-are-writing-crap-nobody-reads">Why Professors Are Writing Crap That Nobody Reads</a></li>
-<li><a class="reference external" href="http://arxiv.org/abs/1510.01647">Impact of Declining Proposal Success Rates on Scientific Productivity</a></li>
-<li><a class="reference external" href="http://arxiv.org/pdf/1507.03989v1.pdf">Survey of software use in astronomy</a></li>
-<li><a class="reference external" href="http://scholarlykitchen.sspnet.org/2009/07/29/arxiv-position-effects/">Downloads, Citations, and Positional Effects in the arXiv</a></li>
-<li><a class="reference external" href="https://implicit.harvard.edu/implicit/takeatest.html">Unconscious bias</a></li>
-<li><a class="reference external" href="http://adsabs.harvard.edu/abs/2015arXiv151202223C">Job crisis in astronomy</a></li>
-<li><a class="reference external" href="http://www.iflscience.com/editors-blog/academics-admit-feeling-pressure-embellish-possible-impact-research">Academics Admit Feeling Pressure To Embellish Possible Impact Of Research</a></li>
-<li><dl class="first docutils">
+<li><p><a class="reference external" href="http://cartacampinas.com.br/2018/01/xrelatorio-internacional-mostra-que-universidade-particular-no-brasil-nao-produzem-conhecimento/">Universidade particular no Brasil não produz conhecimento</a></p></li>
+<li><p><a class="reference external" href="http://www.sciencemag.org/news/2016/07/hate-journal-impact-factors-new-study-gives-you-one-more-reason?utm_source=sciencemagazine&amp;utm_medium=facebook-text&amp;utm_campaign=impactfactor-5531">Hate journal impact factors? New study gives you one more reason</a></p></li>
+<li><p><a class="reference external" href="http://www.cartaeducacao.com.br/reportagens/capes-descredencia-cursos-em-universidades-de-ponta-2/">Capes descredencia cursos em universidades de ponta em 2018</a></p></li>
+<li><p><a class="reference external" href="https://www.nexojornal.com.br/externo/2017/11/19/Por-que-a-filosofia-%C3%A9-t%C3%A3o-importante-no-ensino-da-ci%C3%AAncia?utm_source=socialbttns&amp;utm_medium=article_share&amp;utm_campaign=self">Por que a filosofia é tão importante no ensino da ciência</a></p></li>
+<li><p><a class="reference external" href="https://www.linkedin.com/pulse/7-lies-academic-world-keeps-telling-you-mariana-cerdeira">7 lies the academic world keeps telling you</a></p></li>
+<li><p><a class="reference external" href="https://revistatrip.uol.com.br/trip/sidarta-ribeiro-lygia-da-veiga-pereira-stevens-rehen-e-outros-pesquisadores-precisam-contrabandear-material-cientifico-para-preservar-o-que-restou-da-ciencia-no-pais">Pesquisadores precisam contrabandear material científico para preservar o que restou da ciência no país</a></p></li>
+<li><p><a class="reference external" href="http://jornal.usp.br/universidade/teses-privilegiam-referencias-bibliograficas-em-detrimento-da-narracao/">Teses valorizam mais referências que argumentação</a></p></li>
+<li><p><a class="reference external" href="http://backreaction.blogspot.com.br/2017/11/how-popper-killed-particle-physics.html?m=1">Backreaction: How Popper killed Particle Physics</a></p></li>
+<li><p><a class="reference external" href="http://www.sciencemag.org/careers/2017/07/what-comes-after-phd-check-out-data?utm_source=sciencemagazine&amp;utm_medium=facebook-text&amp;utm_campaign=whatcomesnext-14321">What comes after a Ph.D.? Check out the data</a></p></li>
+<li><p><a class="reference external" href="https://astrobites.org/2017/11/10/research-is-hard/">Research is Hard</a></p></li>
+<li><p><a class="reference external" href="http://www.nature.com/nature/journal/v550/n7677/full/550454a.html?WT.mc_id=FBK_NatureNews&amp;sf126572128=1">History: Science and the Reformation</a></p></li>
+<li><p><a class="reference external" href="https://schimelwritingscience.wordpress.com/2017/10/29/a-different-solution-to-example-9-9-undermining-your-conclusion/">Undermining your conclusion</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;MariliaMoscou/por-que-n%C3%B3s-doutorandos-nos-suicidamos-b694782f1c9a">Por que nós doutorandos nos suicidamos?</a></p></li>
+<li><p><a class="reference external" href="http://www.sciencemag.org/news/2017/10/swiss-university-dissolves-astronomy-institute-after-misconduct-allegations">Swiss university dissolves astronomy institute after misconduct allegations</a></p></li>
+<li><p><a class="reference external" href="https://jobseachjournal.wordpress.com/2017/10/25/the-dark-side-of-academia-abuse-power-games-and-harassment/">The Dark Side of Academia: Abuse, Power Games and Harassment</a></p></li>
+<li><p><a class="reference external" href="http://www.bbc.com/portuguese/brasil-40504128">Cortes na ciência geram êxodo de cérebros, congelam pesquisas e vão punir Brasil por décadas, diz presidente da academia</a></p></li>
+<li><p><a class="reference external" href="https://brasil.elpais.com/brasil/2017/03/01/cultura/1488369509_805958.html?id_externo_rsoc=fb_BR_CM">Os seis conselhos de George Orwell para escrever melhor</a></p></li>
+<li><p><a class="reference external" href="http://www.gazetadopovo.com.br/educacao/o-nobel-que-o-brasil-ganhou-e-ninguem-sabia-78pavf4xstt2d1pggqw16c5lj?utm_source=facebook&amp;utm_medium=cpc&amp;utm_campaign=gazeta-do-povo&amp;utm_content=11-10-nobel">O Nobel que o Brasil ganhou e ninguém sabia</a></p></li>
+<li><p><a class="reference external" href="http://www.sciencemag.org/news/2017/10/latour-qa">The new phase of Bruno Latour</a></p></li>
+<li><p><a class="reference external" href="https://www.parolacce.org/2014/10/05/the-true-story-of-stronzo-bestiale/">The true story of Stronzo Bestiale (and other scientific jokes)</a></p></li>
+<li><p><a class="reference external" href="https://www.nexojornal.com.br/ensaio/2017/Investimento-privado-em-pesquisa-e-desenvolvimento-n%C3%A3o-%C3%A9-a-solu%C3%A7%C3%A3o">Investimento privado em pesquisa e desenvolvimento não é a solução</a></p></li>
+<li><p><a class="reference external" href="https://www.theguardian.com/commentisfree/2017/sep/30/we-hail-individual-geniuses-success-in-science-collaboration-nobel-prize?CMP=Share_iOSApp_Other">We hail individual geniuses, but success in science comes through collaboration</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/QOSEFDGOq-0?t=1h50m22s">Academia - Um Sistema de Interesses</a></p></li>
+<li><p><a class="reference external" href="http://www.nature.com/news/good-data-are-not-enough-1.20906">Good data are not enough for Science</a></p></li>
+<li><p><a class="reference external" href="www.brasilpost.com.br/hugo-fernandesferreira/doutores-desemprego_b_9316594.html?ncid=engmodushpmg00000003">Um exército de Doutores desempregados</a></p></li>
+<li><p><a class="reference external" href="https://amp.theguardian.com/science/head-quarters/2017/aug/24/clinical-trials-revolution-could-change-the-future-of-medical-research">Clinical trials revolution could change the future of medical research</a></p></li>
+<li><p><a class="reference external" href="https://phys.org/news/2017-01-facts-beliefs-identity-seeds-science.html">Facts, beliefs, and identity: The seeds of science skepticism</a></p></li>
+<li><p><a class="reference external" href="http://agencia.fapesp.br/como_aumentar_o_impacto_de_artigos_cientificos_/26143/">Como aumentar o impacto de artigos científicos</a></p></li>
+<li><p><a class="reference external" href="https://qz.com/547641/theres-an-awful-cost-to-getting-a-phd-that-no-one-talks-about/">There's an awful cost to getting a PhD that no one talks about</a></p></li>
+<li><p><a class="reference external" href="http://brasil.elpais.com/brasil/2017/01/10/internacional/1484073680_523691.html?id_externo_rsoc=FB_CC">Ciência vive uma epidemia de estudos inúteis</a></p></li>
+<li><p><a class="reference external" href="http://trabalhounido.blogspot.com.br/2017/01/estudo-nao-aumenta-eficiencia-do.html">Estudo não aumenta eficiência do trabalho no Brasil, diz pesquisa</a></p></li>
+<li><p><a class="reference external" href="http://www.intellectualtakeout.org/blog/why-professors-are-writing-crap-nobody-reads">Why Professors Are Writing Crap That Nobody Reads</a></p></li>
+<li><p><a class="reference external" href="http://arxiv.org/abs/1510.01647">Impact of Declining Proposal Success Rates on Scientific Productivity</a></p></li>
+<li><p><a class="reference external" href="http://arxiv.org/pdf/1507.03989v1.pdf">Survey of software use in astronomy</a></p></li>
+<li><p><a class="reference external" href="http://scholarlykitchen.sspnet.org/2009/07/29/arxiv-position-effects/">Downloads, Citations, and Positional Effects in the arXiv</a></p></li>
+<li><p><a class="reference external" href="https://implicit.harvard.edu/implicit/takeatest.html">Unconscious bias</a></p></li>
+<li><p><a class="reference external" href="http://adsabs.harvard.edu/abs/2015arXiv151202223C">Job crisis in astronomy</a></p></li>
+<li><p><a class="reference external" href="http://www.iflscience.com/editors-blog/academics-admit-feeling-pressure-embellish-possible-impact-research">Academics Admit Feeling Pressure To Embellish Possible Impact Of Research</a></p></li>
+<li><dl class="simple">
 <dt>What Google Learned From Its Quest to Build the Perfect Team</dt>
-<dd><a class="reference external" href="../static/google_perfect_team_comments-Moser.pdf">google_perfect_team_comments-Moser.pdf</a></dd>
+<dd><p><a class="reference external" href="../static/google_perfect_team_comments-Moser.pdf">google_perfect_team_comments-Moser.pdf</a></p>
+</dd>
 </dl>
 </li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=pKyHX0zqynk">Why Do We Procrastinate? (SciShow)</a></li>
-<li><a class="reference external" href="http://www.cartacapital.com.br/sociedade/precisamos-falar-sobre-a-vaidade-na-vida-academica">Precisamos falar sobre a vaidade na vida acadêmica</a></li>
-<li><a class="reference external" href="https://youtu.be/VcgO2v3JjCU">Is science realiable? (SciShow)</a></li>
-<li><a class="reference external" href="http://www.sciencealert.com/europe-announces-that-all-scientific-articles-should-be-freely-accessible-by-2020">Europe announces that all scientific papers should be free by 2020</a></li>
-<li><a class="reference external" href="https://youtu.be/QOSEFDGOq-0?t=1h50m24s">Análise sistêmica na academia</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=StrsvKSAbT8">The Worst Nobel Prize Ever Awarded (SciShow)</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=5gqHTlBp6iY">The Psychology of Trolling</a></li>
-<li><cite>Young researchers thrive in life after academia</cite> &lt;<a class="reference external" href="http://go.nature.com/2dwztqC">http://go.nature.com/2dwztqC</a>&gt;`_</li>
-<li><a class="reference external" href="http://www.nature.com/news/mystery-deportation-of-particle-physicist-leads-to-swell-of-protest-1.20587">Mystery deportation of particle physicist leads to swell of protest</a></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=pKyHX0zqynk">Why Do We Procrastinate? (SciShow)</a></p></li>
+<li><p><a class="reference external" href="http://www.cartacapital.com.br/sociedade/precisamos-falar-sobre-a-vaidade-na-vida-academica">Precisamos falar sobre a vaidade na vida acadêmica</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/VcgO2v3JjCU">Is science realiable? (SciShow)</a></p></li>
+<li><p><a class="reference external" href="http://www.sciencealert.com/europe-announces-that-all-scientific-articles-should-be-freely-accessible-by-2020">Europe announces that all scientific papers should be free by 2020</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/QOSEFDGOq-0?t=1h50m24s">Análise sistêmica na academia</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=StrsvKSAbT8">The Worst Nobel Prize Ever Awarded (SciShow)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=5gqHTlBp6iY">The Psychology of Trolling</a></p></li>
+<li><p><cite>Young researchers thrive in life after academia</cite> &lt;<a class="reference external" href="http://go.nature.com/2dwztqC">http://go.nature.com/2dwztqC</a>&gt;`_</p></li>
+<li><p><a class="reference external" href="http://www.nature.com/news/mystery-deportation-of-particle-physicist-leads-to-swell-of-protest-1.20587">Mystery deportation of particle physicist leads to swell of protest</a></p></li>
 </ul>
-<div class="figure">
+<figure>
 <img alt="../figs/doing_sci_citacoes.jpg" src="../figs/doing_sci_citacoes.jpg" style="width: 800px;" />
-</div>
-<div class="figure">
+</figure>
+<figure>
 <img alt="../figs/doing_sci_fuga.jpg" src="../figs/doing_sci_fuga.jpg" style="width: 577px;" />
-</div>
+</figure>
 <ul class="simple">
-<li><a class="reference external" href="http://www.nature.com/news/where-science-and-nonsense-collide-1.21266">Where science and nonsense collide</a></li>
-<li><a class="reference external" href="http://ciencia.estadao.com.br/blogs/herton-escobar/cnpq-e-organizacoes-sociais-comecam-2017-com-orcamento-sem-lastro/">CNPq e Organizações Sociais começam 2017 com orçamento sem lastro</a></li>
-<li><a class="reference external" href="http://cultura.estadao.com.br/blogs/estado-da-arte/a-verdade-e-a-mesma-em-cambridge-e-em-madras-dois-olhares-sobre-a-matematica-2/">A verdade matemática</a></li>
-<li>Os custos da corrupção e da crise afetam não só economicamente nossa sociedade. Decisões equivocadas criam obstáculos sérios para o futuro da inovação e da ciência e também para a convivência social. É preciso recorrer aos valores  da integridade, da ética, da solidariedade e do respeito à alteridade, para recompor o tecido social. Educação e comunicação serão fundamentais nessa atividade. E assim também o papel do professor e do cientista. <a class="reference external" href="http://portal.if.usp.br/ifusp/pt-br/evento/coloquio-do-ifusp-com-o-dr-belisario-dos-santos-junior">http://portal.if.usp.br/ifusp/pt-br/evento/coloquio-do-ifusp-com-o-dr-belisario-dos-santos-junior</a></li>
-<li><a class="reference external" href="http://jornal.usp.br/ciencias/ciencias-da-saude/ensino-de-homeopatia-veterinaria-e-deficiente-afirma-pesquisadora/">Ensino de homeopatia veterinária é deficiente, afirma pesquisadora</a></li>
-<li><a class="reference external" href="https://jornal.usp.br/artigos/a-homeopatia-e-uma-farsa-criminosa/">A homeopatia é uma farsa</a></li>
-<li><a class="reference external" href="https://aeon.co/ideas/what-i-learned-as-a-hired-consultant-for-autodidact-physicists">What I learned as a hired consultant to autodidact physicists</a></li>
-<li><a class="reference external" href="http://rogeriocerqueiraleite.com.br/ensino-domesticacao-e-desigualdade/">Ensino, Domesticação e Desigualdade</a></li>
-<li><a class="reference external" href="http://www.diretodaciencia.com/2017/05/23/mec-reconhece-centenas-de-programas-de-pos-graduacao/">MEC reconhece centenas de programas de pós-graduação numa tacada só</a></li>
-<li><a class="reference external" href="http://www.otempo.com.br/interessa/%C3%AAxodo-cient%C3%ADfico-impede-o-pa%C3%ADs-de-superar-suas-crises-1.1303881">Êxodo científico impede o país de superar suas crises</a></li>
-<li><a class="reference external" href="http://www.fiocruz.br/brasiliana/cgi/cgilua.exe/sys/start.htm?infoid=90&amp;sid=31">Depoimento Ulisses Capozzoli</a></li>
-<li><a class="reference external" href="http://www.economist.com/blogs/graphicdetail/2017/04/daily-chart-15">Competitiveness at school may not yield the best exam results</a></li>
-<li><a class="reference external" href="https://www.theguardian.com/higher-education-network/2017/may/25/its-time-for-academics-to-take-back-control-of-research-journals?CMP=share_btn_fb">It's time for academics to take back control of research journals</a></li>
-<li><a class="reference external" href="http://super.abril.com.br/blog/alexandre-versignassi/se-tudo-der-certo-o-brasil-sera-da-molecada-que-trabalha/">Se tudo der certo, o Brasil será da molecada que trabalha</a></li>
-<li><a class="reference external" href="http://www.redebrasilatual.com.br/entretenimento/2017/06/nunca-me-sonharam-expoe-realidades-e-utopias-do-ensino-medio-do-opais">'Nunca me sonharam' expõe realidades e utopias de alunos no ensino médio do país</a></li>
-<li><a class="reference external" href="https://astrobites.org/2017/06/09/the-role-of-gender-in-asking-questions/">The Role of Gender in Asking Questions</a></li>
-<li><a class="reference external" href="http://pesquisatec.com/new-blog/2013/5/31/o-que-esperar-e-o-que-no-esperar-de-um-orientador">O que esperar e o que não esperar de um orientador</a></li>
-<li><a class="reference external" href="http://zh.clicrbs.com.br/rs/entretenimento/noticia/2016/06/vitor-ramil-o-artista-paga-alto-preco-por-levar-uma-vida-nao-convencional-5825352.html">O artista paga alto preço por levar uma vida não convencional</a></li>
-<li><a class="reference external" href="http://brasil.elpais.com/brasil/2016/07/26/ciencia/1469532340_615895.html?id_externo_rsoc=FB_CC">Nova revisão invalida milhares de estudos sobre o cérebro</a></li>
+<li><p><a class="reference external" href="http://www.nature.com/news/where-science-and-nonsense-collide-1.21266">Where science and nonsense collide</a></p></li>
+<li><p><a class="reference external" href="http://ciencia.estadao.com.br/blogs/herton-escobar/cnpq-e-organizacoes-sociais-comecam-2017-com-orcamento-sem-lastro/">CNPq e Organizações Sociais começam 2017 com orçamento sem lastro</a></p></li>
+<li><p><a class="reference external" href="http://cultura.estadao.com.br/blogs/estado-da-arte/a-verdade-e-a-mesma-em-cambridge-e-em-madras-dois-olhares-sobre-a-matematica-2/">A verdade matemática</a></p></li>
+<li><p>Os custos da corrupção e da crise afetam não só economicamente nossa sociedade. Decisões equivocadas criam obstáculos sérios para o futuro da inovação e da ciência e também para a convivência social. É preciso recorrer aos valores  da integridade, da ética, da solidariedade e do respeito à alteridade, para recompor o tecido social. Educação e comunicação serão fundamentais nessa atividade. E assim também o papel do professor e do cientista. <a class="reference external" href="http://portal.if.usp.br/ifusp/pt-br/evento/coloquio-do-ifusp-com-o-dr-belisario-dos-santos-junior">http://portal.if.usp.br/ifusp/pt-br/evento/coloquio-do-ifusp-com-o-dr-belisario-dos-santos-junior</a></p></li>
+<li><p><a class="reference external" href="http://jornal.usp.br/ciencias/ciencias-da-saude/ensino-de-homeopatia-veterinaria-e-deficiente-afirma-pesquisadora/">Ensino de homeopatia veterinária é deficiente, afirma pesquisadora</a></p></li>
+<li><p><a class="reference external" href="https://jornal.usp.br/artigos/a-homeopatia-e-uma-farsa-criminosa/">A homeopatia é uma farsa</a></p></li>
+<li><p><a class="reference external" href="https://aeon.co/ideas/what-i-learned-as-a-hired-consultant-for-autodidact-physicists">What I learned as a hired consultant to autodidact physicists</a></p></li>
+<li><p><a class="reference external" href="http://rogeriocerqueiraleite.com.br/ensino-domesticacao-e-desigualdade/">Ensino, Domesticação e Desigualdade</a></p></li>
+<li><p><a class="reference external" href="http://www.diretodaciencia.com/2017/05/23/mec-reconhece-centenas-de-programas-de-pos-graduacao/">MEC reconhece centenas de programas de pós-graduação numa tacada só</a></p></li>
+<li><p><a class="reference external" href="http://www.otempo.com.br/interessa/%C3%AAxodo-cient%C3%ADfico-impede-o-pa%C3%ADs-de-superar-suas-crises-1.1303881">Êxodo científico impede o país de superar suas crises</a></p></li>
+<li><p><a class="reference external" href="http://www.fiocruz.br/brasiliana/cgi/cgilua.exe/sys/start.htm?infoid=90&amp;sid=31">Depoimento Ulisses Capozzoli</a></p></li>
+<li><p><a class="reference external" href="http://www.economist.com/blogs/graphicdetail/2017/04/daily-chart-15">Competitiveness at school may not yield the best exam results</a></p></li>
+<li><p><a class="reference external" href="https://www.theguardian.com/higher-education-network/2017/may/25/its-time-for-academics-to-take-back-control-of-research-journals?CMP=share_btn_fb">It's time for academics to take back control of research journals</a></p></li>
+<li><p><a class="reference external" href="http://super.abril.com.br/blog/alexandre-versignassi/se-tudo-der-certo-o-brasil-sera-da-molecada-que-trabalha/">Se tudo der certo, o Brasil será da molecada que trabalha</a></p></li>
+<li><p><a class="reference external" href="http://www.redebrasilatual.com.br/entretenimento/2017/06/nunca-me-sonharam-expoe-realidades-e-utopias-do-ensino-medio-do-opais">'Nunca me sonharam' expõe realidades e utopias de alunos no ensino médio do país</a></p></li>
+<li><p><a class="reference external" href="https://astrobites.org/2017/06/09/the-role-of-gender-in-asking-questions/">The Role of Gender in Asking Questions</a></p></li>
+<li><p><a class="reference external" href="http://pesquisatec.com/new-blog/2013/5/31/o-que-esperar-e-o-que-no-esperar-de-um-orientador">O que esperar e o que não esperar de um orientador</a></p></li>
+<li><p><a class="reference external" href="http://zh.clicrbs.com.br/rs/entretenimento/noticia/2016/06/vitor-ramil-o-artista-paga-alto-preco-por-levar-uma-vida-nao-convencional-5825352.html">O artista paga alto preço por levar uma vida não convencional</a></p></li>
+<li><p><a class="reference external" href="http://brasil.elpais.com/brasil/2016/07/26/ciencia/1469532340_615895.html?id_externo_rsoc=FB_CC">Nova revisão invalida milhares de estudos sobre o cérebro</a></p></li>
 </ul>
-<div class="figure align-center">
+<figure class="align-center">
 <img alt="../figs/doing_sci-discoveries.jpg" src="../figs/doing_sci-discoveries.jpg" style="height: 500px;" />
-</div>
+</figure>
 <ul class="simple">
-<li><a class="reference external" href="http://revistapesquisa.fapesp.br/2017/06/19/experiencia-encerrada/">Experiência encerrada [Balanço do Ciências sem Fronteiras]</a></li>
-<li><a class="reference external" href="https://www1.folha.uol.com.br/empreendedorsocial/2018/07/nunca-se-escreveu-tanto-tao-errado-e-se-interpretou-tao-mal.shtml">Nunca se escreveu tanto, tão errado e se interpretou tão mal</a></li>
-<li><a class="reference external" href="https://medium.com/ci%C3%AAncia-descomplicada/querido-observat%C3%B3rio-nacional-on-o-seu-curso-ead-sobre-sistema-solar-t%C3%A1-um-tanto-errado-c651c273a331">Querido Observatório Nacional (ON): o seu curso EAD sobre Sistema Solar tá um tanto errado</a></li>
-<li><a class="reference external" href="https://www.geledes.org.br/o-racismo-cientifico-falsa-medida-homem/#gs.cTIVFwQ">O Racismo Científico - A Falsa Medida do Homem</a></li>
-<li><a class="reference external" href="http://blogs.oglobo.globo.com/na-base-dos-dados/post/fez-doutorado-vem-ai-incertezas-do-pos-graduado.html?utm_source=Facebook&amp;utm_medium=Social&amp;utm_campaign=O+Globo">Fez doutorado? Vêm aí as incertezas do pós-graduado</a></li>
-<li><a class="reference external" href="https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science">Is the staggeringly profitable business of scientific publishing bad for science?</a></li>
-<li><a class="reference external" href="https://www.theguardian.com/science/life-and-physics/2017/jun/22/why-i-left-physics-for-economics?CMP=share_btn_fb">Why I left physics for economics</a></li>
-<li><a class="reference external" href="http://jornal.usp.br/radio-usp/radioagencia-usp/ensino-de-ciencias-da-capacidade-de-analise-critica/">Ensino de Ciências dá capacidade de análise crítica</a></li>
-<li><a class="reference external" href="http://hpc.ct.utfpr.edu.br/node/35">O que todo calouro deveria saber antes de ingressar na UTFPR</a></li>
-<li><a class="reference external" href="https://www.allisonharbin.com/post-phd/why-i-left-academia-part-1">Why I left academia</a></li>
-<li><a class="reference external" href="https://www.theguardian.com/science/head-quarters/2017/aug/10/the-human-cost-of-the-pressures-of-postdoctoral-research?CMP=share_btn_fb">The human cost of the pressures of postdoctoral research</a></li>
-<li><a class="reference external" href="https://universoracionalista.org/o-que-aconteceu-com-as-mulheres-na-ciencia-da-computacao/">O que aconteceu com as mulheres na ciência da computação?</a></li>
-<li><a class="reference external" href="http://flip.it/nLE.z4">O que você precisa saber sobre a pós-graduação no Brasil</a></li>
-<li><a class="reference external" href="https://www.wired.com/story/why-men-dont-believe-the-data-on-gender-bias-in-science/">Why Men Don’t Believe the Data on Gender Bias in Science</a></li>
-<li><a class="reference external" href="https://www.atlassian.com/blog/apps/new-research-emotional-intelligence-in-the-workplace">How do emotions affect productivity?</a></li>
-<li><a class="reference external" href="http://journals.aas.org/policy/software.html">Software citations (AAS policy)</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=_ZBKX-6Gz6A">'Thought Leader’ Gives Talk on 'Thought Leadership'</a></li>
-<li><a class="reference external" href="https://cgi.duke.edu/web/sciwriting/index.php?action=lesson1">Duke's Scientific Writing Resource</a></li>
-<li><a class="reference external" href="http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806">http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806</a></li>
-<li><a class="reference external" href="http://www.escritacientifica.com">http://www.escritacientifica.com</a></li>
-<li><a class="reference external" href="http://letramentoacademico.fflch.usp.br/">http://letramentoacademico.fflch.usp.br/</a></li>
-<li><a class="reference external" href="http://gen.lib.rus.ec/">Library Genesis</a> is a scientific community targeting collection of books on natural science disciplines and engineering.</li>
-<li><a class="reference external" href="http://sci-hub.cc/">Sci-Hub</a> is the first website in the world to provide mass &amp; public access to research papers.</li>
-<li><a class="reference external" href="http://www.esquerda.net/artigo/riscos-e-benef%C3%ADcios-da-homeopatia/30934">Riscos e benefícios da homeopatia</a></li>
-<li><a class="reference external" href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Why Most Published Research Findings Are False (Ioannidis, 2005)</a></li>
+<li><p><a class="reference external" href="http://revistapesquisa.fapesp.br/2017/06/19/experiencia-encerrada/">Experiência encerrada [Balanço do Ciências sem Fronteiras]</a></p></li>
+<li><p><a class="reference external" href="https://www1.folha.uol.com.br/empreendedorsocial/2018/07/nunca-se-escreveu-tanto-tao-errado-e-se-interpretou-tao-mal.shtml">Nunca se escreveu tanto, tão errado e se interpretou tão mal</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/ci%C3%AAncia-descomplicada/querido-observat%C3%B3rio-nacional-on-o-seu-curso-ead-sobre-sistema-solar-t%C3%A1-um-tanto-errado-c651c273a331">Querido Observatório Nacional (ON): o seu curso EAD sobre Sistema Solar tá um tanto errado</a></p></li>
+<li><p><a class="reference external" href="https://www.geledes.org.br/o-racismo-cientifico-falsa-medida-homem/#gs.cTIVFwQ">O Racismo Científico - A Falsa Medida do Homem</a></p></li>
+<li><p><a class="reference external" href="http://blogs.oglobo.globo.com/na-base-dos-dados/post/fez-doutorado-vem-ai-incertezas-do-pos-graduado.html?utm_source=Facebook&amp;utm_medium=Social&amp;utm_campaign=O+Globo">Fez doutorado? Vêm aí as incertezas do pós-graduado</a></p></li>
+<li><p><a class="reference external" href="https://www.theguardian.com/science/2017/jun/27/profitable-business-scientific-publishing-bad-for-science">Is the staggeringly profitable business of scientific publishing bad for science?</a></p></li>
+<li><p><a class="reference external" href="https://www.theguardian.com/science/life-and-physics/2017/jun/22/why-i-left-physics-for-economics?CMP=share_btn_fb">Why I left physics for economics</a></p></li>
+<li><p><a class="reference external" href="http://jornal.usp.br/radio-usp/radioagencia-usp/ensino-de-ciencias-da-capacidade-de-analise-critica/">Ensino de Ciências dá capacidade de análise crítica</a></p></li>
+<li><p><a class="reference external" href="http://hpc.ct.utfpr.edu.br/node/35">O que todo calouro deveria saber antes de ingressar na UTFPR</a></p></li>
+<li><p><a class="reference external" href="https://www.allisonharbin.com/post-phd/why-i-left-academia-part-1">Why I left academia</a></p></li>
+<li><p><a class="reference external" href="https://www.theguardian.com/science/head-quarters/2017/aug/10/the-human-cost-of-the-pressures-of-postdoctoral-research?CMP=share_btn_fb">The human cost of the pressures of postdoctoral research</a></p></li>
+<li><p><a class="reference external" href="https://universoracionalista.org/o-que-aconteceu-com-as-mulheres-na-ciencia-da-computacao/">O que aconteceu com as mulheres na ciência da computação?</a></p></li>
+<li><p><a class="reference external" href="http://flip.it/nLE.z4">O que você precisa saber sobre a pós-graduação no Brasil</a></p></li>
+<li><p><a class="reference external" href="https://www.wired.com/story/why-men-dont-believe-the-data-on-gender-bias-in-science/">Why Men Don’t Believe the Data on Gender Bias in Science</a></p></li>
+<li><p><a class="reference external" href="https://www.atlassian.com/blog/apps/new-research-emotional-intelligence-in-the-workplace">How do emotions affect productivity?</a></p></li>
+<li><p><a class="reference external" href="http://journals.aas.org/policy/software.html">Software citations (AAS policy)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=_ZBKX-6Gz6A">'Thought Leader’ Gives Talk on 'Thought Leadership'</a></p></li>
+<li><p><a class="reference external" href="https://cgi.duke.edu/web/sciwriting/index.php?action=lesson1">Duke's Scientific Writing Resource</a></p></li>
+<li><p><a class="reference external" href="http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806">http://porvir.org/porfazer/usp-lanca-curso-online-sobre-producao-de-artigo-cientifico/20130806</a></p></li>
+<li><p><a class="reference external" href="http://www.escritacientifica.com">http://www.escritacientifica.com</a></p></li>
+<li><p><a class="reference external" href="http://letramentoacademico.fflch.usp.br/">http://letramentoacademico.fflch.usp.br/</a></p></li>
+<li><p><a class="reference external" href="http://gen.lib.rus.ec/">Library Genesis</a> is a scientific community targeting collection of books on natural science disciplines and engineering.</p></li>
+<li><p><a class="reference external" href="http://sci-hub.cc/">Sci-Hub</a> is the first website in the world to provide mass &amp; public access to research papers.</p></li>
+<li><p><a class="reference external" href="http://www.esquerda.net/artigo/riscos-e-benef%C3%ADcios-da-homeopatia/30934">Riscos e benefícios da homeopatia</a></p></li>
+<li><p><a class="reference external" href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124">Why Most Published Research Findings Are False (Ioannidis, 2005)</a></p></li>
 </ul>
-</div>
-<div class="section" id="data-tools">
-<h1><a class="toc-backref" href="#id7">Data tools</a></h1>
-<div class="section" id="extracting-data">
-<h2><a class="toc-backref" href="#id8">Extracting data</a></h2>
-<dl class="docutils">
+</section>
+<section id="data-tools">
+<h2><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Data tools</a></h2>
+<section id="extracting-data">
+<h3><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">Extracting data</a></h3>
+<dl class="simple">
 <dt><a class="reference external" href="http://www.frantz.fi/software/g3data.php">http://www.frantz.fi/software/g3data.php</a></dt>
-<dd><tt class="docutils literal">sudo <span class="pre">apt-get</span> install g3data</tt></dd>
+<dd><p><span class="docutils literal">sudo <span class="pre">apt-get</span> install g3data</span></p>
+</dd>
 </dl>
 <p><a class="reference external" href="http://arohatgi.info/WebPlotDigitizer/app/">http://arohatgi.info/WebPlotDigitizer/app/</a></p>
-</div>
-<div class="section" id="time-series-analysis">
-<h2><a class="toc-backref" href="#id9">Time series analysis</a></h2>
+</section>
+<section id="time-series-analysis">
+<h3><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">Time series analysis</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://www.astro.princeton.edu/~jhartman/vartools.html">VARTOOLS</a></li>
-<li><a class="reference external" href="https://www.univie.ac.at/tops/Period04/">Period04</a></li>
+<li><p><a class="reference external" href="http://www.astro.princeton.edu/~jhartman/vartools.html">VARTOOLS</a></p></li>
+<li><p><a class="reference external" href="https://www.univie.ac.at/tops/Period04/">Period04</a></p></li>
 </ul>
-</div>
-<div class="section" id="statistics">
-<h2><a class="toc-backref" href="#id10">Statistics</a></h2>
+</section>
+<section id="statistics">
+<h3><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">Statistics</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1004961">Ten Simple Rules for Effective Statistical Practice</a></li>
+<li><p><a class="reference external" href="http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1004961">Ten Simple Rules for Effective Statistical Practice</a></p></li>
 </ul>
-</div>
-<div class="section" id="d-plots-and-visualization">
-<h2><a class="toc-backref" href="#id11">3D plots and visualization</a></h2>
+</section>
+<section id="d-plots-and-visualization">
+<h3><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">3D plots and visualization</a></h3>
 <ul class="simple">
-<li><a class="reference external" href="https://www.blender.org">Blender3D</a></li>
-<li><a class="reference external" href="http://www.povray.org/">POV-Ray</a></li>
-<li><a class="reference external" href="http://www.paraview.org/">ParaView</a></li>
+<li><p><a class="reference external" href="https://www.blender.org">Blender3D</a></p></li>
+<li><p><a class="reference external" href="http://www.povray.org/">POV-Ray</a></p></li>
+<li><p><a class="reference external" href="http://www.paraview.org/">ParaView</a></p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="vocabulary">
-<h1><a class="toc-backref" href="#id12">Vocabulary</a></h1>
+</section>
+</section>
+<section id="vocabulary">
+<h2><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Vocabulary</a></h2>
 <ul class="simple">
-<li>Criticality: When a nuclear chain reaction in a mass of fissile material is self-sustaining, the mass is said to be in a critical state in which there is no increase or decrease in power.</li>
-<li>Demon core: a mass of plutonium that was involved in two criticality accidents.</li>
-<li>Faster-than-light speed: Gran Sasso neutrinos measurements. See <a class="reference external" href="https://en.wikipedia.org/wiki/CERN_Neutrinos_to_Gran_Sasso">https://en.wikipedia.org/wiki/CERN_Neutrinos_to_Gran_Sasso</a></li>
-<li>Fat Man: codename for the second atomic bomb detonated over Japan on 9 August 1945 (Nagasaki).</li>
-<li>Fermi problem: order of magnitude investigation of problems.</li>
-<li>Frame-dragging effect: measurement by Gravity Probe B satellite. See <a class="reference external" href="https://en.wikipedia.org/wiki/Gravity_Probe_B">https://en.wikipedia.org/wiki/Gravity_Probe_B</a></li>
-<li>Little boy: codename for the first atomic bomb detonated over Japan on 6 August 1945 (Hiroshima).</li>
-<li>Trinity test: the first detonation of a nuclear weapon.</li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_refrigerator">Einstein refrigerator</a></li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/Milankovitch_cycles">Milankovitch cycles</a></li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/Duga_radar">Duga radar (Russian Woodpecker at Chernobyl)</a></li>
-<li><a class="reference external" href="https://www.youtube.com/watch?v=a8ZbtZqH6Io">AeroVironment/DARPA Nano Hummingbird UAV flying</a></li>
-<li><a class="reference external" href="https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment">Semi-Automatic Ground Environment</a></li>
+<li><p>Criticality: When a nuclear chain reaction in a mass of fissile material is self-sustaining, the mass is said to be in a critical state in which there is no increase or decrease in power.</p></li>
+<li><p>Demon core: a mass of plutonium that was involved in two criticality accidents.</p></li>
+<li><p>Faster-than-light speed: Gran Sasso neutrinos measurements. See <a class="reference external" href="https://en.wikipedia.org/wiki/CERN_Neutrinos_to_Gran_Sasso">https://en.wikipedia.org/wiki/CERN_Neutrinos_to_Gran_Sasso</a></p></li>
+<li><p>Fat Man: codename for the second atomic bomb detonated over Japan on 9 August 1945 (Nagasaki).</p></li>
+<li><p>Fermi problem: order of magnitude investigation of problems.</p></li>
+<li><p>Frame-dragging effect: measurement by Gravity Probe B satellite. See <a class="reference external" href="https://en.wikipedia.org/wiki/Gravity_Probe_B">https://en.wikipedia.org/wiki/Gravity_Probe_B</a></p></li>
+<li><p>Little boy: codename for the first atomic bomb detonated over Japan on 6 August 1945 (Hiroshima).</p></li>
+<li><p>Trinity test: the first detonation of a nuclear weapon.</p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_refrigerator">Einstein refrigerator</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Milankovitch_cycles">Milankovitch cycles</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Duga_radar">Duga radar (Russian Woodpecker at Chernobyl)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=a8ZbtZqH6Io">AeroVironment/DARPA Nano Hummingbird UAV flying</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Semi-Automatic_Ground_Environment">Semi-Automatic Ground Environment</a></p></li>
 </ul>
-</div>
-<div class="section" id="stories">
-<h1><a class="toc-backref" href="#id13">Stories</a></h1>
+</section>
+<section id="stories">
+<h2><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Stories</a></h2>
 <ul class="simple">
-<li><a class="reference external" href="https://arstechnica.com/science/2014/09/the-little-known-soviet-mission-to-rescue-a-dead-space-station/">The rescue to Salyut 7</a></li>
+<li><p><a class="reference external" href="https://arstechnica.com/science/2014/09/the-little-known-soviet-mission-to-rescue-a-dead-space-station/">The rescue to Salyut 7</a></p></li>
 </ul>
-</div>
-<div class="section" id="movies">
-<h1><a class="toc-backref" href="#id14">Movies</a></h1>
+</section>
+<section id="movies">
+<h2><a class="toc-backref" href="#toc-entry-13" role="doc-backlink">Movies</a></h2>
 <ul class="simple">
-<li>Fat Man and Little Boy (1989)</li>
-<li>The Great Global Warming Swindle (?)</li>
-<li>Feynman and the Challenger (2013)</li>
-<li><a class="reference external" href="https://www.youtube.com/playlist?list=PLmw4hG7QKEw_mJ4WXnEpKcTd4M7cF8Ipp">My YouTube playlist</a></li>
+<li><p>Fat Man and Little Boy (1989)</p></li>
+<li><p>The Great Global Warming Swindle (?)</p></li>
+<li><p>Feynman and the Challenger (2013)</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/playlist?list=PLmw4hG7QKEw_mJ4WXnEpKcTd4M7cF8Ipp">My YouTube playlist</a></p></li>
 </ul>
-</div>
-<div class="section" id="publicacao-de-patentes">
-<h1><a class="toc-backref" href="#id15">Publicação de Patentes</a></h1>
+</section>
+<section id="publicacao-de-patentes">
+<h2><a class="toc-backref" href="#toc-entry-14" role="doc-backlink">Publicação de Patentes</a></h2>
 <p>por Henri Suzuki 22 e 23/07/2019</p>
-<div class="section" id="gerais">
-<h2><a class="toc-backref" href="#id16">Gerais</a></h2>
+<section id="gerais">
+<h3><a class="toc-backref" href="#toc-entry-15" role="doc-backlink">Gerais</a></h3>
 <p>&quot;Patrocínio&quot; da agência USP de notícias.</p>
 <p>Nos formamos na graduação e na pós se termos visto sequer uma única patente, mesmo na USP.</p>
 <p>Uma patente pode ter mais de uma classificação.</p>
 <p>Para evitar conflito de interesses, não se deve convidar &quot;patenteadores&quot; externos à instituição.</p>
 <p>Nunca divulgar patentes antes do depósito formal.</p>
 <p>Patentiabilidade = novidade / ausência de anterioridade.</p>
-</div>
-<div class="section" id="processo">
-<h2><a class="toc-backref" href="#id17">Processo</a></h2>
+</section>
+<section id="processo">
+<h3><a class="toc-backref" href="#toc-entry-16" role="doc-backlink">Processo</a></h3>
 <ul class="simple">
-<li>Pede-se a patente. Nos EUA, processo ganha código YYYY/NUMBER; outros, A###...</li>
-<li>Fica em sigilo (<em>se aceito</em>) por 12 meses</li>
-<li>Se aceito, é publicado com código [US N,NNN,NNN].</li>
-<li>Não existe &quot;patente internacional&quot;. O que existe é o PCT = Patent Cooperation Treaty. Patentes sob o PCT ganham código WO###...</li>
+<li><p>Pede-se a patente. Nos EUA, processo ganha código YYYY/NUMBER; outros, A###...</p></li>
+<li><p>Fica em sigilo (<em>se aceito</em>) por 12 meses</p></li>
+<li><p>Se aceito, é publicado com código [US N,NNN,NNN].</p></li>
+<li><p>Não existe &quot;patente internacional&quot;. O que existe é o PCT = Patent Cooperation Treaty. Patentes sob o PCT ganham código WO###...</p></li>
 </ul>
-</div>
-<div class="section" id="descobrir-classificacao-de-patentes-de-interesse">
-<h2><a class="toc-backref" href="#id18">Descobrir classificação de patentes de interesse</a></h2>
+</section>
+<section id="descobrir-classificacao-de-patentes-de-interesse">
+<h3><a class="toc-backref" href="#toc-entry-17" role="doc-backlink">Descobrir classificação de patentes de interesse</a></h3>
 <p>Exemplo: &quot;Medicianal plant extract&quot; -- Área de fitoterápicos. Consulta mostra facilmente que chineses, japoneses e coreanos dominam as patentes.</p>
 <p>É possível montar uma &quot;apostila&quot; de patentes a partir de buscas do Google &gt; formato CSV &gt; Algo da área/não é &quot;busca de anterioridade&quot;</p>
 <p>Exemplo 2: Canudo biodegradável [&quot;feito de mandioca&quot;]. Não procurar por &quot;canudo&quot;, mas &quot;materiais&quot; feitos de mandioca...</p>
 <p>Há outras ferramentas (Patent scope...). Porém, Google é a mais simples e padrão. Quem não usa o Google, não consegue usar as outras.</p>
-</div>
-<div class="section" id="contexto-de-patentes">
-<h2><a class="toc-backref" href="#id19">Contexto de Patentes</a></h2>
+</section>
+<section id="contexto-de-patentes">
+<h3><a class="toc-backref" href="#toc-entry-18" role="doc-backlink">Contexto de Patentes</a></h3>
 <p>Patente é só um tipo de Apropriação Intelectual. Há outros, como Direitos Autorais, Propriedade Industrial, etc. É importante conhecer diferenças e adequar o projeto.</p>
 <p>Exemplo: Direitos Autorais. Programas/Software, Manuais, Artigos Científicos. Não depende de registro formal. Válido até 70 anos após a morte do último co-criador. 70 anos é o direito material ($), porém o direito moral (reconhecimento da autoria) não expira.</p>
 <p>Exemplo: Propriedade Industrial e Patentes dependem de depósito formal.</p>
@@ -824,24 +821,24 @@ li {
 <p>Site: &quot;Ten Types of Innovation&quot; -- <a class="reference external" href="https://www.doblin.com/ten-types/">https://www.doblin.com/ten-types/</a></p>
 <blockquote>
 <ol class="arabic simple">
-<li>Profit Model</li>
-<li>Network</li>
-<li>Structure</li>
-<li>Process</li>
-<li>Product Performance</li>
-<li>Product System</li>
-<li>Service</li>
-<li>Channel</li>
-<li>Brand</li>
-<li>Customer engagement</li>
+<li><p>Profit Model</p></li>
+<li><p>Network</p></li>
+<li><p>Structure</p></li>
+<li><p>Process</p></li>
+<li><p>Product Performance</p></li>
+<li><p>Product System</p></li>
+<li><p>Service</p></li>
+<li><p>Channel</p></li>
+<li><p>Brand</p></li>
+<li><p>Customer engagement</p></li>
 </ol>
 </blockquote>
-<dl class="docutils">
+<dl class="simple">
 <dt>Classificação:</dt>
-<dd><ul class="first last simple">
-<li>1 a 4: Configuração</li>
-<li>5 e 6: Oferta</li>
-<li>7 a 10: Experiência</li>
+<dd><ul class="simple">
+<li><p>1 a 4: Configuração</p></li>
+<li><p>5 e 6: Oferta</p></li>
+<li><p>7 a 10: Experiência</p></li>
 </ul>
 </dd>
 </dl>
@@ -856,22 +853,22 @@ li {
 <p>USP recebeu R$ 2 milhões em Royalties (por 14 anos?). Maior patente da USP é da farmácia, Redigida por Henri Suzuki.</p>
 <p>Lei de Propriedade Industrial -- Lei no. 9279/96. Toda Universidade/Instituição de Pesquisa deve ter uma &quot;agência de inovação&quot;. Todos os pedidos de patentes devem vir por esta agência <em>de quaisquer pessoas ligadas a instituição</em>, inclusive alunos.</p>
 <p>Patente é por definição um título de propriedade para <em>impedir terceiros de explorarem sua invenção</em>.</p>
-</div>
-<div class="section" id="batalhas-judiciais">
-<h2><a class="toc-backref" href="#id20">Batalhas judiciais</a></h2>
+</section>
+<section id="batalhas-judiciais">
+<h3><a class="toc-backref" href="#toc-entry-19" role="doc-backlink">Batalhas judiciais</a></h3>
 <p>O custo inicial de uma batalha judicial de patentes nos EUA pode facilmente chegar a US$ 2 milhões.</p>
 <p>Non-practicing entities (NPEs) are people who hold patents for a product or process without any intention of developing it. A type of NPE is patent trolls. These trolls gather a large number of patents and plan patent infringements suits. The suits go against individuals and companies that illegally used some of the patent's elements. To differentiate between trolls and NPE, the Federal Trade Commission uses the term patent assertion entities (PAEs) to describe trolls.</p>
 <p>NPE são entidades especializadas nos processos de patentes, muito usadas por pequenos patenteadores.</p>
 <p>Exemplo: inventor do &quot;bina&quot; == não deu em nada, em virtude da invalidação da redação das patentes.</p>
-</div>
-<div class="section" id="dinamica-navios-naufragados">
-<h2><a class="toc-backref" href="#id21">Dinâmica: navios naufragados</a></h2>
+</section>
+<section id="dinamica-navios-naufragados">
+<h3><a class="toc-backref" href="#toc-entry-20" role="doc-backlink">Dinâmica: navios naufragados</a></h3>
 <ul class="simple">
-<li>com bolinhas de &quot;ping-pong&quot;</li>
-<li>Telas ao redor do navio</li>
-<li>Sucção e válvulas</li>
-<li>&quot;Bicarbonato&quot; = capa mais densa que a água, e infla em contato com a água</li>
-<li>Balão p/ fazer as bolinhas entrarem</li>
+<li><p>com bolinhas de &quot;ping-pong&quot;</p></li>
+<li><p>Telas ao redor do navio</p></li>
+<li><p>Sucção e válvulas</p></li>
+<li><p>&quot;Bicarbonato&quot; = capa mais densa que a água, e infla em contato com a água</p></li>
+<li><p>Balão p/ fazer as bolinhas entrarem</p></li>
 </ul>
 <p>1 atm na praia + 1 atm a cada 10 metros de profundidade.</p>
 <p>&quot;Bomba peristáltica&quot; = US 3,332,385.</p>
@@ -889,9 +886,9 @@ li {
 <p>Exemplo de &quot;segredo industrial&quot;: fórmula da Coca-Cola.</p>
 <p>&quot;Patent it yourself&quot;: bom livro de referência.</p>
 <p>&quot;Prophetic patent example&quot;: se um exemplo da patente for localizada (por exemplo, na internet) esta se torna inválida (&quot;patent unenforceable&quot;).</p>
-</div>
-<div class="section" id="como-e-e-quanto-custa-o-processo-de-patenteamento">
-<h2><a class="toc-backref" href="#id22">Como é e quanto custa o processo de patenteamento</a></h2>
+</section>
+<section id="como-e-e-quanto-custa-o-processo-de-patenteamento">
+<h3><a class="toc-backref" href="#toc-entry-21" role="doc-backlink">Como é e quanto custa o processo de patenteamento</a></h3>
 <p>Há publicações/taxas que precisam ser monitoradas e pagas <strong>no prazo</strong> determinado, com o risco do pedido de patente &quot;morrer&quot;. Sugestão: cadastrar alarme no &quot;Push INPI&quot; (que as vezes falha) e contratar uma empresa especializada. Anuidade (patente?) ~R$ 150. Lá fora é bem mais caro.</p>
 <p>Exame técnico/adequação do pedido == 4-5 anos depois do depósito. Exemplo: &quot;prova de que o chá verde é mesmo inseticida&quot;.</p>
 <p>Nulidade administrativa ou judicial == a patente pode ser anulada por pedido de terceiros. Se acontecer, é como se a patente nunca tivesse existido.</p>
@@ -899,21 +896,21 @@ li {
 <p>Se não pagar anuidade, a patente deixa de ser válida.</p>
 <p>A patente não precisa se concedida para ser vendida.</p>
 <p>&quot;Como se faz uma parceria&quot;? <strong>Antes</strong> de depositar, encontrar a empresa interessada.</p>
-</div>
-<div class="section" id="exemplos-buscas">
-<h2><a class="toc-backref" href="#id23">Exemplos buscas</a></h2>
+</section>
+<section id="exemplos-buscas">
+<h3><a class="toc-backref" href="#toc-entry-22" role="doc-backlink">Exemplos buscas</a></h3>
 <p>Orbit.com &gt; log-in &gt; easy search &gt; A61K-036 &gt; Show results</p>
 <p>Select &gt; graph analysis</p>
 <p>EPxxx &gt; patent europeia</p>
-<dl class="docutils">
+<dl class="simple">
 <dt>Acrônimos:</dt>
-<dd><ul class="first last simple">
-<li>EPO - European Patent Office</li>
-<li>IPC - International Patent Classification</li>
-<li>IPBI - Intelectual Property Business Inteligence</li>
-<li>WIPO - World Intelectual Property Organization</li>
-<li>CPC - Cooperative Patent Classification</li>
-<li>Lapsed patent = patente abandonada</li>
+<dd><ul class="simple">
+<li><p>EPO - European Patent Office</p></li>
+<li><p>IPC - International Patent Classification</p></li>
+<li><p>IPBI - Intelectual Property Business Inteligence</p></li>
+<li><p>WIPO - World Intelectual Property Organization</p></li>
+<li><p>CPC - Cooperative Patent Classification</p></li>
+<li><p>Lapsed patent = patente abandonada</p></li>
 </ul>
 </dd>
 </dl>
@@ -923,9 +920,9 @@ li {
 <p>SciFinder = Bando de dados de <em>química</em>.</p>
 <p>Orbit = $2000/ano 1 licença (ICB). $45.000/ano p/ campus.</p>
 <p>Compendex Engineering Index (EI) = portal de engenharia. Desenho industrial tem database gratuito. &quot;Free design database&quot;.</p>
-</div>
-<div class="section" id="materiais">
-<h2><a class="toc-backref" href="#id24">Materiais</a></h2>
+</section>
+<section id="materiais">
+<h3><a class="toc-backref" href="#toc-entry-23" role="doc-backlink">Materiais</a></h3>
 <p>Guia Básico de Patentes - INPI = consulta</p>
 <p>Resolução no.124 - Diretrizes = formatação = instrução normativa</p>
 <p>Consiste de = <em>exatamente</em> (toda a lista de características).</p>
@@ -940,8 +937,8 @@ li {
 <p>Segredo Industrial ou Desenho Industrial podem ser mais eficazes para proteção do projeto do que patente...</p>
 <p>EPO - Case Law of the Boards of Appeal of the European Patent Office -- excelente referências históricas.</p>
 <p>Livro Ivan Aller (Denis Barbosa?) -- Litígio de patentes.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</main>
 </body>
 </html>

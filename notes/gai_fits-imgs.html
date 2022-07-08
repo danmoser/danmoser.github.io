@@ -1,10 +1,63 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>FITS images header and coordinates</title>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 <style type="text/css">
 
 /*
@@ -358,115 +411,63 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 </head>
-<body>
-<div class="document" id="fits-images-header-and-coordinates">
+<body class="with-toc">
+<main id="fits-images-header-and-coordinates">
 <h1 class="title">FITS images header and coordinates</h1>
 
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents" role="doc-toc">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#aplpy" id="id1">APLpy</a></li>
-<li><a class="reference internal" href="#fits-and-wcs" id="id2">FITS and WCS</a><ul>
-<li><a class="reference internal" href="#intro" id="id3">Intro</a></li>
-<li><a class="reference internal" href="#the-fits-header" id="id4">The FITS header</a><ul>
-<li><a class="reference internal" href="#fits-header-example" id="id5">FITS Header example</a></li>
+<li><p><a class="reference internal" href="#aplpy" id="toc-entry-1">APLpy</a></p></li>
+<li><p><a class="reference internal" href="#fits-and-wcs" id="toc-entry-2">FITS and WCS</a></p>
+<ul>
+<li><p><a class="reference internal" href="#intro" id="toc-entry-3">Intro</a></p></li>
+<li><p><a class="reference internal" href="#the-fits-header" id="toc-entry-4">The FITS header</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fits-header-example" id="toc-entry-5">FITS Header example</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#coordinates-and-projections" id="id6">Coordinates and projections</a></li>
-<li><a class="reference internal" href="#fits-header-and-the-wcs" id="id7">FITS Header and the WCS</a></li>
-<li><a class="reference internal" href="#wcs-keywords-basics" id="id8">WCS Keywords basics</a></li>
-<li><a class="reference internal" href="#wcs-rotation" id="id9">WCS rotation</a></li>
-<li><a class="reference internal" href="#alma-ost-requeriments" id="id10">ALMA OST requeriments</a></li>
-<li><a class="reference internal" href="#from-an-image-to-alma" id="id11">From an image to ALMA!</a></li>
+<li><p><a class="reference internal" href="#coordinates-and-projections" id="toc-entry-6">Coordinates and projections</a></p></li>
+<li><p><a class="reference internal" href="#fits-header-and-the-wcs" id="toc-entry-7">FITS Header and the WCS</a></p></li>
+<li><p><a class="reference internal" href="#wcs-keywords-basics" id="toc-entry-8">WCS Keywords basics</a></p></li>
+<li><p><a class="reference internal" href="#wcs-rotation" id="toc-entry-9">WCS rotation</a></p></li>
+<li><p><a class="reference internal" href="#alma-ost-requeriments" id="toc-entry-10">ALMA OST requeriments</a></p></li>
+<li><p><a class="reference internal" href="#from-an-image-to-alma" id="toc-entry-11">From an image to ALMA!</a></p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="aplpy">
-<h1><a class="toc-backref" href="#id1">APLpy</a></h1>
+</nav>
+<section id="aplpy">
+<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">APLpy</a></h2>
 <p>To make beautiful plots with Python: <a class="reference external" href="https://aplpy.github.io">https://aplpy.github.io</a></p>
-</div>
-<div class="section" id="fits-and-wcs">
-<h1><a class="toc-backref" href="#id2">FITS and WCS</a></h1>
-<div class="section" id="intro">
-<h2><a class="toc-backref" href="#id3">Intro</a></h2>
+</section>
+<section id="fits-and-wcs">
+<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">FITS and WCS</a></h2>
+<section id="intro">
+<h3><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Intro</a></h3>
 <p>FITS header &lt; <strong>FITS format</strong> from <em>IAU FITS Working Group</em>!</p>
 <p>Official reference documentation: <a class="reference external" href="http://fits.gsfc.nasa.gov/fits_standard.html">http://fits.gsfc.nasa.gov/fits_standard.html</a></p>
-</div>
-<div class="section" id="the-fits-header">
-<h2><a class="toc-backref" href="#id4">The FITS header</a></h2>
+</section>
+<section id="the-fits-header">
+<h3><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">The FITS header</a></h3>
 <p>It's the astronomical standard metadata! Specifies all useful information associate with
 your data (obtaining conditions, reducing history, etc).</p>
 <p>The header is a table with three possible fields:</p>
 <ul>
-<li><p class="first">Keyword; Value; Comment</p>
+<li><p>Keyword; Value; Comment</p>
 <blockquote>
 <ul class="simple">
-<li><em>Keywords</em> must start with a text character.</li>
-<li><em>Value</em> can be of multiple types (interger, float, string).</li>
-<li>[Optional] <em>Comment</em> text.</li>
+<li><p><em>Keywords</em> must start with a text character.</p></li>
+<li><p><em>Value</em> can be of multiple types (interger, float, string).</p></li>
+<li><p>[Optional] <em>Comment</em> text.</p></li>
 </ul>
 </blockquote>
 </li>
 </ul>
-<div class="section" id="fits-header-example">
-<h3><a class="toc-backref" href="#id5">FITS Header example</a></h3>
-<pre class="code literal-block">
-SIMPLE  =                    T / Standard FITS format
+<section id="fits-header-example">
+<h4><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">FITS Header example</a></h4>
+<pre class="code literal-block"><code>SIMPLE  =                    T / Standard FITS format
 BITPIX  =                   16 / Number of bits for each pixel
 NAXIS   =                    2 / Number of axes in frame
 NAXIS1  =                 2148 / Number of pixels per row
@@ -485,58 +486,57 @@ OBJECT  = ' BD+28.4211 '       / Target Description
 DATA-TYP= 'OBJECT  '           / Characteristics of this data
 RA      = '21:51:12.055'       / RA of the tracked pos. on the slit guide pos.
 DEC     = '+28:51:38.72'       / Dec of the tracked pos. on the slit guide pos.
-...
-</pre>
-</div>
-</div>
-<div class="section" id="coordinates-and-projections">
-<h2><a class="toc-backref" href="#id6">Coordinates and projections</a></h2>
+...</code></pre>
+</section>
+</section>
+<section id="coordinates-and-projections">
+<h3><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Coordinates and projections</a></h3>
 <p>FITS conventions has been defined to specify the physical, or world, coordinates to be attached to each pixel of an N-dimensional image (<a class="reference external" href="http://fits.gsfc.nasa.gov/fits_wcs.html">http://fits.gsfc.nasa.gov/fits_wcs.html</a>)</p>
 <p>Paper I (units and world coordinates).</p>
 <p>Paper II: celestianl coordinates and projection [!] schemes.</p>
 <img alt="../figs/gai_fits-imgs_Lab3World_projections.jpg" class="align-center" src="../figs/gai_fits-imgs_Lab3World_projections.jpg" style="width: 1024px;" />
 <img alt="../figs/gai_fits-imgs_map-projections.jpg" class="align-center" src="../figs/gai_fits-imgs_map-projections.jpg" style="width: 800px;" />
 <img alt="../figs/gai_fits-imgs_skymap_sp_493.gif" class="align-center" src="../figs/gai_fits-imgs_skymap_sp_493.gif" style="width: 1024px;" />
-</div>
-<div class="section" id="fits-header-and-the-wcs">
-<h2><a class="toc-backref" href="#id7">FITS Header and the WCS</a></h2>
+</section>
+<section id="fits-header-and-the-wcs">
+<h3><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">FITS Header and the WCS</a></h3>
 <p>World Coordinate System (WCS) keywords in the header of a FITS or IRAF image file define the relationship between pixel coordinates in the image and sky coordinates.</p>
 <p>There are 25 projections of the proposed FITS WCS standard (<a class="reference external" href="http://tdc-www.harvard.edu/wcstools/wcstools.wcs.html">http://tdc-www.harvard.edu/wcstools/wcstools.wcs.html</a>):</p>
 <blockquote>
 <ul class="simple">
-<li>AZP: Zenithal (Azimuthal) Perspective</li>
-<li>SZP: Slant Zenithal Perspective</li>
-<li><strong>TAN: Gnomonic = Tangent Plane</strong></li>
-<li>SIN: Orthographic/synthesis</li>
-<li>STG: Stereographic</li>
-<li>ARC: Zenithal/azimuthal equidistant</li>
-<li>ZPN: Zenithal/azimuthal PolyNomial</li>
-<li>ZEA: Zenithal/azimuthal Equal Area</li>
-<li>AIR: Airy</li>
-<li>CYP: CYlindrical Perspective</li>
-<li>CAR: Cartesian</li>
-<li>MER: Mercator</li>
-<li>CEA: Cylindrical Equal Area</li>
-<li>COP: COnic Perspective</li>
-<li>COD: COnic equiDistant</li>
-<li>COE: COnic Equal area</li>
-<li>COO: COnic Orthomorphic</li>
-<li>BON: Bonne</li>
-<li>PCO: Polyconic</li>
-<li>SFL: Sanson-Flamsteed</li>
-<li>PAR: Parabolic</li>
-<li>AIT: Hammer-Aitoff equal area all-sky</li>
-<li>MOL: Mollweide</li>
-<li>CSC: COBE quadrilateralized Spherical Cube</li>
-<li>QSC: Quadrilateralized Spherical Cube</li>
-<li>TSC: Tangential Spherical Cube</li>
-<li>NCP: North celestial pole (special case of SIN)</li>
-<li>GLS: GLobal Sinusoidal (Similar to SFL)</li>
+<li><p>AZP: Zenithal (Azimuthal) Perspective</p></li>
+<li><p>SZP: Slant Zenithal Perspective</p></li>
+<li><p><strong>TAN: Gnomonic = Tangent Plane</strong></p></li>
+<li><p>SIN: Orthographic/synthesis</p></li>
+<li><p>STG: Stereographic</p></li>
+<li><p>ARC: Zenithal/azimuthal equidistant</p></li>
+<li><p>ZPN: Zenithal/azimuthal PolyNomial</p></li>
+<li><p>ZEA: Zenithal/azimuthal Equal Area</p></li>
+<li><p>AIR: Airy</p></li>
+<li><p>CYP: CYlindrical Perspective</p></li>
+<li><p>CAR: Cartesian</p></li>
+<li><p>MER: Mercator</p></li>
+<li><p>CEA: Cylindrical Equal Area</p></li>
+<li><p>COP: COnic Perspective</p></li>
+<li><p>COD: COnic equiDistant</p></li>
+<li><p>COE: COnic Equal area</p></li>
+<li><p>COO: COnic Orthomorphic</p></li>
+<li><p>BON: Bonne</p></li>
+<li><p>PCO: Polyconic</p></li>
+<li><p>SFL: Sanson-Flamsteed</p></li>
+<li><p>PAR: Parabolic</p></li>
+<li><p>AIT: Hammer-Aitoff equal area all-sky</p></li>
+<li><p>MOL: Mollweide</p></li>
+<li><p>CSC: COBE quadrilateralized Spherical Cube</p></li>
+<li><p>QSC: Quadrilateralized Spherical Cube</p></li>
+<li><p>TSC: Tangential Spherical Cube</p></li>
+<li><p>NCP: North celestial pole (special case of SIN)</p></li>
+<li><p>GLS: GLobal Sinusoidal (Similar to SFL)</p></li>
 </ul>
 </blockquote>
-</div>
-<div class="section" id="wcs-keywords-basics">
-<h2><a class="toc-backref" href="#id8">WCS Keywords basics</a></h2>
+</section>
+<section id="wcs-keywords-basics">
+<h3><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">WCS Keywords basics</a></h3>
 <p>CTYPE1 and CTYPE2 indicate the coordinate type and projection.</p>
 <p>CTYEP1 = xxxxyyyy / 'Comment'
 CTYEP2 = xxxxyyyy / 'Comment'</p>
@@ -544,43 +544,42 @@ CTYEP2 = xxxxyyyy / 'Comment'</p>
 <p>The second four characters contain a four-character code for the projection.</p>
 <p>CRPIX1 and CRPIX2 are the pixel coordinates of the reference point to which the projection and the rotation refer.</p>
 <p>CRVAL1 and CRVAL2 give the center coordinate as right ascension and declination or longitude and latitude in decimal degrees.</p>
-</div>
-<div class="section" id="wcs-rotation">
-<h2><a class="toc-backref" href="#id9">WCS rotation</a></h2>
+</section>
+<section id="wcs-rotation">
+<h3><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">WCS rotation</a></h3>
 <p>Many astronomical instruments provide image files in which the <strong>'x' and 'y' coordinate axes are not orientated with equatorial north</strong> corresponding to 'up' (<strong>and east == 'left'</strong>). According to WCS, there are three options for the scale and rotation:</p>
 <p>Historically, CDELT1 and CDELT2 have been used to indicate the plate scale in degrees per pixel and <strong>CROTA2</strong> has been used to indicate the rotation of the horizontal and vertical axes in degrees. Usually the axes rotate together and CROTA2 is used to indicate that angle in degrees.</p>
 <p>The FITS WCS standard uses a rotation matrix, <strong>CD1_1, CD1_2, CD2_1, and CD2_2</strong> to indicate both rotation and scale, allowing a more intuitive computation if the axes are skewed. This model has been used by HST and IRAF for several years.</p>
 <ul class="simple">
-<li>CD1_1 =  CDELT1 * cos (CROTA2)</li>
-<li>CD1_2 = -CDELT2 * sin (CROTA2)</li>
-<li>CD2_1 =  CDELT1 * sin (CROTA2)</li>
-<li>CD2_2 =  CDELT2 * cos (CROTA2)</li>
+<li><p>CD1_1 =  CDELT1 * cos (CROTA2)</p></li>
+<li><p>CD1_2 = -CDELT2 * sin (CROTA2)</p></li>
+<li><p>CD2_1 =  CDELT1 * sin (CROTA2)</p></li>
+<li><p>CD2_2 =  CDELT2 * cos (CROTA2)</p></li>
 </ul>
 <p>The 1996 proposed FITS WCS standard used PC001001, PC001002, PC002001, and PC002002 to represent the rotation matrix but retained CDELT1 and CDELT2 for the scale. It is also read by this software, but <em>should not be used for new WCS's</em>.</p>
-</div>
-<div class="section" id="alma-ost-requeriments">
-<h2><a class="toc-backref" href="#id10">ALMA OST requeriments</a></h2>
+</section>
+<section id="alma-ost-requeriments">
+<h3><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">ALMA OST requeriments</a></h3>
 <p>OST = Observation Support Tool, <a class="reference external" href="http://almaost.jb.man.ac.uk">http://almaost.jb.man.ac.uk</a></p>
 <blockquote>
 <ul class="simple">
-<li><strong>[BUNIT:]</strong> The physical units of the FITS image array values.</li>
-<li><strong>CDELTn*</strong>: Coordinate increment along axis n.</li>
-<li><strong>[CROTAn]</strong>: Coordinate system rotation angle.</li>
-<li><strong>[CDn_n]</strong>: Usually a matrix of four values which describe the mapping of the Coordinate system within the FITS image, i.e both increment and rotation. CDn_n matrix values and CDELTn and CROTAn are degenerate.</li>
-<li><strong>CTYPEn</strong>: Name of the CDELTn coordinate axis.</li>
-<li><strong>NAXIS</strong>: Number of axes.</li>
-<li><strong>NAXISn</strong>: Size of the axis n.</li>
+<li><p><strong>[BUNIT:]</strong> The physical units of the FITS image array values.</p></li>
+<li><p><strong>CDELTn*</strong>: Coordinate increment along axis n.</p></li>
+<li><p><strong>[CROTAn]</strong>: Coordinate system rotation angle.</p></li>
+<li><p><strong>[CDn_n]</strong>: Usually a matrix of four values which describe the mapping of the Coordinate system within the FITS image, i.e both increment and rotation. CDn_n matrix values and CDELTn and CROTAn are degenerate.</p></li>
+<li><p><strong>CTYPEn</strong>: Name of the CDELTn coordinate axis.</p></li>
+<li><p><strong>NAXIS</strong>: Number of axes.</p></li>
+<li><p><strong>NAXISn</strong>: Size of the axis n.</p></li>
 </ul>
 </blockquote>
 <p>CRVAL3: good to save wavelength info.</p>
-</div>
-<div class="section" id="from-an-image-to-alma">
-<h2><a class="toc-backref" href="#id11">From an image to ALMA!</a></h2>
+</section>
+<section id="from-an-image-to-alma">
+<h3><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">From an image to ALMA!</a></h3>
 <p>Attention! ALMA OST do not rotate images for now. Instead it assumes that an uploaded image does have equatorial north corresponding to 'up' (<a class="reference external" href="http://almaost.jb.man.ac.uk/help/#Rotation">http://almaost.jb.man.ac.uk/help/#Rotation</a>).</p>
 <p>Suggestion - use of PyHdust (<a class="reference external" href="http://github.com/danmoser/pyhdust">http://github.com/danmoser/pyhdust</a>).</p>
 <p>One example: ramp image with 2 AU in size at 10 parsecs, rotated at 45 degree (by definition, to <strong>east</strong>) at 21 cm.</p>
-<pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword">as</span> <span class="name namespace">np</span>
+<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword">as</span> <span class="name namespace">np</span>
 <span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword">as</span> <span class="name namespace">phc</span>
 <span class="keyword namespace">import</span> <span class="name namespace">pyhdust.interftools</span> <span class="keyword">as</span> <span class="name namespace">intt</span>
 
@@ -591,14 +590,13 @@ CTYEP2 = xxxxyyyy / 'Comment'</p>
 
 <span class="name">intt</span><span class="operator">.</span><span class="name">img2fits</span><span class="punctuation">(</span><span class="name">img</span><span class="punctuation">,</span> <span class="literal number float">21.</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="literal number integer">2</span><span class="operator">*</span><span class="name">phc</span><span class="operator">.</span><span class="name">au</span><span class="operator">.</span><span class="name">cgs</span><span class="operator">/</span><span class="name">phc</span><span class="operator">.</span><span class="name">Rsun</span><span class="operator">.</span><span class="name">cgs</span><span class="punctuation">],</span> <span class="literal number integer">10</span><span class="punctuation">,</span> <span class="name">rot</span><span class="operator">=</span><span class="literal number float">45.</span><span class="punctuation">,</span> \
 <span class="name">coordsinf</span><span class="operator">=</span><span class="punctuation">[</span><span class="literal string single">'21:51:12.055'</span><span class="punctuation">,</span> <span class="literal string single">'-28:51:38.72'</span><span class="punctuation">],</span> <span class="name">ulbd</span><span class="operator">=</span><span class="literal string single">'cm'</span><span class="punctuation">,</span> <span class="name">deg</span><span class="operator">=</span><span class="keyword constant">True</span><span class="punctuation">,</span> \
-<span class="name">outname</span><span class="operator">=</span><span class="literal string single">'model_rotated'</span><span class="punctuation">)</span>
-</pre>
+<span class="name">outname</span><span class="operator">=</span><span class="literal string single">'model_rotated'</span><span class="punctuation">)</span></code></pre>
 <p>Output - <a class="reference external" href="../static/model.fits">Coordinate rotation</a>:</p>
 <img alt="../figs/gai_fits-imgs_model.png" src="../figs/gai_fits-imgs_model.png" />
 <p>Output - <a class="reference external" href="../static/model_rotated.fits">Image rotation</a>:</p>
 <img alt="../figs/gai_fits-imgs_model_rotated.png" src="../figs/gai_fits-imgs_model_rotated.png" />
-</div>
-</div>
-</div>
+</section>
+</section>
+</main>
 </body>
 </html>

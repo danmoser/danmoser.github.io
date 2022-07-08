@@ -3,11 +3,57 @@ Linux tips
 
 .. contents:: Table of contents
 
-Useful commands tricks
+Useful commands & tricks
 ===========================
 How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS
 -----------------------------------------------------------------------
 TBC if it works: https://www.how2shout.com/linux/how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts/
+
+Fixing WPS missing fonts
+---------------------------
+.. code:: bash
+
+    # URL taken from https://aur.archlinux.org/packages/ttf-wps-fonts
+    wget https://github.com/IamDH4/ttf-wps-fonts/archive/master.zip
+    unzip master.zip
+    sudo mkdir /usr/share/fonts/wps-fonts
+    sudo mv ttf-wps-fonts-master/* /usr/share/fonts/wps-fonts
+    sudo chmod 644 /usr/share/fonts/wps-fonts/*
+    sudo fc-cache -vfs
+    rm -rf ttf-wps-fonts-master
+
+Creating tunnels with ``ssh`` and VirtualBox
+---------------------------------------------
+My machine "orion" is running a VirtualBox VM "orionVM". 
+
+In Virtualbox, if I set the following port forwarding: ``Rule 1 | TCP | 127.0.0.1 | 2222 | 10.0.2.15 | 22``, then I will be able to do the following:
+
+.. code:: bash
+
+    @orion $ ssh -p2222 {localhost|127.0.0.1}
+    # connects to orionvm !!
+    # it won't work with {orion}
+
+If I add the network IP for orion in the Virtualbox ``Rule 1 | TCP | {networkIP} | 2222 | 10.0.2.15 | 22``, I can use ``ssh -p2222 orion``.
+
+There is a network machine "nebula" that "orionVM" can not access, but "orion" can. The command below will enable "orionVM" to access "nebula:22" using "orion:2222":
+
+.. code:: bash
+
+    @orion $ ssh -N -C -L *:2222:nebula:22 orion
+
+    @orionVM $ ssh -p2222 orion
+
+More info at https://serverfault.com/questions/910526/ssh-local-port-forwarding-working-from-localhost-only
+
+Tunnel creating for Docker
+---------------------------
+.. code:: bash
+
+    # Tunnel creation -- Docker
+    ssh -i ~/.ssh/file.pem -NL localhost:2374:/var/run/docker.sock user@machine &
+    # Access tunnel
+    docker -H localhost:2374 info
 
 ``duf`` is a nice alternative to ``df``
 -----------------------------------------

@@ -242,7 +242,9 @@ Basic/help commands
 
 Basic RMS
 ----------
-:bash:`vartools -i EXAMPLES/1 -rms`
+.. code:: bash
+    
+    vartools -i EXAMPLES/1 -rms
 
 ``-i $file``, input of single file
 
@@ -250,7 +252,9 @@ Basic RMS
 
 Basic list RMS
 -------------------
-:bash:`vartools -l EXAMPLES/lc_list -rms`
+.. code:: bash
+
+    vartools -l EXAMPLES/lc_list -rms
 
 ``-l $file``, where ``$file`` is a filename list containing the light curves, a (sub)file per line. The subfile contains a single lightcurve, 3 col: [JD, mag, errmag].
 
@@ -258,7 +262,9 @@ Site examples
 ==============
 Fitting a quadratic polynomial in JD to a list of light curves
 -----------------------------------------------------------------
-:bash:`vartools -l EXAMPLES/lc_list -rms -decorr 1 1 1 0 1 1 2 0 -rms -chi2 -tab`
+.. code:: bash
+
+    vartools -l EXAMPLES/lc_list -rms -decorr 1 1 1 0 1 1 2 0 -rms -chi2 -tab
 
 ``-decorr B B B # # B``, decorrelates the light curve against specified signals
     - 0/1 enable/disable
@@ -276,7 +282,9 @@ Minha interpretação: 112 do final do comeando indica que só há um ajust por 
 
 Performing a Lomb-Scargle period search on a light curve and fitting a harmonic series to the light curve
 ------------------------------------------------------------------------------------------------------------------------
-:bash:`vartools -i EXAMPLES/2 -LS 1.0 2.0 0.01 1 0 -Killharm ls 0 0 1 EXAMPLES/OUTDIR1 -oneline`
+.. code:: bash
+
+    vartools -i EXAMPLES/2 -LS 1.0 2.0 0.01 1 0 -Killharm ls 0 0 1 EXAMPLES/OUTDIR1 -oneline
 
 ``-LS``, Perform a Generalized Lomb-Scargle (L-S) search of the light curves for periodic sinusoidal signals. The search is done over frequencies between fmin = 1/maxp to fmax = 1/minp, with a uniform frequency step-size of Delta f = subsample/T, where T is the time-span of the observations.
     - minp maxp subsample Npeaks o(uput)periodogram
@@ -284,7 +292,6 @@ Performing a Lomb-Scargle period search on a light curve and fitting a harmonic 
 ``-Killharm``, This command whitens light curves against one or more periods. The mean value of the light curve, the period of the light curve and the cos and sin coefficients are output.
     Killharm_Per1_Amplitude_1 = Max-Min
     
-
 ``-oneline``, Output each statistic on a separate line rather than using the default of outputing a table. This option can provide more readable output when processing a single light curve. It is not suggested when processing a list of light curves.
 
 
