@@ -5,6 +5,17 @@ Linux tips
 
 Useful commands & tricks
 ===========================
+Get process ID
+-----------------
+.. code:: bash
+
+    ps -ef | grep {name} | grep -v grep | awk '{print $2}'
+
+
+Linux GUI trash path
+----------------------
+It is stored at ``/home/$USER/.local/share/Trash`` . From https://askubuntu.com/questions/102099/where-is-the-trash-folder
+
 How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS
 -----------------------------------------------------------------------
 TBC if it works: https://www.how2shout.com/linux/how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts/
@@ -784,6 +795,14 @@ QjackCtl: mic in the output, no lag. No system sound, and no record.
 Audacity + loopback: mic in the output, with lag. System sound, and record. 
 
 Audacity: no mic in the output. System sound and record, no lag.
+
+
+Naming ``screen``s
+--------------------
+- ``screen -S {name}``
+- ``screen -r {name}``
+
+https://unix.stackexchange.com/questions/12227/setting-a-name-for-a-screen-session
 
 
 Can't resume an attached screen

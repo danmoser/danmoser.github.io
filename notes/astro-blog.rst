@@ -7,11 +7,39 @@ DMF AstroBlog
 *********
 2022-07
 ===========
+MetBrewer 
+----------
+Color palettes inspired by works at the Metropolitan Museum of Art in New York. R and Python included
+
+https://github.com/BlakeRMills/MetBrewer
+
+----------
+
+Webb Deep Field in scale
+--------------------------
+https://twitter.com/SpaceToday1/status/1548004092605124613
+
+-----
+
+Astrophysicist Paul Sutter explains the world's seeming lack of trust in science
+---------------------------------------------------------------------------------
+This "Edge of Knowledge" episode looks at facts versus feelings.
+
+https://arstechnica.com/science/2022/07/astrophysicist-paul-sutter-on-trusting-science-and-why-so-many-people-dont/
+
+------
+
+Astronomy community shapes their own destiny with Astropy 
+----------------------------------------------------------------------
+Astronomy is a software based field, and the community is building their own open source tools. 
+
+https://github.com/readme/featured/webb-telescope-astropy
+
+-------
+
 Fink Broker and Gaia DR3
 --------------------------
 https://fink-broker.org/2022-07-05-science-portal-updates/
-
-
 
 2022-06
 ========

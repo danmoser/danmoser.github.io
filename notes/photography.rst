@@ -676,6 +676,7 @@ Specs
 - Flash coverage: 12.0m 
 - Microphone port: Yes
 - Interchangeable lenses:
+
     - Nikon has a great set of compatible lenses (~280).
 
 
@@ -726,7 +727,8 @@ Lens tools
 
 Other accessories
 ------------------
-Future:
+Planned:
+
     - Extension tube set for Nikon (7, 14 and 28mm)**
     - Directional microphone w/ windscreen for cameras**
     - V-shape triple 3 shoe mount bracket for cameras**
@@ -758,6 +760,7 @@ My tips
 - "Shaking hands" should not be a problem on shutter speeds faster than 1/100 sec (1/60 sec). On the other side, if one have a very steady hand, it is possible to shoot at 1/40 sec or even 1/30 sec. 
 
 - To increase Bokeh (or decrease the Depth of Focus): 
+
     - Small f-number (or f-stop; f/2.8 or faster);
     - Short object distance (check lens minimum focus distance);
     - Long focal length (50mm or longer).

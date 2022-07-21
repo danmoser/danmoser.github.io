@@ -263,3 +263,22 @@ References
 ===========
 - NM guide: https://www.onlyinyourstate.com/new-mexico/
 - The loneliest roads in America: https://bigthink.com/strange-maps/americas-loneliest-roads/
+
+Guides
+=========
+RMNP
+------
+- https://www.nps.gov/romo/planyourvisit/index.htm
+- https://www.recreation.gov/timed-entry/10086910
+
+.. figure:: ../figs/travel_rmnp-bus.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/travel_rmnp-map1.jpg
+    :align: center
+    :height: 500
+
+.. figure:: ../figs/travel_rmnp-map2.jpg
+    :align: center
+    :height: 500
