@@ -1,63 +1,10 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>instrumentation.rst</title>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 <style type="text/css">
 
 /*
@@ -413,6 +360,59 @@ ul.auto-toc {
 </style>
 <style type="text/css">
 
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
+<style type="text/css">
+
 /*
 *   math2html: convert LaTeX equations to HTML output.
 *
@@ -748,276 +748,278 @@ span.boxed, span.framebox {
 
 </style>
 </head>
-<body class="with-toc">
-<main>
+<body>
+<div class="document">
 
 
-<nav class="contents" id="table-of-contents" role="doc-toc">
+<div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#instrumentation-notes" id="toc-entry-1">Instrumentation notes</a></p>
-<ul>
-<li><p><a class="reference internal" href="#important-topics-for-astronomical-instrumentation" id="toc-entry-2">Important topics for astronomical instrumentation</a></p></li>
-<li><p><a class="reference internal" href="#engineering" id="toc-entry-3">Engineering</a></p>
-<ul>
-<li><p><a class="reference internal" href="#steps-in-engineering-problem-solving" id="toc-entry-4">Steps in Engineering Problem Solving</a></p></li>
-<li><p><a class="reference internal" href="#assessing-performance" id="toc-entry-5">Assessing performance</a></p></li>
-<li><p><a class="reference internal" href="#exemplo-operacao" id="toc-entry-6">Exemplo operação</a></p></li>
-<li><p><a class="reference internal" href="#open-vs-closed-loops" id="toc-entry-7">open vs closed loops</a></p>
-<ul>
-<li><p><a class="reference internal" href="#lookup-table" id="toc-entry-8">Lookup table</a></p></li>
+<li><a class="reference internal" href="#instrumentation-notes" id="toc-entry-1">Instrumentation notes</a><ul>
+<li><a class="reference internal" href="#important-topics-for-astronomical-instrumentation" id="toc-entry-2">Important topics for astronomical instrumentation</a></li>
+<li><a class="reference internal" href="#engineering" id="toc-entry-3">Engineering</a><ul>
+<li><a class="reference internal" href="#steps-in-engineering-problem-solving" id="toc-entry-4">Steps in Engineering Problem Solving</a></li>
+<li><a class="reference internal" href="#assessing-performance" id="toc-entry-5">Assessing performance</a></li>
+<li><a class="reference internal" href="#exemplo-operacao" id="toc-entry-6">Exemplo operação</a></li>
+<li><a class="reference internal" href="#open-vs-closed-loops" id="toc-entry-7">open vs closed loops</a><ul>
+<li><a class="reference internal" href="#lookup-table" id="toc-entry-8">Lookup table</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#fea" id="toc-entry-9">FEA</a></p></li>
-<li><p><a class="reference internal" href="#controle" id="toc-entry-10">Controle</a></p>
-<ul>
-<li><p><a class="reference internal" href="#tela-sino-p-tica" id="toc-entry-11">Tela sinó(p)tica</a></p></li>
+<li><a class="reference internal" href="#fea" id="toc-entry-9">FEA</a></li>
+<li><a class="reference internal" href="#controle" id="toc-entry-10">Controle</a><ul>
+<li><a class="reference internal" href="#tela-sino-p-tica" id="toc-entry-11">Tela sinó(p)tica</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#vocabulary" id="toc-entry-12">Vocabulary</a></p></li>
+<li><a class="reference internal" href="#vocabulary" id="toc-entry-12">Vocabulary</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#ut-classes" id="toc-entry-13">UT Classes</a></p></li>
-<li><p><a class="reference internal" href="#electronics" id="toc-entry-14">Electronics</a></p>
-<ul>
-<li><p><a class="reference internal" href="#interesting-chips" id="toc-entry-15">Interesting chips</a></p></li>
-<li><p><a class="reference internal" href="#acronyms" id="toc-entry-16">Acronyms</a></p></li>
-<li><p><a class="reference internal" href="#motors" id="toc-entry-17">Motors</a></p>
-<ul>
-<li><p><a class="reference internal" href="#dc-motors" id="toc-entry-18">DC motors</a></p></li>
-<li><p><a class="reference internal" href="#servo-motors" id="toc-entry-19">Servo motors</a></p></li>
-<li><p><a class="reference internal" href="#step-per-motors" id="toc-entry-20">Step(per) motors</a></p></li>
+<li><a class="reference internal" href="#ut-classes" id="toc-entry-13">UT Classes</a></li>
+<li><a class="reference internal" href="#electronics" id="toc-entry-14">Electronics</a><ul>
+<li><a class="reference internal" href="#interesting-chips" id="toc-entry-15">Interesting chips</a></li>
+<li><a class="reference internal" href="#acronyms" id="toc-entry-16">Acronyms</a></li>
+<li><a class="reference internal" href="#motors" id="toc-entry-17">Motors</a><ul>
+<li><a class="reference internal" href="#dc-motors" id="toc-entry-18">DC motors</a></li>
+<li><a class="reference internal" href="#servo-motors" id="toc-entry-19">Servo motors</a></li>
+<li><a class="reference internal" href="#step-per-motors" id="toc-entry-20">Step(per) motors</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#random" id="toc-entry-21">Random</a></p></li>
+<li><a class="reference internal" href="#random" id="toc-entry-21">Random</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#optics" id="toc-entry-22">Optics</a></p>
-<ul>
-<li><p><a class="reference internal" href="#telescope-calculator" id="toc-entry-23">Telescope Calculator</a></p></li>
-<li><p><a class="reference internal" href="#adc-atmospheric-dispersion-corrector" id="toc-entry-24">ADC - Atmospheric Dispersion Corrector</a></p></li>
-<li><p><a class="reference internal" href="#general" id="toc-entry-25">General</a></p></li>
-<li><p><a class="reference internal" href="#lentes-a-esfericas" id="toc-entry-26">Lentes a/esféricas</a></p></li>
+<li><a class="reference internal" href="#optics" id="toc-entry-22">Optics</a><ul>
+<li><a class="reference internal" href="#telescope-calculator" id="toc-entry-23">Telescope Calculator</a></li>
+<li><a class="reference internal" href="#adc-atmospheric-dispersion-corrector" id="toc-entry-24">ADC - Atmospheric Dispersion Corrector</a></li>
+<li><a class="reference internal" href="#general" id="toc-entry-25">General</a></li>
+<li><a class="reference internal" href="#lentes-a-esfericas" id="toc-entry-26">Lentes a/esféricas</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#mechanics" id="toc-entry-27">Mechanics</a></p>
-<ul>
-<li><p><a class="reference internal" href="#gears-rules" id="toc-entry-28">Gears rules</a></p>
-<ul>
-<li><p><a class="reference internal" href="#gear-trains" id="toc-entry-29">Gear trains</a></p></li>
-<li><p><a class="reference internal" href="#worm-gear" id="toc-entry-30">Worm gear</a></p></li>
+<li><a class="reference internal" href="#mechanics" id="toc-entry-27">Mechanics</a><ul>
+<li><a class="reference internal" href="#gears-rules" id="toc-entry-28">Gears rules</a><ul>
+<li><a class="reference internal" href="#gear-trains" id="toc-entry-29">Gear trains</a></li>
+<li><a class="reference internal" href="#worm-gear" id="toc-entry-30">Worm gear</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#systems-engineering" id="toc-entry-31">Systems Engineering</a></p>
-<ul>
-<li><p><a class="reference internal" href="#plectics" id="toc-entry-32">Plectics</a></p></li>
+<li><a class="reference internal" href="#systems-engineering" id="toc-entry-31">Systems Engineering</a><ul>
+<li><a class="reference internal" href="#plectics" id="toc-entry-32">Plectics</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</nav>
-<section id="instrumentation-notes">
-<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Instrumentation notes</a></h2>
-<section id="important-topics-for-astronomical-instrumentation">
-<h3><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Important topics for astronomical instrumentation</a></h3>
+</div>
+<div class="section" id="instrumentation-notes">
+<h1><a class="toc-backref" href="#toc-entry-1">Instrumentation notes</a></h1>
+<div class="section" id="important-topics-for-astronomical-instrumentation">
+<h2><a class="toc-backref" href="#toc-entry-2">Important topics for astronomical instrumentation</a></h2>
 <ul class="simple">
-<li><p>Astronomical Spectroscopy</p></li>
-<li><p>Imaging and photometry</p></li>
-<li><p>Active and Adaptive Optics</p></li>
-<li><p>Polarimetry and Spectro-polarimetry</p></li>
-<li><p>Characteristics of astronomical detectors in multiple wavelengths</p></li>
-<li><p>Spectral imaging (IFU, Fabry-Perot and similar)</p></li>
-<li><p>Data treatment; Astronomical databases</p></li>
-<li><p>Technology of Large Telescopes</p></li>
-<li><p>Factors that affect astronomical observations</p></li>
-<li><p>Signal-to-noise analysis and errors</p></li>
+<li>Astronomical Spectroscopy</li>
+<li>Imaging and photometry</li>
+<li>Active and Adaptive Optics</li>
+<li>Polarimetry and Spectro-polarimetry</li>
+<li>Characteristics of astronomical detectors in multiple wavelengths</li>
+<li>Spectral imaging (IFU, Fabry-Perot and similar)</li>
+<li>Data treatment; Astronomical databases</li>
+<li>Technology of Large Telescopes</li>
+<li>Factors that affect astronomical observations</li>
+<li>Signal-to-noise analysis and errors</li>
 </ul>
-</section>
-<section id="engineering">
-<h3><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Engineering</a></h3>
-<section id="steps-in-engineering-problem-solving">
-<h4><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">Steps in Engineering Problem Solving</a></h4>
+</div>
+<div class="section" id="engineering">
+<h2><a class="toc-backref" href="#toc-entry-3">Engineering</a></h2>
+<div class="section" id="steps-in-engineering-problem-solving">
+<h3><a class="toc-backref" href="#toc-entry-4">Steps in Engineering Problem Solving</a></h3>
 <p>(originally <a class="reference external" href="http://homepages.udayton.edu/~hardierc/ece203/Solution%20Strategy.htm">here</a>)</p>
 <ol class="arabic">
-<li><p>Understand the purpose of the problem.</p></li>
-<li><p>Collect the known information. Realize that some of it might be discovered later to be unnecessary.</p></li>
-<li><p>Determine what information you must find.</p></li>
-<li><p>Simplify the problem only enough to allow the required information to be obtained. State any assumptions you make.</p></li>
-<li><p>Draw a sketch and label any necessary variables.</p></li>
-<li><p>Determine which of the fundamental principles are applicable.</p></li>
-<li><p>Think about your proposed solution approach in general and consider other approaches before proceeding with the details.</p>
+<li><p class="first">Understand the purpose of the problem.</p>
+</li>
+<li><p class="first">Collect the known information. Realize that some of it might be discovered later to be unnecessary.</p>
+</li>
+<li><p class="first">Determine what information you must find.</p>
+</li>
+<li><p class="first">Simplify the problem only enough to allow the required information to be obtained. State any assumptions you make.</p>
+</li>
+<li><p class="first">Draw a sketch and label any necessary variables.</p>
+</li>
+<li><p class="first">Determine which of the fundamental principles are applicable.</p>
+</li>
+<li><p class="first">Think about your proposed solution approach in general and consider other approaches before proceeding with the details.</p>
 <blockquote>
 <p>Interpret the mathematics. If the mathematics produces multiple answers, do not discard some of them without considering what they mean. The mathematics might be trying to tell you something, and you might miss an opportunity to discover more about the problem.</p>
 </blockquote>
 </li>
-<li><p>Label each step of the solution process.</p></li>
-<li><p>Solve the problem. If you are solving the problem with a computer program:</p>
+<li><p class="first">Label each step of the solution process.</p>
+</li>
+<li><p class="first">Solve the problem. If you are solving the problem with a computer program:</p>
 <blockquote>
 <ul>
-<li><p>State the problem concisely.</p></li>
-<li><p>Specify the data to be used by the program. This is the “input”.</p></li>
-<li><p>Specify the information to be generated by the program. This is called the &quot;output&quot;.</p></li>
-<li><p>Work through the solution steps by hand using a simple data set.</p>
+<li><p class="first">State the problem concisely.</p>
+</li>
+<li><p class="first">Specify the data to be used by the program. This is the “input”.</p>
+</li>
+<li><p class="first">Specify the information to be generated by the program. This is called the &quot;output&quot;.</p>
+</li>
+<li><p class="first">Work through the solution steps by hand using a simple data set.</p>
 <blockquote>
 <p>You may only be able to do a partial solution or nothing at all here.</p>
 </blockquote>
 </li>
-<li><p>Write and run the program.</p></li>
-<li><p>Check the output of the program with your hand solution.</p>
+<li><p class="first">Write and run the program.</p>
+</li>
+<li><p class="first">Check the output of the program with your hand solution.</p>
 <blockquote>
 <p>Checking the dimensions and units and printing the results of intermediate steps in the calculation sequence can uncover mistakes.</p>
 </blockquote>
 </li>
-<li><p>Run the program with your actual input data (if different from your simple test data) and perform a reality check on the output.  That is, determine if the range of output values is reasonable for the problem at hand.</p>
+<li><p class="first">Run the program with your actual input data (if different from your simple test data) and perform a reality check on the output.  That is, determine if the range of output values is reasonable for the problem at hand.</p>
 <blockquote>
 <p>Checking the dimensions and units and printing the results of intermediate steps in the calculation sequence can uncover mistakes.</p>
 </blockquote>
 </li>
-<li><p>If the program will be used as a general tool in the future, test it by running it for a range of reasonable input data values; perform a reality check on the results.</p></li>
+<li><p class="first">If the program will be used as a general tool in the future, test it by running it for a range of reasonable input data values; perform a reality check on the results.</p>
+</li>
 </ul>
 </blockquote>
 </li>
-<li><p>Present your solution using graphs and data tables to good effect. Do not state the answer with any greater precision than is justified by any of the following:</p>
+<li><p class="first">Present your solution using graphs and data tables to good effect. Do not state the answer with any greater precision than is justified by any of the following:</p>
 <blockquote>
 <ul class="simple">
-<li><p>The precision of the given information.</p></li>
-<li><p>The simplifying assumptions.</p></li>
-<li><p>The requirements of the problem.</p></li>
+<li>The precision of the given information.</li>
+<li>The simplifying assumptions.</li>
+<li>The requirements of the problem.</li>
 </ul>
 </blockquote>
 </li>
 </ol>
-</section>
-<section id="assessing-performance">
-<h4><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Assessing performance</a></h4>
+</div>
+<div class="section" id="assessing-performance">
+<h3><a class="toc-backref" href="#toc-entry-5">Assessing performance</a></h3>
 <p>Most of times, just one parameter at once!</p>
-</section>
-<section id="exemplo-operacao">
-<h4><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Exemplo operação</a></h4>
+</div>
+<div class="section" id="exemplo-operacao">
+<h3><a class="toc-backref" href="#toc-entry-6">Exemplo operação</a></h3>
 <p>O funcionamento dos VLTs. Eles funcionam assim: há um ar-condicionado em todo o enclosure do telescópio, com temperatura-alvo a esperada para o momento da abertura da cúpula. Além da estabilidade nas observações iniciais, o objetivo é não dar grandes choques térmicos nos instrumentos. Todos os racks tem a resfriamento pŕoprio. Muitos compressores de Hélio (com amortecimento de vibração) ou resfriamento de nitrogênio. E os Nasmyth tem a estabilidade mecânica completa mesmo.</p>
-</section>
-<section id="open-vs-closed-loops">
-<h4><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">open vs closed loops</a></h4>
+</div>
+<div class="section" id="open-vs-closed-loops">
+<h3><a class="toc-backref" href="#toc-entry-7">open vs closed loops</a></h3>
 <p>Malha aberta é quando você faz uma correção de uma grandeza sem ter certeza se ela é a melhor possível. Malha fechada é quando a grande é monitorada por um sensor de tal forma que a correção aplicada é sempre a melhor possível. A palavra malha em Português vem de loop em Inglês, pois entre o sensor e o atuador, que aplica a correção, há um circuito que faz uma estimativa de quanto de correção precisa ser aplicada, então, se você desenhar um diagrama de controle vai haver o sistema a ser controlado, um sensor, um controlador e um atuador e esses componentes formam um circuito em loop fechado (como um circuito circular) entre uma entrada e uma saída.</p>
-<section id="lookup-table">
-<h5><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">Lookup table</a></h5>
+<div class="section" id="lookup-table">
+<h4><a class="toc-backref" href="#toc-entry-8">Lookup table</a></h4>
 <p>In computer science, a lookup table is an array that replaces runtime computation with a simpler array indexing operation. The savings in terms of processing time can be significant. Used in <strong>opened loops</strong>.</p>
-</section>
-</section>
-<section id="fea">
-<h4><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">FEA</a></h4>
+</div>
+</div>
+<div class="section" id="fea">
+<h3><a class="toc-backref" href="#toc-entry-9">FEA</a></h3>
 <p>Finite element analysis (FEA) is a computerized method for predicting how a product reacts to real-world forces, vibration, heat, fluid flow, and other physical effects. Finite element analysis shows whether a product will break, wear out, or work the way it was designed. FEA ou FEM (finite element method) uses variational methods from the calculus of variations to approximate a solution by minimizing an associated error function.</p>
-</section>
-<section id="controle">
-<h4><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">Controle</a></h4>
-<section id="tela-sino-p-tica">
-<h5><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Tela sinó(p)tica</a></h5>
+</div>
+<div class="section" id="controle">
+<h3><a class="toc-backref" href="#toc-entry-10">Controle</a></h3>
+<div class="section" id="tela-sino-p-tica">
+<h4><a class="toc-backref" href="#toc-entry-11">Tela sinó(p)tica</a></h4>
 <p>No subsistema de controle há um display que fica no console de operação, que indica em uma tela gráfica sinó(p)tica, o estado atual do espetrógrafo, e.g., qual a temperatura dentro do espectrógrafo, qual a rede de difração utilizada, o ângulo das câmaras, a tensão de entrada, a pressão na entrada e na saída da linha de água de refrigeração, etc. Quem está de frente para esse painel/display tem acesso a todas as informações sobre o instrumento. As vezes uma tela somente não é suficiente, então há mais de uma tela em cada display, que pode ser trocada como no &quot;windows&quot;, e mais de um display para que dois operadores possam ver telas diferentes ao mesmo tempo. Essa tela é gráfica com um desenho do espectrógrafo e tem pontos de leitura de forma intuitiva nos pontos do desenho. Também é possível operar válvulas, trocar redes de difração, mover as câmaras, etc, por essas telas. Esse sistema é chamado supervisório. Ele tem uma parte que é software e uma parte que é hardware (computadores que recebem as informações do PLC, e os displays).</p>
-</section>
-</section>
-<section id="vocabulary">
-<h4><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Vocabulary</a></h4>
+</div>
+</div>
+<div class="section" id="vocabulary">
+<h3><a class="toc-backref" href="#toc-entry-12">Vocabulary</a></h3>
 <ul class="simple">
-<li><p>specular reflectance: 1-by-1 angle mirror</p></li>
+<li>specular reflectance: 1-by-1 angle mirror</li>
 </ul>
-</section>
-</section>
-<section id="ut-classes">
-<h3><a class="toc-backref" href="#toc-entry-13" role="doc-backlink">UT Classes</a></h3>
+</div>
+</div>
+<div class="section" id="ut-classes">
+<h2><a class="toc-backref" href="#toc-entry-13">UT Classes</a></h2>
 <ul class="simple">
-<li><p>Computer-electronics interface (Labview) - Done</p></li>
-<li><p>Mechanical drawing and machining (Invetor+Workshop day) - On going</p></li>
-<li><p>Optical design (Zemax) - On going</p></li>
-<li><p>Electronics (MultiSim) - Near future</p></li>
+<li>Computer-electronics interface (Labview) - Done</li>
+<li>Mechanical drawing and machining (Invetor+Workshop day) - On going</li>
+<li>Optical design (Zemax) - On going</li>
+<li>Electronics (MultiSim) - Near future</li>
 </ul>
-</section>
-<section id="electronics">
-<h3><a class="toc-backref" href="#toc-entry-14" role="doc-backlink">Electronics</a></h3>
-<section id="interesting-chips">
-<h4><a class="toc-backref" href="#toc-entry-15" role="doc-backlink">Interesting chips</a></h4>
+</div>
+<div class="section" id="electronics">
+<h2><a class="toc-backref" href="#toc-entry-14">Electronics</a></h2>
+<div class="section" id="interesting-chips">
+<h3><a class="toc-backref" href="#toc-entry-15">Interesting chips</a></h3>
 <ul class="simple">
-<li><p>Arduino = ATmega8, ATmega168, ATmega328, ...</p></li>
-<li><p>Attiny85 = low power consumption micro-controller</p></li>
-<li><p>ESP8266 = low-cost WiFi chip</p></li>
+<li>Arduino = ATmega8, ATmega168, ATmega328, ...</li>
+<li>Attiny85 = low power consumption micro-controller</li>
+<li>ESP8266 = low-cost WiFi chip</li>
 </ul>
-</section>
-<section id="acronyms">
-<h4><a class="toc-backref" href="#toc-entry-16" role="doc-backlink">Acronyms</a></h4>
+</div>
+<div class="section" id="acronyms">
+<h3><a class="toc-backref" href="#toc-entry-16">Acronyms</a></h3>
 <ul class="simple">
-<li><p>AC: Alternating Current</p></li>
-<li><p>ADC or A/D: analog-to-digital conversion</p></li>
-<li><p>DAC or D/A: digital-to-analog conversion</p></li>
-<li><p>DC: Direct Current</p></li>
-<li><p>DMA: Direct Memory Access</p></li>
-<li><p>DRT|TL: Diode|Resistor|Transistor-to-Transistor Logic</p></li>
-<li><p>DSP: Digital Signal Processing</p></li>
-<li><p>IEEE: Institute of Electrical and Electronics Engineers</p></li>
-<li><p>PCI: Peripheral Component Interconnect</p></li>
-<li><p>PXI: PCI eXtensions (for Instrumentation)</p></li>
-<li><p>RTSI: Real-Time System Integration bus</p></li>
-<li><p>SCC: Signal Conditioning Carriers</p></li>
-<li><p>transducer: voltage or current convertion to signal</p></li>
-<li><p>IC: Integrated Circuit</p></li>
+<li>AC: Alternating Current</li>
+<li>ADC or A/D: analog-to-digital conversion</li>
+<li>DAC or D/A: digital-to-analog conversion</li>
+<li>DC: Direct Current</li>
+<li>DMA: Direct Memory Access</li>
+<li>DRT|TL: Diode|Resistor|Transistor-to-Transistor Logic</li>
+<li>DSP: Digital Signal Processing</li>
+<li>IEEE: Institute of Electrical and Electronics Engineers</li>
+<li>PCI: Peripheral Component Interconnect</li>
+<li>PXI: PCI eXtensions (for Instrumentation)</li>
+<li>RTSI: Real-Time System Integration bus</li>
+<li>SCC: Signal Conditioning Carriers</li>
+<li>transducer: voltage or current convertion to signal</li>
+<li>IC: Integrated Circuit</li>
 </ul>
-</section>
-<section id="motors">
-<h4><a class="toc-backref" href="#toc-entry-17" role="doc-backlink">Motors</a></h4>
+</div>
+<div class="section" id="motors">
+<h3><a class="toc-backref" href="#toc-entry-17">Motors</a></h3>
 <p>The basic working principle of motors is a central permanent magnet surrounded by wires (&quot;coils&quot;). The passing current in a coil create a force that repeals the magnet, that turns (shaft).
 There are 3 basic types of motors:</p>
-<section id="dc-motors">
-<h5><a class="toc-backref" href="#toc-entry-18" role="doc-backlink">DC motors</a></h5>
+<div class="section" id="dc-motors">
+<h4><a class="toc-backref" href="#toc-entry-18">DC motors</a></h4>
 <p>DC motors are continuously rotating motors. They follow two basic laws:</p>
 <ul class="simple">
-<li><p>Motor RPM is linearly proportional to the applied voltage</p></li>
-<li><p>Motor Torque is linearly proportional to the circuit current</p></li>
+<li>Motor RPM is linearly proportional to the applied voltage</li>
+<li>Motor Torque is linearly proportional to the circuit current</li>
 </ul>
 <p>2 wires only. Reversing the current makes the motor rotate in the opposite direction.</p>
 <p><a class="reference external" href="https://www.youtube.com/watch?v=GBbdhQI1_f8&amp;list=UU-mVNw_SPFez8OZGc0uNhkQ&amp;index=13">How DC Motors work by Phidgets</a></p>
-</section>
-<section id="servo-motors">
-<h5><a class="toc-backref" href="#toc-entry-19" role="doc-backlink">Servo motors</a></h5>
+</div>
+<div class="section" id="servo-motors">
+<h4><a class="toc-backref" href="#toc-entry-19">Servo motors</a></h4>
 <p>Servo motors are designed to make movements between precise angles. It is not only a motor but an assembly, usually composed by: a DC motor, a potentiometer, and a control circuit. Servos are controlled by sending an electrical pulse of variable width, or Pulse Width Modulation (PWM). Servo motors are designed to operate at 50 Hz (1 pulse each 20 ms), at the typical pulse length is 1 to 2 ms.</p>
 <p>Examples:</p>
 <ul class="simple">
-<li><p>positive pulse, 1 ms long = 0 deg position, anti-clockwise movement</p></li>
-<li><p>positive pulse, 1.5 ms long = 90 deg position, anti-clockwise movement</p></li>
-<li><p>positive pule, 2 ms long = 180 deg position, anti-clockwise movement</p></li>
-<li><p>negative pulse, 1.5 ms long = 90 deg position, clockwise movement</p></li>
+<li>positive pulse, 1 ms long = 0 deg position, anti-clockwise movement</li>
+<li>positive pulse, 1.5 ms long = 90 deg position, anti-clockwise movement</li>
+<li>positive pule, 2 ms long = 180 deg position, anti-clockwise movement</li>
+<li>negative pulse, 1.5 ms long = 90 deg position, clockwise movement</li>
 </ul>
-</section>
-<section id="step-per-motors">
-<h5><a class="toc-backref" href="#toc-entry-20" role="doc-backlink">Step(per) motors</a></h5>
+</div>
+<div class="section" id="step-per-motors">
+<h4><a class="toc-backref" href="#toc-entry-20">Step(per) motors</a></h4>
 <p>Step motors are DC motors that rotates in steps. It can be precisely positioned without any feedback sensor, what represents an open-loop controller.</p>
 <p>Between 4-8 wires.</p>
-</section>
-</section>
-<section id="random">
-<h4><a class="toc-backref" href="#toc-entry-21" role="doc-backlink">Random</a></h4>
+</div>
+</div>
+<div class="section" id="random">
+<h3><a class="toc-backref" href="#toc-entry-21">Random</a></h3>
 <p>Nyquist Theorem: &quot;The maximum frequency one can detect is always less than half of the sampling rate&quot;.</p>
-<dl class="simple">
+<dl class="docutils">
 <dt>Information can be folded in:</dt>
-<dd><ul class="simple">
-<li><p>state</p></li>
-<li><p>rate</p></li>
-<li><p>level</p></li>
-<li><p>shape</p></li>
-<li><p>frequency content</p></li>
+<dd><ul class="first last simple">
+<li>state</li>
+<li>rate</li>
+<li>level</li>
+<li>shape</li>
+<li>frequency content</li>
 </ul>
 </dd>
 </dl>
 <p><strong>Arduino</strong> is open source hardware and software project for creating (digital) microcontrollers.</p>
-</section>
-</section>
-<section id="optics">
-<h3><a class="toc-backref" href="#toc-entry-22" role="doc-backlink">Optics</a></h3>
-<section id="telescope-calculator">
-<h4><a class="toc-backref" href="#toc-entry-23" role="doc-backlink">Telescope Calculator</a></h4>
-<figure class="align-center">
-<img alt="../figs/inst_Lens_angle_of_view.svg" src="../figs/inst_Lens_angle_of_view.svg" />
-</figure>
+</div>
+</div>
+<div class="section" id="optics">
+<h2><a class="toc-backref" href="#toc-entry-22">Optics</a></h2>
+<div class="section" id="telescope-calculator">
+<h3><a class="toc-backref" href="#toc-entry-23">Telescope Calculator</a></h3>
+<div class="figure align-center">
+<object data="../figs/inst_Lens_angle_of_view.svg" type="image/svg+xml">../figs/inst_Lens_angle_of_view.svg</object>
+</div>
 <div class="formula">
 <i>f</i><sub><i>T</i></sub> = <i>D</i><sub><i>T</i></sub>.<i>f</i><sub>#<i>T</i></sub>
 </div>
@@ -1040,82 +1042,81 @@ There are 3 basic types of motors:</p>
 <p>(optical) resolving power, <span class="formula"><i>θ</i> = 1.22<i>λ</i> ⁄ <i>D</i><sub><i>T</i></sub></span> [rad]; multiply by 206265 to [arcsec].</p>
 <p><strong>Eye relief</strong> is an eyepiece specification. It is the distance from the eyepiece lens to the point where your eye can best see the full field of view (larger the eye relief, likely larger the field of view).</p>
 <p>Plate scale (in arcsec/mm), <span class="formula"><i>PE</i> = 206265 ⁄ <i>f</i><sub><i>T</i></sub><span class="text"> [mm]</span></span></p>
-</section>
-<section id="adc-atmospheric-dispersion-corrector">
-<h4><a class="toc-backref" href="#toc-entry-24" role="doc-backlink">ADC - Atmospheric Dispersion Corrector</a></h4>
+</div>
+<div class="section" id="adc-atmospheric-dispersion-corrector">
+<h3><a class="toc-backref" href="#toc-entry-24">ADC - Atmospheric Dispersion Corrector</a></h3>
 <p>An Atmospheric Dispersion Corrector is an optical device usually comprising two thin prisms which can rotate to compensate for the elongation of a star image caused by the wavelength dependence of the refractive index of air. At high airmasses, it is very easily seen on the guider that the star image is not round and small. Using the ADC will make the star look round and small again. The ADC can be left in the beam at all times since it does not absorb a lot of light and does not introduce polarization. It should be noted that the telescope focus will change dramatically when the ADC is moved in or out of the beam.</p>
-</section>
-<section id="general">
-<h4><a class="toc-backref" href="#toc-entry-25" role="doc-backlink">General</a></h4>
+</div>
+<div class="section" id="general">
+<h3><a class="toc-backref" href="#toc-entry-25">General</a></h3>
 <ul class="simple">
-<li><p>Adaptive optics: &quot;Zernike 100/200&quot;, the order/speed of the wavefront corrections</p></li>
-<li><p>Adaptive optics: Isoplanatic angle, or &quot;FoV&quot; on which the wavefront conditions are roughly the same</p></li>
-<li><p>EE = Encircled energy, related to image quality. How much of the incoming energy is confined in the final resolution element (EE can also be Energy Efficiency).</p></li>
+<li>Adaptive optics: &quot;Zernike 100/200&quot;, the order/speed of the wavefront corrections</li>
+<li>Adaptive optics: Isoplanatic angle, or &quot;FoV&quot; on which the wavefront conditions are roughly the same</li>
+<li>EE = Encircled energy, related to image quality. How much of the incoming energy is confined in the final resolution element (EE can also be Energy Efficiency).</li>
 </ul>
-</section>
-<section id="lentes-a-esfericas">
-<h4><a class="toc-backref" href="#toc-entry-26" role="doc-backlink">Lentes a/esféricas</a></h4>
-<dl class="simple">
+</div>
+<div class="section" id="lentes-a-esfericas">
+<h3><a class="toc-backref" href="#toc-entry-26">Lentes a/esféricas</a></h3>
+<dl class="docutils">
 <dt>Fiz uma pesquisa rápida, e recomendo eles dois links se vocês quiserem saber mais sobre a questão esférico/aesférico:</dt>
-<dd><ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_aberration">https://en.wikipedia.org/wiki/Spherical_aberration</a></p></li>
-<li><p><a class="reference external" href="http://www.edmundoptics.com/resources/application-notes/optics/all-about-aspheric-lenses/">http://www.edmundoptics.com/resources/application-notes/optics/all-about-aspheric-lenses/</a></p></li>
+<dd><ul class="first last simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Spherical_aberration">https://en.wikipedia.org/wiki/Spherical_aberration</a></li>
+<li><a class="reference external" href="http://www.edmundoptics.com/resources/application-notes/optics/all-about-aspheric-lenses/">http://www.edmundoptics.com/resources/application-notes/optics/all-about-aspheric-lenses/</a></li>
 </ul>
 </dd>
 </dl>
 <p>Basicamente é um problema que aparece principalmente em campos grandes: o ponto onde a lente faz foco muda em função da posição do objeto no campo (por exemplo, se o foco está para a estrela do centro da imagem, os objetos nas extremidades ficam desfocados - e vice-e-versa). Isso significa prática que somente 47% da área de uma lente esférica é usável para um foco completo.</p>
 <p>Para corrigir isso, os fabricantes de lentes introduzem desvios nas superfície das lentes esféricas. Usando uma lente aesférica de mesmo tamanho que uma esférica, um campo muito maior se torna útil com as mesma condições mecânicas (isto é, peso e dimensões).</p>
-</section>
-</section>
-<section id="mechanics">
-<h3><a class="toc-backref" href="#toc-entry-27" role="doc-backlink">Mechanics</a></h3>
-<section id="gears-rules">
-<h4><a class="toc-backref" href="#toc-entry-28" role="doc-backlink">Gears rules</a></h4>
-<figure class="align-center">
+</div>
+</div>
+<div class="section" id="mechanics">
+<h2><a class="toc-backref" href="#toc-entry-27">Mechanics</a></h2>
+<div class="section" id="gears-rules">
+<h3><a class="toc-backref" href="#toc-entry-28">Gears rules</a></h3>
+<div class="figure align-center">
 <img alt="../figs/inst_mech_gears.jpg" src="../figs/inst_mech_gears.jpg" />
-</figure>
+</div>
 <p>Only gears with the same <strong>diametral pitch</strong> can work together.</p>
 <blockquote>
 <p>diametral pitch = number of teeths/circular pitch</p>
 <p>circular pitch = root diam.+working depth/2 = root diam.+(whole depth-clearence)/2</p>
 </blockquote>
 <p>Usual diametral pitches: 12, 24, 36, 48, 64.</p>
-<section id="gear-trains">
-<h5><a class="toc-backref" href="#toc-entry-29" role="doc-backlink">Gear trains</a></h5>
-<dl class="simple">
+<div class="section" id="gear-trains">
+<h4><a class="toc-backref" href="#toc-entry-29">Gear trains</a></h4>
+<dl class="docutils">
 <dt>Given <span class="formula"><i>w</i></span> the angular speed, and <span class="formula"><i>R</i></span> the pitch radius, and <span class="formula"><i>N</i></span> the number of teeths, the following rules apply:</dt>
-<dd><ul class="simple">
-<li><p><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>2</sub></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>R</i><sub>2</sub></span><span class="ignored">)/(</span><span class="denominator"><i>R</i><sub>1</sub></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>2</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub></span><span class="ignored">)</span></span></span></p></li>
+<dd><ul class="first last simple">
+<li><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>2</sub></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>R</i><sub>2</sub></span><span class="ignored">)/(</span><span class="denominator"><i>R</i><sub>1</sub></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>2</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub></span><span class="ignored">)</span></span></span></li>
 </ul>
 </dd>
 </dl>
 <p>In a <strong>serial</strong> combination of gears, the number/size of intermediate gears are irrelevant. For example, in an 4-gear series <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>4</sub></span><span class="ignored">)</span></span> =  − <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>4</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub></span><span class="ignored">)</span></span></span>, independent of <span class="formula"><i>N</i><sub>2</sub>, <i>N</i><sub>3</sub></span>.
 In a serial combination of gears, the even gears rotate on opposite direction of odd ones.</p>
 <p>In a gear trains were the gears share the same rotational axis, the above rules do not apply. For example, in a 4-gear series where gears 2 and 3 share the same rotation, <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>w</i><sub>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>w</i><sub>4</sub></span><span class="ignored">)</span></span> =  + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sub>2</sub><i>N</i><sub>4</sub></span><span class="ignored">)/(</span><span class="denominator"><i>N</i><sub>1</sub><i>N</i><sub>3</sub></span><span class="ignored">)</span></span></span>.</p>
-</section>
-<section id="worm-gear">
-<h5><a class="toc-backref" href="#toc-entry-30" role="doc-backlink">Worm gear</a></h5>
+</div>
+<div class="section" id="worm-gear">
+<h4><a class="toc-backref" href="#toc-entry-30">Worm gear</a></h4>
 <p>Works perpedicular to the <strong>wormwheel</strong>. The basic rule is:</p>
 <blockquote>
-<p>one full rotation of the wormwheel = one teeth movement in the wormwheel</p>
-</blockquote>
-</section>
-</section>
-</section>
-<section id="systems-engineering">
-<h3><a class="toc-backref" href="#toc-entry-31" role="doc-backlink">Systems Engineering</a></h3>
-<section id="plectics">
-<h4><a class="toc-backref" href="#toc-entry-32" role="doc-backlink">Plectics</a></h4>
+one full rotation of the wormwheel = one teeth movement in the wormwheel</blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="systems-engineering">
+<h2><a class="toc-backref" href="#toc-entry-31">Systems Engineering</a></h2>
+<div class="section" id="plectics">
+<h3><a class="toc-backref" href="#toc-entry-32">Plectics</a></h3>
 <ul class="simple">
-<li><p>Pléctica (Portuguese; <a class="reference external" href="../static/instrumentation-Plectica.pdf">PDF</a>)</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Plectics">https://en.wikipedia.org/wiki/Plectics</a></p></li>
+<li>Pléctica (Portuguese; <a class="reference external" href="../static/instrumentation-Plectica.pdf">PDF</a>)</li>
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Plectics">https://en.wikipedia.org/wiki/Plectics</a></li>
 </ul>
-<figure class="align-center">
+<div class="figure align-center">
 <img alt="../figs/inst_agile.png" src="../figs/inst_agile.png" style="width: 600px;" />
-</figure>
-</section>
-</section>
-</section>
-</main>
+</div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

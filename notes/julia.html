@@ -1,63 +1,10 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>Julia Language</title>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 <style type="text/css">
 
 /*
@@ -411,50 +358,109 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 </head>
 <body>
-<main id="julia-language">
+<div class="document" id="julia-language">
 <h1 class="title">Julia Language</h1>
 
 <p>This a place to share my experience installing and using <em>Julia</em> programming language. And 11 min introduction to its development context: <a class="reference external" href="https://www.youtube.com/watch?v=B9moDuSYzGo">Solving the Two Language Problem | ODSC East 2016 | Stefan Karpinski</a>.</p>
 <p>Official website: <a class="reference external" href="http://julialang.org/">http://julialang.org/</a></p>
 <p>github website: <a class="reference external" href="https://github.com/JuliaLang/julia">https://github.com/JuliaLang/julia</a></p>
-<section id="tutorials">
-<h2>Tutorials</h2>
+<div class="section" id="tutorials">
+<h1>Tutorials</h1>
 <p>My interest on Julia increased after watching the begging of this talk <a class="reference external" href="https://www.youtube.com/watch?v=vWkgEddb4-A">Introduction to Julia - Part 1 | SciPy 2014 | David Sanders</a>.</p>
 <p><a class="reference external" href="https://github.com/dpsanders/scipy_2014_julia">Tutorial material</a>.</p>
-</section>
-<section id="v0-3">
-<h2>v0.3</h2>
+</div>
+<div class="section" id="v0-3">
+<h1>v0.3</h1>
 <p>I started using the Julia from my Ubuntu 14.04, that is the version 0.3. Unfortunately, this version do not supports the IJulia, to I needed to move to v0.4.</p>
-</section>
-<section id="generic-binaries-v0-4">
-<h2>Generic binaries - v0.4</h2>
+</div>
+<div class="section" id="generic-binaries-v0-4">
+<h1>Generic binaries - v0.4</h1>
 <p>I started using the generic complied binaries from the website (v0.4.5). However, when I applied the fractals example from Sanders that took 0.25 seg to run in his machine, on mine took 145.5 seg! Then, I decided to build it on my own...</p>
-</section>
-<section id="github-v0-5-dev">
-<h2>github - v0.5-dev</h2>
+</div>
+<div class="section" id="github-v0-5-dev">
+<h1>github - v0.5-dev</h1>
 <p>When you want source code, you go directly to the git, right? That was what I did, but I forgot of something very important: if you just clone the main branch, you probably will grab the under-development one.</p>
 <p>So, I compiled the v0.5, and it worked nicely. The fractals example ran in the expect time. However, because I think it is a <em>dev</em> version, there were <strong>a lot</strong> do deprecated and warning messages, which I'm not expecting to see. Because of this, I decided to build the last stable version.</p>
-<section id="ipython">
-<h3>ipython</h3>
+<div class="section" id="ipython">
+<h2>ipython</h2>
 <p>&quot;IJulia&quot; is based on the IPython notebook. But, for some reason, I couldn't make IJulia run in IPython 4.x (I tried at least 2 versions). With IPython 3.x, it worked well.</p>
-</section>
-</section>
-<section id="stable-v0-4-6">
-<h2>Stable - v0.4.6</h2>
+</div>
+</div>
+<div class="section" id="stable-v0-4-6">
+<h1>Stable - v0.4.6</h1>
 <p>Now I'm compiling it to see if I can work with the IPython 4.x and if I get less warning messages... The whole compiling process takes about 1 hour.</p>
 <p>Download: <a class="reference external" href="http://julialang.org/downloads/">http://julialang.org/downloads/</a> &gt; Source &gt; GitHub</p>
-<pre class="code bash literal-block"><code>make
+<pre class="code bash literal-block">
+make
 <span class="comment single"># After finish, update 'x' below by your compiled version
-</span>cp -R julia-x/* ~/.local/</code></pre>
+</span>cp -R julia-x/* ~/.local/
+</pre>
 <p>After compiling:</p>
-<pre class="code literal-block"><code>julia&gt; Pkg.add(&quot;PyPlot&quot;)
-julia&gt; Pkg.add(&quot;IJulia&quot;)</code></pre>
-<pre class="code bash literal-block"><code><span class="name builtin">cd</span> ~/ipynb
-ipython notebook</code></pre>
+<pre class="code literal-block">
+julia&gt; Pkg.add(&quot;PyPlot&quot;)
+julia&gt; Pkg.add(&quot;IJulia&quot;)
+</pre>
+<pre class="code bash literal-block">
+<span class="name builtin">cd</span> ~/ipynb
+ipython notebook
+</pre>
 <p>Success!!</p>
-</section>
-</main>
+</div>
+</div>
 </body>
 </html>

@@ -797,7 +797,7 @@ Audacity + loopback: mic in the output, with lag. System sound, and record.
 Audacity: no mic in the output. System sound and record, no lag.
 
 
-Naming ``screen``s
+Naming ``screen``
 --------------------
 - ``screen -S {name}``
 - ``screen -r {name}``

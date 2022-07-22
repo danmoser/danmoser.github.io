@@ -1,63 +1,10 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>Tutorial de redução de dados de espectroscopia do OPD/LNA</title>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 <style type="text/css">
 
 /*
@@ -411,129 +358,183 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 </head>
-<body class="with-toc">
-<main id="tutorial-de-reducao-de-dados-de-espectroscopia-do-opd-lna">
+<body>
+<div class="document" id="tutorial-de-reducao-de-dados-de-espectroscopia-do-opd-lna">
 <h1 class="title">Tutorial de redução de dados de espectroscopia do OPD/LNA</h1>
 
-<nav class="contents" id="indice" role="doc-toc">
+<div class="contents topic" id="indice">
 <p class="topic-title">Índice</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#resumo-2016-03-28" id="toc-entry-1">Resumo 2016-03-28</a></p></li>
-<li><p><a class="reference internal" href="#para-a-execucao" id="toc-entry-2">Para a execução</a></p>
-<ul>
-<li><p><a class="reference internal" href="#dados-de-exemplo" id="toc-entry-3">Dados de exemplo</a></p></li>
-<li><p><a class="reference internal" href="#download-softwares" id="toc-entry-4">Download softwares</a></p></li>
-<li><p><a class="reference internal" href="#instalacao" id="toc-entry-5">Instalação</a></p>
-<ul>
-<li><p><a class="reference internal" href="#ureka" id="toc-entry-6">Ureka</a></p>
-<ul>
-<li><p><a class="reference internal" href="#erro-xgterm" id="toc-entry-7">Erro <cite>xgterm</cite></a></p></li>
+<li><a class="reference internal" href="#resumo-2016-03-28" id="toc-entry-1">Resumo 2016-03-28</a></li>
+<li><a class="reference internal" href="#para-a-execucao" id="toc-entry-2">Para a execução</a><ul>
+<li><a class="reference internal" href="#dados-de-exemplo" id="toc-entry-3">Dados de exemplo</a></li>
+<li><a class="reference internal" href="#download-softwares" id="toc-entry-4">Download softwares</a></li>
+<li><a class="reference internal" href="#instalacao" id="toc-entry-5">Instalação</a><ul>
+<li><a class="reference internal" href="#ureka" id="toc-entry-6">Ureka</a><ul>
+<li><a class="reference internal" href="#erro-xgterm" id="toc-entry-7">Erro <cite>xgterm</cite></a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#opera" id="toc-entry-8">OPERA</a></p>
-<ul>
-<li><p><a class="reference internal" href="#problemas-com-opera" id="toc-entry-9">Problemas com OPERA</a></p></li>
+<li><a class="reference internal" href="#opera" id="toc-entry-8">OPERA</a><ul>
+<li><a class="reference internal" href="#problemas-com-opera" id="toc-entry-9">Problemas com OPERA</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#beacon-reduc" id="toc-entry-10"><cite>beacon-reduc</cite></a></p></li>
+<li><a class="reference internal" href="#beacon-reduc" id="toc-entry-10"><cite>beacon-reduc</cite></a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#download-e-instalacao-alternativa" id="toc-entry-11">Download e instalação alternativa</a></p></li>
+<li><a class="reference internal" href="#download-e-instalacao-alternativa" id="toc-entry-11">Download e instalação alternativa</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#reducao" id="toc-entry-12">Redução</a></p>
-<ul>
-<li><p><a class="reference internal" href="#pre-processamento" id="toc-entry-13">Pré-processamento</a></p></li>
-<li><p><a class="reference internal" href="#ecass" id="toc-entry-14">ECASS</a></p>
-<ul>
-<li><p><a class="reference internal" href="#estrutura-de-pastas-e-arquivos" id="toc-entry-15">Estrutura de pastas e arquivos</a></p></li>
-<li><p><a class="reference internal" href="#passos" id="toc-entry-16">Passos</a></p></li>
+<li><a class="reference internal" href="#reducao" id="toc-entry-12">Redução</a><ul>
+<li><a class="reference internal" href="#pre-processamento" id="toc-entry-13">Pré-processamento</a></li>
+<li><a class="reference internal" href="#ecass" id="toc-entry-14">ECASS</a><ul>
+<li><a class="reference internal" href="#estrutura-de-pastas-e-arquivos" id="toc-entry-15">Estrutura de pastas e arquivos</a></li>
+<li><a class="reference internal" href="#passos" id="toc-entry-16">Passos</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#musicos-com-iraf" id="toc-entry-17">MUSICOS com IRAF</a></p>
-<ul>
-<li><p><a class="reference internal" href="#passos-1" id="toc-entry-18">Passos</a></p></li>
+<li><a class="reference internal" href="#musicos-com-iraf" id="toc-entry-17">MUSICOS com IRAF</a><ul>
+<li><a class="reference internal" href="#passos-1" id="toc-entry-18">Passos</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#musicos-com-opera" id="toc-entry-19">MUSICOS com OPERA</a></p>
-<ul>
-<li><p><a class="reference internal" href="#passos-2" id="toc-entry-20">Passos</a></p></li>
-<li><p><a class="reference internal" href="#sobre-as-rotinas-extract-ms" id="toc-entry-21">Sobre as rotinas <cite>extract_ms_*</cite></a></p></li>
-<li><p><a class="reference internal" href="#resultados" id="toc-entry-22">Resultados</a></p></li>
-<li><p><a class="reference internal" href="#problemas" id="toc-entry-23">Problemas</a></p></li>
+<li><a class="reference internal" href="#musicos-com-opera" id="toc-entry-19">MUSICOS com OPERA</a><ul>
+<li><a class="reference internal" href="#passos-2" id="toc-entry-20">Passos</a></li>
+<li><a class="reference internal" href="#sobre-as-rotinas-extract-ms" id="toc-entry-21">Sobre as rotinas <cite>extract_ms_*</cite></a></li>
+<li><a class="reference internal" href="#resultados" id="toc-entry-22">Resultados</a></li>
+<li><a class="reference internal" href="#problemas" id="toc-entry-23">Problemas</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#motivacao" id="toc-entry-24">Motivação</a></p></li>
-<li><p><a class="reference internal" href="#contato" id="toc-entry-25">Contato</a></p></li>
-<li><p><a class="reference internal" href="#referencias" id="toc-entry-26">Referencias</a></p></li>
+<li><a class="reference internal" href="#motivacao" id="toc-entry-24">Motivação</a></li>
+<li><a class="reference internal" href="#contato" id="toc-entry-25">Contato</a></li>
+<li><a class="reference internal" href="#referencias" id="toc-entry-26">Referencias</a></li>
 </ul>
-</nav>
-<section id="resumo-2016-03-28">
-<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Resumo 2016-03-28</a></h2>
+</div>
+<div class="section" id="resumo-2016-03-28">
+<h1><a class="toc-backref" href="#toc-entry-1">Resumo 2016-03-28</a></h1>
 <p>Farei uma demonstração prática de como reduzir dados de espectroscopia de dois espectrógrafos do OPD/LNA: (i) o espectrógrafo de fenda longa Cassegrain (ECASS) e (ii) o espectrógrafo echelle MUSICOS. Para ambos os espectrógrafos serão empregadas rotinas IRAF complementadas com rotinas Python. E para o MUSICOS também executarei o software de redução OPERA, adaptado ao instrumento numa parceria do LNA com o CFHT (software utilizado no espectrógrafo ESPaDOnS).</p>
 <p>A ideia é que o participantes tragam seus notebooks e executem simultaneamente o processo de redução na execução comentada que farei. Para isso é preciso baixar os dados de exemplo disponibilizados e ter os aplicativos já instalados. O tempo programado para as demonstrações é de 1h30.</p>
 <p>Mais instruções no sítio <a class="reference external" href="http://j.mp/opdspec">http://j.mp/opdspec</a></p>
-</section>
-<section id="para-a-execucao">
-<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Para a execução</a></h2>
+</div>
+<div class="section" id="para-a-execucao">
+<h1><a class="toc-backref" href="#toc-entry-2">Para a execução</a></h1>
 <p>Softwares necessários para o tutorial:</p>
 <ul class="simple">
-<li><p>IRAF v2.16+</p></li>
-<li><p>pacote <cite>beacon-reduc</cite></p></li>
-<li><p>OPERA v1.0+ com pipeline MUSICOS</p></li>
-<li><p>Python 2.7.5+</p></li>
-<li><p>Módulos Python <cite>pyfits</cite>, <cite>jdcal</cite>, <cite>matplotlib</cite>, <cite>astropy</cite></p></li>
+<li>IRAF v2.16+</li>
+<li>pacote <cite>beacon-reduc</cite></li>
+<li>OPERA v1.0+ com pipeline MUSICOS</li>
+<li>Python 2.7.5+</li>
+<li>Módulos Python <cite>pyfits</cite>, <cite>jdcal</cite>, <cite>matplotlib</cite>, <cite>astropy</cite></li>
 </ul>
-<section id="dados-de-exemplo">
-<h3><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Dados de exemplo</a></h3>
+<div class="section" id="dados-de-exemplo">
+<h2><a class="toc-backref" href="#toc-entry-3">Dados de exemplo</a></h2>
 <blockquote>
-<p><a class="reference external" href="http://dl.dropbox.com/u/6569986/transfer/specdata.zip">http://dl.dropbox.com/u/6569986/transfer/specdata.zip</a></p>
-</blockquote>
-</section>
-<section id="download-softwares">
-<h3><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">Download softwares</a></h3>
+<a class="reference external" href="http://dl.dropbox.com/u/6569986/transfer/specdata.zip">http://dl.dropbox.com/u/6569986/transfer/specdata.zip</a></blockquote>
+</div>
+<div class="section" id="download-softwares">
+<h2><a class="toc-backref" href="#toc-entry-4">Download softwares</a></h2>
 <p>Todos os softwares necessários encontram-se no conjunto Ureka (Mac and Linux) do Gemini Observatory e STSCI, (com exceção do OPERA). Recomendamos todos os participantes a instalarem este conjunto. O <strong>Ureka necessita de 5.5 GB</strong> de espaço em disco.</p>
 <blockquote>
-<p><a class="reference external" href="http://ssb.stsci.edu/ureka/">http://ssb.stsci.edu/ureka/</a></p>
-</blockquote>
+<a class="reference external" href="http://ssb.stsci.edu/ureka/">http://ssb.stsci.edu/ureka/</a></blockquote>
 <p>O pacote de redução <cite>beacon</cite> recomenda-se o download pelo <cite>git</cite>:</p>
-<pre class="code bash literal-block"><code>git clone https://github.com/danmoser/beacon.git</code></pre>
+<pre class="code bash literal-block">
+git clone https://github.com/danmoser/beacon.git
+</pre>
 <p>E o software OPERA com o módulo do Musicos</p>
 <blockquote>
 <p>[Antigo] <a class="reference external" href="http://dl.dropbox.com/u/6569986/transfer/opera-1.0.zip">http://dl.dropbox.com/u/6569986/transfer/opera-1.0.zip</a></p>
 <p><a class="reference external" href="http://dl.dropbox.com/u/6569986/transfer/opera-1.0_ForMUSICOS-OES_2016-03-22.zip">http://dl.dropbox.com/u/6569986/transfer/opera-1.0_ForMUSICOS-OES_2016-03-22.zip</a></p>
 </blockquote>
-</section>
-<section id="instalacao">
-<h3><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Instalação</a></h3>
-<section id="ureka">
-<h4><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Ureka</a></h4>
+</div>
+<div class="section" id="instalacao">
+<h2><a class="toc-backref" href="#toc-entry-5">Instalação</a></h2>
+<div class="section" id="ureka">
+<h3><a class="toc-backref" href="#toc-entry-6">Ureka</a></h3>
 <p>Se você tiver um Linux 64 bits das versões abaixo, o primeiro passo é instalar os pacotes:</p>
 <ul class="simple">
-<li><p>Ubuntu 12.04</p></li>
+<li>Ubuntu 12.04</li>
 </ul>
-<pre class="code bash literal-block"><code>sudo apt-get install ia32-libs</code></pre>
+<pre class="code bash literal-block">
+sudo apt-get install ia32-libs
+</pre>
 <ul class="simple">
-<li><p>Ubuntu 13.10, 14.04 e 14.10</p></li>
+<li>Ubuntu 13.10, 14.04 e 14.10</li>
 </ul>
-<pre class="code bash literal-block"><code>sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0</code></pre>
+<pre class="code bash literal-block">
+sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
+</pre>
 <ul class="simple">
-<li><p>Fedora 17, 18, 19, 20 e 21:</p></li>
+<li>Fedora 17, 18, 19, 20 e 21:</li>
 </ul>
-<pre class="code bash literal-block"><code>su
+<pre class="code bash literal-block">
+su
 yum install glibc.i686
-yum install ncurses-libs.i686</code></pre>
+yum install ncurses-libs.i686
+</pre>
 <ul class="simple">
-<li><p>Debian 7:</p></li>
+<li>Debian 7:</li>
 </ul>
-<pre class="code bash literal-block"><code>su
+<pre class="code bash literal-block">
+su
 dpkg --add-architecture i386
-apt-get update</code></pre>
+apt-get update
+</pre>
 <p>Para instalar o Ureka propriamente:</p>
-<pre class="code bash literal-block"><code><span class="comment single"># Choose an installation directory and download this installer
+<pre class="code bash literal-block">
+<span class="comment single"># Choose an installation directory and download this installer
 # Run the installer by typing
 </span>sh install_ureka_1.5.2
 
@@ -550,21 +551,27 @@ apt-get update</code></pre>
 # A file `login.cl` will contain this information
 </span>mkiraf
 <span class="comment single"># choose xgterm
-</span>xgterm -sb -e <span class="literal string double">&quot;cl&quot;</span></code></pre>
-<section id="erro-xgterm">
-<h5><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">Erro <cite>xgterm</cite></a></h5>
+</span>xgterm -sb -e <span class="literal string double">&quot;cl&quot;</span>
+</pre>
+<div class="section" id="erro-xgterm">
+<h4><a class="toc-backref" href="#toc-entry-7">Erro <cite>xgterm</cite></a></h4>
 <p>Em alguns casos, o <cite>xgterm</cite> parece não funcionar em sistemas 64 bits (erros de biblioteca). Se isso acontecer, vc pode fazer seguinte</p>
-<pre class="code bash literal-block"><code>sudo apt-get install libuuid1:i386 libx11-xcb-dev:i386 libx11-xcb1:i386
-mv <span class="name variable">$HOME</span>/Ureka/iraf/lib32/lib/libX11.so.6 <span class="name variable">$HOME</span>/Ureka/iraf/lib32/lib/libX11.so.6.bkp</code></pre>
-</section>
-</section>
-<section id="opera">
-<h4><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">OPERA</a></h4>
+<pre class="code bash literal-block">
+sudo apt-get install libuuid1:i386 libx11-xcb-dev:i386 libx11-xcb1:i386
+mv <span class="name variable">$HOME</span>/Ureka/iraf/lib32/lib/libX11.so.6 <span class="name variable">$HOME</span>/Ureka/iraf/lib32/lib/libX11.so.6.bkp
+</pre>
+</div>
+</div>
+<div class="section" id="opera">
+<h3><a class="toc-backref" href="#toc-entry-8">OPERA</a></h3>
 <p>OPERA depende de uma lista de softwares. Verifique no arquivo <em>DEPENDENCIES</em> após o download do programa. Alguns que destacamos: <em>gcc</em>, <em>cfitsio</em>, <em>fftw3</em>. Recomenda-se também o <em>gnuplot</em> (e <em>Xcode</em>, <em>Autotools</em> para usuários Mac).</p>
 <p>Para instalar estas dependências no Ubuntu 14.04:</p>
-<pre class="code bash literal-block"><code>sudo apt-get install fftw3 libfftw3-dev libcfitsio3-dev gnuplot</code></pre>
+<pre class="code bash literal-block">
+sudo apt-get install fftw3 libfftw3-dev libcfitsio3-dev gnuplot
+</pre>
 <p>Atenção: <strong>não instale o OPERA com previlégios root</strong>.</p>
-<pre class="code bash literal-block"><code><span class="comment single"># O código abaixo supõem a instalação na pasta `$HOME`.
+<pre class="code bash literal-block">
+<span class="comment single"># O código abaixo supõem a instalação na pasta `$HOME`.
 # Substitua-o caso instale escolha outro diretório.
 </span><span class="name builtin">cd</span> <span class="name variable">$HOME</span>
 rm -rf opera-1.0
@@ -581,31 +588,37 @@ make install
 </span>chmod +x <span class="name variable">$HOME</span>/opera-1.0/pipeline/pyMusicos/*.py
 nano <span class="name variable">$HOME</span>/.bashrc
 <span class="comment single"># PATH=$PATH:$HOME/opera-1.0/bin/:$HOME/opera-1.0/pipeline/pyMusicos/
-</span><span class="name builtin">source</span> <span class="name variable">$HOME</span>/.bashrc</code></pre>
-<section id="problemas-com-opera">
-<h5><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">Problemas com OPERA</a></h5>
+</span><span class="name builtin">source</span> <span class="name variable">$HOME</span>/.bashrc
+</pre>
+<div class="section" id="problemas-com-opera">
+<h4><a class="toc-backref" href="#toc-entry-9">Problemas com OPERA</a></h4>
 <ol class="arabic simple">
-<li><p>O OPERA precisa do CFITSIO &lt;= v3.29.</p></li>
-<li><p>Dependendo do que você tinha no sistema, pode encontrar o seguinte erro:</p></li>
+<li>O OPERA precisa do CFITSIO &lt;= v3.29.</li>
+<li>Dependendo do que você tinha no sistema, pode encontrar o seguinte erro:</li>
 </ol>
-<pre class="code bash literal-block"><code>ERROR: Mismatch <span class="keyword">in</span> the version of the fitsio.h include file used to build
+<pre class="code bash literal-block">
+ERROR: Mismatch <span class="keyword">in</span> the version of the fitsio.h include file used to build
 the CFITSIO library, and the version included by the application program:
    Version used to build the CFITSIO <span class="name variable">library</span>   <span class="operator">=</span> <span class="literal number">3</span>.340000
-   Version included by the application <span class="name variable">program</span> <span class="operator">=</span> <span class="literal number">3</span>.290000</code></pre>
+   Version included by the application <span class="name variable">program</span> <span class="operator">=</span> <span class="literal number">3</span>.290000
+</pre>
 <p>Este erro surgiu na minha máquina pois eu compilei e instalei como <cite>sudo</cite> o cfitsio v3.29, e depois instalei o cfitsio do Ubuntu (v3.34). A biblioteca vai tentar ser instalada na pasta <cite>/usr/local/</cite>, enquanto que o padrão Ubuntu é <cite>/usr/</cite>. O problema é que na compilação do OPERA esses caminhos se misturam e dá o erro acima.</p>
-<p>Para desinstalar, eu fiz o seguinte: fui na pasta compilada e <span class="docutils literal">make distclean</span>. Também, verifique a existência dos seguintes arquivos:</p>
-<pre class="code bash literal-block"><code>/usr/local/include/fitsio.h
+<p>Para desinstalar, eu fiz o seguinte: fui na pasta compilada e <tt class="docutils literal">make distclean</tt>. Também, verifique a existência dos seguintes arquivos:</p>
+<pre class="code bash literal-block">
+/usr/local/include/fitsio.h
 /usr/local/include/fitsio2.h
 /usr/local/include/drvrsmem.h
 /usr/local/include/longnam.h
 /usr/local/lib/pkgconfig/cfitsio.pc
-/usr/local/lib/libcfitsio.a</code></pre>
-</section>
-</section>
-<section id="beacon-reduc">
-<h4><a class="toc-backref" href="#toc-entry-10" role="doc-backlink"><cite>beacon-reduc</cite></a></h4>
+/usr/local/lib/libcfitsio.a
+</pre>
+</div>
+</div>
+<div class="section" id="beacon-reduc">
+<h3><a class="toc-backref" href="#toc-entry-10"><cite>beacon-reduc</cite></a></h3>
 <p>Pacotes IRAF por padrão são instalados na subpasta <cite>extern</cite>.</p>
-<pre class="code bash literal-block"><code><span class="comment single"># O código abaixo supõem a instalação do UREKA na pasta `$HOME`.
+<pre class="code bash literal-block">
+<span class="comment single"># O código abaixo supõem a instalação do UREKA na pasta `$HOME`.
 # Substitua-o caso instale escolha outro diretório.
 </span><span class="name builtin">cd</span> <span class="name variable">$HOME</span>
 <span class="name builtin">cd</span> Ureka/iraf/extern
@@ -628,166 +641,187 @@ git clone https://github.com/danmoser/beacon.git
 <span class="comment single"># e adicionando a linha
 # PATH=$PATH:$HOME/Ureka/iraf/extern/scripts/
 </span>chmod +x <span class="name variable">$HOME</span>/Ureka/iraf/extern/scripts/*
-<span class="name builtin">source</span> <span class="name variable">$HOME</span>/.bashrc</code></pre>
-</section>
-</section>
-<section id="download-e-instalacao-alternativa">
-<h3><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Download e instalação alternativa</a></h3>
+<span class="name builtin">source</span> <span class="name variable">$HOME</span>/.bashrc
+</pre>
+</div>
+</div>
+<div class="section" id="download-e-instalacao-alternativa">
+<h2><a class="toc-backref" href="#toc-entry-11">Download e instalação alternativa</a></h2>
 <p>Para a instalação dos aplicativos individualmente, seguem os links:</p>
 <ul class="simple">
-<li><p>IRAF: <a class="reference external" href="http://iraf.noao.edu/">http://iraf.noao.edu/</a></p></li>
-<li><p>Python: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p></li>
+<li>IRAF: <a class="reference external" href="http://iraf.noao.edu/">http://iraf.noao.edu/</a></li>
+<li>Python: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
 </ul>
-<p>Recomenda-se a instalação dos módulos Python através do comando <span class="docutils literal">pip</span> (apropriado a cada sistema, e nativo a partir do Python 2.7.9. Na dúvida, instale uma versão atualizada do Python para obtê-lo).</p>
-<pre class="code bash literal-block"><code>sudo pip install pyfits
-sudo pip install matplotlib</code></pre>
-</section>
-</section>
-<section id="reducao">
-<h2><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Redução</a></h2>
-<section id="pre-processamento">
-<h3><a class="toc-backref" href="#toc-entry-13" role="doc-backlink">Pré-processamento</a></h3>
+<p>Recomenda-se a instalação dos módulos Python através do comando <tt class="docutils literal">pip</tt> (apropriado a cada sistema, e nativo a partir do Python 2.7.9. Na dúvida, instale uma versão atualizada do Python para obtê-lo).</p>
+<pre class="code bash literal-block">
+sudo pip install pyfits
+sudo pip install matplotlib
+</pre>
+</div>
+</div>
+<div class="section" id="reducao">
+<h1><a class="toc-backref" href="#toc-entry-12">Redução</a></h1>
+<div class="section" id="pre-processamento">
+<h2><a class="toc-backref" href="#toc-entry-13">Pré-processamento</a></h2>
 <ol class="arabic simple">
-<li><p>Rodar <span class="docutils literal">create_ut.py</span> para correção da velocidade heliocêntrica com o IRAF.</p></li>
-<li><p>Verificar formato das imagens com <span class="docutils literal">imhead <span class="pre">-l</span></span>.</p></li>
-<li><p>Efetuar correção de cubo (modo <em>Kinetic</em> do CCD) com <span class="docutils literal">read3Dfits</span>.</p></li>
+<li>Rodar <tt class="docutils literal">create_ut.py</tt> para correção da velocidade heliocêntrica com o IRAF.</li>
+<li>Verificar formato das imagens com <tt class="docutils literal">imhead <span class="pre">-l</span></tt>.</li>
+<li>Efetuar correção de cubo (modo <em>Kinetic</em> do CCD) com <tt class="docutils literal">read3Dfits</tt>.</li>
 </ol>
-</section>
-<section id="ecass">
-<h3><a class="toc-backref" href="#toc-entry-14" role="doc-backlink">ECASS</a></h3>
-<section id="estrutura-de-pastas-e-arquivos">
-<h4><a class="toc-backref" href="#toc-entry-15" role="doc-backlink">Estrutura de pastas e arquivos</a></h4>
+</div>
+<div class="section" id="ecass">
+<h2><a class="toc-backref" href="#toc-entry-14">ECASS</a></h2>
+<div class="section" id="estrutura-de-pastas-e-arquivos">
+<h3><a class="toc-backref" href="#toc-entry-15">Estrutura de pastas e arquivos</a></h3>
 <p>NOITE/alvos, com calibrações em <em>calib</em>. Formato <em>bias_0x</em> e <em>flat_f_0x</em>, onde <em>f</em> é o respectivo flat-field (necessário a cada ângulo de posicionamento da rede).</p>
 <p>Na pasta de <strong>cada alvo</strong> deve haver uma lâmpada da forma <em>alvo_lamp_f</em>. Alvo formato <em>alvo_f_0x</em>.</p>
-</section>
-<section id="passos">
-<h4><a class="toc-backref" href="#toc-entry-16" role="doc-backlink">Passos</a></h4>
+</div>
+<div class="section" id="passos">
+<h3><a class="toc-backref" href="#toc-entry-16">Passos</a></h3>
 <ol class="arabic">
-<li><p>Rodar na pasta de calibrações</p>
+<li><p class="first">Rodar na pasta de calibrações</p>
 <blockquote>
-<pre class="code bash literal-block"><code>epar calib_spec</code></pre>
+<pre class="code bash literal-block">
+epar calib_spec
+</pre>
 </blockquote>
 </li>
-<li><p>Rodar na pasta do alvo</p>
+<li><p class="first">Rodar na pasta do alvo</p>
 <blockquote>
-<pre class="code bash literal-block"><code>epar calib_spec</code></pre>
+<pre class="code bash literal-block">
+epar calib_spec
+</pre>
 </blockquote>
 </li>
 </ol>
 <p>Para economizar tempo, é possível copiar a solução das linhas da lâmpada de calibração.</p>
-</section>
-</section>
-<section id="musicos-com-iraf">
-<h3><a class="toc-backref" href="#toc-entry-17" role="doc-backlink">MUSICOS com IRAF</a></h3>
+</div>
+</div>
+<div class="section" id="musicos-com-iraf">
+<h2><a class="toc-backref" href="#toc-entry-17">MUSICOS com IRAF</a></h2>
 <p>NOITE/alvos, com calibrações em <em>calib</em>. Formato <em>bias_0x</em> e <em>flat_f_0x</em>, onde <em>f</em> é o respectivo flat-field (recomendado a cada posicionamento da rede).</p>
 <p>So há uma lâmpada por posicionamento da rede, que deve ficar na <strong>pasta de calibrações</strong>. Precisa ser da forma <em>lamp_f_0x</em>.</p>
 <p>Alvo formato <em>alvo_f_0x</em>.</p>
-<section id="passos-1">
-<h4><a class="toc-backref" href="#toc-entry-18" role="doc-backlink">Passos</a></h4>
+<div class="section" id="passos-1">
+<h3><a class="toc-backref" href="#toc-entry-18">Passos</a></h3>
 <ol class="arabic">
-<li><p>Rodar na pasta de calibrações</p>
+<li><p class="first">Rodar na pasta de calibrações</p>
 <blockquote>
-<pre class="code bash literal-block"><code>epar calib_spec</code></pre>
+<pre class="code bash literal-block">
+epar calib_spec
+</pre>
 <p>Para economizar tempo, é possível copiar a solução das linhas da lâmpada de calibração. Porém <strong>é necessário comparar a posição da fenda 1</strong> para escolher o arquivo adequado.</p>
 </blockquote>
 </li>
-<li><p>Rodar na pasta do alvo</p>
+<li><p class="first">Rodar na pasta do alvo</p>
 <blockquote>
-<pre class="code bash literal-block"><code>epar calib_spec</code></pre>
+<pre class="code bash literal-block">
+epar calib_spec
+</pre>
 </blockquote>
 </li>
-<li><p>Caso não esteja satisfeito com a solução do contínuo, rode o comando abaixo, a ser aplicado em todos os arquivos <cite>*.ms.cal.fits</cite>.</p>
+<li><p class="first">Caso não esteja satisfeito com a solução do contínuo, rode o comando abaixo, a ser aplicado em todos os arquivos <cite>*.ms.cal.fits</cite>.</p>
 <blockquote>
-<pre class="code bash literal-block"><code>extract_ms_iraf.py</code></pre>
+<pre class="code bash literal-block">
+extract_ms_iraf.py
+</pre>
 </blockquote>
 </li>
 </ol>
-</section>
-</section>
-<section id="musicos-com-opera">
-<h3><a class="toc-backref" href="#toc-entry-19" role="doc-backlink">MUSICOS com OPERA</a></h3>
+</div>
+</div>
+<div class="section" id="musicos-com-opera">
+<h2><a class="toc-backref" href="#toc-entry-19">MUSICOS com OPERA</a></h2>
 <p>Todos os arquivos na pasta da noite. A separação entre imagens de calibração e objetos é feita pelo <em>header</em>. O nomes padrão para são <em>bias*</em>, <em>flat*, *lamp*</em>, e o restante é considerado alvo.</p>
-<section id="passos-2">
-<h4><a class="toc-backref" href="#toc-entry-20" role="doc-backlink">Passos</a></h4>
+<div class="section" id="passos-2">
+<h3><a class="toc-backref" href="#toc-entry-20">Passos</a></h3>
 <ol class="arabic">
-<li><p>Verifique se o cabeçalho das imagens estão corretos com o comando</p>
+<li><p class="first">Verifique se o cabeçalho das imagens estão corretos com o comando</p>
 <blockquote>
-<pre class="code bash literal-block"><code>operaQueryImageInfo -r ./ -e <span class="literal string double">&quot;INSTMODE OBSTYPE OBJECT EXPTIME2 DATE MODDATA&quot;</span></code></pre>
+<pre class="code bash literal-block">
+operaQueryImageInfo -r ./ -e <span class="literal string double">&quot;INSTMODE OBSTYPE OBJECT EXPTIME2 DATE MODDATA&quot;</span>
+</pre>
 </blockquote>
 </li>
 </ol>
 <p><strong>Opcional</strong>: Rodar <cite>prepare_header_opera.py</cite> na pasta da noite. Rode com a opção <cite>-h</cite> para a acessar a ajuda. Note que a rotina assume o mesmo modo (<em>RED</em> ou <em>BLUE</em>) para todas modificações no <em>header</em> (bias e flat deveriam ser indiferentes ao modo). Assim, se há dois modo na noite, especifique explicitamente o formato dos nome. Exemplo:</p>
 <blockquote>
-<pre class="code bash literal-block"><code>prepare_header_opera.py -B -l <span class="literal string double">&quot;lamp_b*&quot;</span> -o <span class="literal string double">&quot;*_b_*&quot;</span></code></pre>
+<pre class="code bash literal-block">
+prepare_header_opera.py -B -l <span class="literal string double">&quot;lamp_b*&quot;</span> -o <span class="literal string double">&quot;*_b_*&quot;</span>
+</pre>
 </blockquote>
 <ol class="arabic">
-<li><p>Rodar o processamento das calibrações da noite</p>
+<li><p class="first">Rodar o processamento das calibrações da noite</p>
 <blockquote>
-<pre class="code bash literal-block"><code>mkdir reduc
+<pre class="code bash literal-block">
+mkdir reduc
 operaMusicos.py --datarootdir<span class="operator">=</span>../ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span>./reduc --night<span class="operator">=</span>./ --product<span class="operator">=</span><span class="literal string double">&quot;CALIB&quot;</span> -pvts
-<span class="comment single"># &quot;-s&quot; means SIMULATION of the reduction...</span></code></pre>
+<span class="comment single"># &quot;-s&quot; means SIMULATION of the reduction...</span>
+</pre>
 </blockquote>
 </li>
-<li><p>Rodar o processamento dos alvos da noite</p>
+<li><p class="first">Rodar o processamento dos alvos da noite</p>
 <blockquote>
-<pre class="code bash literal-block"><code>operaMusicos.py --datarootdir<span class="operator">=</span>/data/MUSICOS/ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span><span class="name variable">$HOME</span>/Reductions/MUSICOS/ --night<span class="operator">=</span>14set05_R --product<span class="operator">=</span><span class="literal string double">&quot;OPSPC&quot;</span> -pvt</code></pre>
+<pre class="code bash literal-block">
+operaMusicos.py --datarootdir<span class="operator">=</span>/data/MUSICOS/ --pipelinehomedir<span class="operator">=</span><span class="name variable">$HOME</span>/opera-1.0 --productrootdir<span class="operator">=</span><span class="name variable">$HOME</span>/Reductions/MUSICOS/ --night<span class="operator">=</span>14set05_R --product<span class="operator">=</span><span class="literal string double">&quot;OPSPC&quot;</span> -pvt
+</pre>
 </blockquote>
 </li>
-<li><p>Caso não esteja satisfeito com a solução do contínuo, rode o comando abaixo, a ser aplicado em todos os arquivos <cite>*.spc.gz</cite>.</p>
+<li><p class="first">Caso não esteja satisfeito com a solução do contínuo, rode o comando abaixo, a ser aplicado em todos os arquivos <cite>*.spc.gz</cite>.</p>
 <blockquote>
-<pre class="code bash literal-block"><code>extract_ms_opera.py</code></pre>
+<pre class="code bash literal-block">
+extract_ms_opera.py
+</pre>
 </blockquote>
 </li>
 </ol>
-</section>
-<section id="sobre-as-rotinas-extract-ms">
-<h4><a class="toc-backref" href="#toc-entry-21" role="doc-backlink">Sobre as rotinas <cite>extract_ms_*</cite></a></h4>
+</div>
+<div class="section" id="sobre-as-rotinas-extract-ms">
+<h3><a class="toc-backref" href="#toc-entry-21">Sobre as rotinas <cite>extract_ms_*</cite></a></h3>
 <p>Basicamente faço o seguinte: leio os espectros e pego o lambda e o fluxo não normalizados. Há um algoritmo que ajusta o contínuo baseado nos maiores valores a cada espaçamento regular de dados; neste ajuste, os pontos onde a variação é muito grande (o critério exato é onde a derivada do contínuo é maior que a mediana das derivadas) são excluídos. Ajustando isso a cada ordem, eu as linearizo em lambda de acordo com a maior resolução presente (interpolação linear no fluxo) e faço uma soma e divisão nas zonas de sobreposição. Por fim, resta uma variação de alta frequência no contínuo que eu filtro com o algoritmo de Savitzky-Golay em caixa pequena.</p>
-</section>
-<section id="resultados">
-<h4><a class="toc-backref" href="#toc-entry-22" role="doc-backlink">Resultados</a></h4>
-<pre class="code bash literal-block"><code><span class="name variable">$HOME</span>/opera-1.0/pipeline/pySpectralAnalysis/plotSpectrum.py —spectrumfile<span class="operator">=</span>HR8634_R_001.spc.gz
+</div>
+<div class="section" id="resultados">
+<h3><a class="toc-backref" href="#toc-entry-22">Resultados</a></h3>
+<pre class="code bash literal-block">
+<span class="name variable">$HOME</span>/opera-1.0/pipeline/pySpectralAnalysis/plotSpectrum.py —spectrumfile<span class="operator">=</span>HR8634_R_001.spc.gz
 
 gunzip -c HR8634_R_002.spc.gz &gt; HR8634_R_002.spc
 gnuplot -persist ../14set05Plots/HR8634_RED.gnu
-gnuplot -persist ../14set05Plots/HR8634_RED_norm.gnu</code></pre>
-</section>
-<section id="problemas">
-<h4><a class="toc-backref" href="#toc-entry-23" role="doc-backlink">Problemas</a></h4>
+gnuplot -persist ../14set05Plots/HR8634_RED_norm.gnu
+</pre>
+</div>
+<div class="section" id="problemas">
+<h3><a class="toc-backref" href="#toc-entry-23">Problemas</a></h3>
 <ul class="simple">
-<li><p>Não encontra <em>object</em>. Solução: verificar <em>header</em>.</p></li>
+<li>Não encontra <em>object</em>. Solução: verificar <em>header</em>.</li>
 </ul>
-</section>
-</section>
-</section>
-<section id="motivacao">
-<h2><a class="toc-backref" href="#toc-entry-24" role="doc-backlink">Motivação</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="motivacao">
+<h1><a class="toc-backref" href="#toc-entry-24">Motivação</a></h1>
 <p>Michel Serres, Roda Viva:</p>
 <blockquote>
-<p>A palavra &quot;anjo&quot; (...) vem do grego angelos, que significa mensageiro, aquele que leva a mensagem. (...) antes de escrever o livro, que não tínhamos nenhuma teoria filosófica referente à sociedade de informação. E, como todos temos profissões de transportadores e interceptadores de mensagens, pensei &quot;mas, afinal, quando na Idade Média os filósofos inventaram a teoria dos anjos, isto é, a angelologia, o que tinham em mente?&quot; Eles tinham em mente, meu senhor, a utopia da sociedade da informação. Eles tinham tido a idéia de que se podia imaginar operadores encarregados justamente de tarefas que só a tecnologia de hoje permitiu realizar. (...) Por exemplo, dizem sempre que os anjos são invisíveis. É verdade, vocês nunca os viram, eu também não. Mas por que são invisíveis? Eu vou dizer. Estou falando em francês, mas os telespectadores estão ouvindo a mensagem em português. Há, portanto, entre mim, o emissor da mensagem, e o telespectador, o receptor da mensagem, alguém que trata a mensagem. Onde ele está? Ele não está aqui. O telespectador não o vê. Eu não o vejo. Vocês também não, mas, sem ele, nada seria possível, já que falo em francês e vocês ouvem em português. Conseqüentemente, é um anjo. E <strong>quanto melhor ele faz seu trabalho, menos ele aparece</strong>. O tradutor está ausente. Aliás, agradeçamos a ele por estar ausente; ele não apareceu ainda. Suponhamos agora que, em vez de traduzir fielmente a minha mensagem, ele diga o contrário. Vamos ficar preocupados. Vamos ficar bravos. Isso pode causar, entre nós, discussões que não teriam acontecido, talvez afrontas, talvez até guerras. Neste momento, ele existe. Ele afirmou sua presença. Eu o vejo. E, quando o vejo, significa que é um anjo mau. Entendem?</p>
-</blockquote>
-</section>
-<section id="contato">
-<h2><a class="toc-backref" href="#toc-entry-25" role="doc-backlink">Contato</a></h2>
+A palavra &quot;anjo&quot; (...) vem do grego angelos, que significa mensageiro, aquele que leva a mensagem. (...) antes de escrever o livro, que não tínhamos nenhuma teoria filosófica referente à sociedade de informação. E, como todos temos profissões de transportadores e interceptadores de mensagens, pensei &quot;mas, afinal, quando na Idade Média os filósofos inventaram a teoria dos anjos, isto é, a angelologia, o que tinham em mente?&quot; Eles tinham em mente, meu senhor, a utopia da sociedade da informação. Eles tinham tido a idéia de que se podia imaginar operadores encarregados justamente de tarefas que só a tecnologia de hoje permitiu realizar. (...) Por exemplo, dizem sempre que os anjos são invisíveis. É verdade, vocês nunca os viram, eu também não. Mas por que são invisíveis? Eu vou dizer. Estou falando em francês, mas os telespectadores estão ouvindo a mensagem em português. Há, portanto, entre mim, o emissor da mensagem, e o telespectador, o receptor da mensagem, alguém que trata a mensagem. Onde ele está? Ele não está aqui. O telespectador não o vê. Eu não o vejo. Vocês também não, mas, sem ele, nada seria possível, já que falo em francês e vocês ouvem em português. Conseqüentemente, é um anjo. E <strong>quanto melhor ele faz seu trabalho, menos ele aparece</strong>. O tradutor está ausente. Aliás, agradeçamos a ele por estar ausente; ele não apareceu ainda. Suponhamos agora que, em vez de traduzir fielmente a minha mensagem, ele diga o contrário. Vamos ficar preocupados. Vamos ficar bravos. Isso pode causar, entre nós, discussões que não teriam acontecido, talvez afrontas, talvez até guerras. Neste momento, ele existe. Ele afirmou sua presença. Eu o vejo. E, quando o vejo, significa que é um anjo mau. Entendem?</blockquote>
+</div>
+<div class="section" id="contato">
+<h1><a class="toc-backref" href="#toc-entry-25">Contato</a></h1>
 <ul class="simple">
-<li><p>Este tutorial: &quot;Daniel Moser&quot; &lt;dmfaes &#64; gmail.com&gt;</p></li>
-<li><p>Pipeline MUSICOS no OPERA: &quot;Eder Martioli&quot; &lt;emartioli &#64; lna.br&gt;</p></li>
+<li>Este tutorial: &quot;Daniel Moser&quot; &lt;dmfaes &#64; gmail.com&gt;</li>
+<li>Pipeline MUSICOS no OPERA: &quot;Eder Martioli&quot; &lt;emartioli &#64; lna.br&gt;</li>
 </ul>
-</section>
-<section id="referencias">
-<h2><a class="toc-backref" href="#toc-entry-26" role="doc-backlink">Referencias</a></h2>
-<dl class="simple">
+</div>
+<div class="section" id="referencias">
+<h1><a class="toc-backref" href="#toc-entry-26">Referencias</a></h1>
+<dl class="docutils">
 <dt>OPERA - Open source Pipeline for ESPaDOnS Reduction and Analysis</dt>
-<dd><p><a class="reference external" href="http://cfht.hawaii.edu/en/projects/opera/">http://cfht.hawaii.edu/en/projects/opera/</a></p>
-</dd>
+<dd><a class="reference external" href="http://cfht.hawaii.edu/en/projects/opera/">http://cfht.hawaii.edu/en/projects/opera/</a></dd>
 <dt>OPD/LNA - Instrumentos e Detectores</dt>
-<dd><p><a class="reference external" href="http://www.lna.br/opd/instrum/instr.html">http://www.lna.br/opd/instrum/instr.html</a></p>
-</dd>
+<dd><a class="reference external" href="http://www.lna.br/opd/instrum/instr.html">http://www.lna.br/opd/instrum/instr.html</a></dd>
 <dt>Dicas Python</dt>
-<dd><p><a class="reference external" href="python_astro.html">Python and Astronomy</a></p>
-</dd>
+<dd><a class="reference external" href="python_astro.html">Python and Astronomy</a></dd>
 </dl>
-</section>
-</main>
+</div>
+</div>
 </body>
 </html>

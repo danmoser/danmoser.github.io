@@ -1,63 +1,10 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>Python and object-oriented programming</title>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 <style type="text/css">
 
 /*
@@ -411,35 +358,89 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 </head>
-<body class="with-toc">
-<main id="python-and-object-oriented-programming">
+<body>
+<div class="document" id="python-and-object-oriented-programming">
 <h1 class="title">Python and object-oriented programming</h1>
 
 <p>(<strong>Programação orientada a objetos com Python</strong>)</p>
 <p>Daniel Moser</p>
 <p>Feb 14th, 2017</p>
 <p>2nd IAG Python Boot Camp</p>
-<nav class="contents" id="table-of-contents" role="doc-toc">
+<div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#what-is-oop" id="toc-entry-1">What is OOP?</a></p></li>
-<li><p><a class="reference internal" href="#oop-concepts-abstraction-class-and-object" id="toc-entry-2">OOP Concepts: abstraction, class and object</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="toc-entry-3">Examples</a></p></li>
-<li><p><a class="reference internal" href="#oop-concepts-heritage" id="toc-entry-4">OOP Concepts: heritage</a></p></li>
-<li><p><a class="reference internal" href="#ways-of-combining-classes-and-their-properties" id="toc-entry-5">Ways of combining classes and their properties</a></p></li>
-<li><p><a class="reference internal" href="#encapsulation-and-polymorphism" id="toc-entry-6">Encapsulation and polymorphism</a></p></li>
-<li><p><a class="reference internal" href="#other-oop-concepts" id="toc-entry-7">Other OOP Concepts</a></p></li>
-<li><p><a class="reference internal" href="#oop-pro-et-contra" id="toc-entry-8">OOP pro et contra</a></p></li>
-<li><p><a class="reference internal" href="#extra" id="toc-entry-9">Extra</a></p></li>
-<li><p><a class="reference internal" href="#exercises" id="toc-entry-10">Exercises</a></p></li>
+<li><a class="reference internal" href="#what-is-oop" id="toc-entry-1">What is OOP?</a></li>
+<li><a class="reference internal" href="#oop-concepts-abstraction-class-and-object" id="toc-entry-2">OOP Concepts: abstraction, class and object</a></li>
+<li><a class="reference internal" href="#examples" id="toc-entry-3">Examples</a></li>
+<li><a class="reference internal" href="#oop-concepts-heritage" id="toc-entry-4">OOP Concepts: heritage</a></li>
+<li><a class="reference internal" href="#ways-of-combining-classes-and-their-properties" id="toc-entry-5">Ways of combining classes and their properties</a></li>
+<li><a class="reference internal" href="#encapsulation-and-polymorphism" id="toc-entry-6">Encapsulation and polymorphism</a></li>
+<li><a class="reference internal" href="#other-oop-concepts" id="toc-entry-7">Other OOP Concepts</a></li>
+<li><a class="reference internal" href="#oop-pro-et-contra" id="toc-entry-8">OOP pro et contra</a></li>
+<li><a class="reference internal" href="#extra" id="toc-entry-9">Extra</a></li>
+<li><a class="reference internal" href="#exercises" id="toc-entry-10">Exercises</a></li>
 </ul>
-</nav>
-<section id="what-is-oop">
-<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">What is OOP?</a></h2>
+</div>
+<div class="section" id="what-is-oop">
+<h1><a class="toc-backref" href="#toc-entry-1">What is OOP?</a></h1>
 <p><strong>OOP</strong> is a programming paradigm. It is usually compared with the traditional <strong>procedural</strong> programming.</p>
 <p>The procedural programming is based on <em>procedures</em> (i.e., routines and sub-routines), where the procedures and data variables are <strong>independent</strong>. Examples: Cobol, C, Fortran...</p>
-<pre class="code literal-block"><code>program Fibonacci;
+<pre class="code literal-block">
+program Fibonacci;
 
 function fib(n: Integer): Integer;
 var a: Integer = 1;
@@ -463,10 +464,12 @@ end;
 
 begin
   WriteLn(fib(6));
-end.</code></pre>
+end.
+</pre>
 <p>OOP is based in <strong>objects</strong>, a variable that combines <em>methods</em> (procedures) and <em>attributes</em> (data).</p>
 <p>Examples of <em>OOP compatible</em> languages: C#, C++, Java, Lisp, Python, Ruby...</p>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">Fibonacci</span><span class="punctuation">:</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">Fibonacci</span><span class="punctuation">:</span>
    <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">cache</span> <span class="operator">=</span> <span class="punctuation">{}</span>
    <span class="keyword">def</span> <span class="name function">fib</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">n</span><span class="punctuation">):</span>
@@ -489,25 +492,29 @@ end.</code></pre>
 <span class="comment single"># print(fibonaccyCounter.fib(600))</span>
 
 <span class="comment single"># %time fibonaccyCounter.fib(600)</span>
-<span class="comment single"># %time fibonaccyCounter.fib(600)</span></code></pre>
+<span class="comment single"># %time fibonaccyCounter.fib(600)</span>
+</pre>
 <p>Why <em>OOP compatible</em>? Because usually in a OOP language one can still work as a  <strong>procedural</strong> language...</p>
 <p>Examples of pure OOP languages: Smalltalk and Self.</p>
-</section>
-<section id="oop-concepts-abstraction-class-and-object">
-<h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">OOP Concepts: abstraction, class and object</a></h2>
+</div>
+<div class="section" id="oop-concepts-abstraction-class-and-object">
+<h1><a class="toc-backref" href="#toc-entry-2">OOP Concepts: abstraction, class and object</a></h1>
 <ul class="simple">
-<li><p><strong>abstraction</strong> is the process of defining only the essential aspects in a specific context, ignoring non-relevant characteristics.</p></li>
-<li><p><strong>class</strong> is an <em>abstraction</em> that defines a <strong>type</strong> of object and what objects of that type have within them (their <strong>attributes</strong>) and also defines what kind of actions that type of object is able to perform (<strong>methods</strong>).</p></li>
+<li><strong>abstraction</strong> is the process of defining only the essential aspects in a specific context, ignoring non-relevant characteristics.</li>
+<li><strong>class</strong> is an <em>abstraction</em> that defines a <strong>type</strong> of object and what objects of that type have within them (their <strong>attributes</strong>) and also defines what kind of actions that type of object is able to perform (<strong>methods</strong>).</li>
 </ul>
-<pre class="literal-block">&quot;Class has no life, it's just a concept.&quot;</pre>
+<pre class="literal-block">
+&quot;Class has no life, it's just a concept.&quot;
+</pre>
 <ul class="simple">
-<li><p><strong>object</strong> (or class <strong>instance</strong>) is a living variable, created according to a (conceptual) class.</p></li>
-<li><p><strong>constructor</strong> has a special function: it serves to initialize attributes and runs automatically whenever you create a new object.</p></li>
+<li><strong>object</strong> (or class <strong>instance</strong>) is a living variable, created according to a (conceptual) class.</li>
+<li><strong>constructor</strong> has a special function: it serves to initialize attributes and runs automatically whenever you create a new object.</li>
 </ul>
-</section>
-<section id="examples">
-<h2><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Examples</a></h2>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">testing</span><span class="punctuation">:</span>
+</div>
+<div class="section" id="examples">
+<h1><a class="toc-backref" href="#toc-entry-3">Examples</a></h1>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">testing</span><span class="punctuation">:</span>
     <span class="literal string doc">&quot;&quot;&quot;This is a IAG Python Boot Camp class definition&quot;&quot;&quot;</span>
 
     <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">init_value</span><span class="punctuation">):</span>
@@ -518,14 +525,16 @@ end.</code></pre>
     <span class="keyword">def</span> <span class="name function">double_attr</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
         <span class="literal string doc">&quot;&quot;&quot;This is a method that double the ``some_value`` atribute&quot;&quot;&quot;</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">some_value</span> <span class="operator">*=</span> <span class="literal number integer">2</span>
-        <span class="keyword">return</span></code></pre>
-</section>
-<section id="oop-concepts-heritage">
-<h2><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">OOP Concepts: heritage</a></h2>
+        <span class="keyword">return</span>
+</pre>
+</div>
+<div class="section" id="oop-concepts-heritage">
+<h1><a class="toc-backref" href="#toc-entry-4">OOP Concepts: heritage</a></h1>
 <ul class="simple">
-<li><p><strong>heritage</strong> is the mechanism by which one <em>class</em> can be extended to another one. The inheritance mechanism allows a class (subclass) to share the source code of another class (superclass), taking advantage of its behaviors (methods) and possible variables (attributes).</p></li>
+<li><strong>heritage</strong> is the mechanism by which one <em>class</em> can be extended to another one. The inheritance mechanism allows a class (subclass) to share the source code of another class (superclass), taking advantage of its behaviors (methods) and possible variables (attributes).</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">Pets</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">Pets</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="name">owner</span> <span class="operator">=</span> <span class="literal string double">&quot;Python Boot Camp&quot;</span>
 
     <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">name</span><span class="punctuation">,</span> <span class="name">age</span><span class="punctuation">,</span> <span class="name">condition</span><span class="operator">=</span><span class="literal string single">'healthy'</span><span class="punctuation">):</span>
@@ -566,25 +575,29 @@ end.</code></pre>
 
     <span class="keyword">def</span> <span class="name function">meow</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
         <span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string double">&quot; Meow!!&quot;</span><span class="punctuation">)</span>
-        <span class="keyword">return</span></code></pre>
+        <span class="keyword">return</span>
+</pre>
 <ul class="simple">
-<li><p><strong>specialization</strong> is the inheritance process in which a subclass is created from existing superclass(es).</p></li>
-<li><p><strong>generalization</strong> is the process in which a superclass is created from existing subclasses.</p></li>
-<li><p>Python supports <strong>multiple inheritance</strong>:</p></li>
+<li><strong>specialization</strong> is the inheritance process in which a subclass is created from existing superclass(es).</li>
+<li><strong>generalization</strong> is the process in which a superclass is created from existing subclasses.</li>
+<li>Python supports <strong>multiple inheritance</strong>:</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">Toys</span><span class="punctuation">:</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">Toys</span><span class="punctuation">:</span>
     <span class="name">color</span> <span class="operator">=</span> <span class="literal string single">'light blue'</span>
 
 <span class="keyword">class</span> <span class="name class">Lassie</span><span class="punctuation">(</span><span class="name">Pets</span><span class="punctuation">,</span> <span class="name">Toys</span><span class="punctuation">):</span>
-    <span class="keyword">pass</span></code></pre>
+    <span class="keyword">pass</span>
+</pre>
 <p>Must read: <a class="reference external" href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">Python’s super() considered super!</a></p>
-</section>
-<section id="ways-of-combining-classes-and-their-properties">
-<h2><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Ways of combining classes and their properties</a></h2>
+</div>
+<div class="section" id="ways-of-combining-classes-and-their-properties">
+<h1><a class="toc-backref" href="#toc-entry-5">Ways of combining classes and their properties</a></h1>
 <ul class="simple">
-<li><p><strong>association</strong> is the mechanism by which one object uses the resources (<em>attributes</em>) of another.</p></li>
+<li><strong>association</strong> is the mechanism by which one object uses the resources (<em>attributes</em>) of another.</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span><span class="punctuation">,</span> <span class="name">c</span><span class="punctuation">):</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">a</span> <span class="operator">=</span> <span class="name">a</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">b</span> <span class="operator">=</span> <span class="name">b</span>
@@ -605,11 +618,13 @@ end.</code></pre>
 <span class="name">ting</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string double">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
 <span class="name">ling</span> <span class="operator">=</span> <span class="name">B</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">9</span><span class="punctuation">)</span>
 
-<span class="name builtin">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">(</span><span class="name">ting</span><span class="operator">.</span><span class="name">b</span><span class="punctuation">,</span> <span class="name">ting</span><span class="operator">.</span><span class="name">c</span><span class="punctuation">)</span></code></pre>
+<span class="name builtin">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">(</span><span class="name">ting</span><span class="operator">.</span><span class="name">b</span><span class="punctuation">,</span> <span class="name">ting</span><span class="operator">.</span><span class="name">c</span><span class="punctuation">)</span>
+</pre>
 <ul class="simple">
-<li><p><strong>coupling</strong> or <strong>aggregation</strong>: is the process where a (sub)class is (integrally) incorporated as an attribute of another one.</p></li>
+<li><strong>coupling</strong> or <strong>aggregation</strong>: is the process where a (sub)class is (integrally) incorporated as an attribute of another one.</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span><span class="punctuation">,</span> <span class="name">c</span><span class="punctuation">):</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">a</span> <span class="operator">=</span> <span class="name">a</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">b</span> <span class="operator">=</span> <span class="name">b</span>
@@ -631,11 +646,13 @@ end.</code></pre>
 <span class="name">ting</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">(</span><span class="literal string double">&quot;yo&quot;</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">,</span> <span class="literal number integer">6</span><span class="punctuation">)</span>
 <span class="name">ling</span> <span class="operator">=</span> <span class="name">B</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">9</span><span class="punctuation">,</span> <span class="name">ting</span><span class="punctuation">)</span>
 
-<span class="name builtin">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">()</span></code></pre>
+<span class="name builtin">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">()</span>
+</pre>
 <ul class="simple">
-<li><p><strong>composition</strong>: is similar to the aggregation, but only incorporating a specific version of the subclass.</p></li>
+<li><strong>composition</strong>: is similar to the aggregation, but only incorporating a specific version of the subclass.</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span><span class="punctuation">,</span> <span class="name">c</span><span class="punctuation">):</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">a</span> <span class="operator">=</span> <span class="name">a</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">b</span> <span class="operator">=</span> <span class="name">b</span>
@@ -656,24 +673,32 @@ end.</code></pre>
 
 <span class="name">ling</span> <span class="operator">=</span> <span class="name">B</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">9</span><span class="punctuation">)</span>
 
-<span class="name builtin">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">()</span></code></pre>
-<pre class="literal-block">Remember: those &quot;association/combination&quot; names may vary in the literature.</pre>
-</section>
-<section id="encapsulation-and-polymorphism">
-<h2><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Encapsulation and polymorphism</a></h2>
+<span class="name builtin">print</span> <span class="name">ling</span><span class="operator">.</span><span class="name">addAllNums</span><span class="punctuation">()</span>
+</pre>
+<pre class="literal-block">
+Remember: those &quot;association/combination&quot; names may vary in the literature.
+</pre>
+</div>
+<div class="section" id="encapsulation-and-polymorphism">
+<h1><a class="toc-backref" href="#toc-entry-6">Encapsulation and polymorphism</a></h1>
 <ul class="simple">
-<li><p><strong>encapsulation</strong>: In an object oriented program, one can restrict access to methods and attributes.</p></li>
+<li><strong>encapsulation</strong>: In an object oriented program, one can restrict access to methods and attributes.</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">C</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">C</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function magic">__init__</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">a</span> <span class="operator">=</span> <span class="literal number integer">1</span>    <span class="comment single"># OK to access directly</span>
         <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">_a</span> <span class="operator">=</span> <span class="literal number integer">2</span>   <span class="comment single"># should be considered private</span>
-        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">__a</span> <span class="operator">=</span> <span class="literal number integer">3</span>  <span class="comment single"># considered private, name Disfigured</span></code></pre>
-<pre class="literal-block">Warning! Some people say that *encapsulation* can prevent the data from being modified. This is **not** the case in Python (and even Java[!]. Other methods need to used to avoid modification).</pre>
+        <span class="name builtin pseudo">self</span><span class="operator">.</span><span class="name">__a</span> <span class="operator">=</span> <span class="literal number integer">3</span>  <span class="comment single"># considered private, name Disfigured</span>
+</pre>
+<pre class="literal-block">
+Warning! Some people say that *encapsulation* can prevent the data from being modified. This is **not** the case in Python (and even Java[!]. Other methods need to used to avoid modification).
+</pre>
 <ul class="simple">
-<li><p><strong>polymorphism</strong>: is the principle by which two or more classes can invoke methods that have the same identification (signature) but distinct, specialized behaviors for each one.</p></li>
+<li><strong>polymorphism</strong>: is the principle by which two or more classes can invoke methods that have the same identification (signature) but distinct, specialized behaviors for each one.</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">Person</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">Person</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">pay_bill</span><span class="punctuation">():</span>
         <span class="keyword">raise</span> <span class="name exception">NotImplementedError</span>
 
@@ -683,26 +708,30 @@ end.</code></pre>
 
 <span class="keyword">class</span> <span class="name class">GradStudent</span><span class="punctuation">(</span><span class="name">Person</span><span class="punctuation">):</span>
     <span class="keyword">def</span> <span class="name function">pay_bill</span><span class="punctuation">():</span>
-        <span class="name builtin">print</span> <span class="literal string double">&quot;Can I owe you ten bucks or do the dishes?&quot;</span></code></pre>
+        <span class="name builtin">print</span> <span class="literal string double">&quot;Can I owe you ten bucks or do the dishes?&quot;</span>
+</pre>
 <!-- There are four types of polymorphism that a programming language may have (note that not every object-oriented language has implemented all types of polymorphism): -->
 <ul class="simple">
-<li><p><strong>interface</strong>: is a contract between the class and the outside world. When a class contemplates/implements an interface, it is committed to providing the behavior expected by the interface.</p></li>
-<li><p><strong>packages</strong> (or <strong>namespaces</strong>) are references for class/interface organization.</p></li>
+<li><strong>interface</strong>: is a contract between the class and the outside world. When a class contemplates/implements an interface, it is committed to providing the behavior expected by the interface.</li>
+<li><strong>packages</strong> (or <strong>namespaces</strong>) are references for class/interface organization.</li>
 </ul>
-<pre class="code python literal-block"><code><span class="keyword namespace">import</span> <span class="name namespace">scipy</span>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">scipy</span>
 
 <span class="name">scipy</span><span class="operator">.</span><span class="name">interpolate</span>
 <span class="name">scipy</span><span class="operator">.</span><span class="name">interpolate</span><span class="operator">.</span><span class="name">quad</span>
 
-<span class="name">scipy</span><span class="operator">.</span><span class="name">integrate</span></code></pre>
-</section>
-<section id="other-oop-concepts">
-<h2><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">Other OOP Concepts</a></h2>
+<span class="name">scipy</span><span class="operator">.</span><span class="name">integrate</span>
+</pre>
+</div>
+<div class="section" id="other-oop-concepts">
+<h1><a class="toc-backref" href="#toc-entry-7">Other OOP Concepts</a></h1>
 <ul class="simple">
-<li><p><strong>ducktyping</strong> (or duck typing)</p></li>
+<li><strong>ducktyping</strong> (or duck typing)</li>
 </ul>
-<p>As far as the function <span class="docutils literal">in_the_forest</span> is concerned, the <span class="docutils literal">Person</span> object is a <em>duck</em>:</p>
-<pre class="code python literal-block"><code><span class="keyword">class</span> <span class="name class">Duck</span><span class="punctuation">:</span>
+<p>As far as the function <tt class="docutils literal">in_the_forest</tt> is concerned, the <tt class="docutils literal">Person</tt> object is a <em>duck</em>:</p>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">Duck</span><span class="punctuation">:</span>
     <span class="keyword">def</span> <span class="name function">quack</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
         <span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string double">&quot;Quaaaaaack!&quot;</span><span class="punctuation">)</span>
     <span class="keyword">def</span> <span class="name function">feathers</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span>
@@ -726,55 +755,59 @@ end.</code></pre>
     <span class="name">in_the_forest</span><span class="punctuation">(</span><span class="name">donald</span><span class="punctuation">)</span>
     <span class="name">in_the_forest</span><span class="punctuation">(</span><span class="name">john</span><span class="punctuation">)</span>
 
-<span class="name">game</span><span class="punctuation">()</span></code></pre>
+<span class="name">game</span><span class="punctuation">()</span>
+</pre>
 <ul class="simple">
-<li><p><strong>message (passing)</strong> is the selection of the code to execute in response to a <strong>method call</strong>, typically by looking up the method in a table associated with the object. This feature is known as <strong>dynamic dispatch</strong>, and distinguishes an object from an <strong>abstract data type</strong>, which has a fixed (static) implementation of the operations for all instances. [<em>Not covered here</em>]</p></li>
+<li><strong>message (passing)</strong> is the selection of the code to execute in response to a <strong>method call</strong>, typically by looking up the method in a table associated with the object. This feature is known as <strong>dynamic dispatch</strong>, and distinguishes an object from an <strong>abstract data type</strong>, which has a fixed (static) implementation of the operations for all instances. [<em>Not covered here</em>]</li>
 </ul>
-</section>
-<section id="oop-pro-et-contra">
-<h2><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">OOP pro et contra</a></h2>
+</div>
+<div class="section" id="oop-pro-et-contra">
+<h1><a class="toc-backref" href="#toc-entry-8">OOP pro et contra</a></h1>
 <p>Advantages of OOP:</p>
 <ul class="simple">
-<li><p>A more logical and better encapsulated code division.</p></li>
-<li><p>This makes maintaining and extending the code easier and with less risk of inserting bugs.</p></li>
-<li><p>It is also easier to reuse the code.</p></li>
-<li><p>It is easier to manage the development of this type of software when we have a large team.</p></li>
+<li>A more logical and better encapsulated code division.</li>
+<li>This makes maintaining and extending the code easier and with less risk of inserting bugs.</li>
+<li>It is also easier to reuse the code.</li>
+<li>It is easier to manage the development of this type of software when we have a large team.</li>
 </ul>
 <p>Disadvantages of OOP</p>
 <ul class="simple">
-<li><p>Learning of the object-oriented programming paradigm is more complicated. In traditional procedural programming, just decorate a few dozen commands and you can already make a simple program.</p></li>
-<li><p>Hardly an object-oriented language will be able to run over non-object-oriented languages.</p></li>
+<li>Learning of the object-oriented programming paradigm is more complicated. In traditional procedural programming, just decorate a few dozen commands and you can already make a simple program.</li>
+<li>Hardly an object-oriented language will be able to run over non-object-oriented languages.</li>
 </ul>
-</section>
-<section id="extra">
-<h2><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">Extra</a></h2>
+</div>
+<div class="section" id="extra">
+<h1><a class="toc-backref" href="#toc-entry-9">Extra</a></h1>
 <ul class="simple">
-<li><p><strong>UML</strong> (Unified Modeling Language) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.</p></li>
-<li><p><strong>SysML</strong> (Systems Modeling Language) can be seen as a <em>system view</em> of the application, or as an extension of subsets of UML.</p></li>
+<li><strong>UML</strong> (Unified Modeling Language) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.</li>
+<li><strong>SysML</strong> (Systems Modeling Language) can be seen as a <em>system view</em> of the application, or as an extension of subsets of UML.</li>
 </ul>
 <p>This kind of tools can be used, for example, together with <strong>abstraction</strong> level concepts for automatic programming (or automatic coding)!</p>
-</section>
-<section id="exercises">
-<h2><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">Exercises</a></h2>
+</div>
+<div class="section" id="exercises">
+<h1><a class="toc-backref" href="#toc-entry-10">Exercises</a></h1>
 <ol class="arabic simple">
-<li><p>What <span class="docutils literal">dir()</span> do?</p></li>
-<li><p>What <span class="docutils literal"><span class="pre">hasattr(),</span> <span class="pre">getattr(),</span> setattr()</span> and <span class="docutils literal">delattr()</span> do?</p></li>
-<li><p>What is happening here?</p></li>
+<li>What <tt class="docutils literal">dir()</tt> do?</li>
+<li>What <tt class="docutils literal"><span class="pre">hasattr(),</span> <span class="pre">getattr(),</span> setattr()</tt> and <tt class="docutils literal">delattr()</tt> do?</li>
+<li>What is happening here?</li>
 </ol>
-<pre class="code literal-block"><code>class test:
+<pre class="code literal-block">
+class test:
     def __init__(self):
         print &quot;init 1&quot;
 
     def __init__(self):
-        print &quot;init 2&quot;</code></pre>
+        print &quot;init 2&quot;
+</pre>
 <ol class="arabic simple">
-<li><p>How can you change a class (global) attribute?</p></li>
-<li><p>What <span class="docutils literal">isinstance(variable, class)</span> do?</p></li>
-<li><p>Is <span class="docutils literal">Lassie</span> an instance of <span class="docutils literal">Pets</span> or <span class="docutils literal">Toys</span>?</p></li>
-<li><p>What <span class="docutils literal">instance.__base__</span> do?</p></li>
-<li><p>About <strong>interfaces</strong>. Understand what is happening here:</p></li>
+<li>How can you change a class (global) attribute?</li>
+<li>What <tt class="docutils literal">isinstance(variable, class)</tt> do?</li>
+<li>Is <tt class="docutils literal">Lassie</tt> an instance of <tt class="docutils literal">Pets</tt> or <tt class="docutils literal">Toys</tt>?</li>
+<li>What <tt class="docutils literal">instance.__base__</tt> do?</li>
+<li>About <strong>interfaces</strong>. Understand what is happening here:</li>
 </ol>
-<pre class="code python literal-block"><code><span class="literal string doc">&quot;&quot;&quot;http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.html&quot;&quot;&quot;</span>
+<pre class="code python literal-block">
+<span class="literal string doc">&quot;&quot;&quot;http://python-3-patterns-idioms-test.readthedocs.io/en/latest/ChangeInterface.html&quot;&quot;&quot;</span>
 
 <span class="keyword">class</span> <span class="name class">WhatIHave</span><span class="punctuation">:</span>
     <span class="keyword">def</span> <span class="name function">g</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">):</span> <span class="keyword">pass</span>
@@ -832,8 +865,9 @@ end.</code></pre>
 <span class="comment single"># Approach 3:</span>
 <span class="name">whatIUse</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">whatIHave2</span><span class="punctuation">)</span>
 <span class="comment single"># Approach 4:</span>
-<span class="name">whatIUse</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">whatIHave3</span><span class="operator">.</span><span class="name">whatIWant</span><span class="punctuation">())</span></code></pre>
-</section>
-</main>
+<span class="name">whatIUse</span><span class="operator">.</span><span class="name">op</span><span class="punctuation">(</span><span class="name">whatIHave3</span><span class="operator">.</span><span class="name">whatIWant</span><span class="punctuation">())</span>
+</pre>
+</div>
+</div>
 </body>
 </html>

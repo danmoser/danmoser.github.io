@@ -1,63 +1,10 @@
-<!DOCTYPE html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <title>git</title>
-<style type="text/css">
-
-/*body {
-   width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
-}
-*/
-table {
-    margin: 0 auto;
-    text-align: center;
-    border-collapse: collapse;
-    vertical-align: center;
-    valig: center;
-}
-
-th,
-td {
-    padding: 5px;
-    vertical-align: middle;
-    /*text-align: left;*/
-    /*border-bottom: 1px solid #ddd;*/
-}
-
-tr:nth-child(even) {
-    background-color: #e6e6e6
-}
-
-tr:hover {
-    background-color: #bfbfbf
-}
-
-.strike {
-  text-decoration: line-through;
-}
-
-p {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-} 
-
-li {
-    max-width: 1000px;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.center {
-    text-align: center;
-}
-
-</style>
 <style type="text/css">
 
 /*
@@ -411,82 +358,131 @@ ul.auto-toc {
   list-style-type: none }
 
 </style>
+<style type="text/css">
+
+/*body {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+*/
+table {
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+    vertical-align: center;
+    valig: center;
+}
+
+th,
+td {
+    padding: 5px;
+    vertical-align: middle;
+    /*text-align: left;*/
+    /*border-bottom: 1px solid #ddd;*/
+}
+
+tr:nth-child(even) {
+    background-color: #e6e6e6
+}
+
+tr:hover {
+    background-color: #bfbfbf
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+p {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+} 
+
+li {
+    max-width: 1000px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.center {
+    text-align: center;
+}
+
+</style>
 </head>
-<body class="with-toc">
-<main id="git">
+<body>
+<div class="document" id="git">
 <h1 class="title">git</h1>
 
-<nav class="contents" id="table-of-contents" role="doc-toc">
+<div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#concepts" id="toc-entry-1">Concepts</a></p>
-<ul>
-<li><p><a class="reference internal" href="#basics" id="toc-entry-2">Basics</a></p></li>
-<li><p><a class="reference internal" href="#other" id="toc-entry-3">Other</a></p></li>
+<li><a class="reference internal" href="#concepts" id="toc-entry-1">Concepts</a><ul>
+<li><a class="reference internal" href="#basics" id="toc-entry-2">Basics</a></li>
+<li><a class="reference internal" href="#other" id="toc-entry-3">Other</a></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#examples" id="toc-entry-4">Examples</a></p>
-<ul>
-<li><p><a class="reference internal" href="#cloning-a-repo" id="toc-entry-5">Cloning a repo</a></p></li>
-<li><p><a class="reference internal" href="#create-a-new-project" id="toc-entry-6">Create a new project</a></p></li>
-<li><p><a class="reference internal" href="#branches" id="toc-entry-7">Branches</a></p></li>
-<li><p><a class="reference internal" href="#merge" id="toc-entry-8">Merge</a></p></li>
-<li><p><a class="reference internal" href="#general-tips" id="toc-entry-9">General tips</a></p>
-<ul>
-<li><p><a class="reference internal" href="#mergetool" id="toc-entry-10">mergetool</a></p></li>
+<li><a class="reference internal" href="#examples" id="toc-entry-4">Examples</a><ul>
+<li><a class="reference internal" href="#cloning-a-repo" id="toc-entry-5">Cloning a repo</a></li>
+<li><a class="reference internal" href="#create-a-new-project" id="toc-entry-6">Create a new project</a></li>
+<li><a class="reference internal" href="#branches" id="toc-entry-7">Branches</a></li>
+<li><a class="reference internal" href="#merge" id="toc-entry-8">Merge</a></li>
+<li><a class="reference internal" href="#general-tips" id="toc-entry-9">General tips</a><ul>
+<li><a class="reference internal" href="#mergetool" id="toc-entry-10">mergetool</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#refs" id="toc-entry-11">Refs</a></p>
-<ul>
-<li><p><a class="reference internal" href="#texts" id="toc-entry-12">Texts</a></p>
-<ul>
-<li><p><a class="reference internal" href="#rebase-vs-merge" id="toc-entry-13">Rebase vs. merge</a></p></li>
+<li><a class="reference internal" href="#refs" id="toc-entry-11">Refs</a><ul>
+<li><a class="reference internal" href="#texts" id="toc-entry-12">Texts</a><ul>
+<li><a class="reference internal" href="#rebase-vs-merge" id="toc-entry-13">Rebase vs. merge</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</nav>
-<section id="concepts">
-<h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Concepts</a></h2>
-<section id="basics">
-<h3><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Basics</a></h3>
+</div>
+<div class="section" id="concepts">
+<h1><a class="toc-backref" href="#toc-entry-1">Concepts</a></h1>
+<div class="section" id="basics">
+<h2><a class="toc-backref" href="#toc-entry-2">Basics</a></h2>
 <p>In short, the versions one has are:</p>
 <ul class="simple">
-<li><ol class="lowerroman simple">
-<li><p>in the hard-disk, whenever you change a file;</p></li>
+<li><ol class="first lowerroman">
+<li>in the hard-disk, whenever you change a file;</li>
 </ol>
 </li>
-<li><ol class="lowerroman simple" start="2">
-<li><p>a temporary (unnamed) version, when you do <cite>git add .</cite> (valid for each of the added files);</p></li>
+<li><ol class="first lowerroman" start="2">
+<li>a temporary (unnamed) version, when you do <cite>git add .</cite> (valid for each of the added files);</li>
 </ol>
 </li>
-<li><ol class="lowerroman simple" start="3">
-<li><p>a permanent version, each time you do <cite>git commit</cite>.</p></li>
+<li><ol class="first lowerroman" start="3">
+<li>a permanent version, each time you do <cite>git commit</cite>.</li>
 </ol>
 </li>
 </ul>
 <p>The sincronization is:</p>
 <ul class="simple">
-<li><p>When you do <cite>git pull</cite>, all the committed versions from the server come to your hard-disk;</p></li>
-<li><p>When you do <cite>git push</cite>, all the committed versions from hard-disk go to the server.</p></li>
+<li>When you do <cite>git pull</cite>, all the committed versions from the server come to your hard-disk;</li>
+<li>When you do <cite>git push</cite>, all the committed versions from hard-disk go to the server.</li>
 </ul>
-</section>
-<section id="other">
-<h3><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Other</a></h3>
+</div>
+<div class="section" id="other">
+<h2><a class="toc-backref" href="#toc-entry-3">Other</a></h2>
 <ul class="simple">
-<li><p>Commit your changes or stash them before you can switch branches.</p></li>
-<li><p><a class="reference external" href="https://yangsu.github.io/pull-request-tutorial/">Pull request tutorial</a>: Or how to send other user your suggestions for modifications.</p></li>
+<li>Commit your changes or stash them before you can switch branches.</li>
+<li><a class="reference external" href="https://yangsu.github.io/pull-request-tutorial/">Pull request tutorial</a>: Or how to send other user your suggestions for modifications.</li>
 </ul>
-</section>
-</section>
-<section id="examples">
-<h2><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">Examples</a></h2>
-<section id="cloning-a-repo">
-<h3><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">Cloning a repo</a></h3>
-<pre class="code bash literal-block"><code><span class="name builtin">cd</span> ~
+</div>
+</div>
+<div class="section" id="examples">
+<h1><a class="toc-backref" href="#toc-entry-4">Examples</a></h1>
+<div class="section" id="cloning-a-repo">
+<h2><a class="toc-backref" href="#toc-entry-5">Cloning a repo</a></h2>
+<pre class="code bash literal-block">
+<span class="name builtin">cd</span> ~
 git clone https://github.com/danmoser/hello-world.git
 <span class="comment single"># or you can do
 </span>git clone https://github.com/danmoser/hello-world.git destfolder
@@ -494,11 +490,13 @@ git clone https://github.com/danmoser/hello-world.git
 <span class="comment single"># There is a change in the website, update it to your PC ('pull'):
 </span><span class="name builtin">cd</span> ~/hello-world
 git pull
-<span class="comment single">#    1 file changed, 1 insertion(+)</span></code></pre>
-</section>
-<section id="create-a-new-project">
-<h3><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">Create a new project</a></h3>
-<pre class="code bash literal-block"><code><span class="comment single"># Start a new project
+<span class="comment single">#    1 file changed, 1 insertion(+)</span>
+</pre>
+</div>
+<div class="section" id="create-a-new-project">
+<h2><a class="toc-backref" href="#toc-entry-6">Create a new project</a></h2>
+<pre class="code bash literal-block">
+<span class="comment single"># Start a new project
 </span><span class="name builtin">cd</span> project
 git init
 
@@ -510,11 +508,13 @@ git init
 
 <span class="comment single"># -a/--all: Tell the command to automatically stage files that have been
 # modified and deleted, but new files you have not told Git about are not affected.
-</span>git commit -am <span class="literal string double">&quot;Commit 001&quot;</span></code></pre>
-</section>
-<section id="branches">
-<h3><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">Branches</a></h3>
-<pre class="code bash literal-block"><code><span class="comment single"># Create and switch to a new branch
+</span>git commit -am <span class="literal string double">&quot;Commit 001&quot;</span>
+</pre>
+</div>
+<div class="section" id="branches">
+<h2><a class="toc-backref" href="#toc-entry-7">Branches</a></h2>
+<pre class="code bash literal-block">
+<span class="comment single"># Create and switch to a new branch
 </span>git branch develop
 <span class="comment single"># List branches
 </span>git branch
@@ -537,11 +537,13 @@ git log --oneline --decorate --graph --all
 </span>git log --format<span class="operator">=</span><span class="literal string double">&quot;%h&quot;</span>
 
 <span class="comment single"># Delete branch &quot;develop&quot;
-</span>git branch -d develop</code></pre>
-</section>
-<section id="merge">
-<h3><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">Merge</a></h3>
-<pre class="code bash literal-block"><code><span class="comment single"># Someone made a merge request (github)
+</span>git branch -d develop
+</pre>
+</div>
+<div class="section" id="merge">
+<h2><a class="toc-backref" href="#toc-entry-8">Merge</a></h2>
+<pre class="code bash literal-block">
+<span class="comment single"># Someone made a merge request (github)
 # git checkout -b|-B &lt;new_branch&gt; [&lt;start point&gt;]
 # Specifying -b causes a new branch to be created as if git-branch[1] were
 # called and then checked out.
@@ -555,51 +557,66 @@ git log --oneline --decorate --graph --all
 # then edit the listed files looking for the &gt;&gt;&gt; &lt;&lt;&lt; entries.
 </span>git merge --no-ff beacon-dnbed
 git push
-<span class="comment single"># git push origin master</span></code></pre>
-</section>
-<section id="general-tips">
-<h3><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">General tips</a></h3>
+<span class="comment single"># git push origin master</span>
+</pre>
+</div>
+<div class="section" id="general-tips">
+<h2><a class="toc-backref" href="#toc-entry-9">General tips</a></h2>
 <p>git ignore file extensions:</p>
-<pre class="code bash literal-block"><code>vim .git/info/exclude
+<pre class="code bash literal-block">
+vim .git/info/exclude
 <span class="comment single"># More info at
-</span>git <span class="name builtin">help</span> ignore</code></pre>
+</span>git <span class="name builtin">help</span> ignore
+</pre>
 <p>Ignore syncing <cite>*.o</cite> (but keep then at PC):</p>
-<pre class="code bash literal-block"><code>git rm --cached *.o -n  <span class="comment single"># `-n` is the dry-run
-# Use `--cached` to keep the file, or `-f` to force removal.</span></code></pre>
+<pre class="code bash literal-block">
+git rm --cached *.o -n  <span class="comment single"># `-n` is the dry-run
+# Use `--cached` to keep the file, or `-f` to force removal.</span>
+</pre>
 <p>Roll back to a previous commit: <cite>git reset --hard f2f730b</cite></p>
-<pre class="code bash literal-block"><code>git diff --cached f2f730b arquivo.py</code></pre>
+<pre class="code bash literal-block">
+git diff --cached f2f730b arquivo.py
+</pre>
 <p>Dump old version file:</p>
-<pre class="code bash literal-block"><code>git cat-file -p cf1328e:./poltools.py &gt; poltools.old.py</code></pre>
+<pre class="code bash literal-block">
+git cat-file -p cf1328e:./poltools.py &gt; poltools.old.py
+</pre>
 <p>Add files from a remote local:</p>
-<pre class="code bash literal-block"><code>git remote add origin https://github.com/USER/REPO.git</code></pre>
+<pre class="code bash literal-block">
+git remote add origin https://github.com/USER/REPO.git
+</pre>
 <p>Upload your local commit to the web:</p>
-<pre class="code bash literal-block"><code>git push origin master</code></pre>
+<pre class="code bash literal-block">
+git push origin master
+</pre>
 <p>Download the changes from the repository:</p>
-<pre class="code bash literal-block"><code>git pull origin master</code></pre>
-<section id="mergetool">
-<h4><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">mergetool</a></h4>
-<p>Go for <span class="docutils literal">smerge</span> (Sublime-merge). There are others (<span class="docutils literal">meld</span>, <span class="docutils literal">kdiff3</span>, <span class="docutils literal">kompare</span>...).</p>
-<p>To configure the git merge tool, use: <span class="docutils literal">git config <span class="pre">--global</span> merge.tool smerge</span>.</p>
-</section>
-</section>
-</section>
-<section id="refs">
-<h2><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">Refs</a></h2>
+<pre class="code bash literal-block">
+git pull origin master
+</pre>
+<div class="section" id="mergetool">
+<h3><a class="toc-backref" href="#toc-entry-10">mergetool</a></h3>
+<p>Go for <tt class="docutils literal">smerge</tt> (Sublime-merge). There are others (<tt class="docutils literal">meld</tt>, <tt class="docutils literal">kdiff3</tt>, <tt class="docutils literal">kompare</tt>...).</p>
+<p>To configure the git merge tool, use: <tt class="docutils literal">git config <span class="pre">--global</span> merge.tool smerge</tt>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="refs">
+<h1><a class="toc-backref" href="#toc-entry-11">Refs</a></h1>
 <p><a class="reference external" href="http://ohshitgit.com/">http://ohshitgit.com/</a></p>
 <p><a class="reference external" href="http://overapi.com/git">http://overapi.com/git</a></p>
 <p><a class="reference external" href="http://git-scm.com">http://git-scm.com</a></p>
-<section id="texts">
-<h3><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Texts</a></h3>
-<section id="rebase-vs-merge">
-<h4><a class="toc-backref" href="#toc-entry-13" role="doc-backlink">Rebase vs. merge</a></h4>
+<div class="section" id="texts">
+<h2><a class="toc-backref" href="#toc-entry-12">Texts</a></h2>
+<div class="section" id="rebase-vs-merge">
+<h3><a class="toc-backref" href="#toc-entry-13">Rebase vs. merge</a></h3>
 <p>Now that you've seen rebasing and merging in action, you may be wondering which one is better. Before we can answer this, let's step back a bit and talk about what history means.</p>
 <p>One point of view on this is that your repository's commit history is a record of what actually happened. It's a historical document, valuable in its own right, and shouldn't be tampered with. From this angle, changing the commit history is almost blasphemous; you're lying about what actually transpired. So what if there was a messy series of merge commits? That's how it happened, and the repository should preserve that for posterity.</p>
 <p>The opposing point of view is that the commit history is the story of how your project was made. You wouldn't publish the first draft of a book, and the manual for how to maintain your software deserves careful editing. This is the camp that uses tools like rebase and filter-branch to tell the story in the way that's best for future readers.</p>
 <p>Now, to the question of whether merging or rebasing is better: hopefully you'll see that it's not that simple. Git is a powerful tool, and allows you to do many things to and with your history, but every team and every project is different. Now that you know how both of these things work, it's up to you to decide which one is best for your particular situation.</p>
 <p>In general the way to get the best of both worlds is to rebase local changes you've made but haven't shared yet before you push them in order to clean up your story, but never rebase anything you've pushed somewhere.</p>
-</section>
-</section>
-</section>
-</main>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
