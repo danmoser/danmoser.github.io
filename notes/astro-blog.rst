@@ -7,6 +7,14 @@ DMF AstroBlog
 *********
 2022-07
 ===========
+JOSS: The Journal of Open Source Software
+-----------------------------------------------
+Volunteers for revisions are welcome
+
+https://joss.theoj.org/ 
+
+---
+
 MetBrewer 
 ----------
 Color palettes inspired by works at the Metropolitan Museum of Art in New York. R and Python included
@@ -169,7 +177,7 @@ https://www.revistaquestaodeciencia.com.br/artigo/2019/03/11/que-mal-que-tem-amp
 
 --------
 
-The ‘Batman Effect’: How having an alter ego empowers you
+The 'Batman Effect': How having an alter ego empowers you
 ------------------------------------------------------------------
 https://www.bbc.com/worklife/article/20200817-the-batman-effect-how-having-an-alter-ego-empowers-you
 

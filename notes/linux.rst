@@ -5,6 +5,10 @@ Linux tips
 
 Useful commands & tricks
 ===========================
+gfortran error with numpy
+--------------------------
+If you get ``ImportError: libgfortran.so.3: cannot open shared object file: No such file or directory`` when running python with numpy, try reinstalling numpy (eg., ``pip install --user -U numpy``).
+
 Get process ID
 -----------------
 .. code:: bash
