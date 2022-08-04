@@ -5,6 +5,47 @@ Linux tips
 
 Useful commands & tricks
 ===========================
+Load xfce4 apps at startup
+-----------------------------
+``xfce4-session-settings``
+
+
+Uninstalling from ``make install``
+-------------------------------------
+#. Check if ``Makefile`` has the ``uninstall`` option. If it does, run ``make uninstall``
+#. Check if it has the ``install_manifest.txt`` file. If it makes use of CMake, very likely it is there. If it does, run ``xargs rm < install_manifest.txt``
+#. If not, then you need to create the ``install_manifest.txt`` yourself. You can either run ``make -n install`` to see the installation steps OR re-install it in a temporary folder and generate the files from there. These are the steps:
+
+.. code:: bash
+
+    ./configure --prefix=/dummy/path
+    make  # -j $NCPUS
+    make install
+    find /dummy/path -type f -print > install_manifest.txt
+    find /dummy/path -type d -print >> install_manifest.txt
+    xargs rm < install_manifest.txt
+    rm -r /dummy/path
+
+Remember: you may need sudo powers depending on the original install path.
+
+
+Changing the Install Directory with make install
+--------------------------------------------------------
+``./configure --prefix=/custom/path``. More at https://www.baeldung.com/linux/change-install-dir-make-install
+
+
+``awk`` and ``cut`` basics
+----------------------------
+.. code:: bash
+
+    awk -F: '{ print $1}' /etc/passwd
+    cut -d: -f1 /etc/passwd
+
+    cat /etc/passwd | grep root | awk -F: '{ print $1}'
+    cat /etc/passwd | grep root | cut -d: -f1
+
+https://phoenixnap.com/kb/how-to-list-users-linux
+
 gfortran error with numpy
 --------------------------
 If you get ``ImportError: libgfortran.so.3: cannot open shared object file: No such file or directory`` when running python with numpy, try reinstalling numpy (eg., ``pip install --user -U numpy``).
