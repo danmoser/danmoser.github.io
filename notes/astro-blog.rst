@@ -5,6 +5,29 @@ DMF AstroBlog
 
 2022
 *********
+2022-08
+============
+Linguistic Antipatterns
+===========================
+Programming languages. Linguistic antipatterns were first studied in a series of papers led by Venera Arnaoudova.
+
+https://www.linguistic-antipatterns.com/
+
+---
+
+Websites to get things done for free
+---------------------------------------
+Originally from https://twitter.com/MakadiaHarsh/status/1553761431560011784
+
+- https://pdfdrive.com -- more than 80 million eBooks for free.
+- https://tinypng.com -- uses smart lossy compression to reduce the size of WEBP, JPEG, and PNG files. 
+- https://smallpdf.com -- master PDF files.
+- http://photopea.com -- web-based photo and graphics editor.
+- https://quillbot.com -- rewrite and enhance any sentence, paragraph, or article using state-of-the-art AI.
+- https://freenom.com -- the world's first and only free domain provider.
+- https://mega.io -- 20+GB of free cloud storage.
+- https://wetransfer.com -- simplest way to send big files.
+
 2022-07
 ===========
 JOSS: The Journal of Open Source Software

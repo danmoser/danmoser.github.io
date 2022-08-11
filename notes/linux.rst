@@ -5,6 +5,10 @@ Linux tips
 
 Useful commands & tricks
 ===========================
+Strange terminal behavior
+---------------------------
+If you experience strange behavior in your terminal (for example, the columns of the ``ls`` command are misaligned or there is no line wrap in long commands), run the magic command ``reset``. Most likely your problems will be solved!!
+
 Load xfce4 apps at startup
 -----------------------------
 ``xfce4-session-settings``

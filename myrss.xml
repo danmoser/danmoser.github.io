@@ -5,8 +5,35 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Fri, 22 Jul 2022 00:27:11 -0000</lastBuildDate>
+<lastBuildDate>Thu, 11 Aug 2022 23:43:43 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>Websites to get things done for free</title>
+<description>Originally from https://twitter.com/MakadiaHarsh/status/1553761431560011784
+
+- https://pdfdrive.com -- more than 80 million eBooks for free.
+- https://tinypng.com -- uses smart lossy compression to reduce the size of WEBP, JPEG, and PNG files. 
+- https://smallpdf.com -- master PDF files.
+- http://photopea.com -- web-based photo and graphics editor.
+- https://quillbot.com -- rewrite and enhance any sentence, paragraph, or article using state-of-the-art AI.
+- https://freenom.com -- the world&#x27;s first and only free domain provider.
+- https://mega.io -- 20+GB of free cloud storage.
+- https://wetransfer.com -- simplest way to send big files.
+
+2022-07</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#websites-to-get-things-done-for-free</link>
+</item>
+
+
+<item>
+<title>JOSS: The Journal of Open Source Software</title>
+<description>Volunteers for revisions are welcome
+
+https://joss.theoj.org/ </description>
+<link>http://danmoser.github.io/notes/astro-blog.html#joss-the-journal-of-open-source-software</link>
+</item>
 
 
 <item>
@@ -209,7 +236,7 @@ https://www.revistaquestaodeciencia.com.br/artigo/2019/03/11/que-mal-que-tem-amp
 
 
 <item>
-<title>The ‘Batman Effect’: How having an alter ego empowers you</title>
+<title>The &#x27;Batman Effect&#x27;: How having an alter ego empowers you</title>
 <description>https://www.bbc.com/worklife/article/20200817-the-batman-effect-how-having-an-alter-ego-empowers-you</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#the-batman-effect-how-having-an-alter-ego-empowers-you</link>
 </item>

@@ -82,6 +82,13 @@ Image Filtering in Python
 ---------------------------
 A prior: https://code.tutsplus.com/tutorials/image-filtering-in-python--cms-29202
 
+Useful Python libraries
+--------------------------
+.. figure:: ../figs/python_astro-libs.gif
+    :align: center
+    :height: 500
+
+
 
 numpy compared to R
 ====================

@@ -420,111 +420,162 @@ li {
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
 <li><a class="reference internal" href="#useful-commands-tricks" id="toc-entry-1">Useful commands &amp; tricks</a><ul>
-<li><a class="reference internal" href="#get-process-id" id="toc-entry-2">Get process ID</a></li>
-<li><a class="reference internal" href="#linux-gui-trash-path" id="toc-entry-3">Linux GUI trash path</a></li>
-<li><a class="reference internal" href="#how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts" id="toc-entry-4">How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS</a></li>
-<li><a class="reference internal" href="#fixing-wps-missing-fonts" id="toc-entry-5">Fixing WPS missing fonts</a></li>
-<li><a class="reference internal" href="#creating-tunnels-with-ssh-and-virtualbox" id="toc-entry-6">Creating tunnels with <tt class="docutils literal">ssh</tt> and VirtualBox</a></li>
-<li><a class="reference internal" href="#tunnel-creating-for-docker" id="toc-entry-7">Tunnel creating for Docker</a></li>
-<li><a class="reference internal" href="#duf-is-a-nice-alternative-to-df" id="toc-entry-8"><tt class="docutils literal">duf</tt> is a nice alternative to <tt class="docutils literal">df</tt></a></li>
-<li><a class="reference internal" href="#how-to-create-a-service-on-linux" id="toc-entry-9">How to create a service on Linux</a></li>
-<li><a class="reference internal" href="#interesting-commands" id="toc-entry-10">Interesting commands</a></li>
-<li><a class="reference internal" href="#remove-a-directory-from-path" id="toc-entry-11">Remove a directory from <tt class="docutils literal">$PATH</tt></a></li>
-<li><a class="reference internal" href="#disk-activity" id="toc-entry-12">Disk activity</a></li>
-<li><a class="reference internal" href="#partitioning" id="toc-entry-13">Partitioning</a></li>
-<li><a class="reference internal" href="#command-cmake-and-make" id="toc-entry-14">Command <tt class="docutils literal">cmake</tt> and <tt class="docutils literal">make</tt></a></li>
-<li><a class="reference internal" href="#decrease-backlight-below-minimum" id="toc-entry-15">Decrease Backlight Below Minimum</a></li>
-<li><a class="reference internal" href="#how-to-mount-an-iso-file" id="toc-entry-16">How to mount an ISO file</a></li>
-<li><a class="reference internal" href="#how-to-create-an-iso-image" id="toc-entry-17">How to create an ISO image</a><ul>
-<li><a class="reference internal" href="#creating-an-iso-from-files" id="toc-entry-18">Creating an ISO from Files</a></li>
-<li><a class="reference internal" href="#ripping-an-iso-from-a-cd" id="toc-entry-19">Ripping an ISO from a CD</a></li>
+<li><a class="reference internal" href="#strange-terminal-behavior" id="toc-entry-2">Strange terminal behavior</a></li>
+<li><a class="reference internal" href="#load-xfce4-apps-at-startup" id="toc-entry-3">Load xfce4 apps at startup</a></li>
+<li><a class="reference internal" href="#uninstalling-from-make-install" id="toc-entry-4">Uninstalling from <tt class="docutils literal">make install</tt></a></li>
+<li><a class="reference internal" href="#changing-the-install-directory-with-make-install" id="toc-entry-5">Changing the Install Directory with make install</a></li>
+<li><a class="reference internal" href="#awk-and-cut-basics" id="toc-entry-6"><tt class="docutils literal">awk</tt> and <tt class="docutils literal">cut</tt> basics</a></li>
+<li><a class="reference internal" href="#gfortran-error-with-numpy" id="toc-entry-7">gfortran error with numpy</a></li>
+<li><a class="reference internal" href="#get-process-id" id="toc-entry-8">Get process ID</a></li>
+<li><a class="reference internal" href="#linux-gui-trash-path" id="toc-entry-9">Linux GUI trash path</a></li>
+<li><a class="reference internal" href="#how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts" id="toc-entry-10">How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS</a></li>
+<li><a class="reference internal" href="#fixing-wps-missing-fonts" id="toc-entry-11">Fixing WPS missing fonts</a></li>
+<li><a class="reference internal" href="#creating-tunnels-with-ssh-and-virtualbox" id="toc-entry-12">Creating tunnels with <tt class="docutils literal">ssh</tt> and VirtualBox</a></li>
+<li><a class="reference internal" href="#tunnel-creating-for-docker" id="toc-entry-13">Tunnel creating for Docker</a></li>
+<li><a class="reference internal" href="#duf-is-a-nice-alternative-to-df" id="toc-entry-14"><tt class="docutils literal">duf</tt> is a nice alternative to <tt class="docutils literal">df</tt></a></li>
+<li><a class="reference internal" href="#how-to-create-a-service-on-linux" id="toc-entry-15">How to create a service on Linux</a></li>
+<li><a class="reference internal" href="#interesting-commands" id="toc-entry-16">Interesting commands</a></li>
+<li><a class="reference internal" href="#remove-a-directory-from-path" id="toc-entry-17">Remove a directory from <tt class="docutils literal">$PATH</tt></a></li>
+<li><a class="reference internal" href="#disk-activity" id="toc-entry-18">Disk activity</a></li>
+<li><a class="reference internal" href="#partitioning" id="toc-entry-19">Partitioning</a></li>
+<li><a class="reference internal" href="#command-cmake-and-make" id="toc-entry-20">Command <tt class="docutils literal">cmake</tt> and <tt class="docutils literal">make</tt></a></li>
+<li><a class="reference internal" href="#decrease-backlight-below-minimum" id="toc-entry-21">Decrease Backlight Below Minimum</a></li>
+<li><a class="reference internal" href="#how-to-mount-an-iso-file" id="toc-entry-22">How to mount an ISO file</a></li>
+<li><a class="reference internal" href="#how-to-create-an-iso-image" id="toc-entry-23">How to create an ISO image</a><ul>
+<li><a class="reference internal" href="#creating-an-iso-from-files" id="toc-entry-24">Creating an ISO from Files</a></li>
+<li><a class="reference internal" href="#ripping-an-iso-from-a-cd" id="toc-entry-25">Ripping an ISO from a CD</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#disable-web-notifications-firefox-browser" id="toc-entry-20">Disable Web Notifications Firefox Browser</a></li>
-<li><a class="reference internal" href="#find-a-package-by-filenames" id="toc-entry-21">Find a package by filenames</a></li>
-<li><a class="reference internal" href="#set-size-of-files-in-multi-files-zip" id="toc-entry-22">Set size of files in multi-files zip</a></li>
-<li><a class="reference internal" href="#print-line-interval" id="toc-entry-23">Print line interval</a></li>
-<li><a class="reference internal" href="#repair-rar-file" id="toc-entry-24">Repair <tt class="docutils literal">rar</tt> file</a></li>
-<li><a class="reference internal" href="#good-media-player" id="toc-entry-25">Good media player</a></li>
-<li><a class="reference internal" href="#multiple-files-edition-substitution" id="toc-entry-26">Multiple files edition (substitution)</a></li>
-<li><a class="reference internal" href="#is-there-a-way-to-echo-an-alias" id="toc-entry-27">Is there a way to echo an alias?</a></li>
-<li><a class="reference internal" href="#disk-usage" id="toc-entry-28">Disk usage</a></li>
-<li><a class="reference internal" href="#ls" id="toc-entry-29"><tt class="docutils literal">ls</tt></a></li>
-<li><a class="reference internal" href="#unix-essential-commands" id="toc-entry-30">Unix essential commands</a></li>
-<li><a class="reference internal" href="#symbolic-link" id="toc-entry-31">Symbolic link</a></li>
-<li><a class="reference internal" href="#number-of-cores" id="toc-entry-32">Number of cores</a></li>
-<li><a class="reference internal" href="#rm-find" id="toc-entry-33"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></li>
-<li><a class="reference internal" href="#rsync" id="toc-entry-34"><tt class="docutils literal">rsync</tt></a></li>
+<li><a class="reference internal" href="#disable-web-notifications-firefox-browser" id="toc-entry-26">Disable Web Notifications Firefox Browser</a></li>
+<li><a class="reference internal" href="#find-a-package-by-filenames" id="toc-entry-27">Find a package by filenames</a></li>
+<li><a class="reference internal" href="#set-size-of-files-in-multi-files-zip" id="toc-entry-28">Set size of files in multi-files zip</a></li>
+<li><a class="reference internal" href="#print-line-interval" id="toc-entry-29">Print line interval</a></li>
+<li><a class="reference internal" href="#repair-rar-file" id="toc-entry-30">Repair <tt class="docutils literal">rar</tt> file</a></li>
+<li><a class="reference internal" href="#good-media-player" id="toc-entry-31">Good media player</a></li>
+<li><a class="reference internal" href="#multiple-files-edition-substitution" id="toc-entry-32">Multiple files edition (substitution)</a></li>
+<li><a class="reference internal" href="#is-there-a-way-to-echo-an-alias" id="toc-entry-33">Is there a way to echo an alias?</a></li>
+<li><a class="reference internal" href="#disk-usage" id="toc-entry-34">Disk usage</a></li>
+<li><a class="reference internal" href="#ls" id="toc-entry-35"><tt class="docutils literal">ls</tt></a></li>
+<li><a class="reference internal" href="#unix-essential-commands" id="toc-entry-36">Unix essential commands</a></li>
+<li><a class="reference internal" href="#symbolic-link" id="toc-entry-37">Symbolic link</a></li>
+<li><a class="reference internal" href="#number-of-cores" id="toc-entry-38">Number of cores</a></li>
+<li><a class="reference internal" href="#rm-find" id="toc-entry-39"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></li>
+<li><a class="reference internal" href="#rsync" id="toc-entry-40"><tt class="docutils literal">rsync</tt></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general-tips" id="toc-entry-35">General Tips</a><ul>
-<li><a class="reference internal" href="#terminal" id="toc-entry-36">Terminal</a></li>
-<li><a class="reference internal" href="#scripts" id="toc-entry-37">Scripts</a></li>
-<li><a class="reference internal" href="#keeping-windows-opened" id="toc-entry-38">Keeping windows opened</a></li>
-<li><a class="reference internal" href="#useful-keyboard-shortcuts" id="toc-entry-39">Useful keyboard shortcuts</a></li>
-<li><a class="reference internal" href="#win-programs-alternatives" id="toc-entry-40">Win programs alternatives</a></li>
-<li><a class="reference internal" href="#image-tools" id="toc-entry-41">Image tools</a></li>
-<li><a class="reference internal" href="#image-to-pdf-format" id="toc-entry-42">Image to PDF format</a></li>
-<li><a class="reference internal" href="#image-to-eps-format" id="toc-entry-43">Image to EPS format</a></li>
-<li><a class="reference internal" href="#cedilla" id="toc-entry-44">Cedilla</a></li>
-<li><a class="reference internal" href="#grub-edit" id="toc-entry-45">GRUB edit</a></li>
-<li><a class="reference internal" href="#changing-time-zone" id="toc-entry-46">Changing time-zone</a></li>
-<li><a class="reference internal" href="#problems-with-the-panel" id="toc-entry-47">Problems with the panel</a></li>
-<li><a class="reference internal" href="#alternative-to-indicator-multiload" id="toc-entry-48">Alternative to <tt class="docutils literal"><span class="pre">indicator-multiload</span></tt></a></li>
-<li><a class="reference internal" href="#mimes-and-program-links-in-file-managers" id="toc-entry-49">Mimes and program links in File Managers</a></li>
-<li><a class="reference internal" href="#exporting-wifi-passwords" id="toc-entry-50">Exporting wifi passwords</a></li>
-<li><a class="reference internal" href="#mounting-a-disk-your-user-isn-t-the-owner" id="toc-entry-51">Mounting a disk your user isn't the owner</a></li>
-<li><a class="reference internal" href="#firefox-adblocl" id="toc-entry-52">Firefox + AdBlocl</a></li>
+<li><a class="reference internal" href="#general-tips" id="toc-entry-41">General Tips</a><ul>
+<li><a class="reference internal" href="#terminal" id="toc-entry-42">Terminal</a></li>
+<li><a class="reference internal" href="#scripts" id="toc-entry-43">Scripts</a></li>
+<li><a class="reference internal" href="#keeping-windows-opened" id="toc-entry-44">Keeping windows opened</a></li>
+<li><a class="reference internal" href="#useful-keyboard-shortcuts" id="toc-entry-45">Useful keyboard shortcuts</a></li>
+<li><a class="reference internal" href="#win-programs-alternatives" id="toc-entry-46">Win programs alternatives</a></li>
+<li><a class="reference internal" href="#image-tools" id="toc-entry-47">Image tools</a></li>
+<li><a class="reference internal" href="#image-to-pdf-format" id="toc-entry-48">Image to PDF format</a></li>
+<li><a class="reference internal" href="#image-to-eps-format" id="toc-entry-49">Image to EPS format</a></li>
+<li><a class="reference internal" href="#cedilla" id="toc-entry-50">Cedilla</a></li>
+<li><a class="reference internal" href="#grub-edit" id="toc-entry-51">GRUB edit</a></li>
+<li><a class="reference internal" href="#changing-time-zone" id="toc-entry-52">Changing time-zone</a></li>
+<li><a class="reference internal" href="#problems-with-the-panel" id="toc-entry-53">Problems with the panel</a></li>
+<li><a class="reference internal" href="#alternative-to-indicator-multiload" id="toc-entry-54">Alternative to <tt class="docutils literal"><span class="pre">indicator-multiload</span></tt></a></li>
+<li><a class="reference internal" href="#mimes-and-program-links-in-file-managers" id="toc-entry-55">Mimes and program links in File Managers</a></li>
+<li><a class="reference internal" href="#exporting-wifi-passwords" id="toc-entry-56">Exporting wifi passwords</a></li>
+<li><a class="reference internal" href="#mounting-a-disk-your-user-isn-t-the-owner" id="toc-entry-57">Mounting a disk your user isn't the owner</a></li>
+<li><a class="reference internal" href="#firefox-adblocl" id="toc-entry-58">Firefox + AdBlocl</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#permitions" id="toc-entry-53">Permitions</a><ul>
-<li><a class="reference internal" href="#how-to-apply-default-permissions" id="toc-entry-54">How to apply default permissions</a></li>
-<li><a class="reference internal" href="#users" id="toc-entry-55">Users</a></li>
-<li><a class="reference internal" href="#machine-name" id="toc-entry-56">machine name</a></li>
+<li><a class="reference internal" href="#permitions" id="toc-entry-59">Permitions</a><ul>
+<li><a class="reference internal" href="#how-to-apply-default-permissions" id="toc-entry-60">How to apply default permissions</a></li>
+<li><a class="reference internal" href="#users" id="toc-entry-61">Users</a></li>
+<li><a class="reference internal" href="#machine-name" id="toc-entry-62">machine name</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ssh-auth" id="toc-entry-57">SSH Auth</a><ul>
-<li><a class="reference internal" href="#run-at-local-pc" id="toc-entry-58">1- Run at local PC</a></li>
-<li><a class="reference internal" href="#run-at-remote-pc" id="toc-entry-59">2- Run at remote PC</a></li>
-<li><a class="reference internal" href="#one-may-need-to-run-at-remote-pc" id="toc-entry-60">3- One may need to run at remote PC</a></li>
-<li><a class="reference internal" href="#github" id="toc-entry-61">GitHub</a></li>
+<li><a class="reference internal" href="#ssh-auth" id="toc-entry-63">SSH Auth</a><ul>
+<li><a class="reference internal" href="#run-at-local-pc" id="toc-entry-64">1- Run at local PC</a></li>
+<li><a class="reference internal" href="#run-at-remote-pc" id="toc-entry-65">2- Run at remote PC</a></li>
+<li><a class="reference internal" href="#one-may-need-to-run-at-remote-pc" id="toc-entry-66">3- One may need to run at remote PC</a></li>
+<li><a class="reference internal" href="#github" id="toc-entry-67">GitHub</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-pc-mic" id="toc-entry-62">Using PC MIC</a><ul>
-<li><a class="reference internal" href="#tips" id="toc-entry-63">Tips</a></li>
-<li><a class="reference internal" href="#how-can-i-get-the-instrumentals-only-from-a-file-and-remove-the-vocals" id="toc-entry-64">How can I get the instrumentals only from a file and remove the vocals?</a></li>
-<li><a class="reference internal" href="#no-sound-with-headphones-but-sound-with-stereo" id="toc-entry-65">No Sound with Headphones but Sound with Stereo</a></li>
-<li><a class="reference internal" href="#listen-to-microphone-over-the-speakers-using-pulseaudio" id="toc-entry-66">Listen to microphone over the speakers using pulseaudio</a></li>
-<li><a class="reference internal" href="#listen-to-microphone-over-the-speakers-using-qjackctl" id="toc-entry-67">Listen to microphone over the speakers using Qjackctl</a></li>
-<li><a class="reference internal" href="#how-to-do-a-mixing" id="toc-entry-68">How to do a mixing</a></li>
-<li><a class="reference internal" href="#summary" id="toc-entry-69">Summary</a></li>
-<li><a class="reference internal" href="#naming-screen" id="toc-entry-70">Naming <tt class="docutils literal">screen</tt></a></li>
-<li><a class="reference internal" href="#can-t-resume-an-attached-screen" id="toc-entry-71">Can't resume an attached screen</a></li>
-<li><a class="reference internal" href="#how-to-close-and-kill-an-screen-session" id="toc-entry-72">How to close and kill an <tt class="docutils literal">screen</tt> session</a></li>
-<li><a class="reference internal" href="#one-can-not-open-a-screen-in-a-screen" id="toc-entry-73">One can not open a <tt class="docutils literal">screen</tt> in a <tt class="docutils literal">screen</tt></a></li>
-<li><a class="reference internal" href="#difference-between-bashrc-bash-profile-and-profile" id="toc-entry-74">Difference between <tt class="docutils literal">.bashrc</tt>, <tt class="docutils literal"><span class="pre">.bash-profile</span></tt>, and <tt class="docutils literal">.profile</tt></a></li>
+<li><a class="reference internal" href="#using-pc-mic" id="toc-entry-68">Using PC MIC</a><ul>
+<li><a class="reference internal" href="#tips" id="toc-entry-69">Tips</a></li>
+<li><a class="reference internal" href="#how-can-i-get-the-instrumentals-only-from-a-file-and-remove-the-vocals" id="toc-entry-70">How can I get the instrumentals only from a file and remove the vocals?</a></li>
+<li><a class="reference internal" href="#no-sound-with-headphones-but-sound-with-stereo" id="toc-entry-71">No Sound with Headphones but Sound with Stereo</a></li>
+<li><a class="reference internal" href="#listen-to-microphone-over-the-speakers-using-pulseaudio" id="toc-entry-72">Listen to microphone over the speakers using pulseaudio</a></li>
+<li><a class="reference internal" href="#listen-to-microphone-over-the-speakers-using-qjackctl" id="toc-entry-73">Listen to microphone over the speakers using Qjackctl</a></li>
+<li><a class="reference internal" href="#how-to-do-a-mixing" id="toc-entry-74">How to do a mixing</a></li>
+<li><a class="reference internal" href="#summary" id="toc-entry-75">Summary</a></li>
+<li><a class="reference internal" href="#naming-screen" id="toc-entry-76">Naming <tt class="docutils literal">screen</tt></a></li>
+<li><a class="reference internal" href="#can-t-resume-an-attached-screen" id="toc-entry-77">Can't resume an attached screen</a></li>
+<li><a class="reference internal" href="#how-to-close-and-kill-an-screen-session" id="toc-entry-78">How to close and kill an <tt class="docutils literal">screen</tt> session</a></li>
+<li><a class="reference internal" href="#one-can-not-open-a-screen-in-a-screen" id="toc-entry-79">One can not open a <tt class="docutils literal">screen</tt> in a <tt class="docutils literal">screen</tt></a></li>
+<li><a class="reference internal" href="#difference-between-bashrc-bash-profile-and-profile" id="toc-entry-80">Difference between <tt class="docutils literal">.bashrc</tt>, <tt class="docutils literal"><span class="pre">.bash-profile</span></tt>, and <tt class="docutils literal">.profile</tt></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="useful-commands-tricks">
 <h1><a class="toc-backref" href="#toc-entry-1">Useful commands &amp; tricks</a></h1>
+<div class="section" id="strange-terminal-behavior">
+<h2><a class="toc-backref" href="#toc-entry-2">Strange terminal behavior</a></h2>
+<p>If you experience strange behavior in your terminal (for example, the columns of the <tt class="docutils literal">ls</tt> command are misaligned or there is no line wrap in long commands), run the magic command <tt class="docutils literal">reset</tt>. Most likely your problems will be solved!!</p>
+</div>
+<div class="section" id="load-xfce4-apps-at-startup">
+<h2><a class="toc-backref" href="#toc-entry-3">Load xfce4 apps at startup</a></h2>
+<p><tt class="docutils literal"><span class="pre">xfce4-session-settings</span></tt></p>
+</div>
+<div class="section" id="uninstalling-from-make-install">
+<h2><a class="toc-backref" href="#toc-entry-4">Uninstalling from <tt class="docutils literal">make install</tt></a></h2>
+<ol class="arabic simple">
+<li>Check if <tt class="docutils literal">Makefile</tt> has the <tt class="docutils literal">uninstall</tt> option. If it does, run <tt class="docutils literal">make uninstall</tt></li>
+<li>Check if it has the <tt class="docutils literal">install_manifest.txt</tt> file. If it makes use of CMake, very likely it is there. If it does, run <tt class="docutils literal">xargs rm &lt; install_manifest.txt</tt></li>
+<li>If not, then you need to create the <tt class="docutils literal">install_manifest.txt</tt> yourself. You can either run <tt class="docutils literal">make <span class="pre">-n</span> install</tt> to see the installation steps OR re-install it in a temporary folder and generate the files from there. These are the steps:</li>
+</ol>
+<pre class="code bash literal-block">
+./configure --prefix<span class="operator">=</span>/dummy/path
+make  <span class="comment single"># -j $NCPUS
+</span>make install
+find /dummy/path -type f -print &gt; install_manifest.txt
+find /dummy/path -type d -print &gt;&gt; install_manifest.txt
+xargs rm &lt; install_manifest.txt
+rm -r /dummy/path
+</pre>
+<p>Remember: you may need sudo powers depending on the original install path.</p>
+</div>
+<div class="section" id="changing-the-install-directory-with-make-install">
+<h2><a class="toc-backref" href="#toc-entry-5">Changing the Install Directory with make install</a></h2>
+<p><tt class="docutils literal">./configure <span class="pre">--prefix=/custom/path</span></tt>. More at <a class="reference external" href="https://www.baeldung.com/linux/change-install-dir-make-install">https://www.baeldung.com/linux/change-install-dir-make-install</a></p>
+</div>
+<div class="section" id="awk-and-cut-basics">
+<h2><a class="toc-backref" href="#toc-entry-6"><tt class="docutils literal">awk</tt> and <tt class="docutils literal">cut</tt> basics</a></h2>
+<pre class="code bash literal-block">
+awk -F: <span class="literal string single">'{ print $1}'</span> /etc/passwd
+cut -d: -f1 /etc/passwd
+
+cat /etc/passwd <span class="punctuation">|</span> grep root <span class="punctuation">|</span> awk -F: <span class="literal string single">'{ print $1}'</span>
+cat /etc/passwd <span class="punctuation">|</span> grep root <span class="punctuation">|</span> cut -d: -f1
+</pre>
+<p><a class="reference external" href="https://phoenixnap.com/kb/how-to-list-users-linux">https://phoenixnap.com/kb/how-to-list-users-linux</a></p>
+</div>
+<div class="section" id="gfortran-error-with-numpy">
+<h2><a class="toc-backref" href="#toc-entry-7">gfortran error with numpy</a></h2>
+<p>If you get <tt class="docutils literal">ImportError: libgfortran.so.3: cannot open shared object file: No such file or directory</tt> when running python with numpy, try reinstalling numpy (eg., <tt class="docutils literal">pip install <span class="pre">--user</span> <span class="pre">-U</span> numpy</tt>).</p>
+</div>
 <div class="section" id="get-process-id">
-<h2><a class="toc-backref" href="#toc-entry-2">Get process ID</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-8">Get process ID</a></h2>
 <pre class="code bash literal-block">
 ps -ef <span class="punctuation">|</span> grep <span class="operator">{</span>name<span class="operator">}</span> <span class="punctuation">|</span> grep -v grep <span class="punctuation">|</span> awk <span class="literal string single">'{print $2}'</span>
 </pre>
 </div>
 <div class="section" id="linux-gui-trash-path">
-<h2><a class="toc-backref" href="#toc-entry-3">Linux GUI trash path</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-9">Linux GUI trash path</a></h2>
 <p>It is stored at <tt class="docutils literal"><span class="pre">/home/$USER/.local/share/Trash</span></tt> . From <a class="reference external" href="https://askubuntu.com/questions/102099/where-is-the-trash-folder">https://askubuntu.com/questions/102099/where-is-the-trash-folder</a></p>
 </div>
 <div class="section" id="how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts">
-<h2><a class="toc-backref" href="#toc-entry-4">How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-10">How to install Oracle Java 8 64-bit Ubuntu 22.04 | 20.04 LTS</a></h2>
 <p>TBC if it works: <a class="reference external" href="https://www.how2shout.com/linux/how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts/">https://www.how2shout.com/linux/how-to-install-oracle-java-8-64-bit-ubuntu-22-04-20-04-lts/</a></p>
 </div>
 <div class="section" id="fixing-wps-missing-fonts">
-<h2><a class="toc-backref" href="#toc-entry-5">Fixing WPS missing fonts</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-11">Fixing WPS missing fonts</a></h2>
 <pre class="code bash literal-block">
 <span class="comment single"># URL taken from https://aur.archlinux.org/packages/ttf-wps-fonts
 </span>wget https://github.com/IamDH4/ttf-wps-fonts/archive/master.zip
@@ -537,7 +588,7 @@ rm -rf ttf-wps-fonts-master
 </pre>
 </div>
 <div class="section" id="creating-tunnels-with-ssh-and-virtualbox">
-<h2><a class="toc-backref" href="#toc-entry-6">Creating tunnels with <tt class="docutils literal">ssh</tt> and VirtualBox</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-12">Creating tunnels with <tt class="docutils literal">ssh</tt> and VirtualBox</a></h2>
 <p>My machine &quot;orion&quot; is running a VirtualBox VM &quot;orionVM&quot;.</p>
 <p>In Virtualbox, if I set the following port forwarding: <tt class="docutils literal">Rule 1 | TCP | 127.0.0.1 | 2222 | 10.0.2.15 | 22</tt>, then I will be able to do the following:</p>
 <pre class="code bash literal-block">
@@ -555,7 +606,7 @@ rm -rf ttf-wps-fonts-master
 <p>More info at <a class="reference external" href="https://serverfault.com/questions/910526/ssh-local-port-forwarding-working-from-localhost-only">https://serverfault.com/questions/910526/ssh-local-port-forwarding-working-from-localhost-only</a></p>
 </div>
 <div class="section" id="tunnel-creating-for-docker">
-<h2><a class="toc-backref" href="#toc-entry-7">Tunnel creating for Docker</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-13">Tunnel creating for Docker</a></h2>
 <pre class="code bash literal-block">
 <span class="comment single"># Tunnel creation -- Docker
 </span>ssh -i ~/.ssh/file.pem -NL localhost:2374:/var/run/docker.sock user&#64;machine <span class="punctuation">&amp;</span>
@@ -564,17 +615,17 @@ rm -rf ttf-wps-fonts-master
 </pre>
 </div>
 <div class="section" id="duf-is-a-nice-alternative-to-df">
-<h2><a class="toc-backref" href="#toc-entry-8"><tt class="docutils literal">duf</tt> is a nice alternative to <tt class="docutils literal">df</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-14"><tt class="docutils literal">duf</tt> is a nice alternative to <tt class="docutils literal">df</tt></a></h2>
 <p>On Ubunut, <tt class="docutils literal">sudo apt install duf</tt>.</p>
 <p><tt class="docutils literal">df <span class="pre">-Th</span></tt> is also godd!</p>
 </div>
 <div class="section" id="how-to-create-a-service-on-linux">
-<h2><a class="toc-backref" href="#toc-entry-9">How to create a service on Linux</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-15">How to create a service on Linux</a></h2>
 <p>Using Tomcat as an example</p>
 <p>More on apache-tomcat installation at <a class="reference external" href="https://computingforgeeks.com/install-apache-tomcat-9-on-linux-rhel-centos/">https://computingforgeeks.com/install-apache-tomcat-9-on-linux-rhel-centos/</a></p>
 </div>
 <div class="section" id="interesting-commands">
-<h2><a class="toc-backref" href="#toc-entry-10">Interesting commands</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-16">Interesting commands</a></h2>
 <pre class="code bash literal-block">
 lsblk
 free -m
@@ -585,15 +636,15 @@ ethtool em1
 </pre>
 </div>
 <div class="section" id="remove-a-directory-from-path">
-<h2><a class="toc-backref" href="#toc-entry-11">Remove a directory from <tt class="docutils literal">$PATH</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-17">Remove a directory from <tt class="docutils literal">$PATH</tt></a></h2>
 <p><tt class="docutils literal"><span class="pre">PATH=$(echo</span> &quot;$PATH&quot; | sed <span class="pre">-e</span> <span class="pre">'s/\/home\/wrong\/dir\://')</span></tt></p>
 </div>
 <div class="section" id="disk-activity">
-<h2><a class="toc-backref" href="#toc-entry-12">Disk activity</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-18">Disk activity</a></h2>
 <p><tt class="docutils literal">iostat</tt> and <tt class="docutils literal">dstat <span class="pre">-d</span></tt> do the job. <tt class="docutils literal">dstat</tt> (without flags) monitor different points: <a class="reference external" href="https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html">https://www.networkworld.com/article/3330497/linux-commands-for-measuring-disk-activity.html</a></p>
 </div>
 <div class="section" id="partitioning">
-<h2><a class="toc-backref" href="#toc-entry-13">Partitioning</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-19">Partitioning</a></h2>
 <p>Newer systems (~2015+) require two additional partitions:</p>
 <ul class="simple">
 <li>&gt;300MB EFI</li>
@@ -602,7 +653,7 @@ ethtool em1
 <p>The rest remains the same since the DOS era.</p>
 </div>
 <div class="section" id="command-cmake-and-make">
-<h2><a class="toc-backref" href="#toc-entry-14">Command <tt class="docutils literal">cmake</tt> and <tt class="docutils literal">make</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-20">Command <tt class="docutils literal">cmake</tt> and <tt class="docutils literal">make</tt></a></h2>
 <pre class="code bash literal-block">
 rm CMakeCache.txt
 cmake ..
@@ -611,36 +662,36 @@ make <span class="name variable">DESTDIR</span><span class="operator">=</span><s
 </pre>
 </div>
 <div class="section" id="decrease-backlight-below-minimum">
-<h2><a class="toc-backref" href="#toc-entry-15">Decrease Backlight Below Minimum</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-21">Decrease Backlight Below Minimum</a></h2>
 <pre class="code bash literal-block">
 sudo nano /sys/class/backlight/intel_backlight/brightness
 <span class="comment single"># set the value to 1</span>
 </pre>
 </div>
 <div class="section" id="how-to-mount-an-iso-file">
-<h2><a class="toc-backref" href="#toc-entry-16">How to mount an ISO file</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-22">How to mount an ISO file</a></h2>
 <pre class="code bash literal-block">
 sudo mount /path/to/file.iso /path/to/mount -o loop <span class="comment single">#-t udf #-t iso9660
 </span>sudo umount /path/to/mount
 </pre>
 </div>
 <div class="section" id="how-to-create-an-iso-image">
-<h2><a class="toc-backref" href="#toc-entry-17">How to create an ISO image</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-23">How to create an ISO image</a></h2>
 <div class="section" id="creating-an-iso-from-files">
-<h3><a class="toc-backref" href="#toc-entry-18">Creating an ISO from Files</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-24">Creating an ISO from Files</a></h3>
 <pre class="code bash literal-block">
 mkisofs -o new.iso /path/to/folder
 </pre>
 </div>
 <div class="section" id="ripping-an-iso-from-a-cd">
-<h3><a class="toc-backref" href="#toc-entry-19">Ripping an ISO from a CD</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-25">Ripping an ISO from a CD</a></h3>
 <pre class="code bash literal-block">
 dd <span class="keyword">if</span><span class="operator">=</span>/dev/cdrom <span class="name variable">of</span><span class="operator">=</span>/home/user/new.iso
 </pre>
 </div>
 </div>
 <div class="section" id="disable-web-notifications-firefox-browser">
-<h2><a class="toc-backref" href="#toc-entry-20">Disable Web Notifications Firefox Browser</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-26">Disable Web Notifications Firefox Browser</a></h2>
 <ul class="simple">
 <li>Access &quot;<a class="reference external" href="about:config">about:config</a>&quot;</li>
 <li>Search for &quot;webnotifications&quot;</li>
@@ -649,11 +700,11 @@ dd <span class="keyword">if</span><span class="operator">=</span>/dev/cdrom <spa
 <p>One may also want to clean up the previous authorizations. For that, <cite>Options &gt; Content &gt; Notifications &gt; Choose... &gt; Remove All Sites &gt; Save Changes</cite>.</p>
 </div>
 <div class="section" id="find-a-package-by-filenames">
-<h2><a class="toc-backref" href="#toc-entry-21">Find a package by filenames</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-27">Find a package by filenames</a></h2>
 <p><tt class="docutils literal"><span class="pre">apt-file</span></tt>: <a class="reference external" href="https://wiki.ubuntu.com/AptFile">https://wiki.ubuntu.com/AptFile</a> . This is very useful when looking for Latex files, as <cite>*.sty</cite>.</p>
 </div>
 <div class="section" id="set-size-of-files-in-multi-files-zip">
-<h2><a class="toc-backref" href="#toc-entry-22">Set size of files in multi-files zip</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-28">Set size of files in multi-files zip</a></h2>
 <pre class="code bash literal-block">
 7za a -m0<span class="operator">=</span>Copy -v512m output.7z input
 7za a -m0<span class="operator">=</span>lzma2 -mx0 output.7z input
@@ -663,38 +714,38 @@ dd <span class="keyword">if</span><span class="operator">=</span>/dev/cdrom <spa
 </pre>
 </div>
 <div class="section" id="print-line-interval">
-<h2><a class="toc-backref" href="#toc-entry-23">Print line interval</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-29">Print line interval</a></h2>
 <p>Print from lines 4400 to 4500 of a file</p>
 <pre class="code bash literal-block">
 cat file <span class="punctuation">|</span> head -n <span class="literal number">4500</span> <span class="punctuation">|</span> tail -n <span class="literal number">100</span>
 </pre>
 </div>
 <div class="section" id="repair-rar-file">
-<h2><a class="toc-backref" href="#toc-entry-24">Repair <tt class="docutils literal">rar</tt> file</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-30">Repair <tt class="docutils literal">rar</tt> file</a></h2>
 <pre class="code bash literal-block">
 unrar x -kb damaged.rar
 </pre>
 </div>
 <div class="section" id="good-media-player">
-<h2><a class="toc-backref" href="#toc-entry-25">Good media player</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-31">Good media player</a></h2>
 <p><tt class="docutils literal">mplayer</tt> (mplayer2) is the best!</p>
 </div>
 <div class="section" id="multiple-files-edition-substitution">
-<h2><a class="toc-backref" href="#toc-entry-26">Multiple files edition (substitution)</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-32">Multiple files edition (substitution)</a></h2>
 <pre class="code bash literal-block">
 sed -i <span class="literal string double">&quot;s/INPUT/OUTPUT/g&quot;</span> *.txt
 </pre>
 <p>Reminder: if you want to substitute a special character, write &quot;\&quot; before it (e.g., &quot;\/&quot;).</p>
 </div>
 <div class="section" id="is-there-a-way-to-echo-an-alias">
-<h2><a class="toc-backref" href="#toc-entry-27">Is there a way to echo an alias?</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-33">Is there a way to echo an alias?</a></h2>
 <pre class="code bash literal-block">
 <span class="name builtin">alias</span> ls
 <span class="comment single"># alias ls='ls --color=auto'</span>
 </pre>
 </div>
 <div class="section" id="disk-usage">
-<h2><a class="toc-backref" href="#toc-entry-28">Disk usage</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-34">Disk usage</a></h2>
 <pre class="code bash literal-block">
 du -h<span class="operator">(</span>s<span class="operator">)</span> folder
 </pre>
@@ -702,7 +753,7 @@ du -h<span class="operator">(</span>s<span class="operator">)</span> folder
 <p>Good program: <tt class="docutils literal">baobab</tt>.</p>
 </div>
 <div class="section" id="ls">
-<h2><a class="toc-backref" href="#toc-entry-29"><tt class="docutils literal">ls</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-35"><tt class="docutils literal">ls</tt></a></h2>
 <pre class="code bash literal-block">
 ls -ltr --time-style<span class="operator">=</span>long
 ls -ltr --time-style<span class="operator">=</span>iso
@@ -710,7 +761,7 @@ ls -ltr --time-style<span class="operator">=</span>full
 </pre>
 </div>
 <div class="section" id="unix-essential-commands">
-<h2><a class="toc-backref" href="#toc-entry-30">Unix essential commands</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-36">Unix essential commands</a></h2>
 <pre class="literal-block">
 `awk`      tool for processing rows and columns.
 `bc`       calculate mathematical expressions.
@@ -790,19 +841,19 @@ chmod <span class="literal number">755</span> helloworld.sh
 </pre>
 </div>
 <div class="section" id="symbolic-link">
-<h2><a class="toc-backref" href="#toc-entry-31">Symbolic link</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-37">Symbolic link</a></h2>
 <pre class="code bash literal-block">
 ln -s <span class="operator">{</span>/path/to/file-name<span class="operator">}</span> <span class="operator">{</span>link-name<span class="operator">}</span>
 </pre>
 </div>
 <div class="section" id="number-of-cores">
-<h2><a class="toc-backref" href="#toc-entry-32">Number of cores</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-38">Number of cores</a></h2>
 <pre class="code bash literal-block">
 nproc
 </pre>
 </div>
 <div class="section" id="rm-find">
-<h2><a class="toc-backref" href="#toc-entry-33"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-39"><tt class="docutils literal">rm</tt> + <tt class="docutils literal">find</tt></a></h2>
 <pre class="code bash literal-block">
 find . -name <span class="literal string double">&quot;*~&quot;</span> -exec rm -r <span class="literal string double">&quot;{}&quot;</span> <span class="literal string escape">\;</span>
 <span class="comment single"># or
@@ -812,7 +863,7 @@ find . -name <span class="literal string double">&quot;*~&quot;</span> -exec rm 
 </pre>
 </div>
 <div class="section" id="rsync">
-<h2><a class="toc-backref" href="#toc-entry-34"><tt class="docutils literal">rsync</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-40"><tt class="docutils literal">rsync</tt></a></h2>
 <pre class="code bash literal-block">
 rsync -azP --delete --dry-run --rsh<span class="operator">=</span><span class="literal string single">'ssh -p20001'</span> Scripts/ user&#64;machine:/paht/Scripts2
     <span class="comment single"># &quot;/&quot; = very important. Otherwise, without &quot;/&quot;, it goes /paht/Scripts2/Scripts
@@ -842,9 +893,9 @@ rsync -a -f <span class="literal string single">'- /*/*/'</span> /dirA/ host:/di
 </div>
 </div>
 <div class="section" id="general-tips">
-<h1><a class="toc-backref" href="#toc-entry-35">General Tips</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-41">General Tips</a></h1>
 <div class="section" id="terminal">
-<h2><a class="toc-backref" href="#toc-entry-36">Terminal</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-42">Terminal</a></h2>
 <ul class="simple">
 <li><em>Ctrl+Shift+T</em> Open it</li>
 <li><em>Ctrl+A</em>      Go to the beginning of the line you are currently typing on</li>
@@ -864,15 +915,15 @@ rsync -a -f <span class="literal string single">'- /*/*/'</span> /dirA/ host:/di
 <p>Also works on Mac OS.</p>
 </div>
 <div class="section" id="scripts">
-<h2><a class="toc-backref" href="#toc-entry-37">Scripts</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-43">Scripts</a></h2>
 <p>Script starts with <tt class="docutils literal"><span class="pre">#!/bin/bash</span></tt></p>
 </div>
 <div class="section" id="keeping-windows-opened">
-<h2><a class="toc-backref" href="#toc-entry-38">Keeping windows opened</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-44">Keeping windows opened</a></h2>
 <p>After opening then with <tt class="docutils literal">program &amp;</tt>, just type <tt class="docutils literal">disown</tt>.</p>
 </div>
 <div class="section" id="useful-keyboard-shortcuts">
-<h2><a class="toc-backref" href="#toc-entry-39">Useful keyboard shortcuts</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-45">Useful keyboard shortcuts</a></h2>
 <pre class="code bash literal-block">
 exaile -t  <span class="comment single">#Pause
 </span>exaile -p  <span class="comment single">#Previous
@@ -886,13 +937,13 @@ amixer <span class="name builtin">set</span> Master <span class="literal number"
 </pre>
 </div>
 <div class="section" id="win-programs-alternatives">
-<h2><a class="toc-backref" href="#toc-entry-40">Win programs alternatives</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-46">Win programs alternatives</a></h2>
 <div class="figure align-center">
 <img alt="../figs/linux_ref_progs.jpg" src="../figs/linux_ref_progs.jpg" style="width: 640px;" />
 </div>
 </div>
 <div class="section" id="image-tools">
-<h2><a class="toc-backref" href="#toc-entry-41">Image tools</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-47">Image tools</a></h2>
 <pre class="code bash literal-block">
 sudo apt-get install imagemagick
 mogrify -quality <span class="literal number">75</span> *
@@ -922,7 +973,7 @@ convert temp.pdf -crop 1200x460+0+70 +repage newfig1.pdf
 </pre>
 </div>
 <div class="section" id="image-to-pdf-format">
-<h2><a class="toc-backref" href="#toc-entry-42">Image to PDF format</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-48">Image to PDF format</a></h2>
 <p>In principle, one could use <tt class="docutils literal">convert</tt> for the job. However, it is annoying aligning and setting border. So, I suggest using <tt class="docutils literal">img2pdf</tt>.</p>
 <pre class="code bash literal-block">
 img2pdf input.png --pagesize 210mmx297mm --border 1cm:2.5cm -o out.pdf
@@ -931,7 +982,7 @@ img2pdf input.png --pagesize 210mmx297mm --border 1cm:2.5cm -o out.pdf
 </pre>
 </div>
 <div class="section" id="image-to-eps-format">
-<h2><a class="toc-backref" href="#toc-entry-43">Image to EPS format</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-49">Image to EPS format</a></h2>
 <p>There are <em>several</em> recipes for doing this (e.g., <tt class="docutils literal">convert img.png img.eps</tt>).
 By far, the best option is this:</p>
 <pre class="code bash literal-block">
@@ -946,7 +997,7 @@ convert image.png eps2:image.eps
 <p>(More about EPS-PDF convertion, formats and sizes, see <a class="reference external" href="latex.html">latex</a> page)</p>
 </div>
 <div class="section" id="cedilla">
-<h2><a class="toc-backref" href="#toc-entry-44">Cedilla</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-50">Cedilla</a></h2>
 <p>Add the following to <tt class="docutils literal">/etc/environment</tt>:</p>
 <pre class="code literal-block">
 GTK_IM_MODULE=cedilla
@@ -954,14 +1005,14 @@ QT_IM_MODULE=cedilla
 </pre>
 </div>
 <div class="section" id="grub-edit">
-<h2><a class="toc-backref" href="#toc-entry-45">GRUB edit</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-51">GRUB edit</a></h2>
 <pre class="code bash literal-block">
 sudo vim /etc/default/grub
 sudo update-grub
 </pre>
 </div>
 <div class="section" id="changing-time-zone">
-<h2><a class="toc-backref" href="#toc-entry-46">Changing time-zone</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-52">Changing time-zone</a></h2>
 <p>Using the terminal (command line)</p>
 <pre class="code bash literal-block">
 sudo dpkg-reconfigure tzdata
@@ -969,12 +1020,12 @@ sudo dpkg-reconfigure tzdata
 <p>Follow the directions in the terminal. The timezone info is saved in <tt class="docutils literal">/etc/timezone</tt>.</p>
 </div>
 <div class="section" id="problems-with-the-panel">
-<h2><a class="toc-backref" href="#toc-entry-47">Problems with the panel</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-53">Problems with the panel</a></h2>
 <p>On Xubuntu 16.04, if the indicator-multiload has problems (&quot;transparency&quot;) or the volume indicator is missing, You might have indicator-plugin missing from the panel.</p>
 <p>Right click on the panel and select it.</p>
 </div>
 <div class="section" id="alternative-to-indicator-multiload">
-<h2><a class="toc-backref" href="#toc-entry-48">Alternative to <tt class="docutils literal"><span class="pre">indicator-multiload</span></tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-54">Alternative to <tt class="docutils literal"><span class="pre">indicator-multiload</span></tt></a></h2>
 <p>Install <tt class="docutils literal"><span class="pre">multiload-ng</span></tt>!!!!</p>
 <pre class="code bash literal-block">
 sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -986,7 +1037,7 @@ sudo apt install xfce4-multiload-ng-plugin
 <p>Then, (right click) Panel &gt; Panel Preferences &gt; (tab) Items &gt; &quot;+&quot;</p>
 </div>
 <div class="section" id="mimes-and-program-links-in-file-managers">
-<h2><a class="toc-backref" href="#toc-entry-49">Mimes and program links in File Managers</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-55">Mimes and program links in File Managers</a></h2>
 <p>In Ubuntu, the program-file type association is set is in <tt class="docutils literal"><span class="pre">~/.local/share/applications/mimeapps.list</span></tt>.</p>
 <p>Then, the program associated there must have a &quot;description&quot; in <tt class="docutils literal">/usr/share/applications/PROGRAM.desktop</tt>.</p>
 <p>One example is here:</p>
@@ -1011,11 +1062,11 @@ Icon=/home/user/.local/share/icons/hicolor/64x64/apps/FoxitReader.png
 </pre>
 </div>
 <div class="section" id="exporting-wifi-passwords">
-<h2><a class="toc-backref" href="#toc-entry-50">Exporting wifi passwords</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-56">Exporting wifi passwords</a></h2>
 <p>Network or wifi passwords are saved in <tt class="docutils literal"><span class="pre">/etc/NetworkManager/system-connections</span></tt>. There is a file for each connection with its configuration and password. One need root privileges to read them (the files aren't encrypted).</p>
 </div>
 <div class="section" id="mounting-a-disk-your-user-isn-t-the-owner">
-<h2><a class="toc-backref" href="#toc-entry-51">Mounting a disk your user isn't the owner</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-57">Mounting a disk your user isn't the owner</a></h2>
 <p>To mount a filesystem with special user id set, use <tt class="docutils literal">bindfs</tt>.</p>
 <pre class="code bash literal-block">
 sudo apt-get install bindfs
@@ -1028,12 +1079,12 @@ sudo bindfs -u <span class="keyword">$(</span>id -u<span class="keyword">)</span
 - <a class="reference external" href="https://askubuntu.com/questions/34066/mounting-filesystem-with-special-user-id-set/353759#353759">https://askubuntu.com/questions/34066/mounting-filesystem-with-special-user-id-set/353759#353759</a></p>
 </div>
 <div class="section" id="firefox-adblocl">
-<h2><a class="toc-backref" href="#toc-entry-52">Firefox + AdBlocl</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-58">Firefox + AdBlocl</a></h2>
 <p>Open <tt class="docutils literal">about:config</tt> in Firefox, and change the option at <tt class="docutils literal">extensions.adblockplus.sidebar_key</tt>!</p>
 </div>
 </div>
 <div class="section" id="permitions">
-<h1><a class="toc-backref" href="#toc-entry-53">Permitions</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-59">Permitions</a></h1>
 <pre class="code bash literal-block">
 chmod a<span class="operator">[</span>ll<span class="operator">]</span>,g<span class="operator">[</span>roup<span class="operator">]</span>,u<span class="operator">[</span>ser<span class="operator">]</span> +/-x,r,w
 <span class="name variable">1</span> <span class="operator">=</span> execute
@@ -1056,7 +1107,7 @@ find /path/to/base/dir -type f -exec chmod <span class="literal number">644</spa
 chmod <span class="literal number">644</span> <span class="keyword">$(</span>find /path/to/base/dir -type f<span class="keyword">)</span>
 </pre>
 <div class="section" id="how-to-apply-default-permissions">
-<h2><a class="toc-backref" href="#toc-entry-54">How to apply default permissions</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-60">How to apply default permissions</a></h2>
 <pre class="code bash literal-block">
 chmod g+s &lt;directory&gt;  //set gid
 setfacl -d -m g::rwx /&lt;directory&gt;  //set group to rwx default
@@ -1081,14 +1132,14 @@ default:other::r-x
 </pre>
 </div>
 <div class="section" id="users">
-<h2><a class="toc-backref" href="#toc-entry-55">Users</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-61">Users</a></h2>
 <p>How can I add a new user as sudoer using the command line?</p>
 <pre class="code bash literal-block">
 sudo usermod -a -G sudo &lt;username&gt;
 </pre>
 </div>
 <div class="section" id="machine-name">
-<h2><a class="toc-backref" href="#toc-entry-56">machine name</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-62">machine name</a></h2>
 <p>Error message when I run sudo: unable to resolve host(name)</p>
 <ul class="simple">
 <li>Edit <tt class="docutils literal">/etc/hostname</tt> file contains just the name of the machine.</li>
@@ -1097,9 +1148,9 @@ sudo usermod -a -G sudo &lt;username&gt;
 </div>
 </div>
 <div class="section" id="ssh-auth">
-<h1><a class="toc-backref" href="#toc-entry-57">SSH Auth</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-63">SSH Auth</a></h1>
 <div class="section" id="run-at-local-pc">
-<h2><a class="toc-backref" href="#toc-entry-58">1- Run at local PC</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-64">1- Run at local PC</a></h2>
 <pre class="code bash literal-block">
 $ ssh-keygen -t rsa
 <span class="comment single">#(3x type ENTER)
@@ -1109,7 +1160,7 @@ $ ssh-keygen -t rsa
 </pre>
 </div>
 <div class="section" id="run-at-remote-pc">
-<h2><a class="toc-backref" href="#toc-entry-59">2- Run at remote PC</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-65">2- Run at remote PC</a></h2>
 <pre class="code bash literal-block">
 $ cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
 $ chmod <span class="literal number">700</span> ~/.ssh/authorized_keys
@@ -1117,14 +1168,14 @@ $ rm id_rsa.pub
 </pre>
 </div>
 <div class="section" id="one-may-need-to-run-at-remote-pc">
-<h2><a class="toc-backref" href="#toc-entry-60">3- One may need to run at remote PC</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-66">3- One may need to run at remote PC</a></h2>
 <pre class="code bash literal-block">
 $ <span class="name builtin">exec</span> ssh-agent bash
 $ ssh-add
 </pre>
 </div>
 <div class="section" id="github">
-<h2><a class="toc-backref" href="#toc-entry-61">GitHub</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-67">GitHub</a></h2>
 <pre class="code bash literal-block">
 git config --global user.name <span class="literal string double">&quot;John Doe&quot;</span>
 git config --global user.email johndoe&#64;example.com
@@ -1158,14 +1209,14 @@ cat /home/user/.ssh/id_github.pub
 </div>
 </div>
 <div class="section" id="using-pc-mic">
-<h1><a class="toc-backref" href="#toc-entry-62">Using PC MIC</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-68">Using PC MIC</a></h1>
 <div class="section" id="tips">
-<h2><a class="toc-backref" href="#toc-entry-63">Tips</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-69">Tips</a></h2>
 <p>Press &quot;Record&quot; and then check the &quot;Recording&quot; tab at the volume control.</p>
 <p>Look for the &quot;Monitor...&quot; option.</p>
 </div>
 <div class="section" id="how-can-i-get-the-instrumentals-only-from-a-file-and-remove-the-vocals">
-<h2><a class="toc-backref" href="#toc-entry-64">How can I get the instrumentals only from a file and remove the vocals?</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-70">How can I get the instrumentals only from a file and remove the vocals?</a></h2>
 <p>A software that can do this is called <tt class="docutils literal">sox</tt>. It has an option for karaoke:</p>
 <blockquote>
 <p><em>oops</em></p>
@@ -1181,14 +1232,14 @@ sox song.wav song_karaoke.wav oops
 <a class="reference external" href="http://manual.audacityteam.org/o/man/tutorial_vocal_removal_and_isolation.html">http://manual.audacityteam.org/o/man/tutorial_vocal_removal_and_isolation.html</a></blockquote>
 </div>
 <div class="section" id="no-sound-with-headphones-but-sound-with-stereo">
-<h2><a class="toc-backref" href="#toc-entry-65">No Sound with Headphones but Sound with Stereo</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-71">No Sound with Headphones but Sound with Stereo</a></h2>
 <p>Sound card automaticly change to hdmi output when two applications conflicted with it. I fix that with the following command. It restore output to analog, again.</p>
 <pre class="code bash literal-block">
 alsactl -F restore
 </pre>
 </div>
 <div class="section" id="listen-to-microphone-over-the-speakers-using-pulseaudio">
-<h2><a class="toc-backref" href="#toc-entry-66">Listen to microphone over the speakers using pulseaudio</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-72">Listen to microphone over the speakers using pulseaudio</a></h2>
 <p>By default, we cannot hear any sound of microphone over speaker on Debian or Ubuntu OS. So, we cannot sing karaoke. But this command can route the mic input through output:</p>
 <pre class="code literal-block">
 pactl load-module module-loopback latency_msec=1
@@ -1207,7 +1258,7 @@ load-module module-loopback
 <p><strong>PROBLEM</strong>: there is a lag in the mic audio using this method.</p>
 </div>
 <div class="section" id="listen-to-microphone-over-the-speakers-using-qjackctl">
-<h2><a class="toc-backref" href="#toc-entry-67">Listen to microphone over the speakers using Qjackctl</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-73">Listen to microphone over the speakers using Qjackctl</a></h2>
 <pre class="code literal-block">
 sudo apt-get install qjackctl
 </pre>
@@ -1217,19 +1268,19 @@ sudo apt-get install qjackctl
 <strong>PROBLEM</strong>: No system audio - but no lag!</blockquote>
 </div>
 <div class="section" id="how-to-do-a-mixing">
-<h2><a class="toc-backref" href="#toc-entry-68">How to do a mixing</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-74">How to do a mixing</a></h2>
 <p>Open you file in the Audacity.</p>
 <p>Record your mic. The problem is: or you listen to yourself (and set out of sinc with the music, like with loopback) or listen only to the music.</p>
 <p>I couldn't find a way record the voice while playing it in the right time (only with lag).</p>
 </div>
 <div class="section" id="summary">
-<h2><a class="toc-backref" href="#toc-entry-69">Summary</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-75">Summary</a></h2>
 <p>QjackCtl: mic in the output, no lag. No system sound, and no record.</p>
 <p>Audacity + loopback: mic in the output, with lag. System sound, and record.</p>
 <p>Audacity: no mic in the output. System sound and record, no lag.</p>
 </div>
 <div class="section" id="naming-screen">
-<h2><a class="toc-backref" href="#toc-entry-70">Naming <tt class="docutils literal">screen</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-76">Naming <tt class="docutils literal">screen</tt></a></h2>
 <ul class="simple">
 <li><tt class="docutils literal">screen <span class="pre">-S</span> {name}</tt></li>
 <li><tt class="docutils literal">screen <span class="pre">-r</span> {name}</tt></li>
@@ -1237,12 +1288,12 @@ sudo apt-get install qjackctl
 <p><a class="reference external" href="https://unix.stackexchange.com/questions/12227/setting-a-name-for-a-screen-session">https://unix.stackexchange.com/questions/12227/setting-a-name-for-a-screen-session</a></p>
 </div>
 <div class="section" id="can-t-resume-an-attached-screen">
-<h2><a class="toc-backref" href="#toc-entry-71">Can't resume an attached screen</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-77">Can't resume an attached screen</a></h2>
 <p><tt class="docutils literal">screen <span class="pre">-rd</span></tt> does the job</p>
 <p><a class="reference external" href="https://unix.stackexchange.com/questions/240444/cant-resume-screen-says-i-am-already-attached">https://unix.stackexchange.com/questions/240444/cant-resume-screen-says-i-am-already-attached</a></p>
 </div>
 <div class="section" id="how-to-close-and-kill-an-screen-session">
-<h2><a class="toc-backref" href="#toc-entry-72">How to close and kill an <tt class="docutils literal">screen</tt> session</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-78">How to close and kill an <tt class="docutils literal">screen</tt> session</a></h2>
 <ul class="simple">
 <li>Showing keybindings:     Ctrl+a ?</li>
 <li>Ending session and terminating Screen:   Ctrl+a </li>
@@ -1258,12 +1309,12 @@ sudo apt-get install qjackctl
 <p><a class="reference external" href="https://linuxhint.com/how-do-i-close-a-screen-session/">https://linuxhint.com/how-do-i-close-a-screen-session/</a></p>
 </div>
 <div class="section" id="one-can-not-open-a-screen-in-a-screen">
-<h2><a class="toc-backref" href="#toc-entry-73">One can not open a <tt class="docutils literal">screen</tt> in a <tt class="docutils literal">screen</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-79">One can not open a <tt class="docutils literal">screen</tt> in a <tt class="docutils literal">screen</tt></a></h2>
 <p>If I open a screen on my local machine and ssh into a remote one, if I try to open a screen on remote I receive the following error message: <tt class="docutils literal">Cannot find terminfo entry for <span class="pre">'screen.xterm-256color'.</span></tt></p>
 <p>However, if I ssh into remote from a local terminal, screen on remote works fine :-)</p>
 </div>
 <div class="section" id="difference-between-bashrc-bash-profile-and-profile">
-<h2><a class="toc-backref" href="#toc-entry-74">Difference between <tt class="docutils literal">.bashrc</tt>, <tt class="docutils literal"><span class="pre">.bash-profile</span></tt>, and <tt class="docutils literal">.profile</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-80">Difference between <tt class="docutils literal">.bashrc</tt>, <tt class="docutils literal"><span class="pre">.bash-profile</span></tt>, and <tt class="docutils literal">.profile</tt></a></h2>
 <p><a class="reference external" href="https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile">https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile</a></p>
 </div>
 </div>

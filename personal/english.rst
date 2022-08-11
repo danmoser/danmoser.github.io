@@ -3,6 +3,11 @@ English
 
 .. contents:: Table of contents
 
+Useful
+=======
+https://quillbot.com/
+
+
 Grammar
 =========
 - Between, among: one use between to refer to two things which are clearly separated, and use among to talk about things which are not clearly separated because they are part of a group or crowd or mass of objects.
@@ -144,6 +149,7 @@ Expressions
 - "a good deal in spots": em vários pontos
 - "built to order": feito sob encomenda
 - "bottom of a [deep] chasm": fundo do poço
+- "dead in the water": to be unresponsive; completely disabled
 - "different kettle of fish": very different; a bad state of affairs; mess
 - "foul play": jogo sujo, crime
 - "get into the weeds": get into the details
