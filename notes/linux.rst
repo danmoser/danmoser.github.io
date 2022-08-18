@@ -885,3 +885,35 @@ However, if I ssh into remote from a local terminal, screen on remote works fine
 Difference between ``.bashrc``, ``.bash-profile``, and ``.profile``
 ----------------------------------------------------------------------------
 https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile
+
+Cron jobs
+==========
+Your friend: https://crontab.guru/
+
+``crontab`` is the command that loads and runs a set of cron jobs. 
+
+- ``crontab {cronfile}``
+- ``crontab -l``: show currently running cron jobs
+- ``sudo crontab -u panda -l``: show all cron jobs running for user panda
+- ``crontab -e``: edit the current crontab. *Avoid* this command (changes are hard to be saved)
+- ``crontab -r``: clear the cron jobs
+
+The ``{cronfile}`` will be something like this:
+
+.. code:: bash
+
+    # Please do not edit the crontab directly (crontab -e)
+    # 
+    # Syntax:
+    # minute (0-59)
+    #   hour (0-23)
+    #     day (0-31)
+    #       month (0-12)
+    #         day of the week (0-6, 0=Sunday)
+
+    # SHELL=/bin/bash
+    # BASH_ENV=/home/dataproc/cron_bash
+    MAILTO=dfaes@nrao.edu
+
+    #* 8-17 * * 1-5 rsync -avq orion:/export/home/orion/shared/ ~/mnt/ 2> msg_in.log
+
