@@ -3,18 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <title>Linux tips</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -511,6 +511,7 @@ li {
 <li><a class="reference internal" href="#difference-between-bashrc-bash-profile-and-profile" id="toc-entry-80">Difference between <tt class="docutils literal">.bashrc</tt>, <tt class="docutils literal"><span class="pre">.bash-profile</span></tt>, and <tt class="docutils literal">.profile</tt></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#cron-jobs" id="toc-entry-81">Cron jobs</a></li>
 </ul>
 </div>
 <div class="section" id="useful-commands-tricks">
@@ -1317,6 +1318,35 @@ sudo apt-get install qjackctl
 <h2><a class="toc-backref" href="#toc-entry-80">Difference between <tt class="docutils literal">.bashrc</tt>, <tt class="docutils literal"><span class="pre">.bash-profile</span></tt>, and <tt class="docutils literal">.profile</tt></a></h2>
 <p><a class="reference external" href="https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile">https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile</a></p>
 </div>
+</div>
+<div class="section" id="cron-jobs">
+<h1><a class="toc-backref" href="#toc-entry-81">Cron jobs</a></h1>
+<p>Your friend: <a class="reference external" href="https://crontab.guru/">https://crontab.guru/</a></p>
+<p><tt class="docutils literal">crontab</tt> is the command that loads and runs a set of cron jobs.</p>
+<ul class="simple">
+<li><tt class="docutils literal">crontab {cronfile}</tt></li>
+<li><tt class="docutils literal">crontab <span class="pre">-l</span></tt>: show currently running cron jobs</li>
+<li><tt class="docutils literal">sudo crontab <span class="pre">-u</span> panda <span class="pre">-l</span></tt>: show all cron jobs running for user panda</li>
+<li><tt class="docutils literal">crontab <span class="pre">-e</span></tt>: edit the current crontab. <em>Avoid</em> this command (changes are hard to be saved)</li>
+<li><tt class="docutils literal">crontab <span class="pre">-r</span></tt>: clear the cron jobs</li>
+</ul>
+<p>The <tt class="docutils literal">{cronfile}</tt> will be something like this:</p>
+<pre class="code bash literal-block">
+<span class="comment single"># Please do not edit the crontab directly (crontab -e)
+#
+# Syntax:
+# minute (0-59)
+#   hour (0-23)
+#     day (0-31)
+#       month (0-12)
+#         day of the week (0-6, 0=Sunday)
+</span>
+<span class="comment single"># SHELL=/bin/bash
+# BASH_ENV=/home/dataproc/cron_bash
+</span><span class="name variable">MAILTO</span><span class="operator">=</span>dfaes&#64;nrao.edu
+
+<span class="comment single">#* 8-17 * * 1-5 rsync -avq orion:/export/home/orion/shared/ ~/mnt/ 2&gt; msg_in.log</span>
+</pre>
 </div>
 </div>
 </body>

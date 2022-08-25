@@ -1,13 +1,13 @@
 DMF notes
 ###########
 
-================  ============  ==============================  ============  ===========
-`charges`_        `cheers`_     `docs_general-info`_            `drugs`_      `english`_
-`espanol`_        `francais`_   `games`_                        `index`_      `latin`_
-`music`_          `patagonia`_  .. image:: ../figs/index2.gif   `philos`_     `poetry`_
-`poetry_clouds`_  `politcs`_    `portugues`_                    `psi`_        `religion`_
-`santiago`_       `sports`_     .. image:: ../figs/index3a.gif  `travellog`_  \
-================  ============  ==============================  ============  ===========
+================  ============  ==============================  =========  ==============
+`charges`_        `cheers`_     `docs_general-info`_            `drugs`_   `english`_
+`espanol`_        `francais`_   `games`_                        `index`_   `latin`_
+`music`_          `patagonia`_  .. image:: ../figs/index2.gif   `philos`_  `poetry`_
+`poetry_clouds`_  `politcs`_    `portugues`_                    `psi`_     `receituario`_
+`religion`_       `santiago`_   .. image:: ../figs/index3a.gif  `sports`_  `travellog`_
+================  ============  ==============================  =========  ==============
 
 .. _charges: charges.html
 .. _cheers: cheers.html
@@ -27,6 +27,7 @@ DMF notes
 .. _politcs: politcs.html
 .. _portugues: portugues.html
 .. _psi: psi.html
+.. _receituario: receituario.html
 .. _religion: religion.html
 .. _santiago: santiago.html
 .. _sports: sports.html
