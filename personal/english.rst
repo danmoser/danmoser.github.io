@@ -168,10 +168,22 @@ Expressions
 - "wanted on a charge": procurado sob a acusação de
 - "wildcat strike": greve selvagem 
 
+Email phrases
+---------------
+- Allow me to introduce myself
+- Hope this email finds you well
+- I hope you enjoyed your weekend
+- I hope you're doing well
+- I hope you're having a [great week|wonderful day]
+- It's great to hear from you
+- I'm eager to get your advice on...
+- I'm reaching out about...
+- Thank you for [your help|the update]
+- Thanks for [getting in touch|the quick response]
+
 
 Acronyms
 ------------
-- ASB: American Savings Bank
 - CD: Certificate Deposit -- um tipo de investimento feito no/pelo banco.
 
 Prepositions
@@ -183,3 +195,4 @@ Prepositions
 Other
 ========
 - `The magic of "untranslatable" words <http://www.scientificamerican.com/article/the-magic-of-untranslatable-words/?WT.mc_id=SA_FB_MB_NEWS>`_
+- `Do NOT say the T in these 11 Common Words | It's not just Californians! <https://youtu.be/5svtIgYDJDI>`_

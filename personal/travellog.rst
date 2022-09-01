@@ -186,8 +186,8 @@ NE NM
 - (Food) Bavarian restaurant
 - Fort Union National Monument
 
-NO NM
--------
+NW NM / I40 West
+-----------------
 - [Farmington]
 - Fajada Butte 
 - Chaco Culture
@@ -225,14 +225,9 @@ I40 East NM
 - Mesalands Dinosaur museum
 - {done}(Food) Holly's Drive Inn 
 
-I40 West NM
-----------------
-- Red Rock Park
-
 NE Socorro
 ------------
-- Sevilleta National Wildlife Refuge
-- Abo ruins
+- {done}Sevilleta National Wildlife Refuge
 - Salinas Pueblos (x3)
 
 Captain/Ruidoso area
@@ -282,3 +277,37 @@ RMNP
 .. figure:: ../figs/travel_rmnp-map2.jpg
     :align: center
     :height: 500
+
+Plans
+=======
+Socorro -- Gunnison Park
+---------------------------
+.. code:: 
+
+    ABQ--Crawford = 7h
+    ABQ--Taos--Crawford = 8h
+    ABQ--Taos = 2h30
+    ABQ--Espanola = 1h30 (Socorro size)
+    ABQ--Monte Vista = 4h
+    ABQ--dam = 6h
+    Taos--Monte Vista = 2h
+    Monte Vista--Crawford = 3h30
+    Sunset at 7:40pm (early Sep)
+    Safeway (10pm): Delta (7am) + Montrose (6am)
+
+Three day trip: Sat: north; Sun: south; Mon: open (south or NW NM).
+
+Socorro -- Carlsbad
+---------------------
+.. code::
+
+    Soc--Roswell--Carlsbad = 4h
+    Soc--Alamogordo--Carlsbad = 4h40
+    Carlsbad--caves = 30min
+    Carlsbad--Guadalupe = 50min
+    Alamogordo--Socorro = 2h30
+
+
+Weekend trip. Sat: leave at 8am; lunch at noon in Carlsbad. Caves from 1h30 -- end of day. Hotels from $65--90/day. 
+
+Sun: leave early. Guadalupe until 11h30am. Lunch in Carlsbad at 12h30pm. White sands at 4h30pm (entrance closes at 6pm). 

@@ -1468,7 +1468,48 @@ Como fazer: Misture tudo seco. Misture tudo molhado. Combine. Asse por 30 minuto
 
 Figo em calda (com casca)
 ----------------------------
-https://www.tudoreceitas.com/receita-de-figos-em-calda-com-sua-casca-10544.html
+Ingredientes:
+
+- 500 g (uma duzia) de figos maduros 
+- 1 limao
+- 250 gramas de acucar
+- 10 g (uma colher sopa) de acido citrico [opcional]
+
+Como fazer
+~~~~~~~~~~~~
+Lave os figos em água corrente e corte a parte superior do talo. Adicione o suco do limao (e o acido citrico). Adicione o acucar sobre os figos, cubra com uma pelicula aderente e reserve por 8--10h em temperatura ambiente. Apos o descanso, cozinhe tudo por 1h em fogo baixo.
+
+Os figos ainda quentes podem ser colocados num pote hermetico. Podem ser armazenados por alguns (poucos) meses. Depois de abertos, mantenha em geladeira por ate' 2 semanas. O acido citrico ajuda a conservar por periodos um pocuo mais longos.
+
+
+Cuca de banana com farofa
+---------------------------
+Ingredientes cuca:
+
+- 2 xícaras (chá) de farinha de trigo
+- 8 colheres (sopa) de açúcar
+- 1 xícara (chá) de leite
+- 2 colheres (sopa) de manteiga ou margarina
+- 1 ovo grande
+- 1 colher (sopa) de fermento em pó
+- 1 pitada de sal
+- 6 a 7 bananas prata médias fatiadas
+
+Ingredientes farofa:
+
+- 5 colheres (sopa) de açúcar
+- 5 colheres (sopa) de farinha de trigo
+- 4 colheres (sopa) de manteiga ou margarina
+- canela em pó (opcional)
+
+Como fazer
+~~~~~~~~~~~
+Farofa: Numa tigela, coloque o açúcar, a farinha de trigo, a manteiga ou margarina. Misture muito bem com as pontas dos dedos, para formar uma farofa. Polvilhe com canela (opcional). Reserve.
+
+Cuca: Na batedeira, coloque o ovo, o açúcar, a manteiga e o sal. Bata muito bem até obter um creme claro e homogêneo.
+Acrescente a farinha, aos poucos, intercalando com o leite, e bata até incorporar. Por último, adicione o fermento e misture levemente.
+
+Numa forma retangular (30 cm x 25 cm) untada e enfarinhada, coloque a massa. Cubra toda a superfície da massa com as bananas fatiadas. Adicione a farofa reservada e espalhe por cima das bananas. Asse em forno médio (180oC) pré-aquecido por 40 minutos. Retire do forno, corte em quadradinhos e sirva em seguida!
 
 
 Drinks
