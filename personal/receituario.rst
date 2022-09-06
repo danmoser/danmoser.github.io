@@ -1573,12 +1573,14 @@ Quantidade: 1 tablete de fermento biológico equivale a uma 1 colher-Sopa de Roy
 
 Pratos indianos e nepales
 -----------------------------
-- Saag - parecido com espinafre em creme
+- Chana curry - grão de bico no molho
 - Naan - pão sem fermento
+- Pun Hill -- carne (ou tofu) grelhado com pimentões
+- Saag - parecido com espinafre em creme
+- Samosa -- salgado com massa de pastel. Recheio de batata e ervilha
+- Tandoori chicken - frango assado saboroso tempero
 - Tikka masala - Stroganoff de frango com curry (padrao nao apimentado)
 - Vegetable korma - vegetais ao molho com caju
-- Chana curry - grão de bico no molho
-- Tandoori chicken - frango assado saboroso tempero
 
 
 Para avaliar

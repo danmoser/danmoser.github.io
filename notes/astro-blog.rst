@@ -5,10 +5,53 @@ DMF AstroBlog
 
 2022
 *********
+2022-09
+=========
+You Should Be Using Python's Walrus Operator - Here's Why
+----------------------------------------------------------
+https://martinheinz.dev/blog/79
+
+----
+
+No more paywalls for public research in USA by 2026
+----------------------------------------------------------
+https://www.whitehouse.gov/ostp/news-updates/2022/08/25/ostp-issues-guidance-to-make-federally-funded-research-freely-available-without-delay/
+
+--------
+
+Introdução à Ciência da Computação com Python - USP
+----------------------------------------------------------
+https://www.youtube.com/playlist?list=PLcoJJSvnDgcKpOi_UeneTNTIVOigRQwcn
+
+---------
+
+Workshop 'Python em Astronomia' - UFS
+-----------------------------------------------
+https://sites.google.com/view/apoastro/p%C3%A1gina-inicial/python-em-astronomia
+
+-------
+
+Valor 'p' da estatistica
+-----------------------------
+https://twitter.com/pedrocintra52/status/1559301222720471041
+
+--------
+
+10 mind-blowing AI websites you probably didn't know existed
+--------------------------------------------------------------
+https://twitter.com/TessaRDavis/status/1557711104071110656
+
+-------
+
+GitHub repositories to improve programming skills
+----------------------------------------------------------
+https://twitter.com/denicmarko/status/1559850795805429761
+
+
 2022-08
 ============
 Linguistic Antipatterns
-===========================
+---------------------------------------
 Programming languages. Linguistic antipatterns were first studied in a series of papers led by Venera Arnaoudova.
 
 https://www.linguistic-antipatterns.com/

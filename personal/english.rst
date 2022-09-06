@@ -63,6 +63,7 @@ Vocabulary
 - glimpse: vislumbrar
 - glower: olhar furioso
 - groove: sulco, estria
+- hallmark: marca registrada
 - hardpoint: área/ponto de carga (mecânica), junção
 - (to) hand: entregar
 - harness: arreio, armadura
@@ -161,7 +162,8 @@ Expressions
 - "one-off payment": pagamento único/'a vista
 - "Ponzi scheme": a fraudulent investment operation
 - "state of play": the present situation
-- "to tip his hat": tirar o seu (dele) chapéu
+- "tit-for-tat": olho-por-olho
+- "tip his hat": tirar o seu (dele) chapéu
 - "turn-key": pronto para ser usado
 - "under the hood": is not immediately visible or obvious
 - "wall-clock time": refers to elapsed time as determined by a chronometer such as a wristwatch or wall clock
