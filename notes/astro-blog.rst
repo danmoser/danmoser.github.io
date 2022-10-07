@@ -5,8 +5,122 @@ DMF AstroBlog
 
 2022
 *********
+2022-10
+==========
+Software engineering practices
+-----------------------------------
+https://simonwillison.net/2022/Oct/1/software-engineering-practices/
+
+---------
+
+SI Units for PostgreSQL
+--------------------------
+https://github.com/df7cb/postgresql-unit
+
+-------
+
+Java Algorithms for Celestial Computation
+--------------------------------------------
+Suitable for Navigation and Astronomy. Mainly based on Jean MEEUS' "Astronomical Algorithms". 
+
+https://celestjava.sourceforge.net/
+
+-------
+
+Oh Shit, Git!?!
+--------------------------
+Git is hard: screwing up is easy, and figuring out how to fix your mistakes is fucking impossible. 
+
+https://ohshitgit.com/
+
+
 2022-09
 =========
+Short Thoughts on Computers and Programming
+-----------------------------------------------
+https://www.datagubbe.se/short/
+
+-------
+
+11 Laws of Software Estimation for Complex Work
+------------------------------------------------------------
+Product Management. Wrong estimates aren’t your fault, but they are definitely your problem
+
+https://mdalmijn.com/11-laws-of-software-estimation-for-complex-work/
+
+-------
+
+15 Python Code to automate your work
+--------------------------------------
+https://twitter.com/clcoding/status/1561889221526269952
+
+-------
+
+6 free games that help you learn & practice coding skills 
+-----------------------------------------------------------
+#programming
+
+- http://Codingame.com
+- http://Codewars.com
+- http://CryptoZombies.io
+- http://robocode-dev.github.io/tank-royale/
+- http://alexnisnevich.github.io/untrusted/
+- https://mystery.knightlab.com/
+
+--------
+
+Build your own zoom with Python
+-----------------------------------------------------------
+https://twitter.com/Saboo_Shubham_/status/1568501777195999232
+
+--------
+
+Top 75+ Interview Questions in OOP & Design Patterns
+-----------------------------------------------------------
+https://twitter.com/swapnakpanda/status/1568563856322236416
+
+------
+
+Closure phase in astrophysics
+-------------------------------
+In 1958, by Jennison, R. C.
+
+- https://ui.adsabs.harvard.edu/abs/1958MNRAS.118..276J/abstract
+- https://en.wikipedia.org/wiki/Closure_phase
+
+------
+
+
+Simple Python GUI/MP3 player
+-------------------------------
+PySimpleGUI and VLC: https://github.com/driscollis/pytips/blob/main/applications/psg_mp3_player.py
+
+``pip install python-vlc pysimplegui``
+
+------
+
+UX/UI designer resources
+-------------------------
+- http://freeillustrations.xyz - free illustration kits!
+- http://freeimages.com - free stock photos
+- http://screenlane.com - design inspiration
+
+----
+
+Python Traitlets
+------------------
+https://traitlets.readthedocs.io/en/stable/using_traitlets.html
+
+------
+
+This Man Is Trying to Put Mirrors in Space to Generate Solar Power at Night
+----------------------------------------------------------------------------------------
+With initiatives such as this and conspterate satellites for the internet, the future of astronomy could be restricted to telescopes on the moon or orbit L2 as James Webb.
+
+https://www.vice.com/en/article/n7z3yq/this-man-is-trying-to-put-mirrors-in-space-to-generate-solar-power-at-night
+
+-----
+
 You Should Be Using Python's Walrus Operator - Here's Why
 ----------------------------------------------------------
 https://martinheinz.dev/blog/79

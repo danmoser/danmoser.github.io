@@ -155,8 +155,9 @@ Expressions
 - "foul play": jogo sujo, crime
 - "get into the weeds": get into the details
 - "get into the woods": run away
-- "heads-up": (Informal) information or notification -- *He gave me a heads-up on the new security measures*.
+- "heads-up": (Informal) information or notification -- *He gave me a heads-up on the new security measures*
 - "in any event": de qualquer modo
+- "jump the gun": To begin a race too soon, before the starting gun goes off
 - "let's hope for the best": vamos esperar pelo melhor
 - "let's see what we get": vamos ver o que acontece
 - "one-off payment": pagamento único/'a vista

@@ -1593,3 +1593,4 @@ Para avaliar
 - https://www.terra.com.br/vida-e-estilo/culinaria/receitas/pao-de-queijo-vegano-a-receita-perfeita-para-acompanhar-o-cafezinho,f1b8bef404b9517bac4e318d749a2f0djrq4fc2m.html
 - https://www.receitasdepesos.com.br/pao-de-queijo-fofinho-nao-compre-mais-na-padaria-vem-ver.html
 - https://share.fitonapp.com/html/invite-message/d1e3d6ce20834703a35336cbcd6f3ccd
+- https://www.quer-cafe.com/bolo-de-banana-de-liquidificador-super-fofinho-e-simples-de-fazer/
