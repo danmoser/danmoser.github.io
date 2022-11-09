@@ -5,8 +5,217 @@ DMF AstroBlog
 
 2022
 *********
+2022-11
+===========
+Remove Image background with Python
+--------------------------------------
+``pip install rembg``
+
+.. code:: python
+
+    from rembg import remove
+    from PIL import Image
+    input_graph = 'cl.jpg'
+    output_graph = 'output.png'
+    inp = Image.open(input_graph)
+    output = remove(inp)
+    output.save(output_graph)
+
+-----------
+
+JSON Crack
+------------
+Seamlessly visualize your JSON data instantly into graphs.
+
+https://jsoncrack.com/
+
+---------
+
+Printing coloured output in Python
+------------------------------------
+.. code:: python
+
+    from colorama import Fore, Back
+    # Fore = foreground (font color)
+    # Back = background color
+
+    print(Back.YELLOW+Fore.RED+"Hello World")
+    print(Back.BLUE+Fore.RED+"Hello World")
+
+--------
+
+190 Python Projects with Source Code
+----------------------------------------
+https://amankharwal.medium.com/130-python-projects-with-source-code-61f498591bb
+
+--------
+
+CLI video recorder
+--------------------
+https://github.com/charmbracelet/vhs
+
+----
+
+Shell Script Best Practices
+--------------------------------
+Just make the first line be ``#!/usr/bin/env bash``, even if you don’t give executable permission to the script file!
+
+https://sharats.me/posts/shell-script-best-practices/
+
+-------
+
+Mermaid charts
+----------------
+- Basic overview of creating flowcharts using Mermaid: https://ckeditor.com/blog/basic-overview-of-creating-flowcharts-using-mermaid/
+- Mermaid Live Editor: https://mermaid.live 
+
+-------
+
+Things your manager might not know
+------------------------------------
+https://jvns.ca/blog/things-your-manager-might-not-know/
+
+-------
+
+The Perfect Commit
+---------------------
+https://simonwillison.net/2022/Oct/29/the-perfect-commit/
+
+-------
+
+Developer tools to fill the void of space with intelligent life
+-----------------------------------------------------------------
+Saganipsum http://saganipsum.com/
+
+-----
+
+Why Functional Programming Should Be the Future of Software Development
+-------------------------------------------------------------------------
+https://spectrum.ieee.org/functional-programming
+
+--------
+
+Transition from Java 8 to Java 11
+-------------------------------------------
+Azure: https://learn.microsoft.com/en-us/java/openjdk/transition-from-java-8-to-java-11
+Docs
+
+Jaxb: https://www.jesperdj.com/2018/09/30/jaxb-on-java-9-10-11-and-beyond/
+
+--------
+
+Road to Artificial General Intelligence
+------------------------------------------
+https://maraoz.com/2022/10/31/agi-roadmap/
+
+---------
+
+DevOps Roadmap for 2022 with learning resources
+------------------------------------------------------
+https://github.com/milanm/DevOps-Roadmap
+
+---------
+
+hishtory
+---------
+Your shell history: synced, queryable, and in context: https://github.com/ddworken/hishtory
+
+hiSHtory cross-device Encrypted Syncing Design: https://blog.daviddworken.com/posts/hishtory-explained/
+
+--------
+
+Apache Age
+-------------
+Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL. 
+
+https://github.com/apache/age
+
+--------
+
+A Visual Guide to SSH Tunnels 
+-----------------------------------
+SSH port forwarding explained
+
+https://iximiuz.com/en/posts/ssh-tunnels/
+
+--------
+
+typer
+-------
+Typer, build great CLIs. Easy to code. Based on Python type hints. 
+
+https://github.com/tiangolo/typer
+
+------
+
+Seven selected dev repositories
+--------------------------------
+- Memphis: An open-source real-time data processing platform https://github.com/memphisdev/memphis-broker
+- The art of command line https://github.com/jlevy/the-art-of-command-line
+- Public-APIs: a collective list of free APIs https://github.com/public-apis/public-apis
+- Hover: a collection of CSS3 powered hover effects https://github.com/IanLunn/Hover
+- Path to a free self-taught education in Computer Science: https://github.com/ossu/computer-science
+- A curated list of software and architecture related design patterns https://github.com/DovAmir/awesome-design-patterns
+- 33 JavaScript concepts every developer should know https://github.com/vasanthk/react-bits
+
 2022-10
 ==========
+Wireframing with Pencil!
+-------------------------
+https://pencil.evolus.vn/
+
+https://app.diagrams.net/ (former https://draw.io) is an alternative
+
+----------
+
+Programming Portals
+--------------------------------------
+https://maggieappleton.com/programming-portals
+
+--------
+
+NRAO Image Gallery: Backgrounds 
+--------------------------------------
+https://public.nrao.edu/gallery/gallery-collection/desktop-video-chat-backgrounds/
+
+----------
+
+Proof that paper accepts everything
+--------------------------------------
+Why we "stopped" making Einsteins: https://erikhoel.substack.com/p/why-we-stopped-making-einsteins
+
+--------
+
+Mike Acton's Expectations of Professional Software Engineers
+--------------------------------------------------------------------------
+https://adamj.eu/tech/2022/06/17/mike-actons-expectations-of-professional-software-engineers/
+
+-------
+
+How images from NASA’s James Webb Space Telescope get their iconic look
+--------------------------------------------------------------------------
+https://www.theverge.com/2022/10/10/23393194/nasa-image-processing-jwst-astrophotography
+
+-------
+
+The Well-Maintained Test: 12 Questions for New Dependencies
+-------------------------------------------------------------
+https://adamj.eu/tech/2021/11/04/the-well-maintained-test/
+
+-------
+
+Covariance and contravariance in Computer Science
+----------------------------------------------------------
+https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+
+------
+
+Testing Bash with BATS
+-----------------------------------
+https://opensource.com/article/19/2/testing-bash-bats
+
+---------
+
 Software engineering practices
 -----------------------------------
 https://simonwillison.net/2022/Oct/1/software-engineering-practices/
@@ -71,7 +280,7 @@ https://twitter.com/clcoding/status/1561889221526269952
 
 Build your own zoom with Python
 -----------------------------------------------------------
-https://twitter.com/Saboo_Shubham_/status/1568501777195999232
+`Zoom with Python <https://twitter.com/Saboo_Shubham_/status/1568501777195999232>`_
 
 --------
 

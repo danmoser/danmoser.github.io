@@ -5,8 +5,247 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Fri, 07 Oct 2022 01:24:16 -0000</lastBuildDate>
+<lastBuildDate>Wed, 09 Nov 2022 00:13:30 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>Remove Image background with Python</title>
+<description>``pip install rembg``
+
+.. code:: python
+
+    from rembg import remove
+    from PIL import Image
+    input_graph = &#x27;cl.jpg&#x27;
+    output_graph = &#x27;output.png&#x27;
+    inp = Image.open(input_graph)
+    output = remove(inp)
+    output.save(output_graph)</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#remove-image-background-with-python</link>
+</item>
+
+
+<item>
+<title>JSON Crack</title>
+<description>Seamlessly visualize your JSON data instantly into graphs.
+
+https://jsoncrack.com/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#json-crack</link>
+</item>
+
+
+<item>
+<title>Printing coloured output in Python</title>
+<description>.. code:: python
+
+    from colorama import Fore, Back
+    # Fore = foreground (font color)
+    # Back = background color
+
+    print(Back.YELLOW+Fore.RED+&quot;Hello World&quot;)
+    print(Back.BLUE+Fore.RED+&quot;Hello World&quot;)</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#printing-coloured-output-in-python</link>
+</item>
+
+
+<item>
+<title>190 Python Projects with Source Code</title>
+<description>https://amankharwal.medium.com/130-python-projects-with-source-code-61f498591bb</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#-python-projects-with-source-code</link>
+</item>
+
+
+<item>
+<title>CLI video recorder</title>
+<description>https://github.com/charmbracelet/vhs</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#cli-video-recorder</link>
+</item>
+
+
+<item>
+<title>Shell Script Best Practices</title>
+<description>Just make the first line be ``#!/usr/bin/env bash``, even if you don’t give executable permission to the script file!
+
+https://sharats.me/posts/shell-script-best-practices/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#shell-script-best-practices</link>
+</item>
+
+
+<item>
+<title>Mermaid charts</title>
+<description>- Basic overview of creating flowcharts using Mermaid: https://ckeditor.com/blog/basic-overview-of-creating-flowcharts-using-mermaid/
+- Mermaid Live Editor: https://mermaid.live </description>
+<link>http://danmoser.github.io/notes/astro-blog.html#mermaid-charts</link>
+</item>
+
+
+<item>
+<title>Things your manager might not know</title>
+<description>https://jvns.ca/blog/things-your-manager-might-not-know/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#things-your-manager-might-not-know</link>
+</item>
+
+
+<item>
+<title>The Perfect Commit</title>
+<description>https://simonwillison.net/2022/Oct/29/the-perfect-commit/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-perfect-commit</link>
+</item>
+
+
+<item>
+<title>Developer tools to fill the void of space with intelligent life</title>
+<description>Saganipsum http://saganipsum.com/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#developer-tools-to-fill-the-void-of-space-with-intelligent-life</link>
+</item>
+
+
+<item>
+<title>Why Functional Programming Should Be the Future of Software Development</title>
+<description>https://spectrum.ieee.org/functional-programming</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#why-functional-programming-should-be-the-future-of-software-development</link>
+</item>
+
+
+<item>
+<title>Transition from Java 8 to Java 11</title>
+<description>Azure: https://learn.microsoft.com/en-us/java/openjdk/transition-from-java-8-to-java-11
+Docs
+
+Jaxb: https://www.jesperdj.com/2018/09/30/jaxb-on-java-9-10-11-and-beyond/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#transition-from-java--to-java-</link>
+</item>
+
+
+<item>
+<title>Road to Artificial General Intelligence</title>
+<description>https://maraoz.com/2022/10/31/agi-roadmap/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#road-to-artificial-general-intelligence</link>
+</item>
+
+
+<item>
+<title>DevOps Roadmap for 2022 with learning resources</title>
+<description>https://github.com/milanm/DevOps-Roadmap</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#devops-roadmap-for--with-learning-resources</link>
+</item>
+
+
+<item>
+<title>hishtory</title>
+<description>Your shell history: synced, queryable, and in context: https://github.com/ddworken/hishtory
+
+hiSHtory cross-device Encrypted Syncing Design: https://blog.daviddworken.com/posts/hishtory-explained/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#hishtory</link>
+</item>
+
+
+<item>
+<title>Apache Age</title>
+<description>Graph database optimized for fast analysis and real-time data processing. It is provided as an extension to PostgreSQL. 
+
+https://github.com/apache/age</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#apache-age</link>
+</item>
+
+
+<item>
+<title>A Visual Guide to SSH Tunnels </title>
+<description>SSH port forwarding explained
+
+https://iximiuz.com/en/posts/ssh-tunnels/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#a-visual-guide-to-ssh-tunnels-</link>
+</item>
+
+
+<item>
+<title>typer</title>
+<description>Typer, build great CLIs. Easy to code. Based on Python type hints. 
+
+https://github.com/tiangolo/typer</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#typer</link>
+</item>
+
+
+<item>
+<title>Seven selected dev repositories</title>
+<description>- Memphis: An open-source real-time data processing platform https://github.com/memphisdev/memphis-broker
+- The art of command line https://github.com/jlevy/the-art-of-command-line
+- Public-APIs: a collective list of free APIs https://github.com/public-apis/public-apis
+- Hover: a collection of CSS3 powered hover effects https://github.com/IanLunn/Hover
+- Path to a free self-taught education in Computer Science: https://github.com/ossu/computer-science
+- A curated list of software and architecture related design patterns https://github.com/DovAmir/awesome-design-patterns
+- 33 JavaScript concepts every developer should know https://github.com/vasanthk/react-bits
+
+2022-10</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#seven-selected-dev-repositories</link>
+</item>
+
+
+<item>
+<title>Wireframing with Pencil!</title>
+<description>https://pencil.evolus.vn/
+
+https://app.diagrams.net/ (former https://draw.io) is an alternative</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#wireframing-with-pencil</link>
+</item>
+
+
+<item>
+<title>Programming Portals</title>
+<description>https://maggieappleton.com/programming-portals</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#programming-portals</link>
+</item>
+
+
+<item>
+<title>NRAO Image Gallery: Backgrounds </title>
+<description>https://public.nrao.edu/gallery/gallery-collection/desktop-video-chat-backgrounds/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#nrao-image-gallery-backgrounds-</link>
+</item>
+
+
+<item>
+<title>Proof that paper accepts everything</title>
+<description>Why we &quot;stopped&quot; making Einsteins: https://erikhoel.substack.com/p/why-we-stopped-making-einsteins</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#proof-that-paper-accepts-everything</link>
+</item>
+
+
+<item>
+<title>Mike Acton&#x27;s Expectations of Professional Software Engineers</title>
+<description>https://adamj.eu/tech/2022/06/17/mike-actons-expectations-of-professional-software-engineers/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#mike-actons-expectations-of-professional-software-engineers</link>
+</item>
+
+
+<item>
+<title>How images from NASA’s James Webb Space Telescope get their iconic look</title>
+<description>https://www.theverge.com/2022/10/10/23393194/nasa-image-processing-jwst-astrophotography</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#how-images-from-nasas-james-webb-space-telescope-get-their-iconic-look</link>
+</item>
+
+
+<item>
+<title>The Well-Maintained Test: 12 Questions for New Dependencies</title>
+<description>https://adamj.eu/tech/2021/11/04/the-well-maintained-test/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-well-maintained-test--questions-for-new-dependencies</link>
+</item>
+
+
+<item>
+<title>Covariance and contravariance in Computer Science</title>
+<description>https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#covariance-and-contravariance-in-computer-science</link>
+</item>
+
+
+<item>
+<title>Testing Bash with BATS</title>
+<description>https://opensource.com/article/19/2/testing-bash-bats</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#testing-bash-with-bats</link>
+</item>
 
 
 <item>
@@ -83,7 +322,7 @@ https://mdalmijn.com/11-laws-of-software-estimation-for-complex-work/</descripti
 
 <item>
 <title>Build your own zoom with Python</title>
-<description>https://twitter.com/Saboo_Shubham_/status/1568501777195999232</description>
+<description>`Zoom with Python &lt;https://twitter.com/Saboo_Shubham_/status/1568501777195999232&gt;`_</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#build-your-own-zoom-with-python</link>
 </item>
 

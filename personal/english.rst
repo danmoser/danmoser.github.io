@@ -150,14 +150,17 @@ Expressions
 - "a good deal in spots": em vários pontos
 - "built to order": feito sob encomenda
 - "bottom of a [deep] chasm": fundo do poço
+- "corny": idiots who try to make themselves look good in public but really are embarrassing
 - "dead in the water": to be unresponsive; completely disabled
 - "different kettle of fish": very different; a bad state of affairs; mess
+- "east bumblefuck": somewhere inconviniently far away
 - "foul play": jogo sujo, crime
 - "get into the weeds": get into the details
 - "get into the woods": run away
 - "heads-up": (Informal) information or notification -- *He gave me a heads-up on the new security measures*
 - "in any event": de qualquer modo
-- "jump the gun": To begin a race too soon, before the starting gun goes off
+- "jump the gun": to begin a race too soon, before the starting gun goes off
+- "kitsch": melodramatic, overdone, gaudy and tacky or sentimental and folksy. It's so bad that it's cool.
 - "let's hope for the best": vamos esperar pelo melhor
 - "let's see what we get": vamos ver o que acontece
 - "one-off payment": pagamento único/'a vista
@@ -166,6 +169,7 @@ Expressions
 - "tit-for-tat": olho-por-olho
 - "tip his hat": tirar o seu (dele) chapéu
 - "turn-key": pronto para ser usado
+- "turtle poke"/"turtle head poking": when you poop peeks out of your asshole.
 - "under the hood": is not immediately visible or obvious
 - "wall-clock time": refers to elapsed time as determined by a chronometer such as a wristwatch or wall clock
 - "wanted on a charge": procurado sob a acusação de

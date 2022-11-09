@@ -1,13 +1,14 @@
 DMF notes
 ###########
 
-================  ============  ==============================  =========  ==============
-`charges`_        `cheers`_     `docs_general-info`_            `drugs`_   `english`_
-`espanol`_        `francais`_   `games`_                        `index`_   `latin`_
-`music`_          `patagonia`_  .. image:: ../figs/index2.gif   `philos`_  `poetry`_
-`poetry_clouds`_  `politcs`_    `portugues`_                    `psi`_     `receituario`_
-`religion`_       `santiago`_   .. image:: ../figs/index3a.gif  `sports`_  `travellog`_
-================  ============  ==============================  =========  ==============
+==============  =============================  ==============================  ============  ============
+`charges`_      `cheers`_                      `docs_general-info`_            `drugs`_      `english`_
+`espanol`_      `francais`_                    `games`_                        `index`_      `latin`_
+`music`_        .. image:: ../figs/index2.gif  `ordinario`_                    `patagonia`_  `philos`_
+`poetry`_       `poetry_clouds`_               `politcs`_                      `portugues`_  `psi`_
+`receituario`_  `religion`_                    `santiago`_                     `sports`_     `travellog`_
+\               \                              .. image:: ../figs/index3a.gif  \             \
+==============  =============================  ==============================  ============  ============
 
 .. _charges: charges.html
 .. _cheers: cheers.html
@@ -20,6 +21,7 @@ DMF notes
 .. _index: index.html
 .. _latin: latin.html
 .. _music: music.html
+.. _ordinario: ordinario.html
 .. _patagonia: patagonia.html
 .. _philos: philos.html
 .. _poetry: poetry.html

@@ -1511,6 +1511,40 @@ Acrescente a farinha, aos poucos, intercalando com o leite, e bata até incorpor
 
 Numa forma retangular (30 cm x 25 cm) untada e enfarinhada, coloque a massa. Cubra toda a superfície da massa com as bananas fatiadas. Adicione a farofa reservada e espalhe por cima das bananas. Asse em forno médio (180oC) pré-aquecido por 40 minutos. Retire do forno, corte em quadradinhos e sirva em seguida!
 
+[ENG] Blueberry and apple cake
+--------------------------------
+Ingredient and how to make it:
+
+- 130 g oat flakes (gluten free) (1 1/2 cup)
+- 240 ml hot water (1 cup)
+- leave to soak for 5 minutes
+- 2 eggs
+- 30 g (2 1/2 tbsp) erythritol, stevia, etc
+- OR 125 g (10 tbsp) of sugar
+- 1 tsp vanilla extract (optional)
+- 120 g yogurt (1/2 cup)
+- 50 g melted and cooled butter (1/4 cup) 
+- 1 apple
+- 80 g blueberries (2.5 oz)
+- 7 g baking powder (1/2 tbsp)
+- bake for 50 minutes at 180°C/360°F
+
+
+[ENG] Apple cake/pie
+---------------------------------
+Recipe and preparation:
+
+- 2 apples
+- cinnamon + sugar 20 grams (+ lemon juice 20 ml + butter; optional)
+- caramelize the apples (optional)
+- 1 egg
+- sugar 40 grams
+- sour cream 200 grams
+- butter 50 grams
+- flour 130 grams
+- if the dough is too thick, add 20 ml of milk
+- 1 tbsp baking powder
+- cook on low heat
 
 Drinks
 =======
@@ -1545,7 +1579,7 @@ Observações culinárias
 =======================
 - Fogo alto se usa para cozinhar alguma coisa rápido (batata frita, por exemplo, tem que ser feita em fogo alto). No entanto, cozinhar em fogo alto, queima o alimento por fora e não cozinha muito por dentro.
  
-- Fogo baixo é usado para cozinhar em geral. Caso a panela fique fechada, o alimento vai "fazer água". Caso a panela fique aberta, o alimento vai cozinhar. Caso você mexa o alimento com a panela aberta, o alimento seca.
+- Fogo baixo é usado para cozinhar em geral. Caso a panela fique fechada, o alimento vai "fazer água". Caso a panela fique fechada, o alimento vai cozinhar. Caso você mexa o alimento com a panela aberta, o alimento seca.
 
 - Quando a panela tem muita água, não se pode tampá-la, porque senão entorna.
 
