@@ -164,7 +164,9 @@ Expressions
 - "let's hope for the best": vamos esperar pelo melhor
 - "let's see what we get": vamos ver o que acontece
 - "one-off payment": pagamento único/'a vista
+- "pawn off": dispose of something unwanted by inducing someone else to accept it
 - "Ponzi scheme": a fraudulent investment operation
+- "second to none": as good as the best, as in quality or reputation
 - "state of play": the present situation
 - "tit-for-tat": olho-por-olho
 - "tip his hat": tirar o seu (dele) chapéu
@@ -192,6 +194,7 @@ Email phrases
 Acronyms
 ------------
 - CD: Certificate Deposit -- um tipo de investimento feito no/pelo banco.
+- IOU: I Owe You
 
 Prepositions
 -------------

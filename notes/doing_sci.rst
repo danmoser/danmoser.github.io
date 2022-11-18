@@ -72,6 +72,9 @@ Useful expressions
 
 - It is about the same age as they are.
 
+.. figure:: ../figs/doing-writting.jpeg
+    :align: center
+
 
 Definitions
 ===============

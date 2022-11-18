@@ -5,8 +5,56 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Wed, 09 Nov 2022 00:13:30 -0000</lastBuildDate>
+<lastBuildDate>Fri, 18 Nov 2022 03:31:52 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>hyperfine</title>
+<description>A command-line benchmarking tool: https://github.com/sharkdp/hyperfine</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#hyperfine</link>
+</item>
+
+
+<item>
+<title>Python code formatters</title>
+<description>Most popular formatters:
+
+- black
+- autopep8
+- yapf
+
+Other useful tools:
+
+- isort: good practices for imports in the code
+- flake8: diagnostics https://github.com/pycqa/flake8
+
+More at https://deepsource.io/blog/python-code-formatters/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#python-code-formatters</link>
+</item>
+
+
+<item>
+<title>ohmyzsh</title>
+<description>A framework for managing your zsh configuration. Includes 300+ optional plugins (including git &quot;superpowers&quot;). It requires an Unix-like operating system with Zsh.
+
+https://github.com/ohmyzsh/ohmyzsh</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#ohmyzsh</link>
+</item>
+
+
+<item>
+<title>GitHub stars won&#x27;t pay your rent</title>
+<description>https://kitze.io/posts/github-stars-wont-pay-your-rent</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#github-stars-wont-pay-your-rent</link>
+</item>
+
+
+<item>
+<title>Kindness, Tech Staffing and Resource Allocation</title>
+<description>https://redmonk.com/rstephens/2022/11/01/kindness-and-staffing/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#kindness-tech-staffing-and-resource-allocation</link>
+</item>
 
 
 <item>

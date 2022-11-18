@@ -7,6 +7,50 @@ DMF AstroBlog
 *********
 2022-11
 ===========
+hyperfine
+------------
+A command-line benchmarking tool: https://github.com/sharkdp/hyperfine
+
+
+--------
+
+Python code formatters
+-----------------------
+Most popular formatters:
+
+- black
+- autopep8
+- yapf
+
+Other useful tools:
+
+- isort: good practices for imports in the code
+- flake8: diagnostics https://github.com/pycqa/flake8
+
+More at https://deepsource.io/blog/python-code-formatters/
+
+---------
+
+ohmyzsh
+------------------------------------
+A framework for managing your zsh configuration. Includes 300+ optional plugins (including git "superpowers"). It requires an Unix-like operating system with Zsh.
+
+https://github.com/ohmyzsh/ohmyzsh
+
+--------
+
+GitHub stars won't pay your rent
+------------------------------------
+https://kitze.io/posts/github-stars-wont-pay-your-rent
+
+------------
+
+Kindness, Tech Staffing and Resource Allocation
+--------------------------------------------------
+https://redmonk.com/rstephens/2022/11/01/kindness-and-staffing/
+
+------------
+
 Remove Image background with Python
 --------------------------------------
 ``pip install rembg``
