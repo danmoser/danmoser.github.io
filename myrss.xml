@@ -5,8 +5,103 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Fri, 18 Nov 2022 03:31:52 -0000</lastBuildDate>
+<lastBuildDate>Tue, 20 Dec 2022 23:53:43 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>Selected web dev learning sites</title>
+<description>12 websites that will help you learn web development faster (completely free):
+
+https://twitter.com/Prathkum/status/1574061048012984321</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#selected-web-dev-learning-sites</link>
+</item>
+
+
+<item>
+<title>Summarize any book using Python</title>
+<description>Using ``transformers`` . However, it requires PyTorch, TensorFlow &gt;= 2.0, or Flax. PyTorch may require 2 GB for download of models!!
+
+https://twitter.com/itsafiz/status/1573616101606715393</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#summarize-any-book-using-python</link>
+</item>
+
+
+<item>
+<title>Desktop Notification with Python</title>
+<description>With ``plyer``: https://youtu.be/g-4a2oub2HU</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#desktop-notification-with-python</link>
+</item>
+
+
+<item>
+<title>SOLID OOP principles</title>
+<description>S = Single Responsibility Principle
+O = Open/Closed Principle
+L = Liskov Substitution Principle
+I  = Interface Segregation Principle
+D = Dependency Inversion Principle
+
+https://twitter.com/vikasrajputin/status/1593460494886576128</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#solid-oop-principles</link>
+</item>
+
+
+<item>
+<title>Google Java Format</title>
+<description>https://github.com/google/google-java-format</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#google-java-format</link>
+</item>
+
+
+<item>
+<title>Resume vs Resume 2.0</title>
+<description>https://twitter.com/tanishka__yadav/status/1592166475745611780
+
+Resume 2.0 is generated on https://www.showwcase.com/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#resume-vs-resume-</link>
+</item>
+
+
+<item>
+<title>Selected GitHub repos</title>
+<description>16 GitHub repositories with more value than USD 20K+ bootcamps (learn for FREE):
+
+https://twitter.com/madzadev/status/1592173978361253888?</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#selected-github-repos</link>
+</item>
+
+
+<item>
+<title>Cartwright</title>
+<description>Cartwright is a data profiler that identifies and categorizes spatial and temporal features. 100% Python.
+
+https://github.com/jataware/cartwright</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#cartwright</link>
+</item>
+
+
+<item>
+<title>The Enigma Machine</title>
+<description>https://www.cryptii.com/pipes/enigma-machine</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#the-enigma-machine</link>
+</item>
+
+
+<item>
+<title>Timeline of Computer History</title>
+<description>https://www.computerhistory.org/timeline
+
+2022-11</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#timeline-of-computer-history</link>
+</item>
+
+
+<item>
+<title>Earthquakes visualization tool</title>
+<description>https://glowy-earthquakes.glitch.me/</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#earthquakes-visualization-tool</link>
+</item>
 
 
 <item>

@@ -42,6 +42,9 @@ Writing tips
 
 - `"Vermes de corda", fake e false news <http://revistaquestaodeciencia.com.br/questao-de-fato/2019/06/01/vermes-de-corda-nao-existem-logo-nao-causam-autismo>`_
 
+.. figure:: ../figs/doing-sci_abstract.png
+    :align: center
+
 
 Useful expressions
 -------------------

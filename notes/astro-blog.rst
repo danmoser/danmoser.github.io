@@ -5,12 +5,93 @@ DMF AstroBlog
 
 2022
 *********
+2022-12
+===========
+Selected web dev learning sites
+-------------------------------------
+12 websites that will help you learn web development faster (completely free):
+
+https://twitter.com/Prathkum/status/1574061048012984321
+
+----------
+
+Summarize any book using Python
+-------------------------------------
+Using ``transformers`` . However, it requires PyTorch, TensorFlow >= 2.0, or Flax. PyTorch may require 2 GB for download of models!!
+
+https://twitter.com/itsafiz/status/1573616101606715393
+
+------------
+
+Desktop Notification with Python
+------------------------------------
+With ``plyer``: https://youtu.be/g-4a2oub2HU
+
+------------
+
+SOLID OOP principles
+------------------------
+S = Single Responsibility Principle
+O = Open/Closed Principle
+L = Liskov Substitution Principle
+I  = Interface Segregation Principle
+D = Dependency Inversion Principle
+
+https://twitter.com/vikasrajputin/status/1593460494886576128
+
+--------
+
+Google Java Format
+---------------------
+https://github.com/google/google-java-format
+
+--------
+
+Resume vs Resume 2.0
+---------------------------
+https://twitter.com/tanishka__yadav/status/1592166475745611780
+
+Resume 2.0 is generated on https://www.showwcase.com/
+
+---------
+
+Selected GitHub repos
+-----------------------
+16 GitHub repositories with more value than USD 20K+ bootcamps (learn for FREE):
+
+https://twitter.com/madzadev/status/1592173978361253888?
+
+--------------
+
+Cartwright
+------------
+Cartwright is a data profiler that identifies and categorizes spatial and temporal features. 100% Python.
+
+https://github.com/jataware/cartwright
+
+---------
+
+The Enigma Machine
+------------------------
+https://www.cryptii.com/pipes/enigma-machine
+
+----------
+
+Timeline of Computer History
+-----------------------------
+https://www.computerhistory.org/timeline
+
 2022-11
 ===========
+Earthquakes visualization tool
+------------------------------------
+https://glowy-earthquakes.glitch.me/
+
+------------
+
 hyperfine
 ------------
 A command-line benchmarking tool: https://github.com/sharkdp/hyperfine
-
 
 --------
 
