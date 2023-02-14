@@ -150,6 +150,7 @@ Expressions
 - "a good deal in spots": em vários pontos
 - "built to order": feito sob encomenda
 - "bottom of a [deep] chasm": fundo do poço
+- "clerical error": an error on the part of an office worker, often a secretary or personal assistant. It is a phrase which can also be used as an excuse to deflect blame away from specific individuals.
 - "corny": idiots who try to make themselves look good in public but really are embarrassing
 - "dead in the water": to be unresponsive; completely disabled
 - "different kettle of fish": very different; a bad state of affairs; mess
@@ -194,6 +195,7 @@ Email phrases
 Acronyms
 ------------
 - CD: Certificate Deposit -- um tipo de investimento feito no/pelo banco.
+- FWIW: For What It's Worth
 - IOU: I Owe You
 
 Prepositions
