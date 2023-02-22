@@ -1,15 +1,16 @@
 DMF notes
 ###########
 
-=========================  ===============  ==============================  ================  ==================
-`astro-basics`_            `astro-blog`_    `astro-ph`_                     `astro-spec`_     `astro_reduction`_
-`astro_top-impact`_        `beacon`_        `beatlas`_                      `bravo`_          `codes_usage`_
-`doing_sci`_               `estatistica`_   `example`_                      `gai_fits-imgs`_  `git`_
-`grandes-telescopios-br`_  `import_wheel`_  .. image:: ../figs/index2.gif   `index`_          `informatics`_
-`instrumentation`_         `inthepress`_    `julia`_                        `latex`_          `linux`_
-`math`_                    `photography`_   `physics-basics`_               `python-oop`_     `python-packages`_
-`python_astro`_            `regex`_         .. image:: ../figs/index3a.gif  `rst`_            `thermal`_
-=========================  ===============  ==============================  ================  ==================
+===================  =============================  ==============================  =================  ==================
+`astro-basics`_      `astro-blog`_                  `astro-ph`_                     `astro-spec`_      `astro_reduction`_
+`astro_top-impact`_  `beacon`_                      `beatlas`_                      `bravo`_           `codes_usage`_
+`doing_sci`_         `estatistica`_                 `example`_                      `ffmpeg`_          `gai_fits-imgs`_
+`git`_               .. image:: ../figs/index2.gif  `grandes-telescopios-br`_       `import_wheel`_    `index`_
+`informatics`_       `instrumentation`_             `inthepress`_                   `julia`_           `latex`_
+`linux`_             `math`_                        `photography`_                  `physics-basics`_  `python-oop`_
+`python-packages`_   `python_astro`_                `regex`_                        `rst`_             `thermal`_
+\                    \                              .. image:: ../figs/index3a.gif  \                  \
+===================  =============================  ==============================  =================  ==================
 
 .. _astro-basics: astro-basics.html
 .. _astro-blog: astro-blog.html
@@ -24,6 +25,7 @@ DMF notes
 .. _doing_sci: doing_sci.html
 .. _estatistica: estatistica.html
 .. _example: example.html
+.. _ffmpeg: ffmpeg.html
 .. _gai_fits-imgs: gai_fits-imgs.html
 .. _git: git.html
 .. _grandes-telescopios-br: grandes-telescopios-br.html

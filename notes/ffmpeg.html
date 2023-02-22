@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<title>DMF notes</title>
+<title>ffmpeg and imagemagick</title>
 <style type="text/css">
 
 /*
@@ -413,70 +413,66 @@ li {
 </style>
 </head>
 <body>
-<div class="document" id="dmf-notes">
-<h1 class="title">DMF notes</h1>
+<div class="document" id="ffmpeg-and-imagemagick">
+<h1 class="title">ffmpeg and imagemagick</h1>
 
-<table border="1" class="docutils">
-<colgroup>
-<col width="17%" />
-<col width="26%" />
-<col width="27%" />
-<col width="15%" />
-<col width="16%" />
-</colgroup>
-<tbody valign="top">
-<tr><td><a class="reference external" href="astro-basics.html">astro-basics</a></td>
-<td><a class="reference external" href="astro-blog.html">astro-blog</a></td>
-<td><a class="reference external" href="astro-ph.html">astro-ph</a></td>
-<td><a class="reference external" href="astro-spec.html">astro-spec</a></td>
-<td><a class="reference external" href="astro_reduction.html">astro_reduction</a></td>
-</tr>
-<tr><td><a class="reference external" href="astro_top-impact.html">astro_top-impact</a></td>
-<td><a class="reference external" href="beacon.html">beacon</a></td>
-<td><a class="reference external" href="beatlas.html">beatlas</a></td>
-<td><a class="reference external" href="bravo.html">bravo</a></td>
-<td><a class="reference external" href="codes_usage.html">codes_usage</a></td>
-</tr>
-<tr><td><a class="reference external" href="doing_sci.html">doing_sci</a></td>
-<td><a class="reference external" href="estatistica.html">estatistica</a></td>
-<td><a class="reference external" href="example.html">example</a></td>
-<td><a class="reference external" href="ffmpeg.html">ffmpeg</a></td>
-<td><a class="reference external" href="gai_fits-imgs.html">gai_fits-imgs</a></td>
-</tr>
-<tr><td><a class="reference external" href="git.html">git</a></td>
-<td><img alt="../figs/index2.gif" class="first last" src="../figs/index2.gif" />
-</td>
-<td><a class="reference external" href="grandes-telescopios-br.html">grandes-telescopios-br</a></td>
-<td><a class="reference external" href="import_wheel.html">import_wheel</a></td>
-<td><a class="reference external" href="index.html">index</a></td>
-</tr>
-<tr><td><a class="reference external" href="informatics.html">informatics</a></td>
-<td><a class="reference external" href="instrumentation.html">instrumentation</a></td>
-<td><a class="reference external" href="inthepress.html">inthepress</a></td>
-<td><a class="reference external" href="julia.html">julia</a></td>
-<td><a class="reference external" href="latex.html">latex</a></td>
-</tr>
-<tr><td><a class="reference external" href="linux.html">linux</a></td>
-<td><a class="reference external" href="math.html">math</a></td>
-<td><a class="reference external" href="photography.html">photography</a></td>
-<td><a class="reference external" href="physics-basics.html">physics-basics</a></td>
-<td><a class="reference external" href="python-oop.html">python-oop</a></td>
-</tr>
-<tr><td><a class="reference external" href="python-packages.html">python-packages</a></td>
-<td><a class="reference external" href="python_astro.html">python_astro</a></td>
-<td><a class="reference external" href="regex.html">regex</a></td>
-<td><a class="reference external" href="rst.html">rst</a></td>
-<td><a class="reference external" href="thermal.html">thermal</a></td>
-</tr>
-<tr><td></td>
-<td></td>
-<td><img alt="../figs/index3a.gif" class="first last" src="../figs/index3a.gif" />
-</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<div class="section" id="ffmpeg">
+<h1>ffmpeg</h1>
+<div class="section" id="cheatsheet">
+<h2>Cheatsheet</h2>
+<pre class="code bash literal-block">
+-pattern_type glob -i <span class="literal string single">'raw/*.png'</span>  <span class="comment single"># repeat this to combine more than one pattern
+</span>-loop -1  <span class="comment single"># for GIFs; number of times a gif plays; -1==infinite
+</span>-r <span class="literal number">1</span>.5  <span class="comment single"># framerate
+</span>-framerate <span class="literal number">1</span>.5  <span class="comment single"># same as -r</span>
+</pre>
+</div>
+<div class="section" id="from-images">
+<h2>From images</h2>
+<pre class="code bash literal-block">
+ffmpeg -r <span class="literal number">1</span>.0 -i <span class="literal string single">'prefix_%04d.png'</span> raw.gif
+ffmpeg -r <span class="literal number">1</span>.0 -pattern_type glob -i <span class="literal string single">'*.png'</span> raw.gif
+<span class="comment single"># problem: all images will be resized to the size of the first one (distortion)
+# solution: use imagemagick
+# problem2: low quality.
+# solution2: use palette (see below)
+</span>
+ffmpeg -r <span class="literal number">0</span>.5 -pattern_type glob -i <span class="literal string single">'*.png'</span> -c:v libx264 -pix_fmt yuv420p out.mp4
+<span class="comment single"># problem: all images will be resized to the size of the first one (distortion)
+# solution: use imagemagick
+</span>
+ffmpeg -i prefix_%02d.png -vf <span class="literal string double">&quot;palettegen&quot;</span> palette.png
+ffmpeg -i prefix_%02d.png -i palette.png -filter_complex <span class="literal string double">&quot;paletteuse&quot;</span> output.gif
+</pre>
+</div>
+</div>
+<div class="section" id="imagemagick">
+<h1>Imagemagick</h1>
+<div class="section" id="cheatsheet-1">
+<h2>Cheatsheet</h2>
+<pre class="code bash literal-block">
+-delay <span class="literal number">100</span>  <span class="comment single"># hundreds of a sec
+</span>-loop <span class="literal number">5</span>
+-dispose previous  <span class="comment single"># remove previous frame in the animation
+</span>-gravity center  <span class="comment single"># center images
+</span>-thumbnail 000x000  <span class="comment single"># resize image
+</span>-extent 000x000  <span class="comment single"># adjust the image in a frame of this size</span>
+</pre>
+</div>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<pre class="code bash literal-block">
+mogrify -geometry 640x480^ -gravity center -crop 640x480+0+0 *.png
+<span class="comment single"># force all images do to be 640x480. If bigger, cropped from the center
+</span>
+mogrify -thumbnail 640x480 -background black -gravity center -extent 640x480 *.png
+<span class="comment single"># pad with black background
+</span>
+convert -delay <span class="literal number">200</span> -loop <span class="literal number">5</span> -dispose previous *.png -gravity center iamanimating.gif
+<span class="comment single"># also creates a gif animation</span>
+</pre>
+</div>
+</div>
 </div>
 </body>
 </html>

@@ -311,3 +311,5 @@ Socorro -- Carlsbad
 Weekend trip. Sat: leave at 8am; lunch at noon in Carlsbad. Caves from 1h30 -- end of day. Hotels from $65--90/day. 
 
 Sun: leave early. Guadalupe until 11h30am. Lunch in Carlsbad at 12h30pm. White sands at 4h30pm (entrance closes at 6pm). 
+
+Light Among the Ruins | Jemez Springs - Sandoval County - https://seesandoval.org/events/light-among-the-ruins/

@@ -479,12 +479,13 @@ Tempo de forno: 35 minutos a 180-200C (servir com molho de tomate e molho de que
 Quibe de trigo
 -----------------
 Ingredientes:
+
 - 1 beringela
 - 3 dentes de alho
 - 1 copo de trigo para quibe
 - 1/2 cebola
 - suco de limão
-- tahine
+- tahine (creme de gergelim)
 - tempero verde (salsinha/cebolinha/hortelã desidratada)
 
 Como fazer
@@ -496,6 +497,48 @@ Numa vasilha, coloque 1 copo de trigo para quibe e 1 copo de água fervente.
 Depois de assado, junte os ingredientes na vasilha com 1/2 cebola picada, suco de 1 limão, 2 colheres de tahine, tempero verde (salsinha/cebolinha/hortelã desidratada).
 
 Misture bem e adicione trigo hidratado (1-2 copos) e sal. Leve novamente ao forno e fronto!
+
+
+[ENG] Lentil burguers
+------------------------
+Ingredients
+
+- 2 cups boiled or steamed brown lentils (~150g of dry lentils)
+- 1/2 white onion, diced
+- 2 carrots, finely grated
+- 3/4 cup oat flour
+- 2 cloves of garlic, crushed
+- 2 tbsp ketchup
+- 2 tbsp low-sodium soy sauce or coconut aminos
+- 1 tsp cumin
+- 1/2 tsp smoked paprika
+- 1/2 tsp salt
+- 1/2 tsp black pepper
+- 2 tbsp olive oil, divided
+
+Directions
+~~~~~~~~~~~~~
+- Heat a large skillet with 1 tbsp of olive oil and saute your diced onions until they soften, about 5-7 minutes.
+- Transfer them to a bowl with the grated carrots, lentils, garlic and spices and mix well using a masher or your hands to break up some of the lentils. Alternatively, you can break the carrots and the lentils in a food processor/blender.
+- Add in the soy sauce, ketchup and oat flour and mix well together until evenly incorporated.
+- Line a cutting board or flat plate with parchment paper, and shape the batter into 6 burgers. The batter will be slightly sticky so I suggest shaping them with wet hands.
+- Heat your skillet on medium/low heat, and add in another tbsp of olive oil. Cook the burgers for about 5-6 minutes per side, until golden brown. I suggest cooking 3 at a time, depending on the size of your skillet, and adding more oil in between batches.
+- Alternatively, you can roast them instead of cooking in the skillet.
+- Serve with a side salad or your favorites sides!
+- The burgers will stay fresh in the fridge for up to 5 days, or can be frozen for 3 months.
+
+
+Pates ([ENG] Dips)
+=====================
+[ENG] Lemon Yogurt Dip
+-------------------------
+- 1/2 cup Greek or plain yogurt
+- 1 clove garlic, crushed
+- 2 tbsp lemon juice
+- 1/2 tbsp dry parsley
+- Pinch of salt 
+
+
 
 
 Pães, massas e molhos
@@ -768,6 +811,50 @@ How to prepare
 - The dough may be frozen if desired.
 - Bake it on a greased baking sheet (25 min at 400 F - or until dark golden color). 
 
+
+[ENG] Brazilian Cheese Balls (Pão de queijo; 03)
+-------------------------------------------------
+Ingredients:
+
+- 4 cups polvilho doce 
+- 2 cups polvilho azedo
+- 2.5 cups shredded cheese (400 g)
+- 1.5 spoon of salt (15 g)
+- 1.5 cups almond milk
+- 2/3 cups canola oil
+
+INFO:
+
+- shredded cheese: 160 g == 2 cups
+- polvilho doce: 260g == 2 cups 
+- polvilho azedo: 265 g == 2 cups
+- 2 cups ~ 500 ml
+
+How to prepare
+~~~~~~~~~~~~~~~~
+- mix the two kinds of polvilho before pouring the boiling milk+oil !
+
+
+Pão de banana
+----------------
+Ingredientes:
+
+- 2 bananas
+- 1 colher (sopa) de açúcar
+- 1 colher (sobremesa) de fermento em pó
+- 1/2 colher (sopa) de amido de milho
+- 1 copo de fubá
+- 60 ml de leite integral
+- 1 ovo inteiro
+- mistura de açúcar e canela para passar nos pães (opcional)
+
+Modo de preparo
+~~~~~~~~~~~~~~~~~~
+- Unte uma frigideira com óleo.
+- Amasse bem as bananas em uma tigela. Acrescente os outros ingredientes, seguindo esta ordem: açúcar, ovo, leite, fubá, amido de milho e fermento em pó.
+- Leve a massa em fogo baixo, tampando a frigideira.
+- Quando estiver dourada e soltar da frigideira, vire e doure do outro lado, com a frigideira tampada. Vá repetindo o processo até que a massa termine.
+- Opcional: passar de ambos os lados a mistura de açúcar e canela
 
 Bolos e doces
 ===============
@@ -1615,6 +1702,29 @@ Pratos indianos e nepales
 - Tandoori chicken - frango assado saboroso tempero
 - Tikka masala - Stroganoff de frango com curry (padrao nao apimentado)
 - Vegetable korma - vegetais ao molho com caju
+
+
+Fubá e farinha de milho
+-------------------------
+De acordo com a Anvisa, farinha de milho e fubá são a mesma coisa: trata-se do produto obtido a partir da moagem do grão de milho. No entanto, na prática, tais produtos apresentam características e funções diferentes:
+
+Farinha de milho flocada: em seu processo de produção, essa farinha de milho é hidratada, triturada e depois torrada. Assim, o resultado são flocos espessos sequinhos, que conhecemos também pelo nome de farinha de biju.
+
+Fubá: é um produto de grãos médios, na qual o milho degerminado é moído. O resultado, nesse caso, é uma farinha com flocos mais finos, e que absorve mais água.
+
+Fubá e farinha de milho não apresentam glúten.
+
+Os diferentes tipos de fubá
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Basicamente, existem três variedades: o tradicional fubá, o fubá mimoso e a semolina. O primeiro nada mais é do que a farinha de milho obtida a partir da moagem do grão de milho e tem espessura média. O chamado mimoso é mais fino, usado principalmente na preparação de bolos e polentas. Por fim, a sêmola ou semolina é uma farinha de milho mais grossa, indicada para a preparação de broas.
+
+[Eng] Corn strach, corn flour, corn meal
+------------------------------------------
+Corn meal (also written 'cornmeal'): is made from grinding dried corn into a powder. The texture of corn meal can vary. It ranges from coarse, medium, and fine. Typically, the corn meal bought in the grocery store is medium or coarsely ground. Once corn meal has become finely ground it is referred to as corn flour. 
+
+Corn Flour: is a type of flour that is made from finely-milled corn kernels. Depending on the corn's color, it can either come in yellow, white, or even blue. Normally, this type of flour contains more than just dried corn kernels. It also contains the germ, hulls, and endosperm of the corn, which is what makes it whole-grain flour. Cornflour tends to take on a sweet, earthy flavor.
+
+Corn Starch: consists only of the endosperm of the corn kernels. This makes cornstarch devoid of added protein, fiber, and other nutrients, taking on a white, chalky appearance. White and flavorless, cornstarch adds more texture than taste to a dish. As such, it is used as a thickening agent.
 
 
 Para avaliar

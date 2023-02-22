@@ -196,6 +196,7 @@ Acronyms
 ------------
 - CD: Certificate Deposit -- um tipo de investimento feito no/pelo banco.
 - FWIW: For What It's Worth
+- IIRC: If I Recall Correctly
 - IOU: I Owe You
 
 Prepositions
