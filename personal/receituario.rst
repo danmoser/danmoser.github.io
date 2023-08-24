@@ -528,6 +528,66 @@ Directions
 - The burgers will stay fresh in the fridge for up to 5 days, or can be frozen for 3 months.
 
 
+[ENG] Chicken Marsala
+------------------------
+Chicken:
+
+- 1/2 cup all-purpose flour (plain flour)
+- 1 teaspoon kosher salt
+- 1 teaspoon garlic powder
+- 1/2 teaspoon black cracked pepper
+- 2 large boneless skinless chicken breasts, halved horizontally to make 4 fillets*
+- 2 tablespoons olive oil, divided
+- 4 tablespoons unsalted butter, divided
+
+Marsala Sauce:
+
+- 1 tablespoon unsalted butter as needed
+- 8 ounces (250g) brown or Cremini mushrooms, sliced
+- 4-5 cloves garlic, minced
+- 3/4 cup dry Marsala wine
+- 1 1/4 cup low-sodium chicken broth (or stock)
+- 3/4 cup heavy cream (thickened cream, evaporated milk or half and half may also be used)**
+- 2 tablespoons fresh chopped parsley
+
+Instructions
+~~~~~~~~~~~~~~~~
+- Mix the flour, salt, garlic powder and pepper in a shallow bowl. Dredge the chicken in the flour mixture and shake off excess.
+- Heat 1 tablespoon oil and 2 tablespoons butter in a 12-inch pan or skillet over medium-high heat until shimmering. Fry 2 of the chicken breasts until golden-brown on both sides (about 3 to 4 minutes per side). Transfer to warm plate, tent with foil and keep warm.
+- In the same pan with remaining pan grease leftover from the chicken, melt 1 tablespoon of butter. Add the garlic and  mushrooms for 2-3 minutes until browned, scraping away at any of the leftover chicken bits off the bottom of the pan.
+- Pour in the Marsala and the broth and simmer until reduced by half and starting to thicken, (about 10-15 minutes).
+- Pour in the cream and return the chicken back into the sauce. Cook until the sauce thickens (about 3 minutes). Garnish with chopped parsley and serve immediately. (The sauce will continue to thicken off the heat.)
+- Serve over cooked angel hair pasta (or pasta of choice), rice, potatoes, cauliflower rice or zucchini noodles, if desired. 
+
+[ENG] Simple chicken curry ("Chicken masala")
+------------------------------------------------
+Ingredients:
+
+- Chicken, 1 kg
+- Onion, rough chopped- 4 medium
+- Ginger, crushed- 2 tsp
+- Garlic, crushed- 2 tsp
+- Tomatoes, roughly chopped- 3 medium
+- Green chillies, thick chopped- 3 nos.
+- Turmeric powder, 1/2 tsp
+- Red Chilli Powder, 1.5 tsp
+- Readymade Chicken Masala, 1 tbsp (store bought)
+- Salt, 1.5 tsp
+- Refined Oil, 4-5 tbsp 
+
+Process:
+
+- Heat oil in a pan and add the chopped onions.
+- Fry on high heat for 10 mins till brown in colour.
+- Add the crushed ginger and garlic and fry on medium heat for 2 mins.
+- Add the chopped tomatoes and green chillies and fry on medium heat for 2 mins.
+- Add the turmeric powder and mix & fry on medium heat for around 3 mins till tomatoes are soft.
+- Now add the chicken pieces and fry on high heat for 2-3 mins till the chicken pieces are browned.
+- Add the readymade chicken masala, red Chilli powder and salt, mix and bhunno on high heat for 5 mins. Continue to fry on medium heat for another 5 mins.
+- Now add 200 ml water and cook on low heat for around 20 mins till the chicken pieces are tender and oil separates.
+
+Taken from: https://youtu.be/jwyge5daKUQ
+
 Pates ([ENG] Dips)
 =====================
 [ENG] Lemon Yogurt Dip
@@ -585,6 +645,25 @@ Ingredientes:
 Como fazer
 ~~~~~~~~~~~~
 Amassar por 15 minutos e deixar "descansar" por uma hora para crescer. Sovar mais um pouco e colocar numa forma. Deixar "descansar" mais uma hora antes de colocar para assar.
+
+[ENG] Bread (03)
+-----------------
+Ingredients:
+
+- 1 kg all purpose flour (500 ml = 300 g)
+- 2 tbsp dry yeast (~15 g, ~1/2 oz)
+- 3/4 cup sugar
+- 3/4 cup oil (canola)
+- 500 ml warm water
+- 1 tbsp salt
+
+How to prepare
+~~~~~~~~~~~~~~~~
+- knead the dough for about 10 min
+- let it raise for 0.5--1h
+- split it in 8 pieces
+- braid: 4 over 3; 1+2 over 4; 4 over 1; 2 over 3+4... and so on: the right-most over one to the left and the left-most over two. 
+- bake for 25-30 min in 350F (175C)
 
 
 Pão sírio
@@ -1633,8 +1712,53 @@ Recipe and preparation:
 - 1 tbsp baking powder
 - cook on low heat
 
+Sorvete "Marido Gelado"
+--------------------------
+Receita:
+
+- 2 caixas de leite condensado
+- 3 medidas de leite (caixa do leite condensado)
+- Bater itens acima no liquidificador; cozinhar e esperar esfriar
+- Bater 6 claras em neve com 4 colheres de acucar
+- Adicionar 2 caixas de creme de leite
+- Misturar tudo
+- Caramelizar as formas e levar ao freezer. Nao vai ao forno
+
+[ENG] Banana bread
+-------------------
+- 4 bananas
+- 1.5 cups oat (milled)
+- 1 tbsp honey
+- 2 tbsp almond butter
+- 1/4 cups coconut oil
+- 1 tbsp baking powder
+- chopped walnut (optional)
+- pinch of salt
+- 0.5 tbsp of baking powder
+- (no milk)
+
+Inspired on this almond flour recipe: https://www.rhubarbarians.com/healthy-vegan-banana-bread/
+
+Bolo de cenoura e aveia
+-------------------------
+- 3 cenouras médias
+- 4 gema de ovos
+- 125 ml de leite
+- 125 ml de óleo de coco
+- 2 xícara de açúcar
+- 4.25 xícara de aveia (triturar se estiver em flocos)
+- 1 colher de fermento 
+- bater claras em neve, e adicioná-las por último
+- levar ao forno ate dourar
+
+Inspirado nessa receita: https://cooknenjoy.com/bolo-de-cenoura-com-aveia/
+
 Drinks
 =======
+- "dose" = 2 oz
+- "meter" = 1 and 0.5 oz
+- The biggest difference between **tonic water** and **club soda** is the taste. Tonic water has a strong bitter and sweet flavor, while club soda has a mild, faintly salty flavor. 
+
 Vinho quente
 --------------
 - 1 xícara (chá) de açúcar
@@ -1651,7 +1775,53 @@ Negroni
 - 1 dose de red Italian bitter ("Campari")
 - 1 dose de gin
 
-Adicione gelo e fruta cítrica para enfeite.
+Adicione gelo e fruta cítrica para enfeite. Gin pode ser substituido por vodka.
+
+Gin and tonic
+---------------
+- 2 oz gin
+- 4 oz tonic water
+- garnish: lime wedges
+
+Cosmopolitan
+-------------
+- 1.5 oz vodka
+- 1 oz Cointreau orange liqueur
+- 0.5 oz fresh lime juice
+- 0.25 oz cranberry juice
+- garnish: cherry on top
+
+Mojito
+--------
+- 4 mint leaves
+- 1 lime juice
+- 1 tbsp powdered sugar
+- 2 oz white rum
+- 2 oz club soda
+- crushed ice
+
+Tequila Sunrise
+-----------------
+- 2 oz tequila
+- 4 oz orange juice
+- 0.5 oz grenadine
+
+Pina Colada
+-------------
+- 1 slice of pineapple
+- 1 tsp of coconut oil or 2 oz of coconut milk
+- 0.5 oz simple syrup (optional if pineapple is sweet enough)
+- 2 oz almond milk
+- 2 oz rum
+
+Rob Roy
+---------
+- 2.5 oz Scotch
+- 1.5 oz Vermouth
+- dash of bitter (Aperol)
+- cherry for garnish (bottom)
+- ice (optional to make it lighter)
+
 
 Other drinks
 --------------
@@ -1675,12 +1845,19 @@ Observações culinárias
 
 Medidores de volume
 ---------------------
+- 1 "cup" (americano) = 237 ml
 - 1 copo = 200 ml
-- 1 xícara = 75 ml
-- Colheres, em ordem Crescente de tamanho:
+- 1 xícara = 75 ml (*pode variar. Algumas receitas dizem xícara de cha == "cup")
+- 1 dose = 2 oz ~ 60 ml
+- Colheres, em ordem Crescente de tamanho: café < chá ou sobremesa < sopa
 
-café < chá ou sobremesa < sopa
-
+[ENG] Measurements
+---------------------
+- Dash or pinch = less than 1/8 teaspoon
+- 1 teaspoon "tsp" = 1/3 tablespoon ~ 5 ml
+- 2 tablespoons "tbs" (or "tbsp") = 1 oz = 1/8 cup ~ 30 ml
+- 1 oz = 28.4 ml
+- 1 cup = 1/2 pint = 237 ml
 
 Fermentos
 ----------
@@ -1738,3 +1915,10 @@ Para avaliar
 - https://www.receitasdepesos.com.br/pao-de-queijo-fofinho-nao-compre-mais-na-padaria-vem-ver.html
 - https://share.fitonapp.com/html/invite-message/d1e3d6ce20834703a35336cbcd6f3ccd
 - https://www.quer-cafe.com/bolo-de-banana-de-liquidificador-super-fofinho-e-simples-de-fazer/
+- Chocolate Baked Oats {with Banana} - Easy & Healthy
+https://www.hauteandhealthyliving.com/chocolate-baked-oats/
+- https://www.hauteandhealthyliving.com/paleo-waffles/
+- https://receitatodahora.com.br/esse-pao-de-banana-sem-farinha-e-natural-delicioso-e-fica-pronto-em-apenas-10-minutos/
+- https://pickyeaterblog.com/healthy-banana-bread-lightened-up-low-calorie/
+- Sobremesa rápida que não vai ao forno basta misturar os ingredientes e levar à geladeira - Receita Toda Hora
+https://receitatodahora.com.br/sobremesa-rapida-que-nao-vai-ao-forno-basta-misturar-os-ingredientes-e-levar-a-geladeira/
