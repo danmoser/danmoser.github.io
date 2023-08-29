@@ -588,6 +588,14 @@ Process:
 
 Taken from: https://youtu.be/jwyge5daKUQ
 
+Coxinha de batata
+---------------------
+- 200g de batata cozida
+- 150g de peito de frango desfiado
+- requeijo e/ou queijo para rechear (opcional)
+
+Amasse a batata e adicione o frango. Misture bem ate' formar uma massinha. Abra a massa na mao, coloque o recheio e feche. Asse a 180.C por aprox. 20 minutos. 
+
 Pates ([ENG] Dips)
 =====================
 [ENG] Lemon Yogurt Dip
@@ -934,6 +942,13 @@ Modo de preparo
 - Leve a massa em fogo baixo, tampando a frigideira.
 - Quando estiver dourada e soltar da frigideira, vire e doure do outro lado, com a frigideira tampada. Vá repetindo o processo até que a massa termine.
 - Opcional: passar de ambos os lados a mistura de açúcar e canela
+
+Panqueca de quinoa
+-----------------------
+Lave bem 1 xícara de quinoa em grãos e deixe de molho de um dia para o outro. Descarte a água e bata os grãos no liquidificador com 1 xícara de água nova e 1 pitada de sal. 
+
+Faça as panquecas em uma frigideira antiaderente untada com um fiozinho de azeite se necessário! 
+
 
 Bolos e doces
 ===============
@@ -1753,6 +1768,42 @@ Bolo de cenoura e aveia
 
 Inspirado nessa receita: https://cooknenjoy.com/bolo-de-cenoura-com-aveia/
 
+Bolo de aveia com laranja
+---------------------------
+- 1 xícara aveia em flocos
+- 2 laranjas espremidas (160 ml) para hidratar aveia
+- 1/2 xícara de uva passa
+- 1/2 laranja espremida (40 ml) para hidratar uva passa
+- 2 colheres farinha amêndoa
+- 2 colheres coco ralado
+- 4 colheres óleo de côco
+- 1 colher chá fermento em pó
+- Raspas da laranja (a gosto)
+
+Deixe hidratando por pelo menos 30 minutos. Depois, misture todos os ingredientes (fermento por ultimo). Asse por aproximadamente 30 minutos.
+
+Bolo de Fubá com Cenoura
+----------------------------
+- 3 ovos - 160 Gr
+- 1 1/2 xícara de açúcar - 350 Gr
+- 1 xícara rasa de óleo - 200 ml
+- 2 xícara de fubá - 290 gr
+- 1/2 xícara de amido de milho - 85 Gr
+- 2 cenouras medias - 250 Gr
+- 1 c de sobremesa de fermento - 15 Gr
+
+Assar a 180 graus por 45 minutos.
+
+Brownie saudavel
+-------------------
+- 2 macas picadas
+- 8 colheres de sopa de cacau em po'
+- 2 ovos
+- 1 colher de cafe' de fermento
+- chocolate picado (opcional; para cobertura)
+
+Misture bem todos os ingredientes em um processador. Unte uma forma com oleo de coco. Leve ao forno 180.C por 20 minutos. Alternativamente, leve ao micro-ondas por 4 ou 5 minutos.
+
 Drinks
 =======
 - "dose" = 2 oz
@@ -1771,6 +1822,7 @@ Vinho quente
 
 Negroni
 ----------
+- [old-f glass]
 - 1 dose de dry Vermouth
 - 1 dose de red Italian bitter ("Campari")
 - 1 dose de gin
@@ -1779,12 +1831,14 @@ Adicione gelo e fruta cítrica para enfeite. Gin pode ser substituido por vodka.
 
 Gin and tonic
 ---------------
+- [highball/old-f glass]
 - 2 oz gin
 - 4 oz tonic water
 - garnish: lime wedges
 
 Cosmopolitan
 -------------
+- [cocktail glass]
 - 1.5 oz vodka
 - 1 oz Cointreau orange liqueur
 - 0.5 oz fresh lime juice
@@ -1793,6 +1847,7 @@ Cosmopolitan
 
 Mojito
 --------
+- [old-f glass]
 - 4 mint leaves
 - 1 lime juice
 - 1 tbsp powdered sugar
@@ -1802,12 +1857,14 @@ Mojito
 
 Tequila Sunrise
 -----------------
+- [highball glass]
 - 2 oz tequila
 - 4 oz orange juice
 - 0.5 oz grenadine
 
 Pina Colada
 -------------
+- [goblet glass]
 - 1 slice of pineapple
 - 1 tsp of coconut oil or 2 oz of coconut milk
 - 0.5 oz simple syrup (optional if pineapple is sweet enough)
@@ -1816,20 +1873,95 @@ Pina Colada
 
 Rob Roy
 ---------
+- [cocktail glass]
 - 2.5 oz Scotch
 - 1.5 oz Vermouth
 - dash of bitter (Aperol)
 - cherry for garnish (bottom)
 - ice (optional to make it lighter)
 
+Blood Mary
+-------------
+- [highball/old-f glass]
+- 1.5 oz Vodka
+- 3 oz tomato juice
+- 0.5 oz lemon juice
+- 1 dash Worcetershire sauce
+- 1 pinch celery salt
+- 1 pinch hot sauce (to taste)
+
+Mai Tai
+-----------
+- [goblet/old-f glass]
+- 1.5 oz rum
+- 0.75 oz dry curacao
+- 0.75 oz lime juice
+- 0.5 oz orgeat (almond syrup)
+
+Sidecar
+---------
+- [cocktail glass]
+- 2 oz brandy (cognac or Armagnac; or bourbon)
+- 1 oz orange liqueur (Cointreau)
+- 0.75 oz lemon juice
+
+Old-fashioned 
+----------------
+- [old-f glass]
+- 0.5 teaspoon sugar (1 sugar cube)
+- 2 dashes bitter
+- 2 oz bourbon or whiskey
+
+Moscow mule
+--------------
+- [copper glass]
+- 2 oz vodka
+- 0.5 oz lime juice
+- 4 oz ginger beer
+
+Penicillin
+-----------
+- [old-f glass]
+- 2 oz Scotch
+- 0.75 oz lemon juice
+- 0.75 oz honey syrup
+- 2 quarter-size slices fresh ginger
+
+Aperol spritz
+---------------
+- [goblet/wine glass]
+- 1 slice orange
+- 3 oz processo
+- 2 oz Aperol
+- 0.5 oz club soda
+
+Aviation
+------------
+- [cocktail glass]
+- 2 oz gin
+- 0.5 oz marachino (cheery) liqueur
+- 0.5 oz lemon juice
+
+Gin Martini
+---------------
+- [cocktail glass]
+- 2.5 oz gin
+- 0.5 oz vermouth
+- 1 dash orange or aromatic bitters
+- garnish: 3 olives
+
+Grand Manhattan
+-------------------
+- [cocktail glass]
+- 1.5 oz bourbon
+- 0.25 oz orange liqueur
+- 0.25 oz sweet vermouth
+- 0.5 oz orange juice
 
 Other drinks
 --------------
-- https://www.boston.com/community/cocktail-club/how-to-make-an-exotic-mai-tai-cocktail-recipe/
-- https://golf.com/lifestyle/food/make-perfect-gin-and-tonic-clubhouse-eats/
 - https://insanelygoodrecipes.com/brazilian-cocktails/
 - https://insanelygoodrecipes.com/dark-rum-cocktails/
-- https://www.receitasdepesos.com.br/pao-de-queijo-super-macio-melhor-do-que-de-padaria-voce-tem-que-fazer.html
 
 
 Observações culinárias
@@ -1847,7 +1979,7 @@ Medidores de volume
 ---------------------
 - 1 "cup" (americano) = 237 ml
 - 1 copo = 200 ml
-- 1 xícara = 75 ml (*pode variar. Algumas receitas dizem xícara de cha == "cup")
+- 1 xícara = 75 ml (\*pode variar. Algumas receitas dizem xícara de cha == "cup")
 - 1 dose = 2 oz ~ 60 ml
 - Colheres, em ordem Crescente de tamanho: café < chá ou sobremesa < sopa
 
@@ -1871,14 +2003,14 @@ Quantidade: 1 tablete de fermento biológico equivale a uma 1 colher-Sopa de Roy
 
 Pratos indianos e nepales
 -----------------------------
-- Chana curry - grão de bico no molho
-- Naan - pão sem fermento
+- Chana curry -- grão de bico no molho
+- Naan -- pão sem fermento
 - Pun Hill -- carne (ou tofu) grelhado com pimentões
-- Saag - parecido com espinafre em creme
+- Saag -- parecido com espinafre em creme
 - Samosa -- salgado com massa de pastel. Recheio de batata e ervilha
-- Tandoori chicken - frango assado saboroso tempero
-- Tikka masala - Stroganoff de frango com curry (padrao nao apimentado)
-- Vegetable korma - vegetais ao molho com caju
+- Tandoori chicken -- frango assado saboroso tempero
+- Tikka masala -- Stroganoff de frango com curry (padrao nao apimentado)
+- Vegetable korma -- vegetais ao molho com caju
 
 
 Fubá e farinha de milho
@@ -1906,6 +2038,7 @@ Corn Starch: consists only of the endosperm of the corn kernels. This makes corn
 
 Para avaliar
 ==============
+- https://www.receitasdepesos.com.br/pao-de-queijo-super-macio-melhor-do-que-de-padaria-voce-tem-que-fazer.html
 - https://www.curiouscuisiniere.com/pandebono-cassava-bread/
 - https://www.receitasdepesos.com.br/paozinho-de-batata-4-ingredientes-sem-forno-4-minutos-faz-agora.html
 - https://www.receitasdepesos.com.br/pudim-de-caneca-de-leite-condensado-3-minutos-micro-ondas-somente.html
