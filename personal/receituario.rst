@@ -596,6 +596,18 @@ Coxinha de batata
 
 Amasse a batata e adicione o frango. Misture bem ate' formar uma massinha. Abra a massa na mao, coloque o recheio e feche. Asse a 180.C por aprox. 20 minutos. 
 
+Torta de Zucchini simples
+-----------------------------
+- 1 zucchini
+- 2 ovos
+- 2 colheres de sopa de farelo de aveia
+- 1 colher de cha de fermento quimico
+- 1 tomate pequeno
+- temperos e sal a gosto
+
+Rale o zucchini grosso e adicione uma colher de cha de sal. Repouse por 10 minutos e esprema bem o liquido da zucchini. Bata os ovos com os temperos e adicione todos os ingredientes. Cozinhe numa frigedira aquecida com um fio de azeite. Inicie com as rodelas de tomate e adicione a massa no fogo baixo/medio *com tampa* por ~5 minutos, antes de virar. Alternativamente, leve a massa ao forno.
+
+
 Pates ([ENG] Dips)
 =====================
 [ENG] Lemon Yogurt Dip
@@ -1958,6 +1970,14 @@ Grand Manhattan
 - 0.25 oz sweet vermouth
 - 0.5 oz orange juice
 
+The Revolver
+-------------
+- 2 oz. (60 ml) Old Grand-Dad Bonded Bourbon
+- 1/2 oz. (15 ml) Tia Maria Coffee Liqueur
+- 2 dashes Fee Bros. Orange Bitters
+- Flamed orange oil for garnish
+
+
 Other drinks
 --------------
 - https://insanelygoodrecipes.com/brazilian-cocktails/
@@ -2048,10 +2068,8 @@ Para avaliar
 - https://www.receitasdepesos.com.br/pao-de-queijo-fofinho-nao-compre-mais-na-padaria-vem-ver.html
 - https://share.fitonapp.com/html/invite-message/d1e3d6ce20834703a35336cbcd6f3ccd
 - https://www.quer-cafe.com/bolo-de-banana-de-liquidificador-super-fofinho-e-simples-de-fazer/
-- Chocolate Baked Oats {with Banana} - Easy & Healthy
-https://www.hauteandhealthyliving.com/chocolate-baked-oats/
+- Chocolate Baked Oats with Banana - Easy & Healthy https://www.hauteandhealthyliving.com/chocolate-baked-oats/
 - https://www.hauteandhealthyliving.com/paleo-waffles/
 - https://receitatodahora.com.br/esse-pao-de-banana-sem-farinha-e-natural-delicioso-e-fica-pronto-em-apenas-10-minutos/
 - https://pickyeaterblog.com/healthy-banana-bread-lightened-up-low-calorie/
-- Sobremesa rápida que não vai ao forno basta misturar os ingredientes e levar à geladeira - Receita Toda Hora
-https://receitatodahora.com.br/sobremesa-rapida-que-nao-vai-ao-forno-basta-misturar-os-ingredientes-e-levar-a-geladeira/
+- Sobremesa rápida que não vai ao forno basta misturar os ingredientes e levar à geladeira - https://receitatodahora.com.br/sobremesa-rapida-que-nao-vai-ao-forno-basta-misturar-os-ingredientes-e-levar-a-geladeira/
