@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <title>from otherswork import wheel: looking for useful Python packages</title>
 <style type="text/css">
 
@@ -457,65 +457,65 @@ li {
 <li><p class="first">random</p>
 <blockquote>
 <pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">random</span>
-<span class="keyword namespace">import</span> <span class="name namespace">numpy.random</span> <span class="keyword">as</span> <span class="name namespace">np_rand</span>
+<span class="keyword namespace">import</span> <span class="name namespace">random</span><span class="whitespace">
+</span><span class="keyword namespace">import</span> <span class="name namespace">numpy.random</span> <span class="keyword">as</span> <span class="name namespace">np_rand</span><span class="whitespace">
 
-<span class="name">abc</span> <span class="operator">=</span> <span class="name builtin">list</span><span class="punctuation">(</span><span class="literal string single">'abcde'</span><span class="punctuation">)</span>
+</span><span class="name">abc</span> <span class="operator">=</span> <span class="name builtin">list</span><span class="punctuation">(</span><span class="literal string single">'abcde'</span><span class="punctuation">)</span><span class="whitespace">
 
-<span class="name">random</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="name">abc</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="comment single"># ['c', 'e']</span>
+</span><span class="name">random</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="name">abc</span><span class="punctuation">,</span> <span class="literal number integer">2</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># ['c', 'e']</span><span class="whitespace">
 
-<span class="comment single"># np_rand.sample(size=None)  # Return random floats in the half-open interval [0.0, 1.0)</span>
-<span class="name">np_rand</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="comment single"># array([ 0.79363627,  0.48012174])</span>
+</span><span class="comment single"># np_rand.sample(size=None)  # Return random floats in the half-open interval [0.0, 1.0)</span><span class="whitespace">
+</span><span class="name">np_rand</span><span class="operator">.</span><span class="name">sample</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># array([ 0.79363627,  0.48012174])</span>
 </pre>
 </blockquote>
 </li>
 <li><p class="first">time, datetime</p>
 <blockquote>
 <pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">time</span>
+<span class="keyword namespace">import</span> <span class="name namespace">time</span><span class="whitespace">
 
-<span class="comment single"># Regular and 12 hour format</span>
-<span class="name builtin">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span>
-<span class="comment single"># ('19:11:49', '07:11:49')</span>
+</span><span class="comment single"># Regular and 12 hour format</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%H:%M:%S&quot;</span><span class="punctuation">),</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%I:%M:%S&quot;</span><span class="punctuation">))</span><span class="whitespace">
+</span><span class="comment single"># ('19:11:49', '07:11:49')</span><span class="whitespace">
 
-<span class="comment single"># Date with full and short year</span>
-<span class="name builtin">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%Y/%b/</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">))</span>
-<span class="comment single"># ('2016/Jun/15', '16-06-15')</span>
+</span><span class="comment single"># Date with full and short year</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="punctuation">(</span><span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%Y/%b/</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">),</span> <span class="name">time</span><span class="operator">.</span><span class="name">strftime</span><span class="punctuation">(</span><span class="literal string double">&quot;%y-%m-</span><span class="literal string interpol">%d</span><span class="literal string double">&quot;</span><span class="punctuation">))</span><span class="whitespace">
+</span><span class="comment single"># ('2016/Jun/15', '16-06-15')</span>
 </pre>
 </blockquote>
 </li>
 <li><p class="first">linecache</p>
 <blockquote>
 <pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">linecache</span>
+<span class="keyword namespace">import</span> <span class="name namespace">linecache</span><span class="whitespace">
 
-<span class="name">theline</span> <span class="operator">=</span> <span class="name">linecache</span><span class="operator">.</span><span class="name">getline</span><span class="punctuation">(</span><span class="name">thefilepath</span><span class="punctuation">,</span> <span class="name">desired_line_number</span><span class="punctuation">)</span>
+</span><span class="name">theline</span> <span class="operator">=</span> <span class="name">linecache</span><span class="operator">.</span><span class="name">getline</span><span class="punctuation">(</span><span class="name">thefilepath</span><span class="punctuation">,</span> <span class="name">desired_line_number</span><span class="punctuation">)</span>
 </pre>
 </blockquote>
 </li>
 <li><p class="first">collections</p>
 <blockquote>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">collections</span> <span class="keyword namespace">import</span> <span class="name">defaultdict</span>
+<span class="keyword namespace">from</span> <span class="name namespace">collections</span> <span class="keyword namespace">import</span> <span class="name">defaultdict</span><span class="whitespace">
 
-<span class="name">dl</span> <span class="operator">=</span> <span class="name">defaultdict</span><span class="punctuation">(</span><span class="name builtin">list</span><span class="punctuation">)</span>
-<span class="name">dl</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+</span><span class="name">dl</span> <span class="operator">=</span> <span class="name">defaultdict</span><span class="punctuation">(</span><span class="name builtin">list</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">dl</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
 
-<span class="name">ds</span> <span class="operator">=</span> <span class="name">defaultdict</span><span class="punctuation">(</span><span class="name builtin">set</span><span class="punctuation">)</span>
-<span class="name">ds</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+</span><span class="name">ds</span> <span class="operator">=</span> <span class="name">defaultdict</span><span class="punctuation">(</span><span class="name builtin">set</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">ds</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span><span class="operator">.</span><span class="name">append</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
 
-<span class="keyword namespace">from</span> <span class="name namespace">collections</span> <span class="keyword namespace">import</span> <span class="name">OrderedDict</span>
+</span><span class="keyword namespace">from</span> <span class="name namespace">collections</span> <span class="keyword namespace">import</span> <span class="name">OrderedDict</span><span class="whitespace">
 
-<span class="name">od</span> <span class="operator">=</span> <span class="name">OrderedDict</span><span class="punctuation">()</span>
-<span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span>
-<span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'b'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">2</span>
-<span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'c'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">3</span>
-<span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'d'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">4</span>
+</span><span class="name">od</span> <span class="operator">=</span> <span class="name">OrderedDict</span><span class="punctuation">()</span><span class="whitespace">
+</span><span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'a'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">1</span><span class="whitespace">
+</span><span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'b'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">2</span><span class="whitespace">
+</span><span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'c'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">3</span><span class="whitespace">
+</span><span class="name">od</span><span class="punctuation">[</span><span class="literal string single">'d'</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="literal number integer">4</span><span class="whitespace">
 
-<span class="keyword">for</span> <span class="name">it</span> <span class="operator word">in</span> <span class="name">od</span><span class="operator">.</span><span class="name">items</span><span class="punctuation">():</span>
-    <span class="name builtin">print</span><span class="punctuation">(</span><span class="name">it</span><span class="punctuation">)</span>
+</span><span class="keyword">for</span> <span class="name">it</span> <span class="operator word">in</span> <span class="name">od</span><span class="operator">.</span><span class="name">items</span><span class="punctuation">():</span><span class="whitespace">
+</span>    <span class="name builtin">print</span><span class="punctuation">(</span><span class="name">it</span><span class="punctuation">)</span>
 </pre>
 </blockquote>
 </li>
@@ -535,15 +535,15 @@ li {
 <div class="section" id="pip">
 <h1><tt class="docutils literal">pip</tt></h1>
 <pre class="code bash literal-block">
-pip install _package_
-<span class="comment single"># --user : local install (no admin rights)
+pip<span class="whitespace"> </span>install<span class="whitespace"> </span>_package_<span class="whitespace">
+</span><span class="comment single"># --user : local install (no admin rights)
 # -U or --upgrade : upgrade existing installation
 # --no-deps : no install of dependencies packages (useful for upgrade)
 # --install-option=&quot;--prefix=$PREFIX_PATH&quot; redirects the install</span>
 </pre>
 <p><tt class="docutils literal">pip</tt> in embedded in 2.7.9+. If you have an updated version of Python and don't find it, run this command:</p>
 <pre class="code bash literal-block">
-python -m ensurepip
+python<span class="whitespace"> </span>-m<span class="whitespace"> </span>ensurepip
 </pre>
 <p>Remember: <tt class="docutils literal">pip</tt> installs binaries in addition to the modules. Add this installation path to your <cite>$PATH</cite> (in unix, is is <cite>$HOME/.local/bin</cite>).</p>
 </div>
@@ -559,13 +559,13 @@ python -m ensurepip
 <li><p class="first"><a class="reference external" href="https://pypi.python.org/pypi/tqdm">tqdm</a></p>
 <blockquote>
 <pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">time</span>
-<span class="keyword namespace">from</span> <span class="name namespace">tqdm</span> <span class="keyword namespace">import</span> <span class="name">tqdm</span>
+<span class="keyword namespace">import</span> <span class="name namespace">time</span><span class="whitespace">
+</span><span class="keyword namespace">from</span> <span class="name namespace">tqdm</span> <span class="keyword namespace">import</span> <span class="name">tqdm</span><span class="whitespace">
 
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Starting something low...'</span><span class="punctuation">)</span>
-<span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name">tqdm</span><span class="punctuation">(</span><span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">)):</span>
-    <span class="name">time</span><span class="operator">.</span><span class="name">sleep</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span>
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Done!'</span><span class="punctuation">)</span>
+</span><span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Starting something low...'</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name">tqdm</span><span class="punctuation">(</span><span class="name builtin">range</span><span class="punctuation">(</span><span class="literal number integer">5</span><span class="punctuation">)):</span><span class="whitespace">
+</span>    <span class="name">time</span><span class="operator">.</span><span class="name">sleep</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string single">'# Done!'</span><span class="punctuation">)</span>
 </pre>
 </blockquote>
 </li>
@@ -576,11 +576,11 @@ python -m ensurepip
 <li><p class="first"><a class="reference external" href="https://pypi.python.org/pypi/virtualenv">virtualenv</a></p>
 <blockquote>
 <pre class="code bash literal-block">
-virtualenv -p /usr/bin/python2.6 /path/to/myvirtualenv
+virtualenv<span class="whitespace"> </span>-p<span class="whitespace"> </span>/usr/bin/python2.6<span class="whitespace"> </span>/path/to/myvirtualenv<span class="whitespace">
 
-<span class="name builtin">source</span> /path/to/myvirtualenv/bin/activate
+</span><span class="name builtin">source</span><span class="whitespace"> </span>/path/to/myvirtualenv/bin/activate<span class="whitespace">
 
-deactivate
+</span>deactivate
 </pre>
 </blockquote>
 </li>
@@ -608,44 +608,44 @@ deactivate
 <li><p class="first"><a class="reference external" href="http://numba.pydata.org/">Numba</a></p>
 <blockquote>
 <pre class="code python literal-block">
-<span class="comment hashbang">#!/usr/bin/env python</span>
-<span class="comment single"># -*- coding:utf-8 -*-</span>
+<span class="comment hashbang">#!/usr/bin/env python</span><span class="whitespace">
+</span><span class="comment single"># -*- coding:utf-8 -*-</span><span class="whitespace">
 
-<span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword">as</span> <span class="name namespace">np</span>
-<span class="keyword namespace">from</span> <span class="name namespace">numba</span> <span class="keyword namespace">import</span> <span class="name">jit</span>
+</span><span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword">as</span> <span class="name namespace">np</span><span class="whitespace">
+</span><span class="keyword namespace">from</span> <span class="name namespace">numba</span> <span class="keyword namespace">import</span> <span class="name">jit</span><span class="whitespace">
 
-<span class="name">size</span> <span class="operator">=</span> <span class="name">long</span><span class="punctuation">(</span><span class="literal number float">1e8</span><span class="punctuation">)</span>
-
-
-<span class="keyword">def</span> <span class="name function">my_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span>
-    <span class="name">result</span> <span class="operator">=</span> <span class="literal number float">0.0</span>
-    <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span>
-        <span class="name">result</span> <span class="operator">+=</span> <span class="name">i</span>
-    <span class="keyword">return</span> <span class="name">result</span>
-
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="name">my_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span>
+</span><span class="name">size</span> <span class="operator">=</span> <span class="name">long</span><span class="punctuation">(</span><span class="literal number float">1e8</span><span class="punctuation">)</span><span class="whitespace">
 
 
-<span class="comment single"># jit decorator tells Numba to compile this function.</span>
-<span class="comment single"># The argument types will be inferred by Numba when function is called.</span>
-<span class="name decorator">&#64;jit</span>
-<span class="keyword">def</span> <span class="name function">nb_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span>
-    <span class="name">result</span> <span class="operator">=</span> <span class="literal number float">0.0</span>
-    <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span>
-        <span class="name">result</span> <span class="operator">+=</span> <span class="name">i</span>
-    <span class="keyword">return</span> <span class="name">result</span>
+</span><span class="keyword">def</span> <span class="name function">my_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span><span class="whitespace">
+</span>    <span class="name">result</span> <span class="operator">=</span> <span class="literal number float">0.0</span><span class="whitespace">
+</span>    <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span><span class="whitespace">
+</span>        <span class="name">result</span> <span class="operator">+=</span> <span class="name">i</span><span class="whitespace">
+</span>    <span class="keyword">return</span> <span class="name">result</span><span class="whitespace">
 
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="name">nb_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span>
+</span><span class="name builtin">print</span><span class="punctuation">(</span><span class="name">my_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span><span class="whitespace">
 
 
-<span class="keyword">def</span> <span class="name function">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span>
-    <span class="keyword">return</span> <span class="name">np</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">astype</span><span class="punctuation">(</span><span class="name builtin">float</span><span class="punctuation">))</span>
+</span><span class="comment single"># jit decorator tells Numba to compile this function.</span><span class="whitespace">
+</span><span class="comment single"># The argument types will be inferred by Numba when function is called.</span><span class="whitespace">
+</span><span class="name decorator">&#64;jit</span><span class="whitespace">
+</span><span class="keyword">def</span> <span class="name function">nb_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span><span class="whitespace">
+</span>    <span class="name">result</span> <span class="operator">=</span> <span class="literal number float">0.0</span><span class="whitespace">
+</span>    <span class="keyword">for</span> <span class="name">i</span> <span class="operator word">in</span> <span class="name builtin">range</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span><span class="whitespace">
+</span>        <span class="name">result</span> <span class="operator">+=</span> <span class="name">i</span><span class="whitespace">
+</span>    <span class="keyword">return</span> <span class="name">result</span><span class="whitespace">
 
-<span class="name builtin">print</span><span class="punctuation">(</span><span class="name">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span>
+</span><span class="name builtin">print</span><span class="punctuation">(</span><span class="name">nb_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span><span class="whitespace">
+
+
+</span><span class="keyword">def</span> <span class="name function">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">):</span><span class="whitespace">
+</span>    <span class="keyword">return</span> <span class="name">np</span><span class="operator">.</span><span class="name">sum</span><span class="punctuation">(</span><span class="name">np</span><span class="operator">.</span><span class="name">arange</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">)</span><span class="operator">.</span><span class="name">astype</span><span class="punctuation">(</span><span class="name builtin">float</span><span class="punctuation">))</span><span class="whitespace">
+
+</span><span class="name builtin">print</span><span class="punctuation">(</span><span class="name">np_sum</span><span class="punctuation">(</span><span class="name">size</span><span class="punctuation">))</span>
 </pre>
 <pre class="code bash literal-block">
 <span class="comment single"># running cmd
-</span>python -m cProfile -s cumulative numba_ex.py &gt; numba_ex.txt
+</span>python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfile<span class="whitespace"> </span>-s<span class="whitespace"> </span>cumulative<span class="whitespace"> </span>numba_ex.py<span class="whitespace"> </span>&gt;<span class="whitespace"> </span>numba_ex.txt
 </pre>
 </blockquote>
 </li>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <title>ffmpeg and imagemagick</title>
 <style type="text/css">
 
@@ -421,55 +421,55 @@ li {
 <div class="section" id="cheatsheet">
 <h2>Cheatsheet</h2>
 <pre class="code bash literal-block">
--pattern_type glob -i <span class="literal string single">'raw/*.png'</span>  <span class="comment single"># repeat this to combine more than one pattern
-</span>-loop -1  <span class="comment single"># for GIFs; number of times a gif plays; -1==infinite
-</span>-r <span class="literal number">1</span>.5  <span class="comment single"># framerate
-</span>-framerate <span class="literal number">1</span>.5  <span class="comment single"># same as -r</span>
+-pattern_type<span class="whitespace"> </span>glob<span class="whitespace"> </span>-i<span class="whitespace"> </span><span class="literal string single">'raw/*.png'</span><span class="whitespace">  </span><span class="comment single"># repeat this to combine more than one pattern
+</span>-loop<span class="whitespace"> </span>-1<span class="whitespace">  </span><span class="comment single"># for GIFs; number of times a gif plays; -1==infinite
+</span>-r<span class="whitespace"> </span><span class="literal number">1</span>.5<span class="whitespace">  </span><span class="comment single"># framerate
+</span>-framerate<span class="whitespace"> </span><span class="literal number">1</span>.5<span class="whitespace">  </span><span class="comment single"># same as -r</span>
 </pre>
 </div>
 <div class="section" id="from-images">
 <h2>From images</h2>
 <pre class="code bash literal-block">
-ffmpeg -r <span class="literal number">1</span>.0 -i <span class="literal string single">'prefix_%04d.png'</span> raw.gif
-ffmpeg -r <span class="literal number">1</span>.0 -pattern_type glob -i <span class="literal string single">'*.png'</span> raw.gif
-<span class="comment single"># problem: all images will be resized to the size of the first one (distortion)
+ffmpeg<span class="whitespace"> </span>-r<span class="whitespace"> </span><span class="literal number">1</span>.0<span class="whitespace"> </span>-i<span class="whitespace"> </span><span class="literal string single">'prefix_%04d.png'</span><span class="whitespace"> </span>raw.gif<span class="whitespace">
+</span>ffmpeg<span class="whitespace"> </span>-r<span class="whitespace"> </span><span class="literal number">1</span>.0<span class="whitespace"> </span>-pattern_type<span class="whitespace"> </span>glob<span class="whitespace"> </span>-i<span class="whitespace"> </span><span class="literal string single">'*.png'</span><span class="whitespace"> </span>raw.gif<span class="whitespace">
+</span><span class="comment single"># problem: all images will be resized to the size of the first one (distortion)
 # solution: use imagemagick
 # problem2: low quality.
 # solution2: use palette (see below)
-</span>
-ffmpeg -r <span class="literal number">0</span>.5 -pattern_type glob -i <span class="literal string single">'*.png'</span> -c:v libx264 -pix_fmt yuv420p out.mp4
-<span class="comment single"># problem: all images will be resized to the size of the first one (distortion)
+</span><span class="whitespace">
+</span>ffmpeg<span class="whitespace"> </span>-r<span class="whitespace"> </span><span class="literal number">0</span>.5<span class="whitespace"> </span>-pattern_type<span class="whitespace"> </span>glob<span class="whitespace"> </span>-i<span class="whitespace"> </span><span class="literal string single">'*.png'</span><span class="whitespace"> </span>-c:v<span class="whitespace"> </span>libx264<span class="whitespace"> </span>-pix_fmt<span class="whitespace"> </span>yuv420p<span class="whitespace"> </span>out.mp4<span class="whitespace">
+</span><span class="comment single"># problem: all images will be resized to the size of the first one (distortion)
 # solution: use imagemagick
-</span>
-ffmpeg -i prefix_%02d.png -vf <span class="literal string double">&quot;palettegen&quot;</span> palette.png
-ffmpeg -i prefix_%02d.png -i palette.png -filter_complex <span class="literal string double">&quot;paletteuse&quot;</span> output.gif
+</span><span class="whitespace">
+</span>ffmpeg<span class="whitespace"> </span>-i<span class="whitespace"> </span>prefix_%02d.png<span class="whitespace"> </span>-vf<span class="whitespace"> </span><span class="literal string double">&quot;palettegen&quot;</span><span class="whitespace"> </span>palette.png<span class="whitespace">
+</span>ffmpeg<span class="whitespace"> </span>-i<span class="whitespace"> </span>prefix_%02d.png<span class="whitespace"> </span>-i<span class="whitespace"> </span>palette.png<span class="whitespace"> </span>-filter_complex<span class="whitespace"> </span><span class="literal string double">&quot;paletteuse&quot;</span><span class="whitespace"> </span>output.gif
 </pre>
 </div>
 </div>
 <div class="section" id="imagemagick">
 <h1>Imagemagick</h1>
-<div class="section" id="cheatsheet-1">
+<div class="section" id="id1">
 <h2>Cheatsheet</h2>
 <pre class="code bash literal-block">
--delay <span class="literal number">100</span>  <span class="comment single"># hundreds of a sec
-</span>-loop <span class="literal number">5</span>
--dispose previous  <span class="comment single"># remove previous frame in the animation
-</span>-gravity center  <span class="comment single"># center images
-</span>-thumbnail 000x000  <span class="comment single"># resize image
-</span>-extent 000x000  <span class="comment single"># adjust the image in a frame of this size</span>
+-delay<span class="whitespace"> </span><span class="literal number">100</span><span class="whitespace">  </span><span class="comment single"># hundreds of a sec
+</span>-loop<span class="whitespace"> </span><span class="literal number">5</span><span class="whitespace">
+</span>-dispose<span class="whitespace"> </span>previous<span class="whitespace">  </span><span class="comment single"># remove previous frame in the animation
+</span>-gravity<span class="whitespace"> </span>center<span class="whitespace">  </span><span class="comment single"># center images
+</span>-thumbnail<span class="whitespace"> </span>000x000<span class="whitespace">  </span><span class="comment single"># resize image
+</span>-extent<span class="whitespace"> </span>000x000<span class="whitespace">  </span><span class="comment single"># adjust the image in a frame of this size</span>
 </pre>
 </div>
 <div class="section" id="examples">
 <h2>Examples</h2>
 <pre class="code bash literal-block">
-mogrify -geometry 640x480^ -gravity center -crop 640x480+0+0 *.png
-<span class="comment single"># force all images do to be 640x480. If bigger, cropped from the center
-</span>
-mogrify -thumbnail 640x480 -background black -gravity center -extent 640x480 *.png
-<span class="comment single"># pad with black background
-</span>
-convert -delay <span class="literal number">200</span> -loop <span class="literal number">5</span> -dispose previous *.png -gravity center iamanimating.gif
-<span class="comment single"># also creates a gif animation</span>
+mogrify<span class="whitespace"> </span>-geometry<span class="whitespace"> </span>640x480^<span class="whitespace"> </span>-gravity<span class="whitespace"> </span>center<span class="whitespace"> </span>-crop<span class="whitespace"> </span>640x480+0+0<span class="whitespace"> </span>*.png<span class="whitespace">
+</span><span class="comment single"># force all images do to be 640x480. If bigger, cropped from the center
+</span><span class="whitespace">
+</span>mogrify<span class="whitespace"> </span>-thumbnail<span class="whitespace"> </span>640x480<span class="whitespace"> </span>-background<span class="whitespace"> </span>black<span class="whitespace"> </span>-gravity<span class="whitespace"> </span>center<span class="whitespace"> </span>-extent<span class="whitespace"> </span>640x480<span class="whitespace"> </span>*.png<span class="whitespace">
+</span><span class="comment single"># pad with black background
+</span><span class="whitespace">
+</span>convert<span class="whitespace"> </span>-delay<span class="whitespace"> </span><span class="literal number">200</span><span class="whitespace"> </span>-loop<span class="whitespace"> </span><span class="literal number">5</span><span class="whitespace"> </span>-dispose<span class="whitespace"> </span>previous<span class="whitespace"> </span>*.png<span class="whitespace"> </span>-gravity<span class="whitespace"> </span>center<span class="whitespace"> </span>iamanimating.gif<span class="whitespace">
+</span><span class="comment single"># also creates a gif animation</span>
 </pre>
 </div>
 </div>

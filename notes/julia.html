@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <title>Julia Language</title>
 <style type="text/css">
 
@@ -446,9 +446,9 @@ li {
 <p>Now I'm compiling it to see if I can work with the IPython 4.x and if I get less warning messages... The whole compiling process takes about 1 hour.</p>
 <p>Download: <a class="reference external" href="http://julialang.org/downloads/">http://julialang.org/downloads/</a> &gt; Source &gt; GitHub</p>
 <pre class="code bash literal-block">
-make
-<span class="comment single"># After finish, update 'x' below by your compiled version
-</span>cp -R julia-x/* ~/.local/
+make<span class="whitespace">
+</span><span class="comment single"># After finish, update 'x' below by your compiled version
+</span>cp<span class="whitespace"> </span>-R<span class="whitespace"> </span>julia-x/*<span class="whitespace"> </span>~/.local/
 </pre>
 <p>After compiling:</p>
 <pre class="code literal-block">
@@ -456,8 +456,8 @@ julia&gt; Pkg.add(&quot;PyPlot&quot;)
 julia&gt; Pkg.add(&quot;IJulia&quot;)
 </pre>
 <pre class="code bash literal-block">
-<span class="name builtin">cd</span> ~/ipynb
-ipython notebook
+<span class="name builtin">cd</span><span class="whitespace"> </span>~/ipynb<span class="whitespace">
+</span>ipython<span class="whitespace"> </span>notebook
 </pre>
 <p>Success!!</p>
 </div>

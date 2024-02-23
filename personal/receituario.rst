@@ -1818,9 +1818,49 @@ Misture bem todos os ingredientes em um processador. Unte uma forma com oleo de 
 
 Drinks
 =======
-- "dose" = 2 oz
+- "shot" ("dose") = 2 oz
 - "meter" = 1 and 0.5 oz
 - The biggest difference between **tonic water** and **club soda** is the taste. Tonic water has a strong bitter and sweet flavor, while club soda has a mild, faintly salty flavor. 
+
+Super juice
+---------------
+How to make it:
+
+- Peel and weigh the skin of your citric fruit (lime, lemon, or orange)
+- Add the acids with the fruit peels (as below) in a closed container
+- Shake and let rest for 1 to 2h
+- Blend it and strain through a fine sieve or a mesh strainer bag
+- Squeeze the fruit's juice and add 15 to 17x the weight of the peels of Water
+- The juice should last about a week
+
+Lime
+~~~~~
+- 0.50 -- 0.66x peels' weight of Citric acid
+- 0.25 -- 0.33x peels' weight of Malic acid
+
+Lemon
+~~~~~~~
+- 0.75 -- 1.00x peels' weight of Citric acid
+- (no Malic acid)
+
+Orange
+~~~~~~~
+- 0.70 -- 0.90x peels' weight of Citric acid
+- 0.05 -- 0.10x peels' weight of Malic acid
+
+Caipirinha with super juice
+------------------------------
+- 1x volume of lime super juice
+- 1x volume of cachaca
+- 1x to 2x volume of Water
+- 1x teaspoon of sugar
+- some ice
+
+Super juice drink
+-------------------
+- 20ml rum
+- 15ml syrup
+- 22.5ml lime super juice
 
 Vinho quente
 --------------
@@ -1829,7 +1869,7 @@ Vinho quente
 - 1 garrafa de vinho tinto seco (750ml)
 - 4 cravos-da-índia
 - 2 canelas em pau
-- Raspas da casca de 1 laranja sem a parte branca
+- Raspas da casca de 1 laranja sem a parte branca1
 - 1 maçã tipo fuji sem casca em cubos
 
 Negroni

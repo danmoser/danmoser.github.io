@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <title>photography.rst</title>
 <style type="text/css">
 
@@ -417,7 +417,6 @@ li {
 *   math2html: convert LaTeX equations to HTML output.
 *
 *   Copyright (C) 2009,2010 Alex Fernández
-*                 2021      Günter Milde
 *
 *   Released under the terms of the `2-Clause BSD license'_, in short:
 *   Copying and distribution of this file, with or without modification,
@@ -429,19 +428,16 @@ li {
 *
 *   Based on eLyXer: convert LyX source files to HTML output.
 *   http://elyxer.nongnu.org/
-*
-*
+*/
+/* --end--
 * CSS file for LaTeX formulas.
-*
-* References: http://www.zipcon.net/~swhite/docs/math/math.html
-*             http://www.cs.tut.fi/~jkorpela/math/
 */
 
 /* Formulas */
 .formula {
 	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
 	margin: 1.2em 0;
-	line-height: 1.4;
 }
 span.formula {
 	white-space: nowrap;
@@ -465,9 +461,6 @@ span.unknown {
 span.ignored, span.arraydef {
 	display: none;
 }
-.phantom {
-	visibility: hidden;
-}
 .formula i {
 	letter-spacing: 0.1ex;
 }
@@ -484,48 +477,33 @@ span.ignored, span.arraydef {
 }
 
 /* Structures */
-span.hspace {
-	display: inline-block;
-}
 span.overline, span.bar {
 	text-decoration: overline;
 }
-.fraction, .fullfraction, .textfraction {
+.fraction, .fullfraction {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 }
-span.formula .fraction,
-.textfraction,
-span.smallmatrix {
+.fraction .fraction {
 	font-size: 80%;
-	line-height: 1;
+	line-height: 100%;
 }
 span.numerator {
 	display: block;
-	line-height: 1;
 }
 span.denominator {
 	display: block;
-	line-height: 1;
 	padding: 0ex;
 	border-top: thin solid;
 }
-.formula sub, .formula sup {
-	font-size: 80%;
-}
 sup.numerator, sup.unit {
+	font-size: 70%;
 	vertical-align: 80%;
 }
 sub.denominator, sub.unit {
+	font-size: 70%;
 	vertical-align: -20%;
-}
-span.smallsymbol {
-	font-size: 75%;
-	line-height: 75%;
-}
-span.boldsymbol {
-	font-weight: bold;
 }
 span.sqrt {
 	display: inline-block;
@@ -533,62 +511,39 @@ span.sqrt {
 	padding: 0.1ex;
 }
 sup.root {
+	font-size: 70%;
 	position: relative;
 	left: 1.4ex;
 }
 span.radical {
 	display: inline-block;
 	padding: 0ex;
-	/* font-size: 160%; for DejaVu, not required with STIX */
-	line-height: 100%;
+	font-size: 150%;
 	vertical-align: top;
-	vertical-align: middle;
 }
-
 span.root {
 	display: inline-block;
 	border-top: thin solid;
 	padding: 0ex;
 	vertical-align: middle;
 }
-div.formula .bigoperator,
-.displaystyle .bigoperator,
-.displaystyle .bigoperator {
-	line-height: 120%;
-	font-size: 140%;
-	padding-right: 0.2ex;
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
 }
-span.fraction .bigoperator,
-span.scriptstyle .bigoperator {
-	line-height: inherit;
-	font-size: inherit;
-	padding-right: 0;
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
 }
-span.bigdelimiter {
-	display: inline-block;
+span.largesymbol {
+	font-size: 175%;
 }
-span.bigdelimiter.size1 {
-	transform: scale(1, 1.2);
-	line-height: 1.2;
+span.hugesymbol {
+	font-size: 200%;
 }
-span.bigdelimiter.size2 {
-	transform: scale(1, 1.62);
-	line-height: 1.62%;
-
-}
-span.bigdelimiter.size3 {
-	transform: scale(1, 2.05);
-	line-height: 2.05%;
-}
-span.bigdelimiter.size4 {
-	transform: scale(1, 2.47);
-	line-height: 2.47%;
-}
-/* vertically stacked sub and superscript */
 span.scripts {
 	display: inline-table;
 	vertical-align: middle;
-	padding-right: 0.2ex;
 }
 .script {
 	display: table-row;
@@ -606,42 +561,51 @@ span.limits {
 sup.limit, sub.limit {
 	line-height: 100%;
 }
-span.embellished,
-span.embellished > .base {
+span.symbolover {
 	display: inline-block;
-}
-span.embellished > sup,
-span.embellished > sub {
-	display: inline-block;
-	font-size: 100%;
+	text-align: center;
 	position: relative;
-	bottom: 0.3em;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
 	width: 0px;
 }
-span.embellished > sub {
-	top: 0.4em;
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
 }
 
 /* Environments */
 span.array, span.bracketcases, span.binomial, span.environment {
 	display: inline-table;
 	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
 	vertical-align: middle;
 }
 span.arrayrow, span.binomrow {
 	display: table-row;
-	padding: 0;
-	border: 0;
+	padding: 0ex;
+	border: 0ex;
 }
 span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
 	display: table-cell;
 	padding: 0ex 0.2ex;
-	line-height: 1; /* 99%; */
+	line-height: 99%;
 	border: 0ex;
 }
-.environment.align > .arrayrow > .arraycell.align-l {
-	padding-right: 2em;
-}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
 
 /* Inline binomials */
 span.binom {
@@ -684,30 +648,19 @@ span.downstackrel {
 }
 
 /* Fonts */
-.formula {
-	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
-}
-span.radical,   /* ensure correct size of square-root sign */
-span.integral { /* upright integral signs for better alignment of indices */
-	font-family: "STIXIntegralsUp", STIX;
-	/* font-size: 115%; match apparent size with DejaVu */
-}
-span.bracket {
-  /* some "STIX" and "DejaVu Math TeX Gyre" bracket pieces don't fit */
-	font-family: "DejaVu Serif", serif;
-}
 span.mathsf, span.textsf {
+	font-style: normal;
 	font-family: sans-serif;
 }
 span.mathrm, span.textrm {
-	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
-}
-span.mathtt, span.texttt {
-	font-family: monospace;
-}
-span.text, span.textnormal,
-span.mathsf, span.mathtt, span.mathrm {
 	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
 }
 span.fraktur {
 	font-family: "Lucida Blackletter", eufm10, blackletter;
@@ -718,16 +671,6 @@ span.blackboard {
 span.scriptfont {
 	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
 	font-style: italic;
-}
-span.mathscr {
-  font-family: MathJax_Script, rsfs10,  cursive;
-  font-style: italic;
-}
-span.textsc {
-	font-variant: small-caps;
-}
-span.textsl {
-	font-style: oblique;
 }
 
 /* Colors */
@@ -746,6 +689,7 @@ span.boxed, span.framebox {
 	padding: 5px;
 }
 
+
 </style>
 </head>
 <body>
@@ -755,112 +699,112 @@ span.boxed, span.framebox {
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#photography" id="toc-entry-1">Photography</a><ul>
-<li><a class="reference internal" href="#camera-guide" id="toc-entry-2">Camera Guide</a><ul>
-<li><a class="reference internal" href="#the-lens-ratio" id="toc-entry-3">The Lens Ratio</a></li>
-<li><a class="reference internal" href="#filter-thread" id="toc-entry-4">Filter Thread</a></li>
-<li><a class="reference internal" href="#standard-or-normal-lens" id="toc-entry-5">Standard (or Normal) Lens</a></li>
-<li><a class="reference internal" href="#wide-angle-lens" id="toc-entry-6">Wide Angle Lens</a></li>
-<li><a class="reference internal" href="#telephoto-lens" id="toc-entry-7">Telephoto Lens</a></li>
-<li><a class="reference internal" href="#macro-lens" id="toc-entry-8">Macro Lens</a></li>
-<li><a class="reference internal" href="#zoom-lens" id="toc-entry-9">Zoom Lens</a></li>
-<li><a class="reference internal" href="#image-stabilization" id="toc-entry-10">Image Stabilization</a></li>
-<li><a class="reference internal" href="#extension-tubes" id="toc-entry-11">Extension tubes</a></li>
-<li><a class="reference internal" href="#normal-and-cross-type-focusing-points" id="toc-entry-12">Normal and Cross-Type Focusing Points</a></li>
+<li><a class="reference internal" href="#photography" id="id7">Photography</a><ul>
+<li><a class="reference internal" href="#camera-guide" id="id8">Camera Guide</a><ul>
+<li><a class="reference internal" href="#the-lens-ratio" id="id9">The Lens Ratio</a></li>
+<li><a class="reference internal" href="#filter-thread" id="id10">Filter Thread</a></li>
+<li><a class="reference internal" href="#standard-or-normal-lens" id="id11">Standard (or Normal) Lens</a></li>
+<li><a class="reference internal" href="#wide-angle-lens" id="id12">Wide Angle Lens</a></li>
+<li><a class="reference internal" href="#telephoto-lens" id="id13">Telephoto Lens</a></li>
+<li><a class="reference internal" href="#macro-lens" id="id14">Macro Lens</a></li>
+<li><a class="reference internal" href="#zoom-lens" id="id15">Zoom Lens</a></li>
+<li><a class="reference internal" href="#image-stabilization" id="id16">Image Stabilization</a></li>
+<li><a class="reference internal" href="#extension-tubes" id="id17">Extension tubes</a></li>
+<li><a class="reference internal" href="#normal-and-cross-type-focusing-points" id="id18">Normal and Cross-Type Focusing Points</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general" id="toc-entry-13">General</a><ul>
-<li><a class="reference internal" href="#cameras-and-lenses" id="toc-entry-14">Cameras and lenses</a><ul>
-<li><a class="reference internal" href="#general-photography" id="toc-entry-15">General photography</a></li>
-<li><a class="reference internal" href="#topics-on-photography" id="toc-entry-16">Topics on photography</a></li>
-<li><a class="reference internal" href="#shopping" id="toc-entry-17">Shopping</a></li>
+<li><a class="reference internal" href="#general" id="id19">General</a><ul>
+<li><a class="reference internal" href="#cameras-and-lenses" id="id20">Cameras and lenses</a><ul>
+<li><a class="reference internal" href="#general-photography" id="id21">General photography</a></li>
+<li><a class="reference internal" href="#topics-on-photography" id="id22">Topics on photography</a></li>
+<li><a class="reference internal" href="#shopping" id="id23">Shopping</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#optics-vocabulary" id="toc-entry-18">Optics Vocabulary</a></li>
-<li><a class="reference internal" href="#types-of-cameras" id="toc-entry-19">Types of cameras</a><ul>
-<li><a class="reference internal" href="#the-power-of-the-mirrorless-cameras" id="toc-entry-20">The power of the Mirrorless cameras</a></li>
+<li><a class="reference internal" href="#optics-vocabulary" id="id24">Optics Vocabulary</a></li>
+<li><a class="reference internal" href="#types-of-cameras" id="id25">Types of cameras</a><ul>
+<li><a class="reference internal" href="#the-power-of-the-mirrorless-cameras" id="id26">The power of the Mirrorless cameras</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#flash" id="toc-entry-21">Flash</a></li>
-<li><a class="reference internal" href="#filters" id="toc-entry-22">Filters</a></li>
+<li><a class="reference internal" href="#flash" id="id27">Flash</a></li>
+<li><a class="reference internal" href="#filters" id="id28">Filters</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#math" id="toc-entry-23">Math</a><ul>
-<li><a class="reference internal" href="#thin-lens-equation" id="toc-entry-24">Thin lens equation</a></li>
-<li><a class="reference internal" href="#field-of-view" id="toc-entry-25">Field of View</a></li>
-<li><a class="reference internal" href="#f-number" id="toc-entry-26">f-number</a></li>
-<li><a class="reference internal" href="#depth-of-field" id="toc-entry-27">Depth of Field</a></li>
-<li><a class="reference internal" href="#exposure-value" id="toc-entry-28">Exposure Value</a></li>
-<li><a class="reference internal" href="#iso-f-stop-and-shutter-speed-correlation" id="toc-entry-29">ISO, f-stop and Shutter Speed correlation</a></li>
+<li><a class="reference internal" href="#math" id="id29">Math</a><ul>
+<li><a class="reference internal" href="#thin-lens-equation" id="id30">Thin lens equation</a></li>
+<li><a class="reference internal" href="#field-of-view" id="id31">Field of View</a></li>
+<li><a class="reference internal" href="#f-number" id="id32">f-number</a></li>
+<li><a class="reference internal" href="#depth-of-field" id="id33">Depth of Field</a></li>
+<li><a class="reference internal" href="#exposure-value" id="id34">Exposure Value</a></li>
+<li><a class="reference internal" href="#iso-f-stop-and-shutter-speed-correlation" id="id35">ISO, f-stop and Shutter Speed correlation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#market-options" id="toc-entry-30">Market Options</a><ul>
-<li><a class="reference internal" href="#nikon-lenses-acronyms" id="toc-entry-31">Nikon Lenses Acronyms</a><ul>
-<li><a class="reference internal" href="#auto-indexing" id="toc-entry-32">Auto Indexing</a></li>
-<li><a class="reference internal" href="#auto-focus" id="toc-entry-33">Auto Focus</a></li>
-<li><a class="reference internal" href="#types" id="toc-entry-34">Types</a></li>
-<li><a class="reference internal" href="#f-mount-system" id="toc-entry-35">F-mount System</a></li>
-<li><a class="reference internal" href="#z-mount-system" id="toc-entry-36">Z-mount System</a></li>
-<li><a class="reference internal" href="#format" id="toc-entry-37">Format</a></li>
-<li><a class="reference internal" href="#stabilization" id="toc-entry-38">Stabilization</a></li>
-<li><a class="reference internal" href="#specialization" id="toc-entry-39">Specialization</a></li>
-<li><a class="reference internal" href="#elements" id="toc-entry-40">Elements</a></li>
+<li><a class="reference internal" href="#market-options" id="id36">Market Options</a><ul>
+<li><a class="reference internal" href="#nikon-lenses-acronyms" id="id37">Nikon Lenses Acronyms</a><ul>
+<li><a class="reference internal" href="#auto-indexing" id="id38">Auto Indexing</a></li>
+<li><a class="reference internal" href="#auto-focus" id="id39">Auto Focus</a></li>
+<li><a class="reference internal" href="#types" id="id40">Types</a></li>
+<li><a class="reference internal" href="#f-mount-system" id="id41">F-mount System</a></li>
+<li><a class="reference internal" href="#z-mount-system" id="id42">Z-mount System</a></li>
+<li><a class="reference internal" href="#format" id="id43">Format</a></li>
+<li><a class="reference internal" href="#stabilization" id="id44">Stabilization</a></li>
+<li><a class="reference internal" href="#specialization" id="id45">Specialization</a></li>
+<li><a class="reference internal" href="#elements" id="id46">Elements</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pentax-lenses-acronyms" id="toc-entry-41">Pentax Lenses Acronyms</a><ul>
-<li><a class="reference internal" href="#mounts" id="toc-entry-42">Mounts</a></li>
-<li><a class="reference internal" href="#lens-designations" id="toc-entry-43">Lens Designations</a></li>
-<li><a class="reference internal" href="#focusing" id="toc-entry-44">Focusing</a></li>
-<li><a class="reference internal" href="#elements-1" id="toc-entry-45">Elements</a></li>
-<li><a class="reference internal" href="#build" id="toc-entry-46">BUILD</a></li>
+<li><a class="reference internal" href="#pentax-lenses-acronyms" id="id47">Pentax Lenses Acronyms</a><ul>
+<li><a class="reference internal" href="#mounts" id="id48">Mounts</a></li>
+<li><a class="reference internal" href="#lens-designations" id="id49">Lens Designations</a></li>
+<li><a class="reference internal" href="#focusing" id="id50">Focusing</a></li>
+<li><a class="reference internal" href="#id1" id="id51">Elements</a></li>
+<li><a class="reference internal" href="#build" id="id52">BUILD</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nikon-lenses" id="toc-entry-47">Nikon lenses</a><ul>
-<li><a class="reference internal" href="#nikon-35mm-f-1-8g-dx-vs-50mm-f-1-4g" id="toc-entry-48">Nikon 35mm f/1.8G DX vs 50mm f/1.4G</a></li>
-<li><a class="reference internal" href="#af-s-nikkor-50mm-f-1-8g" id="toc-entry-49">AF-S NIKKOR 50mm f/1.8G</a></li>
-<li><a class="reference internal" href="#af-s-dx-nikkor-35mm-f-1-8g" id="toc-entry-50">AF-S DX NIKKOR 35mm f/1.8G</a></li>
-<li><a class="reference internal" href="#af-p-dx-nikkor-70-300mm-f-4-5-6-3g-ed-lens" id="toc-entry-51">AF-P DX NIKKOR 70-300mm f/4.5-6.3G ED Lens</a></li>
-<li><a class="reference internal" href="#af-p-dx-nikkor-18-55mm-f-3-5-5-6g-vr-lens" id="toc-entry-52">AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR Lens</a></li>
-<li><a class="reference internal" href="#af-s-dx-nikkor-18-140mm-f-3-5-5-6g-ed-vr-lens" id="toc-entry-53">AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens</a></li>
-<li><a class="reference internal" href="#non-nikon-for-nikon" id="toc-entry-54">Non-Nikon for Nikon</a></li>
-<li><a class="reference internal" href="#fx-dx-convertion" id="toc-entry-55">FX-DX convertion</a></li>
-<li><a class="reference internal" href="#thinking-in-terms-of-35mm-sensor" id="toc-entry-56">Thinking in terms of 35mm sensor</a></li>
+<li><a class="reference internal" href="#nikon-lenses" id="id53">Nikon lenses</a><ul>
+<li><a class="reference internal" href="#nikon-35mm-f-1-8g-dx-vs-50mm-f-1-4g" id="id54">Nikon 35mm f/1.8G DX vs 50mm f/1.4G</a></li>
+<li><a class="reference internal" href="#af-s-nikkor-50mm-f-1-8g" id="id55">AF-S NIKKOR 50mm f/1.8G</a></li>
+<li><a class="reference internal" href="#af-s-dx-nikkor-35mm-f-1-8g" id="id56">AF-S DX NIKKOR 35mm f/1.8G</a></li>
+<li><a class="reference internal" href="#af-p-dx-nikkor-70-300mm-f-4-5-6-3g-ed-lens" id="id57">AF-P DX NIKKOR 70-300mm f/4.5-6.3G ED Lens</a></li>
+<li><a class="reference internal" href="#af-p-dx-nikkor-18-55mm-f-3-5-5-6g-vr-lens" id="id58">AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR Lens</a></li>
+<li><a class="reference internal" href="#af-s-dx-nikkor-18-140mm-f-3-5-5-6g-ed-vr-lens" id="id59">AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens</a></li>
+<li><a class="reference internal" href="#non-nikon-for-nikon" id="id60">Non-Nikon for Nikon</a></li>
+<li><a class="reference internal" href="#fx-dx-convertion" id="id61">FX-DX convertion</a></li>
+<li><a class="reference internal" href="#thinking-in-terms-of-35mm-sensor" id="id62">Thinking in terms of 35mm sensor</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#my-gear" id="toc-entry-57">My gear</a><ul>
-<li><a class="reference internal" href="#canon-powershot-s30" id="toc-entry-58">Canon PowerShot S30</a><ul>
-<li><a class="reference internal" href="#specs" id="toc-entry-59">Specs</a></li>
+<li><a class="reference internal" href="#my-gear" id="id63">My gear</a><ul>
+<li><a class="reference internal" href="#canon-powershot-s30" id="id64">Canon PowerShot S30</a><ul>
+<li><a class="reference internal" href="#specs" id="id65">Specs</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#fujifilm-finepix-hs25exr" id="toc-entry-60">Fujifilm FinePix HS25EXR</a><ul>
-<li><a class="reference internal" href="#specs-1" id="toc-entry-61">Specs</a></li>
+<li><a class="reference internal" href="#fujifilm-finepix-hs25exr" id="id66">Fujifilm FinePix HS25EXR</a><ul>
+<li><a class="reference internal" href="#id2" id="id67">Specs</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#nikon-d5300" id="toc-entry-62">Nikon D5300</a><ul>
-<li><a class="reference internal" href="#specs-2" id="toc-entry-63">Specs</a></li>
-<li><a class="reference internal" href="#when-bought" id="toc-entry-64">When bought</a></li>
-<li><a class="reference internal" href="#when-shipped" id="toc-entry-65">When shipped</a></li>
+<li><a class="reference internal" href="#nikon-d5300" id="id68">Nikon D5300</a><ul>
+<li><a class="reference internal" href="#id3" id="id69">Specs</a></li>
+<li><a class="reference internal" href="#when-bought" id="id70">When bought</a></li>
+<li><a class="reference internal" href="#when-shipped" id="id71">When shipped</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#lens-tools" id="toc-entry-66">Lens tools</a><ul>
-<li><a class="reference internal" href="#mm" id="toc-entry-67">58mm</a></li>
-<li><a class="reference internal" href="#mm-1" id="toc-entry-68">55mm</a></li>
-<li><a class="reference internal" href="#mm-2" id="toc-entry-69">52mm</a></li>
+<li><a class="reference internal" href="#lens-tools" id="id72">Lens tools</a><ul>
+<li><a class="reference internal" href="#mm" id="id73">58mm</a></li>
+<li><a class="reference internal" href="#id4" id="id74">55mm</a></li>
+<li><a class="reference internal" href="#id5" id="id75">52mm</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#other-accessories" id="toc-entry-70">Other accessories</a></li>
+<li><a class="reference internal" href="#other-accessories" id="id76">Other accessories</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#my-tips" id="toc-entry-71">My tips</a><ul>
-<li><a class="reference internal" href="#flash-1" id="toc-entry-72">Flash</a></li>
+<li><a class="reference internal" href="#my-tips" id="id77">My tips</a><ul>
+<li><a class="reference internal" href="#id6" id="id78">Flash</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#opinions" id="toc-entry-73">Opinions</a><ul>
-<li><a class="reference internal" href="#the-future-at-early-2020-s-of-the-digital-cameras" id="toc-entry-74">The future (at early 2020's) of the digital cameras</a></li>
-<li><a class="reference internal" href="#entry-level-dslr-vs-mirrorless-in-jan-2019" id="toc-entry-75">Entry-level DSLR vs Mirrorless in Jan 2019</a></li>
-<li><a class="reference internal" href="#weather-dust-sealing" id="toc-entry-76">Weather / Dust Sealing</a></li>
+<li><a class="reference internal" href="#opinions" id="id79">Opinions</a><ul>
+<li><a class="reference internal" href="#the-future-at-early-2020-s-of-the-digital-cameras" id="id80">The future (at early 2020's) of the digital cameras</a></li>
+<li><a class="reference internal" href="#entry-level-dslr-vs-mirrorless-in-jan-2019" id="id81">Entry-level DSLR vs Mirrorless in Jan 2019</a></li>
+<li><a class="reference internal" href="#weather-dust-sealing" id="id82">Weather / Dust Sealing</a></li>
 </ul>
 </li>
 </ul>
@@ -868,9 +812,9 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="photography">
-<h1><a class="toc-backref" href="#toc-entry-1">Photography</a></h1>
+<h1><a class="toc-backref" href="#id7">Photography</a></h1>
 <div class="section" id="camera-guide">
-<h2><a class="toc-backref" href="#toc-entry-2">Camera Guide</a></h2>
+<h2><a class="toc-backref" href="#id8">Camera Guide</a></h2>
 <dl class="docutils">
 <dt>The cameras lenses displays three sets of information:</dt>
 <dd><ul class="first last simple">
@@ -881,58 +825,58 @@ span.boxed, span.framebox {
 </dd>
 </dl>
 <div class="section" id="the-lens-ratio">
-<h3><a class="toc-backref" href="#toc-entry-3">The Lens Ratio</a></h3>
+<h3><a class="toc-backref" href="#id9">The Lens Ratio</a></h3>
 <p>When you look upon the front end of your lens barrel, you'll see a ratio number (1:2.8, 1:2.8-4, 1:3.5-5.6, etc), which is the maximum aperture of the lens.</p>
 <p>A lens with a low f-number (wide maximum aperture), is a better quality lens and allows you to do more with it.</p>
 <p>High quality zoom lenses deliver a constant f-stop throughout the focal range (i.e. a f/2.8 at 35mm and a f/2.8 at 80mm); whereas on a lower quality lens, the f-stop varies as you travel up the focal range (i.e. a f/3.5 at 28mm, but a f/5.6 at 80mm).</p>
 <p>It is to be noted that any lens that is f/2.8 or lower is considered to be a professional lens, and will have a correspondingly higher price tag.</p>
 </div>
 <div class="section" id="filter-thread">
-<h3><a class="toc-backref" href="#toc-entry-4">Filter Thread</a></h3>
+<h3><a class="toc-backref" href="#id10">Filter Thread</a></h3>
 <p>Or Filter size. Almost all lenses have a threaded section on the front that allows you to screw on filters to achieve certain effects.  When referring to a len' specifications, it should tell you the diameter of the filter thread and then you can purchase your filters in the same diameter. Common thread sizes include 49mm, 52mm, 55mm, 58mm, 62mm, 67mm, 72mm, 77mm and 82mm.</p>
 </div>
 <div class="section" id="standard-or-normal-lens">
-<h3><a class="toc-backref" href="#toc-entry-5">Standard (or Normal) Lens</a></h3>
+<h3><a class="toc-backref" href="#id11">Standard (or Normal) Lens</a></h3>
 <p>The standard lens has a fixed focal length (50mm, 85mm, 100mm), and reproduces fairly accurately what the human eye sees -- in terms of perspective and angle of view.</p>
 <p>For a 35mm film camera or a full-frame DSLR, the 50mm lens is considered standard.</p>
 <p>At higher focal lengths (85mm or 100mm) you have an ideal lens for portraiture because when coupled with a wide aperture they thoroughly soften any background detail, thus making it less likely to distract from the main subject.</p>
 </div>
 <div class="section" id="wide-angle-lens">
-<h3><a class="toc-backref" href="#toc-entry-6">Wide Angle Lens</a></h3>
+<h3><a class="toc-backref" href="#id12">Wide Angle Lens</a></h3>
 <p>A wide-angle has a shorter focal length (10 thru 42mm) when compared to a standard lens.</p>
 <p>This enables you to capture a comparatively wider angle of view. A wide-angle lens is a natural choice for capturing outdoor landscapes and group portraits.</p>
 <p>You can use wide-angle lenses to capture a deep DoF (Depth of Focus, the opposite of the &quot;distraction from the main subject&quot;).</p>
 </div>
 <div class="section" id="telephoto-lens">
-<h3><a class="toc-backref" href="#toc-entry-7">Telephoto Lens</a></h3>
+<h3><a class="toc-backref" href="#id13">Telephoto Lens</a></h3>
 <p>Telephoto lenses (100mm -- 800mm) can provide you with a narrow field of view.</p>
 <p>These long lenses enable you to compress a distance (and compress the sense of depth, as well) and pick out specific objects from far off.</p>
 <p>They have a strong resolving power and an inherent shallow DoF, where the slightest lateral moment can take a subject out of view.</p>
 </div>
 <div class="section" id="macro-lens">
-<h3><a class="toc-backref" href="#toc-entry-8">Macro Lens</a></h3>
+<h3><a class="toc-backref" href="#id14">Macro Lens</a></h3>
 <p>Macro lenses are used for close-up or &quot;macro&quot; photography (ie., designed for short focus distances).</p>
 <p>They range in focal lengths of between 50-200mm. These lenses obtain razor-sharp focus for subjects within the macro focus distance, but lose their ability for sharp focus at other distances.</p>
 <p>These lenses enable the photographer to obtain life-size or larger images of subjects like wasps, butterflies, and flowers.</p>
 </div>
 <div class="section" id="zoom-lens">
-<h3><a class="toc-backref" href="#toc-entry-9">Zoom Lens</a></h3>
+<h3><a class="toc-backref" href="#id15">Zoom Lens</a></h3>
 <p>Zoom lenses have variable focal lengths, and are extremely useful.</p>
 <p>Some can range between a wide-angle and a telephoto (i.e. 24 to 300mm) so you have extensive versatility for composition.</p>
 <p>The trade-off with zoom lenses is the aperture. Because of the number of elements required in constructing these lenses, they have a limited ability to open up and allow in light.</p>
 <p>So unless you're prepared to outlay a lot of money, you will give up lens speed.</p>
 </div>
 <div class="section" id="image-stabilization">
-<h3><a class="toc-backref" href="#toc-entry-10">Image Stabilization</a></h3>
+<h3><a class="toc-backref" href="#id16">Image Stabilization</a></h3>
 <p>These lenses contain small gyro stabilizer sensors and servo-actuated lens elements, which purportedly correct for camera shake that occurs with longer focal length lens or in low-light conditions when you need to have slower shutter speeds to achieve an effective EV.</p>
 <p>It is claimed that these lenses enable the user to shoot hand-held at 2 to 4 stop slower shutter speeds (exposure 4 to 16 times longer) than the minimum required for a sharp image (ie., exposure of 1/25 sec or longer).</p>
 </div>
 <div class="section" id="extension-tubes">
-<h3><a class="toc-backref" href="#toc-entry-11">Extension tubes</a></h3>
+<h3><a class="toc-backref" href="#id17">Extension tubes</a></h3>
 <p>They work as macro (zoom) lenses, allowing standard lenses to reduce their minimum focus distance. However, the lens loses the ability to focus at infinity.</p>
 </div>
 <div class="section" id="normal-and-cross-type-focusing-points">
-<h3><a class="toc-backref" href="#toc-entry-12">Normal and Cross-Type Focusing Points</a></h3>
+<h3><a class="toc-backref" href="#id18">Normal and Cross-Type Focusing Points</a></h3>
 <p>Look through the viewfinder of any DSLR camera and you will see several dots, or squares, that represent individual points at which the camera is capable of focusing. The purpose of these focusing points may seem fairly obvious, but not all of them are created equal. When you press the shutter button (or back button) halfway, some of these points will light up, indicating that everything at that specific spot is crystal clear and your photo will be nice and sharp.</p>
 <p>However, the speed at which your camera can focus on one of the points, as well as how accurate the focus will be, depends greatly on whether the individual focusing point is a single or cross-type. Understanding the differences in how they operate can help you decide which ones to use to take better photos.</p>
 <p>Most DSLR cameras use whats's called a phase-detection focusing system -- whereas most mirrorless cameras, point-and-shoots, and mobile phones use a separate system called contrast-detect. In a DSLR, most of the light coming through the lens is reflected upwards by the mirror, to the optical viewfinder, which lets you see precisely what the camera lens sees.</p>
@@ -948,15 +892,15 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="general">
-<h2><a class="toc-backref" href="#toc-entry-13">General</a></h2>
+<h2><a class="toc-backref" href="#id19">General</a></h2>
 <div class="section" id="cameras-and-lenses">
-<h3><a class="toc-backref" href="#toc-entry-14">Cameras and lenses</a></h3>
+<h3><a class="toc-backref" href="#id20">Cameras and lenses</a></h3>
 <ul class="simple">
 <li>Very complete benchmarks for photography!!! <a class="reference external" href="https://www.dxomark.com">https://www.dxomark.com</a></li>
 <li>Cameras comparison <a class="reference external" href="https://cameradecision.com/">https://cameradecision.com/</a></li>
 </ul>
 <div class="section" id="general-photography">
-<h4><a class="toc-backref" href="#toc-entry-15">General photography</a></h4>
+<h4><a class="toc-backref" href="#id21">General photography</a></h4>
 <ul class="simple">
 <li><a class="reference external" href="https://photographylife.com/">https://photographylife.com/</a></li>
 <li><a class="reference external" href="https://digital-photography-school.com/">https://digital-photography-school.com/</a></li>
@@ -965,7 +909,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="topics-on-photography">
-<h4><a class="toc-backref" href="#toc-entry-16">Topics on photography</a></h4>
+<h4><a class="toc-backref" href="#id22">Topics on photography</a></h4>
 <ul class="simple">
 <li>Depth of Field calculations <a class="reference external" href="http://www.dofmaster.com/">http://www.dofmaster.com/</a></li>
 <li>What Is AF-Lock? <a class="reference external" href="https://www.lifewire.com/what-is-af-lock-492613">https://www.lifewire.com/what-is-af-lock-492613</a></li>
@@ -976,7 +920,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="shopping">
-<h4><a class="toc-backref" href="#toc-entry-17">Shopping</a></h4>
+<h4><a class="toc-backref" href="#id23">Shopping</a></h4>
 <ul class="simple">
 <li><a class="reference external" href="https://www.adorama.com/">https://www.adorama.com/</a></li>
 <li><a class="reference external" href="https://www.amazon.com/">https://www.amazon.com/</a></li>
@@ -986,7 +930,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="optics-vocabulary">
-<h3><a class="toc-backref" href="#toc-entry-18">Optics Vocabulary</a></h3>
+<h3><a class="toc-backref" href="#id24">Optics Vocabulary</a></h3>
 <ul class="simple">
 <li><strong>Anti-alias (AA or low-pass) filter</strong>: in photography, removing anti-alias filter increases the sharpness and level of detail but at the same time, it increases the chance of moire occurring in certain scenes. Many Nikon sensors (including D5300) lacks anti-alias filter (see Moiré).</li>
 <li><strong>Baffle</strong>: is an opto-mechanical construction designed to block light from a source shining into the front of a optical system and reaching the image as unwanted light. Optical systems which have stringent requirements on stray light levels often need optical baffles. There are many designs, depending on the desired goals. Generic optical baffle designs and their advantages for stray light control can be classified as reflective or refractive; reimaging and nonreimaging systems. A lens hood is a basic baffle (see Lens Hood).</li>
@@ -1012,7 +956,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="types-of-cameras">
-<h3><a class="toc-backref" href="#toc-entry-19">Types of cameras</a></h3>
+<h3><a class="toc-backref" href="#id25">Types of cameras</a></h3>
 <ul class="simple">
 <li><strong>Point-and-shoot (or P&amp;S)</strong>: is a still camera designed primarily for simple operation. Most use focus free lenses or auto focus. Also, their viewfinder passes through a separate lens.</li>
 <li><strong>Bridge (or SLR-like)</strong>: often comparable in size and weight to the smallest digital SLRs (DSLR), but lack interchangeable lenses, and almost all digital bridge cameras lack an optical viewfinder system. The phrase &quot;bridge camera&quot; has been in use at least since the 1980s, and continues to be used with digital cameras. The term was originally used to refer to film cameras which &quot;bridged the gap&quot; between point-and-shoot cameras and SLRs.</li>
@@ -1020,14 +964,14 @@ span.boxed, span.framebox {
 <li><strong>Mirrorless Interchangeable-Lens Camera (MILC)</strong>: this cameras features a single, removable lens and uses a digital display system rather than an optical viewfinder. The word &quot;mirrorless&quot; indicates that the camera does not have an optical mirror or an optical viewfinder like a conventional single-lens reflex camera (SLR), but an electronic viewfinder which displays what the camera image sensor sees. In many mirrorless models, the mechanical shutter remains.</li>
 </ul>
 <div class="section" id="the-power-of-the-mirrorless-cameras">
-<h4><a class="toc-backref" href="#toc-entry-20">The power of the Mirrorless cameras</a></h4>
+<h4><a class="toc-backref" href="#id26">The power of the Mirrorless cameras</a></h4>
 <p>Accordingly to Wikipedia article <a class="reference external" href="https://en.wikipedia.org/wiki/Mirrorless_interchangeable-lens_camera">https://en.wikipedia.org/wiki/Mirrorless_interchangeable-lens_camera</a> (Jan 08th, 2019): &quot;Compared to DSLR cameras, mirrorless cameras are mechanically simpler and are often smaller, lighter, and quieter (since their electronic shutter is used) due to the elimination of the moving mirror and mechanical shutter -- additionally, the lack of a moving mirror reduces vibration that can result in blurred images in super telephoto lenses when using a slow shutter speed.</p>
 <p>&quot;Until recently [2017-2018], mirrorless cameras were somewhat challenged to provide an electronic viewfinder with the clarity low-time-lag responsiveness of the optical viewfinders used on DSLRs (under strong sunlight or when photographing the sky at night). The fact that the image from the lens is always projected onto the image sensor allows for features that are only available in DSLRs when their mirror is locked up into 'live view' mode. This includes the ability to show a focus-peaking display, zebra patterning, and face or eye tracking. Moreover, the electronic viewfinder can provide live depth of field preview, can show a poorly-illuminated subject how it would look with correct exposure in real time, and is easier to view the results of an exposure in bright sunlight.</p>
 <p>&quot;With the latest phase-detect autofocus available on some mirrorless cameras, autofocus speed and accuracy (in some models) has been shown to be as good as DSLRs. But compared with DSLRs, MILCs have lower battery lifetime and smaller buffers (to save battery). On-sensor auto-focus is free of the adjustment requirements of the indirect focusing system of the DSLR, and the latest MILCs can shoot with phase-detect autofocus at up to 20 frames per second using up to 693 focus points—a number exceeding what is available on any DSLR. Using manual focus with an electronic viewfinder can be assisted by the ability to magnify the subject.&quot;</p>
 </div>
 </div>
 <div class="section" id="flash">
-<h3><a class="toc-backref" href="#toc-entry-21">Flash</a></h3>
+<h3><a class="toc-backref" href="#id27">Flash</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt><strong>Flash configurations</strong>:</dt>
@@ -1046,7 +990,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="filters">
-<h3><a class="toc-backref" href="#toc-entry-22">Filters</a></h3>
+<h3><a class="toc-backref" href="#id28">Filters</a></h3>
 <ul class="simple">
 <li><strong>UV</strong>: Film and a digital CCD are more sensitive to UV light than our eyes are. This often shows up in images shot from high altitudes and long distances especially over water. This filter will remove the UV light and more importantly protect your lens from moisture, scratches, and damage.</li>
 <li><strong>(Circular) Polarizer (or CPL)</strong>: provides color and contrast enhancement. Reflected light often shows up as a whitish glare that washes out color in an image. A polarizing filter will correct this problem creating deep blue skies. It also removes glare from non-metallic surfaces such as windows and water.</li>
@@ -1057,10 +1001,10 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="math">
-<h2><a class="toc-backref" href="#toc-entry-23">Math</a></h2>
+<h2><a class="toc-backref" href="#id29">Math</a></h2>
 <div class="section" id="thin-lens-equation">
-<h3><a class="toc-backref" href="#toc-entry-24">Thin lens equation</a></h3>
-<p><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>o</i></span><span class="ignored">)</span></span> + <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>i</i></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>f</i></span><span class="ignored">)</span></span></span></p>
+<h3><a class="toc-backref" href="#id30">Thin lens equation</a></h3>
+<p><span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>o</i></span><span class="ignored">)</span></span> + <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>i</i></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>f</i></span><span class="ignored">)</span></span></span></p>
 <dl class="docutils">
 <dt>where:</dt>
 <dd><ul class="first last simple">
@@ -1072,8 +1016,8 @@ span.boxed, span.framebox {
 </dl>
 </div>
 <div class="section" id="field-of-view">
-<h3><a class="toc-backref" href="#toc-entry-25">Field of View</a></h3>
-<p><span class="formula"><i>FoV</i> = 2arctan(<i>S</i> ⁄ 2<i>f</i>)</span>,</p>
+<h3><a class="toc-backref" href="#id31">Field of View</a></h3>
+<p><span class="formula"><i>FoV</i> = 2arctan(<i>S</i> ⁄ 2<i>f</i>)</span>,</p>
 <dl class="docutils">
 <dt>where:</dt>
 <dd><ul class="first last simple">
@@ -1084,14 +1028,14 @@ span.boxed, span.framebox {
 </dl>
 </div>
 <div class="section" id="f-number">
-<h3><a class="toc-backref" href="#toc-entry-26">f-number</a></h3>
-<p>f-number is usually calculated by the f-stop definition <span class="formula"><i>N</i> = 2<sup><i>i</i> ⁄ 2</sup></span> , where <em>i = 1, 2, 3</em>,... for <em>f/1.4, f/2, f/2.8</em>,...</p>
+<h3><a class="toc-backref" href="#id32">f-number</a></h3>
+<p>f-number is usually calculated by the f-stop definition <span class="formula"><i>N</i> = 2<sup><i>i</i> ⁄ 2</sup></span> , where <em>i = 1, 2, 3</em>,... for <em>f/1.4, f/2, f/2.8</em>,...</p>
 </div>
 <div class="section" id="depth-of-field">
-<h3><a class="toc-backref" href="#toc-entry-27">Depth of Field</a></h3>
-<p>Hyperfocal distance: <span class="formula"><i>H</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>f</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>Nc</i></span><span class="ignored">)</span></span> + <i>f</i></span></p>
-<p>Near distance of acceptable sharpness: <span class="formula"><i>D</i><sub><i>n</i></sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>s</i>(<i>H</i> − <i>f</i>)</span><span class="ignored">)/(</span><span class="denominator"><i>H</i> + <i>s</i> − 2<i>f</i></span><span class="ignored">)</span></span></span></p>
-<p>Far distance of acceptable sharpness: <span class="formula"><i>D</i><sub><i>f</i></sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>s</i>(<i>H</i> − <i>f</i>)</span><span class="ignored">)/(</span><span class="denominator"><i>H</i> − <i>s</i></span><span class="ignored">)</span></span></span></p>
+<h3><a class="toc-backref" href="#id33">Depth of Field</a></h3>
+<p>Hyperfocal distance: <span class="formula"><i>H</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>f</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>Nc</i></span><span class="ignored">)</span></span> + <i>f</i></span></p>
+<p>Near distance of acceptable sharpness: <span class="formula"><i>D</i><sub><i>n</i></sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>s</i>(<i>H</i> − <i>f</i>)</span><span class="ignored">)/(</span><span class="denominator"><i>H</i> + <i>s</i> − 2<i>f</i></span><span class="ignored">)</span></span></span></p>
+<p>Far distance of acceptable sharpness: <span class="formula"><i>D</i><sub><i>f</i></sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>s</i>(<i>H</i> − <i>f</i>)</span><span class="ignored">)/(</span><span class="denominator"><i>H</i> − <i>s</i></span><span class="ignored">)</span></span></span></p>
 <dl class="docutils">
 <dt>where:</dt>
 <dd><ul class="first last simple">
@@ -1107,8 +1051,8 @@ span.boxed, span.framebox {
 </dl>
 </div>
 <div class="section" id="exposure-value">
-<h3><a class="toc-backref" href="#toc-entry-28">Exposure Value</a></h3>
-<p><span class="formula"><i>E</i><sub><i>V</i></sub> = log<sub>2</sub><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>t</i></span><span class="ignored">)</span></span> = <i>ES</i></span></p>
+<h3><a class="toc-backref" href="#id34">Exposure Value</a></h3>
+<p><span class="formula"><i>E</i><sub><i>V</i></sub> = log<sub>2</sub><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>N</i><sup>2</sup></span><span class="ignored">)/(</span><span class="denominator"><i>t</i></span><span class="ignored">)</span></span> = <i>ES</i></span></p>
 <dl class="docutils">
 <dt>where:</dt>
 <dd><ul class="first last simple">
@@ -1121,11 +1065,11 @@ span.boxed, span.framebox {
 </dl>
 </div>
 <div class="section" id="iso-f-stop-and-shutter-speed-correlation">
-<h3><a class="toc-backref" href="#toc-entry-29">ISO, f-stop and Shutter Speed correlation</a></h3>
-<p>f-stop units <em>i</em> follows <span class="formula"><i>N</i> = 2<sup><i>i</i> ⁄ 2</sup></span>. Here there is a factor 0.5x with the unit because the flux goes with the square of the aperture diameter.</p>
-<p>ISO units <em>j</em> follows: <span class="formula"><i>M</i> = 50*2<sup><i>j</i></sup></span></p>
+<h3><a class="toc-backref" href="#id35">ISO, f-stop and Shutter Speed correlation</a></h3>
+<p>f-stop units <em>i</em> follows <span class="formula"><i>N</i> = 2<sup><i>i</i> ⁄ 2</sup></span>. Here there is a factor 0.5x with the unit because the flux goes with the square of the aperture diameter.</p>
+<p>ISO units <em>j</em> follows: <span class="formula"><i>M</i> = 50*2<sup><i>j</i></sup></span></p>
 <dl class="docutils">
-<dt>Shutter Speed units <em>k</em> follows: <span class="formula"><i>t</i> = 2<sup> − <i>k</i></sup></span>. However, it has a 'non-standard' round method:</dt>
+<dt>Shutter Speed units <em>k</em> follows: <span class="formula"><i>t</i> = 2<sup> − <i>k</i></sup></span>. However, it has a 'non-standard' round method:</dt>
 <dd><ul class="first last simple">
 <li>(1/8 = 1/8);</li>
 <li>1/16 = 1/15;</li>
@@ -1152,7 +1096,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="market-options">
-<h2><a class="toc-backref" href="#toc-entry-30">Market Options</a></h2>
+<h2><a class="toc-backref" href="#id36">Market Options</a></h2>
 <p>Some random cameras and selected features.</p>
 <dl class="docutils">
 <dt>Canon EOS Rebel T6 (EOS 1300D)</dt>
@@ -1199,9 +1143,9 @@ span.boxed, span.framebox {
 </dd>
 </dl>
 <div class="section" id="nikon-lenses-acronyms">
-<h3><a class="toc-backref" href="#toc-entry-31">Nikon Lenses Acronyms</a></h3>
+<h3><a class="toc-backref" href="#id37">Nikon Lenses Acronyms</a></h3>
 <div class="section" id="auto-indexing">
-<h4><a class="toc-backref" href="#toc-entry-32">Auto Indexing</a></h4>
+<h4><a class="toc-backref" href="#id38">Auto Indexing</a></h4>
 <p>When dinosaurs walked the Earth, lenses were totally manual. Not just in terms of focusing, but also in terms of exposure metering. There is no auto-focus, and there are no &quot;auto&quot;, &quot;aperture priority&quot;, &quot;shutter priority&quot; or &quot;program&quot; modes.</p>
 <p>It was not until 1977 that Nikon had a huge advancement with &quot;Automatic Maximum Aperture Indexing… or just &quot;Auto Indexing (AI)&quot; for short. The AI system itself, in layman terms, made the lens &quot;smarter&quot; and allowed cameras to have those &quot;auto exposures&quot; mode. The AI system had many upgrades over the years.</p>
 <ul class="simple">
@@ -1212,7 +1156,7 @@ span.boxed, span.framebox {
 <p>While later Nikkor lenses no longer have &quot;AI&quot; decorated on them, the AI technology is present in all of them &quot;by default&quot; in a way.</p>
 </div>
 <div class="section" id="auto-focus">
-<h4><a class="toc-backref" href="#toc-entry-33">Auto Focus</a></h4>
+<h4><a class="toc-backref" href="#id39">Auto Focus</a></h4>
 <p>In 1986, Nikon had the &quot;next big thing&quot; with their lens. That is, auto-focusing.</p>
 <ul class="simple">
 <li>AF: Auto Focus, yep, the raw basics that this lens has auto-focus mechanism.</li>
@@ -1230,7 +1174,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="types">
-<h4><a class="toc-backref" href="#toc-entry-34">Types</a></h4>
+<h4><a class="toc-backref" href="#id40">Types</a></h4>
 <p>AF and AF-S lenses are further categorized... or rather, they have evolved over the years.</p>
 <ul class="simple">
 <li>D-Type: These lenses carry subject-to-camera distance information, which gave a more advanced &quot;3D Matrix Metering&quot;.</li>
@@ -1239,18 +1183,18 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="f-mount-system">
-<h4><a class="toc-backref" href="#toc-entry-35">F-mount System</a></h4>
+<h4><a class="toc-backref" href="#id41">F-mount System</a></h4>
 <p>From the 1930s to 1950s Nikon made lenses for the Leica Screw Mount (LTM) -- But Nikon themselves did not produce any LTM cameras. In 1959, Nikon came up with their own &quot;F-mount&quot; standard, and it has not changed since.</p>
 <p>But please note that not all camera bodies and lenses are backward compatible -- mounting some older F-mount lenses on a later camera body may even result in damage. So please do your research before you slap an old lens on. Also, lens built for the Nikon mirrorless systems are different and will not mount on &quot;F-mount&quot; systems. See &quot;CX&quot; below.</p>
 </div>
 <div class="section" id="z-mount-system">
-<h4><a class="toc-backref" href="#toc-entry-36">Z-mount System</a></h4>
+<h4><a class="toc-backref" href="#id42">Z-mount System</a></h4>
 <ul class="simple">
 <li>As of August 2018, Nikon has finally released their line of mirrorless cameras, and it no longer uses the age-old F-mount. A new &quot;Z-mount&quot; is announced, with a larger diameter than the F-mount.</li>
 </ul>
 </div>
 <div class="section" id="format">
-<h4><a class="toc-backref" href="#toc-entry-37">Format</a></h4>
+<h4><a class="toc-backref" href="#id43">Format</a></h4>
 <ul class="simple">
 <li>FX: Lens built for &quot;full-frame&quot;, or the 35mm film equivalent. FX will never be scripted on the lenses because all F-mount lens are FX &quot;by default&quot;... Unless indicated by &quot;DX&quot; below.</li>
 <li>DX: This lens is specifically designed for APS-C DX camera bodies (or crop sensor). DX lens will work on FX cameras. But you need to set the shoot mode to &quot;DX lens&quot;, and you will get lesser resolution due to cropping.</li>
@@ -1258,13 +1202,13 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="stabilization">
-<h4><a class="toc-backref" href="#toc-entry-38">Stabilization</a></h4>
+<h4><a class="toc-backref" href="#id44">Stabilization</a></h4>
 <ul class="simple">
 <li>Nikon calls their stabilizing system, Vibration Reduction (VR), and the later upgrade VR II. Nothing too fanciful, but most tripod users tend to switch the VR off instead.</li>
 </ul>
 </div>
 <div class="section" id="specialization">
-<h4><a class="toc-backref" href="#toc-entry-39">Specialization</a></h4>
+<h4><a class="toc-backref" href="#id45">Specialization</a></h4>
 <ul class="simple">
 <li>Micro: Or call it Macro, designed to be capable of focusing very close up to the subject.</li>
 <li>PC-E: Perspective Control with the electronic diaphragm. Simply put -- &quot;tilt shift&quot;.</li>
@@ -1272,7 +1216,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="elements">
-<h4><a class="toc-backref" href="#toc-entry-40">Elements</a></h4>
+<h4><a class="toc-backref" href="#id46">Elements</a></h4>
 <ul class="simple">
 <li>ASP or AS: This lens has at least one aspherical lens element, which is good for correcting coma and other aberrations.</li>
 <li>SIC: Super Integrated Coating. Better color performance and generally less ghosting and flaring.</li>
@@ -1284,9 +1228,9 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="pentax-lenses-acronyms">
-<h3><a class="toc-backref" href="#toc-entry-41">Pentax Lenses Acronyms</a></h3>
+<h3><a class="toc-backref" href="#id47">Pentax Lenses Acronyms</a></h3>
 <div class="section" id="mounts">
-<h4><a class="toc-backref" href="#toc-entry-42">Mounts</a></h4>
+<h4><a class="toc-backref" href="#id48">Mounts</a></h4>
 <p>Pentax probably has 2 prominent mount systems now.</p>
 <ul class="simple">
 <li>K-Mount: Used on all their SLR and DSLR K-series camera bodies.</li>
@@ -1294,7 +1238,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="lens-designations">
-<h4><a class="toc-backref" href="#toc-entry-43">Lens Designations</a></h4>
+<h4><a class="toc-backref" href="#id49">Lens Designations</a></h4>
 <p>Welcome to memory lane. This is a list of lens designations for the K-Mount lens.</p>
 <ul class="simple">
 <li>K Lenses: The first generation of K-mount lens, that is totally manual and not a hint of electronics. They are not officially called K-lenses, but people like to call this so.</li>
@@ -1311,15 +1255,15 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="focusing">
-<h4><a class="toc-backref" href="#toc-entry-44">Focusing</a></h4>
+<h4><a class="toc-backref" href="#id50">Focusing</a></h4>
 <ul class="simple">
 <li>Internal focus (IF): Focusing is done by moving inner lens group. No parts on the outside move.</li>
 <li>Autofocus (AF): Not manual focus. What else?</li>
 <li>Super Direct-drive Motor (SDM): Pentax's auto-focus motor.</li>
 </ul>
 </div>
-<div class="section" id="elements-1">
-<h4><a class="toc-backref" href="#toc-entry-45">Elements</a></h4>
+<div class="section" id="id1">
+<h4><a class="toc-backref" href="#id51">Elements</a></h4>
 <ul class="simple">
 <li>Extra-low Dispersion (ED): Glass that is supposedly superior, reduces chromatic aberration and flaring.</li>
 <li>Aspherical lens (AL): Shape of the lens. Read on Wikipedia if you want…</li>
@@ -1331,22 +1275,22 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="build">
-<h4><a class="toc-backref" href="#toc-entry-46">BUILD</a></h4>
+<h4><a class="toc-backref" href="#id52">BUILD</a></h4>
 <ul class="simple">
 <li>Weather Resistant (WR): A weather sealed lens. Note, will probably survive the rain, but not underwater.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="nikon-lenses">
-<h3><a class="toc-backref" href="#toc-entry-47">Nikon lenses</a></h3>
+<h3><a class="toc-backref" href="#id53">Nikon lenses</a></h3>
 <div class="section" id="nikon-35mm-f-1-8g-dx-vs-50mm-f-1-4g">
-<h4><a class="toc-backref" href="#toc-entry-48">Nikon 35mm f/1.8G DX vs 50mm f/1.4G</a></h4>
+<h4><a class="toc-backref" href="#id54">Nikon 35mm f/1.8G DX vs 50mm f/1.4G</a></h4>
 <p><a class="reference external" href="https://photographylife.com/nikon-35mm-f1-8g-vs-50mm-f1-4g">https://photographylife.com/nikon-35mm-f1-8g-vs-50mm-f1-4g</a></p>
 <p>So, which one of these lenses do I recommend? If you use a full-frame camera or primarily shoot portraits and need to get one of the best portrait lenses for under $500, I would certainly recommend the Nikon 50mm f/1.4G. For everything else, including day-to-day photography, I would say the Nikon 35mm f/1.8G is a better choice for DX cameras. Not only due to its focal length, but also its comparably good performance in terms of sharpness and bokeh. When it comes to focal lengths, while the Nikon 50mm f/1.4G is perfect on a full-frame FX camera, it certainly feels a little “too long” on a DX camera. Its narrower field of view on cropped sensors is quite limiting in terms of what you can fit into the frame, whereas the 35mm feels just perfect. We have used the Nikon 35mm f/1.8G for food, portrait and even landscape photography and I really liked working with this focal length.</p>
 <p>Why didn't I compare the Nikon 35mm f/1.8G with the older and cheaper Nikon 50mm f/1.8D? Because the latter does not autofocus on cheaper Nikon bodies like D5000.</p>
 </div>
 <div class="section" id="af-s-nikkor-50mm-f-1-8g">
-<h4><a class="toc-backref" href="#toc-entry-49">AF-S NIKKOR 50mm f/1.8G</a></h4>
+<h4><a class="toc-backref" href="#id55">AF-S NIKKOR 50mm f/1.8G</a></h4>
 <p><a class="reference external" href="https://www.nikonusa.com/en/Nikon-Products/Product/Camera-Lenses/AF-S-NIKKOR-50mm-f%252F1.8G.html">https://www.nikonusa.com/en/Nikon-Products/Product/Camera-Lenses/AF-S-NIKKOR-50mm-f%252F1.8G.html</a></p>
 <ul class="simple">
 <li>50mm - f/1.8 to f/16</li>
@@ -1356,7 +1300,7 @@ Cap/filter size is 58mm.</p>
 <p><a class="reference external" href="https://photographylife.com/reviews/nikon-50mm-f1-8g">https://photographylife.com/reviews/nikon-50mm-f1-8g</a></p>
 </div>
 <div class="section" id="af-s-dx-nikkor-35mm-f-1-8g">
-<h4><a class="toc-backref" href="#toc-entry-50">AF-S DX NIKKOR 35mm f/1.8G</a></h4>
+<h4><a class="toc-backref" href="#id56">AF-S DX NIKKOR 35mm f/1.8G</a></h4>
 <p><a class="reference external" href="https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-s-dx-nikkor-35mm-f%252f1.8g.html">https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-s-dx-nikkor-35mm-f%252f1.8g.html</a></p>
 <ul class="simple">
 <li>35mm - f/1.8 to f/22</li>
@@ -1366,7 +1310,7 @@ Cap/filter size is 52mm.</p>
 <p><a class="reference external" href="https://photographylife.com/lenses/nikon-af-s-dx-nikkor-35mm-f1-8g">https://photographylife.com/lenses/nikon-af-s-dx-nikkor-35mm-f1-8g</a></p>
 </div>
 <div class="section" id="af-p-dx-nikkor-70-300mm-f-4-5-6-3g-ed-lens">
-<h4><a class="toc-backref" href="#toc-entry-51">AF-P DX NIKKOR 70-300mm f/4.5-6.3G ED Lens</a></h4>
+<h4><a class="toc-backref" href="#id57">AF-P DX NIKKOR 70-300mm f/4.5-6.3G ED Lens</a></h4>
 <p><a class="reference external" href="https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-p-dx-nikkor-70-300mm-f%252f4.5-6.3g-ed.html">https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-p-dx-nikkor-70-300mm-f%252f4.5-6.3g-ed.html</a></p>
 <ul class="simple">
 <li>70mm -- f/4.5 to f/22</li>
@@ -1383,7 +1327,7 @@ Cap/filter size is 58mm.</p>
 <p><a class="reference external" href="https://photographylife.com/reviews/nikon-70-300mm-dx-vr-af-p">https://photographylife.com/reviews/nikon-70-300mm-dx-vr-af-p</a></p>
 </div>
 <div class="section" id="af-p-dx-nikkor-18-55mm-f-3-5-5-6g-vr-lens">
-<h4><a class="toc-backref" href="#toc-entry-52">AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR Lens</a></h4>
+<h4><a class="toc-backref" href="#id58">AF-P DX NIKKOR 18-55mm f/3.5-5.6G VR Lens</a></h4>
 <p><a class="reference external" href="https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-p-dx-nikkor-18-55mm-f%252f3.5-5.6g-vr.html">https://www.nikonusa.com/en/nikon-products/product/camera-lenses/af-p-dx-nikkor-18-55mm-f%252f3.5-5.6g-vr.html</a></p>
 <ul class="simple">
 <li>18mm -- f/3.5 to f/22</li>
@@ -1395,7 +1339,7 @@ Cap/filter size is 55mm.</p>
 <p><a class="reference external" href="https://photographylife.com/reviews/nikon-18-55mm-dx-vr-af-p">https://photographylife.com/reviews/nikon-18-55mm-dx-vr-af-p</a></p>
 </div>
 <div class="section" id="af-s-dx-nikkor-18-140mm-f-3-5-5-6g-ed-vr-lens">
-<h4><a class="toc-backref" href="#toc-entry-53">AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens</a></h4>
+<h4><a class="toc-backref" href="#id59">AF-S DX NIKKOR 18-140mm f/3.5-5.6G ED VR Lens</a></h4>
 <ul class="simple">
 <li>18mm -- f/3.5 to f/22</li>
 <li>140mm -- f/5.6 to f/38</li>
@@ -1405,7 +1349,7 @@ Cap/filter size is 67mm.</p>
 <p><a class="reference external" href="https://photographylife.com/lenses/nikon-af-s-dx-nikkor-18-140mm-f3-5-5-6g-ed-vr">https://photographylife.com/lenses/nikon-af-s-dx-nikkor-18-140mm-f3-5-5-6g-ed-vr</a></p>
 </div>
 <div class="section" id="non-nikon-for-nikon">
-<h4><a class="toc-backref" href="#toc-entry-54">Non-Nikon for Nikon</a></h4>
+<h4><a class="toc-backref" href="#id60">Non-Nikon for Nikon</a></h4>
 <ul class="simple">
 <li>[Ref] 18-55mm &#64;35mm. D=7.6mm.</li>
 <li>[Ref] 18-55mm &#64;50mm. D=9.5mm.</li>
@@ -1418,7 +1362,7 @@ Cap/filter size is 67mm.</p>
 </ul>
 </div>
 <div class="section" id="fx-dx-convertion">
-<h4><a class="toc-backref" href="#toc-entry-55">FX-DX convertion</a></h4>
+<h4><a class="toc-backref" href="#id61">FX-DX convertion</a></h4>
 <p>DX has a smaller sensor. If you put a FX lens on a DX camera, with the smaller sensor that produces a 1.5 crop factor, your 35mm lens now works like a 52.5mm lens (35mm x 1.5 crop factor).</p>
 <p>If you buy a FX lens with a given focal length, what is its DX equivalent focal length? <strong>If your are using a DX camera, the EFL of DX and FX lenses is the same</strong>. However, the DX generated image has an factor with respect to the 35mm (full-FX).</p>
 <ul class="simple">
@@ -1482,7 +1426,7 @@ Cap/filter size is 67mm.</p>
 </table>
 </div>
 <div class="section" id="thinking-in-terms-of-35mm-sensor">
-<h4><a class="toc-backref" href="#toc-entry-56">Thinking in terms of 35mm sensor</a></h4>
+<h4><a class="toc-backref" href="#id62">Thinking in terms of 35mm sensor</a></h4>
 <ul class="simple">
 <li>DX 18-55mm lens is equivalent to 27-83mm on FX cameras, resulting a <strong>27-83mm image</strong>..</li>
 <li>DX 70-300mm lens is equivalent to 105-450mm on FX cameras, resulting <strong>105-450mm images</strong>.</li>
@@ -1494,14 +1438,14 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="my-gear">
-<h2><a class="toc-backref" href="#toc-entry-57">My gear</a></h2>
+<h2><a class="toc-backref" href="#id63">My gear</a></h2>
 <div class="section" id="canon-powershot-s30">
-<h3><a class="toc-backref" href="#toc-entry-58">Canon PowerShot S30</a></h3>
+<h3><a class="toc-backref" href="#id64">Canon PowerShot S30</a></h3>
 <p>My acquisition date: ~2002-Sep</p>
 <p>My rate: 8.0/10.</p>
 <p>My comments: My first digital camera. Canon quality to start learning photography.</p>
 <div class="section" id="specs">
-<h4><a class="toc-backref" href="#toc-entry-59">Specs</a></h4>
+<h4><a class="toc-backref" href="#id65">Specs</a></h4>
 <ul class="simple">
 <li>Announcement Date: 2001-Oct-02</li>
 <li>Effective pixels  3.0 MP</li>
@@ -1528,12 +1472,12 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="fujifilm-finepix-hs25exr">
-<h3><a class="toc-backref" href="#toc-entry-60">Fujifilm FinePix HS25EXR</a></h3>
+<h3><a class="toc-backref" href="#id66">Fujifilm FinePix HS25EXR</a></h3>
 <p>My acquisition date: ~2012-Mar</p>
 <p>My rate: 5.0/10.</p>
 <p>My comments: a very complete camera. Good optics. However, the detector quality is <strong>horrible</strong>. It is impossible to take sharp images, specially with ISO above 800. The manual focus also has problems. It is very hard to do something very simple, that is to focus at infinity. Video auto-zoom is very unstable. Decent batteries (4xAA) consumption (350+ frames).</p>
-<div class="section" id="specs-1">
-<h4><a class="toc-backref" href="#toc-entry-61">Specs</a></h4>
+<div class="section" id="id2">
+<h4><a class="toc-backref" href="#id67">Specs</a></h4>
 <ul class="simple">
 <li>Announcement Date: 2011-Jan-05</li>
 <li>Pixels: 16.0 MP</li>
@@ -1560,12 +1504,12 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="nikon-d5300">
-<h3><a class="toc-backref" href="#toc-entry-62">Nikon D5300</a></h3>
+<h3><a class="toc-backref" href="#id68">Nikon D5300</a></h3>
 <p>My acquisition date: 2019-Jan</p>
 <p>My rate: 9.0/10.</p>
 <p>My comments: The camera specs created a very high expectation. In particular, multiple exposure and time-lapse control are great resources. All camera options are not so easy to handle. To be fast requires practice.</p>
-<div class="section" id="specs-2">
-<h4><a class="toc-backref" href="#toc-entry-63">Specs</a></h4>
+<div class="section" id="id3">
+<h4><a class="toc-backref" href="#id69">Specs</a></h4>
 <ul>
 <li><p class="first">Announcement Date: 2014-Feb-12</p>
 </li>
@@ -1599,7 +1543,7 @@ Cap/filter size is 67mm.</p>
 </ul>
 </div>
 <div class="section" id="when-bought">
-<h4><a class="toc-backref" href="#toc-entry-64">When bought</a></h4>
+<h4><a class="toc-backref" href="#id70">When bought</a></h4>
 <ul class="simple">
 <li>Nikon AUTHORIZED DEALER - Includes Full Nikon USA WARRANTY</li>
 <li>Nikon D5300 DX-Format Digital 24.2 MP SLR Camera w/ AF-P 18-55mm VR &amp; 70-300mm Lens</li>
@@ -1609,7 +1553,7 @@ Cap/filter size is 67mm.</p>
 </ul>
 </div>
 <div class="section" id="when-shipped">
-<h4><a class="toc-backref" href="#toc-entry-65">When shipped</a></h4>
+<h4><a class="toc-backref" href="#id71">When shipped</a></h4>
 <ul class="simple">
 <li>DGCAMBAGLG: (Deco Gear) Camera Bag for DSLR and Mirrorless Cameras (Large)  1</li>
 <li>DGFK55MM: (Deco Gear) 55mm 3 pc Lens Filter Kit  1</li>
@@ -1623,9 +1567,9 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="lens-tools">
-<h3><a class="toc-backref" href="#toc-entry-66">Lens tools</a></h3>
+<h3><a class="toc-backref" href="#id72">Lens tools</a></h3>
 <div class="section" id="mm">
-<h4><a class="toc-backref" href="#toc-entry-67">58mm</a></h4>
+<h4><a class="toc-backref" href="#id73">58mm</a></h4>
 <ul class="simple">
 <li>Hood</li>
 <li>UV filter</li>
@@ -1635,8 +1579,8 @@ Cap/filter size is 67mm.</p>
 <li>ND4 filter**</li>
 </ul>
 </div>
-<div class="section" id="mm-1">
-<h4><a class="toc-backref" href="#toc-entry-68">55mm</a></h4>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#id74">55mm</a></h4>
 <ul class="simple">
 <li>Flower (or collapsible) hood</li>
 <li>UV filter</li>
@@ -1647,8 +1591,8 @@ Cap/filter size is 67mm.</p>
 <li>ND ajustable ND2-ND400 filter**</li>
 </ul>
 </div>
-<div class="section" id="mm-2">
-<h4><a class="toc-backref" href="#toc-entry-69">52mm</a></h4>
+<div class="section" id="id5">
+<h4><a class="toc-backref" href="#id75">52mm</a></h4>
 <ul class="simple">
 <li>Flower (or collapsible) hood</li>
 <li>UV filter</li>
@@ -1656,7 +1600,7 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="other-accessories">
-<h3><a class="toc-backref" href="#toc-entry-70">Other accessories</a></h3>
+<h3><a class="toc-backref" href="#id76">Other accessories</a></h3>
 <p>Planned:</p>
 <blockquote>
 <ul class="simple">
@@ -1675,7 +1619,7 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="my-tips">
-<h2><a class="toc-backref" href="#toc-entry-71">My tips</a></h2>
+<h2><a class="toc-backref" href="#id77">My tips</a></h2>
 <ul>
 <li><p class="first">The DX lens focal lengths <strong>are not</strong> equivalent to 35mm with respect to <strong>image size</strong>. To calculate the image size, &quot;convert&quot; the focal length multiplying it by 1.5x (crop factor).</p>
 </li>
@@ -1714,8 +1658,8 @@ Cap/filter size is 67mm.</p>
 </dl>
 </li>
 </ul>
-<div class="section" id="flash-1">
-<h3><a class="toc-backref" href="#toc-entry-72">Flash</a></h3>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id78">Flash</a></h3>
 <ul class="simple">
 <li>Flash is useful to make the exposure faster. Useful when below 1/60 sec and the object is within your flash coverage distance.</li>
 <li>The combination of short focal lengths and close objects can cause <em>vignetting when flash is used</em>.</li>
@@ -1733,15 +1677,15 @@ Cap/filter size is 67mm.</p>
 </div>
 </div>
 <div class="section" id="opinions">
-<h2><a class="toc-backref" href="#toc-entry-73">Opinions</a></h2>
+<h2><a class="toc-backref" href="#id79">Opinions</a></h2>
 <div class="section" id="the-future-at-early-2020-s-of-the-digital-cameras">
-<h3><a class="toc-backref" href="#toc-entry-74">The future (at early 2020's) of the digital cameras</a></h3>
+<h3><a class="toc-backref" href="#id80">The future (at early 2020's) of the digital cameras</a></h3>
 <p>DSLRs largely replaced film-based SLRs during the 2000s, and despite the rising popularity of mirrorless system cameras in the early 2010s, DSLRs remain the most common type of interchangeable lens camera in use as of late 2018.</p>
 <p>However, this trend shall change in the 2020's as mirrorless camera are gaining popularity. This is clear with the recent (2018) announcements of great products from three major camera manufacturers, namely Nikon, Canon and Sony.</p>
 <p>In early 2018, Sony announced the A7III mirrorless camera, bringing the 693 auto-focus points of the A9 model at a much lower cost. In August 2018, Nikon announced its new full-frame mirrorless Z6 and Z7 cameras, both using a new lens mount. Canon announced its first full-frame mirrorless model, the EOS R, and its own new lens mount in October 2018.</p>
 </div>
 <div class="section" id="entry-level-dslr-vs-mirrorless-in-jan-2019">
-<h3><a class="toc-backref" href="#toc-entry-75">Entry-level DSLR vs Mirrorless in Jan 2019</a></h3>
+<h3><a class="toc-backref" href="#id81">Entry-level DSLR vs Mirrorless in Jan 2019</a></h3>
 <p>In Jan 2019 I had a budget of USD~800 and I decided to buy a (Nikon) DSLR instead of a (Sony) mirrorless camera. The main reason for this choice was that mirrorless cameras are more expensive at this moment. The DSLR choice allowed me to buy a kit of different lenses (although my budget also excluded Canon DLSRs).</p>
 <p>I believe my start was an ideal one. I bought a decent body (Nikon D5300, USD~400) which contains many important features for me (including a fully articulated screen for selfies and time-lapse control) with 3 lenses to cover multiple applications. Here are the lenses selection:</p>
 <blockquote>
@@ -1754,7 +1698,7 @@ Cap/filter size is 67mm.</p>
 <p>See &quot;my gear&quot; for more details.</p>
 </div>
 <div class="section" id="weather-dust-sealing">
-<h3><a class="toc-backref" href="#toc-entry-76">Weather / Dust Sealing</a></h3>
+<h3><a class="toc-backref" href="#id82">Weather / Dust Sealing</a></h3>
 <p>Unless you need to photograph under severe weather conditions, or have substantion amount of money to spend, it is not so useful to make and investiment on a weather sealed body camera. To have full protection, you would also need to buy sealed lenses, which are extremely high cost.</p>
 </div>
 </div>

@@ -923,7 +923,6 @@ The ``{cronfile}`` will be something like this:
 
     # SHELL=/bin/bash
     # BASH_ENV=/home/dataproc/cron_bash
-    MAILTO=dfaes@nrao.edu
+    MAILTO=user@my.company.com
 
-    #* 8-17 * * 1-5 rsync -avq orion:/export/home/orion/shared/ ~/mnt/ 2> msg_in.log
-
+    #* 8-17 * * 1-5 rsync -avq machine:/home/user/shared/ ~/mnt/ 2> msg_in.log
