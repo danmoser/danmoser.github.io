@@ -618,6 +618,23 @@ Pates ([ENG] Dips)
 - 1/2 tbsp dry parsley
 - Pinch of salt 
 
+Cenoura
+--------
+- 3 cenouras grandes
+- 1/3 xícara de shoyu
+- 2 dentes alho 
+- 1 cchá gengibre picado
+- suco de 1/2 laranja
+- 1 csopa de melado
+- 1 csopa de páprica defumada
+- 1 cchá de cominho em pó
+- [liquid.] 3 csopa de tahine
+- [liquid.] suco de 1/2 limão
+- [liquid.] sal 
+
+Corte as cenouras em rodelas grossas e coloque numa tigela temperando os ingredientes. Misture bem e leve tudo pra assar em forno alto (200°C) por cerca de 25 minutos, ou até a cenoura ficar dourada e macia. 
+
+Bata no liquidificador com os outros ingredientes. Adicione um pouco de agua ou suco para ajustar cremosidade. Finalize com salsinha picada por cima e pimenta se desejar. 
 
 
 
@@ -827,8 +844,35 @@ Numa frigideira, coloque o azeite para esquentar e frite um pouco o alho e a ceb
 A seguir junte o molho de tomate, dois copos de água, sal, pimenta e deixe cozinhar por duas horas.
 
 
-Pão de queijo (01)
+Pão de queijo 
 -------------------
+Boa aventura! As receitas variam nas proporcoes abaixo, onde "c" e' "cup". 
+
+======= ======= ======= ======= ======= ======= ======= ======= 
+Recipe  A       B       C       D       E       F       G
+======= ======= ======= ======= ======= ======= ======= ======= 
+Tapioca 4c      4c      4c      4c      4c      4c      4c
+Milk    1c      1c      1.33c   2c      1.5c    2c      2c
+Oil     0.5c    0.5c    0.5c    0.5c    1c      1c      1c
+cheese  1.66c   3c      2c      3c      3c      4c      4c
+eggs    >3      3       2       3       2       2       3
+======= ======= ======= ======= ======= ======= ======= ======= 
+
+INFO:
+
+- As receitas mais "cheesy" (em cups) certamente sao com mussarela; as menos, com parmesao
+- Usar qualquer proporcao entre queijos ralados (parmesao e mussarela)
+- Sal a gosto (especialmente necessario se pouco queijo)
+- A proporcao entre polvilhos deve ser sempre entre 100% doce a no maximo 50%.
+- Tapioca flour = polvilho doce
+- 2 cups ~ 400 ml (o cup esta' entre 150 e 250 ml...)
+- shredded cheese: 160 g == 2 cups (mussarela?)
+- polvilho doce: 260 g == 2 cups 
+- polvilho azedo: 265 g == 2 cups
+
+
+Pão de queijo (referencia)
+-----------------------------
 Ingredientes:
 
 - 300 ml de leite
@@ -840,98 +884,11 @@ Ingredientes:
 
 Como fazer
 ~~~~~~~~~~~~
-Colocar o leite+óleo em uma panela e esperar começar a ferver. Derramar então sobre o polvilho e misturar. Parece que ficará seco, mas é assim mesmo.
+Colocar o leite+óleo em uma panela e esperar começar a ferver. Derramar então sobre o polvilho e misturar. Parece que ficará seco, mas é assim mesmo. Esperar 15 min. 
 
-Adicione o sal e o queijo, e por último os ovos. Amassar bem até a massa ficar soltando da mão. Enrolar o pão de queijo no tamanho desejado. A massa pode ser congelada se desejado.
+Adicione o sal e o queijo, e por último os ovos. Amassar bem até a massa ficar soltando da mão (10 min). Enrolar o pão de queijo no tamanho desejado. A massa pode ser congelada se desejado.
 
 Untar a forma com óleo, e levar ao forno (25 min a 400 F - ou até dourar). 
-
-
-Pão de Queijo (02)
----------------------
-- 2 Cups Tapioca Flour
-- 1/2 Cup Unsalted Butter
-- 2/3 Cup Whole Milk
-- 1 Teaspoon Salt
-- 1 Cup Freshly Grated Parmesan Cheese
-- 1/2 Cup Grated White Cheddar Cheese
-- 2 Eggs
-
-Fever manteiga e leite e misturar com tapioca. Esperar 15 min. Misturar o resto. Amassar por 10 min. Assar a 375.F
-
-
-Pão de Queijo (03)
----------------------
-- 250g polvilho doce
-- 250g polvilho azedo
-- 2 xícaras de chá de leite
-- 250g de queijo parmesão ralado
-- 3 ovos
-- 2 colheres de sopa rasas de manteiga
-
-
-[ENG] Brazilian Cheese Balls (Pão de queijo; 01)
--------------------------------------------------
-Ingredients:
-
-- 1 cup of milk
-- 1/2 cup of vegetable oil
-- 3 eggs
-- 1 pound of tapioca flour (ou tapioca starch) -- Bob's Red Mill
-- 1 tbsp of salt
-- 10 oz of grated Parmesan cheese (the thinner the better)
-
-How to prepare
-~~~~~~~~~~~~~~~~
-Put the milk+oil in a pan and wait to start boiling. Then pour over the flour and mix. It appers to be dry, but it is like that.
-
-Add salt and cheese, and finally the eggs. Knead well until dough comes loose from hand. Roll the cheese bread to the desired size. The dough may be frozen if desired.
-
-Grease a container with oil, and bake (25 min at 400 F - or until dark golden color). You can spread cheese on the top before going to the oven. 
-
-
-[ENG] Brazilian Cheese Balls (Pão de queijo; 02)
--------------------------------------------------
-Ingredients:
-
-- 4 cups of tapioca flour (sometimes sold as tapioca starch)
-- 4/3 cup of milk
-- 1/2 cup of vegetable oil
-- 2 eggs
-- 4/3 cup of shredded Mozzarella cheese
-- 3/4 cup of grated Parmesan cheese
-- 1 teaspoon of salt
-
-How to prepare
-~~~~~~~~~~~~~~~~
-- Warm the milk+oil in a pan (no need to boil). Then pour over the tapioca flour and mix. It will appear to be dry, but it is like that.
-- Add salt and the two cheeses, and finally the eggs. Knead well until dough comes loose from hand. Roll into balls of desired size.
-- If the dough is too wet/sticky, let it rest for 30m or 1h.
-- The dough may be frozen if desired.
-- Bake it on a greased baking sheet (25 min at 400 F - or until dark golden color). 
-
-
-[ENG] Brazilian Cheese Balls (Pão de queijo; 03)
--------------------------------------------------
-Ingredients:
-
-- 4 cups polvilho doce 
-- 2 cups polvilho azedo
-- 2.5 cups shredded cheese (400 g)
-- 1.5 spoon of salt (15 g)
-- 1.5 cups almond milk
-- 2/3 cups canola oil
-
-INFO:
-
-- shredded cheese: 160 g == 2 cups
-- polvilho doce: 260g == 2 cups 
-- polvilho azedo: 265 g == 2 cups
-- 2 cups ~ 500 ml
-
-How to prepare
-~~~~~~~~~~~~~~~~
-- mix the two kinds of polvilho before pouring the boiling milk+oil !
 
 
 Pão de banana
@@ -955,6 +912,7 @@ Modo de preparo
 - Quando estiver dourada e soltar da frigideira, vire e doure do outro lado, com a frigideira tampada. Vá repetindo o processo até que a massa termine.
 - Opcional: passar de ambos os lados a mistura de açúcar e canela
 
+
 Panqueca de quinoa
 -----------------------
 Lave bem 1 xícara de quinoa em grãos e deixe de molho de um dia para o outro. Descarte a água e bata os grãos no liquidificador com 1 xícara de água nova e 1 pitada de sal. 
@@ -962,10 +920,50 @@ Lave bem 1 xícara de quinoa em grãos e deixe de molho de um dia para o outro. 
 Faça as panquecas em uma frigideira antiaderente untada com um fiozinho de azeite se necessário! 
 
 
+Pão de batata
+----------------
+Pão de batata simples, macio e demorado. Feito em **5h**.
+
+Ingredientes:
+
+- 1 batata média inteira e com casca (mais ou menos 150 g)
+- 1 envelope de fermento biológico seco (10 g)
+- 1/3 de xícara de açúcar (50 g)
+- 4 xícaras de farinha de trigo, aproximadamente (480 g)
+- 1 ovo
+- 50 g de manteiga, ou 35 ml de oleo
+- 2 colheres (chá) de sal
+- papel manteiga, ou óleo pra untar
+
+Modo de preparo
+~~~~~~~~~~~~~~~~~~
+- Cozinhar batatas *com casca* por 30 minutos. 
+- Transferir uma xícara de agua para a tigela de mistura. Quando amornar, misturar fermento, acucar e 1/2 xícara de farinha. Descansar por 10 minutos (ira' espumar).
+- Acrescentar batata espremida, ovo, manteiga, e sal. Misturar ate' que descole das maos e da tigela.
+- Cubra o fundo da tigela com oleo, cubra a massa e deixe crescer por 2h (ira' dobrar de volume).
+- Separe uma assadeira untada ou com papel manteiga.
+- Polvilhe uma superficie com farinha e divida a massa em 12 partes. Para modelar, amasse com a palma da mao ate' formar um quadrado de 10 cm, e puxe as pontes pra dentro para arredontar.
+- Pincele com uma gema as massas na assadeira e deixe descansar por mais 1h (ira' dobrar novamente de volume). Pano pode grudar, sugestao e' usar filme plastico.
+- Achar por 30 minutos em forno pre-aquecido a 180.C. 
+
+Ref: https://www.nacozinhadahelo.com.br/receitas/pao-de-batata-simples-e-macio
+
+
+Pao de aveia
+---------------
+- 2 ovos pequenos ou 1 ovo grande
+- 1 xícara de aveia ( aveia naturalmente não tem glúten mas pode ter glúten por contaminação )
+- 1 colher de chá rasa de sal 
+- 100g de iogurte 
+- 2 colheres de sopa de semente de girassol 
+- 2 colheres de sopa de semente de abóbora
+- 1 colher de chá de fermento
+
+
 Bolos e doces
 ===============
-Bolo de cenoura (01)
--------------------------
+Bolo de cenoura com linhaça
+-----------------------------
 Ingredientes:
 
 - 4 colheres de linhaça
@@ -985,7 +983,7 @@ Misture tudo com 2 copos de farinha de trigo numa vasilha.
 Leve ao forno por 40 minutos.
  
 
-Bolo de cenoura (02)
+Bolo de cenoura 
 --------------------------
 Ingredientes:
 
@@ -1007,7 +1005,7 @@ Misturar num vasilha a farinha e maizena. Por último, adicione o fermento.
 
 Leve ao forno à 200oC.
 
-Cobertura (01)
+Cobertura (A)
 ~~~~~~~~~~~~~~~
 Ingredientes:
 
@@ -1017,7 +1015,7 @@ Ingredientes:
 
 Cozinhar numa panela até engrossar e colocar em cima do bolo.
 
-Cobertura (01)
+Cobertura (B)
 ~~~~~~~~~~~~~~~
 Ingredientes:
 
@@ -1027,18 +1025,8 @@ Ingredientes:
 Derreter chocolate em banho-maria e colocar em cima do bolo. Na cobertura só com chocolate, recomenda-se cortar o bolo com o chocolate ainda mole, pois pode quebrar depois de frio (depende do chocolate)
 
 
-Bolo de cenoura (03)
----------------------
-- 3 ovos
-- 0,5 xícara de óleo
-- 0,5 xícara de uva-passa preta (s/ caroço)
-- 1,0 xícara de aveia
-- 2 bananas
-- 1 colher de fermento
- 
-
-Bolo de cenoura ou beterraba (04)
------------------------------------
+Bolo de cenoura ou beterraba da Dona Elza
+-------------------------------------------
 - 3 cenouras médias
 - 2 xícaras de açúcar
 - 1/2 xícara de óleo
@@ -1046,7 +1034,57 @@ Bolo de cenoura ou beterraba (04)
 - 3 xícaras de farinha
 - 1 colher de sopa de pó Royal
 
-Receita da Elza.
+Receita da Dona Elza.
+
+
+Bolo de cenoura NV1C
+-----------------------
+- 3 cenouras grandes
+- 4 ovos
+- 1 xícara (chá) de óleo vegetal
+- 2 xícaras de farinha de trigo
+- 1 1/2 xícara de açúcar
+- 1 colher (sopa) de fermento em pó
+
+Bater as cenouras, os ovos e o óleo no liquidificador por 5 minutos, depois misturar em uma tigela com os outros ingredientes. Mexa na mão, sem bater muito para não desenvolver muito glúten da farinha, senão o bolo vai ficar duro.
+
+Unte e enfarinhe o fundo de uma assadeira (não precisa untar as laterais; e não untar vai ajudar o bolo a crescer retinho ao invés de abaulado) e leve para assar em forno pré-aquecido (180-200°C).
+
+Cobertura
+~~~~~~~~~~~~
+- 4 colheres de chocolate em pó
+- 4 colheres de açúcar
+- 4 colheres de água ou leite
+- 1 colher de manteiga ou margarina
+
+(se quiser mais cobertura, dobre as quantidades dos ingredientes)
+
+Leve os ingredientes ao fogo, mexendo até ferver. Deixe fervendo por pelo menos 5 minutos e jogue a calda ainda quente sobre o bolo.
+
+
+Bolo de cenoura e aveia
+-------------------------
+- 3 cenouras médias
+- 4 gema de ovos
+- 125 ml de leite
+- 125 ml de óleo de coco
+- 2 xícara de açúcar
+- 4.25 xícara de aveia (triturar se estiver em flocos)
+- 1 colher de fermento 
+- bater claras em neve, e adicioná-las por último
+- levar ao forno ate dourar
+
+Inspirado nessa receita: https://cooknenjoy.com/bolo-de-cenoura-com-aveia/
+
+
+Bolo de banana e aveia com uvas-passas
+---------------------------------------
+- 3 ovos
+- 0,5 xícara de óleo
+- 0,5 xícara de uva-passa preta (s/ caroço)
+- 1,0 xícara de aveia
+- 2 bananas
+- 1 colher de fermento
 
 
 Bolo de Fubá
@@ -1766,19 +1804,6 @@ Receita:
 
 Inspired on this almond flour recipe: https://www.rhubarbarians.com/healthy-vegan-banana-bread/
 
-Bolo de cenoura e aveia
--------------------------
-- 3 cenouras médias
-- 4 gema de ovos
-- 125 ml de leite
-- 125 ml de óleo de coco
-- 2 xícara de açúcar
-- 4.25 xícara de aveia (triturar se estiver em flocos)
-- 1 colher de fermento 
-- bater claras em neve, e adicioná-las por último
-- levar ao forno ate dourar
-
-Inspirado nessa receita: https://cooknenjoy.com/bolo-de-cenoura-com-aveia/
 
 Bolo de aveia com laranja
 ---------------------------

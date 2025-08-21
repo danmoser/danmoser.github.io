@@ -31,11 +31,11 @@ With ``plyer``: https://youtu.be/g-4a2oub2HU
 
 SOLID OOP principles
 ------------------------
-S = Single Responsibility Principle
-O = Open/Closed Principle
-L = Liskov Substitution Principle
-I  = Interface Segregation Principle
-D = Dependency Inversion Principle
+- S = Single Responsibility Principle
+- O = Open/Closed Principle
+- L = Liskov Substitution Principle
+- I  = Interface Segregation Principle
+- D = Dependency Inversion Principle
 
 https://twitter.com/vikasrajputin/status/1593460494886576128
 

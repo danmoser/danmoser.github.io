@@ -135,3 +135,18 @@ Sunscreen
 ***********
 - Oxybenzone and octinoxate have been proven to be harmful to coral reefs (source: https://www.khon2.com/local-news/new-laws-in-starting-in-2021-in-hawaii/amp/)
 - Safe and effective alternatives according to the FDA are sunscreens containing zinc oxide and titanium dioxid.
+
+
+Medical Dictionary
+***********************
+- Tingling - Formigamento
+- Numbness - Dormencia
+- Sharp pain - Dor Aguda
+- Ache - Dor
+- Itch - Coceira
+- Sore - Dolorido/ Sensível
+- Throbbing/ Beat/ Pulse - Latejante
+- Stinging - Picante (que belisca, arde como ferrão de abelha)
+- Stiffness - Rigidez (dói ao mover)
+- Squeezing/ Compress/ Press - Apertando
+- Shooting - a type of pain described as a sudden, intense, and sharp sensation, often likened to an electric shock or a stabbing pain
