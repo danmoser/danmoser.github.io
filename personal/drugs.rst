@@ -114,6 +114,15 @@ Vocabulário
 
 - inflamação = é uma reação do organismo a uma infecção ou lesão dos tecidos.
 
+Stomach antacids 
+*****************
+They are used to relieve heartburn, indigestion, and an upset stomach by neutralizing excess stomach acid.
+
+- Calcium Carbonate: Brand names: Tums, Rolaids
+- Magnesium Hydroxide: Brand names: Milk of Magnesia, Maalox 
+- Aluminum Hydroxide: Brand names: Amphojel, Maalox
+- Combination Products: Brand names: Mylanta, Gaviscon
+
 
 Fármacos em detalhes
 **********************

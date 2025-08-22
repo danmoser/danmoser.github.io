@@ -822,6 +822,18 @@ Molho de queijo vegano
 - Um dente de alho
 - Uma colher de sopa de azeite extra virgem
 
+[ENG] Cranberry Sauce
+------------------------
+Ingredients
+- 12 ounces cranberries
+- 1 cup white sugar
+- 1 cup orange juice
+
+
+Dissolve sugar in orange juice in a medium saucepan over medium heat. Stir in cranberries and cook until they start to pop, about 8 to 10 minutes. 
+
+https://www.allrecipes.com/recipe/9111/cranberry-sauce/
+
 Ragú
 -------
 Ingredientes:
@@ -890,6 +902,14 @@ Adicione o sal e o queijo, e por último os ovos. Amassar bem até a massa ficar
 
 Untar a forma com óleo, e levar ao forno (25 min a 400 F - ou até dourar). 
 
+[ENG] Cheese Balls
+---------------------
+Recipe "F" above.
+
+Place the tapioca flour in a large bowl, and separately head the milk, oil, and salt. When the heated mixture starts to boil, scald the tapioca flour with the mix, making sure to break up any lumps. Let it cool, and then add the eggs (one at a time) and cheese - be sure to alternate between the two additions, and kneed well after each new addition! Roll into 1in diameter balls and place them on a greased baking sheet. Put in the oven at 375 (Fahrenheit) and bake until golden brown (which is roughly 20 minutes, depending on your oven).
+
+The inside will not be super solid - the cheese is melty inside and will make it look soft and underbaked, but this is what you want! As it cools, you'll see that it does harden up and become more dense and bread-like inside. Overall, they are super tasty and pretty fun to make.
+
 
 Pão de banana
 ----------------
@@ -949,6 +969,21 @@ Modo de preparo
 Ref: https://www.nacozinhadahelo.com.br/receitas/pao-de-batata-simples-e-macio
 
 
+Pao de batata doce
+---------------------
+Pão de batata doce sem farinha!
+
+- 1 batata doce média cozida
+- 1 colher de óleo de coco
+- 2 ovos
+- 3 xícaras de leite em pó desnatado
+- 1 colher de fermento em pó
+- Sal a gosto
+- 1 gema para pincelar
+
+Cozinhe a batata doce ("amarela") com casca. Amasse, e misture com os ingredientes, comecando pelos ovos.
+
+
 Pao de aveia
 ---------------
 - 2 ovos pequenos ou 1 ovo grande
@@ -958,6 +993,22 @@ Pao de aveia
 - 2 colheres de sopa de semente de girassol 
 - 2 colheres de sopa de semente de abóbora
 - 1 colher de chá de fermento
+
+Pao "trabalhoso"
+-----------------
+Ingredientes
+- 3 xic. de farinha de trigo (450g)
+- 2 cols. de chá de fermento biológico (7g)
+- 1 e 1/2 col. de chá de sal (8g)
+- 1 e 1/2 xic. de água morna (360g)*
+
+Modo de preparo
+~~~~~~~~~~~~~~~~~~
+Numa vasilha misture a farinha de trigo, o fermento biológico e o sal. Misture bem e adicione a água morna. Mexa até não sobrar nada de farinha seca. Cubra e deixe descansar por 2 a 3 horas ou até dobrar de tamanho (vai depender da temperatura do ambiente).
+
+Passado esse tempo você já pode assar, mas eu recomendo deixar na geladeira por umas 12 horas para ajudar a desenvolver o sabor da massa. No dia seguinte, pré aqueça o forno na temperatura mais alta que tiver (eu coloquei 280C) , coloque a panela de ferro ou cerâmica para aquecer por 30 minutos. Enquanto isso modele a massa: polvilhe farinha na bancada e despeje a massa. Abra ela até formar um retângulo, puxando pelas laterais. Pega a ponta inferior da massa e dobre em direção ao centro. Depois pega cada uma das pontas laterais e dobre em direção ao dentro (como uma fralda). Pegue a borda superior e puxe em direção à você, enrolando como se fosse um burrito. Depois forme uma bolinha com a massa, empurrando ela com a mão e trazendo em direção a você. Não precisa ficar perfeito, mas isso aumenta a tensão da massa garantindo um pão mais alto.
+
+Coloque o pão numa folha de papel manteiga (isso ajuda na hora de colocar na panela). E com cuidado coloque na panela. Adicione umas 4 pedras de gelo, tampe e asse por 20 minutos. Depois tire a tampa e deixe assar até dourar.
 
 
 Bolos e doces
