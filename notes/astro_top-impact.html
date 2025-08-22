@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
 <title>Debate: the most impacting achievements/works in astronomy in recent years</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -417,6 +417,7 @@ li {
 *   math2html: convert LaTeX equations to HTML output.
 *
 *   Copyright (C) 2009,2010 Alex Fernández
+*                 2021      Günter Milde
 *
 *   Released under the terms of the `2-Clause BSD license'_, in short:
 *   Copying and distribution of this file, with or without modification,
@@ -428,16 +429,19 @@ li {
 *
 *   Based on eLyXer: convert LyX source files to HTML output.
 *   http://elyxer.nongnu.org/
-*/
-/* --end--
+*
+*
 * CSS file for LaTeX formulas.
+*
+* References: http://www.zipcon.net/~swhite/docs/math/math.html
+*             http://www.cs.tut.fi/~jkorpela/math/
 */
 
 /* Formulas */
 .formula {
 	text-align: center;
-	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
 	margin: 1.2em 0;
+	line-height: 1.4;
 }
 span.formula {
 	white-space: nowrap;
@@ -461,6 +465,9 @@ span.unknown {
 span.ignored, span.arraydef {
 	display: none;
 }
+.phantom {
+	visibility: hidden;
+}
 .formula i {
 	letter-spacing: 0.1ex;
 }
@@ -477,33 +484,48 @@ span.ignored, span.arraydef {
 }
 
 /* Structures */
+span.hspace {
+	display: inline-block;
+}
 span.overline, span.bar {
 	text-decoration: overline;
 }
-.fraction, .fullfraction {
+.fraction, .fullfraction, .textfraction {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 }
-.fraction .fraction {
+span.formula .fraction,
+.textfraction,
+span.smallmatrix {
 	font-size: 80%;
-	line-height: 100%;
+	line-height: 1;
 }
 span.numerator {
 	display: block;
+	line-height: 1;
 }
 span.denominator {
 	display: block;
+	line-height: 1;
 	padding: 0ex;
 	border-top: thin solid;
 }
+.formula sub, .formula sup {
+	font-size: 80%;
+}
 sup.numerator, sup.unit {
-	font-size: 70%;
 	vertical-align: 80%;
 }
 sub.denominator, sub.unit {
-	font-size: 70%;
 	vertical-align: -20%;
+}
+span.smallsymbol {
+	font-size: 75%;
+	line-height: 75%;
+}
+span.boldsymbol {
+	font-weight: bold;
 }
 span.sqrt {
 	display: inline-block;
@@ -511,39 +533,62 @@ span.sqrt {
 	padding: 0.1ex;
 }
 sup.root {
-	font-size: 70%;
 	position: relative;
 	left: 1.4ex;
 }
 span.radical {
 	display: inline-block;
 	padding: 0ex;
-	font-size: 150%;
+	/* font-size: 160%; for DejaVu, not required with STIX */
+	line-height: 100%;
 	vertical-align: top;
+	vertical-align: middle;
 }
+
 span.root {
 	display: inline-block;
 	border-top: thin solid;
 	padding: 0ex;
 	vertical-align: middle;
 }
-span.symbol {
-	line-height: 125%;
-	font-size: 125%;
+div.formula .bigoperator,
+.displaystyle .bigoperator,
+.displaystyle .bigoperator {
+	line-height: 120%;
+	font-size: 140%;
+	padding-right: 0.2ex;
 }
-span.bigsymbol {
-	line-height: 150%;
-	font-size: 150%;
+span.fraction .bigoperator,
+span.scriptstyle .bigoperator {
+	line-height: inherit;
+	font-size: inherit;
+	padding-right: 0;
 }
-span.largesymbol {
-	font-size: 175%;
+span.bigdelimiter {
+	display: inline-block;
 }
-span.hugesymbol {
-	font-size: 200%;
+span.bigdelimiter.size1 {
+	transform: scale(1, 1.2);
+	line-height: 1.2;
 }
+span.bigdelimiter.size2 {
+	transform: scale(1, 1.62);
+	line-height: 1.62%;
+
+}
+span.bigdelimiter.size3 {
+	transform: scale(1, 2.05);
+	line-height: 2.05%;
+}
+span.bigdelimiter.size4 {
+	transform: scale(1, 2.47);
+	line-height: 2.47%;
+}
+/* vertically stacked sub and superscript */
 span.scripts {
 	display: inline-table;
 	vertical-align: middle;
+	padding-right: 0.2ex;
 }
 .script {
 	display: table-row;
@@ -561,51 +606,42 @@ span.limits {
 sup.limit, sub.limit {
 	line-height: 100%;
 }
-span.symbolover {
-	display: inline-block;
-	text-align: center;
-	position: relative;
-	float: right;
-	right: 100%;
-	bottom: 0.5em;
-	width: 0px;
-}
-span.withsymbol {
+span.embellished,
+span.embellished > .base {
 	display: inline-block;
 }
-span.symbolunder {
+span.embellished > sup,
+span.embellished > sub {
 	display: inline-block;
-	text-align: center;
+	font-size: 100%;
 	position: relative;
-	float: right;
-	right: 80%;
-	top: 0.3em;
+	bottom: 0.3em;
 	width: 0px;
+}
+span.embellished > sub {
+	top: 0.4em;
 }
 
 /* Environments */
 span.array, span.bracketcases, span.binomial, span.environment {
 	display: inline-table;
 	text-align: center;
-	border-collapse: collapse;
-	margin: 0em;
 	vertical-align: middle;
 }
 span.arrayrow, span.binomrow {
 	display: table-row;
-	padding: 0ex;
-	border: 0ex;
+	padding: 0;
+	border: 0;
 }
 span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
 	display: table-cell;
 	padding: 0ex 0.2ex;
-	line-height: 99%;
+	line-height: 1; /* 99%; */
 	border: 0ex;
 }
-/*
-* CSS file for LaTeX formulas, extra stuff:
-* binomials, vertical braces, stackrel, fonts and colors.
-*/
+.environment.align > .arrayrow > .arraycell.align-l {
+	padding-right: 2em;
+}
 
 /* Inline binomials */
 span.binom {
@@ -648,19 +684,30 @@ span.downstackrel {
 }
 
 /* Fonts */
+.formula {
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
+}
+span.radical,   /* ensure correct size of square-root sign */
+span.integral { /* upright integral signs for better alignment of indices */
+	font-family: "STIXIntegralsUp", STIX;
+	/* font-size: 115%; match apparent size with DejaVu */
+}
+span.bracket {
+  /* some "STIX" and "DejaVu Math TeX Gyre" bracket pieces don't fit */
+	font-family: "DejaVu Serif", serif;
+}
 span.mathsf, span.textsf {
-	font-style: normal;
 	font-family: sans-serif;
 }
 span.mathrm, span.textrm {
-	font-style: normal;
-	font-family: serif;
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
 }
-span.text, span.textnormal {
-	font-style: normal;
+span.mathtt, span.texttt {
+	font-family: monospace;
 }
-span.textipa {
-	color: #008080;
+span.text, span.textnormal,
+span.mathsf, span.mathtt, span.mathrm {
+	font-style: normal;
 }
 span.fraktur {
 	font-family: "Lucida Blackletter", eufm10, blackletter;
@@ -671,6 +718,16 @@ span.blackboard {
 span.scriptfont {
 	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
 	font-style: italic;
+}
+span.mathscr {
+  font-family: MathJax_Script, rsfs10,  cursive;
+  font-style: italic;
+}
+span.textsc {
+	font-variant: small-caps;
+}
+span.textsl {
+	font-style: oblique;
 }
 
 /* Colors */
@@ -689,7 +746,6 @@ span.boxed, span.framebox {
 	padding: 5px;
 }
 
-
 </style>
 </head>
 <body>
@@ -699,68 +755,68 @@ span.boxed, span.framebox {
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#nobel-physics-prizes" id="id1">Nobel physics prizes</a><ul>
-<li><a class="reference internal" href="#takaaki-kajita-and-arthur-b-mcdonald" id="id2">2015 Takaaki Kajita and Arthur B. McDonald</a></li>
-<li><a class="reference internal" href="#francois-englert-and-peter-w-higgs" id="id3">2013 François Englert and Peter W. Higgs</a></li>
-<li><a class="reference internal" href="#saul-perlmutter-brian-p-schmidt-and-adam-g-riess" id="id4">2011 Saul Perlmutter, Brian P. Schmidt and Adam G. Riess</a></li>
-<li><a class="reference internal" href="#charles-kuen-kao-willard-s-boyle-and-george-e-smith" id="id5">2009 Charles Kuen Kao / Willard S. Boyle and George E. Smith</a></li>
-<li><a class="reference internal" href="#john-c-mather-and-george-f-smoot" id="id6">2006 John C. Mather and George F. Smoot</a></li>
-<li><a class="reference internal" href="#raymond-davis-jr-and-masatoshi-koshiba-riccardo-giacconi" id="id7">2002 Raymond Davis Jr. and Masatoshi Koshiba / Riccardo Giacconi</a></li>
+<li><a class="reference internal" href="#nobel-physics-prizes" id="toc-entry-1">Nobel physics prizes</a><ul>
+<li><a class="reference internal" href="#takaaki-kajita-and-arthur-b-mcdonald" id="toc-entry-2">2015 Takaaki Kajita and Arthur B. McDonald</a></li>
+<li><a class="reference internal" href="#francois-englert-and-peter-w-higgs" id="toc-entry-3">2013 François Englert and Peter W. Higgs</a></li>
+<li><a class="reference internal" href="#saul-perlmutter-brian-p-schmidt-and-adam-g-riess" id="toc-entry-4">2011 Saul Perlmutter, Brian P. Schmidt and Adam G. Riess</a></li>
+<li><a class="reference internal" href="#charles-kuen-kao-willard-s-boyle-and-george-e-smith" id="toc-entry-5">2009 Charles Kuen Kao / Willard S. Boyle and George E. Smith</a></li>
+<li><a class="reference internal" href="#john-c-mather-and-george-f-smoot" id="toc-entry-6">2006 John C. Mather and George F. Smoot</a></li>
+<li><a class="reference internal" href="#raymond-davis-jr-and-masatoshi-koshiba-riccardo-giacconi" id="toc-entry-7">2002 Raymond Davis Jr. and Masatoshi Koshiba / Riccardo Giacconi</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#selected-works" id="id8">Selected works</a><ul>
-<li><a class="reference internal" href="#detection-of-the-b-mode-polarization-of-the-cmb" id="id9">2014 Detection of the B-mode polarization of the CMB (?)</a></li>
-<li><a class="reference internal" href="#first-visual-evidence-of-a-black-hole" id="id10">2012 First visual evidence of a black hole</a></li>
-<li><a class="reference internal" href="#the-center-of-the-milk-way-was-a-massive-black-hole" id="id11">2002 The center of the Milk Way was a massive black hole</a><ul>
-<li><a class="reference internal" href="#visual-evidence" id="id12">2015 Visual evidence</a></li>
+<li><a class="reference internal" href="#selected-works" id="toc-entry-8">Selected works</a><ul>
+<li><a class="reference internal" href="#detection-of-the-b-mode-polarization-of-the-cmb" id="toc-entry-9">2014 Detection of the B-mode polarization of the CMB (?)</a></li>
+<li><a class="reference internal" href="#first-visual-evidence-of-a-black-hole" id="toc-entry-10">2012 First visual evidence of a black hole</a></li>
+<li><a class="reference internal" href="#the-center-of-the-milk-way-was-a-massive-black-hole" id="toc-entry-11">2002 The center of the Milk Way was a massive black hole</a><ul>
+<li><a class="reference internal" href="#visual-evidence" id="toc-entry-12">2015 Visual evidence</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#proto-planetary-disk-image-by-alma" id="id13">2014 Proto-planetary disk image by ALMA</a></li>
-<li><a class="reference internal" href="#resolving-exoplanets" id="id14">Resolving exoplanets:</a><ul>
-<li><a class="reference internal" href="#differential-spectrum" id="id15">2010 Differential Spectrum</a></li>
-<li><a class="reference internal" href="#reflection-spectrum" id="id16">2015 Reflection Spectrum</a></li>
-<li><a class="reference internal" href="#imaging" id="id17">2004 Imaging</a></li>
+<li><a class="reference internal" href="#proto-planetary-disk-image-by-alma" id="toc-entry-13">2014 Proto-planetary disk image by ALMA</a></li>
+<li><a class="reference internal" href="#resolving-exoplanets" id="toc-entry-14">Resolving exoplanets:</a><ul>
+<li><a class="reference internal" href="#differential-spectrum" id="toc-entry-15">2010 Differential Spectrum</a></li>
+<li><a class="reference internal" href="#reflection-spectrum" id="toc-entry-16">2015 Reflection Spectrum</a></li>
+<li><a class="reference internal" href="#imaging" id="toc-entry-17">2004 Imaging</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#exoplanetary-system-with-7-planets-orbiting-a-sun-like-star" id="id18">2011 Exoplanetary system with 7+ planets orbiting a Sun-like star</a></li>
-<li><a class="reference internal" href="#observational-evidence-for-popiii-like-stellar-populations" id="id19">2015 Observational evidence for PopIII-like Stellar Populations</a></li>
-<li><a class="reference internal" href="#oldest-milky-way-star" id="id20">2004 Oldest Milky Way Star</a></li>
-<li><a class="reference internal" href="#voyager-probes-an-interesting-solar-system-boundary" id="id21">2015 Voyager probes an interesting Solar System boundary</a></li>
-<li><a class="reference internal" href="#rosetta-lands-a-probe-on-philae-comet" id="id22">2014 Rosetta lands a probe on Philae comet</a></li>
-<li><a class="reference internal" href="#new-horizons-finds-geology-of-all-ages-at-pluto-possible-ice-volcanoes-insight-into-planetary-origins" id="id23">2015 New Horizons finds geology of all ages at Pluto, possible ice volcanoes, insight into planetary origins</a></li>
+<li><a class="reference internal" href="#exoplanetary-system-with-7-planets-orbiting-a-sun-like-star" id="toc-entry-18">2011 Exoplanetary system with 7+ planets orbiting a Sun-like star</a></li>
+<li><a class="reference internal" href="#observational-evidence-for-popiii-like-stellar-populations" id="toc-entry-19">2015 Observational evidence for PopIII-like Stellar Populations</a></li>
+<li><a class="reference internal" href="#oldest-milky-way-star" id="toc-entry-20">2004 Oldest Milky Way Star</a></li>
+<li><a class="reference internal" href="#voyager-probes-an-interesting-solar-system-boundary" id="toc-entry-21">2015 Voyager probes an interesting Solar System boundary</a></li>
+<li><a class="reference internal" href="#rosetta-lands-a-probe-on-philae-comet" id="toc-entry-22">2014 Rosetta lands a probe on Philae comet</a></li>
+<li><a class="reference internal" href="#new-horizons-finds-geology-of-all-ages-at-pluto-possible-ice-volcanoes-insight-into-planetary-origins" id="toc-entry-23">2015 New Horizons finds geology of all ages at Pluto, possible ice volcanoes, insight into planetary origins</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#links" id="id24">Links</a></li>
+<li><a class="reference internal" href="#links" id="toc-entry-24">Links</a></li>
 </ul>
 </div>
 <div class="section" id="nobel-physics-prizes">
-<h1><a class="toc-backref" href="#id1">Nobel physics prizes</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-1">Nobel physics prizes</a></h1>
 <div class="section" id="takaaki-kajita-and-arthur-b-mcdonald">
-<h2><a class="toc-backref" href="#id2">2015 Takaaki Kajita and Arthur B. McDonald</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-2">2015 Takaaki Kajita and Arthur B. McDonald</a></h2>
 <p>&quot;for the discovery of neutrino oscillations, which shows that neutrinos have mass&quot;.</p>
 <p>The authors solved the <em>neutrino problem</em> that started in mid 1960's until 2002. They proposed a modification of the Standard Model of particle physics so that the neutrinos produced in Sun's interior change in their way to Earth, been much harder to be detected.</p>
 </div>
 <div class="section" id="francois-englert-and-peter-w-higgs">
-<h2><a class="toc-backref" href="#id3">2013 François Englert and Peter W. Higgs</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-3">2013 François Englert and Peter W. Higgs</a></h2>
 <p>&quot;for the theoretical discovery of a mechanism that contributes to our understanding of the origin of mass of subatomic particles, and which recently was confirmed through the discovery of the predicted fundamental particle, by the ATLAS and CMS experiments at CERN's Large Hadron Collider&quot;.</p>
 <p>The boson of Higgs was the last particle in the Standard Model to be observed. Higgs' bosons lead to mass: they would attach more to some particles than others, explaining the observed differences of mass in particles. Some of the Higgs' boson properties were observed in the CERN experiments.</p>
 </div>
 <div class="section" id="saul-perlmutter-brian-p-schmidt-and-adam-g-riess">
-<h2><a class="toc-backref" href="#id4">2011 Saul Perlmutter, Brian P. Schmidt and Adam G. Riess</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-4">2011 Saul Perlmutter, Brian P. Schmidt and Adam G. Riess</a></h2>
 <p>&quot;for the discovery of the accelerating expansion of the Universe through observations of distant supernovae&quot;.</p>
 <p>Comparing the SN I type brightness, believed to be constant, the authors found that the far SN I are too faint for a non-accelerating universe. So, to be expanding at that rate, the universe would need a &quot;cosmological constant&quot;, or the dark energy.</p>
 </div>
 <div class="section" id="charles-kuen-kao-willard-s-boyle-and-george-e-smith">
-<h2><a class="toc-backref" href="#id5">2009 Charles Kuen Kao / Willard S. Boyle and George E. Smith</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-5">2009 Charles Kuen Kao / Willard S. Boyle and George E. Smith</a></h2>
 <p>&quot;for groundbreaking achievements concerning the transmission of light in fibers for optical communication&quot; (allowing the transmission of light signals over very long distances and with a minimal energy loss).</p>
 <p>&quot;for the invention of an imaging semiconductor circuit - the CCD sensor&quot; (a very efficient photosensor with high linear information).</p>
 </div>
 <div class="section" id="john-c-mather-and-george-f-smoot">
-<h2><a class="toc-backref" href="#id6">2006 John C. Mather and George F. Smoot</a></h2>
-<p>&quot;for their discovery of the blackbody form and anisotropy of the cosmic microwave background radiation&quot;. The authors started with the COBE satellite the systematic study of the CMB. The small fluctuations of temperature (<span class="formula">≲10<sup>4</sup></span>) are consistent withe the density fluctuations that lead to the objects formation in current universe (cluster of galaxies and galaxies).</p>
+<h2><a class="toc-backref" href="#toc-entry-6">2006 John C. Mather and George F. Smoot</a></h2>
+<p>&quot;for their discovery of the blackbody form and anisotropy of the cosmic microwave background radiation&quot;. The authors started with the COBE satellite the systematic study of the CMB. The small fluctuations of temperature (<span class="formula"> ≲ 10<sup>4</sup></span>) are consistent withe the density fluctuations that lead to the objects formation in current universe (cluster of galaxies and galaxies).</p>
 </div>
 <div class="section" id="raymond-davis-jr-and-masatoshi-koshiba-riccardo-giacconi">
-<h2><a class="toc-backref" href="#id7">2002 Raymond Davis Jr. and Masatoshi Koshiba / Riccardo Giacconi</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-7">2002 Raymond Davis Jr. and Masatoshi Koshiba / Riccardo Giacconi</a></h2>
 <p>&quot;for pioneering contributions to astrophysics, in particular for the detection of cosmic neutrinos&quot;.</p>
 <p>Davis Jr. developed the idea of monitor a large amount of matter, isolated caves to avoid faint sources of emission. The main detector was based on a Chloride (Cl) solution in water. After interaction with a neutrino, the Cl atom becomes a Ar isotope, that is luminescent. But the reaction are rare: the first experiment trapped 2000 solar neutrinos over 25 years ina 380000 liters tank!
 Koshiba observed neutrinos arriving <strong>before</strong> the light in a SN explosion, i.e., a large number of neutrinos were fired out in the early phases of the SN explosion.</p>
@@ -768,9 +824,9 @@ Koshiba observed neutrinos arriving <strong>before</strong> the light in a SN ex
 </div>
 </div>
 <div class="section" id="selected-works">
-<h1><a class="toc-backref" href="#id8">Selected works</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-8">Selected works</a></h1>
 <div class="section" id="detection-of-the-b-mode-polarization-of-the-cmb">
-<h2><a class="toc-backref" href="#id9">2014 Detection of the B-mode polarization of the CMB (?)</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-9">2014 Detection of the B-mode polarization of the CMB (?)</a></h2>
 <p><em>The cosmic microwave background is polarized at the level of a few microkelvin. There are two types of polarization, called E-modes and B-modes. This is in analogy to electrostatics, in which the electric field (E-field) has a vanishing curl and the magnetic field (B-field) has a vanishing divergence.</em></p>
 <p><em>The E-modes arise naturally from Thomson scattering in a heterogeneous plasma. The B-modes are not sourced by standard scalar type perturbations. Instead they can be created by two mechanisms: the first one is by gravitational lensing of E-modes, which has been measured by the South Pole Telescope in 2013; the second one is from gravitational waves arising from cosmic inflation.</em></p>
 <p><em>Detecting the B-modes is extremely difficult, particularly as the degree of foreground contamination is unknown, and the weak gravitational lensing signal mixes the relatively strong E-mode signal with the B-mode signal.</em></p>
@@ -781,18 +837,18 @@ Koshiba observed neutrinos arriving <strong>before</strong> the light in a SN ex
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Cosmic_microwave_background#Polarization">https://en.wikipedia.org/wiki/Cosmic_microwave_background#Polarization</a></p>
 </div>
 <div class="section" id="first-visual-evidence-of-a-black-hole">
-<h2><a class="toc-backref" href="#id10">2012 First visual evidence of a black hole</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-10">2012 First visual evidence of a black hole</a></h2>
 <p><em>&quot;While there has been evidence of these types of flares before, there's never been enough information to say what kind of star fell victim to the black hole, and what was the mass of the black hole that destroyed the star&quot;</em>, the authors said. The works was only possible with a <em>temporal sequence of measurements</em>, thanks to the PAN-Starrs survey, measuring the flare over multi wavelengths with high time cadence and modeling.</p>
 <p><a class="reference external" href="http://www.nature.com/nature/journal/v485/n7397/full/nature10990.html">http://www.nature.com/nature/journal/v485/n7397/full/nature10990.html</a></p>
 <p><a class="reference external" href="http://www.scientificamerican.com/article/black-hole-swallows-star/">http://www.scientificamerican.com/article/black-hole-swallows-star/</a></p>
 </div>
 <div class="section" id="the-center-of-the-milk-way-was-a-massive-black-hole">
-<h2><a class="toc-backref" href="#id11">2002 The center of the Milk Way was a massive black hole</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-11">2002 The center of the Milk Way was a massive black hole</a></h2>
 <p>NACO instrument images in infrared with AO over 10 years, covering almost 1000 stars orbiting Sgr A* (a strong radio source).</p>
 <p><a class="reference external" href="../movs/astro_top-impact_eso0226a.mpg">Legacy Video</a></p>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2002Natur.419..694S">http://adsabs.harvard.edu/abs/2002Natur.419..694S</a></p>
 <div class="section" id="visual-evidence">
-<h3><a class="toc-backref" href="#id12">2015 Visual evidence</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-12">2015 Visual evidence</a></h3>
 <p><a class="reference external" href="../movs/astro_top-impact_eso1151e.mov">Gas Orbit Video</a></p>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2015ApJ...800..125V">http://adsabs.harvard.edu/abs/2015ApJ...800..125V</a></p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso1512/">http://www.eso.org/public/brazil/news/eso1512/</a></p>
@@ -801,58 +857,58 @@ Koshiba observed neutrinos arriving <strong>before</strong> the light in a SN ex
 </div>
 </div>
 <div class="section" id="proto-planetary-disk-image-by-alma">
-<h2><a class="toc-backref" href="#id13">2014 Proto-planetary disk image by ALMA</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-13">2014 Proto-planetary disk image by ALMA</a></h2>
 <p><a class="reference external" href="http://www.almaobservatory.org/press-room/press-releases/771-revolutionary-alma-image-reveals-planetary-genesis">http://www.almaobservatory.org/press-room/press-releases/771-revolutionary-alma-image-reveals-planetary-genesis</a></p>
 </div>
 <div class="section" id="resolving-exoplanets">
-<h2><a class="toc-backref" href="#id14">Resolving exoplanets:</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-14">Resolving exoplanets:</a></h2>
 <div class="section" id="differential-spectrum">
-<h3><a class="toc-backref" href="#id15">2010 Differential Spectrum</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-15">2010 Differential Spectrum</a></h3>
 <p><a class="reference external" href="http://www.nature.com/nature/journal/v468/n7324/full/nature09596.html">http://www.nature.com/nature/journal/v468/n7324/full/nature09596.html</a></p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso1047/">http://www.eso.org/public/brazil/news/eso1047/</a></p>
 </div>
 <div class="section" id="reflection-spectrum">
-<h3><a class="toc-backref" href="#id16">2015 Reflection Spectrum</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-16">2015 Reflection Spectrum</a></h3>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2015A&amp;A...576A.134M">http://adsabs.harvard.edu/abs/2015A&amp;A...576A.134M</a> (*PT)</p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso1517/">http://www.eso.org/public/brazil/news/eso1517/</a></p>
 </div>
 <div class="section" id="imaging">
-<h3><a class="toc-backref" href="#id17">2004 Imaging</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-17">2004 Imaging</a></h3>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2004A&amp;A...425L..29C">http://adsabs.harvard.edu/abs/2004A&amp;A...425L..29C</a></p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso0428/">http://www.eso.org/public/brazil/news/eso0428/</a></p>
 </div>
 </div>
 <div class="section" id="exoplanetary-system-with-7-planets-orbiting-a-sun-like-star">
-<h2><a class="toc-backref" href="#id18">2011 Exoplanetary system with 7+ planets orbiting a Sun-like star</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-18">2011 Exoplanetary system with 7+ planets orbiting a Sun-like star</a></h2>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2011A&amp;A...528A.112L">http://adsabs.harvard.edu/abs/2011A&amp;A...528A.112L</a></p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso1035/">http://www.eso.org/public/brazil/news/eso1035/</a></p>
 </div>
 <div class="section" id="observational-evidence-for-popiii-like-stellar-populations">
-<h2><a class="toc-backref" href="#id19">2015 Observational evidence for PopIII-like Stellar Populations</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-19">2015 Observational evidence for PopIII-like Stellar Populations</a></h2>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2015ApJ...808..139S">http://adsabs.harvard.edu/abs/2015ApJ...808..139S</a> (*PT)</p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso1524/">http://www.eso.org/public/brazil/news/eso1524/</a></p>
 </div>
 <div class="section" id="oldest-milky-way-star">
-<h2><a class="toc-backref" href="#id20">2004 Oldest Milky Way Star</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-20">2004 Oldest Milky Way Star</a></h2>
 <p><a class="reference external" href="http://adsabs.harvard.edu/abs/2004A&amp;A...426..651P">http://adsabs.harvard.edu/abs/2004A&amp;A...426..651P</a></p>
 <p><a class="reference external" href="http://www.eso.org/public/brazil/news/eso0425/">http://www.eso.org/public/brazil/news/eso0425/</a></p>
 </div>
 <div class="section" id="voyager-probes-an-interesting-solar-system-boundary">
-<h2><a class="toc-backref" href="#id21">2015 Voyager probes an interesting Solar System boundary</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-21">2015 Voyager probes an interesting Solar System boundary</a></h2>
 <p><a class="reference external" href="http://dx.doi.org/10.1088/2041-8205/813/1/L20">http://dx.doi.org/10.1088/2041-8205/813/1/L20</a></p>
 <p><a class="reference external" href="http://www.nasa.gov/feature/jpl/voyager-1-helps-solve-interstellar-medium-mystery">http://www.nasa.gov/feature/jpl/voyager-1-helps-solve-interstellar-medium-mystery</a></p>
 </div>
 <div class="section" id="rosetta-lands-a-probe-on-philae-comet">
-<h2><a class="toc-backref" href="#id22">2014 Rosetta lands a probe on Philae comet</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-22">2014 Rosetta lands a probe on Philae comet</a></h2>
 <p><a class="reference external" href="http://sci.esa.int/rosetta/">http://sci.esa.int/rosetta/</a></p>
 </div>
 <div class="section" id="new-horizons-finds-geology-of-all-ages-at-pluto-possible-ice-volcanoes-insight-into-planetary-origins">
-<h2><a class="toc-backref" href="#id23">2015 New Horizons finds geology of all ages at Pluto, possible ice volcanoes, insight into planetary origins</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-23">2015 New Horizons finds geology of all ages at Pluto, possible ice volcanoes, insight into planetary origins</a></h2>
 <p><a class="reference external" href="http://pluto.jhuapl.edu/News-Center/News-Article.php?page=20151109">http://pluto.jhuapl.edu/News-Center/News-Article.php?page=20151109</a></p>
 </div>
 </div>
 <div class="section" id="links">
-<h1><a class="toc-backref" href="#id24">Links</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-24">Links</a></h1>
 <dl class="docutils">
 <dt>Nobel physics prizes list</dt>
 <dd><a class="reference external" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/">http://www.nobelprize.org/nobel_prizes/physics/laureates/</a></dd>

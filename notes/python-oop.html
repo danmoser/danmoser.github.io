@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
 <title>Python and object-oriented programming</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -423,20 +423,20 @@ li {
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#what-is-oop" id="id1">What is OOP?</a></li>
-<li><a class="reference internal" href="#oop-concepts-abstraction-class-and-object" id="id2">OOP Concepts: abstraction, class and object</a></li>
-<li><a class="reference internal" href="#examples" id="id3">Examples</a></li>
-<li><a class="reference internal" href="#oop-concepts-heritage" id="id4">OOP Concepts: heritage</a></li>
-<li><a class="reference internal" href="#ways-of-combining-classes-and-their-properties" id="id5">Ways of combining classes and their properties</a></li>
-<li><a class="reference internal" href="#encapsulation-and-polymorphism" id="id6">Encapsulation and polymorphism</a></li>
-<li><a class="reference internal" href="#other-oop-concepts" id="id7">Other OOP Concepts</a></li>
-<li><a class="reference internal" href="#oop-pro-et-contra" id="id8">OOP pro et contra</a></li>
-<li><a class="reference internal" href="#extra" id="id9">Extra</a></li>
-<li><a class="reference internal" href="#exercises" id="id10">Exercises</a></li>
+<li><a class="reference internal" href="#what-is-oop" id="toc-entry-1">What is OOP?</a></li>
+<li><a class="reference internal" href="#oop-concepts-abstraction-class-and-object" id="toc-entry-2">OOP Concepts: abstraction, class and object</a></li>
+<li><a class="reference internal" href="#examples" id="toc-entry-3">Examples</a></li>
+<li><a class="reference internal" href="#oop-concepts-heritage" id="toc-entry-4">OOP Concepts: heritage</a></li>
+<li><a class="reference internal" href="#ways-of-combining-classes-and-their-properties" id="toc-entry-5">Ways of combining classes and their properties</a></li>
+<li><a class="reference internal" href="#encapsulation-and-polymorphism" id="toc-entry-6">Encapsulation and polymorphism</a></li>
+<li><a class="reference internal" href="#other-oop-concepts" id="toc-entry-7">Other OOP Concepts</a></li>
+<li><a class="reference internal" href="#oop-pro-et-contra" id="toc-entry-8">OOP pro et contra</a></li>
+<li><a class="reference internal" href="#extra" id="toc-entry-9">Extra</a></li>
+<li><a class="reference internal" href="#exercises" id="toc-entry-10">Exercises</a></li>
 </ul>
 </div>
 <div class="section" id="what-is-oop">
-<h1><a class="toc-backref" href="#id1">What is OOP?</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-1">What is OOP?</a></h1>
 <p><strong>OOP</strong> is a programming paradigm. It is usually compared with the traditional <strong>procedural</strong> programming.</p>
 <p>The procedural programming is based on <em>procedures</em> (i.e., routines and sub-routines), where the procedures and data variables are <strong>independent</strong>. Examples: Cobol, C, Fortran...</p>
 <pre class="code literal-block">
@@ -498,7 +498,7 @@ end.
 <p>Examples of pure OOP languages: Smalltalk and Self.</p>
 </div>
 <div class="section" id="oop-concepts-abstraction-class-and-object">
-<h1><a class="toc-backref" href="#id2">OOP Concepts: abstraction, class and object</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-2">OOP Concepts: abstraction, class and object</a></h1>
 <ul class="simple">
 <li><strong>abstraction</strong> is the process of defining only the essential aspects in a specific context, ignoring non-relevant characteristics.</li>
 <li><strong>class</strong> is an <em>abstraction</em> that defines a <strong>type</strong> of object and what objects of that type have within them (their <strong>attributes</strong>) and also defines what kind of actions that type of object is able to perform (<strong>methods</strong>).</li>
@@ -512,7 +512,7 @@ end.
 </ul>
 </div>
 <div class="section" id="examples">
-<h1><a class="toc-backref" href="#id3">Examples</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-3">Examples</a></h1>
 <pre class="code python literal-block">
 <span class="keyword">class</span> <span class="name class">testing</span><span class="punctuation">:</span><span class="whitespace">
     </span><span class="literal string doc">&quot;&quot;&quot;This is a IAG Python Boot Camp class definition&quot;&quot;&quot;</span><span class="whitespace">
@@ -529,7 +529,7 @@ end.
 </pre>
 </div>
 <div class="section" id="oop-concepts-heritage">
-<h1><a class="toc-backref" href="#id4">OOP Concepts: heritage</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-4">OOP Concepts: heritage</a></h1>
 <ul class="simple">
 <li><strong>heritage</strong> is the mechanism by which one <em>class</em> can be extended to another one. The inheritance mechanism allows a class (subclass) to share the source code of another class (superclass), taking advantage of its behaviors (methods) and possible variables (attributes).</li>
 </ul>
@@ -592,7 +592,7 @@ end.
 <p>Must read: <a class="reference external" href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">Python’s super() considered super!</a></p>
 </div>
 <div class="section" id="ways-of-combining-classes-and-their-properties">
-<h1><a class="toc-backref" href="#id5">Ways of combining classes and their properties</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-5">Ways of combining classes and their properties</a></h1>
 <ul class="simple">
 <li><strong>association</strong> is the mechanism by which one object uses the resources (<em>attributes</em>) of another.</li>
 </ul>
@@ -680,7 +680,7 @@ Remember: those &quot;association/combination&quot; names may vary in the litera
 </pre>
 </div>
 <div class="section" id="encapsulation-and-polymorphism">
-<h1><a class="toc-backref" href="#id6">Encapsulation and polymorphism</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-6">Encapsulation and polymorphism</a></h1>
 <ul class="simple">
 <li><strong>encapsulation</strong>: In an object oriented program, one can restrict access to methods and attributes.</li>
 </ul>
@@ -725,7 +725,7 @@ Warning! Some people say that *encapsulation* can prevent the data from being mo
 </pre>
 </div>
 <div class="section" id="other-oop-concepts">
-<h1><a class="toc-backref" href="#id7">Other OOP Concepts</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-7">Other OOP Concepts</a></h1>
 <ul class="simple">
 <li><strong>ducktyping</strong> (or duck typing)</li>
 </ul>
@@ -762,7 +762,7 @@ Warning! Some people say that *encapsulation* can prevent the data from being mo
 </ul>
 </div>
 <div class="section" id="oop-pro-et-contra">
-<h1><a class="toc-backref" href="#id8">OOP pro et contra</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-8">OOP pro et contra</a></h1>
 <p>Advantages of OOP:</p>
 <ul class="simple">
 <li>A more logical and better encapsulated code division.</li>
@@ -777,7 +777,7 @@ Warning! Some people say that *encapsulation* can prevent the data from being mo
 </ul>
 </div>
 <div class="section" id="extra">
-<h1><a class="toc-backref" href="#id9">Extra</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-9">Extra</a></h1>
 <ul class="simple">
 <li><strong>UML</strong> (Unified Modeling Language) is a general-purpose, developmental, modeling language in the field of software engineering, that is intended to provide a standard way to visualize the design of a system.</li>
 <li><strong>SysML</strong> (Systems Modeling Language) can be seen as a <em>system view</em> of the application, or as an extension of subsets of UML.</li>
@@ -785,7 +785,7 @@ Warning! Some people say that *encapsulation* can prevent the data from being mo
 <p>This kind of tools can be used, for example, together with <strong>abstraction</strong> level concepts for automatic programming (or automatic coding)!</p>
 </div>
 <div class="section" id="exercises">
-<h1><a class="toc-backref" href="#id10">Exercises</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-10">Exercises</a></h1>
 <ol class="arabic simple">
 <li>What <tt class="docutils literal">dir()</tt> do?</li>
 <li>What <tt class="docutils literal"><span class="pre">hasattr(),</span> <span class="pre">getattr(),</span> setattr()</tt> and <tt class="docutils literal">delattr()</tt> do?</li>

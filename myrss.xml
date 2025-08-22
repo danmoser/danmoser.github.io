@@ -5,8 +5,109 @@
 <title>Dan Moser astro blog</title>
 <description>Space to share interesting news from Astronomy, Systems Engineering and Python.</description>
 <link>http://danmoser.github.io/</link>
-<lastBuildDate>Fri, 23 Feb 2024 21:08:21 -0000</lastBuildDate>
+<lastBuildDate>Fri, 22 Aug 2025 23:29:58 -0000</lastBuildDate>
 <webMaster>dmfaes@gmail.com (Dan Moser)</webMaster>
+
+
+<item>
+<title>What&#x27;s up in the sky?</title>
+<description>https://www.n2yo.com
+
+
+2024-04</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#whats-up-in-the-sky</link>
+</item>
+
+
+<item>
+<title>&#x27;Shrugging off failure is hard&#x27;</title>
+<description>The $400-million grant setback that shaped the Smithsonian lead scientist&#x27;s career
+
+https://www.nature.com/articles/d41586-024-01108-2</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#shrugging-off-failure-is-hard</link>
+</item>
+
+
+<item>
+<title>Satellites and astronomy</title>
+<description>- Satellite Orbit Prediction Processor: https://pypi.org/project/sopp/
+- Representing Orbits with Two-Line Elements (TLEs): https://satmad.readthedocs.io/en/stable/propagation/tle.html
+- orbital mechanics - How can I plot a satellite&#x27;s orbit in 3D from a TLE using Python and Skyfield? https://space.stackexchange.com/questions/25958/how-can-i-plot-a-satellites-orbit-in-3d-from-a-tle-using-python-and-skyfield</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#satellites-and-astronomy</link>
+</item>
+
+
+<item>
+<title>Shadow of 2024&#x27;s total solar eclipse</title>
+<description>NOAA&#x27;s GOES-16 satellite is captured the shadow of the total solar eclipse as it traversed the continental United States.
+
+https://twitter.com/WxNB_/status/1777427591248425402</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#shadow-of-s-total-solar-eclipse</link>
+</item>
+
+
+<item>
+<title>Python OOP exercise book</title>
+<description>https://twitter.com/clcoding/status/1776956087822143922
+
+
+2024-03</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#python-oop-exercise-book</link>
+</item>
+
+
+<item>
+<title>US-ELT funding</title>
+<description>- https://www.nsf.gov/nsb/news/news_summ.jsp?cntn_id=309171
+- https://www.science.org/content/article/nsf-board-approves-funding-just-one-two-proposed-giant-telescopes
+- https://www.scientificamerican.com/article/behind-tomorrow-s-telescopes-a-bitter-rivalry-from-yesterday/
+- https://www.nature.com/articles/d41586-024-00623-6
+- https://bigthink.com/starts-with-a-bang/future-astronomy-dimmed-by-half/
+
+Radio astronomy: from amateur roots to worldwide groups</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#us-elt-funding</link>
+</item>
+
+
+<item>
+<title>Sending a WhatsApp Message using Python </title>
+<description>https://www.clcoding.com/2024/04/sending-whatsapp-message-using-python.html
+
+Ref: https://twitter.com/clcoding/status/1777366079297192246</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#sending-a-whatsapp-message-using-python-</link>
+</item>
+
+
+<item>
+<title>Non-native English speaking scientists work much harder</title>
+<description>Non-native English speaking scientists work much harder just to keep up, global research reveals
+
+https://theconversation.com/non-native-english-speaking-scientists-work-much-harder-just-to-keep-up-global-research-reveals-208750</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#non-native-english-speaking-scientists-work-much-harder</link>
+</item>
+
+
+<item>
+<title>Nerdy news</title>
+<description>https://arstechnica.com</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#nerdy-news</link>
+</item>
+
+
+<item>
+<title>Underrated Linux tools</title>
+<description>- meld: file differences
+- htop: CPU and Memory usage
+- ncdu: browse the directory structure with disk space information
+- nvtop: htop for GPUs!
+- tmux: multiple terminal sessions to be accessed simultaneously in a single window
+
+
+2022
+*********
+2022-12</description>
+<link>http://danmoser.github.io/notes/astro-blog.html#underrated-linux-tools</link>
+</item>
 
 
 <item>
@@ -36,11 +137,11 @@ https://twitter.com/itsafiz/status/1573616101606715393</description>
 
 <item>
 <title>SOLID OOP principles</title>
-<description>S = Single Responsibility Principle
-O = Open/Closed Principle
-L = Liskov Substitution Principle
-I  = Interface Segregation Principle
-D = Dependency Inversion Principle
+<description>- S = Single Responsibility Principle
+- O = Open/Closed Principle
+- L = Liskov Substitution Principle
+- I  = Interface Segregation Principle
+- D = Dependency Inversion Principle
 
 https://twitter.com/vikasrajputin/status/1593460494886576128</description>
 <link>http://danmoser.github.io/notes/astro-blog.html#solid-oop-principles</link>

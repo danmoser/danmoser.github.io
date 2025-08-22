@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
 <title>git</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -419,25 +419,25 @@ li {
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#concepts" id="id1">Concepts</a><ul>
-<li><a class="reference internal" href="#basics" id="id2">Basics</a></li>
-<li><a class="reference internal" href="#other" id="id3">Other</a></li>
+<li><a class="reference internal" href="#concepts" id="toc-entry-1">Concepts</a><ul>
+<li><a class="reference internal" href="#basics" id="toc-entry-2">Basics</a></li>
+<li><a class="reference internal" href="#other" id="toc-entry-3">Other</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#examples" id="id4">Examples</a><ul>
-<li><a class="reference internal" href="#cloning-a-repo" id="id5">Cloning a repo</a></li>
-<li><a class="reference internal" href="#create-a-new-project" id="id6">Create a new project</a></li>
-<li><a class="reference internal" href="#branches" id="id7">Branches</a></li>
-<li><a class="reference internal" href="#merge" id="id8">Merge</a></li>
-<li><a class="reference internal" href="#general-tips" id="id9">General tips</a><ul>
-<li><a class="reference internal" href="#mergetool" id="id10">mergetool</a></li>
+<li><a class="reference internal" href="#examples" id="toc-entry-4">Examples</a><ul>
+<li><a class="reference internal" href="#cloning-a-repo" id="toc-entry-5">Cloning a repo</a></li>
+<li><a class="reference internal" href="#create-a-new-project" id="toc-entry-6">Create a new project</a></li>
+<li><a class="reference internal" href="#branches" id="toc-entry-7">Branches</a></li>
+<li><a class="reference internal" href="#merge" id="toc-entry-8">Merge</a></li>
+<li><a class="reference internal" href="#general-tips" id="toc-entry-9">General tips</a><ul>
+<li><a class="reference internal" href="#mergetool" id="toc-entry-10">mergetool</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#refs" id="id11">Refs</a><ul>
-<li><a class="reference internal" href="#texts" id="id12">Texts</a><ul>
-<li><a class="reference internal" href="#rebase-vs-merge" id="id13">Rebase vs. merge</a></li>
+<li><a class="reference internal" href="#refs" id="toc-entry-11">Refs</a><ul>
+<li><a class="reference internal" href="#texts" id="toc-entry-12">Texts</a><ul>
+<li><a class="reference internal" href="#rebase-vs-merge" id="toc-entry-13">Rebase vs. merge</a></li>
 </ul>
 </li>
 </ul>
@@ -445,9 +445,9 @@ li {
 </ul>
 </div>
 <div class="section" id="concepts">
-<h1><a class="toc-backref" href="#id1">Concepts</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-1">Concepts</a></h1>
 <div class="section" id="basics">
-<h2><a class="toc-backref" href="#id2">Basics</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-2">Basics</a></h2>
 <p>In short, the versions one has are:</p>
 <ul class="simple">
 <li><ol class="first lowerroman">
@@ -470,7 +470,7 @@ li {
 </ul>
 </div>
 <div class="section" id="other">
-<h2><a class="toc-backref" href="#id3">Other</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-3">Other</a></h2>
 <ul class="simple">
 <li>Commit your changes or stash them before you can switch branches.</li>
 <li><a class="reference external" href="https://yangsu.github.io/pull-request-tutorial/">Pull request tutorial</a>: Or how to send other user your suggestions for modifications.</li>
@@ -478,9 +478,9 @@ li {
 </div>
 </div>
 <div class="section" id="examples">
-<h1><a class="toc-backref" href="#id4">Examples</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-4">Examples</a></h1>
 <div class="section" id="cloning-a-repo">
-<h2><a class="toc-backref" href="#id5">Cloning a repo</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-5">Cloning a repo</a></h2>
 <pre class="code bash literal-block">
 <span class="name builtin">cd</span><span class="whitespace"> </span>~<span class="whitespace">
 </span>git<span class="whitespace"> </span>clone<span class="whitespace"> </span>https://github.com/danmoser/hello-world.git<span class="whitespace">
@@ -494,7 +494,7 @@ li {
 </pre>
 </div>
 <div class="section" id="create-a-new-project">
-<h2><a class="toc-backref" href="#id6">Create a new project</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-6">Create a new project</a></h2>
 <pre class="code bash literal-block">
 <span class="comment single"># Start a new project
 </span><span class="name builtin">cd</span><span class="whitespace"> </span>project<span class="whitespace">
@@ -512,7 +512,7 @@ li {
 </pre>
 </div>
 <div class="section" id="branches">
-<h2><a class="toc-backref" href="#id7">Branches</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-7">Branches</a></h2>
 <pre class="code bash literal-block">
 <span class="comment single"># Create and switch to a new branch
 </span>git<span class="whitespace"> </span>branch<span class="whitespace"> </span>develop<span class="whitespace">
@@ -541,7 +541,7 @@ li {
 </pre>
 </div>
 <div class="section" id="merge">
-<h2><a class="toc-backref" href="#id8">Merge</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-8">Merge</a></h2>
 <pre class="code bash literal-block">
 <span class="comment single"># Someone made a merge request (github)
 # git checkout -b|-B &lt;new_branch&gt; [&lt;start point&gt;]
@@ -561,7 +561,7 @@ li {
 </pre>
 </div>
 <div class="section" id="general-tips">
-<h2><a class="toc-backref" href="#id9">General tips</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-9">General tips</a></h2>
 <p>git ignore file extensions:</p>
 <pre class="code bash literal-block">
 vim<span class="whitespace"> </span>.git/info/exclude<span class="whitespace">
@@ -594,21 +594,21 @@ git<span class="whitespace"> </span>push<span class="whitespace"> </span>origin<
 git<span class="whitespace"> </span>pull<span class="whitespace"> </span>origin<span class="whitespace"> </span>master
 </pre>
 <div class="section" id="mergetool">
-<h3><a class="toc-backref" href="#id10">mergetool</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-10">mergetool</a></h3>
 <p>Go for <tt class="docutils literal">smerge</tt> (Sublime-merge). There are others (<tt class="docutils literal">meld</tt>, <tt class="docutils literal">kdiff3</tt>, <tt class="docutils literal">kompare</tt>...).</p>
 <p>To configure the git merge tool, use: <tt class="docutils literal">git config <span class="pre">--global</span> merge.tool smerge</tt>.</p>
 </div>
 </div>
 </div>
 <div class="section" id="refs">
-<h1><a class="toc-backref" href="#id11">Refs</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-11">Refs</a></h1>
 <p><a class="reference external" href="http://ohshitgit.com/">http://ohshitgit.com/</a></p>
 <p><a class="reference external" href="http://overapi.com/git">http://overapi.com/git</a></p>
 <p><a class="reference external" href="http://git-scm.com">http://git-scm.com</a></p>
 <div class="section" id="texts">
-<h2><a class="toc-backref" href="#id12">Texts</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-12">Texts</a></h2>
 <div class="section" id="rebase-vs-merge">
-<h3><a class="toc-backref" href="#id13">Rebase vs. merge</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-13">Rebase vs. merge</a></h3>
 <p>Now that you've seen rebasing and merging in action, you may be wondering which one is better. Before we can answer this, let's step back a bit and talk about what history means.</p>
 <p>One point of view on this is that your repository's commit history is a record of what actually happened. It's a historical document, valuable in its own right, and shouldn't be tampered with. From this angle, changing the commit history is almost blasphemous; you're lying about what actually transpired. So what if there was a messy series of merge commits? That's how it happened, and the repository should preserve that for posterity.</p>
 <p>The opposing point of view is that the commit history is the story of how your project was made. You wouldn't publish the first draft of a book, and the manual for how to maintain your software deserves careful editing. This is the camp that uses tools like rebase and filter-branch to tell the story in the way that's best for future readers.</p>

@@ -3,6 +3,95 @@
 DMF AstroBlog
 ##############
 
+2024
+*********
+2024-06
+========
+What's up in the sky?
+------------------------
+https://www.n2yo.com
+
+
+2024-04
+========
+'Shrugging off failure is hard'
+--------------------------------
+The $400-million grant setback that shaped the Smithsonian lead scientist's career
+
+https://www.nature.com/articles/d41586-024-01108-2
+
+------
+
+Satellites and astronomy
+---------------------------
+- Satellite Orbit Prediction Processor: https://pypi.org/project/sopp/
+- Representing Orbits with Two-Line Elements (TLEs): https://satmad.readthedocs.io/en/stable/propagation/tle.html
+- orbital mechanics - How can I plot a satellite's orbit in 3D from a TLE using Python and Skyfield? https://space.stackexchange.com/questions/25958/how-can-i-plot-a-satellites-orbit-in-3d-from-a-tle-using-python-and-skyfield
+
+--------
+
+Shadow of 2024's total solar eclipse
+--------------------------------------
+NOAA's GOES-16 satellite is captured the shadow of the total solar eclipse as it traversed the continental United States.
+
+https://twitter.com/WxNB_/status/1777427591248425402
+
+---------
+
+Python OOP exercise book
+--------------------------
+https://twitter.com/clcoding/status/1776956087822143922
+
+
+2024-03
+=========
+US-ELT funding
+----------------
+- https://www.nsf.gov/nsb/news/news_summ.jsp?cntn_id=309171
+- https://www.science.org/content/article/nsf-board-approves-funding-just-one-two-proposed-giant-telescopes
+- https://www.scientificamerican.com/article/behind-tomorrow-s-telescopes-a-bitter-rivalry-from-yesterday/
+- https://www.nature.com/articles/d41586-024-00623-6
+- https://bigthink.com/starts-with-a-bang/future-astronomy-dimmed-by-half/
+
+Radio astronomy: from amateur roots to worldwide groups
+--------------------------------------------------------
+Having emerged from amateur beginnings in the backyards of radio engineers, radio astronomy is now the focus of elite, international global consortia. Emma Chapman outlines how the subject has developed and why it needs to strike a fine balance between its science and engineering roots
+
+https://physicsworld.com/a/radio-astronomy-from-amateur-roots-to-worldwide-groups/
+
+-------------
+
+Sending a WhatsApp Message using Python 
+-----------------------------------------
+https://www.clcoding.com/2024/04/sending-whatsapp-message-using-python.html
+
+Ref: https://twitter.com/clcoding/status/1777366079297192246
+
+-------------
+
+Non-native English speaking scientists work much harder
+----------------------------------------------------------
+Non-native English speaking scientists work much harder just to keep up, global research reveals
+
+https://theconversation.com/non-native-english-speaking-scientists-work-much-harder-just-to-keep-up-global-research-reveals-208750
+
+-------------
+
+Nerdy news
+-------------
+https://arstechnica.com
+
+-------------
+
+Underrated Linux tools
+--------------------------
+- meld: file differences
+- htop: CPU and Memory usage
+- ncdu: browse the directory structure with disk space information
+- nvtop: htop for GPUs!
+- tmux: multiple terminal sessions to be accessed simultaneously in a single window
+
+
 2022
 *********
 2022-12

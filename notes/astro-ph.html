@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
 <title>Astrophysics Topics</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -417,6 +417,7 @@ li {
 *   math2html: convert LaTeX equations to HTML output.
 *
 *   Copyright (C) 2009,2010 Alex Fernández
+*                 2021      Günter Milde
 *
 *   Released under the terms of the `2-Clause BSD license'_, in short:
 *   Copying and distribution of this file, with or without modification,
@@ -428,16 +429,19 @@ li {
 *
 *   Based on eLyXer: convert LyX source files to HTML output.
 *   http://elyxer.nongnu.org/
-*/
-/* --end--
+*
+*
 * CSS file for LaTeX formulas.
+*
+* References: http://www.zipcon.net/~swhite/docs/math/math.html
+*             http://www.cs.tut.fi/~jkorpela/math/
 */
 
 /* Formulas */
 .formula {
 	text-align: center;
-	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
 	margin: 1.2em 0;
+	line-height: 1.4;
 }
 span.formula {
 	white-space: nowrap;
@@ -461,6 +465,9 @@ span.unknown {
 span.ignored, span.arraydef {
 	display: none;
 }
+.phantom {
+	visibility: hidden;
+}
 .formula i {
 	letter-spacing: 0.1ex;
 }
@@ -477,33 +484,48 @@ span.ignored, span.arraydef {
 }
 
 /* Structures */
+span.hspace {
+	display: inline-block;
+}
 span.overline, span.bar {
 	text-decoration: overline;
 }
-.fraction, .fullfraction {
+.fraction, .fullfraction, .textfraction {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 }
-.fraction .fraction {
+span.formula .fraction,
+.textfraction,
+span.smallmatrix {
 	font-size: 80%;
-	line-height: 100%;
+	line-height: 1;
 }
 span.numerator {
 	display: block;
+	line-height: 1;
 }
 span.denominator {
 	display: block;
+	line-height: 1;
 	padding: 0ex;
 	border-top: thin solid;
 }
+.formula sub, .formula sup {
+	font-size: 80%;
+}
 sup.numerator, sup.unit {
-	font-size: 70%;
 	vertical-align: 80%;
 }
 sub.denominator, sub.unit {
-	font-size: 70%;
 	vertical-align: -20%;
+}
+span.smallsymbol {
+	font-size: 75%;
+	line-height: 75%;
+}
+span.boldsymbol {
+	font-weight: bold;
 }
 span.sqrt {
 	display: inline-block;
@@ -511,39 +533,62 @@ span.sqrt {
 	padding: 0.1ex;
 }
 sup.root {
-	font-size: 70%;
 	position: relative;
 	left: 1.4ex;
 }
 span.radical {
 	display: inline-block;
 	padding: 0ex;
-	font-size: 150%;
+	/* font-size: 160%; for DejaVu, not required with STIX */
+	line-height: 100%;
 	vertical-align: top;
+	vertical-align: middle;
 }
+
 span.root {
 	display: inline-block;
 	border-top: thin solid;
 	padding: 0ex;
 	vertical-align: middle;
 }
-span.symbol {
-	line-height: 125%;
-	font-size: 125%;
+div.formula .bigoperator,
+.displaystyle .bigoperator,
+.displaystyle .bigoperator {
+	line-height: 120%;
+	font-size: 140%;
+	padding-right: 0.2ex;
 }
-span.bigsymbol {
-	line-height: 150%;
-	font-size: 150%;
+span.fraction .bigoperator,
+span.scriptstyle .bigoperator {
+	line-height: inherit;
+	font-size: inherit;
+	padding-right: 0;
 }
-span.largesymbol {
-	font-size: 175%;
+span.bigdelimiter {
+	display: inline-block;
 }
-span.hugesymbol {
-	font-size: 200%;
+span.bigdelimiter.size1 {
+	transform: scale(1, 1.2);
+	line-height: 1.2;
 }
+span.bigdelimiter.size2 {
+	transform: scale(1, 1.62);
+	line-height: 1.62%;
+
+}
+span.bigdelimiter.size3 {
+	transform: scale(1, 2.05);
+	line-height: 2.05%;
+}
+span.bigdelimiter.size4 {
+	transform: scale(1, 2.47);
+	line-height: 2.47%;
+}
+/* vertically stacked sub and superscript */
 span.scripts {
 	display: inline-table;
 	vertical-align: middle;
+	padding-right: 0.2ex;
 }
 .script {
 	display: table-row;
@@ -561,51 +606,42 @@ span.limits {
 sup.limit, sub.limit {
 	line-height: 100%;
 }
-span.symbolover {
-	display: inline-block;
-	text-align: center;
-	position: relative;
-	float: right;
-	right: 100%;
-	bottom: 0.5em;
-	width: 0px;
-}
-span.withsymbol {
+span.embellished,
+span.embellished > .base {
 	display: inline-block;
 }
-span.symbolunder {
+span.embellished > sup,
+span.embellished > sub {
 	display: inline-block;
-	text-align: center;
+	font-size: 100%;
 	position: relative;
-	float: right;
-	right: 80%;
-	top: 0.3em;
+	bottom: 0.3em;
 	width: 0px;
+}
+span.embellished > sub {
+	top: 0.4em;
 }
 
 /* Environments */
 span.array, span.bracketcases, span.binomial, span.environment {
 	display: inline-table;
 	text-align: center;
-	border-collapse: collapse;
-	margin: 0em;
 	vertical-align: middle;
 }
 span.arrayrow, span.binomrow {
 	display: table-row;
-	padding: 0ex;
-	border: 0ex;
+	padding: 0;
+	border: 0;
 }
 span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
 	display: table-cell;
 	padding: 0ex 0.2ex;
-	line-height: 99%;
+	line-height: 1; /* 99%; */
 	border: 0ex;
 }
-/*
-* CSS file for LaTeX formulas, extra stuff:
-* binomials, vertical braces, stackrel, fonts and colors.
-*/
+.environment.align > .arrayrow > .arraycell.align-l {
+	padding-right: 2em;
+}
 
 /* Inline binomials */
 span.binom {
@@ -648,19 +684,30 @@ span.downstackrel {
 }
 
 /* Fonts */
+.formula {
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
+}
+span.radical,   /* ensure correct size of square-root sign */
+span.integral { /* upright integral signs for better alignment of indices */
+	font-family: "STIXIntegralsUp", STIX;
+	/* font-size: 115%; match apparent size with DejaVu */
+}
+span.bracket {
+  /* some "STIX" and "DejaVu Math TeX Gyre" bracket pieces don't fit */
+	font-family: "DejaVu Serif", serif;
+}
 span.mathsf, span.textsf {
-	font-style: normal;
 	font-family: sans-serif;
 }
 span.mathrm, span.textrm {
-	font-style: normal;
-	font-family: serif;
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
 }
-span.text, span.textnormal {
-	font-style: normal;
+span.mathtt, span.texttt {
+	font-family: monospace;
 }
-span.textipa {
-	color: #008080;
+span.text, span.textnormal,
+span.mathsf, span.mathtt, span.mathrm {
+	font-style: normal;
 }
 span.fraktur {
 	font-family: "Lucida Blackletter", eufm10, blackletter;
@@ -671,6 +718,16 @@ span.blackboard {
 span.scriptfont {
 	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
 	font-style: italic;
+}
+span.mathscr {
+  font-family: MathJax_Script, rsfs10,  cursive;
+  font-style: italic;
+}
+span.textsc {
+	font-variant: small-caps;
+}
+span.textsl {
+	font-style: oblique;
 }
 
 /* Colors */
@@ -689,7 +746,6 @@ span.boxed, span.framebox {
 	padding: 5px;
 }
 
-
 </style>
 </head>
 <body>
@@ -699,54 +755,54 @@ span.boxed, span.framebox {
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#absolute-flux-units-and-magnitudes" id="id1">Absolute flux units and magnitudes</a></li>
-<li><a class="reference internal" href="#meetings" id="id2">Meetings</a></li>
-<li><a class="reference internal" href="#variable-stars" id="id3">Variable stars</a><ul>
-<li><a class="reference internal" href="#chart" id="id4">Chart</a></li>
-<li><a class="reference internal" href="#nomenclature" id="id5">Nomenclature</a><ul>
-<li><a class="reference internal" href="#intrinsic-variabilities" id="id6">Intrinsic variabilities</a><ul>
-<li><a class="reference internal" href="#pulsation" id="id7">Pulsation</a></li>
+<li><a class="reference internal" href="#absolute-flux-units-and-magnitudes" id="toc-entry-1">Absolute flux units and magnitudes</a></li>
+<li><a class="reference internal" href="#meetings" id="toc-entry-2">Meetings</a></li>
+<li><a class="reference internal" href="#variable-stars" id="toc-entry-3">Variable stars</a><ul>
+<li><a class="reference internal" href="#chart" id="toc-entry-4">Chart</a></li>
+<li><a class="reference internal" href="#nomenclature" id="toc-entry-5">Nomenclature</a><ul>
+<li><a class="reference internal" href="#intrinsic-variabilities" id="toc-entry-6">Intrinsic variabilities</a><ul>
+<li><a class="reference internal" href="#pulsation" id="toc-entry-7">Pulsation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#extrinsic-variabilities" id="id8">Extrinsic variabilities</a></li>
+<li><a class="reference internal" href="#extrinsic-variabilities" id="toc-entry-8">Extrinsic variabilities</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#shape-missions" id="id9">Shape missions</a></li>
-<li><a class="reference internal" href="#peculiar-stars" id="id10">Peculiar stars</a></li>
+<li><a class="reference internal" href="#shape-missions" id="toc-entry-9">Shape missions</a></li>
+<li><a class="reference internal" href="#peculiar-stars" id="toc-entry-10">Peculiar stars</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#astrophysical-disks" id="id11">Astrophysical disks</a></li>
-<li><a class="reference internal" href="#observational" id="id12">Observational</a><ul>
-<li><a class="reference internal" href="#eso-periods" id="id13">ESO Periods</a></li>
-<li><a class="reference internal" href="#opd-periods" id="id14">OPD Periods</a></li>
+<li><a class="reference internal" href="#astrophysical-disks" id="toc-entry-11">Astrophysical disks</a></li>
+<li><a class="reference internal" href="#observational" id="toc-entry-12">Observational</a><ul>
+<li><a class="reference internal" href="#eso-periods" id="toc-entry-13">ESO Periods</a></li>
+<li><a class="reference internal" href="#opd-periods" id="toc-entry-14">OPD Periods</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#spectro-astrometry" id="id15">Spectro-astrometry</a></li>
-<li><a class="reference internal" href="#about-fluxes-and-conversions" id="id16">About fluxes and conversions</a></li>
-<li><a class="reference internal" href="#interferometers" id="id17">Interferometers</a><ul>
-<li><a class="reference internal" href="#eso-interferometers" id="id18">ESO interferometers</a></li>
-<li><a class="reference internal" href="#chara-interferometers" id="id19">CHARA interferometers</a></li>
-<li><a class="reference internal" href="#other-interferometers" id="id20">Other interferometers</a></li>
+<li><a class="reference internal" href="#spectro-astrometry" id="toc-entry-15">Spectro-astrometry</a></li>
+<li><a class="reference internal" href="#about-fluxes-and-conversions" id="toc-entry-16">About fluxes and conversions</a></li>
+<li><a class="reference internal" href="#interferometers" id="toc-entry-17">Interferometers</a><ul>
+<li><a class="reference internal" href="#eso-interferometers" id="toc-entry-18">ESO interferometers</a></li>
+<li><a class="reference internal" href="#chara-interferometers" id="toc-entry-19">CHARA interferometers</a></li>
+<li><a class="reference internal" href="#other-interferometers" id="toc-entry-20">Other interferometers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#organize" id="id21">Organize</a><ul>
-<li><a class="reference internal" href="#links" id="id22">Links</a></li>
+<li><a class="reference internal" href="#organize" id="toc-entry-21">Organize</a><ul>
+<li><a class="reference internal" href="#links" id="toc-entry-22">Links</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#statistics" id="id23">Statistics</a></li>
-<li><a class="reference internal" href="#vo" id="id24">VO</a></li>
+<li><a class="reference internal" href="#statistics" id="toc-entry-23">Statistics</a></li>
+<li><a class="reference internal" href="#vo" id="toc-entry-24">VO</a></li>
 </ul>
 </div>
 <div class="section" id="absolute-flux-units-and-magnitudes">
-<h1><a class="toc-backref" href="#id1">Absolute flux units and magnitudes</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-1">Absolute flux units and magnitudes</a></h1>
 <p>...</p>
 </div>
 <div class="section" id="meetings">
-<h1><a class="toc-backref" href="#id2">Meetings</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-2">Meetings</a></h1>
 <p><a class="reference external" href="http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/meetings/">http://www1.cadc-ccda.hia-iha.nrc-cnrc.gc.ca/en/meetings/</a></p>
 </div>
 <div class="section" id="variable-stars">
-<h1><a class="toc-backref" href="#id3">Variable stars</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-3">Variable stars</a></h1>
 <p>Variable star are defined as &quot;stars having an apparent property changing with time&quot; (usually their brightness). These properties can be:
 - intrinsic: stellar luminosity actually changes (e.g., pulsations);
 - extrinsic: owing to changes in the amount of light reaching Earth (e.g., eclipses).</p>
@@ -755,7 +811,7 @@ span.boxed, span.framebox {
 <p>The famous <em>General Catalogue of Variable Stars</em> was the first list of variable stars created by the Academy of Sciences of the USSR, and continuously been updated by Russian researchers. In 2008, 46000 variable stars were known in the Milky Way, 10000 in other galaxies and a list of 10000 candidates exist.</p>
 <p>The variabilities are classified as photometric or spectroscopic. They can be Periodical, Semiperiodical, Irregular or Unique. Examples: changes in velocities (spec. shifts) are a signal of binary system; abnormal emission or absorption lines indicate circumstellar activity and/or magnetic field...</p>
 <div class="section" id="chart">
-<h2><a class="toc-backref" href="#id4">Chart</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-4">Chart</a></h2>
 <p>Dr Ashley J. Ruiter (&#64;growzchilepeps):
 &quot;Chien-Hsiu Lee explains the work being done by ANTARES to make sure current ZTF and future LSST data are distributed for the optimal (for those data) streams (research interests). #iaus357 &#64;LSST &#64;ztfsurvey I am learning about brokers! :)&quot;</p>
 <div class="figure align-center">
@@ -763,22 +819,22 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="nomenclature">
-<h2><a class="toc-backref" href="#id5">Nomenclature</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-5">Nomenclature</a></h2>
 <p>In a given constellation, the first variable star discovered were designates with the letter <em>R</em> (and continuously until <em>Z</em>). Then, <em>RR</em>...*RZ*, <em>SS</em>...*ZZ*. Then <em>AA</em>...*AZ*, <em>BB</em>...*QZ*, with J omitted. After exhausted the total of 334 possibilities, stars as <em>V335</em>, <em>V...</em>.</p>
 <p>The subgroups of variabilities are divided according to their <em>prototype</em>.</p>
 <div class="section" id="intrinsic-variabilities">
-<h3><a class="toc-backref" href="#id6">Intrinsic variabilities</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-6">Intrinsic variabilities</a></h3>
 <ul class="simple">
 <li>Pulsation, Eruption, Cataclysmic/Explosive...</li>
 </ul>
 <div class="section" id="pulsation">
-<h4><a class="toc-backref" href="#id7">Pulsation</a></h4>
+<h4><a class="toc-backref" href="#toc-entry-7">Pulsation</a></h4>
 <ul class="simple">
 <li>Radial or non-radial</li>
 <li><dl class="first docutils">
 <dt>Fundamental frequency (<span class="formula"><i>f</i><sub>0</sub></span>) determining the period.</dt>
 <dd><ul class="first last">
-<li>Harmonic or overtone (<span class="formula"><i>n</i> &gt; 1</span>)</li>
+<li>Harmonic or overtone (<span class="formula"><i>n</i> &gt; 1</span>)</li>
 </ul>
 </dd>
 </dl>
@@ -794,7 +850,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="extrinsic-variabilities">
-<h3><a class="toc-backref" href="#id8">Extrinsic variabilities</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-8">Extrinsic variabilities</a></h3>
 <ul class="simple">
 <li>Eclipsing, multiple stars (rv)</li>
 <li>Rotating variables (&quot;spots&quot;)</li>
@@ -802,7 +858,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="shape-missions">
-<h2><a class="toc-backref" href="#id9">Shape missions</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-9">Shape missions</a></h2>
 <ul class="simple">
 <li>MOST</li>
 <li>CoRoT</li>
@@ -813,16 +869,16 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="peculiar-stars">
-<h2><a class="toc-backref" href="#id10">Peculiar stars</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-10">Peculiar stars</a></h2>
 <p>Excellent reference is <a class="reference external" href="http://www.astrosurf.com/buil/us/peculiar.htm">http://www.astrosurf.com/buil/us/peculiar.htm</a>, were there are lists of bright Bp/Ap and Herbig Be/Ae stars.</p>
 </div>
 </div>
 <div class="section" id="astrophysical-disks">
-<h1><a class="toc-backref" href="#id11">Astrophysical disks</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-11">Astrophysical disks</a></h1>
 <p><a class="reference external" href="http://www.damtp.cam.ac.uk/user/hl278/DAD.html">http://www.damtp.cam.ac.uk/user/hl278/DAD.html</a></p>
 </div>
 <div class="section" id="observational">
-<h1><a class="toc-backref" href="#id12">Observational</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-12">Observational</a></h1>
 <table border="1" class="docutils">
 <colgroup>
 <col width="25%" />
@@ -901,7 +957,7 @@ span.boxed, span.framebox {
 </tbody>
 </table>
 <div class="section" id="eso-periods">
-<h2><a class="toc-backref" href="#id13">ESO Periods</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-13">ESO Periods</a></h2>
 <ul>
 <li><p class="first">Period Odd  - 01 Apr to 30 Sep (RA limits: ~10h to ~02h)</p>
 <blockquote>
@@ -916,7 +972,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="opd-periods">
-<h2><a class="toc-backref" href="#id14">OPD Periods</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-14">OPD Periods</a></h2>
 <ul>
 <li><p class="first">Período Verão - 01 set a 28* fev (RA limits ~20h a ~12h)</p>
 <blockquote>
@@ -932,15 +988,15 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="spectro-astrometry">
-<h1><a class="toc-backref" href="#id15">Spectro-astrometry</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-15">Spectro-astrometry</a></h1>
 <p>The spectro-astrometric technique is a method for studying the spatial structure of astronomical sources on scales well below the normal limit on resolution set by the seeing disk size or the diffraction limit. It relies on the fact that the relative position of a source at two or more wavelengths can be measured to an accuracy limited only be photon statistics, if the measurements are simultaneous.</p>
 <p>The technique is being used for the study of structure in pre-main-sequence stars, where it can be used to detect binary companions and to study the outflows from the stars. It is also being used to study the structure of the narrow line region in active galactic nuclei.</p>
 </div>
 <div class="section" id="about-fluxes-and-conversions">
-<h1><a class="toc-backref" href="#id16">About fluxes and conversions</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-16">About fluxes and conversions</a></h1>
 <p>The relation of Black Body curves are:</p>
 <div class="formula">
-<i>I</i>(<i>λ</i>, <i>T</i>)<i>d</i><i>λ</i> = <i>I</i>(<i>ν</i>, <i>T</i>)<i>d</i><i>ν</i>
+<i>I</i>(<i>λ</i>, <i>T</i>)<i>d</i><i>λ</i> = <i>I</i>(<i>ν</i>, <i>T</i>)<i>d</i><i>ν</i>
 </div>
 <p>And convertion of units:</p>
 <pre class="literal-block">
@@ -956,9 +1012,9 @@ dHz/dA = &quot;(c/A)'dA&quot; = -c/(A)^2
 </pre>
 </div>
 <div class="section" id="interferometers">
-<h1><a class="toc-backref" href="#id17">Interferometers</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-17">Interferometers</a></h1>
 <div class="section" id="eso-interferometers">
-<h2><a class="toc-backref" href="#id18">ESO interferometers</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-18">ESO interferometers</a></h2>
 <ul class="simple">
 <li>VINCI: First VLTI generation. ? BAND, 2 telescopes, ? resolution</li>
 <li>MIDI: Second VLTI generation. ? BAND, 2 telescopes, ? resolution</li>
@@ -969,7 +1025,7 @@ dHz/dA = &quot;(c/A)'dA&quot; = -c/(A)^2
 </ul>
 </div>
 <div class="section" id="chara-interferometers">
-<h2><a class="toc-backref" href="#id19">CHARA interferometers</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-19">CHARA interferometers</a></h2>
 <ul class="simple">
 <li>ALOHA: H band. 4? telescopes. R=1250-9300? (resolution)</li>
 <li>MIRC: H band?</li>
@@ -977,14 +1033,14 @@ dHz/dA = &quot;(c/A)'dA&quot; = -c/(A)^2
 </ul>
 </div>
 <div class="section" id="other-interferometers">
-<h2><a class="toc-backref" href="#id20">Other interferometers</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-20">Other interferometers</a></h2>
 <ul class="simple">
 <li>NPOI: Kenneth J. Johnston, Navy Precision Optical Interferometer. V band (Halpha).?</li>
 </ul>
 </div>
 </div>
 <div class="section" id="organize">
-<h1><a class="toc-backref" href="#id21">Organize</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-21">Organize</a></h1>
 <p><a class="reference external" href="http://www.aps.org/publications/apsnews/201501/stories.cfm">http://www.aps.org/publications/apsnews/201501/stories.cfm</a></p>
 <p><a class="reference external" href="http://www.osti.gov/accomplishments/smoot.html">http://www.osti.gov/accomplishments/smoot.html</a></p>
 <p><a class="reference external" href="http://news.ucsc.edu/2014/10/exoplanet-atmosphere.html">http://news.ucsc.edu/2014/10/exoplanet-atmosphere.html</a></p>
@@ -992,7 +1048,7 @@ dHz/dA = &quot;(c/A)'dA&quot; = -c/(A)^2
 <p><a class="reference external" href="http://www.space.com/19425-astronomy-prizes-scientists-awards.html">http://www.space.com/19425-astronomy-prizes-scientists-awards.html</a></p>
 <p><a class="reference external" href="http://www.aps.org/publications/apsnews/201402/newsmakers.cfm">http://www.aps.org/publications/apsnews/201402/newsmakers.cfm</a></p>
 <div class="section" id="links">
-<h2><a class="toc-backref" href="#id22">Links</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-22">Links</a></h2>
 <dl class="docutils">
 <dt>Astronomical Imaging using Polarizing Filters and Stokes Parameter Imaging Technique</dt>
 <dd><a class="reference external" href="http://narrowbandimaging.com">http://narrowbandimaging.com</a></dd>
@@ -1000,11 +1056,11 @@ dHz/dA = &quot;(c/A)'dA&quot; = -c/(A)^2
 </div>
 </div>
 <div class="section" id="statistics">
-<h1><a class="toc-backref" href="#id23">Statistics</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-23">Statistics</a></h1>
 <p><a class="reference external" href="http://astronomy.swin.edu.au/~cblake/stats.html">http://astronomy.swin.edu.au/~cblake/stats.html</a></p>
 </div>
 <div class="section" id="vo">
-<h1><a class="toc-backref" href="#id24">VO</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-24">VO</a></h1>
 <dl class="docutils">
 <dt>ESA Sky:</dt>
 <dd><ul class="first last simple">

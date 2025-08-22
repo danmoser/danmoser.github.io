@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
 <title>Python and Astronomy</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -417,6 +417,7 @@ li {
 *   math2html: convert LaTeX equations to HTML output.
 *
 *   Copyright (C) 2009,2010 Alex Fernández
+*                 2021      Günter Milde
 *
 *   Released under the terms of the `2-Clause BSD license'_, in short:
 *   Copying and distribution of this file, with or without modification,
@@ -428,16 +429,19 @@ li {
 *
 *   Based on eLyXer: convert LyX source files to HTML output.
 *   http://elyxer.nongnu.org/
-*/
-/* --end--
+*
+*
 * CSS file for LaTeX formulas.
+*
+* References: http://www.zipcon.net/~swhite/docs/math/math.html
+*             http://www.cs.tut.fi/~jkorpela/math/
 */
 
 /* Formulas */
 .formula {
 	text-align: center;
-	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
 	margin: 1.2em 0;
+	line-height: 1.4;
 }
 span.formula {
 	white-space: nowrap;
@@ -461,6 +465,9 @@ span.unknown {
 span.ignored, span.arraydef {
 	display: none;
 }
+.phantom {
+	visibility: hidden;
+}
 .formula i {
 	letter-spacing: 0.1ex;
 }
@@ -477,33 +484,48 @@ span.ignored, span.arraydef {
 }
 
 /* Structures */
+span.hspace {
+	display: inline-block;
+}
 span.overline, span.bar {
 	text-decoration: overline;
 }
-.fraction, .fullfraction {
+.fraction, .fullfraction, .textfraction {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 }
-.fraction .fraction {
+span.formula .fraction,
+.textfraction,
+span.smallmatrix {
 	font-size: 80%;
-	line-height: 100%;
+	line-height: 1;
 }
 span.numerator {
 	display: block;
+	line-height: 1;
 }
 span.denominator {
 	display: block;
+	line-height: 1;
 	padding: 0ex;
 	border-top: thin solid;
 }
+.formula sub, .formula sup {
+	font-size: 80%;
+}
 sup.numerator, sup.unit {
-	font-size: 70%;
 	vertical-align: 80%;
 }
 sub.denominator, sub.unit {
-	font-size: 70%;
 	vertical-align: -20%;
+}
+span.smallsymbol {
+	font-size: 75%;
+	line-height: 75%;
+}
+span.boldsymbol {
+	font-weight: bold;
 }
 span.sqrt {
 	display: inline-block;
@@ -511,39 +533,62 @@ span.sqrt {
 	padding: 0.1ex;
 }
 sup.root {
-	font-size: 70%;
 	position: relative;
 	left: 1.4ex;
 }
 span.radical {
 	display: inline-block;
 	padding: 0ex;
-	font-size: 150%;
+	/* font-size: 160%; for DejaVu, not required with STIX */
+	line-height: 100%;
 	vertical-align: top;
+	vertical-align: middle;
 }
+
 span.root {
 	display: inline-block;
 	border-top: thin solid;
 	padding: 0ex;
 	vertical-align: middle;
 }
-span.symbol {
-	line-height: 125%;
-	font-size: 125%;
+div.formula .bigoperator,
+.displaystyle .bigoperator,
+.displaystyle .bigoperator {
+	line-height: 120%;
+	font-size: 140%;
+	padding-right: 0.2ex;
 }
-span.bigsymbol {
-	line-height: 150%;
-	font-size: 150%;
+span.fraction .bigoperator,
+span.scriptstyle .bigoperator {
+	line-height: inherit;
+	font-size: inherit;
+	padding-right: 0;
 }
-span.largesymbol {
-	font-size: 175%;
+span.bigdelimiter {
+	display: inline-block;
 }
-span.hugesymbol {
-	font-size: 200%;
+span.bigdelimiter.size1 {
+	transform: scale(1, 1.2);
+	line-height: 1.2;
 }
+span.bigdelimiter.size2 {
+	transform: scale(1, 1.62);
+	line-height: 1.62%;
+
+}
+span.bigdelimiter.size3 {
+	transform: scale(1, 2.05);
+	line-height: 2.05%;
+}
+span.bigdelimiter.size4 {
+	transform: scale(1, 2.47);
+	line-height: 2.47%;
+}
+/* vertically stacked sub and superscript */
 span.scripts {
 	display: inline-table;
 	vertical-align: middle;
+	padding-right: 0.2ex;
 }
 .script {
 	display: table-row;
@@ -561,51 +606,42 @@ span.limits {
 sup.limit, sub.limit {
 	line-height: 100%;
 }
-span.symbolover {
-	display: inline-block;
-	text-align: center;
-	position: relative;
-	float: right;
-	right: 100%;
-	bottom: 0.5em;
-	width: 0px;
-}
-span.withsymbol {
+span.embellished,
+span.embellished > .base {
 	display: inline-block;
 }
-span.symbolunder {
+span.embellished > sup,
+span.embellished > sub {
 	display: inline-block;
-	text-align: center;
+	font-size: 100%;
 	position: relative;
-	float: right;
-	right: 80%;
-	top: 0.3em;
+	bottom: 0.3em;
 	width: 0px;
+}
+span.embellished > sub {
+	top: 0.4em;
 }
 
 /* Environments */
 span.array, span.bracketcases, span.binomial, span.environment {
 	display: inline-table;
 	text-align: center;
-	border-collapse: collapse;
-	margin: 0em;
 	vertical-align: middle;
 }
 span.arrayrow, span.binomrow {
 	display: table-row;
-	padding: 0ex;
-	border: 0ex;
+	padding: 0;
+	border: 0;
 }
 span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
 	display: table-cell;
 	padding: 0ex 0.2ex;
-	line-height: 99%;
+	line-height: 1; /* 99%; */
 	border: 0ex;
 }
-/*
-* CSS file for LaTeX formulas, extra stuff:
-* binomials, vertical braces, stackrel, fonts and colors.
-*/
+.environment.align > .arrayrow > .arraycell.align-l {
+	padding-right: 2em;
+}
 
 /* Inline binomials */
 span.binom {
@@ -648,19 +684,30 @@ span.downstackrel {
 }
 
 /* Fonts */
+.formula {
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
+}
+span.radical,   /* ensure correct size of square-root sign */
+span.integral { /* upright integral signs for better alignment of indices */
+	font-family: "STIXIntegralsUp", STIX;
+	/* font-size: 115%; match apparent size with DejaVu */
+}
+span.bracket {
+  /* some "STIX" and "DejaVu Math TeX Gyre" bracket pieces don't fit */
+	font-family: "DejaVu Serif", serif;
+}
 span.mathsf, span.textsf {
-	font-style: normal;
 	font-family: sans-serif;
 }
 span.mathrm, span.textrm {
-	font-style: normal;
-	font-family: serif;
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
 }
-span.text, span.textnormal {
-	font-style: normal;
+span.mathtt, span.texttt {
+	font-family: monospace;
 }
-span.textipa {
-	color: #008080;
+span.text, span.textnormal,
+span.mathsf, span.mathtt, span.mathrm {
+	font-style: normal;
 }
 span.fraktur {
 	font-family: "Lucida Blackletter", eufm10, blackletter;
@@ -671,6 +718,16 @@ span.blackboard {
 span.scriptfont {
 	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
 	font-style: italic;
+}
+span.mathscr {
+  font-family: MathJax_Script, rsfs10,  cursive;
+  font-style: italic;
+}
+span.textsc {
+	font-variant: small-caps;
+}
+span.textsl {
+	font-style: oblique;
 }
 
 /* Colors */
@@ -689,7 +746,6 @@ span.boxed, span.framebox {
 	padding: 5px;
 }
 
-
 </style>
 </head>
 <body>
@@ -699,108 +755,114 @@ span.boxed, span.framebox {
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title">Table of contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#general-tips" id="id1">General tips</a><ul>
-<li><a class="reference internal" href="#style-guide" id="id2">Style Guide</a><ul>
-<li><a class="reference internal" href="#naming-variables" id="id3">Naming variables</a></li>
-<li><a class="reference internal" href="#line-continuation-with-strings" id="id4">Line continuation with strings</a></li>
-<li><a class="reference internal" href="#formating-printing-in-python" id="id5">Formating printing in Python</a></li>
-<li><a class="reference internal" href="#how-to-get-rid-of-utf-8-bom" id="id6">How to get rid of UTF-8 BOM</a></li>
-<li><a class="reference internal" href="#the-use-of-underscore-in-python" id="id7">The use of <tt class="docutils literal">_</tt> (underscore) in Python</a></li>
-<li><a class="reference internal" href="#image-filtering-in-python" id="id8">Image Filtering in Python</a></li>
-<li><a class="reference internal" href="#useful-python-libraries" id="id9">Useful Python libraries</a></li>
+<li><a class="reference internal" href="#general-tips" id="toc-entry-1">General tips</a><ul>
+<li><a class="reference internal" href="#style-guide" id="toc-entry-2">Style Guide</a><ul>
+<li><a class="reference internal" href="#naming-variables" id="toc-entry-3">Naming variables</a></li>
+<li><a class="reference internal" href="#line-continuation-with-strings" id="toc-entry-4">Line continuation with strings</a></li>
+<li><a class="reference internal" href="#formating-printing-in-python" id="toc-entry-5">Formating printing in Python</a></li>
+<li><a class="reference internal" href="#how-to-get-rid-of-utf-8-bom" id="toc-entry-6">How to get rid of UTF-8 BOM</a></li>
+<li><a class="reference internal" href="#the-use-of-underscore-in-python" id="toc-entry-7">The use of <tt class="docutils literal">_</tt> (underscore) in Python</a></li>
+<li><a class="reference internal" href="#image-filtering-in-python" id="toc-entry-8">Image Filtering in Python</a></li>
+<li><a class="reference internal" href="#useful-python-libraries" id="toc-entry-9">Useful Python libraries</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#numpy-compared-to-r" id="id10">numpy compared to R</a></li>
-<li><a class="reference internal" href="#python-super-considered-super" id="id11">Python <tt class="docutils literal">super()</tt> considered super!</a></li>
-<li><a class="reference internal" href="#flat-a-double-nested-list" id="id12">flat a double (!) nested list:</a></li>
-<li><a class="reference internal" href="#os-path" id="id13">os.path</a></li>
-<li><a class="reference internal" href="#input-vs-raw-input" id="id14"><tt class="docutils literal">input</tt> vs <tt class="docutils literal">raw_input</tt></a></li>
-<li><a class="reference internal" href="#pip" id="id15">pip</a><ul>
-<li><a class="reference internal" href="#installing-in-a-custom-folder" id="id16">Installing in a custom folder</a></li>
-<li><a class="reference internal" href="#pip-not-found" id="id17"><cite>pip</cite> not found</a></li>
-<li><a class="reference internal" href="#pip-is-not-working-importerror-no-module-named-pip-internal" id="id18"><cite>pip</cite> is not working: ImportError: No module named 'pip._internal'</a></li>
-<li><a class="reference internal" href="#could-not-find-egg-info" id="id19">&quot;Could not find .egg-info&quot;</a></li>
-<li><a class="reference internal" href="#setting-up-virtual-environments" id="id20">Setting up virtual environments</a></li>
-<li><a class="reference internal" href="#which-pip" id="id21">which pip</a></li>
-<li><a class="reference internal" href="#getting-pip" id="id22">getting pip</a></li>
+<li><a class="reference internal" href="#numpy-compared-to-r" id="toc-entry-10">numpy compared to R</a></li>
+<li><a class="reference internal" href="#python-super-considered-super" id="toc-entry-11">Python <tt class="docutils literal">super()</tt> considered super!</a></li>
+<li><a class="reference internal" href="#flat-a-double-nested-list" id="toc-entry-12">flat a double (!) nested list:</a></li>
+<li><a class="reference internal" href="#os-path" id="toc-entry-13">os.path</a></li>
+<li><a class="reference internal" href="#input-vs-raw-input" id="toc-entry-14"><tt class="docutils literal">input</tt> vs <tt class="docutils literal">raw_input</tt></a></li>
+<li><a class="reference internal" href="#pip" id="toc-entry-15">pip</a><ul>
+<li><a class="reference internal" href="#installing-in-a-custom-folder" id="toc-entry-16">Installing in a custom folder</a></li>
+<li><a class="reference internal" href="#pip-not-found" id="toc-entry-17"><cite>pip</cite> not found</a></li>
+<li><a class="reference internal" href="#pip-is-not-working-importerror-no-module-named-pip-internal" id="toc-entry-18"><cite>pip</cite> is not working: ImportError: No module named 'pip._internal'</a></li>
+<li><a class="reference internal" href="#could-not-find-egg-info" id="toc-entry-19">&quot;Could not find .egg-info&quot;</a></li>
+<li><a class="reference internal" href="#setting-up-virtual-environments" id="toc-entry-20">Setting up virtual environments</a></li>
+<li><a class="reference internal" href="#which-pip" id="toc-entry-21">which pip</a></li>
+<li><a class="reference internal" href="#getting-pip" id="toc-entry-22">getting pip</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ipython" id="id23">ipython</a></li>
-<li><a class="reference internal" href="#encoding" id="id24">Encoding</a><ul>
-<li><a class="reference internal" href="#shebang" id="id25">Shebang</a></li>
-<li><a class="reference internal" href="#smart-file-encoding" id="id26">Smart file encoding</a></li>
+<li><a class="reference internal" href="#ipython" id="toc-entry-23">ipython</a></li>
+<li><a class="reference internal" href="#encoding" id="toc-entry-24">Encoding</a><ul>
+<li><a class="reference internal" href="#shebang" id="toc-entry-25">Shebang</a></li>
+<li><a class="reference internal" href="#smart-file-encoding" id="toc-entry-26">Smart file encoding</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-ide-to-use-for-python" id="id27">What IDE to use for Python?</a></li>
-<li><a class="reference internal" href="#matplotlib" id="id28">Matplotlib</a><ul>
-<li><a class="reference internal" href="#taking-long-to-start" id="id29">Taking long to start</a></li>
-<li><a class="reference internal" href="#themechanged-error" id="id30"><em>ThemeChanged</em> error</a></li>
-<li><a class="reference internal" href="#figsize" id="id31"><tt class="docutils literal">figsize</tt></a></li>
-<li><a class="reference internal" href="#bugs" id="id32">Bugs</a></li>
-<li><a class="reference internal" href="#animations" id="id33">ANIMATIONS!!!</a></li>
+<li><a class="reference internal" href="#what-ide-to-use-for-python" id="toc-entry-27">What IDE to use for Python?</a></li>
+<li><a class="reference internal" href="#matplotlib" id="toc-entry-28">Matplotlib</a><ul>
+<li><a class="reference internal" href="#taking-long-to-start" id="toc-entry-29">Taking long to start</a></li>
+<li><a class="reference internal" href="#themechanged-error" id="toc-entry-30"><em>ThemeChanged</em> error</a></li>
+<li><a class="reference internal" href="#figsize" id="toc-entry-31"><tt class="docutils literal">figsize</tt></a></li>
+<li><a class="reference internal" href="#bugs" id="toc-entry-32">Bugs</a></li>
+<li><a class="reference internal" href="#animations" id="toc-entry-33">ANIMATIONS!!!</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#python-gui" id="id34">Python GUI</a></li>
-<li><a class="reference internal" href="#errors" id="id35">Errors</a></li>
-<li><a class="reference internal" href="#vo-tables" id="id36">VO tables</a></li>
-<li><a class="reference internal" href="#astropy-affiliated-packages" id="id37">Astropy affiliated packages</a></li>
-<li><a class="reference internal" href="#status-line-printing-over-the-same-line" id="id38">Status line (printing over the same line)</a></li>
-<li><a class="reference internal" href="#check-if-a-variable-is-string" id="id39">Check if a variable is string</a></li>
-<li><a class="reference internal" href="#emcee-and-other-nice-stuff" id="id40"><em>emcee</em> and other nice stuff</a></li>
-<li><a class="reference internal" href="#kernel-density-estimation-in-python" id="id41">Kernel Density Estimation in Python</a></li>
-<li><a class="reference internal" href="#adding-nice-help-to-your-program" id="id42">Adding nice help to your program</a></li>
-<li><a class="reference internal" href="#date-time" id="id43">Date &amp; Time</a></li>
-<li><a class="reference internal" href="#profile" id="id44">Profile</a></li>
-<li><a class="reference internal" href="#broadcasting" id="id45">Broadcasting</a></li>
-<li><a class="reference internal" href="#pandas" id="id46">Pandas</a></li>
-<li><a class="reference internal" href="#capturing-the-shell-output-in-python" id="id47">Capturing the shell output in Python</a></li>
-<li><a class="reference internal" href="#regex-python-tip" id="id48"><em>regex</em> Python tip</a></li>
-<li><a class="reference internal" href="#list-of-reserved-words-in-python" id="id49">List of reserved words in Python</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#multi-threading" id="id50">Multi-threading</a><ul>
-<li><a class="reference internal" href="#definitions" id="id51">Definitions</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#data-fitting" id="id52">Data fitting</a><ul>
-<li><a class="reference internal" href="#curve-fit" id="id53"><tt class="docutils literal">curve_fit</tt></a></li>
-<li><a class="reference internal" href="#leastsq" id="id54"><tt class="docutils literal">leastsq</tt></a></li>
-<li><a class="reference internal" href="#pyhdust-leastsq" id="id55"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></li>
-<li><a class="reference internal" href="#pyhdust-curve-fit" id="id56"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#global-variables" id="id57">Global variables</a></li>
-<li><a class="reference internal" href="#control-flow" id="id58">Control Flow</a></li>
-<li><a class="reference internal" href="#values-representation-and-text-encoding" id="id59">Values representation and text encoding</a></li>
-<li><a class="reference internal" href="#summary" id="id60">Summary</a></li>
-<li><a class="reference internal" href="#hard-install-reference" id="id61">Hard install reference</a><ul>
-<li><a class="reference internal" href="#start" id="id62">Start</a></li>
-<li><a class="reference internal" href="#systems" id="id63">Systems</a><ul>
-<li><a class="reference internal" href="#ms-windows" id="id64">MS-Windows</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#compiling-python" id="id65">Compiling Python</a><ul>
-<li><a class="reference internal" href="#numba" id="id66"><tt class="docutils literal">numba</tt></a></li>
-<li><a class="reference internal" href="#parsl" id="id67"><tt class="docutils literal">parsl</tt></a></li>
+<li><a class="reference internal" href="#python-gui" id="toc-entry-34">Python GUI</a></li>
+<li><a class="reference internal" href="#errors" id="toc-entry-35">Errors</a></li>
+<li><a class="reference internal" href="#vo-tables" id="toc-entry-36">VO tables</a></li>
+<li><a class="reference internal" href="#astropy-affiliated-packages" id="toc-entry-37">Astropy affiliated packages</a></li>
+<li><a class="reference internal" href="#status-line-printing-over-the-same-line" id="toc-entry-38">Status line (printing over the same line)</a></li>
+<li><a class="reference internal" href="#check-if-a-variable-is-string" id="toc-entry-39">Check if a variable is string</a></li>
+<li><a class="reference internal" href="#emcee-and-other-nice-stuff" id="toc-entry-40"><em>emcee</em> and other nice stuff</a></li>
+<li><a class="reference internal" href="#kernel-density-estimation-in-python" id="toc-entry-41">Kernel Density Estimation in Python</a></li>
+<li><a class="reference internal" href="#adding-nice-help-to-your-program" id="toc-entry-42">Adding nice help to your program</a></li>
+<li><a class="reference internal" href="#date-time" id="toc-entry-43">Date &amp; Time</a></li>
+<li><a class="reference internal" href="#profile" id="toc-entry-44">Profile</a></li>
+<li><a class="reference internal" href="#broadcasting" id="toc-entry-45">Broadcasting</a></li>
+<li><a class="reference internal" href="#pandas" id="toc-entry-46">Pandas</a></li>
+<li><a class="reference internal" href="#capturing-the-shell-output-in-python" id="toc-entry-47">Capturing the shell output in Python</a></li>
+<li><a class="reference internal" href="#regex-python-tip" id="toc-entry-48"><em>regex</em> Python tip</a></li>
+<li><a class="reference internal" href="#list-of-reserved-words-in-python" id="toc-entry-49">List of reserved words in Python</a></li>
+<li><a class="reference internal" href="#general-notes" id="toc-entry-50">General notes</a><ul>
+<li><a class="reference internal" href="#nonlocal" id="toc-entry-51">nonlocal</a></li>
+<li><a class="reference internal" href="#python-arguments" id="toc-entry-52">Python arguments</a></li>
+<li><a class="reference internal" href="#application-of-list-comprehension" id="toc-entry-53">Application of list-comprehension</a></li>
+<li><a class="reference internal" href="#namespace" id="toc-entry-54">namespace</a></li>
+<li><a class="reference internal" href="#class-and-static-methods" id="toc-entry-55">Class and static methods</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#python-environments-and-references" id="id68">Python environments and references</a><ul>
-<li><a class="reference internal" href="#how-to-clean-up-conda-environments" id="id69">How to clean up conda environments</a><ul>
-<li><a class="reference internal" href="#packages-install-pip-issues-with-conda" id="id70">Packages install (pip) issues with conda</a></li>
+<li><a class="reference internal" href="#multi-threading" id="toc-entry-56">Multi-threading</a><ul>
+<li><a class="reference internal" href="#definitions" id="toc-entry-57">Definitions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="id71">General use Python packages in Astronomy</a></li>
-<li><a class="reference internal" href="#python-learning-for-astronomers" id="id72">Python learning for astronomers</a></li>
-<li><a class="reference internal" href="#python-distributions" id="id73">Python distributions</a></li>
-<li><a class="reference internal" href="#python-environments" id="id74">Python environments</a></li>
-<li><a class="reference internal" href="#utilities" id="id75">Utilities</a><ul>
-<li><a class="reference internal" href="#package-index" id="id76">Package Index</a></li>
-<li><a class="reference internal" href="#cookbooks" id="id77">Cookbooks</a></li>
-<li><a class="reference internal" href="#articles" id="id78">Articles</a></li>
-<li><a class="reference internal" href="#python-code-revision" id="id79">Python code revision</a></li>
-<li><a class="reference internal" href="#visualization-tools" id="id80">Visualization tools</a></li>
+<li><a class="reference internal" href="#data-fitting" id="toc-entry-58">Data fitting</a><ul>
+<li><a class="reference internal" href="#curve-fit" id="toc-entry-59"><tt class="docutils literal">curve_fit</tt></a></li>
+<li><a class="reference internal" href="#leastsq" id="toc-entry-60"><tt class="docutils literal">leastsq</tt></a></li>
+<li><a class="reference internal" href="#pyhdust-leastsq" id="toc-entry-61"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></li>
+<li><a class="reference internal" href="#pyhdust-curve-fit" id="toc-entry-62"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#global-variables" id="toc-entry-63">Global variables</a></li>
+<li><a class="reference internal" href="#control-flow" id="toc-entry-64">Control Flow</a></li>
+<li><a class="reference internal" href="#values-representation-and-text-encoding" id="toc-entry-65">Values representation and text encoding</a></li>
+<li><a class="reference internal" href="#summary" id="toc-entry-66">Summary</a></li>
+<li><a class="reference internal" href="#hard-install-reference" id="toc-entry-67">Hard install reference</a><ul>
+<li><a class="reference internal" href="#start" id="toc-entry-68">Start</a></li>
+<li><a class="reference internal" href="#ms-windows" id="toc-entry-69">MS-Windows</a></li>
+<li><a class="reference internal" href="#newer-python-versions-for-ubuntu" id="toc-entry-70">Newer Python versions for Ubuntu</a></li>
+<li><a class="reference internal" href="#compiling-python" id="toc-entry-71">Compiling Python</a><ul>
+<li><a class="reference internal" href="#numba" id="toc-entry-72"><tt class="docutils literal">numba</tt></a></li>
+<li><a class="reference internal" href="#parsl" id="toc-entry-73"><tt class="docutils literal">parsl</tt></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#python-environments-and-references" id="toc-entry-74">Python environments and references</a><ul>
+<li><a class="reference internal" href="#how-to-clean-up-conda-environments" id="toc-entry-75">How to clean up conda environments</a><ul>
+<li><a class="reference internal" href="#packages-install-pip-issues-with-conda" id="toc-entry-76">Packages install (pip) issues with conda</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-use-python-packages-in-astronomy" id="toc-entry-77">General use Python packages in Astronomy</a></li>
+<li><a class="reference internal" href="#python-learning-for-astronomers" id="toc-entry-78">Python learning for astronomers</a></li>
+<li><a class="reference internal" href="#python-distributions" id="toc-entry-79">Python distributions</a></li>
+<li><a class="reference internal" href="#python-environments" id="toc-entry-80">Python environments</a></li>
+<li><a class="reference internal" href="#utilities" id="toc-entry-81">Utilities</a><ul>
+<li><a class="reference internal" href="#package-index" id="toc-entry-82">Package Index</a></li>
+<li><a class="reference internal" href="#cookbooks" id="toc-entry-83">Cookbooks</a></li>
+<li><a class="reference internal" href="#articles" id="toc-entry-84">Articles</a></li>
+<li><a class="reference internal" href="#python-code-revision" id="toc-entry-85">Python code revision</a></li>
+<li><a class="reference internal" href="#visualization-tools" id="toc-entry-86">Visualization tools</a></li>
 </ul>
 </li>
 </ul>
@@ -808,9 +870,9 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="general-tips">
-<h1><a class="toc-backref" href="#id1">General tips</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-1">General tips</a></h1>
 <div class="section" id="style-guide">
-<h2><a class="toc-backref" href="#id2">Style Guide</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-2">Style Guide</a></h2>
 <dl class="docutils">
 <dt>Python style guide are in two PEPs (Python Enhancement Proposals):</dt>
 <dd><ul class="first last simple">
@@ -820,7 +882,7 @@ span.boxed, span.framebox {
 </dd>
 </dl>
 <div class="section" id="naming-variables">
-<h3><a class="toc-backref" href="#id3">Naming variables</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-3">Naming variables</a></h3>
 <p>Class names should normally use the <em>CapWords</em> convention.</p>
 <p>Function names should be lowercase, with words separated by underscores as necessary to improve readability.</p>
 <p><em>single_trailing_underscore_</em> : used by convention to avoid conflicts with Python keyword, e.g.</p>
@@ -830,7 +892,7 @@ span.boxed, span.framebox {
 <p>You can define functions as <strong>is_xxx</strong> or <strong>has_xxx</strong> to return Boolean values.</p>
 </div>
 <div class="section" id="line-continuation-with-strings">
-<h3><a class="toc-backref" href="#id4">Line continuation with strings</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-4">Line continuation with strings</a></h3>
 <p>How is the best way to spam a string over multiple lines?</p>
 <p>Since adjacent string literals are automatically joint into a single string, you can just use the implied line continuation inside parentheses as recommended by PEP 8:</p>
 <pre class="code python literal-block">
@@ -840,12 +902,12 @@ span.boxed, span.framebox {
 <p><a class="reference external" href="http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings">http://stackoverflow.com/questions/5437619/python-style-line-continuation-with-strings</a></p>
 </div>
 <div class="section" id="formating-printing-in-python">
-<h3><a class="toc-backref" href="#id5">Formating printing in Python</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-5">Formating printing in Python</a></h3>
 <p>Using <em>%</em> and <em>.format()</em> for great good!</p>
 <p><a class="reference external" href="https://pyformat.info/">https://pyformat.info/</a></p>
 </div>
 <div class="section" id="how-to-get-rid-of-utf-8-bom">
-<h3><a class="toc-backref" href="#id6">How to get rid of UTF-8 BOM</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-6">How to get rid of UTF-8 BOM</a></h3>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">codecs</span><span class="whitespace">
 </span><span class="name">f0</span> <span class="operator">=</span> <span class="name builtin">open</span><span class="punctuation">(</span><span class="name">file</span><span class="punctuation">)</span><span class="whitespace">
@@ -858,7 +920,7 @@ span.boxed, span.framebox {
 </pre>
 </div>
 <div class="section" id="the-use-of-underscore-in-python">
-<h3><a class="toc-backref" href="#id7">The use of <tt class="docutils literal">_</tt> (underscore) in Python</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-7">The use of <tt class="docutils literal">_</tt> (underscore) in Python</a></h3>
 <p><tt class="docutils literal">_</tt> has 3 main conventional uses in Python (imported from the corresponding C conventions, probably):</p>
 <blockquote>
 <ol class="arabic simple">
@@ -871,18 +933,18 @@ span.boxed, span.framebox {
 <p><a class="reference external" href="http://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python">http://stackoverflow.com/questions/5893163/what-is-the-purpose-of-the-single-underscore-variable-in-python</a></p>
 </div>
 <div class="section" id="image-filtering-in-python">
-<h3><a class="toc-backref" href="#id8">Image Filtering in Python</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-8">Image Filtering in Python</a></h3>
 <p>A prior: <a class="reference external" href="https://code.tutsplus.com/tutorials/image-filtering-in-python--cms-29202">https://code.tutsplus.com/tutorials/image-filtering-in-python--cms-29202</a></p>
 </div>
 <div class="section" id="useful-python-libraries">
-<h3><a class="toc-backref" href="#id9">Useful Python libraries</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-9">Useful Python libraries</a></h3>
 <div class="figure align-center">
 <img alt="../figs/python_astro-libs.gif" src="../figs/python_astro-libs.gif" style="height: 500px;" />
 </div>
 </div>
 </div>
 <div class="section" id="numpy-compared-to-r">
-<h2><a class="toc-backref" href="#id10">numpy compared to R</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-10">numpy compared to R</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="48%" />
@@ -925,11 +987,11 @@ fx &lt;- function(x) {x**2}
 </pre>
 </div>
 <div class="section" id="python-super-considered-super">
-<h2><a class="toc-backref" href="#id11">Python <tt class="docutils literal">super()</tt> considered super!</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-11">Python <tt class="docutils literal">super()</tt> considered super!</a></h2>
 <p><a class="reference external" href="https://rhettinger.wordpress.com/2011/05/26/super-considered-super/">https://rhettinger.wordpress.com/2011/05/26/super-considered-super/</a></p>
 </div>
 <div class="section" id="flat-a-double-nested-list">
-<h2><a class="toc-backref" href="#id12">flat a double (!) nested list:</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-12">flat a double (!) nested list:</a></h2>
 <pre class="code python literal-block">
 <span class="name">result</span> <span class="operator">=</span> <span class="punctuation">[]</span><span class="whitespace">
 </span><span class="keyword">for</span> <span class="name">x</span> <span class="operator word">in</span> <span class="name">oidata</span><span class="operator">.</span><span class="name">vis2</span><span class="punctuation">:</span><span class="whitespace">
@@ -942,7 +1004,7 @@ fx &lt;- function(x) {x**2}
 <p>There is a general answer for arbitrary nested case in Python Cookbood (3rd ed).</p>
 </div>
 <div class="section" id="os-path">
-<h2><a class="toc-backref" href="#id13">os.path</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-13">os.path</a></h2>
 <p>This is the right way of dealing with paths, filenames, extensions...</p>
 <pre class="code python literal-block">
 <span class="name">observ</span> <span class="operator">=</span> <span class="literal string single">'/media/moser/SAMSUNG2TB/interf/interf_PIO/2015/2015-11-29_SCI_alp_Eri_oidataCalibrated.fits'</span><span class="whitespace">
@@ -950,13 +1012,13 @@ fx &lt;- function(x) {x**2}
 </pre>
 </div>
 <div class="section" id="input-vs-raw-input">
-<h2><a class="toc-backref" href="#id14"><tt class="docutils literal">input</tt> vs <tt class="docutils literal">raw_input</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-14"><tt class="docutils literal">input</tt> vs <tt class="docutils literal">raw_input</tt></a></h2>
 <p><tt class="docutils literal">raw_input</tt> does not exists in Python 3.x. It was renamed to <tt class="docutils literal">input</tt>.</p>
 </div>
 <div class="section" id="pip">
-<h2><a class="toc-backref" href="#id15">pip</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-15">pip</a></h2>
 <div class="section" id="installing-in-a-custom-folder">
-<h3><a class="toc-backref" href="#id16">Installing in a custom folder</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-16">Installing in a custom folder</a></h3>
 <pre class="code bash literal-block">
 pip<span class="whitespace"> </span>install<span class="whitespace"> </span>--install-option<span class="operator">=</span><span class="literal string double">&quot;--prefix=</span><span class="name variable">$PREFIX_PATH</span><span class="literal string double">&quot;</span><span class="whitespace"> </span>package_name
 </pre>
@@ -964,7 +1026,7 @@ pip<span class="whitespace"> </span>install<span class="whitespace"> </span>--in
 <p>In <em>Ureka</em>, this should be <cite>$UREKA_PATH/python/</cite>.</p>
 </div>
 <div class="section" id="pip-not-found">
-<h3><a class="toc-backref" href="#id17"><cite>pip</cite> not found</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-17"><cite>pip</cite> not found</a></h3>
 <p>After installing Python 2.7.9+, you need to run</p>
 <pre class="code bash literal-block">
 python<span class="whitespace"> </span>-m<span class="whitespace"> </span>ensurepip<span class="whitespace">
@@ -973,13 +1035,13 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>ensure
 </pre>
 </div>
 <div class="section" id="pip-is-not-working-importerror-no-module-named-pip-internal">
-<h3><a class="toc-backref" href="#id18"><cite>pip</cite> is not working: ImportError: No module named 'pip._internal'</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-18"><cite>pip</cite> is not working: ImportError: No module named 'pip._internal'</a></h3>
 <pre class="code bash literal-block">
 python3<span class="whitespace"> </span>-m<span class="whitespace"> </span>pip<span class="whitespace"> </span>install<span class="whitespace"> </span>--user<span class="whitespace"> </span>--upgrade<span class="whitespace"> </span>pip
 </pre>
 </div>
 <div class="section" id="could-not-find-egg-info">
-<h3><a class="toc-backref" href="#id19">&quot;Could not find .egg-info&quot;</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-19">&quot;Could not find .egg-info&quot;</a></h3>
 <p>It is a bug, solved by <cite>setuptools</cite>. In Debian/Ubuntu, run</p>
 <pre class="code bash literal-block">
 sudo<span class="whitespace"> </span>pip<span class="whitespace"> </span>install<span class="whitespace"> </span>pip<span class="whitespace"> </span>-U<span class="whitespace">
@@ -987,14 +1049,14 @@ sudo<span class="whitespace"> </span>pip<span class="whitespace"> </span>install
 </pre>
 </div>
 <div class="section" id="setting-up-virtual-environments">
-<h3><a class="toc-backref" href="#id20">Setting up virtual environments</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-20">Setting up virtual environments</a></h3>
 <pre class="code bash literal-block">
 pip<span class="whitespace"> </span>freeze<span class="whitespace"> </span>&gt;<span class="whitespace"> </span>requirements.txt<span class="whitespace">
 </span>pip<span class="whitespace"> </span>install<span class="whitespace"> </span>-r<span class="whitespace"> </span>requirements.txt
 </pre>
 </div>
 <div class="section" id="which-pip">
-<h3><a class="toc-backref" href="#id21">which pip</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-21">which pip</a></h3>
 <p>Problem: <tt class="docutils literal">ImportError: No module named ...</tt></p>
 <p>Explanation: Your <tt class="docutils literal">pip</tt> is probably using a different <tt class="docutils literal">python</tt> executable.
 Check it:</p>
@@ -1008,7 +1070,7 @@ curl<span class="whitespace"> </span>https://raw.github.com/pypa/pip/master/cont
 <p>For more installation instructions, see <a class="reference external" href="http://www.pip-installer.org/en/latest/installing.html">http://www.pip-installer.org/en/latest/installing.html</a>.</p>
 </div>
 <div class="section" id="getting-pip">
-<h3><a class="toc-backref" href="#id22">getting pip</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-22">getting pip</a></h3>
 <p>To install pip, securely download <a class="reference external" href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a></p>
 <pre class="code bash literal-block">
 python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </span>--user
@@ -1016,7 +1078,7 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </div>
 </div>
 <div class="section" id="ipython">
-<h2><a class="toc-backref" href="#id23">ipython</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-23">ipython</a></h2>
 <ul>
 <li><p class="first"><cite>ipython</cite> is not calling the python version I want. What should I do?</p>
 <blockquote>
@@ -1043,16 +1105,16 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </ul>
 </div>
 <div class="section" id="encoding">
-<h2><a class="toc-backref" href="#id24">Encoding</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-24">Encoding</a></h2>
 <div class="section" id="shebang">
-<h3><a class="toc-backref" href="#id25">Shebang</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-25">Shebang</a></h3>
 <pre class="code python literal-block">
 <span class="comment hashbang">#!/usr/bin/env python</span><span class="whitespace">
 </span><span class="comment single"># -*- coding:utf-8 -*-</span>
 </pre>
 </div>
 <div class="section" id="smart-file-encoding">
-<h3><a class="toc-backref" href="#id26">Smart file encoding</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-26">Smart file encoding</a></h3>
 <p>For Python2 (2.6+). It also works in Python3, but it is the native behavior.</p>
 <pre class="code python literal-block">
 <span class="keyword namespace">from</span> <span class="name namespace">io</span> <span class="keyword namespace">import</span> <span class="name builtin">open</span>
@@ -1060,14 +1122,14 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </div>
 </div>
 <div class="section" id="what-ide-to-use-for-python">
-<h2><a class="toc-backref" href="#id27">What IDE to use for Python?</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-27">What IDE to use for Python?</a></h2>
 <p>This is a <em>religious</em> question.</p>
 <p><a class="reference external" href="http://stackoverflow.com/questions/81584/what-ide-to-use-for-python">http://stackoverflow.com/questions/81584/what-ide-to-use-for-python</a></p>
 </div>
 <div class="section" id="matplotlib">
-<h2><a class="toc-backref" href="#id28">Matplotlib</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-28">Matplotlib</a></h2>
 <div class="section" id="taking-long-to-start">
-<h3><a class="toc-backref" href="#id29">Taking long to start</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-29">Taking long to start</a></h3>
 <p>If you are getting this message:</p>
 <blockquote>
 <dl class="docutils">
@@ -1078,7 +1140,7 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 <p>erase the contents of <tt class="docutils literal">mpl.get_cachedir()</tt>. Additionally, you may need to delete <tt class="docutils literal"><span class="pre">~/.config/matplotlib</span></tt> and <tt class="docutils literal"><span class="pre">~/.cache/fontconfig</span></tt>.</p>
 </div>
 <div class="section" id="themechanged-error">
-<h3><a class="toc-backref" href="#id30"><em>ThemeChanged</em> error</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-30"><em>ThemeChanged</em> error</a></h3>
 <pre class="code python literal-block">
 <span class="name">can</span><span class="literal string single">'t invoke &quot;event&quot; command: application has been destroyed</span><span class="whitespace">
 </span><span class="keyword">while</span> <span class="name">executing</span> <span class="literal string double">&quot;event generate $w &lt;&lt;ThemeChanged&gt;&gt;&quot;</span><span class="whitespace">
@@ -1089,7 +1151,7 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 <p>Solution: Write this line after you import matplotlib in ipython: <tt class="docutils literal">%matplotlib inline</tt>.</p>
 </div>
 <div class="section" id="figsize">
-<h3><a class="toc-backref" href="#id31"><tt class="docutils literal">figsize</tt></a></h3>
+<h3><a class="toc-backref" href="#toc-entry-31"><tt class="docutils literal">figsize</tt></a></h3>
 <table border="1" class="docutils">
 <colgroup>
 <col width="32%" />
@@ -1106,24 +1168,24 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </table>
 </div>
 <div class="section" id="bugs">
-<h3><a class="toc-backref" href="#id32">Bugs</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-32">Bugs</a></h3>
 <ul class="simple">
 <li><cite>eps</cite> = no transparency.</li>
 <li><cite>pdf</cite> = no hatches in patches.</li>
 </ul>
 </div>
 <div class="section" id="animations">
-<h3><a class="toc-backref" href="#id33">ANIMATIONS!!!</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-33">ANIMATIONS!!!</a></h3>
 <p>Excellent post: <a class="reference external" href="http://zulko.github.io/blog/2014/11/29/data-animations-with-python-and-moviepy/">Data Animations With Python and MoviePy</a></p>
 </div>
 </div>
 <div class="section" id="python-gui">
-<h2><a class="toc-backref" href="#id34">Python GUI</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-34">Python GUI</a></h2>
 <p>&quot;Always&quot; the first option is to use <cite>Tkinter</cite> because it is part of the standard Python module and runs in most of the systems. However it is not so beautiful as the <cite>Qt</cite> library.</p>
 <p>If someone needs pretty graphics, interactively, one may think using <cite>pyqtgraph</cite> (<a class="reference external" href="http://www.pyqtgraph.org/">http://www.pyqtgraph.org/</a>).</p>
 </div>
 <div class="section" id="errors">
-<h2><a class="toc-backref" href="#id35">Errors</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-35">Errors</a></h2>
 <pre class="code python literal-block">
 <span class="comment single"># DO NOT USE THIS!</span><span class="whitespace">
 </span><span class="comment single"># import sys</span><span class="whitespace">
@@ -1147,7 +1209,7 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </ul>
 </div>
 <div class="section" id="vo-tables">
-<h2><a class="toc-backref" href="#id36">VO tables</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-36">VO tables</a></h2>
 <p><a class="reference external" href="https://github.com/astropy/astropy/blob/master/docs/io/votable/index.rst">https://github.com/astropy/astropy/blob/master/docs/io/votable/index.rst</a></p>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">astropy.io.votable</span> <span class="keyword">as</span> <span class="name namespace">votable</span><span class="whitespace">
@@ -1161,12 +1223,12 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </pre>
 </div>
 <div class="section" id="astropy-affiliated-packages">
-<h2><a class="toc-backref" href="#id37">Astropy affiliated packages</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-37">Astropy affiliated packages</a></h2>
 <p>Matt Craig, has created this list of Astropy affiliated packages to help improve your experience exploring astronomy using Python.</p>
 <p><a class="reference external" href="https://www.numfocus.org/blog/leveling-up-with-open-astronomy-astropy-affiliated-packages/">https://www.numfocus.org/blog/leveling-up-with-open-astronomy-astropy-affiliated-packages/</a></p>
 </div>
 <div class="section" id="status-line-printing-over-the-same-line">
-<h2><a class="toc-backref" href="#id38">Status line (printing over the same line)</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-38">Status line (printing over the same line)</a></h2>
 <pre class="code python literal-block">
 <span class="keyword">def</span> <span class="name function">fnPrintLine</span><span class="punctuation">(</span><span class="name">tag</span><span class="punctuation">,</span> <span class="name">msg</span><span class="punctuation">,</span> <span class="name">cols</span><span class="operator">=</span><span class="keyword constant">None</span><span class="punctuation">,</span> <span class="name">sameLine</span><span class="operator">=</span><span class="keyword constant">False</span><span class="punctuation">,</span> <span class="name">align</span><span class="operator">=</span><span class="literal string single">'left'</span><span class="punctuation">,</span> <span class="name">flush</span><span class="operator">=</span><span class="literal string single">''</span><span class="punctuation">,</span> <span class="name">full</span><span class="operator">=</span><span class="keyword constant">False</span><span class="punctuation">):</span><span class="whitespace">
     </span><span class="literal string doc">&quot;&quot;&quot;
@@ -1218,7 +1280,7 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </pre>
 </div>
 <div class="section" id="check-if-a-variable-is-string">
-<h2><a class="toc-backref" href="#id39">Check if a variable is string</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-39">Check if a variable is string</a></h2>
 <p>In Python 2.x, one would do for the <em>s</em> variable</p>
 <pre class="code python literal-block">
 <span class="name builtin">isinstance</span><span class="punctuation">(</span><span class="name">s</span><span class="punctuation">,</span> <span class="name">basestring</span><span class="punctuation">)</span>
@@ -1234,14 +1296,14 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </pre>
 </div>
 <div class="section" id="emcee-and-other-nice-stuff">
-<h2><a class="toc-backref" href="#id40"><em>emcee</em> and other nice stuff</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-40"><em>emcee</em> and other nice stuff</a></h2>
 <p><a class="reference external" href="http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html">http://eso-python.github.io/ESOPythonTutorials/ESOPythonDemoDay8_MCMC_with_emcee.html</a></p>
 <p><a class="reference external" href="http://eso-python.github.io/ESOPythonTutorials/">http://eso-python.github.io/ESOPythonTutorials/</a></p>
 <p><a class="reference external" href="https://github.com/ESO-python/ESOPythonTutorials/tree/master/notebooks">https://github.com/ESO-python/ESOPythonTutorials/tree/master/notebooks</a></p>
 <p><a class="reference external" href="http://www.sc.eso.org/~bdias/pycoffee/refs.html">http://www.sc.eso.org/~bdias/pycoffee/refs.html</a></p>
 </div>
 <div class="section" id="kernel-density-estimation-in-python">
-<h2><a class="toc-backref" href="#id41">Kernel Density Estimation in Python</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-41">Kernel Density Estimation in Python</a></h2>
 <p>Kernel density estimation is a way to estimate the probability density function (PDF) of a random variable in a non-parametric way.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://jakevdp.github.io/blog/2013/12/01/kernel-density-estimation/">https://jakevdp.github.io/blog/2013/12/01/kernel-density-estimation/</a></li>
@@ -1249,12 +1311,12 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </ul>
 </div>
 <div class="section" id="adding-nice-help-to-your-program">
-<h2><a class="toc-backref" href="#id42">Adding nice help to your program</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-42">Adding nice help to your program</a></h2>
 <p><span class="strike">Use the module ``optparse`</span> ` (depricated).</p>
 <p>Use <tt class="docutils literal">argparse</tt>: <a class="reference external" href="https://docs.python.org/2/library/argparse.html">https://docs.python.org/2/library/argparse.html</a></p>
 </div>
 <div class="section" id="date-time">
-<h2><a class="toc-backref" href="#id43">Date &amp; Time</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-43">Date &amp; Time</a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">time</span><span class="whitespace">
 
@@ -1345,13 +1407,13 @@ python<span class="whitespace"> </span>get-pip.py<span class="whitespace"> </spa
 </table>
 </div>
 <div class="section" id="profile">
-<h2><a class="toc-backref" href="#id44">Profile</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-44">Profile</a></h2>
 <pre class="code bash literal-block">
 python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfile<span class="whitespace"> </span>script.py
 </pre>
 </div>
 <div class="section" id="broadcasting">
-<h2><a class="toc-backref" href="#id45">Broadcasting</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-45">Broadcasting</a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">numpy</span> <span class="keyword">as</span> <span class="name namespace">np</span><span class="whitespace">
 </span><span class="keyword namespace">from</span> <span class="name namespace">itertools</span> <span class="keyword namespace">import</span> <span class="name">product</span> <span class="keyword">as</span> <span class="name">itprod</span><span class="whitespace">
@@ -1367,7 +1429,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </pre>
 </div>
 <div class="section" id="pandas">
-<h2><a class="toc-backref" href="#id46">Pandas</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-46">Pandas</a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">pandas</span><span class="whitespace">
 
@@ -1400,7 +1462,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </pre>
 </div>
 <div class="section" id="capturing-the-shell-output-in-python">
-<h2><a class="toc-backref" href="#id47">Capturing the shell output in Python</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-47">Capturing the shell output in Python</a></h2>
 <p>This is way easier, but only works on Unix (including Cygwin).</p>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">commands</span><span class="whitespace">
@@ -1410,7 +1472,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 <p><a class="reference external" href="https://stackoverflow.com/questions/4760215/running-shell-command-from-python-and-capturing-the-output">https://stackoverflow.com/questions/4760215/running-shell-command-from-python-and-capturing-the-output</a></p>
 </div>
 <div class="section" id="regex-python-tip">
-<h2><a class="toc-backref" href="#id48"><em>regex</em> Python tip</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-48"><em>regex</em> Python tip</a></h2>
 <p>The <strong>'.'' (dot)</strong> doesn't have the original <em>regex</em> meaning with the default <tt class="docutils literal">re</tt> in Python.</p>
 <p>So, we need to enable it using the flag <tt class="docutils literal">re.DOTALL</tt>. Example:</p>
 <pre class="code python literal-block">
@@ -1420,7 +1482,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 <p><a class="reference external" href="http://www.thegeekstuff.com/2014/07/advanced-python-regex/">http://www.thegeekstuff.com/2014/07/advanced-python-regex/</a></p>
 </div>
 <div class="section" id="list-of-reserved-words-in-python">
-<h2><a class="toc-backref" href="#id49">List of reserved words in Python</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-49">List of reserved words in Python</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="22%" />
@@ -1652,11 +1714,64 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </tbody>
 </table>
 </div>
+<div class="section" id="general-notes">
+<h2><a class="toc-backref" href="#toc-entry-50">General notes</a></h2>
+<div class="section" id="nonlocal">
+<h3><a class="toc-backref" href="#toc-entry-51">nonlocal</a></h3>
+<p><tt class="docutils literal">nonlocal</tt> usually refers to shared variables in nested functions. They are not <tt class="docutils literal">local</tt> (scope inside the function) nor <tt class="docutils literal">global</tt> (scope of the application).</p>
+</div>
+<div class="section" id="python-arguments">
+<h3><a class="toc-backref" href="#toc-entry-52">Python arguments</a></h3>
+<p>Python arguments follow this structure: <tt class="docutils literal"><span class="pre">function(positional-only,</span> /, positional or keyword, *, <span class="pre">keyword-only)</span></tt>.</p>
+</div>
+<div class="section" id="application-of-list-comprehension">
+<h3><a class="toc-backref" href="#toc-entry-53">Application of list-comprehension</a></h3>
+<p><tt class="docutils literal">[my_func() for _ in range(10)]</tt> calls <tt class="docutils literal">my_func</tt> 10 times!</p>
+</div>
+<div class="section" id="namespace">
+<h3><a class="toc-backref" href="#toc-entry-54">namespace</a></h3>
+<p>A class <em>namespace</em> usually refers to the class <tt class="docutils literal">__dict__</tt>.</p>
+</div>
+<div class="section" id="class-and-static-methods">
+<h3><a class="toc-backref" href="#toc-entry-55">Class and static methods</a></h3>
+<p>The decorators <tt class="docutils literal">&#64;classmethod</tt> and <tt class="docutils literal">&#64;staticmethod</tt> make the class' function to accessible without the need of instantiation (no <tt class="docutils literal">self</tt>):</p>
+<pre class="code python literal-block">
+<span class="keyword">class</span> <span class="name class">A</span><span class="punctuation">(</span><span class="name builtin">object</span><span class="punctuation">):</span><span class="whitespace">
+</span>    <span class="keyword">def</span> <span class="name function">foo</span><span class="punctuation">(</span><span class="name builtin pseudo">self</span><span class="punctuation">,</span> <span class="name">x</span><span class="punctuation">):</span><span class="whitespace">
+</span>        <span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string affix">f</span><span class="literal string double">&quot;executing foo(</span><span class="literal string interpol">{</span><span class="name builtin pseudo">self</span><span class="literal string interpol">}</span><span class="literal string double">, </span><span class="literal string interpol">{</span><span class="name">x</span><span class="literal string interpol">}</span><span class="literal string double">)&quot;</span><span class="punctuation">)</span><span class="whitespace">
+
+</span>    <span class="name decorator">&#64;classmethod</span><span class="whitespace">
+</span>    <span class="keyword">def</span> <span class="name function">class_foo</span><span class="punctuation">(</span><span class="name builtin pseudo">cls</span><span class="punctuation">,</span> <span class="name">x</span><span class="punctuation">):</span><span class="whitespace">
+</span>        <span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string affix">f</span><span class="literal string double">&quot;executing class_foo(</span><span class="literal string interpol">{</span><span class="name builtin pseudo">cls</span><span class="literal string interpol">}</span><span class="literal string double">, </span><span class="literal string interpol">{</span><span class="name">x</span><span class="literal string interpol">}</span><span class="literal string double">)&quot;</span><span class="punctuation">)</span><span class="whitespace">
+
+</span>    <span class="name decorator">&#64;staticmethod</span><span class="whitespace">
+</span>    <span class="keyword">def</span> <span class="name function">static_foo</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">):</span><span class="whitespace">
+</span>        <span class="name builtin">print</span><span class="punctuation">(</span><span class="literal string affix">f</span><span class="literal string double">&quot;executing static_foo(</span><span class="literal string interpol">{</span><span class="name">x</span><span class="literal string interpol">}</span><span class="literal string double">)&quot;</span><span class="punctuation">)</span><span class="whitespace">
+
+</span><span class="name">a</span> <span class="operator">=</span> <span class="name">A</span><span class="punctuation">()</span><span class="whitespace">
+</span><span class="name">A</span><span class="operator">.</span><span class="name">foo</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># error!</span><span class="whitespace">
+</span><span class="name">a</span><span class="operator">.</span><span class="name">foo</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># executing foo(&lt;__main__.A object at 0xb7dbef0c&gt;, 1</span><span class="whitespace">
+</span><span class="name">A</span><span class="operator">.</span><span class="name">class_foo</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># executing class_foo(&lt;class '__main__.A'&gt;, 1)</span><span class="whitespace">
+</span><span class="name">a</span><span class="operator">.</span><span class="name">class_foo</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># executing class_foo(&lt;class '__main__.A'&gt;, 1)</span><span class="whitespace">
+</span><span class="name">A</span><span class="operator">.</span><span class="name">static_foo</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># executing static_foo(1)</span><span class="whitespace">
+</span><span class="name">a</span><span class="operator">.</span><span class="name">static_foo</span><span class="punctuation">(</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="comment single"># executing static_foo(1)</span>
+</pre>
+<p><tt class="docutils literal">&#64;staticmethod</tt> behave like plain functions except that you can call them from an instance or the class.</p>
+<p>More at <a class="reference external" href="https://stackoverflow.com/questions/68645/class-static-variables-and-methods">https://stackoverflow.com/questions/68645/class-static-variables-and-methods</a>
+and <a class="reference external" href="https://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python">https://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python</a></p>
+</div>
+</div>
 </div>
 <div class="section" id="multi-threading">
-<h1><a class="toc-backref" href="#id50">Multi-threading</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-56">Multi-threading</a></h1>
 <div class="section" id="definitions">
-<h2><a class="toc-backref" href="#id51">Definitions</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-57">Definitions</a></h2>
 <ul class="simple">
 <li><em>Thread</em>: independent process, managed by the operational system.</li>
 <li><em>Daemon</em> thread: by default, the main program waits the end of all threads before closing itself. However, this condition can be relaxed, and define the so-called &quot;daemon threads&quot;.</li>
@@ -1671,9 +1786,9 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </div>
 </div>
 <div class="section" id="data-fitting">
-<h1><a class="toc-backref" href="#id52">Data fitting</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-58">Data fitting</a></h1>
 <div class="section" id="curve-fit">
-<h2><a class="toc-backref" href="#id53"><tt class="docutils literal">curve_fit</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-59"><tt class="docutils literal">curve_fit</tt></a></h2>
 <p>Consider errors for fitting. The solution returns the covariation matrix. Its diagnonal is the variance (the squared root, <span class="formula"><i>σ</i></span>)!!</p>
 <pre class="code python literal-block">
 <span class="keyword namespace">from</span> <span class="name namespace">scipy.optimize</span> <span class="keyword namespace">import</span> <span class="name">curve_fit</span><span class="whitespace">
@@ -1690,12 +1805,12 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </pre>
 </div>
 <div class="section" id="leastsq">
-<h2><a class="toc-backref" href="#id54"><tt class="docutils literal">leastsq</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-60"><tt class="docutils literal">leastsq</tt></a></h2>
 <p>Consider errors for fitting. The solution, however, has no errors in the parameters.</p>
 <p><a class="reference external" href="http://wiki.scipy.org/Cookbook/FittingData">http://wiki.scipy.org/Cookbook/FittingData</a></p>
 </div>
 <div class="section" id="pyhdust-leastsq">
-<h2><a class="toc-backref" href="#id55"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-61"><em>PyHdust</em> + <tt class="docutils literal">leastsq</tt></a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword">as</span> <span class="name namespace">phc</span><span class="whitespace">
 
@@ -1713,7 +1828,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </pre>
 </div>
 <div class="section" id="pyhdust-curve-fit">
-<h2><a class="toc-backref" href="#id56"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></h2>
+<h2><a class="toc-backref" href="#toc-entry-62"><em>PyHdust</em> + <tt class="docutils literal">curve_fit</tt></a></h2>
 <pre class="code python literal-block">
 <span class="keyword namespace">import</span> <span class="name namespace">pyhdust.phc</span> <span class="keyword">as</span> <span class="name namespace">phc</span><span class="whitespace">
 
@@ -1731,7 +1846,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </div>
 </div>
 <div class="section" id="global-variables">
-<h1><a class="toc-backref" href="#id57">Global variables</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-63">Global variables</a></h1>
 <p>One needs to declare a variable <cite>global</cite> in a function when one wants that function to be able to modify the global variable. If you one wants to access it, then the <cite>global</cite> is not needed.</p>
 <pre class="code python literal-block">
 <span class="keyword">def</span> <span class="name function">func1</span><span class="punctuation">():</span><span class="whitespace">
@@ -1778,7 +1893,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </pre>
 </div>
 <div class="section" id="control-flow">
-<h1><a class="toc-backref" href="#id58">Control Flow</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-64">Control Flow</a></h1>
 <p>The syntax is the <tt class="docutils literal">*</tt> and <tt class="docutils literal">**</tt>. The names <tt class="docutils literal">*args</tt> and <tt class="docutils literal">**kwargs</tt> are only by convention but there's no hard requirement to use them.</p>
 <p>You would use <tt class="docutils literal">args</tt> when you're not sure how many arguments might be passed to your function, i.e. it allows you pass an arbitrary number of arguments to your function. For example:</p>
 <pre class="code python literal-block">
@@ -1818,7 +1933,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 <p>As you can see in this case it takes the list (or tuple) of items and unpacks it. By this it matches them to the arguments in the function. Of course, you could have a <tt class="docutils literal">*</tt> both in the function definition and in the function call.</p>
 </div>
 <div class="section" id="values-representation-and-text-encoding">
-<h1><a class="toc-backref" href="#id59">Values representation and text encoding</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-65">Values representation and text encoding</a></h1>
 <table border="1" class="docutils">
 <colgroup>
 <col width="14%" />
@@ -1866,7 +1981,7 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 <p>Of course, work in <tt class="docutils literal">bytes</tt> is much faster than with an encoding, but it is not design to work with text (but instead to <strong>integer</strong> values).</p>
 </div>
 <div class="section" id="summary">
-<h1><a class="toc-backref" href="#id60">Summary</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-66">Summary</a></h1>
 <pre class="code python literal-block">
 <span class="comment single"># built-in functions</span><span class="whitespace">
 </span><span class="keyword">for</span> <span class="name">a</span><span class="punctuation">,</span> <span class="name">b</span> <span class="operator word">in</span> <span class="name builtin">zip</span><span class="punctuation">(</span><span class="name">list1</span><span class="punctuation">,</span> <span class="name">list2</span><span class="punctuation">):</span><span class="whitespace">
@@ -1964,9 +2079,9 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </pre>
 </div>
 <div class="section" id="hard-install-reference">
-<h1><a class="toc-backref" href="#id61">Hard install reference</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-67">Hard install reference</a></h1>
 <div class="section" id="start">
-<h2><a class="toc-backref" href="#id62">Start</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-68">Start</a></h2>
 <pre class="code bash literal-block">
 <span class="comment single"># In ~/.bashrc
 </span><span class="name builtin">export</span><span class="whitespace"> </span><span class="name variable">PYTHONPATH</span><span class="operator">=</span><span class="name variable">$PYTHONPATH</span>:~/pyhdust<span class="whitespace">
@@ -1986,10 +2101,8 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 </span>$<span class="whitespace"> </span>./configure<span class="whitespace"> </span>--prefix<span class="operator">=</span><span class="literal string double">&quot;~/.local&quot;</span>
 </pre>
 </div>
-<div class="section" id="systems">
-<h2><a class="toc-backref" href="#id63">Systems</a></h2>
 <div class="section" id="ms-windows">
-<h3><a class="toc-backref" href="#id64">MS-Windows</a></h3>
+<h2><a class="toc-backref" href="#toc-entry-69">MS-Windows</a></h2>
 <p>When dialing with binary files in Windows (e.g., <em>struct, xdrlib</em>) open/write the files with the appendix 'b' (i.e., <tt class="docutils literal">rb, wb, r+b</tt>...).</p>
 <p>Starting at version 2.7.9, Python comes with pip!!!</p>
 <dl class="docutils">
@@ -1997,9 +2110,41 @@ python<span class="whitespace"> </span>-m<span class="whitespace"> </span>cProfi
 <dd><a class="reference external" href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">http://www.lfd.uci.edu/~gohlke/pythonlibs/</a></dd>
 </dl>
 </div>
+<div class="section" id="newer-python-versions-for-ubuntu">
+<h2><a class="toc-backref" href="#toc-entry-70">Newer Python versions for Ubuntu</a></h2>
+<pre class="code bash literal-block">
+<span class="comment single"># double check if you have this package:
+</span>sudo<span class="whitespace"> </span>apt<span class="whitespace"> </span>install<span class="whitespace"> </span>software-properties-common<span class="whitespace">
+
+</span><span class="comment single"># add repo:
+</span>sudo<span class="whitespace"> </span>add-apt-repository<span class="whitespace"> </span>ppa:deadsnakes/ppa<span class="whitespace">
+
+</span><span class="comment single"># enforce update
+</span>sudo<span class="whitespace"> </span>apt<span class="whitespace"> </span>update<span class="whitespace">
+
+</span><span class="comment single"># install you version
+</span>sudo<span class="whitespace"> </span>apt<span class="whitespace"> </span>install<span class="whitespace"> </span>python3.12<span class="whitespace"> </span>python3.12-dev<span class="whitespace">
+
+</span><span class="comment single"># set default python version:
+</span>python3<span class="whitespace"> </span>--version<span class="whitespace">
+</span><span class="comment single"># 3.10.12
+</span>sudo<span class="whitespace"> </span>update-alternatives<span class="whitespace"> </span>--install<span class="whitespace"> </span>/usr/bin/python3<span class="whitespace"> </span>python3<span class="whitespace"> </span>/usr/bin/python3.10<span class="whitespace"> </span><span class="literal number">1</span><span class="whitespace">
+</span>sudo<span class="whitespace"> </span>update-alternatives<span class="whitespace"> </span>--install<span class="whitespace"> </span>/usr/bin/python3<span class="whitespace"> </span>python3<span class="whitespace"> </span>/usr/bin/python3.12<span class="whitespace"> </span><span class="literal number">2</span><span class="whitespace">
+</span>sudo<span class="whitespace"> </span>update-alternatives<span class="whitespace"> </span>--config<span class="whitespace"> </span>python3
+</pre>
+<p>Other interesting packages:</p>
+<blockquote>
+<ul class="simple">
+<li>python3.12-venv: provides the standard library <tt class="docutils literal">venv</tt> module.</li>
+<li>python3.12-distutils: provides the standard library <tt class="docutils literal">distutils</tt> module.</li>
+<li>python3.12-lib2to3: provides the <tt class="docutils literal"><span class="pre">2to3-3.12</span></tt> utility and the standard library <tt class="docutils literal">lib2to3</tt> module.</li>
+<li>python3.12-gdbm: provides the standard library <tt class="docutils literal">dbm.gnu</tt> module.</li>
+<li>python3.12-tk: provides the standard library <tt class="docutils literal">tkinter</tt> module.</li>
+</ul>
+</blockquote>
 </div>
 <div class="section" id="compiling-python">
-<h2><a class="toc-backref" href="#id65">Compiling Python</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-71">Compiling Python</a></h2>
 <p>Compiling Python on Ubuntu:</p>
 <ul>
 <li><p class="first">Download the source from <a class="reference external" href="https://www.python.org/downloads">Python website</a></p>
@@ -2061,7 +2206,7 @@ readline
 </li>
 </ul>
 <div class="section" id="numba">
-<h3><a class="toc-backref" href="#id66"><tt class="docutils literal">numba</tt></a></h3>
+<h3><a class="toc-backref" href="#toc-entry-72"><tt class="docutils literal">numba</tt></a></h3>
 <p>It requires <tt class="docutils literal">llvm 3.7.x</tt>. The compilation flag of the binaries at <a class="reference external" href="http://llvm.org">http://llvm.org</a> are not supported on Ubuntu 14.04, so I needed to compile it.</p>
 <p>It makes use of the <tt class="docutils literal">cmake</tt>. And it works like this:</p>
 <pre class="code bash literal-block">
@@ -2079,20 +2224,20 @@ readline
 </pre>
 </div>
 <div class="section" id="parsl">
-<h3><a class="toc-backref" href="#id67"><tt class="docutils literal">parsl</tt></a></h3>
+<h3><a class="toc-backref" href="#toc-entry-73"><tt class="docutils literal">parsl</tt></a></h3>
 <p>A Parallel Scripting Library for Python.</p>
 <p><a class="reference external" href="http://parsl-project.org/">http://parsl-project.org/</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="python-environments-and-references">
-<h1><a class="toc-backref" href="#id68">Python environments and references</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-74">Python environments and references</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="http://python-notes.curiousefficiency.org/">http://python-notes.curiousefficiency.org/</a></li>
 <li><a class="reference external" href="https://stackoverflow.blog/2017/10/31/disliked-programming-languages/">What are the Most Disliked Programming Languages?</a></li>
 </ul>
 <div class="section" id="how-to-clean-up-conda-environments">
-<h2><a class="toc-backref" href="#id69">How to clean up conda environments</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-75">How to clean up conda environments</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments">https://til.hashrocket.com/posts/9ohfsktorj-squeaky-clean-anaconda-environments</a></li>
 <li><a class="reference external" href="https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment">https://conda.io/docs/user-guide/tasks/manage-environments.html#removing-an-environment</a></li>
@@ -2103,12 +2248,12 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </span>conda<span class="whitespace"> </span>clean<span class="whitespace"> </span>-a<span class="whitespace"> </span>-y
 </pre>
 <div class="section" id="packages-install-pip-issues-with-conda">
-<h3><a class="toc-backref" href="#id70">Packages install (pip) issues with conda</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-76">Packages install (pip) issues with conda</a></h3>
 <p>This is pretty common issue. What I have found is that the conda env doesn’t play well with the PYTHONPATH. The system seems to always look in the PYTHONPATH locations even when you’re using a conda environment. Now, I always run <tt class="docutils literal">unset PYTHONPATH</tt> when using a conda environment, and it works much better (I’m on a mac).</p>
 </div>
 </div>
 <div class="section" id="general-use-python-packages-in-astronomy">
-<h2><a class="toc-backref" href="#id71">General use Python packages in Astronomy</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-77">General use Python packages in Astronomy</a></h2>
 <ul>
 <li><dl class="first docutils">
 <dt>PyHdust (Python tools for hdust code)</dt>
@@ -2129,6 +2274,18 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 <li><dl class="first docutils">
 <dt>astroplan: An Open Source Observation Planning Package in Python</dt>
 <dd><p class="first last"><a class="reference external" href="https://arxiv.org/abs/1712.09631">https://arxiv.org/abs/1712.09631</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>sgp4: Track Earth satellites given TLE data, using up-to-date SGP4 routines</dt>
+<dd><p class="first last"><a class="reference external" href="https://pypi.org/project/sgp4/">https://pypi.org/project/sgp4/</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Skyfield: positions for the stars, planets, and satellites in orbit around the Earth</dt>
+<dd><p class="first last"><a class="reference external" href="https://rhodesmill.org/skyfield/">https://rhodesmill.org/skyfield/</a></p>
 </dd>
 </dl>
 </li>
@@ -2218,7 +2375,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="python-learning-for-astronomers">
-<h2><a class="toc-backref" href="#id72">Python learning for astronomers</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-78">Python learning for astronomers</a></h2>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Python para zumbis</dt>
@@ -2273,7 +2430,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="python-distributions">
-<h2><a class="toc-backref" href="#id73">Python distributions</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-79">Python distributions</a></h2>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Ureka*</dt>
@@ -2308,7 +2465,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="python-environments">
-<h2><a class="toc-backref" href="#id74">Python environments</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-80">Python environments</a></h2>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>IPython</dt>
@@ -2333,9 +2490,9 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="utilities">
-<h2><a class="toc-backref" href="#id75">Utilities</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-81">Utilities</a></h2>
 <div class="section" id="package-index">
-<h3><a class="toc-backref" href="#id76">Package Index</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-82">Package Index</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>PyPI</dt>
@@ -2345,7 +2502,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="cookbooks">
-<h3><a class="toc-backref" href="#id77">Cookbooks</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-83">Cookbooks</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>ActiveState Python recipes</dt>
@@ -2355,7 +2512,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="articles">
-<h3><a class="toc-backref" href="#id78">Articles</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-84">Articles</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Survey of software use in astronomy</dt>
@@ -2365,7 +2522,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="python-code-revision">
-<h3><a class="toc-backref" href="#id79">Python code revision</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-85">Python code revision</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Landscape</dt>
@@ -2375,7 +2532,7 @@ conda<span class="whitespace"> </span>info<span class="whitespace"> </span>-e<sp
 </ul>
 </div>
 <div class="section" id="visualization-tools">
-<h3><a class="toc-backref" href="#id80">Visualization tools</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-86">Visualization tools</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Seaborn</dt>

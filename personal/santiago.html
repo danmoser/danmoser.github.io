@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.20.1: https://docutils.sourceforge.io/" />
 <title>Santiago Blog and Info</title>
 <style type="text/css">
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
 
-See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
 */
 
@@ -417,6 +417,7 @@ li {
 *   math2html: convert LaTeX equations to HTML output.
 *
 *   Copyright (C) 2009,2010 Alex Fernández
+*                 2021      Günter Milde
 *
 *   Released under the terms of the `2-Clause BSD license'_, in short:
 *   Copying and distribution of this file, with or without modification,
@@ -428,16 +429,19 @@ li {
 *
 *   Based on eLyXer: convert LyX source files to HTML output.
 *   http://elyxer.nongnu.org/
-*/
-/* --end--
+*
+*
 * CSS file for LaTeX formulas.
+*
+* References: http://www.zipcon.net/~swhite/docs/math/math.html
+*             http://www.cs.tut.fi/~jkorpela/math/
 */
 
 /* Formulas */
 .formula {
 	text-align: center;
-	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
 	margin: 1.2em 0;
+	line-height: 1.4;
 }
 span.formula {
 	white-space: nowrap;
@@ -461,6 +465,9 @@ span.unknown {
 span.ignored, span.arraydef {
 	display: none;
 }
+.phantom {
+	visibility: hidden;
+}
 .formula i {
 	letter-spacing: 0.1ex;
 }
@@ -477,33 +484,48 @@ span.ignored, span.arraydef {
 }
 
 /* Structures */
+span.hspace {
+	display: inline-block;
+}
 span.overline, span.bar {
 	text-decoration: overline;
 }
-.fraction, .fullfraction {
+.fraction, .fullfraction, .textfraction {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
 }
-.fraction .fraction {
+span.formula .fraction,
+.textfraction,
+span.smallmatrix {
 	font-size: 80%;
-	line-height: 100%;
+	line-height: 1;
 }
 span.numerator {
 	display: block;
+	line-height: 1;
 }
 span.denominator {
 	display: block;
+	line-height: 1;
 	padding: 0ex;
 	border-top: thin solid;
 }
+.formula sub, .formula sup {
+	font-size: 80%;
+}
 sup.numerator, sup.unit {
-	font-size: 70%;
 	vertical-align: 80%;
 }
 sub.denominator, sub.unit {
-	font-size: 70%;
 	vertical-align: -20%;
+}
+span.smallsymbol {
+	font-size: 75%;
+	line-height: 75%;
+}
+span.boldsymbol {
+	font-weight: bold;
 }
 span.sqrt {
 	display: inline-block;
@@ -511,39 +533,62 @@ span.sqrt {
 	padding: 0.1ex;
 }
 sup.root {
-	font-size: 70%;
 	position: relative;
 	left: 1.4ex;
 }
 span.radical {
 	display: inline-block;
 	padding: 0ex;
-	font-size: 150%;
+	/* font-size: 160%; for DejaVu, not required with STIX */
+	line-height: 100%;
 	vertical-align: top;
+	vertical-align: middle;
 }
+
 span.root {
 	display: inline-block;
 	border-top: thin solid;
 	padding: 0ex;
 	vertical-align: middle;
 }
-span.symbol {
-	line-height: 125%;
-	font-size: 125%;
+div.formula .bigoperator,
+.displaystyle .bigoperator,
+.displaystyle .bigoperator {
+	line-height: 120%;
+	font-size: 140%;
+	padding-right: 0.2ex;
 }
-span.bigsymbol {
-	line-height: 150%;
-	font-size: 150%;
+span.fraction .bigoperator,
+span.scriptstyle .bigoperator {
+	line-height: inherit;
+	font-size: inherit;
+	padding-right: 0;
 }
-span.largesymbol {
-	font-size: 175%;
+span.bigdelimiter {
+	display: inline-block;
 }
-span.hugesymbol {
-	font-size: 200%;
+span.bigdelimiter.size1 {
+	transform: scale(1, 1.2);
+	line-height: 1.2;
 }
+span.bigdelimiter.size2 {
+	transform: scale(1, 1.62);
+	line-height: 1.62%;
+
+}
+span.bigdelimiter.size3 {
+	transform: scale(1, 2.05);
+	line-height: 2.05%;
+}
+span.bigdelimiter.size4 {
+	transform: scale(1, 2.47);
+	line-height: 2.47%;
+}
+/* vertically stacked sub and superscript */
 span.scripts {
 	display: inline-table;
 	vertical-align: middle;
+	padding-right: 0.2ex;
 }
 .script {
 	display: table-row;
@@ -561,51 +606,42 @@ span.limits {
 sup.limit, sub.limit {
 	line-height: 100%;
 }
-span.symbolover {
-	display: inline-block;
-	text-align: center;
-	position: relative;
-	float: right;
-	right: 100%;
-	bottom: 0.5em;
-	width: 0px;
-}
-span.withsymbol {
+span.embellished,
+span.embellished > .base {
 	display: inline-block;
 }
-span.symbolunder {
+span.embellished > sup,
+span.embellished > sub {
 	display: inline-block;
-	text-align: center;
+	font-size: 100%;
 	position: relative;
-	float: right;
-	right: 80%;
-	top: 0.3em;
+	bottom: 0.3em;
 	width: 0px;
+}
+span.embellished > sub {
+	top: 0.4em;
 }
 
 /* Environments */
 span.array, span.bracketcases, span.binomial, span.environment {
 	display: inline-table;
 	text-align: center;
-	border-collapse: collapse;
-	margin: 0em;
 	vertical-align: middle;
 }
 span.arrayrow, span.binomrow {
 	display: table-row;
-	padding: 0ex;
-	border: 0ex;
+	padding: 0;
+	border: 0;
 }
 span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
 	display: table-cell;
 	padding: 0ex 0.2ex;
-	line-height: 99%;
+	line-height: 1; /* 99%; */
 	border: 0ex;
 }
-/*
-* CSS file for LaTeX formulas, extra stuff:
-* binomials, vertical braces, stackrel, fonts and colors.
-*/
+.environment.align > .arrayrow > .arraycell.align-l {
+	padding-right: 2em;
+}
 
 /* Inline binomials */
 span.binom {
@@ -648,19 +684,30 @@ span.downstackrel {
 }
 
 /* Fonts */
+.formula {
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
+}
+span.radical,   /* ensure correct size of square-root sign */
+span.integral { /* upright integral signs for better alignment of indices */
+	font-family: "STIXIntegralsUp", STIX;
+	/* font-size: 115%; match apparent size with DejaVu */
+}
+span.bracket {
+  /* some "STIX" and "DejaVu Math TeX Gyre" bracket pieces don't fit */
+	font-family: "DejaVu Serif", serif;
+}
 span.mathsf, span.textsf {
-	font-style: normal;
 	font-family: sans-serif;
 }
 span.mathrm, span.textrm {
-	font-style: normal;
-	font-family: serif;
+	font-family: STIX, "DejaVu Serif", "DejaVu Math TeX Gyre", serif;
 }
-span.text, span.textnormal {
-	font-style: normal;
+span.mathtt, span.texttt {
+	font-family: monospace;
 }
-span.textipa {
-	color: #008080;
+span.text, span.textnormal,
+span.mathsf, span.mathtt, span.mathrm {
+	font-style: normal;
 }
 span.fraktur {
 	font-family: "Lucida Blackletter", eufm10, blackletter;
@@ -671,6 +718,16 @@ span.blackboard {
 span.scriptfont {
 	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
 	font-style: italic;
+}
+span.mathscr {
+  font-family: MathJax_Script, rsfs10,  cursive;
+  font-style: italic;
+}
+span.textsc {
+	font-variant: small-caps;
+}
+span.textsl {
+	font-style: oblique;
 }
 
 /* Colors */
@@ -689,7 +746,6 @@ span.boxed, span.framebox {
 	padding: 5px;
 }
 
-
 </style>
 </head>
 <body>
@@ -699,69 +755,69 @@ span.boxed, span.framebox {
 <div class="contents topic" id="indice">
 <p class="topic-title">Índice</p>
 <ul class="simple">
-<li><a class="reference internal" href="#passeios" id="id1">Passeios</a><ul>
-<li><a class="reference internal" href="#resumo" id="id2">Resumo</a></li>
-<li><a class="reference internal" href="#santiago" id="id3">Santiago</a><ul>
-<li><a class="reference internal" href="#bici" id="id4">Bici</a></li>
-<li><a class="reference internal" href="#region-baquedano" id="id5">Region Baquedano</a></li>
-<li><a class="reference internal" href="#region-la-moneda" id="id6">Region La Moneda</a></li>
-<li><a class="reference internal" href="#region-central" id="id7">Region Central</a></li>
-<li><a class="reference internal" href="#region-las-condes-vitacura-providencia" id="id8">Region Las Condes/Vitacura/Providencia</a></li>
+<li><a class="reference internal" href="#passeios" id="toc-entry-1">Passeios</a><ul>
+<li><a class="reference internal" href="#resumo" id="toc-entry-2">Resumo</a></li>
+<li><a class="reference internal" href="#santiago" id="toc-entry-3">Santiago</a><ul>
+<li><a class="reference internal" href="#bici" id="toc-entry-4">Bici</a></li>
+<li><a class="reference internal" href="#region-baquedano" id="toc-entry-5">Region Baquedano</a></li>
+<li><a class="reference internal" href="#region-la-moneda" id="toc-entry-6">Region La Moneda</a></li>
+<li><a class="reference internal" href="#region-central" id="toc-entry-7">Region Central</a></li>
+<li><a class="reference internal" href="#region-las-condes-vitacura-providencia" id="toc-entry-8">Region Las Condes/Vitacura/Providencia</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#restaurantes-noite" id="id9">Restaurantes/Noite</a></li>
-<li><a class="reference internal" href="#trekking" id="id10">Trekking</a><ul>
-<li><a class="reference internal" href="#cerro-san-cristobal" id="id11">Cerro San Cristobal</a></li>
-<li><a class="reference internal" href="#cerro-pochoco" id="id12">Cerro Pochoco</a></li>
-<li><a class="reference internal" href="#cerro-manquehue" id="id13">Cerro Manquehue</a></li>
-<li><a class="reference internal" href="#parque-naturales-cordillera" id="id14">Parque naturales Cordillera</a></li>
+<li><a class="reference internal" href="#restaurantes-noite" id="toc-entry-9">Restaurantes/Noite</a></li>
+<li><a class="reference internal" href="#trekking" id="toc-entry-10">Trekking</a><ul>
+<li><a class="reference internal" href="#cerro-san-cristobal" id="toc-entry-11">Cerro San Cristobal</a></li>
+<li><a class="reference internal" href="#cerro-pochoco" id="toc-entry-12">Cerro Pochoco</a></li>
+<li><a class="reference internal" href="#cerro-manquehue" id="toc-entry-13">Cerro Manquehue</a></li>
+<li><a class="reference internal" href="#parque-naturales-cordillera" id="toc-entry-14">Parque naturales Cordillera</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#viajes-cortos" id="id15">Viajes cortos</a><ul>
-<li><a class="reference internal" href="#resorts-de-sky" id="id16">Resorts de sky</a></li>
-<li><a class="reference internal" href="#valparaiso-vina-del-mar" id="id17">Valparaíso/Viña del mar</a></li>
-<li><a class="reference internal" href="#el-morado" id="id18">El Morado</a></li>
-<li><a class="reference internal" href="#radal-siete-tazas" id="id19">Radal Siete Tazas</a></li>
-<li><a class="reference internal" href="#termas-panimavida-quinamavida-catillo" id="id20">Termas Panimávida, Quinamávida, Catillo</a></li>
+<li><a class="reference internal" href="#viajes-cortos" id="toc-entry-15">Viajes cortos</a><ul>
+<li><a class="reference internal" href="#resorts-de-sky" id="toc-entry-16">Resorts de sky</a></li>
+<li><a class="reference internal" href="#valparaiso-vina-del-mar" id="toc-entry-17">Valparaíso/Viña del mar</a></li>
+<li><a class="reference internal" href="#el-morado" id="toc-entry-18">El Morado</a></li>
+<li><a class="reference internal" href="#radal-siete-tazas" id="toc-entry-19">Radal Siete Tazas</a></li>
+<li><a class="reference internal" href="#termas-panimavida-quinamavida-catillo" id="toc-entry-20">Termas Panimávida, Quinamávida, Catillo</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#viajes-lejanos" id="id21">Viajes lejanos</a><ul>
-<li><a class="reference internal" href="#norte-antofagasta-san-pedro-de-atacama" id="id22">Norte: Antofagasta, San Pedro de Atacama</a></li>
-<li><a class="reference internal" href="#la-serena" id="id23">La Serena</a></li>
-<li><a class="reference internal" href="#chillan" id="id24">Chillan</a></li>
-<li><a class="reference internal" href="#patagonia" id="id25">Patagonia</a></li>
+<li><a class="reference internal" href="#viajes-lejanos" id="toc-entry-21">Viajes lejanos</a><ul>
+<li><a class="reference internal" href="#norte-antofagasta-san-pedro-de-atacama" id="toc-entry-22">Norte: Antofagasta, San Pedro de Atacama</a></li>
+<li><a class="reference internal" href="#la-serena" id="toc-entry-23">La Serena</a></li>
+<li><a class="reference internal" href="#chillan" id="toc-entry-24">Chillan</a></li>
+<li><a class="reference internal" href="#patagonia" id="toc-entry-25">Patagonia</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#uteis" id="id26">Uteis</a><ul>
-<li><a class="reference internal" href="#aeroporto-centro-santiago" id="id27">Aeroporto - centro Santiago</a><ul>
-<li><a class="reference internal" href="#turbus" id="id28">Turbus</a></li>
-<li><a class="reference internal" href="#centropuerto" id="id29">Centropuerto</a></li>
+<li><a class="reference internal" href="#uteis" id="toc-entry-26">Uteis</a><ul>
+<li><a class="reference internal" href="#aeroporto-centro-santiago" id="toc-entry-27">Aeroporto - centro Santiago</a><ul>
+<li><a class="reference internal" href="#turbus" id="toc-entry-28">Turbus</a></li>
+<li><a class="reference internal" href="#centropuerto" id="toc-entry-29">Centropuerto</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#arriendo" id="id30">Arriendo</a></li>
+<li><a class="reference internal" href="#arriendo" id="toc-entry-30">Arriendo</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#compras" id="id31">Compras</a><ul>
-<li><a class="reference internal" href="#dicas-conversao" id="id32">Dicas conversão</a></li>
-<li><a class="reference internal" href="#voos" id="id33">Voos</a></li>
-<li><a class="reference internal" href="#aplicativos" id="id34">Aplicativos</a></li>
-<li><a class="reference internal" href="#sitios" id="id35">Sítios</a></li>
-<li><a class="reference internal" href="#bicicleta" id="id36">Bicicleta</a></li>
+<li><a class="reference internal" href="#compras" id="toc-entry-31">Compras</a><ul>
+<li><a class="reference internal" href="#dicas-conversao" id="toc-entry-32">Dicas conversão</a></li>
+<li><a class="reference internal" href="#voos" id="toc-entry-33">Voos</a></li>
+<li><a class="reference internal" href="#aplicativos" id="toc-entry-34">Aplicativos</a></li>
+<li><a class="reference internal" href="#sitios" id="toc-entry-35">Sítios</a></li>
+<li><a class="reference internal" href="#bicicleta" id="toc-entry-36">Bicicleta</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="passeios">
-<h1><a class="toc-backref" href="#id1">Passeios</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-1">Passeios</a></h1>
 <ul class="simple">
 <li><a class="reference external" href="http://www.chileestuyo.cl">http://www.chileestuyo.cl</a></li>
 <li><a class="reference external" href="https://www.airbnb.com">https://www.airbnb.com</a></li>
 <li><a class="reference external" href="http://www.booking.com">http://www.booking.com</a></li>
 </ul>
 <div class="section" id="resumo">
-<h2><a class="toc-backref" href="#id2">Resumo</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-2">Resumo</a></h2>
 <ul class="simple">
 <li>Santiago (metropolitano)</li>
 <li><dl class="first docutils">
@@ -805,13 +861,13 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="santiago">
-<h2><a class="toc-backref" href="#id3">Santiago</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-3">Santiago</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="../static/santiago_ebook_v1-2-2.pdf">E-Book</a></li>
 <li><a class="reference external" href="http://www.tripadvisor.com/Attractions-g294305-Activities-Santiago_Santiago_Metropolitan_Region.html">Santiago Trip Advisor</a></li>
 </ul>
 <div class="section" id="bici">
-<h3><a class="toc-backref" href="#id4">Bici</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-4">Bici</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="https://www.google.com/maps/d/viewer?mid=zvBMMeqnQFNI.k_3VZmLi0Ab0&amp;hl=en_US">Mapa ciclovias</a></li>
 </ul>
@@ -821,7 +877,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="region-baquedano">
-<h3><a class="toc-backref" href="#id5">Region Baquedano</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-5">Region Baquedano</a></h3>
 <ul class="simple">
 <li>Cerro Santa Lucía</li>
 <li>Feria (artesanal) Santa Lucía (comprar lapiz azul)</li>
@@ -837,7 +893,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="region-la-moneda">
-<h3><a class="toc-backref" href="#id6">Region La Moneda</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-6">Region La Moneda</a></h3>
 <ul class="simple">
 <li><dl class="first docutils">
 <dt>Palacio de la moneda (necessita agendar. &quot;Em baixo&quot;, tem coisas legais.</dt>
@@ -859,7 +915,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="region-central">
-<h3><a class="toc-backref" href="#id7">Region Central</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-7">Region Central</a></h3>
 <ul class="simple">
 <li>Estación Central</li>
 <li>Parque O'Higgins</li>
@@ -871,7 +927,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="region-las-condes-vitacura-providencia">
-<h3><a class="toc-backref" href="#id8">Region Las Condes/Vitacura/Providencia</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-8">Region Las Condes/Vitacura/Providencia</a></h3>
 <ul class="simple">
 <li>Costanera Center</li>
 <li>Los Leones (tiendas en la calle)</li>
@@ -883,7 +939,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="restaurantes-noite">
-<h2><a class="toc-backref" href="#id9">Restaurantes/Noite</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-9">Restaurantes/Noite</a></h2>
 <ul class="simple">
 <li>Patio Belavista (Belavista)</li>
 <li>Tangueria El Cachafaz (Pedro de Valdivia)</li>
@@ -910,7 +966,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="trekking">
-<h2><a class="toc-backref" href="#id10">Trekking</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-10">Trekking</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://www.wikiexplora.com/index.php/Santiago">http://www.wikiexplora.com/index.php/Santiago</a></li>
 <li><a class="reference external" href="http://alltrails.com/explore?q=Santiago,%20chile">http://alltrails.com/explore?q=Santiago,%20chile</a></li>
@@ -926,27 +982,27 @@ span.boxed, span.framebox {
 </li>
 </ul>
 <div class="section" id="cerro-san-cristobal">
-<h3><a class="toc-backref" href="#id11">Cerro San Cristobal</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-11">Cerro San Cristobal</a></h3>
 <ul class="simple">
 <li>Hasta el fin de la avenida Pedro de Valdivia. Mejor aller por el funicular.</li>
 <li><a class="reference external" href="http://www.wikiexplora.com/index.php/Cerro_San_Crist%C3%B3bal">http://www.wikiexplora.com/index.php/Cerro_San_Crist%C3%B3bal</a></li>
 </ul>
 </div>
 <div class="section" id="cerro-pochoco">
-<h3><a class="toc-backref" href="#id12">Cerro Pochoco</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-12">Cerro Pochoco</a></h3>
 <ul class="simple">
 <li>Observatorio Achaya é o ponto de partida.</li>
 <li><a class="reference external" href="http://www.wikiexplora.com/index.php/Cerro_Pochoco">http://www.wikiexplora.com/index.php/Cerro_Pochoco</a></li>
 </ul>
 </div>
 <div class="section" id="cerro-manquehue">
-<h3><a class="toc-backref" href="#id13">Cerro Manquehue</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-13">Cerro Manquehue</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="http://www.wikiexplora.com/index.php/Cerro_Manquehue">http://www.wikiexplora.com/index.php/Cerro_Manquehue</a></li>
 </ul>
 </div>
 <div class="section" id="parque-naturales-cordillera">
-<h3><a class="toc-backref" href="#id14">Parque naturales Cordillera</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-14">Parque naturales Cordillera</a></h3>
 <p><a class="reference external" href="http://asociacionparquecordillera.cl/red-de-parques-naturales/">http://asociacionparquecordillera.cl/red-de-parques-naturales/</a></p>
 <div class="figure">
 <img alt="../figs/santiago_mapa-pqcord.jpg" src="../figs/santiago_mapa-pqcord.jpg" />
@@ -962,7 +1018,7 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="viajes-cortos">
-<h2><a class="toc-backref" href="#id15">Viajes cortos</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-15">Viajes cortos</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://www.denomades.com/pt/santiago">https://www.denomades.com/pt/santiago</a></li>
 <li>Arriendo coches: 30000 CLP/día (pequeño) + seguro (que em geral, dobra o preço)</li>
@@ -972,7 +1028,7 @@ span.boxed, span.framebox {
 <li><a class="reference external" href="http://www.observatorioroanjase.cl">http://www.observatorioroanjase.cl</a></li>
 </ul>
 <div class="section" id="resorts-de-sky">
-<h3><a class="toc-backref" href="#id16">Resorts de sky</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-16">Resorts de sky</a></h3>
 <ul class="simple">
 <li>Valle Nevado</li>
 <li>La Parva (Descida de bike!)</li>
@@ -980,7 +1036,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="valparaiso-vina-del-mar">
-<h3><a class="toc-backref" href="#id17">Valparaíso/Viña del mar</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-17">Valparaíso/Viña del mar</a></h3>
 <ul class="simple">
 <li>Buses desde 4500 !</li>
 <li>Viña Casas Del Bosque, o restaurante dizem que é bom.</li>
@@ -992,7 +1048,7 @@ span.boxed, span.framebox {
 </ul>
 </div>
 <div class="section" id="el-morado">
-<h3><a class="toc-backref" href="#id18">El Morado</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-18">El Morado</a></h3>
 <p>Roteiro (93 km de Santiago, por Puente Alto):</p>
 <ol class="arabic simple">
 <li>Rest. Calipso</li>
@@ -1012,14 +1068,14 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="radal-siete-tazas">
-<h3><a class="toc-backref" href="#id19">Radal Siete Tazas</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-19">Radal Siete Tazas</a></h3>
 <ul class="simple">
 <li><a class="reference external" href="http://www.sietetazas.cl">http://www.sietetazas.cl</a></li>
 <li><a class="reference external" href="../static/santiago_mapa_7tazas.pdf">Mapa</a></li>
 </ul>
 </div>
 <div class="section" id="termas-panimavida-quinamavida-catillo">
-<h3><a class="toc-backref" href="#id20">Termas Panimávida, Quinamávida, Catillo</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-20">Termas Panimávida, Quinamávida, Catillo</a></h3>
 <ul class="simple">
 <li>Cerca de Linares.</li>
 <li>Tren SCL - Linares, ida-e-volta (22000)</li>
@@ -1028,9 +1084,9 @@ span.boxed, span.framebox {
 </div>
 </div>
 <div class="section" id="viajes-lejanos">
-<h2><a class="toc-backref" href="#id21">Viajes lejanos</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-21">Viajes lejanos</a></h2>
 <div class="section" id="norte-antofagasta-san-pedro-de-atacama">
-<h3><a class="toc-backref" href="#id22">Norte: Antofagasta, San Pedro de Atacama</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-22">Norte: Antofagasta, San Pedro de Atacama</a></h3>
 <ul class="simple">
 <li>Alma: aos sábados e domingos, <a class="reference external" href="http://www.eso.org/public/about-eso/visitors/alma/">http://www.eso.org/public/about-eso/visitors/alma/</a></li>
 <li>Paranal: aos sábados, <a class="reference external" href="http://www.eso.org/public/about-eso/visitors/paranal/">http://www.eso.org/public/about-eso/visitors/paranal/</a></li>
@@ -1048,7 +1104,7 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </pre>
 </div>
 <div class="section" id="la-serena">
-<h3><a class="toc-backref" href="#id23">La Serena</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-23">La Serena</a></h3>
 <ul class="simple">
 <li>Valle del Elqui</li>
 <li>Isla Damas (pinguinos)</li>
@@ -1056,13 +1112,13 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </ul>
 </div>
 <div class="section" id="chillan">
-<h3><a class="toc-backref" href="#id24">Chillan</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-24">Chillan</a></h3>
 <ul class="simple">
 <li>Termas: <a class="reference external" href="http://www.chileanski.com/por/termas-de-chillan/como-chegar.htm">http://www.chileanski.com/por/termas-de-chillan/como-chegar.htm</a></li>
 </ul>
 </div>
 <div class="section" id="patagonia">
-<h3><a class="toc-backref" href="#id25">Patagonia</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-25">Patagonia</a></h3>
 <ul class="simple">
 <li>&quot;Carretera austral&quot;: é o nome dado a autopista chilena no. 7, entre as cidades Puerto Montt e Villa O'Higgins.</li>
 <li><a class="reference external" href="patagonia.html">My info carretera</a></li>
@@ -1074,26 +1130,26 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </div>
 </div>
 <div class="section" id="uteis">
-<h1><a class="toc-backref" href="#id26">Uteis</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-26">Uteis</a></h1>
 <div class="section" id="aeroporto-centro-santiago">
-<h2><a class="toc-backref" href="#id27">Aeroporto - centro Santiago</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-27">Aeroporto - centro Santiago</a></h2>
 <p>Taxi: ~15000 CLPd.</p>
 <p>Onibus: Duas empresas oferecem o serviço diariamente. Ambos saem do primeiro andar do aeroporto, em frente à saída 5, e fazem suas paradas nas entradas de algumas estações do metrô de Santiago.</p>
 <div class="section" id="turbus">
-<h3><a class="toc-backref" href="#id28">Turbus</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-28">Turbus</a></h3>
 <p>Onibus verde, ~1400 CLP.</p>
 <p>SCL hasta Pajaritos, Las Rejas e Universidad de Santiago (&quot;Terminal Alameda&quot;). O serviço é prestado de 5 hs até 0 hs, a cada 20 minutos. De madrugada, sai um ônibus a cada hora, com destino até o Terminal Alameda.</p>
 <p>Do centro para SCL, Terminal Alameda (plataformas 22 e 23) e Pajaritos.</p>
 </div>
 <div class="section" id="centropuerto">
-<h3><a class="toc-backref" href="#id29">Centropuerto</a></h3>
+<h3><a class="toc-backref" href="#toc-entry-29">Centropuerto</a></h3>
 <p>Onibus azul, ~1600 CLP.</p>
 <p>De SCL, faz um trajeto mais longo que a Tur-Bus, parando nas estações Pajaritos, Las Rejas, Universidad de Santiago, Estación Central e finaliza o trajeto na Estación Los Héroes.</p>
 <p>No retorno ao Aeroporto, faz paradas nas mesmas estações, no sentido contrário (embarque em Los Héroes).</p>
 </div>
 </div>
 <div class="section" id="arriendo">
-<h2><a class="toc-backref" href="#id30">Arriendo</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-30">Arriendo</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://www.compartodepto.cl">http://www.compartodepto.cl</a></li>
 <li><a class="reference external" href="http://www.portalinmobiliario.com">http://www.portalinmobiliario.com</a></li>
@@ -1103,14 +1159,14 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </div>
 </div>
 <div class="section" id="compras">
-<h1><a class="toc-backref" href="#id31">Compras</a></h1>
+<h1><a class="toc-backref" href="#toc-entry-31">Compras</a></h1>
 <div class="section" id="dicas-conversao">
-<h2><a class="toc-backref" href="#id32">Dicas conversão</a></h2>
-<p><span class="formula"><i>BRL</i> → <i>CLP</i> =  × 200 − 10</span>. Exemplo: 5 BRL <span class="formula"> × </span> 200 - 10% = 900 CLP.</p>
-<p><span class="formula"><i>CLP</i> → <i>BRL</i> = ÷200 + 10</span>. Exemplo: 2500 CLP <span class="formula">÷</span> 200 = 12.5 + 10% = 14 BRL.</p>
+<h2><a class="toc-backref" href="#toc-entry-32">Dicas conversão</a></h2>
+<p><span class="formula"><i>BRL</i> → <i>CLP</i> = ×200 − 10</span>. Exemplo: 5 BRL <span class="formula">×</span> 200 - 10% = 900 CLP.</p>
+<p><span class="formula"><i>CLP</i> → <i>BRL</i> = ÷200 + 10</span>. Exemplo: 2500 CLP <span class="formula">÷</span> 200 = 12.5 + 10% = 14 BRL.</p>
 </div>
 <div class="section" id="voos">
-<h2><a class="toc-backref" href="#id33">Voos</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-33">Voos</a></h2>
 <ul class="simple">
 <li>Para voos durante a semana, pesquise tarifas entre 10h e 16h</li>
 <li>Procure comprar com mais de 28 dias de antecedência</li>
@@ -1122,7 +1178,7 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </ul>
 </div>
 <div class="section" id="aplicativos">
-<h2><a class="toc-backref" href="#id34">Aplicativos</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-34">Aplicativos</a></h2>
 <ul class="simple">
 <li><em>XE Currency</em>: Muito usado em viagens para o exterior, este conversor de moedas tem boa provação entre os usuários. Converte mais de 180 moedas na interface de fácil acesso, além de armazenar os dados para acesso offline.</li>
 <li><em>Hotwire</em>: Este aplicativo mapeia os maiores descontos em hotéis e mostra as melhores ofertas de acordo com a localização.</li>
@@ -1131,7 +1187,7 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </ul>
 </div>
 <div class="section" id="sitios">
-<h2><a class="toc-backref" href="#id35">Sítios</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-35">Sítios</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="http://www.mercadolibre.cl">http://www.mercadolibre.cl</a> (usada)</li>
 <li><a class="reference external" href="http://www.yapo.cl">http://www.yapo.cl</a> (usada)</li>
@@ -1142,7 +1198,7 @@ http://iverotravelschile.com/pt/tours-san-pedro-de-atacama-chile.html
 </ul>
 </div>
 <div class="section" id="bicicleta">
-<h2><a class="toc-backref" href="#id36">Bicicleta</a></h2>
+<h2><a class="toc-backref" href="#toc-entry-36">Bicicleta</a></h2>
 <ul class="simple">
 <li>Tem uma quadra no centro de santiago, que é especializada em bicicletas, lá deverias encontrar o melhor preço. Mas na verdade não é tão barato assim... Calle San Diego.</li>
 </ul>

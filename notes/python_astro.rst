@@ -645,6 +645,62 @@ unichr              unicode             vars                       while
 with                xrange              yield                      zip
 =================== =================== ========================== =======================
 
+General notes
+=================
+nonlocal
+------------
+``nonlocal`` usually refers to shared variables in nested functions. They are not ``local`` (scope inside the function) nor ``global`` (scope of the application).
+
+Python arguments
+-----------------
+Python arguments follow this structure: ``function(positional-only, /, positional or keyword, *, keyword-only)``.
+
+Application of list-comprehension
+-----------------------------------
+``[my_func() for _ in range(10)]`` calls ``my_func`` 10 times!
+
+namespace
+------------
+A class *namespace* usually refers to the class ``__dict__``.
+
+Class and static methods
+-------------------------
+The decorators ``@classmethod`` and ``@staticmethod`` make the class' function to accessible without the need of instantiation (no ``self``):
+
+.. code:: python
+
+    class A(object):
+        def foo(self, x):
+            print(f"executing foo({self}, {x})")
+
+        @classmethod
+        def class_foo(cls, x):
+            print(f"executing class_foo({cls}, {x})")
+
+        @staticmethod
+        def static_foo(x):
+            print(f"executing static_foo({x})")
+
+    a = A()
+    A.foo(1)
+    # error!
+    a.foo(1)
+    # executing foo(<__main__.A object at 0xb7dbef0c>, 1
+    A.class_foo(1)
+    # executing class_foo(<class '__main__.A'>, 1)
+    a.class_foo(1)
+    # executing class_foo(<class '__main__.A'>, 1)
+    A.static_foo(1)
+    # executing static_foo(1)
+    a.static_foo(1)
+    # executing static_foo(1)
+
+``@staticmethod`` behave like plain functions except that you can call them from an instance or the class.
+
+More at https://stackoverflow.com/questions/68645/class-static-variables-and-methods
+and https://stackoverflow.com/questions/136097/what-is-the-difference-between-staticmethod-and-classmethod-in-python
+
+
 Multi-threading
 *****************
 Definitions
@@ -968,16 +1024,47 @@ Start
     $ python setup.py install --user
     $ ./configure --prefix="~/.local"
 
-Systems
-=============
 MS-Windows
--------------
+==================================
 When dialing with binary files in Windows (e.g., *struct, xdrlib*) open/write the files with the appendix 'b' (i.e., ``rb, wb, r+b``...).
 
 Starting at version 2.7.9, Python comes with pip!!!
 
 Unofficial Windows Binaries for Python Extension Packages
     http://www.lfd.uci.edu/~gohlke/pythonlibs/
+
+
+Newer Python versions for Ubuntu
+==================================
+.. code:: bash
+
+    # double check if you have this package:
+    sudo apt install software-properties-common
+    
+    # add repo:
+    sudo add-apt-repository ppa:deadsnakes/ppa
+    
+    # enforce update
+    sudo apt update
+    
+    # install you version
+    sudo apt install python3.12 python3.12-dev
+
+    # set default python version:
+    python3 --version    
+    # 3.10.12
+    sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+    sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 2
+    sudo update-alternatives --config python3
+
+Other interesting packages:
+
+    - python3.12-venv: provides the standard library ``venv`` module.
+    - python3.12-distutils: provides the standard library ``distutils`` module.
+    - python3.12-lib2to3: provides the ``2to3-3.12`` utility and the standard library ``lib2to3`` module.
+    - python3.12-gdbm: provides the standard library ``dbm.gnu`` module.
+    - python3.12-tk: provides the standard library ``tkinter`` module.
+
 
 Compiling Python
 ==================
@@ -1100,6 +1187,12 @@ General use Python packages in Astronomy
 
 - astroplan: An Open Source Observation Planning Package in Python
     https://arxiv.org/abs/1712.09631
+
+- sgp4: Track Earth satellites given TLE data, using up-to-date SGP4 routines
+    https://pypi.org/project/sgp4/
+
+- Skyfield: positions for the stars, planets, and satellites in orbit around the Earth
+    https://rhodesmill.org/skyfield/
 
 - SpecViz: 1D Spectral Visualization Tool
     http://specviz.readthedocs.io/
