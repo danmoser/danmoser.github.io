@@ -18,7 +18,7 @@ Official reference documentation: http://fits.gsfc.nasa.gov/fits_standard.html
 
 The FITS header
 ----------------
-It's the astronomical standard metadata! Specifies all useful information associate with
+It's the astronomical standard metadata! Specifies all useful information associated with
 your data (obtaining conditions, reducing history, etc).
 
 The header is a table with three possible fields:
@@ -26,7 +26,7 @@ The header is a table with three possible fields:
 - Keyword; Value; Comment
 
     - *Keywords* must start with a text character.
-    - *Value* can be of multiple types (interger, float, string).
+    - *Value* can be of multiple types (integer, float, string).
     - [Optional] *Comment* text.
 
 
