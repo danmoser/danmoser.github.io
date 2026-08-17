@@ -1015,56 +1015,80 @@ Numa frigideira, coloque o azeite para esquentar e frite um pouco o alho e a ceb
 A seguir junte o molho de tomate, dois copos de água, sal, pimenta e deixe cozinhar por duas horas.
 
 
+.. Pão de queijo 
+.. -------------------
+.. Boa aventura! As receitas variam nas proporcoes abaixo, onde "c" e' "cup". 
+
+.. ======= ======= ======= ======= ======= ======= ======= ======= 
+.. Recipe  A       B       C       D       E       F       G
+.. ======= ======= ======= ======= ======= ======= ======= ======= 
+.. Tapioca 4c      4c      4c      4c      4c      4c      4c
+.. Milk    1c      1c      1.33c   2c      1.5c    2c      2c
+.. Oil     0.5c    0.5c    0.5c    0.5c    1c      1c      1c
+.. cheese  1.66c   3c      2c      3c      3c      4c      4c
+.. eggs    >3      3       2       3       2       2       3
+.. ======= ======= ======= ======= ======= ======= ======= ======= 
+
+.. INFO:
+
+.. - As receitas mais "cheesy" (em cups) certamente sao com mussarela; as menos, com parmesao
+.. - Usar qualquer proporcao entre queijos ralados (parmesao e mussarela)
+.. - Sal a gosto (especialmente necessario se pouco queijo)
+.. - A proporcao entre polvilhos deve ser sempre entre 100% doce a no maximo 50%.
+.. - Tapioca flour = polvilho doce
+.. - 2 cups ~ 400 ml (o cup esta' entre 150 e 250 ml...)
+.. - shredded cheese: 160 g == 2 cups (mussarela?)
+.. - polvilho doce: 260 g == 2 cups 
+.. - polvilho azedo: 265 g == 2 cups
+
+
+.. Pão de queijo (referencia)
+.. -----------------------------
+.. Ingredientes:
+
+.. - 300 ml de leite
+.. - 150 ml de óleo
+.. - 3 ovos
+.. - 565 gramas de polvilho azedo (= 1 pacote de *Tapioca Flour* (ou *starch*), vendido no H-E-B)
+.. - 1 colher sobremesa sal
+.. - 300 gramas de queijo parmesão ralado (quanto mais fino, melhor)
+
 Pão de queijo 
 -------------------
-Boa aventura! As receitas variam nas proporcoes abaixo, onde "c" e' "cup". 
+Receita dimensionada para uma vasilha de 6 Quart a partir da referencia abaixo.
 
-======= ======= ======= ======= ======= ======= ======= ======= 
-Recipe  A       B       C       D       E       F       G
-======= ======= ======= ======= ======= ======= ======= ======= 
-Tapioca 4c      4c      4c      4c      4c      4c      4c
-Milk    1c      1c      1.33c   2c      1.5c    2c      2c
-Oil     0.5c    0.5c    0.5c    0.5c    1c      1c      1c
-cheese  1.66c   3c      2c      3c      3c      4c      4c
-eggs    >3      3       2       3       2       2       3
-======= ======= ======= ======= ======= ======= ======= ======= 
-
-INFO:
-
-- As receitas mais "cheesy" (em cups) certamente sao com mussarela; as menos, com parmesao
-- Usar qualquer proporcao entre queijos ralados (parmesao e mussarela)
-- Sal a gosto (especialmente necessario se pouco queijo)
-- A proporcao entre polvilhos deve ser sempre entre 100% doce a no maximo 50%.
-- Tapioca flour = polvilho doce
-- 2 cups ~ 400 ml (o cup esta' entre 150 e 250 ml...)
-- shredded cheese: 160 g == 2 cups (mussarela?)
-- polvilho doce: 260 g == 2 cups 
-- polvilho azedo: 265 g == 2 cups
+- Polvilho total - 5 xícaras (850g)
+- Proporção azedo:doce entre 2:1 e 1:2
+- Sal - 3 colheres de chá (18 g)
+- Leite - 2 xícaras (460 g)
+- Óleo - 1 xícara (128 g)
+- Queijo - 2 xícaras (300 g)
+- Ovo - 4 unidades (240 g)
 
 
 Pão de queijo (referencia)
 -----------------------------
-Ingredientes:
+NV1C:
 
-- 300 ml de leite
-- 150 ml de óleo
-- 3 ovos
-- 565 gramas de polvilho azedo (= 1 pacote de *Tapioca Flour* (ou *starch*), vendido no H-E-B)
-- 1 colher sobremesa sal
-- 300 gramas de queijo parmesão ralado (quanto mais fino, melhor)
+- Polvilho total (azedo + doce) - 1 xícara (170 g) 
+- Proporção azedo 2:1 doce
+- Sal - 1 colher de chá (6 g)
+- Leite - 1/2 xícara (115 g)
+- Óleo - 1/4 xícara (32 g)
+- Queijo - 1/2 xícara (75 g)
+- Ovo - 1 unidade (60 g)
 
 Como fazer
 ~~~~~~~~~~~~
-Colocar o leite+óleo em uma panela e esperar começar a ferver. Derramar então sobre o polvilho e misturar. Parece que ficará seco, mas é assim mesmo. Esperar 15 min. 
+Colocar o leite + óleo em uma panela e esperar começar a ferver. Derramar então sobre o polvilho e misturar. Esperar 15 min. 
 
 Adicione o sal e o queijo, e por último os ovos. Amassar bem até a massa ficar soltando da mão (10 min). Enrolar o pão de queijo no tamanho desejado. A massa pode ser congelada se desejado.
 
-Untar a forma com óleo, e levar ao forno (25 min a 400 F - ou até dourar). 
+Levar ao forno por 20 min a 400 F, ou até dourar. 
+
 
 [ENG] Cheese Balls
 ---------------------
-Recipe "F" above.
-
 Place the tapioca flour in a large bowl, and separately head the milk, oil, and salt. When the heated mixture starts to boil, scald the tapioca flour with the mix, making sure to break up any lumps. Let it cool, and then add the eggs (one at a time) and cheese - be sure to alternate between the two additions, and kneed well after each new addition! Roll into 1in diameter balls and place them on a greased baking sheet. Put in the oven at 375 (Fahrenheit) and bake until golden brown (which is roughly 20 minutes, depending on your oven).
 
 The inside will not be super solid - the cheese is melty inside and will make it look soft and underbaked, but this is what you want! As it cools, you'll see that it does harden up and become more dense and bread-like inside. Overall, they are super tasty and pretty fun to make.
@@ -1296,6 +1320,22 @@ Deixe num recipiente *fechado* ate' dobrar de altura (~1h). Amasse bem mais uma 
 Leve ao forno quente (180.C) por ~40 min.
 
 
+Pão de Milho
+-------------
+- 1 lata de milho (sem a água)
+- 5 colheres (sopa) de açúcar
+- 1 colher (sopa) fermento biológico seco (10 gramas)
+- 180 ml de água
+- 3 e 1/2 xícaras (chá) de farinha de trigo
+- 1 xícara (chá) de fubá mimoso 
+- 1 colher (sobremesa) de sal
+- 3 colheres (sopa) de manteiga
+
+No liquidificador bata o milho, o açúcar, o fermento biológico seco e a água, bata bem. Despeje essa mistura num bowl, adicione o fubá mimoso, misture bem e comece a adicionar a farinha de trigo aos poucos, acrescente o sal. Sove a massa por uns 5 minutos e em seguida coloque a manteiga e sove novamente por uns 10 minutos.
+
+Tampe a massa e deixe descascar por uns 40 minutos ou até dobrar de volume. Depois que a massa crescer, modele o pão no formato que você preferir e coloque numa forma de pão untada e esfarinhada com fubá. Deixe descansar por uns 30 minutos, polvilhe fubá por cima e leve para assar em forno pré aquecido a 180 graus, por uns 30 minutos. Já salva essa receita e envia para os amigos que amam pão de milho!
+
+
 Bolos e doces
 ===============
 Bolo de cenoura com linhaça
@@ -1400,17 +1440,25 @@ Leve os ingredientes ao fogo, mexendo até ferver. Deixe fervendo por pelo menos
 
 Bolo de cenoura e aveia
 -------------------------
-- 3 cenouras médias
-- 4 gema de ovos
-- 125 ml de leite
-- 125 ml de óleo de coco
-- 2 xícara de açúcar
-- 4.25 xícara de aveia (triturar se estiver em flocos)
-- 1 colher de fermento 
-- bater claras em neve, e adicioná-las por último
-- levar ao forno ate dourar
+.. - 3 cenouras médias
+.. - 4 gema de ovos
+.. - 125 ml de leite
+.. - 125 ml de óleo de coco
+.. - 2 xícara de açúcar
+.. - 4.25 xícara de aveia (triturar se estiver em flocos)
+.. - 1 colher de fermento 
+.. - bater claras em neve, e adicioná-las por último
+.. - levar ao forno ate dourar
 
-Inspirado nessa receita: https://cooknenjoy.com/bolo-de-cenoura-com-aveia/
+.. Inspirado nessa receita: https://cooknenjoy.com/bolo-de-cenoura-com-aveia/
+
+- 2 cenouras medias (140g)
+- 3 ovos
+- 1 cup açúcar demerara
+- 2 tbsp iogurte 
+- 2 tea spoon coconut oil
+- 1 1/3 cup oat flour
+- 1 tea spoon baking powder
 
 
 Bolo de banana e aveia com uvas-passas
